@@ -1,0 +1,784 @@
+﻿@FLM41=Merkjaskrár stofnaðar þann 3/4/2011
+ ;By user Admin
+@FLM42=Rautt
+ ;Fleet colors
+@FLM43=Blátt
+ ;Fleet colors
+@FLM44=Grænt
+ ;Fleet colors
+@FLM46=Velja mynd
+ ;Fleet label
+@FLM47=Breyta
+ ;Fleet label
+@FLM48=Fjarlægja
+ ;Fleet label
+@FLM49=Viðskiptavinur
+ ;Fleet label
+@FLM50=Opið
+ ;Fleet label
+@FLM51=Nýtt
+ ;Fleet label
+@FLM52=Leiga
+ ;Fleet label
+@FLM53=Almennt
+ ;Fleet label
+@FLM55=Skoða
+ ;Fleet label
+@FLM56=Eyða
+ ;Fleet label
+@FLM57=Viðhengi
+ ;Fleet label
+@FLM58=Ljúka
+ ;Fleet label
+@FLM59=Leigutaxtar
+ ;Fleet label
+@FLM60=Leigutímabil
+ ;Fleet label
+@FLM61=Frá
+ ;Fleet label
+@FLM62=Til
+ ;Fleet label
+@FLM63=Kílómetrafjöldi
+ ;Fleet label
+@FLM64=Í upphafi
+ ;Fleet label
+@FLM65=Við skil
+ ;Fleet label
+@FLM66=Eldsneytismagn
+ ;Fleet label
+@FLM67=Sækja
+ ;Fleet label
+@FLM68=Gjöld
+ ;Fleet label
+@FLM69=Bæta við gjöldum
+ ;Fleet label
+@FLM70=Einnig flutningabifreiðar
+ ;Fleet label
+@FLM71=Útleigur
+ ;Fleet label
+@FLM72=Breyta
+ ;Fleet label
+@FLM73=Grunnstillingar bílaflotastjórnunar
+ ;Fleet label
+@FLM74=Framleiðendur og tegundir ökutækja
+ ;Fleet label
+@FLM75=Skilgreina framleiðendur og tegundir ökutækja
+ ;Fleet label
+@FLM76=Skilgreina skal framleiðendur og tegundir ökutækja sem eru á skrá, þ.m.t. auðkennandi mynd fyrir tegund ökutækis.
+ ;Fleet label
+@FLM77=Tegundarmynd
+ ;Fleet label
+@FLM78=Fletta ...
+ ;Fleet label
+@FLM79=Nýr framleiðandi
+ ;Fleet label
+@FLM80=Ný tegund
+ ;Fleet label
+@FLM81=Gerðir leigugjalds
+ ;Fleet label
+@FLM82=Skilgreina gerðir gjalda
+ ;Fleet label
+@FLM83=Gerðir gjalda eru notaðar til að flokka hvert leigugjald. Með þessum hætti verður auðveldara að fylgjast með kostnaði.
+ ;Fleet label
+@FLM84=Öryggiseinkunnir smájeppa
+ ;Fleet label
+@FLM85=Skilgreina öryggiseinkunnir smájeppa
+ ;Fleet label
+@FLM86=Ökutæki
+ ;Fleet label
+@FLM87=Viðhalda
+ ;Fleet label
+@FLM88=Ferill
+ ;Fleet label
+@FLM89=Ferill taxta
+ ;Fleet label
+@FLM90=Taxtar
+ ;Fleet label
+@FLM91=Upplýsingar
+ ;Fleet label
+@FLM92=Upplýsingar um bifreiðar og smájeppa
+ ;Fleet label
+@FLM93=Smájeppi
+ ;Fleet label
+@FLM94=Upplýsingar um flutningabifreið
+ ;Fleet label
+@FLM95=Ökutæki
+ ;Fleet label
+@FLM96=Til ráðstöfunar
+ ;Fleet label
+@FLM97=Staðsetning
+ ;Fleet label
+@FLM98=Viðhald
+ ;Fleet label
+@FLM99=Færsla
+ ;Fleet label
+@FLM100=Listi
+ ;Fleet label
+@FLM101=Kenni bifreiðar
+ ;Fleet label
+@FLM102=Stjórnun dagsetninga vegna ökutækjataxta
+ ;Fleet label
+@FLM103=Ný útgáfa
+ ;Fleet label
+@FLM104=Viðhald ökutækis
+ ;Fleet label
+@FLM105=Bílaflotastjórnun
+ ;Fleet label
+@FLM106=Nýlegar útleigur
+ ;Fleet label
+@FLM107=Samstæðufyrirtæki notanda vegna öryggisaðgangs
+ ;Fleet label
+@FLM108=Ökutæki sem notandi hefur öryggisaðgang að
+ ;Fleet label
+@FLM109=Samstæðufyrirtæki sem notandi hefur aðgang að
+ ;Fleet label
+@FLM110=Flutningabifreiðar
+ ;Fleet label
+@FLM111=Sportjeppar
+ ;Fleet label
+@FLM112=Valmynd fyrir birtar síður viðskiptavinar
+ ;Fleet label
+@FLM113=Aðgerðir
+ ;Fleet label
+@FLM114=Ökutækjavalmynd
+ ;Fleet label
+@FLM115=Valmynd fyrir birtar síður ökutækis
+ ;Fleet label
+@FLM116=Grein - úrelt
+ ;Fleet label
+@FLM117=Staðsetning leigu - úrelt
+ ;Fleet label
+@FLM118=Svæði - úrelt
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Gerð eldsneytis
+ ;Fleet label
+@FLM123=Staðlað
+ ;Fleet label
+@FLM124=Hágæða
+ ;Fleet label
+@FLM125=GPS-virkt
+ ;Fleet label
+@FLM126=Olíuskipti
+ ;Fleet label
+@FLM127=Viðhald
+ ;Fleet label
+@FLM128=Fyrirbyggjandi viðhald
+ ;Fleet label
+@FLM129=Bíður skoðunar
+ ;Fleet label
+@FLM130=Bíður eftir þjónustu
+ ;Fleet label
+@FLM131=Bíður samþykktar
+ ;Fleet label
+@FLM132=Bíður eftir hreinsun
+ ;Fleet label
+@FLM133=Lokið
+ ;Fleet label
+@FLM134=Gírkassi
+ ;Fleet label
+@FLM135=Sjálfskiptur
+ ;Fleet label
+@FLM136=Beinskiptur
+ ;Fleet label
+@FLM137=Laus
+ ;Fleet label
+@FLM138=Í notkun
+ ;Fleet label
+@FLM139=Leigður
+ ;Fleet label
+@FLM140=Skemmdur
+ ;Fleet label
+@FLM141=Afturkallaður
+ ;Fleet label
+@FLM142=Í biðstöðu
+ ;Fleet label
+@FLM143=Gerð ökutækis
+ ;Fleet label
+@FLM144=Óþekkt
+ ;Fleet label
+@FLM145=Flutningabifreið
+ ;Fleet label
+@FLM146=Bifreið
+ ;Fleet label
+@FLM147=Gerð gjalda
+ ;Fleet label
+@FLM148=Ökuskírteini
+ ;Fleet label
+@FLM149=Framleiðandi, tegund
+ ;Fleet label
+@FLM150=Athugasemdir
+ ;Fleet label
+@FLM151=Leiguupplýsingar ökutækis
+ ;Fleet label
+@FLM152=Kenni öryggiseinkunnar
+ ;Fleet label
+@FLM153=Öryggiseinkunn smájeppa
+ ;Fleet label
+@FLM154=Samtala útleigu
+ ;Fleet label
+@FLM155=Framleiðandi
+ ;Fleet label
+@FLM156=Framleiðandi ökutækis
+ ;Fleet label
+@FLM157=Tegund
+ ;Fleet label
+@FLM158=Tegund ökutækis
+ ;Fleet label
+@FLM159=Bílar
+ ;Fleet label
+@FLM160=Dyr
+ ;Fleet label
+@FLM161=Sætafjöldi
+ ;Fleet label
+@FLM162=Gerðir gjalda
+ ;Fleet label
+@FLM163=Lokadagur
+ ;Fleet label
+@FLM164=Kílómetrafjöldi við upphaf útleigu
+ ;Fleet label
+@FLM165=Kílómetrafjöldi við lok útleigu
+ ;Fleet label
+@FLM166=Eldsneytismagn við upphaf útleigu
+ ;Fleet label
+@FLM167=Eldsneytismagn við lok útleigu
+ ;Fleet label
+@FLM168=Leiguupplýsingar ökutækis
+ ;Fleet label
+@FLM169=Sætafjöldi í þriðju sætisröð
+ ;Fleet label
+@FLM170=Beygjuradíus
+ ;Fleet label
+@FLM171=Hæð frá jörðu
+ ;Fleet label
+@FLM172=Flutt einkunn
+ ;Fleet label
+@FLM173=Heildareinkunn
+ ;Fleet label
+@FLM174=Athafnarými
+ ;Fleet label
+@FLM175=Gólfrými
+ ;Fleet label
+@FLM176=Hámarkshleðsla
+ ;Fleet label
+@FLM177=Gerð
+ ;Fleet label
+@FLM178=Brúttóþyngd ökutækis
+ ;Fleet label
+@FLM179=Staða ökutækis
+ ;Fleet label
+@FLM180=Fyrirtæki
+ ;Fleet label
+@FLM181=Forskoða flokk
+ ;Fleet label
+@FLM182=Framleiðendur ökutækja
+ ;Fleet label
+@FLM183=Tegundir ökutækja
+ ;Fleet label
+@FLM184=Mynd af ökutæki
+ ;Fleet label
+@FLM185=Tæknilýsing tegundar
+ ;Fleet label
+@FLM186=Myndasnið
+ ;Fleet label
+@FLM187=Ökutækjataxti
+ ;Fleet label
+@FLM188=Daglegur taxti
+ ;Fleet label
+@FLM189=Vikulegur taxti
+ ;Fleet label
+@FLM190=Samstæðufyrirtæki notanda sem tengjast hlutverki
+ ;Fleet label
+@FLM191=Tafla sem inniheldur samstæðufyrirtæki sem tengjast hlutverki notandans
+ ;Fleet label
+@FLM192=Yfirlitið DimAttributeOMBranch inniheldur allar færslur úr töflunni OMOperatingUnit sem merktar eru sem „Útibú“.
+ ;Fleet label
+@FLM193=Yfirlitið DimAttributeOMRegion inniheldur allar færslur úr töflunni OMOperatingUnit sem merktar eru sem „Svæði“.
+ ;Fleet label
+@FLM194=Yfirlitið DimAttributeOMRentalLocation inniheldur allar færslur úr töflunni OMOperatingUnit sem merktar eru sem „Leigusvæði“.
+ ;Fleet label
+@FLM195=Bílaflotastjórnunarstöð
+ ;Fleet label
+@FLM196=Bæta við
+ ;Fleet label
+@FLM197=Núgildandi útleigur
+ ;Fleet label
+@FLM198=Úthlutuð ökutæki
+ ;Fleet label
+@FLM199=Tiltæk ökutæki
+ ;Fleet label
+@FLM200=Afturkölluð ökutæki
+ ;Fleet label
+@FLM201=Lokið
+ ;Fleet label
+@FLM202=Í vinnslu
+ ;Fleet label
+@FLM203=Ferill taxta
+ ;Fleet label
+@FLM204=Ljúka útleigu
+ ;Fleet label
+@FLM205=Hreinsa ökutæki
+ ;Fleet label
+@FLM206=Kanna ástand ökutækis
+ ;Fleet label
+@FLM207=Þjónusta ökutæki
+ ;Fleet label
+@FLM208=Samþykkja þjónustu
+ ;Fleet label
+@FLM209=Upplýsingar um viðskiptavin
+ ;Fleet label
+@FLM210=Heiti
+ ;Fleet label
+@FLM211=Leyfi
+ ;Fleet label
+@FLM212=Aðsetur
+ ;Fleet label
+@FLM213=Sími
+ ;Fleet label
+@FLM214=Tölvupóstur
+ ;Fleet label
+@FLM215=Greiðsluupplýsingar
+ ;Fleet label
+@FLM216=Kreditkort
+ ;Fleet label
+@FLM217=Lok gildistíma
+ ;Fleet label
+@FLM218=Dagsetning
+ ;Fleet label
+@FLM219=Upphaf útleigu
+ ;Fleet label
+@FLM220=Lokadagur
+ ;Fleet label
+@FLM221=Lýsing
+ ;Fleet label
+@FLM222=Magn
+ ;Fleet label
+@FLM223=Útvíkkað
+ ;Fleet label
+@FLM224=Upplýsingar um ökutæki
+ ;Fleet label
+@FLM225=Framleiðandi og tegund
+ ;Fleet label
+@FLM226=Dagstaxti
+ ;Fleet label
+@FLM227=Vikutaxti
+ ;Fleet label
+@FLM228=Forskoðun ökutækis
+ ;Fleet label
+@FLM229=Litur
+ ;Fleet label
+@FLM230=Staða
+ ;Fleet label
+@FLM231=Úthlutað ökutæki
+ ;Fleet label
+@FLM232=Bunkar bílaflotastjórnunar
+ ;Fleet label
+@FLM233=Takmarka notendur við BU
+ ;Fleet label
+@FLM234=Aðgangur notanda að ökutækjum vegna öryggisaðgangs
+ ;Fleet label
+@FLM235=Sjálfsafgreiðsla fyrir leigufærslur
+ ;Fleet label
+@FLM236=Fulltrúi í bílaflotastjórnun
+ ;Fleet label
+@FLM237=Leigufulltrúi
+ ;Fleet label
+@FLM238=Útibússtjóri bílaflotastjórnunar
+ ;Fleet label
+@FLM239=Útibússtjóri útleigu
+ ;Fleet label
+@FLM240=Tæknimaður bílaflotastjórnunar
+ ;Fleet label
+@FLM241=Tæknimaður
+ ;Fleet label
+@FLM242=Nota verkflæði
+ ;Fleet label
+@FLM243=Þjónustuflokkur sem birtir tiltækar ökutækjabirgðir
+ ;Fleet label
+@FLM244=Fjöldi dyra
+ ;Number of doors in the FM vehicle
+@FLM245=Útvíkkuð upphæð
+ ;Fleet label
+@FLM246=Eldsneytismagn
+ ;Fleet label
+@FLM247=Hæð frá jörðu
+ ;Fleet label
+@FLM248=Gólfrými í flutningabifreið
+ ;Fleet label
+@FLM249=Hámarkshleðsla
+ ;Fleet label
+@FLM250=Sameiginlegt höfuðlag
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Einkunn
+ ;Fleet label
+@FLM253=Samtala útleigu
+ ;Fleet label
+@FLM254=Sæti
+ ;Fleet label
+@FLM255=Gerð gjalda
+ ;Fleet label (table)
+@FLM256=Geymslupláss
+ ;Fleet label
+@FLM257=Beygjuradíus
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Verkflæðisfyrirspurn
+ ;Fleet label
+@FLM260=Viðhaldsfærsla
+ ;Fleet label
+@FLM261=Nýjar útleigur
+ ;Fleet label
+@FLM262=Allar útleigur
+ ;Fleet label
+@FLM263=Uppsetning bílaflota
+ ;Fleet label
+@FLM264=Öll ökutæki
+ ;Fleet label
+@FLM265=Dagsetningar taxta
+ ;Fleet label
+@FLM268=Útibú _DEMO_
+ ;Fleet label
+@FLM269=Leigustaðsetningar _DEMO_
+ ;Fleet label
+@FLM270=Svæði _DEMO_
+ ;Fleet label
+@FLM271=Hreinsun lokið
+ ;Fleet label
+@FLM272=Eyða viðskiptavinum
+ ;Fleet label
+@FLM273=Eyða völdum útleigum
+ ;Fleet label
+@FLM274=Eyða völdu ökutæki
+ ;Fleet label
+@FLM275=Ástandskönnun lokið
+ ;Fleet label
+@FLM276=Þjónustu lokið
+ ;Fleet label
+@FLM278=Hefja verkflæði
+ ;Fleet label
+@FLM279=Samþykkja þjónustu
+ ;Fleet label
+@FLM280=Neita um þjónustu
+ ;Fleet label
+@FLM281=Hafna þjónustu
+ ;Fleet label
+@FLM282=Eyða völdum ökutækjum
+ ;Fleet label
+@FLM283=Verkflæðisskilgreining
+ ;Fleet label
+@FLM284=Stofna eða uppfæra útibú
+ ;Fleet label
+@FLM285=Stofna eða uppfæra staðsetningar útleigu
+ ;Fleet label
+@FLM286=Stofna eða uppfæra svæði
+ ;Fleet label
+@FLM287=Bæta við/breyta viðskiptavini
+ ;Fleet label
+@FLM288=Leigukenni ökutækis
+ ;Fleet label (table)
+@FLM289=Bæta við/breyta leigugjaldi
+ ;Fleet label
+@FLM290=Upplýsingar um gjald
+ ;Fleet label
+@FLM291=Upplýsingar um leigu
+ ;Fleet label
+@FLM292=Breyta leigu
+ ;Fleet label
+@FLM293=Útleigur eftir viðskiptavini
+ ;Fleet label
+@FLM294=Útleigur á hverja tegund
+ ;Fleet label
+@FLM295=Bæta við/breyta ökutæki
+ ;Fleet label
+@FLM296=Væntanlegar útleigur
+ ;Fleet label
+@FLM297=Útleigur eftir ökutækjum
+ ;Fleet label
+@FLM298=Sjá hjálp á netinu
+ ;Fleet label
+@FLM299=Gerð leigugjalds
+ ;Fleet label
+@FLM300=Skrá kílómetrafjölda
+ ;Fleet label
+@FLM301=Vinnuferli bílaflota
+ ;Fleet label
+@FLM302=Bílafloti - Stjórna uppsetningu bílaflota
+ ;Fleet label
+@FLM303=Bílafloti - Breyta færslum viðskiptavinar
+ ;Fleet label
+@FLM304=Bílafloti - Stjórna viðskiptavinum
+ ;Fleet label
+@FLM305=Bílafloti - Stjórna birgðum
+ ;Fleet label
+@FLM306=Bílafloti - Leigja bíla
+ ;Fleet label
+@FLM307=Bílafloti - Skoða færslur viðskiptavinar
+ ;Fleet label
+@FLM308=Bílafloti - Skoða birgðir
+ ;Fleet label
+@FLM309=Bílafloti - Verkflæðisfulltrúi
+ ;Fleet label
+@FLM310=Litur ökutækis
+ ;Fleet label
+@FLM311=Bílafloti - Stjórnandi verkflæðis
+ ;Fleet label
+@FLM312=Bílafloti - Tæknimaður verkflæðis
+ ;Fleet label
+@FLM313=Bílafloti - Almenn störf
+ ;Fleet label
+@FLM314=Bílafloti - Stjórnun bíla
+ ;Fleet label
+@FLM315=Hefðbundið vinnuferli bílaflota
+ ;Fleet label
+@FLM316=Kílómetrafjöldi ökutækis
+ ;Fleet label
+@FLM317=Kostnaður
+ ;Fleet label
+@FLM318=Hæð frá jörðu
+ ;Fleet label
+@FLM54=Viðskiptavinir
+ ;Fleet label
+@FLM266=Kreditkort rennur út
+ ;Fleet label (table)
+@FLM277=Ökuskírteini
+ ;Fleet label (table)
+@FLM320=Viðskiptavinalisti
+ ;Fleet label (report menu item)
+@FLM321=Viðskiptavinalisti
+ ;Fleet label (report menu item help text)
+@FLM267=Uppsetning verkflæðis
+ ;Fleet label
+@FLM400=Verkflæði vegna viðhalds ökutækis
+ ;Fleet label
+@FLM500=Valinn greiðslumáti
+ ;Fleet label
+@FLM501=Hvítt
+ ;Fleet colors
+@FLM502=Grátt
+ ;Fleet colors
+@FLM503=Gult
+ ;Fleet colors
+@FLM504=Appelsínugult
+ ;Fleet colors
+@FLM505=Sækja
+ ;Fleet label
+@FLM506=Skila
+ ;Fleet label
+@FLM507=Upphaf útleigu
+ ;Fleet label
+@FLM401=Stjórnun bókana
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Fyrri kílómetrafjöldi
+ ;Fleet label for returning vehicle slider
+@FLM509=Nýr kílómetrafjöldi
+ ;Fleet label for returning vehicle slider
+@FLM510=Útleiga ökutækis
+ ;Fleet label
+@FLM512=Viðbótargjöld
+ ;Fleet label
+@FLM513=Sparnaður
+ ;Fleet label
+@FLM514=Ný bókun
+ ;New reservation menu item label
+@FLM515=Árgerð
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Ár lokagildistíma
+ ;Expiration year label
+@FLM517=Skýrsla viðskiptavinar
+ ;Fleet tile label
+@FLM518=Bókanir sem til eru
+ ;Fleet tile label
+@FLM519=Útleigur í vanskilum
+ ;Fleet tile label
+@FLM520=Heiti greiðslu
+ ;Fleet PaymentInfo field label
+@FLM521=Öryggisnúmer korts
+ ;Fleet label
+@FLM522=Mánuður lokagildistíma
+ ;Expiration month label
+@FLM523=Nafn á korti
+ ;Fleet name on credit card
+@FLM524=Einkunnaferill ökutækis
+ ;Fleet form label
+@FLM525=Ný athugasemd
+ ;Fleet dialog caption
+@FLM526=Nýr viðskiptavinur
+ ;Fleet dialog caption
+@FLM527=Nýjar greiðsluupplýsingar
+ ;Fleet dialog caption
+@FLM528=Bæta við aukabúnaði
+ ;Fleet dialog caption
+@FLM529=Velja viðskiptavin
+ ;Fleet dialog caption
+@FLM530=Tilbúið til afhendingar
+ ;Fleet ReservationState enum option
+@FLM531=Færslukenni heimilisfangs
+ ;Fleet label
+@FLM532=Sextándakerfiskóði litar
+ ;Fleet label
+@FLM533=Kenni litar
+ ;Fleet label
+@FLM534=Heiti litar
+ ;Fleet label
+@FLM535=Afsláttarkenni
+ ;Fleet label
+@FLM536=Kenni greiðsluupplýsinga
+ ;Fleet label
+@FLM537=Kenni frátekningar
+ ;Fleet label
+@FLM539=Leigð ökutæki
+ ;Fleet label
+@FLM540=Bílaflotastjórnun
+ ;Fleet menu label
+@FLM541=Hlaða sýnigögn
+ ;Fleet button text
+@FLM542=Einkunnaferill
+ ;Fleet button text
+@FLM543=Skipta um viðskiptavin
+ ;Fleet dialog label
+@FLM544=Velja ökutæki
+ ;Fleet button text
+@FLM545=Allar bókanir
+ ;Fleet grid title
+@FLM546=Athugasemdir viðskiptavinar
+ ;Fleet group label
+@FLM547=Upplýsingar um leigu
+ ;Fleet group label
+@FLM548=Hlaða mynd
+ ;Fleet group label
+@FLM549=Uppsetning gagna
+ ;Fleet tab label
+@FLM550=Upplýsingar um ökutæki
+ ;Fleet group label
+@FLM551=Tiltæk ökutæki
+ ;Fleet chart label
+@FLM552=Útleigustaða ökutækis
+ ;Fleet chart label
+@FLM553=Ökutæki eftir tegund - tekjur
+ ;Fleet chart label
+@FLM554=Sótt í dag
+ ;Fleet panorama label
+@FLM555=Skilað í dag
+ ;Fleet panorama label
+@FLM556=Leigutaxti
+ ;Fleet panorama label
+@FLM558=Upplýsingar um frátekningar
+ ;Fleet panorama label
+@FLM559=Aukabúnaður
+ ;Fleet panorama label
+@FLM560=Eiginleikar
+ ;Fleet group label
+@FLM561=Upplýsingar vegna afgreiðslu
+ ;Fleet field label
+@FLM562=Upplýsingar vegna skila
+ ;Fleet field label
+@FLM563=Leigulisti
+ ;Fleet report label
+@FLM564=Stofna sýnishorn af viðskiptavinum, leigum og ökutækjum
+ ;Fleet TOC label
+@FLM565=Þetta tekur aðeins nokkrar sekúndur.  
+ ;New Comment
+@FLM322=Útleigur eftir viðskiptavini
+ ;Fleet report label
+@FLM566=Gröf viðskiptavinar
+ ;Fleet form part caption
+@FLM567=Tekjugraf ökutækis
+ ;Fleet form part caption
+@FLM601=Bílaflotastjórnun útleigu
+ ;Fleet rental entity
+@FLM602=Bílaflotastjórnun viðskiptavina
+ ;Fleet customer entity
+@FLM603=Sýnishorn smáforrits
+ ;Label for the sample applet name
+@FLM604=Sýnishorn smáforrits sem er notað til að sýna fram á og prófa umgjörð smáforritsins
+ ;Label for the sample applet description
+@FLM605=Sjá meira
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Staðsetningar viðskiptavina
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Sniðið veitir kort af staðsetningum viðskiptavina
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Leigutæki eftir stöðu
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Sniðið veitir talningar fyrir stöðu leigu
+ ;Rentals by status template description
+FMCustomerEntityView=Skoða eininguna „Bílaflotastjórnun viðskiptavina“
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Vinna með eininguna „Bílaflotastjórnun viðskiptavina“
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Skoða eininguna „Bílaflotastjórnun útleigu“
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Vinna með eininguna „Bílaflotastjórnun útleigu“
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Skoða eininguna Verkþáttur
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Vinna með eininguna Verkþáttur
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Skoða eininguna Tegund
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Vinna með eininguna Tegund
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Skoða eininguna Lögaðili
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Vinna með eininguna Lögaðili
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Skoða eininguna Línueiginleikar
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Vinna með eininguna Línueiginleikar
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Skoða eininguna Tímabil
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Vinna með eininguna Tímabil
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Skoða eininguna Verk
+ ;View privilege for RCADProject
+RCADProjectMaintain=Vinna með eininguna Verk
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Skoða eininguna Vinnukort
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Vinna með eininguna Vinnukort
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Skoða eininguna Færsla á vinnukorti
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Vinna með eininguna Færsla á vinnukorti
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Skoða eininguna Stillingar vinnukorts
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Vinna með eininguna Stillingar vinnukorts
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Skoða eininguna Verkflæðissaga vinnukorts
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Vinna með eininguna Verkflæðissaga vinnukorts
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Skoða eininguna Atriði í verkflæðissögu
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Vinna með eininguna Atriði í verkflæðissögu
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Finna útleigur
+FMTemplateCustomerInformationDisplayName=Upplýsingar um viðskiptavin
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Sniðmátið veitir almennar upplýsingar um viðskiptavin og skrá yfir leigu hans
+ ;Fleet customer information template description
+DataCreated=Sýnigögn stofnuð.
+DataRestored=Sýnigögn endurheimt.
+DataRestoreConfirm=Þetta endurheimtir öll gögn vegna stjórnunar flota aftur í upprunalegt ástand. Á örugglega að gera það?
+Branch=Útibú _DEMO_
+ ;Branch operating unit type
+RentalLocation=Leigustaðsetning _DEMO_
+ ;Rental location operating unit type
+Region=Svæði _DEMO_
+ ;Region operating unit type
+Timestamp=Tímastimpill
+ ;Comment timestamp
+CustomerImage=Mynd viðskiptavinar
+ ;Fleet label
+Analytics=Greiningar
+ ;used on Fleet clerk workspace for Analytics section

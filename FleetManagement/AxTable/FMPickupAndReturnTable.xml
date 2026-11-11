@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMPickupAndReturnTable</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMPickupAndReturnTable extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>fullName</Name>
+				<Source><![CDATA[
+    public display FMName fullName()
+    {
+        return this.FirstName + ' ' + this.LastName;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerImage</Name>
+				<Source><![CDATA[
+    public display container customerImage()
+    {
+        ImageReference imgRef;
+        container imgContainer = this.Image;
+
+        if(imgContainer == connull())
+        {
+            imgRef = ImageReference::constructForSymbol("Person");
+            imgContainer = imgRef.pack();
+        }
+
+        return imgContainer;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalVehicle</Name>
+				<Source><![CDATA[
+    public display FMDescription rentalVehicle()
+    {
+        FMVehicle vehicle;
+        str value;
+
+        if(this.Vehicle == 0)
+        {
+            value = "No vehicle assigned";
+        }
+        else
+        {
+            select vehicle where vehicle.RecId == this.Vehicle;
+            value = vehicle.Description;
+        }
+
+        return value;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<Modules>FleetManagement</Modules>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>FirstName</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FirstName</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>LastName</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>LastName</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldContainer">
+			<Name>Image</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Bitmap</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>Vehicle</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMVehicleRecId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldUtcDateTime">
+			<Name>StartDate</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>StartDateTime</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldUtcDateTime">
+			<Name>EndDate</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>EndDateTime</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>SysDataCacheContextId</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>SysDataCacheContextId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>State</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<EnumType>FMReservationState</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>RentalId</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMRentalId</ExtendedDataType>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes />
+	<Mappings>
+		<AxTableMapping>
+			<MappingTable>SysDataSetCacheTableMap</MappingTable>
+			<Connections>
+				<AxTableMappingConnection>
+					<MapField>Id</MapField>
+					<MapFieldTo>RecId</MapFieldTo>
+				</AxTableMappingConnection>
+				<AxTableMappingConnection>
+					<MapField>SysDataCacheContextId</MapField>
+					<MapFieldTo>SysDataCacheContextId</MapFieldTo>
+				</AxTableMappingConnection>
+			</Connections>
+		</AxTableMapping>
+	</Mappings>
+	<Relations>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>FMRental</Name>
+			<RelatedTable>FMRental</RelatedTable>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>RentalId</Name>
+					<Field>RentalId</Field>
+					<RelatedField>RentalId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+		</AxTableRelation>
+	</Relations>
+	<StateMachines />
+</AxTable>

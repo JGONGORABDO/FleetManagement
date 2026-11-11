@@ -1,0 +1,28 @@
+﻿/* 
+    Represents style targeting forms
+    All form styles begin with ".primaryConductor > .styleName" which means that the UI element must be a immediate child of the shell
+*/
+
+.primaryConductor > .hub {
+    background-color: white; /* $WorkspaceBackground */
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0;
+    bottom: 0;
+}
+
+.primaryConductor > .hub .hubPanoramaBody {
+    position: absolute;
+    left: 120px; /* TODO: Need constant name */
+    top: 132px; /* TODO: Need constant name */
+    right: 0;
+    bottom: 0;
+}
+
+.primaryConductor > .hub .titleGroup {
+    position:absolute;
+    left:120px; /* TODO: Need constant name */
+    right: 0;
+    height:100px; /* TODO: Need constant name */
+}

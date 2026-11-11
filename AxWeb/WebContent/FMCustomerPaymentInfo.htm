@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMCustomerPaymentInfo</title>
+</head>
+<body>
+    <div id="FMCustomerPaymentInfo">
+        <div data-dyn-role="metaModel: 'Toolbar'">
+            <div data-dyn-role="metaModel: 'ToolbarGroup'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Add', ImageType: 'Symbol', ImageName: 'New'"></button>
+            </div>
+        </div>
+        <div data-dyn-role="metaModel: 'List'" data-dyn-bind="DataSource: 'PaymentInformation', DataFilter: 'State !== $dyn.OData.Entry.State.New' ">
+            <div data-dyn-role="metaModel: 'Template'" data-dyn-bind="TemplateId: 'paymentCard'"></div>
+        </div>
+        <!--Template to be applied in the List above-->
+        <div style="display: none" class="dyn-stop-binding">
+            <div id="paymentCard" data-dyn-context="ModelContext" data-dyn-bind="extendedStyle:'card'">
+                <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageType:'URL', ImageName:'StaticMetadata/WebContent/Images/Demo/Data/CreditCardImage.png'"></span>
+                <div class="details">
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('CCN')"></div>
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $value($field('ExpirationMonth'))+'/'+$value($field('ExpirationYear'))"></div>
+                    <div data-dyn-role="metaModel: 'ComboBox'" data-dyn-bind="Items: [{'Value':'0', 'Label':'NotApproved'},{'Value':'1', 'Label':'Approved'},{'Value':'2', 'Label':'Rejected'}], SelectedItem: $format('{0}',$field('State')), AllowEdit:false"></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Dynamically adding the Card stylesheet -->
+        <div data-dyn-template="templateId: 'Card', resourceBundle: 'Card'"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalsByCustUIBuilder</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+///    The <c>FMRentalsByCustUIBuilder</c> is the <c>UIBuilder</c> class for the <c>FMRentalsByCustomerRDP</c> report.
+/// </summary>
+class FMRentalsByCustUIBuilder extends SrsReportDataContractUIBuilder
+{
+    DialogField                             fromDateField;
+    DialogField                             toDateField;
+    FMRentalsByCustContract                 contract;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>build</Name>
+				<Source><![CDATA[
+    public void build()
+    {
+        Dialog dialogLocal = this.dialog();
+        contract = this.dataContractObject() as FMRentalsByCustContract;
+
+        // associate dialog field with data contract method
+        this.addDialogField(methodStr(FMRentalsByCustContract, parmCustGroupId), contract);
+
+        dialogLocal.addGroup("@SYS41297");
+        fromDateField = this.addDialogField(methodStr(FMRentalsByCustContract, parmFromDate), contract);
+        toDateField = this.addDialogField(methodStr(FMRentalsByCustContract, parmToDate), contract);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>postBuild</Name>
+				<Source><![CDATA[
+    public void postBuild()
+    {
+        super();
+        
+        //get the field to override by providing the data contract object and the associated attribute/method
+        DialogField dlgCustGroup = this.bindInfo().getDialogField(this.dataContractObject(), methodStr(FMRentalsByCustContract, parmCustGroupId));
+
+        //register the method we want to override
+        dlgCustGroup.registerOverrideMethod(methodStr(FormStringControl, lookup), methodStr(FMRentalsByCustUIBuilder, lookupCustGroup), this);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getFromDialog</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///    Transfers data from the dialog into the data contract object.
+    /// </summary>
+    public void getFromDialog()
+    {
+        super();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>lookupCustGroup</Name>
+				<Source><![CDATA[
+    public void lookupCustGroup(FormStringControl _formStringControl)
+    {
+        Query query = new Query();
+
+        // create a table lookup
+        SysTableLookup sysTablelookup = SysTableLookup::newParameters(tableNum(FMCustGroup), _formStringControl);
+        sysTablelookup.addLookupfield(fieldNum(FMCustGroup, CustGroup));
+        sysTablelookup.addLookupfield(fieldNum(FMCustGroup, Description));
+
+        // create a query
+        QueryBuildDataSource DS;
+        DS = query.addDataSource(tableNum(FMCustGroup));
+
+        // assign the query and call lookup
+        sysTablelookup.parmQuery(query);
+        sysTablelookup.performFormLookup();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

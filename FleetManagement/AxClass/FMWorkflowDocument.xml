@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMWorkflowDocument</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMWorkflowDocument extends WorkflowDocument
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>getQueryName</Name>
+				<Source><![CDATA[
+    queryName getQueryName()
+    {
+        return queryStr(FMWorkflowQuery);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

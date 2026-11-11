@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMReservationHub</title>
+</head>
+<body>
+    <!-- Represents a page using a template with placeholders -->
+    <div id="FMReservationHub" data-dyn-template="templateId: 'hub', resourceBundle: 'hub'" data-dyn-role="metaModel: 'Form'" data-dyn-context="$dyn.OData.CreateEndpoint('data/service.svc/')">
+
+        <!-- Fills in a placeholder called hubCaption -->
+        <!--<div class="hubCaption" data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('RentalId')" data-dyn-context="$model('Rentals')"></div>-->
+        <div class="hubTitle" data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: 'New Reservation'"></div>
+        <!-- TODO: Refactor to use data-binding rather than attribute aria-label -->
+        <div class="hubMasterList" aria-label="Reservation information" data-dyn-role="metaModel: 'List'" data-dyn-bind="DataSource: 'Reservations'">
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Rental Id', Value: $field('ReservationId'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Start Date', Value: $field('PickupDate'), AllowEdit: false"></div>
+        </div>
+        <div class="hubDetails" aria-label="Customer information" data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'EntityCard', ResourceBundle: 'EntityCard'}" data-dyn-context="$model('Customer', $selected('Reservations'))"></div>
+        <div class="hubDetails" aria-label="Reservation information" data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMReservationInformation', ResourceBundle: 'FMReservationInformation'}" data-dyn-context="$selected('Reservations')"></div>
+        <div class="hubDetails" aria-label="Vehicle" data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMVehicleInformation', ResourceBundle: 'FMVehicleInformation'}" data-dyn-context="$selected('Reservations')"></div>
+        <div class="hubDetails" aria-label="Add-ons" data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMReservationAddOns', ResourceBundle: 'FMReservationAddOns'}" data-dyn-context="$models('ReservationAddOns', $selected('Reservations'))"></div>
+        <div class="hubDetails" aria-label="Payment information" data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMReservationPayment', ResourceBundle: 'FMReservationPayment'}" data-dyn-context="$model('PaymentInformation', $selected('Reservations'))"></div>
+        <div class="hubDetails" aria-label="Employee comments"></div>
+    </div>
+</body>
+</html>

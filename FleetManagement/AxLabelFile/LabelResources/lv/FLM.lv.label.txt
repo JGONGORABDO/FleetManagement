@@ -1,0 +1,784 @@
+﻿@FLM41=Etiķešu faili ir izveidoti 03.04.2011.
+ ;By user Admin
+@FLM42=Sarkana
+ ;Fleet colors
+@FLM43=Zila
+ ;Fleet colors
+@FLM44=Zaļa
+ ;Fleet colors
+@FLM46=Izvēlēties attēlu
+ ;Fleet label
+@FLM47=Mainīt
+ ;Fleet label
+@FLM48=Noņemt
+ ;Fleet label
+@FLM49=Debitors
+ ;Fleet label
+@FLM50=Atvērta
+ ;Fleet label
+@FLM51=Jauns
+ ;Fleet label
+@FLM52=Noma
+ ;Fleet label
+@FLM53=Vispārīgi
+ ;Fleet label
+@FLM55=Skatīt
+ ;Fleet label
+@FLM56=Dzēst
+ ;Fleet label
+@FLM57=Pielikumi
+ ;Fleet label
+@FLM58=Pabeigt
+ ;Fleet label
+@FLM59=Nomas maksas
+ ;Fleet label
+@FLM60=Nomas periods
+ ;Fleet label
+@FLM61=No
+ ;Fleet label
+@FLM62=Līdz
+ ;Fleet label
+@FLM63=Nobraukums
+ ;Fleet label
+@FLM64=Sākums
+ ;Fleet label
+@FLM65=Beigas
+ ;Fleet label
+@FLM66=Degvielas līmenis
+ ;Fleet label
+@FLM67=Savākšana
+ ;Fleet label
+@FLM68=Izmaksas
+ ;Fleet label
+@FLM69=Pievienot maksu
+ ;Fleet label
+@FLM70=Iekļaut kravas automašīnas
+ ;Fleet label
+@FLM71=Nomas
+ ;Fleet label
+@FLM72=Rediģēt
+ ;Fleet label
+@FLM73=Autoparka pārvaldības konfigurācija
+ ;Fleet label
+@FLM74=Transportlīdzekļu izveidošana un modeļi
+ ;Fleet label
+@FLM75=Definēt transportlīdzekļu izveidošanu un modeļus
+ ;Fleet label
+@FLM76=Definēt transportlīdzekļu izveidošanu un modeļus jūsu krājumos, iekļaujot reprezentatīvu modeļa attēlu.
+ ;Fleet label
+@FLM77=Modeļa attēls
+ ;Fleet label
+@FLM78=Pārlūkot...
+ ;Fleet label
+@FLM79=Jauna izveidošana
+ ;Fleet label
+@FLM80=Jauns modelis
+ ;Fleet label
+@FLM81=Nomas maksas veidi
+ ;Fleet label
+@FLM82=Definēt maksas veidus
+ ;Fleet label
+@FLM83=Maksas veidi tiek izmantoti, lai iedalītu kategorijās nomas maksas. Tas ļauj vieglāk izsekot izmaksām.
+ ;Fleet label
+@FLM84=Apvidus automašīnas drošības vērtējumi
+ ;Fleet label
+@FLM85=Definēt apvidus automašīnas drošības vērtējumus
+ ;Fleet label
+@FLM86=Transportlīdzekļi
+ ;Fleet label
+@FLM87=Uzturēt
+ ;Fleet label
+@FLM88=Vēsture
+ ;Fleet label
+@FLM89=Vēsturiskie vērtējumi
+ ;Fleet label
+@FLM90=Likmes
+ ;Fleet label
+@FLM91=Detalizēti
+ ;Fleet label
+@FLM92=Automašīnas un apvidus automašīnas informācija
+ ;Fleet label
+@FLM93=Apvidus automašīna
+ ;Fleet label
+@FLM94=Kravas automašīnas informācija
+ ;Fleet label
+@FLM95=Transportlīdzekļi
+ ;Fleet label
+@FLM96=Pieejamība
+ ;Fleet label
+@FLM97=Vieta
+ ;Fleet label
+@FLM98=Uzturēšana
+ ;Fleet label
+@FLM99=Ieraksts
+ ;Fleet label
+@FLM100=Saraksts
+ ;Fleet label
+@FLM101=Transportlīdzekļa ID
+ ;Fleet label
+@FLM102=Transportlīdzekļa vērtējuma datuma pārvaldnieks
+ ;Fleet label
+@FLM103=Jauna versija
+ ;Fleet label
+@FLM104=Transportlīdzekļa uzturēšana
+ ;Fleet label
+@FLM105=Autoparka pārvaldība
+ ;Fleet label
+@FLM106=Jaunākās nomas
+ ;Fleet label
+@FLM107=Manas iekšējās organizācijas drošības piekļuvei
+ ;Fleet label
+@FLM108=Transportlīdzekļi, kuriem lietotājam ir drošības piekļuve
+ ;Fleet label
+@FLM109=Iekšējās organizācijas, kurām lietotājam ir piekļuve
+ ;Fleet label
+@FLM110=Kravas automašīnas
+ ;Fleet label
+@FLM111=Apvidus automašīnas
+ ;Fleet label
+@FLM112=Izvēlne debitoru lapu skatīšanai
+ ;Fleet label
+@FLM113=Darbības
+ ;Fleet label
+@FLM114=Transportlīdzekļa izvēlne
+ ;Fleet label
+@FLM115=Izvēlne transportlīdzekļu lapu skatīšanai
+ ;Fleet label
+@FLM116=Filiāle — novecojusi
+ ;Fleet label
+@FLM117=Nomas atrašanās vieta — novecojusi
+ ;Fleet label
+@FLM118=Reģions — novecojis
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Degvielas veids
+ ;Fleet label
+@FLM123=Standarta
+ ;Fleet label
+@FLM124=Augstas kvalitātes
+ ;Fleet label
+@FLM125=GPS iespējots
+ ;Fleet label
+@FLM126=Eļļas maiņa
+ ;Fleet label
+@FLM127=Labošana
+ ;Fleet label
+@FLM128=Preventīvā uzturēšana
+ ;Fleet label
+@FLM129=Gaida pārbaudi
+ ;Fleet label
+@FLM130=Gaida apkopšanu
+ ;Fleet label
+@FLM131=Gaida apstiprinājumu
+ ;Fleet label
+@FLM132=Gaida tīrīšanu
+ ;Fleet label
+@FLM133=Gatavs
+ ;Fleet label
+@FLM134=Ātrumkārba
+ ;Fleet label
+@FLM135=Automātiskā
+ ;Fleet label
+@FLM136=Manuālā
+ ;Fleet label
+@FLM137=Pieejams
+ ;Fleet label
+@FLM138=Apkopē
+ ;Fleet label
+@FLM139=Nomāts
+ ;Fleet label
+@FLM140=Bojāts
+ ;Fleet label
+@FLM141=Atsaukts
+ ;Fleet label
+@FLM142=Gaida
+ ;Fleet label
+@FLM143=Transportlīdzekļa veids
+ ;Fleet label
+@FLM144=Nezināms
+ ;Fleet label
+@FLM145=Kravas automašīna
+ ;Fleet label
+@FLM146=Automašīna
+ ;Fleet label
+@FLM147=Maksas veids
+ ;Fleet label
+@FLM148=Autovadītāja apliecība
+ ;Fleet label
+@FLM149=Izveidot modeli
+ ;Fleet label
+@FLM150=Piezīmes
+ ;Fleet label
+@FLM151=Transportlīdzekļa nomas informācija
+ ;Fleet label
+@FLM152=Drošības vērtējuma ID
+ ;Fleet label
+@FLM153=Apvidus automašīnas drošības vērtējums
+ ;Fleet label
+@FLM154=Nomu kopsumma
+ ;Fleet label
+@FLM155=Izveidot
+ ;Fleet label
+@FLM156=Transportlīdzekļa izveidošana
+ ;Fleet label
+@FLM157=Modelis
+ ;Fleet label
+@FLM158=Transportlīdzekļa modelis
+ ;Fleet label
+@FLM159=Automašīnas
+ ;Fleet label
+@FLM160=Durvis
+ ;Fleet label
+@FLM161=Sēdvietu skaits
+ ;Fleet label
+@FLM162=Maksas veidi
+ ;Fleet label
+@FLM163=Beigu datums
+ ;Fleet label
+@FLM164=Sākuma nobraukums
+ ;Fleet label
+@FLM165=Beigu nobraukums
+ ;Fleet label
+@FLM166=Sākuma degvielas līmenis
+ ;Fleet label
+@FLM167=Beigu degvielas līmenis
+ ;Fleet label
+@FLM168=Transportlīdzekļa nomas informācija
+ ;Fleet label
+@FLM169=Trešās rindas ietilpība
+ ;Fleet label
+@FLM170=Pagriešanās rādiuss
+ ;Fleet label
+@FLM171=Laukuma redzamība
+ ;Fleet label
+@FLM172=Apgāšanās vērtējums
+ ;Fleet label
+@FLM173=Kopējais vērtējums
+ ;Fleet label
+@FLM174=Kustības platība
+ ;Fleet label
+@FLM175=Grīdas platība
+ ;Fleet label
+@FLM176=Maksimālā slodze
+ ;Fleet label
+@FLM177=Veids
+ ;Fleet label
+@FLM178=Transportlīdzekļa bruto svars
+ ;Fleet label
+@FLM179=Transportlīdzekļa statuss
+ ;Fleet label
+@FLM180=Organizācija
+ ;Fleet label
+@FLM181=Pārskata grupa
+ ;Fleet label
+@FLM182=Transportlīdzekļa veidošanas
+ ;Fleet label
+@FLM183=Transportlīdzekļu modeļi
+ ;Fleet label
+@FLM184=Transportlīdzekļa attēls
+ ;Fleet label
+@FLM185=Modeļa specifikācija
+ ;Fleet label
+@FLM186=Attēla formāts
+ ;Fleet label
+@FLM187=Transportlīdzekļa vērtējumi
+ ;Fleet label
+@FLM188=Dienas likme
+ ;Fleet label
+@FLM189=Nedēļas vērtējums
+ ;Fleet label
+@FLM190=Ar lomu saistītas manas iekšējās organizācijas
+ ;Fleet label
+@FLM191=Tabulā, kurā ir uzskaitītas iekšējās organizācijas, kas ir saistīts ar lietotāja lomu
+ ;Fleet label
+@FLM192=Skatā DimAttributeOMBranch ir ietverti visi tabulas OMOperatingUnit ieraksti, kas ir atzīmēti kā Filiāle.
+ ;Fleet label
+@FLM193=Skatā DimAttributeOMRegion ir ietverti visi tabulas OMOperatingUnit ieraksti, kas ir atzīmēti kā Reģioni.
+ ;Fleet label
+@FLM194=Skatā DimAttributeOMRentalLocation ir ietverti visi tabulas OMOperatingUnit ieraksti, kas ir atzīmēti kā Nomas atrašanās vietas.
+ ;Fleet label
+@FLM195=Autoparka pārvaldības centrs
+ ;Fleet label
+@FLM196=Pievienot
+ ;Fleet label
+@FLM197=Pašreizējās nomas
+ ;Fleet label
+@FLM198=Piešķirtie transportlīdzekļi
+ ;Fleet label
+@FLM199=Pieejamie transportlīdzekļi
+ ;Fleet label
+@FLM200=Atsauktie transportlīdzekļi
+ ;Fleet label
+@FLM201=Pabeigts
+ ;Fleet label
+@FLM202=Notiek
+ ;Fleet label
+@FLM203=Vēsturiskais vērtējums
+ ;Fleet label
+@FLM204=Pabeigt nomu
+ ;Fleet label
+@FLM205=Tīrīt transportlīdzekli
+ ;Fleet label
+@FLM206=Pārbaudīt transportlīdzekli
+ ;Fleet label
+@FLM207=Pakalpojumu transportlīdzeklis
+ ;Fleet label
+@FLM208=Lietošanas apstiprinājums
+ ;Fleet label
+@FLM209=Debitora informācija
+ ;Fleet label
+@FLM210=Nosaukums
+ ;Fleet label
+@FLM211=Apliecība
+ ;Fleet label
+@FLM212=Adrese
+ ;Fleet label
+@FLM213=Tālrunis
+ ;Fleet label
+@FLM214=E-pasts
+ ;Fleet label
+@FLM215=Maksājuma informācija
+ ;Fleet label
+@FLM216=Kredītkarte
+ ;Fleet label
+@FLM217=Termiņa beigas
+ ;Fleet label
+@FLM218=Datums
+ ;Fleet label
+@FLM219=Nomas sākums
+ ;Fleet label
+@FLM220=Beigu datums
+ ;Fleet label
+@FLM221=Apraksts
+ ;Fleet label
+@FLM222=Daudzums
+ ;Fleet label
+@FLM223=Paplašināti
+ ;Fleet label
+@FLM224=Transportlīdzekļa informācija
+ ;Fleet label
+@FLM225=Izveidot un formēt
+ ;Fleet label
+@FLM226=Dienas likme
+ ;Fleet label
+@FLM227=Nedēļas likme
+ ;Fleet label
+@FLM228=Transportlīdzekļa daļu apskate
+ ;Fleet label
+@FLM229=Krāsa
+ ;Fleet label
+@FLM230=Statuss
+ ;Fleet label
+@FLM231=Piešķirtais transportlīdzeklis
+ ;Fleet label
+@FLM232=Autoparka pārvaldības norādījumi
+ ;Fleet label
+@FLM233=Ierobežot lietotājus līdz BU
+ ;Fleet label
+@FLM234=Mana transportlīdzekļa piekļuve drošības piekļuvei
+ ;Fleet label
+@FLM235=Pašapkalpošanās nomas ierakstiem
+ ;Fleet label
+@FLM236=Autoparka pārvaldības darbinieks
+ ;Fleet label
+@FLM237=Nomas darbinieks
+ ;Fleet label
+@FLM238=Autoparka pārvaldības filiāles vadītājs
+ ;Fleet label
+@FLM239=Nomas filiāles vadītājs
+ ;Fleet label
+@FLM240=Autoparka pārvaldības servisa tehniķis
+ ;Fleet label
+@FLM241=Servisa tehniķis
+ ;Fleet label
+@FLM242=Izmantot darbplūsmu
+ ;Fleet label
+@FLM243=Pakalpojumu grupa, kas parāda pieejamo automašīnu krājumus
+ ;Fleet label
+@FLM244=Durvju skaits
+ ;Number of doors in the FM vehicle
+@FLM245=Paplašinātais skaits
+ ;Fleet label
+@FLM246=Degvielas līmenis
+ ;Fleet label
+@FLM247=Laukuma redzamība
+ ;Fleet label
+@FLM248=Kravas automašīnas grīdas platība
+ ;Fleet label
+@FLM249=Maksimālā slodze
+ ;Fleet label
+@FLM250=Kustības platība virs galvas
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Novērtējums
+ ;Fleet label
+@FLM253=Nomas kopsumma
+ ;Fleet label
+@FLM254=Sēdvietas
+ ;Fleet label
+@FLM255=Maksas veids
+ ;Fleet label (table)
+@FLM256=Noslodze
+ ;Fleet label
+@FLM257=Pagriešanās rādiuss
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Darbplūsmas vaicājums
+ ;Fleet label
+@FLM260=Uzturēšanas ieraksts
+ ;Fleet label
+@FLM261=Jauna noma
+ ;Fleet label
+@FLM262=Visas nomas
+ ;Fleet label
+@FLM263=Autoparka iestatījumi
+ ;Fleet label
+@FLM264=Visi transportlīdzekļi
+ ;Fleet label
+@FLM265=Likmes datumi
+ ;Fleet label
+@FLM268=Filiāles _DEMO_
+ ;Fleet label
+@FLM269=Nomas atrašanās vietas _DEMO_
+ ;Fleet label
+@FLM270=Reģioni _DEMO_
+ ;Fleet label
+@FLM271=Tīrīšana pabeigta
+ ;Fleet label
+@FLM272=Dzēst debitorus
+ ;Fleet label
+@FLM273=Dzēst atlasītās nomas
+ ;Fleet label
+@FLM274=Dzēst atlasīto transportlīdzekli
+ ;Fleet label
+@FLM275=Pārbaude pabeigta
+ ;Fleet label
+@FLM276=Apkope pabeigta
+ ;Fleet label
+@FLM278=Sākt darbplūsmu
+ ;Fleet label
+@FLM279=Apstiprināt pakalpojumu
+ ;Fleet label
+@FLM280=Liegt pakalpojumu
+ ;Fleet label
+@FLM281=Noraidīt pakalpojumu
+ ;Fleet label
+@FLM282=Dzēst atlasītos transportlīdzekļus
+ ;Fleet label
+@FLM283=Darbplūsmas konfigurācija
+ ;Fleet label
+@FLM284=Izveidot un atjaunināt filiāles
+ ;Fleet label
+@FLM285=Izveidot vai atjaunināt nomas atrašanās vietas
+ ;Fleet label
+@FLM286=Izveidot vai atjaunināt reģionus
+ ;Fleet label
+@FLM287=Pievienot/rediģēt debitoru
+ ;Fleet label
+@FLM288=Transportlīdzekļa nomas ID
+ ;Fleet label (table)
+@FLM289=Pievienot/labot automašīnu nomas maksu
+ ;Fleet label
+@FLM290=Maksas informācija
+ ;Fleet label
+@FLM291=Nomas informācija
+ ;Fleet label
+@FLM292=Labot nomu
+ ;Fleet label
+@FLM293=Debitora nomas
+ ;Fleet label
+@FLM294=Modeļa nomas
+ ;Fleet label
+@FLM295=Pievienot/labot transportlīdzekli
+ ;Fleet label
+@FLM296=Gaidāmās nomas
+ ;Fleet label
+@FLM297=Transportlīdzekļa nomas
+ ;Fleet label
+@FLM298=Skatīt tiešsaistes palīdzību
+ ;Fleet label
+@FLM299=Nomas maksas veidi
+ ;Fleet label
+@FLM300=Ierakstīt nobraukumu
+ ;Fleet label
+@FLM301=Autoparka apstrādes cikls
+ ;Fleet label
+@FLM302=Autoparks — pārvaldīt autoparka iestatījumus
+ ;Fleet label
+@FLM303=Autoparks — labot debitoru ierakstus
+ ;Fleet label
+@FLM304=Autoparks — pārvaldīt debitorus
+ ;Fleet label
+@FLM305=Autoparks — pārvaldīt krājumus
+ ;Fleet label
+@FLM306=Autoparks — nomāt automašīnas
+ ;Fleet label
+@FLM307=Autoparks — skatīt debitoru ierakstus
+ ;Fleet label
+@FLM308=Autoparks — skatīt krājumus
+ ;Fleet label
+@FLM309=Autoparks — darbplūsmas darbinieks
+ ;Fleet label
+@FLM310=Transportlīdzekļa krāsa
+ ;Fleet label
+@FLM311=Autoparks — darbplūsmas vadītājs
+ ;Fleet label
+@FLM312=Autoparks — darbplūsmas servisa tehniķis
+ ;Fleet label
+@FLM313=Autoparks — pamata pienākumi
+ ;Fleet label
+@FLM314=Autoparks — pārvaldīt automašīnas
+ ;Fleet label
+@FLM315=Autoparka standarta apstrādes cikls
+ ;Fleet label
+@FLM316=Transportlīdzekļa nobraukums
+ ;Fleet label
+@FLM317=Izmaksas
+ ;Fleet label
+@FLM318=Redzamība
+ ;Fleet label
+@FLM54=Debitori
+ ;Fleet label
+@FLM266=Kredītkartes termiņš
+ ;Fleet label (table)
+@FLM277=Autovadītāja apliecība
+ ;Fleet label (table)
+@FLM320=Debitoru saraksts
+ ;Fleet label (report menu item)
+@FLM321=Debitoru saraksta pārskats
+ ;Fleet label (report menu item help text)
+@FLM267=Darbplūsmas iestatīšana
+ ;Fleet label
+@FLM400=Transportlīdzekļa uzturēšanas darbplūsma
+ ;Fleet label
+@FLM500=Vēlamā apmaksas metode
+ ;Fleet label
+@FLM501=Balta
+ ;Fleet colors
+@FLM502=Pelēka
+ ;Fleet colors
+@FLM503=Dzeltena
+ ;Fleet colors
+@FLM504=Oranža
+ ;Fleet colors
+@FLM505=Savākšana
+ ;Fleet label
+@FLM506=Atgriešana
+ ;Fleet label
+@FLM507=Nomas sākums
+ ;Fleet label
+@FLM401=Rezervēšanas pārvaldība
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Iepriekšējais nobraukums
+ ;Fleet label for returning vehicle slider
+@FLM509=Jaunais nobraukums
+ ;Fleet label for returning vehicle slider
+@FLM510=Transportlīdzekļa noma
+ ;Fleet label
+@FLM512=Papildu maksas
+ ;Fleet label
+@FLM513=Uzkrājumi
+ ;Fleet label
+@FLM514=Jauna rezervācija
+ ;New reservation menu item label
+@FLM515=Modeļa gads
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Beigu gads
+ ;Expiration year label
+@FLM517=Debitoru pārskats
+ ;Fleet tile label
+@FLM518=Esošās rezervācijas
+ ;Fleet tile label
+@FLM519=Nokavētās nomas
+ ;Fleet tile label
+@FLM520=Maksājuma nosaukums
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=Beigu mēnesis
+ ;Expiration month label
+@FLM523=Uz kartes norādītais vārds
+ ;Fleet name on credit card
+@FLM524=Transportlīdzekļa vērtējumu vēsture
+ ;Fleet form label
+@FLM525=Jauns komentārs
+ ;Fleet dialog caption
+@FLM526=Jauns debitors
+ ;Fleet dialog caption
+@FLM527=Jauna maksājuma informācija
+ ;Fleet dialog caption
+@FLM528=Pievienot piederumu
+ ;Fleet dialog caption
+@FLM529=Atlasīt debitoru
+ ;Fleet dialog caption
+@FLM530=Gatavs saņemšanai
+ ;Fleet ReservationState enum option
+@FLM531=Adreses ieraksta ID
+ ;Fleet label
+@FLM532=Heksadecimālais krāsas kods
+ ;Fleet label
+@FLM533=Krāsas ID
+ ;Fleet label
+@FLM534=Krāsas nosaukums
+ ;Fleet label
+@FLM535=Atlaides ID
+ ;Fleet label
+@FLM536=Maksājuma informācijas ID
+ ;Fleet label
+@FLM537=Rezervācijas ID
+ ;Fleet label
+@FLM539=Iznomātie transportlīdzekļi
+ ;Fleet label
+@FLM540=Autoparka pārvaldība
+ ;Fleet menu label
+@FLM541=Ielādēt demonstrācijas datus
+ ;Fleet button text
+@FLM542=Vērtējumu vēsture
+ ;Fleet button text
+@FLM543=Mainīt debitoru
+ ;Fleet dialog label
+@FLM544=Atlasīt transportlīdzekli
+ ;Fleet button text
+@FLM545=Visas rezervācijas
+ ;Fleet grid title
+@FLM546=Debitoru atsauksmes
+ ;Fleet group label
+@FLM547=Nomas informācija
+ ;Fleet group label
+@FLM548=Maksas attēls
+ ;Fleet group label
+@FLM549=Datu iestatīšana
+ ;Fleet tab label
+@FLM550=Transportlīdzekļa informācija
+ ;Fleet group label
+@FLM551=Pieejamie transportlīdzekļi
+ ;Fleet chart label
+@FLM552=Transportlīdzekļa nomas statuss
+ ;Fleet chart label
+@FLM553=Transportlīdzeklis pēc modeļa — ieņēmumi
+ ;Fleet chart label
+@FLM554=Izdošana šodien
+ ;Fleet panorama label
+@FLM555=Atgriešana šodien
+ ;Fleet panorama label
+@FLM556=Nomas likmes
+ ;Fleet panorama label
+@FLM558=Detalizēta informācija par rezervēšanu
+ ;Fleet panorama label
+@FLM559=Piederumi
+ ;Fleet panorama label
+@FLM560=Līdzekļi
+ ;Fleet group label
+@FLM561=Paņemšanas informācija
+ ;Fleet field label
+@FLM562=Atgriešanas informācija
+ ;Fleet field label
+@FLM563=Nomu saraksts
+ ;Fleet report label
+@FLM564=Izveidot parauga debitorus, nomas un transportlīdzekļus
+ ;Fleet TOC label
+@FLM565=Tas ilgs tikai dažas sekundes.  
+ ;New Comment
+@FLM322=Debitora nomas
+ ;Fleet report label
+@FLM566=Debitoru diagrammas
+ ;Fleet form part caption
+@FLM567=Transportlīdzekļa ieņēmumu diagramma
+ ;Fleet form part caption
+@FLM601=Autoparka nomas pārvaldība
+ ;Fleet rental entity
+@FLM602=Autoparka debitoru pārvaldība
+ ;Fleet customer entity
+@FLM603=Parauga sīklietotne
+ ;Label for the sample applet name
+@FLM604=Parauga sīklietotne tiek izmantota, lai demonstrētu un pārbaudītu sīklietotnes struktūru
+ ;Label for the sample applet description
+@FLM605=Skatīt vairāk
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Debitoru atrašanās vietas
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Veidnē ir sniegta debitoru atrašanās vietu karte
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Nomas pēc statusa
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Veidnē ir sniegts nomas statusu skaits
+ ;Rentals by status template description
+FMCustomerEntityView=Skatīt elementu Autoparka debitoru pārvaldība
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Uzturēt elementu Autoparka debitoru pārvaldība
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Skatīt elementu Autoparka nomas pārvaldība
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Uzturēt elementu Autoparka nomas pārvaldība
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Skatīt elementu Aktivitāte
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Uzturēt elementu Aktivitāte
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Skatīt elementu Kategorija
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Uzturēt elementu Kategorija
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Skatīt elementu Juridiska persona
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Uzturēt elementu Juridiska persona
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Skatīt elementu Rindas rekvizīts
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Uzturēt elementu Rindas rekvizīts
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Skatīt elementu Periods
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Uzturēt elementu Periods
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Skatīt elementu Projekts
+ ;View privilege for RCADProject
+RCADProjectMaintain=Uzturēt elementu Projekts
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Skatīt elementu Darba laika uzskaites tabula
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Uzturēt elementu Darba laika uzskaites tabula
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Skatīt elementu Darba laika uzskaites tabulas ieraksts
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Uzturēt elementu Darba laika uzskaites tabulas ieraksts
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Skatīt elementu Darba laika uzskaites tabulas iestatījumi
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Uzturēt elementu Darba laika uzskaites tabulas iestatījumi
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Skatīt elementu Darba laika uzskaites tabulas darbplūsmas vēsture
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Uzturēt elementu Darba laika uzskaites tabulas darbplūsmas vēsture
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Skatīt elementu Darbplūsmas vēstures krājums
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Uzturēt elementu Darbplūsmas vēstures krājums
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Meklēt nomas
+FMTemplateCustomerInformationDisplayName=Informācija par debitoru
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Veidnē ir sniegta pamatinformācija par debitoru un saraksts ar tā nomām
+ ;Fleet customer information template description
+DataCreated=Parauga dati ir izveidoti.
+DataRestored=Parauga dati ir atjaunoti.
+DataRestoreConfirm=Šādi visi autoparka pārvaldības dati tiks atjaunoti to sākotnējā stāvoklī. Vai tas ir tas, ko vēlaties darīt?
+Branch=Filiāle _DEMO_
+ ;Branch operating unit type
+RentalLocation=Nomas atrašanās vieta _DEMO_
+ ;Rental location operating unit type
+Region=Reģions _DEMO_
+ ;Region operating unit type
+Timestamp=Laikspiedols
+ ;Comment timestamp
+CustomerImage=Debitora attēls
+ ;Fleet label
+Analytics=Analīze
+ ;used on Fleet clerk workspace for Analytics section

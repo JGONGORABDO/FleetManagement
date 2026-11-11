@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxEnum xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehicleStatus</Name>
+	<EnumValues>
+		<AxEnumValue>
+			<Name>Available</Name>
+			<Label>@FLM137</Label>
+			<Value>1</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>InService</Name>
+			<Label>@FLM138</Label>
+			<Value>2</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>Rented</Name>
+			<Label>@FLM139</Label>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>Damaged</Name>
+			<Label>@FLM140</Label>
+			<Value>3</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>Recalled</Name>
+			<Label>@FLM141</Label>
+			<Value>4</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>Pending</Name>
+			<Label>@FLM142</Label>
+			<Value>5</Value>
+		</AxEnumValue>
+	</EnumValues>
+</AxEnum>

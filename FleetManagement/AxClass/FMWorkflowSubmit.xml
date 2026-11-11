@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMWorkflowSubmit</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMWorkflowSubmit
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args _args)
+    {
+
+        RecId                       recId;
+        CompanyId                   companyId;
+        TableId                     tableId;
+        WorkflowCorrelationId       workflowCorrelationId;
+        WorkflowComment             comment;
+        WorkflowSubmitDialog        workflowSubmitDialog;
+        WorkflowVersionTable        wfConfig;
+        FMVehicleMaintenance        vehicleMaintenance;
+
+        workflowSubmitDialog = WorkflowSubmitDialog::construct(_args.caller().getActiveWorkflowConfiguration());
+        workflowSubmitDialog.run();
+
+        if (workflowSubmitDialog.parmIsClosedOK())
+        {
+            comment = workflowSubmitDialog.parmWorkflowComment();
+
+            recId = _args.record().RecId;
+            tableId = _args.record().TableId;
+            companyId = _args.record().DataAreaId;
+
+            try
+            {
+                wfConfig =_args.caller().getActiveWorkflowConfiguration();
+
+                workflowCorrelationId = Workflow::activateFromWorkflowConfigurationId(wfConfig.ConfigurationId, recId, comment, NoYes::No);
+
+
+                vehicleMaintenance = _args.record();
+
+            }
+
+            catch(Exception::Error)
+            {
+                throw error("@SYS330170");
+            }
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

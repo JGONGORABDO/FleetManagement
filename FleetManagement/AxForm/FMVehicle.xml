@@ -1,0 +1,1515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxForm xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>FMVehicle</Name>
+	<SourceCode>
+		<Methods xmlns="">
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Form] 
+public class FMVehicle extends FormRun
+{ 
+    NumberSeqFormHandler numberSeqFormHandler;
+
+}
+]]></Source>
+			</Method>
+			<Method>
+				<Name>close</Name>
+				<Source><![CDATA[
+    public void close()
+    {
+        if (numberSeqFormHandler)
+        {
+            numberSeqFormHandler.formMethodClose();
+        }
+
+        super();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>numberSeqFormHandler</Name>
+				<Source><![CDATA[
+    NumberSeqFormHandler numberSeqFormHandler()
+    {
+        NumberSequenceReference reference;
+        if (!numberSeqFormHandler)
+        {
+            reference = NumberSequenceReference::findByDatatypeAndScope(extendedtypenum(FMVehicleId));
+            numberSeqFormHandler = NumberSeqFormHandler::newForm(reference.NumberSequenceId,
+                                                                 element,
+                                                                 FMVehicle_DS,
+                                                                 fieldNum(FMVehicle, VehicleId)
+                                                                );
+        }
+        return numberSeqFormHandler;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>init</Name>
+				<Source><![CDATA[
+    public void init()
+    {
+        QueryFilter qFilter;
+        QueryBuildDataSource qbd;
+
+        super();
+
+        qbd = FMVehicle_DS.queryBuildDataSource();
+
+        qFilter = FMVehicle_DS.query().addQueryFilter(qbd, fieldstr(FMVehicle, Description));
+        qFilter = FMVehicle_DS.query().addQueryFilter(qbd, fieldstr(FMVehicle, Status));
+        qFilter = FMVehicle_DS.query().addQueryFilter(qbd, fieldstr(FMVehicle, Mileage));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>run</Name>
+				<Source><![CDATA[
+    public void run()
+    {
+        NumberSequenceTable::autoCreate(extendedTypeNum(FMVehicleId));
+
+        super();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+		<DataSources xmlns="">
+			<DataSource>
+				<Name>FMVehicle</Name>
+				<Methods>
+					<Method>
+						<Name>create</Name>
+						<Source><![CDATA[
+        public void create(boolean _append = false)
+        {
+            if (numberSeqFormHandler)
+            {
+                numberSeqFormHandler.formMethodDataSourceCreatePre();
+            }
+
+            super(_append);
+
+            element.numberSeqFormHandler().formMethodDataSourceCreate(true);
+        }
+
+]]></Source>
+					</Method>
+					<Method>
+						<Name>validateWrite</Name>
+						<Source><![CDATA[
+        public boolean validateWrite()
+        {
+            boolean ret;
+
+            ret = super();
+            
+            ret = element.numberSeqFormHandler().formMethodDataSourceValidateWrite(ret) && ret;
+
+            return ret;
+        }
+
+]]></Source>
+					</Method>
+					<Method>
+						<Name>deleting</Name>
+						<Source><![CDATA[
+        public void deleting()
+        {
+            ttsbegin;
+            element.numberSeqFormHandler().formMethodDataSourceDelete();
+            super();
+            ttscommit;
+        }
+
+]]></Source>
+					</Method>
+					<Method>
+						<Name>linkActive</Name>
+						<Source><![CDATA[
+        public void linkActive()
+        {
+            element.numberSeqFormHandler().formMethodDataSourceLinkActive();
+            super();
+        }
+
+]]></Source>
+					</Method>
+					<Method>
+						<Name>writing</Name>
+						<Source><![CDATA[
+        public void writing()
+        {
+            ttsbegin;
+            super();
+            element.numberSeqFormHandler().formMethodDataSourceWrite();
+            ttscommit;
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+				<Fields>
+					<Field>
+						<DataField>VehicleModel</DataField>
+						<Methods>
+							<Method>
+								<Name>modified</Name>
+								<Source><![CDATA[
+            public void modified()
+            {
+                FMVehicleModel vehicleModel;
+                FMModelRate modelRate;
+
+                super();
+
+                select firstonly * from vehicleModel where vehicleModel.RecId == FMVehicle.VehicleModel outer join modelRate where modelRate.MakeModelId == vehicleModel.RecId;
+
+                FMVehicleModel_DS.cursor().data(vehicleModel);
+                FMVehicleModel_DS.setCurrent();
+
+                FMModelRate_DS.cursor().data(modelRate);
+                FMModelRate_DS.setCurrent();
+            }
+
+]]></Source>
+							</Method>
+						</Methods>
+					</Field>
+				</Fields>
+			</DataSource>
+		</DataSources>
+		<DataControls xmlns="" />
+		<Members xmlns="" />
+	</SourceCode>
+	<DataSourceChangeGroupMode>ImplicitInnerOuter</DataSourceChangeGroupMode>
+	<DataSources>
+		<AxFormDataSource xmlns="">
+			<Name>FMVehicle</Name>
+			<Table>FMVehicle</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>Color</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>ColorID</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Description</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>DisplayRelationType</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>FuelType</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>GPSEnabled</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>GrossVehicleWeight</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>InstanceRelationType</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Mileage</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>MPG</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Note</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>OMInternalOrganization</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Status</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Transmission</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>VehicleId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>VehicleModel</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>VIN</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<InsertIfEmpty>No</InsertIfEmpty>
+			<DataSourceLinks />
+			<DerivedDataSources>
+				<AxFormDataSourceDerived>
+					<Name>FMVehicle_FMTruck</Name>
+					<Table>FMTruck</Table>
+					<Fields>
+						<AxFormDataSourceField>
+							<DataField>Color</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>ColorID</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Description</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>DisplayRelationType</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>FloorSpace</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>FuelType</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>GPSEnabled</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>GrossVehicleWeight</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>InstanceRelationType</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>MaxLoad</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Mileage</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>MovingSpace</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>MPG</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Note</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>OMInternalOrganization</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Partition</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>RecId</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Status</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>TableId</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Transmission</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>VehicleId</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>VehicleModel</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>VIN</DataField>
+						</AxFormDataSourceField>
+					</Fields>
+					<ReferencedDataSources />
+					<DerivedDataSources />
+				</AxFormDataSourceDerived>
+				<AxFormDataSourceDerived>
+					<Name>FMVehicle_FMCarClass</Name>
+					<Table>FMCarClass</Table>
+					<Fields>
+						<AxFormDataSourceField>
+							<DataField>Color</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>ColorID</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Description</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>DisplayRelationType</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>FuelType</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>GPSEnabled</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>GrossVehicleWeight</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>InstanceRelationType</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Mileage</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>MPG</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Note</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>NumberOfDoors</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>OMInternalOrganization</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Partition</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>RecId</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>SeatingCapacity</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Status</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>TableId</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>Transmission</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>VehicleId</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>VehicleModel</DataField>
+						</AxFormDataSourceField>
+						<AxFormDataSourceField>
+							<DataField>VIN</DataField>
+						</AxFormDataSourceField>
+					</Fields>
+					<ReferencedDataSources />
+					<DerivedDataSources>
+						<AxFormDataSourceDerived>
+							<Name>FMVehicle_FMSUV</Name>
+							<Table>FMSUV</Table>
+							<Fields>
+								<AxFormDataSourceField>
+									<DataField>Color</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>ColorID</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>Description</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>DisplayRelationType</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>FuelType</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>GPSEnabled</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>GrossVehicleWeight</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>GroundClearance</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>InstanceRelationType</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>Mileage</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>MPG</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>Note</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>NumberOfDoors</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>OMInternalOrganization</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>Partition</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>RecId</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>SeatingCapacity</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>Status</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>SUVSafetyRating</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>TableId</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>ThirdRowCapacity</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>Transmission</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>TurningRadius</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>VehicleId</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>VehicleModel</DataField>
+								</AxFormDataSourceField>
+								<AxFormDataSourceField>
+									<DataField>VIN</DataField>
+								</AxFormDataSourceField>
+							</Fields>
+							<ReferencedDataSources />
+							<DerivedDataSources />
+						</AxFormDataSourceDerived>
+					</DerivedDataSources>
+				</AxFormDataSourceDerived>
+			</DerivedDataSources>
+		</AxFormDataSource>
+		<AxFormDataSource xmlns="">
+			<Name>FMVehicleModel</Name>
+			<Table>FMVehicleModel</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>Image</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>ImageFormat</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Make</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Model</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>ModelSpec</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>VehicleCount</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Year</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<JoinSource>FMVehicle</JoinSource>
+			<LinkType>OuterJoin</LinkType>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+		<AxFormDataSource xmlns="">
+			<Name>FMModelRate</Name>
+			<Table>FMModelRate</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>MakeModelId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RatePerDay</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RatePerWeek</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<JoinSource>FMVehicleModel</JoinSource>
+			<LinkType>OuterJoin</LinkType>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+	</DataSources>
+	<Design>
+		<Caption xmlns="">@FLM86</Caption>
+		<DataSource xmlns="">FMVehicle</DataSource>
+		<Pattern xmlns="">DetailsMaster</Pattern>
+		<PatternVersion xmlns="">1.4</PatternVersion>
+		<SetCompany xmlns="">No</SetCompany>
+		<Style xmlns="">DetailsFormMaster</Style>
+		<TitleDataSource xmlns="">FMVehicle</TitleDataSource>
+		<Controls xmlns="">
+			<AxFormControl xmlns=""
+				i:type="AxFormActionPaneControl">
+				<Name>ApplicationBar</Name>
+				<ElementPosition>536870911</ElementPosition>
+				<FilterExpression>%1</FilterExpression>
+				<HeightMode>Auto</HeightMode>
+				<Type>ActionPane</Type>
+				<VerticalSpacingMode>Fixed</VerticalSpacingMode>
+				<Width>0</Width>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormButtonGroupControl">
+						<Name>FormButtonGroupControl1</Name>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<HeightMode>Auto</HeightMode>
+						<Type>ButtonGroup</Type>
+						<WidthMode>Auto</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormMenuFunctionButtonControl">
+								<Name>ShowVersions</Name>
+								<ElementPosition>1431655764</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<HeightMode>Auto</HeightMode>
+								<Type>MenuFunctionButton</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>Auto</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<DataSource>FMVehicle</DataSource>
+								<MenuItemName>FMVehicleRateDateManager</MenuItemName>
+								<NeedsRecord>Yes</NeedsRecord>
+								<Text>@FLM542</Text>
+							</AxFormControl>
+						</Controls>
+					</AxFormControl>
+				</Controls>
+				<AlignChild>No</AlignChild>
+				<AlignChildren>No</AlignChildren>
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormGroupControl">
+				<Name>NavigationList</Name>
+				<HeightMode>SizeToAvailable</HeightMode>
+				<Type>Group</Type>
+				<Visible>No</Visible>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl>
+						<Name>ListQuickFilter</Name>
+						<WidthMode>SizeToAvailable</WidthMode>
+						<FormControlExtension>
+							<Name>QuickFilterControl</Name>
+							<ExtensionComponents />
+							<ExtensionProperties>
+								<AxFormControlExtensionProperty>
+									<Name>targetControlName</Name>
+									<Type>String</Type>
+									<Value>MainGrid</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>defaultColumnName</Name>
+									<Type>String</Type>
+								</AxFormControlExtensionProperty>
+							</ExtensionProperties>
+						</FormControlExtension>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormGridControl">
+						<Name>SimpleList</Name>
+						<AllowEdit>No</AllowEdit>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<Type>Grid</Type>
+						<WidthMode>SizeToContent</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormReferenceGroupControl">
+								<Name>FMVehicle_MakeModelCopy1</Name>
+								<ElementPosition>1002159032</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<HeightMode>Auto</HeightMode>
+								<Type>ReferenceGroup</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>Auto</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>FMVehicle_MakeModel_VehicleMake_MakeCopy1</Name>
+										<DataRelationPath>VehicleModel.VehicleMake</DataRelationPath>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>FMVehicle_MakeModel_ModelCopy1</Name>
+										<DataRelationPath>VehicleModel</DataRelationPath>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+									</AxFormControl>
+								</Controls>
+								<DataSource>FMVehicle</DataSource>
+								<ReferenceField>VehicleModel</ReferenceField>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormComboBoxControl">
+								<Name>FMVehicle_DisplayRelationTypeCopy1</Name>
+								<ElementPosition>715827880</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<HeightMode>Auto</HeightMode>
+								<Type>ComboBox</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>Auto</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<DataField>DisplayRelationType</DataField>
+								<DataSource>FMVehicle</DataSource>
+								<Items />
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormComboBoxControl">
+								<Name>FMVehicle_StatusCopy1Copy1</Name>
+								<ElementPosition>1717986912</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<HeightMode>Auto</HeightMode>
+								<Type>ComboBox</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>Auto</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<DataField>Status</DataField>
+								<DataSource>FMVehicle</DataSource>
+								<Items />
+							</AxFormControl>
+						</Controls>
+						<DataSource>FMVehicle</DataSource>
+						<MultiSelect>No</MultiSelect>
+						<ShowRowLabels>No</ShowRowLabels>
+						<Style>List</Style>
+					</AxFormControl>
+				</Controls>
+				<FrameType>None</FrameType>
+				<Style>SidePanel</Style>
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormTabControl">
+				<Name>Tab</Name>
+				<AlignControl>No</AlignControl>
+				<ElementPosition>1610612733</ElementPosition>
+				<FilterExpression>%1</FilterExpression>
+				<Type>Tab</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormTabPageControl">
+						<Name>TabPageDetails</Name>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<ElementPosition>1073741822</ElementPosition>
+						<FilterExpression>%1</FilterExpression>
+						<Height>0</Height>
+						<HeightMode>SizeToAvailable</HeightMode>
+						<Type>TabPage</Type>
+						<VerticalSpacing>-1</VerticalSpacing>
+						<Width>0</Width>
+						<WidthMode>SizeToAvailable</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>HeaderInfo</Name>
+								<ElementPosition>1073741822</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<Type>Group</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>HeaderTitle</Name>
+										<ElementPosition>1073741822</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Skip>Yes</Skip>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>SizeToAvailable</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataMethod>titleFields</DataMethod>
+										<DataSource>FMVehicle</DataSource>
+										<ShowLabel>No</ShowLabel>
+										<Style>TitleField</Style>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormGroupControl">
+										<Name>StatusGroup</Name>
+										<ElementPosition>1610612733</ElementPosition>
+										<ExtendedStyle>entityStatus</ExtendedStyle>
+										<FilterExpression>%1</FilterExpression>
+										<Type>Group</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<Visible>No</Visible>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormComboBoxControl">
+												<Name>FMVehicle_Status</Name>
+												<ElementPosition>1431655764</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>ComboBox</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>Status</DataField>
+												<DataSource>FMVehicle</DataSource>
+												<ShowLabel>No</ShowLabel>
+												<ViewEditMode>View</ViewEditMode>
+												<Items />
+											</AxFormControl>
+										</Controls>
+										<ArrangeMethod>HorizontalRight</ArrangeMethod>
+										<Breakable>No</Breakable>
+										<FrameType>None</FrameType>
+										<ViewEditMode>View</ViewEditMode>
+									</AxFormControl>
+								</Controls>
+								<ArrangeMethod>HorizontalLeft</ArrangeMethod>
+								<FrameType>None</FrameType>
+								<Style>DetailTitleContainer</Style>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormTabControl">
+								<Name>TabHeader</Name>
+								<ElementPosition>1610612733</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<Type>Tab</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>DetailGeneral</Name>
+										<ElementPosition>1073741822</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Pattern>FieldsFieldGroups</Pattern>
+										<PatternVersion>1.1</PatternVersion>
+										<Type>TabPage</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>SizeToAvailable</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMVehicle_VehicleId1</Name>
+												<ElementPosition>477218588</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>VehicleId</DataField>
+												<DataSource>FMVehicle</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMVehicle_VIN</Name>
+												<ElementPosition>954437176</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>VIN</DataField>
+												<DataSource>FMVehicle</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormComboBoxControl">
+												<Name>FMVehicle_StatusCopy1Copy2</Name>
+												<ElementPosition>1717986912</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>ComboBox</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>Status</DataField>
+												<DataSource>FMVehicle</DataSource>
+												<Items />
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormComboBoxControl">
+												<Name>FMVehicle_DisplayRelationType1</Name>
+												<ElementPosition>715827882</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>ComboBox</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>DisplayRelationType</DataField>
+												<DataSource>FMVehicle</DataSource>
+												<Items />
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormReferenceGroupControl">
+												<Name>FMVehicle_VehicleModel</Name>
+												<ElementPosition>1193046470</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>ReferenceGroup</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormStringControl">
+														<Name>FMVehicle_VehicleModel_VehicleMake_Make</Name>
+														<DataRelationPath>VehicleModel.VehicleMake</DataRelationPath>
+														<FilterExpression>%1</FilterExpression>
+														<HeightMode>Auto</HeightMode>
+														<Type>String</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormStringControl">
+														<Name>FMVehicle_VehicleModel_Model</Name>
+														<DataRelationPath>VehicleModel</DataRelationPath>
+														<FilterExpression>%1</FilterExpression>
+														<HeightMode>Auto</HeightMode>
+														<Type>String</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+													</AxFormControl>
+												</Controls>
+												<DataSource>FMVehicle</DataSource>
+												<ReferenceField>VehicleModel</ReferenceField>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMVehicle_Description</Name>
+												<ElementPosition>1431655764</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>Description</DataField>
+												<DataSource>FMVehicle</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>RateGroup</Name>
+												<AllowEdit>No</AllowEdit>
+												<ElementPosition>1670265058</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>Group</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormRealControl">
+														<Name>FMModelRate_RatePerDay</Name>
+														<ElementPosition>1073741822</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Real</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<Alignment>Left</Alignment>
+														<DataField>RatePerDay</DataField>
+														<DataSource>FMModelRate</DataSource>
+														<NoOfDecimals>-1</NoOfDecimals>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormRealControl">
+														<Name>FMModelRate_RatePerWeek</Name>
+														<ElementPosition>1610612733</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Real</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<Alignment>Left</Alignment>
+														<DataField>RatePerWeek</DataField>
+														<DataSource>FMModelRate</DataSource>
+														<NoOfDecimals>-1</NoOfDecimals>
+													</AxFormControl>
+												</Controls>
+												<DataSource>FMVehicle</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMVehicle_Note</Name>
+												<ElementPosition>1908874352</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>Note</DataField>
+												<DataSource>FMVehicle</DataSource>
+											</AxFormControl>
+										</Controls>
+										<ColumnsMode>Fill</ColumnsMode>
+										<Caption>@SYS2952</Caption>
+										<Scrollbars>Auto</Scrollbars>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>DetailsDetails</Name>
+										<ElementPosition>1610612733</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Pattern>FieldsFieldGroups</Pattern>
+										<PatternVersion>1.1</PatternVersion>
+										<Type>TabPage</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>SizeToAvailable</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>Attributes1</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<Type>Group</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormComboBoxControl">
+														<Name>FMVehicle_Color</Name>
+														<ElementPosition>1908874352</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>ComboBox</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>Color</DataField>
+														<DataSource>FMVehicle</DataSource>
+														<Items />
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormComboBoxControl">
+														<Name>FMVehicle_Transmission1</Name>
+														<ElementPosition>1670265058</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>ComboBox</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>Transmission</DataField>
+														<DataSource>FMVehicle</DataSource>
+														<Items />
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormIntegerControl">
+														<Name>FMVehicle_MPG1</Name>
+														<ElementPosition>1431655764</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Integer</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>MPG</DataField>
+														<DataSource>FMVehicle</DataSource>
+													</AxFormControl>
+												</Controls>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>Attributes2</Name>
+												<ElementPosition>858993458</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>Group</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormIntegerControl">
+														<Name>FMVehicle_Mileage</Name>
+														<ElementPosition>1193046470</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Integer</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>Mileage</DataField>
+														<DataSource>FMVehicle</DataSource>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormComboBoxControl">
+														<Name>FMVehicle_FuelType</Name>
+														<ElementPosition>477218588</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>ComboBox</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>FuelType</DataField>
+														<DataSource>FMVehicle</DataSource>
+														<Items />
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormIntegerControl">
+														<Name>FMVehicle_GrossVehicleWeight</Name>
+														<ElementPosition>715827882</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Integer</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>GrossVehicleWeight</DataField>
+														<DataSource>FMVehicle</DataSource>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormComboBoxControl">
+														<Name>FMVehicle_GPSEnabled</Name>
+														<ElementPosition>954437176</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>ComboBox</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>GPSEnabled</DataField>
+														<DataSource>FMVehicle</DataSource>
+														<Items />
+													</AxFormControl>
+												</Controls>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>CarInfo</Name>
+												<ElementPosition>1288490187</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>Group</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormIntegerControl">
+														<Name>FMVehicle_FMCarClass_NumberOfDoors</Name>
+														<ElementPosition>858993458</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Integer</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>NumberOfDoors</DataField>
+														<DataSource>FMVehicle_FMCarClass</DataSource>
+														<ShowZero>No</ShowZero>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormIntegerControl">
+														<Name>FMVehicle_FMCarClass_SeatingCapacity</Name>
+														<ElementPosition>1288490187</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Integer</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>SeatingCapacity</DataField>
+														<DataSource>FMVehicle_FMCarClass</DataSource>
+													</AxFormControl>
+												</Controls>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>SUVInfo</Name>
+												<ElementPosition>1717986916</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>Group</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormIntegerControl">
+														<Name>FMVehicle_FMSUV_ThirdRowCapacity</Name>
+														<ElementPosition>715827882</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Integer</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>ThirdRowCapacity</DataField>
+														<DataSource>FMVehicle_FMSUV</DataSource>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormStringControl">
+														<Name>FMVehicle_FMSUV_TurningRadius</Name>
+														<ElementPosition>1073741823</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>String</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>TurningRadius</DataField>
+														<DataSource>FMVehicle_FMSUV</DataSource>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormStringControl">
+														<Name>FMVehicle_FMSUV_GroundClearance</Name>
+														<ElementPosition>1431655764</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>String</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>GroundClearance</DataField>
+														<DataSource>FMVehicle_FMSUV</DataSource>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormReferenceGroupControl">
+														<Name>FMVehicle_FMSUV_SUVSafetyRating</Name>
+														<ElementPosition>1789569705</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>ReferenceGroup</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormStringControl">
+																<Name>FMVehicle_FMSUV_SUVSafetyRating_SafetyRatingId</Name>
+																<DataRelationPath>FMSUVSafetyRating</DataRelationPath>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>String</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+															</AxFormControl>
+														</Controls>
+														<DataSource>FMVehicle_FMSUV</DataSource>
+														<ReferenceField>SUVSafetyRating</ReferenceField>
+													</AxFormControl>
+												</Controls>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>TruckInfo</Name>
+												<ElementPosition>1717986916</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>Group</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormRealControl">
+														<Name>FMVehicle_FMTruck_MovingSpace</Name>
+														<ElementPosition>858993458</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Real</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<Alignment>Left</Alignment>
+														<DataField>MovingSpace</DataField>
+														<DataSource>FMVehicle_FMTruck</DataSource>
+														<NoOfDecimals>-1</NoOfDecimals>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormRealControl">
+														<Name>FMVehicle_FMTruck_FloorSpace</Name>
+														<ElementPosition>1288490187</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Real</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<Alignment>Left</Alignment>
+														<DataField>FloorSpace</DataField>
+														<DataSource>FMVehicle_FMTruck</DataSource>
+														<NoOfDecimals>-1</NoOfDecimals>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormRealControl">
+														<Name>FMVehicle_FMTruck_MaxLoad</Name>
+														<ElementPosition>1717986916</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Type>Real</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<FormControlExtension
+															i:nil="true" />
+														<Alignment>Left</Alignment>
+														<DataField>MaxLoad</DataField>
+														<DataSource>FMVehicle_FMTruck</DataSource>
+														<NoOfDecimals>-1</NoOfDecimals>
+													</AxFormControl>
+												</Controls>
+											</AxFormControl>
+										</Controls>
+										<ColumnsMode>Fill</ColumnsMode>
+										<Caption>@FLM91</Caption>
+										<Scrollbars>Auto</Scrollbars>
+									</AxFormControl>
+								</Controls>
+								<AlignChild>No</AlignChild>
+								<Style>FastTabs</Style>
+							</AxFormControl>
+						</Controls>
+						<PanelStyle>Details</PanelStyle>
+						<Scrollbars>Auto</Scrollbars>
+						<Style>DetailsFormDetails</Style>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormTabPageControl">
+						<Name>TabPageGrid</Name>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<ElementPosition>1610612733</ElementPosition>
+						<FilterExpression>%1</FilterExpression>
+						<Height>0</Height>
+						<HeightMode>SizeToAvailable</HeightMode>
+						<Type>TabPage</Type>
+						<VerticalSpacing>-1</VerticalSpacing>
+						<Width>0</Width>
+						<WidthMode>SizeToAvailable</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>CustomFilterGroup</Name>
+								<Pattern>CustomAndQuickFilters</Pattern>
+								<PatternVersion>1.1</PatternVersion>
+								<Type>Group</Type>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl>
+										<Name>MainGridQuickFilter</Name>
+										<FormControlExtension>
+											<Name>QuickFilterControl</Name>
+											<ExtensionComponents />
+											<ExtensionProperties>
+												<AxFormControlExtensionProperty>
+													<Name>targetControlName</Name>
+													<Type>String</Type>
+													<Value>MainGrid</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>defaultColumnName</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+											</ExtensionProperties>
+										</FormControlExtension>
+									</AxFormControl>
+								</Controls>
+								<ArrangeMethod>HorizontalLeft</ArrangeMethod>
+								<FrameType>None</FrameType>
+								<Style>CustomFilter</Style>
+								<ViewEditMode>Edit</ViewEditMode>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormGridControl">
+								<Name>MainGrid</Name>
+								<ElementPosition>1610612734</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<Type>Grid</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>FMVehicle_VehicleId</Name>
+										<ElementPosition>286331152</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataField>VehicleId</DataField>
+										<DataSource>FMVehicle</DataSource>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormReferenceGroupControl">
+										<Name>FMVehicle_MakeModel</Name>
+										<ElementPosition>1002159032</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>ReferenceGroup</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMVehicle_MakeModel_VehicleMake_Make</Name>
+												<DataRelationPath>VehicleModel.VehicleMake</DataRelationPath>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMVehicle_MakeModel_Model</Name>
+												<DataRelationPath>VehicleModel</DataRelationPath>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+											</AxFormControl>
+										</Controls>
+										<DataSource>FMVehicle</DataSource>
+										<ReferenceField>VehicleModel</ReferenceField>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>FMVehicle_VIN1</Name>
+										<ElementPosition>429496728</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataField>VIN</DataField>
+										<DataSource>FMVehicle</DataSource>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormComboBoxControl">
+										<Name>FMVehicle_DisplayRelationType</Name>
+										<ElementPosition>715827880</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>ComboBox</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataField>DisplayRelationType</DataField>
+										<DataSource>FMVehicle</DataSource>
+										<Items />
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormComboBoxControl">
+										<Name>FMVehicle_StatusCopy1</Name>
+										<ElementPosition>1717986912</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>ComboBox</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataField>Status</DataField>
+										<DataSource>FMVehicle</DataSource>
+										<Items />
+									</AxFormControl>
+								</Controls>
+								<DataSource>FMVehicle</DataSource>
+								<DefaultAction>DefaultActionButton</DefaultAction>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormCommandButtonControl">
+								<Name>DefaultActionButton</Name>
+								<AutoDeclaration>Yes</AutoDeclaration>
+								<HeightMode>Auto</HeightMode>
+								<Type>CommandButton</Type>
+								<Visible>No</Visible>
+								<WidthMode>Auto</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Command>DetailsView</Command>
+							</AxFormControl>
+						</Controls>
+						<PanelStyle>Grid</PanelStyle>
+						<Scrollbars>Auto</Scrollbars>
+						<Style>DetailsFormGrid</Style>
+					</AxFormControl>
+				</Controls>
+				<AlignChild>No</AlignChild>
+				<ShowTabs>No</ShowTabs>
+			</AxFormControl>
+		</Controls>
+	</Design>
+	<Parts>
+		<AxFormPartReference xmlns="">
+			<Name>FMVehicleModel_Part</Name>
+			<DataSource>FMVehicle</DataSource>
+			<DataSourceRelation>FMVehicle.VehicleModel</DataSourceRelation>
+			<MenuItemName>FMVehicleModel_Part</MenuItemName>
+		</AxFormPartReference>
+	</Parts>
+</AxForm>

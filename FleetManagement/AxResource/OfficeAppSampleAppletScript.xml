@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxResource xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>OfficeAppSampleAppletScript</Name>
+	<FileName>OfficeAppSampleApplet.js</FileName>
+	<RelativeUriInModelStore>FleetManagement/FleetManagement/AxResource/ResourceContent/Scripts/OfficeAppSampleApplet.js</RelativeUriInModelStore>
+	<TypeOfResource>Scripts</TypeOfResource>
+</AxResource>

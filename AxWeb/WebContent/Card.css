@@ -1,0 +1,163 @@
+/* Represents a control style */
+/* [style:.card] [control type: not represented] [repeating-control-element:.listItem] [control-child:div,img,etc] */
+
+.card  {
+    /*height: 80px;*/
+    width: 400px;
+    padding: 10px; 
+    padding-bottom: 0px;
+}
+
+.card span
+{
+    display: inline-block;
+    float: left;
+    height: 80px;
+    width: 80px; /* TODO: Check why flexbox is requiring this */
+}
+
+/* Represents style for the heading */
+.card h1 {
+    color: #0072C6; /* $AccentDark */
+    font-size: 26.67px; /* $SmallHeadingFontSize */
+    height: 40px;
+}
+/* Styles text of items in the list to match style of Entity Card*/
+    .card .staticText
+    {
+        font-size: 14.66px;
+        margin: 0;
+    }
+
+.card .details
+{
+    display: inline-block;
+}
+
+.addOnsDialogList div:last-child {
+    background-color:black;
+}
+
+.addOnsDialogList div:last-child .listView .SimpleListView .listItem[aria-selected="true"] {
+    color:#00BCF2;
+}
+
+.entityCard 
+{
+    background-color: #00BCF2; /* $Accent */
+    height: 400px;
+    margin-bottom: 10px; /* TODO: Use constant name when it is available */
+    margin-right: 10px; /* TODO: Use constant name when it is available */
+}
+
+    .entityCard .card h1
+    {
+        color: white; /* $Light */
+        display: block;
+    }
+     
+    .entityCard .toolbar
+    {
+        clear:both;
+        padding: 10px;
+        padding-top: 0;
+    }
+
+    .entityCard .button
+    {
+        height: auto;
+        min-width: initial;
+        margin: 0 4px;
+    }
+
+        .entityCard .button .button-commandRing
+        {
+            color: white; /* $Light */
+        }
+
+    .entityCard .button-container
+    {
+        padding: 0;
+    }
+
+.paymentCard, .peopleCard, .reservationCard
+{
+    height: 80px;
+}
+.reservationCard 
+{
+    width: 450px;
+}
+    .paymentCard span {
+        display: inline-block;
+        float: left;
+        height: 70px;
+        width: 70px; /* TODO: Check why flexbox is requiring this */
+    }
+    .paymentCard[aria-selected="true"] 
+    {
+        height: 50px;
+    }
+.vehicleCard 
+{
+    background-color: #969696; /* $Gray */
+    border: 5px solid #969696; /* $Gray */
+    width: 240px;
+    margin-bottom: 10px; /* TODO: Use constant name when it is available */
+    margin-right: 10px; /* TODO: Use constant name when it is available */
+}
+/* TODO: When UX team has implemented this selection styling, use theirs instead of making our own */
+.vehicleCard[aria-selected="true"]
+{
+    border: 5px solid #00BCF2; /* $Accent */
+    position:relative;
+}
+.vehicleCard[aria-selected="true"]:before {
+  content:'';
+  display:block;
+  border:20px solid #00BCF2; /* $Accent */
+  border-color:#00BCF2; /* $Accent */
+  position:absolute;
+  width:0;
+  height:0;
+  right:0;
+  top:0;
+  border-bottom-color:transparent;
+  border-left-color:transparent;
+}
+
+.vehicleCard[aria-selected="true"]:after {
+  content: '\2713'; /* TODO: Replace with symbol from W8 family that's supported on Chrome and IE10 */
+  font-size: 26.67px; /* $SmallHeadingFontSize */
+  position:absolute;
+  right:-5px;
+  top:-10px;
+  color:white;
+}
+
+    .vehicleCard .image 
+    {
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 220px;
+        height: 105px;
+    }
+    .vehicleCard .vehicleDetails .staticText:first-child 
+    {
+        margin-left: 10px;
+    }
+    .vehicleCard .vehicleDetails .staticText, .vehicleCard .rateDetails .staticText
+    {
+        margin-left: 0px;
+        display: inline-block;
+        color: white; /* $Light */
+    }
+
+    .vehicleCard .rateDetails .staticText:first-child
+    {
+        margin-top: 0px;
+        margin-left: 40px;
+        margin-bottom: 5px;
+        font-size: 26.67px; /* $SmallHeadingFontSize */
+    }

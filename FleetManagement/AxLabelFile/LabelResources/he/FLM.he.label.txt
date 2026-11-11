@@ -1,0 +1,784 @@
+﻿@FLM41=קבצי התוויות נוצרו ב-3.4.2011
+ ;By user Admin
+@FLM42=אדום
+ ;Fleet colors
+@FLM43=כחול
+ ;Fleet colors
+@FLM44=‏‏ירוק
+ ;Fleet colors
+@FLM46=בחר תמונה
+ ;Fleet label
+@FLM47=שינוי
+ ;Fleet label
+@FLM48=הסר
+ ;Fleet label
+@FLM49=לקוח
+ ;Fleet label
+@FLM50=פתוח
+ ;Fleet label
+@FLM51=חדש
+ ;Fleet label
+@FLM52=השכרה
+ ;Fleet label
+@FLM53=כללי
+ ;Fleet label
+@FLM55=הצג
+ ;Fleet label
+@FLM56=מחק
+ ;Fleet label
+@FLM57=קבצים מצורפים
+ ;Fleet label
+@FLM58=הושלם
+ ;Fleet label
+@FLM59=חיובים בגין השכרה
+ ;Fleet label
+@FLM60=תקופת ההשכרה
+ ;Fleet label
+@FLM61=מ
+ ;Fleet label
+@FLM62=עד
+ ;Fleet label
+@FLM63=קילומטראז'
+ ;Fleet label
+@FLM64=התחלה
+ ;Fleet label
+@FLM65=סיום
+ ;Fleet label
+@FLM66=מפלסי דלק
+ ;Fleet label
+@FLM67=איסוף
+ ;Fleet label
+@FLM68=חיובים
+ ;Fleet label
+@FLM69=הוסף חיוב
+ ;Fleet label
+@FLM70=כלול משאיות
+ ;Fleet label
+@FLM71=השכרות
+ ;Fleet label
+@FLM72=ערוך
+ ;Fleet label
+@FLM73=תצורת ניהול צי
+ ;Fleet label
+@FLM74=יצרן הרכב ודגמים
+ ;Fleet label
+@FLM75=הגדר יצרני רכב ודגמים
+ ;Fleet label
+@FLM76=הגדר את היצרן והדגמים של כלי הרכב שבמלאי, כולל תמונה מייצגת של הדגם.
+ ;Fleet label
+@FLM77=תמונת דגם
+ ;Fleet label
+@FLM78=עיין...
+ ;Fleet label
+@FLM79=יצרן חדש
+ ;Fleet label
+@FLM80=דגם חדש
+ ;Fleet label
+@FLM81=סוגי חיובים בגין השכרה
+ ;Fleet label
+@FLM82=הגדר סוגי חיובים
+ ;Fleet label
+@FLM83=סוגי חיובים משמשים לסיווג החיובים השונים בגין השכרה. כך תוכל לעקוב אחר העלויות שלך בקלות רבה יותר.
+ ;Fleet label
+@FLM84=דירוגי בטיחות של רכב SUV
+ ;Fleet label
+@FLM85=הגדר דירוגי בטיחות של רכב SUV
+ ;Fleet label
+@FLM86=כלי רכב
+ ;Fleet label
+@FLM87=שמור על
+ ;Fleet label
+@FLM88=היסטוריה
+ ;Fleet label
+@FLM89=תעריפים היסטוריים
+ ;Fleet label
+@FLM90=תעריפים
+ ;Fleet label
+@FLM91=פרטים
+ ;Fleet label
+@FLM92=מידע על מכונית ורכב SUV
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=מידע על משאית
+ ;Fleet label
+@FLM95=כלי רכב
+ ;Fleet label
+@FLM96=‏‏זמינות
+ ;Fleet label
+@FLM97=מיקום
+ ;Fleet label
+@FLM98=‏‏תחזוקה
+ ;Fleet label
+@FLM99=רשומה
+ ;Fleet label
+@FLM100=רשימה
+ ;Fleet label
+@FLM101=מזהה רכב
+ ;Fleet label
+@FLM102=מנהל תאריך תעריף הרכב
+ ;Fleet label
+@FLM103=גירסה חדשה
+ ;Fleet label
+@FLM104=אחזקת רכב
+ ;Fleet label
+@FLM105=ניהול צי
+ ;Fleet label
+@FLM106=השכרות אחרונות
+ ;Fleet label
+@FLM107=הארגונים הפנימיים שלי עבור גישה לאבטחה
+ ;Fleet label
+@FLM108=כלי רכב שלמשתמש יש גישה לאבטחה שלהם
+ ;Fleet label
+@FLM109=ארגונים פנימיים שאליהם יש למשתמש גישה
+ ;Fleet label
+@FLM110=משאיות
+ ;Fleet label
+@FLM111=רכבי SUV
+ ;Fleet label
+@FLM112=תפריט של דפי תצוגת לקוחות
+ ;Fleet label
+@FLM113=פעולות
+ ;Fleet label
+@FLM114=תפריט רכב
+ ;Fleet label
+@FLM115=תפריט של דפי תצוגת רכב
+ ;Fleet label
+@FLM116=סניף - הוצא משימוש
+ ;Fleet label
+@FLM117=מיקום השכרה - הוצא משימוש
+ ;Fleet label
+@FLM118=אזור - הוצא משימוש
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=סוג דלק
+ ;Fleet label
+@FLM123=סטנדרטי
+ ;Fleet label
+@FLM124=Premium
+ ;Fleet label
+@FLM125=GPS מופעל
+ ;Fleet label
+@FLM126=החלפת שמן
+ ;Fleet label
+@FLM127=תיקון
+ ;Fleet label
+@FLM128=תחזוקה מונעת
+ ;Fleet label
+@FLM129=ממתין לבדיקה
+ ;Fleet label
+@FLM130=ממתין לשירות
+ ;Fleet label
+@FLM131=ממתין לאישור
+ ;Fleet label
+@FLM132=ממתין לניקוי
+ ;Fleet label
+@FLM133=בוצע
+ ;Fleet label
+@FLM134=תיבת הילוכים
+ ;Fleet label
+@FLM135=אוטומטית
+ ;Fleet label
+@FLM136=ידנית
+ ;Fleet label
+@FLM137=זמין
+ ;Fleet label
+@FLM138=בטיפול תקופתי
+ ;Fleet label
+@FLM139=שכור
+ ;Fleet label
+@FLM140=‏‏ניזוק
+ ;Fleet label
+@FLM141=הוחזר
+ ;Fleet label
+@FLM142=בהמתנה
+ ;Fleet label
+@FLM143=סוג רכב
+ ;Fleet label
+@FLM144=לא ידוע
+ ;Fleet label
+@FLM145=משאית
+ ;Fleet label
+@FLM146=מכונית
+ ;Fleet label
+@FLM147=סוג חיוב
+ ;Fleet label
+@FLM148=רישיון נהיגה
+ ;Fleet label
+@FLM149=יצרן ודגם
+ ;Fleet label
+@FLM150=הערות
+ ;Fleet label
+@FLM151=מידע על השכרת רכב
+ ;Fleet label
+@FLM152=מזהה דירוג בטיחות
+ ;Fleet label
+@FLM153=דירוג בטיחות של רכב SUV
+ ;Fleet label
+@FLM154=סך הכול השכרות
+ ;Fleet label
+@FLM155=יצרן
+ ;Fleet label
+@FLM156=יצרן הרכב
+ ;Fleet label
+@FLM157=דגם
+ ;Fleet label
+@FLM158=דגם הרכב
+ ;Fleet label
+@FLM159=מכוניות
+ ;Fleet label
+@FLM160=דלתות
+ ;Fleet label
+@FLM161=קיבולת ישיבה
+ ;Fleet label
+@FLM162=סוגי חיוב
+ ;Fleet label
+@FLM163=תאריך תפוגה
+ ;Fleet label
+@FLM164=קילומטראז' התחלתי
+ ;Fleet label
+@FLM165=קילומטראז' סופי
+ ;Fleet label
+@FLM166=מפלס דלק התחלתי
+ ;Fleet label
+@FLM167=מפלס דלק סופי
+ ;Fleet label
+@FLM168=מידע על השכרת רכב
+ ;Fleet label
+@FLM169=קיבולת ספסל שלישי
+ ;Fleet label
+@FLM170=רדיוס פנייה
+ ;Fleet label
+@FLM171=מרווח גחון
+ ;Fleet label
+@FLM172=דירוג התהפכות
+ ;Fleet label
+@FLM173=דירוג כולל
+ ;Fleet label
+@FLM174=מרחב תנועה
+ ;Fleet label
+@FLM175=שטח רצפה
+ ;Fleet label
+@FLM176=עומס מרבי
+ ;Fleet label
+@FLM177=סוג
+ ;Fleet label
+@FLM178=משקל רכב ברוטו
+ ;Fleet label
+@FLM179=מצב הרכב
+ ;Fleet label
+@FLM180=ארגון
+ ;Fleet label
+@FLM181=קבוצת Preview
+ ;Fleet label
+@FLM182=יצרני רכב
+ ;Fleet label
+@FLM183=דגמי רכב
+ ;Fleet label
+@FLM184=תמונת רכב
+ ;Fleet label
+@FLM185=‏‏מפרט דגם
+ ;Fleet label
+@FLM186=תבנית תמונה
+ ;Fleet label
+@FLM187=תעריפי רכב
+ ;Fleet label
+@FLM188=תעריף ליום
+ ;Fleet label
+@FLM189=תעריף לשבוע
+ ;Fleet label
+@FLM190=הארגונים הפנימיים הקשורים לתפקיד שלי
+ ;Fleet label
+@FLM191=טבלה המכילה ארגונים פנימיים הקשורים לתפקיד המשתמש
+ ;Fleet label
+@FLM192=התצוגה DimAttributeOMBranch מכילה את כל הרשומות מהטבלה OMOperatingUnit המסומנות כסניף.
+ ;Fleet label
+@FLM193=התצוגה DimAttributeOMRegion מכילה את כל הרשומות מהטבלה OMOperatingUnit המסומנות כאזורים
+ ;Fleet label
+@FLM194=התצוגה DimAttributeOMRentalLocation מכילה את כל הרשומות מהטבלה OMOperatingUnit המסומנות כמיקום השכרה.
+ ;Fleet label
+@FLM195=מרכז ניהול הצי
+ ;Fleet label
+@FLM196=הוסף
+ ;Fleet label
+@FLM197=השכרות נוכחיות
+ ;Fleet label
+@FLM198=כלי רכב שהוקצו
+ ;Fleet label
+@FLM199=כלי רכב זמינים
+ ;Fleet label
+@FLM200=כלי רכב שהוחזרו
+ ;Fleet label
+@FLM201=הושלם
+ ;Fleet label
+@FLM202=בביצוע
+ ;Fleet label
+@FLM203=תעריף היסטורי
+ ;Fleet label
+@FLM204=השכרה מלאה
+ ;Fleet label
+@FLM205=נקה רכב
+ ;Fleet label
+@FLM206=בחן רכב
+ ;Fleet label
+@FLM207=טפל ברכב
+ ;Fleet label
+@FLM208=אישור טיפול
+ ;Fleet label
+@FLM209=פרטי לקוח
+ ;Fleet label
+@FLM210=שם
+ ;Fleet label
+@FLM211=רישיון
+ ;Fleet label
+@FLM212=כתובת
+ ;Fleet label
+@FLM213=טלפון
+ ;Fleet label
+@FLM214=דואר אלקטרוני
+ ;Fleet label
+@FLM215=מידע על תשלום
+ ;Fleet label
+@FLM216=כרטיס אשראי
+ ;Fleet label
+@FLM217=תפוגה
+ ;Fleet label
+@FLM218=תאריך
+ ;Fleet label
+@FLM219=התחלת השכרה
+ ;Fleet label
+@FLM220=תאריך סיום
+ ;Fleet label
+@FLM221=תיאור
+ ;Fleet label
+@FLM222=כמות
+ ;Fleet label
+@FLM223=מורחב
+ ;Fleet label
+@FLM224=פרטי הרכב
+ ;Fleet label
+@FLM225=יצרן ודגם
+ ;Fleet label
+@FLM226=תעריף יומי
+ ;Fleet label
+@FLM227=תעריף שבועי
+ ;Fleet label
+@FLM228=חלק הבדיקה המוקדמת של הרכב
+ ;Fleet label
+@FLM229=צבע
+ ;Fleet label
+@FLM230=מצב
+ ;Fleet label
+@FLM231=כלי רכב שהוקצה
+ ;Fleet label
+@FLM232=נקודות לניהול צי
+ ;Fleet label
+@FLM233=הגבל משתמשים ליחידות עסקיות
+ ;Fleet label
+@FLM234=הגישה שלי לכלי רכב עבור גישה לאבטחה
+ ;Fleet label
+@FLM235=שירות עצמי עבור רשומות השכרות
+ ;Fleet label
+@FLM236=פקיד ניהול צי
+ ;Fleet label
+@FLM237=פקיד השכרה
+ ;Fleet label
+@FLM238=מנהל סניף ניהול צי
+ ;Fleet label
+@FLM239=מנהל סניף השכרה
+ ;Fleet label
+@FLM240=טכנאי שירות של ניהול צי
+ ;Fleet label
+@FLM241=טכנאי שירות
+ ;Fleet label
+@FLM242=השתמש בזרימת עבודה
+ ;Fleet label
+@FLM243=קבוצת שירות החושפת מלאי מכוניות זמינות
+ ;Fleet label
+@FLM244=מספר דלתות
+ ;Number of doors in the FM vehicle
+@FLM245=סכום מורחב
+ ;Fleet label
+@FLM246=מפלס דלק
+ ;Fleet label
+@FLM247=מרווח גחון
+ ;Fleet label
+@FLM248=שטח רצפת משאית
+ ;Fleet label
+@FLM249=עומס מרבי
+ ;Fleet label
+@FLM250=תקורת מרחב תנועה
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=דירוג
+ ;Fleet label
+@FLM253=סכום השכרות
+ ;Fleet label
+@FLM254=ישיבה
+ ;Fleet label
+@FLM255=סוג חיוב
+ ;Fleet label (table)
+@FLM256=קיבולת
+ ;Fleet label
+@FLM257=רדיוס פנייה
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=שאילתת זרימת עבודה
+ ;Fleet label
+@FLM260=רשומת תחזוקה
+ ;Fleet label
+@FLM261=השכרה חדשה
+ ;Fleet label
+@FLM262=כל ההשכרות
+ ;Fleet label
+@FLM263=הגדרת צי
+ ;Fleet label
+@FLM264=כל כלי הרכב
+ ;Fleet label
+@FLM265=תאריכי תעריף
+ ;Fleet label
+@FLM268=סניפים _DEMO_
+ ;Fleet label
+@FLM269=מיקומי השכרה _DEMO_
+ ;Fleet label
+@FLM270=אזורים _DEMO_
+ ;Fleet label
+@FLM271=הניקוי הושלם
+ ;Fleet label
+@FLM272=מחק לקוחות
+ ;Fleet label
+@FLM273=מחק את ההשכרות שנבחרו
+ ;Fleet label
+@FLM274=מחק את הרכב שנבחר
+ ;Fleet label
+@FLM275=הבדיקה הושלמה
+ ;Fleet label
+@FLM276=הטיפול הושלם
+ ;Fleet label
+@FLM278=התחל זרימת עבודה
+ ;Fleet label
+@FLM279=אשר טיפול
+ ;Fleet label
+@FLM280=מנע טיפול
+ ;Fleet label
+@FLM281=דחה טיפול
+ ;Fleet label
+@FLM282=מחק את כלי הרכב שנבחרו
+ ;Fleet label
+@FLM283=תצורת זרימת עבודה
+ ;Fleet label
+@FLM284=צור או עדכן סניפים
+ ;Fleet label
+@FLM285=צור או עדכן מיקומי השכרה
+ ;Fleet label
+@FLM286=צור או עדכן אזורים
+ ;Fleet label
+@FLM287=הוסף/ערוך לקוח
+ ;Fleet label
+@FLM288=מזהה השכרת רכב
+ ;Fleet label (table)
+@FLM289=הוסף/ערוך חיוב בגין השכרה
+ ;Fleet label
+@FLM290=פרטי החיוב
+ ;Fleet label
+@FLM291=פרטי השכרה
+ ;Fleet label
+@FLM292=ערוך השכרה
+ ;Fleet label
+@FLM293=השכרות לפי לקוח
+ ;Fleet label
+@FLM294=השכרות לפי דגם
+ ;Fleet label
+@FLM295=הוסף/ערוך רכב
+ ;Fleet label
+@FLM296=השכרות קרובות
+ ;Fleet label
+@FLM297=השכרות לפי רכב
+ ;Fleet label
+@FLM298=ראה עזרה מקוונת
+ ;Fleet label
+@FLM299=סוג חיוב בגין השכרה
+ ;Fleet label
+@FLM300=תעד קילומטראז'
+ ;Fleet label
+@FLM301=מחזור תהליך צי
+ ;Fleet label
+@FLM302=צי - נהל הגדרת צי
+ ;Fleet label
+@FLM303=צי - ערוך רשומות לקוחות
+ ;Fleet label
+@FLM304=צי - נהל לקוחות
+ ;Fleet label
+@FLM305=צי - נהל מלאי
+ ;Fleet label
+@FLM306=צי - השכר מכוניות
+ ;Fleet label
+@FLM307=צי - הצג רשומות לקוחות
+ ;Fleet label
+@FLM308=צי - הצג מלאי
+ ;Fleet label
+@FLM309=צי - פקיד זרימת עבודה
+ ;Fleet label
+@FLM310=צבע הרכב
+ ;Fleet label
+@FLM311=צי - מנהל זרימת עבודה
+ ;Fleet label
+@FLM312=צי - טכנאי שירות זרימת עבודה
+ ;Fleet label
+@FLM313=צי - מטלות בסיסיות
+ ;Fleet label
+@FLM314=צי - נהל מכוניות
+ ;Fleet label
+@FLM315=מחזור תהליך צי רגיל
+ ;Fleet label
+@FLM316=קילומטראז' הרכב
+ ;Fleet label
+@FLM317=עלות
+ ;Fleet label
+@FLM318=מרווח
+ ;Fleet label
+@FLM54=לקוחות
+ ;Fleet label
+@FLM266=תפוגת כרטיס אשראי
+ ;Fleet label (table)
+@FLM277=רישיון נהיגה
+ ;Fleet label (table)
+@FLM320=רשימת לקוחות
+ ;Fleet label (report menu item)
+@FLM321=דוח רשימת לקוחות
+ ;Fleet label (report menu item help text)
+@FLM267=הגדרת זרימת עבודה
+ ;Fleet label
+@FLM400=זרימת עבודה של תחזוקת רכב
+ ;Fleet label
+@FLM500=אמצעי תשלום מועדף
+ ;Fleet label
+@FLM501=לבן
+ ;Fleet colors
+@FLM502=אפור
+ ;Fleet colors
+@FLM503=‏‏צהוב
+ ;Fleet colors
+@FLM504=‏‏כתום
+ ;Fleet colors
+@FLM505=איסוף
+ ;Fleet label
+@FLM506=חזור
+ ;Fleet label
+@FLM507=התחל השכרה
+ ;Fleet label
+@FLM401=ניהול הזמנות
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=קילומטראז' קודם
+ ;Fleet label for returning vehicle slider
+@FLM509=קילומטראז' חדש
+ ;Fleet label for returning vehicle slider
+@FLM510=השכרת רכב
+ ;Fleet label
+@FLM512=חיובים נוספים
+ ;Fleet label
+@FLM513=חיסכון
+ ;Fleet label
+@FLM514=הזמנה חדשה
+ ;New reservation menu item label
+@FLM515=שנת דגם
+ ;Field label for Year field in FmVehicleModel
+@FLM516=שנת סיום
+ ;Expiration year label
+@FLM517=דוח לקוחות
+ ;Fleet tile label
+@FLM518=הזמנות קיימות
+ ;Fleet tile label
+@FLM519=השכרות באיחור
+ ;Fleet tile label
+@FLM520=שם התשלום
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=חודש סיום
+ ;Expiration month label
+@FLM523=שם בכרטיס
+ ;Fleet name on credit card
+@FLM524=היסטוריית תעריפי הרכב
+ ;Fleet form label
+@FLM525=הערה חדשה
+ ;Fleet dialog caption
+@FLM526=לקוח חדש
+ ;Fleet dialog caption
+@FLM527=מידע חדש על תשלום
+ ;Fleet dialog caption
+@FLM528=הוסף אביזר
+ ;Fleet dialog caption
+@FLM529=בחר לקוח
+ ;Fleet dialog caption
+@FLM530=מוכן לאיסוף
+ ;Fleet ReservationState enum option
+@FLM531=מזהה רשומת הכתובת
+ ;Fleet label
+@FLM532=קוד צבע הקסדצימאלי
+ ;Fleet label
+@FLM533=מזהה צבע
+ ;Fleet label
+@FLM534=שם צבע
+ ;Fleet label
+@FLM535=מזהה הנחה
+ ;Fleet label
+@FLM536=מזהה מידע על תשלום
+ ;Fleet label
+@FLM537=מזהה הזמנה
+ ;Fleet label
+@FLM539=כלי רכב שכורים
+ ;Fleet label
+@FLM540=ניהול צי
+ ;Fleet menu label
+@FLM541=טען נתוני הדגמה
+ ;Fleet button text
+@FLM542=היסטוריית תעריפים
+ ;Fleet button text
+@FLM543=שנה לקוח
+ ;Fleet dialog label
+@FLM544=בחר רכב
+ ;Fleet button text
+@FLM545=כל ההזמנות
+ ;Fleet grid title
+@FLM546=משוב לקוח
+ ;Fleet group label
+@FLM547=מידע על השכרה
+ ;Fleet group label
+@FLM548=תמונת חיוב
+ ;Fleet group label
+@FLM549=הגדרת נתונים
+ ;Fleet tab label
+@FLM550=מידע על רכב
+ ;Fleet group label
+@FLM551=כלי רכב זמינים
+ ;Fleet chart label
+@FLM552=מצב השכרת רכב
+ ;Fleet chart label
+@FLM553=רכב לפי דגם - הכנסות
+ ;Fleet chart label
+@FLM554=איסוף היום
+ ;Fleet panorama label
+@FLM555=חוזר היום
+ ;Fleet panorama label
+@FLM556=תעריפי השכרה
+ ;Fleet panorama label
+@FLM558=פרטי שיריון
+ ;Fleet panorama label
+@FLM559=אביזרים
+ ;Fleet panorama label
+@FLM560=תכונות
+ ;Fleet group label
+@FLM561=מידע על איסוף
+ ;Fleet field label
+@FLM562=מידע על החזרה
+ ;Fleet field label
+@FLM563=רשימת השכרות
+ ;Fleet report label
+@FLM564=צור לקוחות, השכרות וכלי רכב לדוגמה
+ ;Fleet TOC label
+@FLM565=זה ייקח רק כמה שניות.  
+ ;New Comment
+@FLM322=השכרות לפי לקוח
+ ;Fleet report label
+@FLM566=תרשימי לקוחות
+ ;Fleet form part caption
+@FLM567=תרשים הכנסות מרכב
+ ;Fleet form part caption
+@FLM601=השכרות של ניהול הצי
+ ;Fleet rental entity
+@FLM602=לקוחות של ניהול הצי
+ ;Fleet customer entity
+@FLM603=יישומון לדוגמה
+ ;Label for the sample applet name
+@FLM604=יישומון לדוגמה המשמש להדגמה ולבדיקה של מסגרת היישומון
+ ;Label for the sample applet description
+@FLM605=הצג יותר
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=מיקומי הלקוח
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=התבנית מספקת מפה של מיקומי הלקוח
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=השכרות לפי מצב
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=התבנית מספקת ספירות של מצבי השכרה
+ ;Rentals by status template description
+FMCustomerEntityView=הצג ישות לקוחות של ניהול צי
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=שמור על ישות לקוחות של ניהול צי
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=הצג ישות השכרות של ניהול צי
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=שמור על ישות השכרות של ניהול צי
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=הצג ישות פעילות
+ ;View privilege for RCADActivity
+RCADActivityMaintain=שמור על ישות פעילות
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=הצג ישות קטגוריה
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=שמור ישות קטגוריה
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=הצג את הישות של ישות משפטית
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=שמור על הישות של ישות משפטית
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=הצג ישות מאפיין שורה
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=שמור על ישות מאפיין שורה
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=הצג ישות תקופה
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=שמור על ישות תקופה
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=הצג ישות פרוייקט
+ ;View privilege for RCADProject
+RCADProjectMaintain=שמור על ישות פרוייקט
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=הצג ישות גיליון זמנים
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=שמור על ישות גיליון זמנים
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=הצג ישות ערך גיליון זמנים
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=שמור על ישות ערך גיליון זמנים
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=הצג ישות הגדרות גיליון זמנים
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=שמור על ישות הגדרות גיליון זמנים
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=הצג את ישות היסטוריית זרימת העבודה בגיליון הזמנים
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=שמור על ישות היסטוריית זרימת העבודה בגיליון הזמנים
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=הצג ישות פריט בהיסטוריית זרימת העבודה
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=שמור על ישות פריט בהיסטוריית זרימת העבודה
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=חפש השכרות
+FMTemplateCustomerInformationDisplayName=פרטי לקוח
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=התבנית מספקת מידע בסיסי על לקוחות ורשימת השכרות שלהם
+ ;Fleet customer information template description
+DataCreated=נתונים לדוגמה נוצרו.
+DataRestored=נתונים לדוגמה שוחזרו.
+DataRestoreConfirm=פעולה זו תחזיר את כל נתוני ניהול הצי למצבם המקורי. האם זה מה שברצונך לעשות?
+Branch=סניף _DEMO_
+ ;Branch operating unit type
+RentalLocation=מיקום השכרה _DEMO_
+ ;Rental location operating unit type
+Region=אזור _DEMO_
+ ;Region operating unit type
+Timestamp=חותמת זמן
+ ;Comment timestamp
+CustomerImage=תמונת לקוח
+ ;Fleet label
+Analytics=ניתוחים
+ ;used on Fleet clerk workspace for Analytics section

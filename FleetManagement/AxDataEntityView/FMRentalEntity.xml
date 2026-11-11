@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxDataEntityView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalEntity</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMRentalEntity extends common
+{
+}
+]]></Declaration>
+		<Methods />
+	</SourceCode>
+	<FormRef>FMRental</FormRef>
+	<Label>@FLM601</Label>
+	<Tags>Fleet</Tags>
+	<DataManagementEnabled>Yes</DataManagementEnabled>
+	<DataManagementStagingTable>FMRentalStaging</DataManagementStagingTable>
+	<IsPublic>Yes</IsPublic>
+	<Modules>SystemAdministration</Modules>
+	<PrimaryKey>EntityKey</PrimaryKey>
+	<PublicCollectionName>FleetRentals</PublicCollectionName>
+	<PublicEntityName>FleetRental</PublicEntityName>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>Comments</Name>
+			<DataField>Comments</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>EndDate</Name>
+			<Label>@FLM220</Label>
+			<DataField>EndDate</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>EndFuelLevel</Name>
+			<Label>@FLM167</Label>
+			<DataField>EndFuelLevel</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>EndMileage</Name>
+			<Label>@FLM165</Label>
+			<DataField>EndMileage</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>RentalId</Name>
+			<Label>@FLM288</Label>
+			<DataField>RentalId</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>StartDate</Name>
+			<Label>@SYS2168</Label>
+			<DataField>StartDate</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>StartFuelLevel</Name>
+			<Label>@FLM166</Label>
+			<DataField>StartFuelLevel</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>StartMileage</Name>
+			<Label>@FLM164</Label>
+			<DataField>StartMileage</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>Vehicle</Name>
+			<AccessModifier>Private</AccessModifier>
+			<DataField>Vehicle</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>State</Name>
+			<Label>@FLM230</Label>
+			<DataField>State</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>VehicleRatePerDay</Name>
+			<DataField>VehicleRatePerDay</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>VehicleRatePerWeek</Name>
+			<DataField>VehicleRatePerWeek</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>VehicleRateTotal</Name>
+			<DataField>VehicleRateTotal</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>CustomerDriverLicense</Name>
+			<Label>@FLM277</Label>
+			<Mandatory>Yes</Mandatory>
+			<DataField>DriverLicense</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>CustomerFirstName</Name>
+			<Label>@SYS32695</Label>
+			<Mandatory>Yes</Mandatory>
+			<DataField>FirstName</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>CustomerLastName</Name>
+			<Label>@SYS32697</Label>
+			<Mandatory>Yes</Mandatory>
+			<DataField>LastName</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>VehicleId</Name>
+			<Mandatory>No</Mandatory>
+			<DataField>VehicleId</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>VehicleVIN</Name>
+			<Mandatory>No</Mandatory>
+			<DataField>VIN</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxDataEntityViewField>
+	</Fields>
+	<Keys>
+		<AxDataEntityViewKey>
+			<Name>EntityKey</Name>
+			<Fields>
+				<AxDataEntityViewKeyField>
+					<DataField>RentalId</DataField>
+				</AxDataEntityViewKeyField>
+			</Fields>
+		</AxDataEntityViewKey>
+	</Keys>
+	<Mappings />
+	<Ranges />
+	<Relations>
+		<AxDataEntityViewRelation>
+			<Name>Customer</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedDataEntity>FMCustomerEntity</RelatedDataEntity>
+			<RelatedDataEntityCardinality>ExactlyOne</RelatedDataEntityCardinality>
+			<RelatedDataEntityRole>CustomerRole</RelatedDataEntityRole>
+			<RelationshipType>Association</RelationshipType>
+			<Role>Rental</Role>
+			<Constraints>
+				<AxDataEntityViewRelationConstraint xmlns=""
+					i:type="AxDataEntityViewRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>CustomerDriverLicense</Field>
+					<RelatedField>DriverLicense</RelatedField>
+				</AxDataEntityViewRelationConstraint>
+			</Constraints>
+		</AxDataEntityViewRelation>
+	</Relations>
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods>
+				<Method>
+					<Name>classDeclaration</Name>
+					<Source><![CDATA[
+[Query]
+public class Metadata extends QueryRun
+{
+}
+]]></Source>
+				</Method>
+			</Methods>
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMRental</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMRental</Table>
+				<DataSources>
+					<AxQuerySimpleEmbeddedDataSource>
+						<Name>FMCustomer</Name>
+						<DynamicFields>Yes</DynamicFields>
+						<IsReadOnly>Yes</IsReadOnly>
+						<Table>FMCustomer</Table>
+						<DataSources />
+						<DerivedDataSources />
+						<Fields />
+						<Ranges />
+						<JoinMode>OuterJoin</JoinMode>
+						<UseRelations>Yes</UseRelations>
+						<Relations>
+							<AxQuerySimpleDataSourceRelation>
+								<Name>FMCustomer</Name>
+								<JoinRelationName>FMCustomer</JoinRelationName>
+							</AxQuerySimpleDataSourceRelation>
+						</Relations>
+					</AxQuerySimpleEmbeddedDataSource>
+					<AxQuerySimpleEmbeddedDataSource>
+						<Name>FMVehicle</Name>
+						<DynamicFields>Yes</DynamicFields>
+						<IsReadOnly>Yes</IsReadOnly>
+						<Table>FMVehicle</Table>
+						<DataSources />
+						<DerivedDataSources>
+							<AxQuerySimpleDerivedDataSource>
+								<Name>FMCarClass</Name>
+								<DynamicFields>Yes</DynamicFields>
+								<Table>FMCarClass</Table>
+								<DataSources />
+								<DerivedDataSources>
+									<AxQuerySimpleDerivedDataSource>
+										<Name>FMSUV</Name>
+										<DynamicFields>Yes</DynamicFields>
+										<Table>FMSUV</Table>
+										<DataSources />
+										<DerivedDataSources />
+										<Fields />
+										<Ranges />
+									</AxQuerySimpleDerivedDataSource>
+								</DerivedDataSources>
+								<Fields />
+								<Ranges />
+							</AxQuerySimpleDerivedDataSource>
+							<AxQuerySimpleDerivedDataSource>
+								<Name>FMTruck</Name>
+								<DynamicFields>Yes</DynamicFields>
+								<Table>FMTruck</Table>
+								<DataSources />
+								<DerivedDataSources />
+								<Fields />
+								<Ranges />
+							</AxQuerySimpleDerivedDataSource>
+						</DerivedDataSources>
+						<Fields />
+						<Ranges />
+						<JoinMode>OuterJoin</JoinMode>
+						<UseRelations>Yes</UseRelations>
+						<Relations>
+							<AxQuerySimpleDataSourceRelation>
+								<Name>FMVehicle</Name>
+								<JoinRelationName>FMVehicle</JoinRelationName>
+							</AxQuerySimpleDataSourceRelation>
+						</Relations>
+					</AxQuerySimpleEmbeddedDataSource>
+				</DataSources>
+				<DerivedDataSources />
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxDataEntityView>

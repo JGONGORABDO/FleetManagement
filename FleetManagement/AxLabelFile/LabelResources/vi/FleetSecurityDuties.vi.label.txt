@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Duy trì dữ liệu đối tượng chính để quản lý dữ liệu 
+DataManagementFleetMasterEntitiesView=Xem dữ liệu đối tượng chính để quản lý dữ liệu 

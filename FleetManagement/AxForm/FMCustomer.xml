@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxForm xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>FMCustomer</Name>
+	<SourceCode>
+		<Methods xmlns="">
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Form]
+public class FMCustomer extends FormRun
+{
+}
+]]></Source>
+			</Method>
+			<Method>
+				<Name>init</Name>
+				<Source><![CDATA[
+    public void init()
+    {
+        QueryFilter qFilter;
+        QueryBuildDataSource qbd;
+
+        super();
+
+        qbd = FMCustomer_DS.queryBuildDataSource();
+
+        qFilter = FmCustomer_DS.query().addQueryFilter(qbd, fieldstr(FMCustomer, FirstName));        
+        qFilter = FmCustomer_DS.query().addQueryFilter(qbd, fieldstr(FMCustomer, LastName));
+        qFilter = FmCustomer_DS.query().addQueryFilter(qbd, fieldstr(FMCustomer, CellPhone));
+        qFilter = FmCustomer_DS.query().addQueryFilter(qbd, fieldstr(FMCustomer, Email));
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+		<DataSources xmlns="" />
+		<DataControls xmlns="" />
+		<Members xmlns="" />
+	</SourceCode>
+	<DataSourceChangeGroupMode>ImplicitInnerOuter</DataSourceChangeGroupMode>
+	<DataSources>
+		<AxFormDataSource xmlns="">
+			<Name>FMCustomer</Name>
+			<Table>FMCustomer</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>AddressID</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>CellPhone</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>CustGroup</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>DriverLicense</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Email</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>FirstName</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Image</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>LastName</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>LicenseImage</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+		<AxFormDataSource xmlns="">
+			<Name>FMAddressTable</Name>
+			<Table>FMAddressTable</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>AddressLine1</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>AddressLine2</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>City</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Country</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>State</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>ZipCode</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<JoinSource>FMCustomer</JoinSource>
+			<LinkType>OuterJoin</LinkType>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+		<AxFormDataSource xmlns="">
+			<Name>FMPaymentInformation</Name>
+			<Table>FMPaymentInformation</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>AddressID</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>CCN</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>CustomerID</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>CVV</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>ExpirationMonth</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>ExpirationYear</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>IsPrimary</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Name</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>NameOnCard</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>State</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<JoinSource>FMCustomer</JoinSource>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+		<AxFormDataSource xmlns="">
+			<Name>FmAddressTable_Billing</Name>
+			<Table>FMAddressTable</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>AddressLine1</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>AddressLine2</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>City</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Country</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>State</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>ZipCode</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<JoinSource>FMPaymentInformation</JoinSource>
+			<LinkType>InnerJoin</LinkType>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+		<AxFormDataSource xmlns="">
+			<Name>FMCustomerComments</Name>
+			<Table>FMCustomerComments</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>Comment</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>CustomerID</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Timestamp</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<JoinSource>FMCustomer</JoinSource>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+	</DataSources>
+	<Design>
+		<Caption xmlns="">@FLM49</Caption>
+		<DataSource xmlns="">FMCustomer</DataSource>
+		<Pattern xmlns="">DetailsMaster</Pattern>
+		<PatternVersion xmlns="">1.4</PatternVersion>
+		<SetCompany xmlns="">No</SetCompany>
+		<Style xmlns="">DetailsFormMaster</Style>
+		<TitleDataSource xmlns="">FMCustomer</TitleDataSource>
+		<Controls xmlns="">
+			<AxFormControl xmlns=""
+				i:type="AxFormActionPaneControl">
+				<Name>ApplicationBar</Name>
+				<ElementPosition>536870911</ElementPosition>
+				<FilterExpression>%1</FilterExpression>
+				<HeightMode>Auto</HeightMode>
+				<Type>ActionPane</Type>
+				<VerticalSpacingMode>Fixed</VerticalSpacingMode>
+				<Width>0</Width>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls />
+				<AlignChild>No</AlignChild>
+				<AlignChildren>No</AlignChildren>
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormGroupControl">
+				<Name>NavigationList</Name>
+				<HeightMode>SizeToAvailable</HeightMode>
+				<Type>Group</Type>
+				<Visible>No</Visible>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl>
+						<Name>ListQuickFilter</Name>
+						<WidthMode>SizeToAvailable</WidthMode>
+						<FormControlExtension>
+							<Name>QuickFilterControl</Name>
+							<ExtensionComponents />
+							<ExtensionProperties>
+								<AxFormControlExtensionProperty>
+									<Name>targetControlName</Name>
+									<Type>String</Type>
+									<Value>MainGrid</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>defaultColumnName</Name>
+									<Type>String</Type>
+								</AxFormControlExtensionProperty>
+							</ExtensionProperties>
+						</FormControlExtension>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormGridControl">
+						<Name>SimpleList</Name>
+						<AllowEdit>No</AllowEdit>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<Type>Grid</Type>
+						<WidthMode>SizeToContent</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormStringControl">
+								<Name>FmCustomer_FullName</Name>
+								<ElementPosition>477218588</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<HeightMode>Auto</HeightMode>
+								<Type>String</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>Auto</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<DataMethod>fullName</DataMethod>
+								<DataSource>FMCustomer</DataSource>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormStringControl">
+								<Name>FmCustomer_Phone</Name>
+								<AutoDeclaration>Yes</AutoDeclaration>
+								<HeightMode>Auto</HeightMode>
+								<Type>String</Type>
+								<WidthMode>Auto</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<DataField>CellPhone</DataField>
+								<DataSource>FMCustomer</DataSource>
+							</AxFormControl>
+						</Controls>
+						<DataSource>FMCustomer</DataSource>
+						<MultiSelect>No</MultiSelect>
+						<ShowRowLabels>No</ShowRowLabels>
+						<Style>List</Style>
+					</AxFormControl>
+				</Controls>
+				<FrameType>None</FrameType>
+				<Style>SidePanel</Style>
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormTabControl">
+				<Name>Tab</Name>
+				<AlignControl>No</AlignControl>
+				<ElementPosition>1342177278</ElementPosition>
+				<FilterExpression>%1</FilterExpression>
+				<Type>Tab</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormTabPageControl">
+						<Name>TabPageDetails</Name>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<ElementPosition>1073741822</ElementPosition>
+						<FilterExpression>%1</FilterExpression>
+						<HeightMode>Auto</HeightMode>
+						<Type>TabPage</Type>
+						<VerticalSpacing>-1</VerticalSpacing>
+						<WidthMode>Auto</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>HeaderInfo</Name>
+								<ElementPosition>1073741822</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<Type>Group</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>HeaderTitle</Name>
+										<ElementPosition>1431655764</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Skip>Yes</Skip>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>SizeToAvailable</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataMethod>titleFields</DataMethod>
+										<DataSource>FMCustomer</DataSource>
+										<DisplayHeight>1</DisplayHeight>
+										<DisplayHeightMode>Fixed</DisplayHeightMode>
+										<ShowLabel>No</ShowLabel>
+										<Style>TitleField</Style>
+									</AxFormControl>
+								</Controls>
+								<ArrangeMethod>HorizontalLeft</ArrangeMethod>
+								<FrameType>None</FrameType>
+								<Style>DetailTitleContainer</Style>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormTabControl">
+								<Name>TabHeader</Name>
+								<ElementPosition>1610612733</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<Type>Tab</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>CustomerGeneral</Name>
+										<ElementPosition>1431655764</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Pattern>FieldsFieldGroups</Pattern>
+										<PatternVersion>1.1</PatternVersion>
+										<Type>TabPage</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMCustomer_FirstName</Name>
+												<ElementPosition>429496728</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>FirstName</DataField>
+												<DataSource>FMCustomer</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMCustomer_LastName</Name>
+												<ElementPosition>644245092</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>LastName</DataField>
+												<DataSource>FMCustomer</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMCustomer_DriverLicense</Name>
+												<ElementPosition>858993456</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>DriverLicense</DataField>
+												<DataSource>FMCustomer</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMCustomer_CellPhone</Name>
+												<ElementPosition>1717986912</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>CellPhone</DataField>
+												<DataSource>FMCustomer</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMCustomer_Email</Name>
+												<ElementPosition>1932735276</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>Email</DataField>
+												<DataSource>FMCustomer</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMAddressTable_AddressLine1Copy2</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<Type>String</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>AddressLine1</DataField>
+												<DataSource>FMAddressTable</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMAddressTable_AddressLine2Copy2</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<Type>String</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>AddressLine2</DataField>
+												<DataSource>FMAddressTable</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>CityStateCopy1</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<Type>Group</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormStringControl">
+														<Name>FMAddressTable_CityCopy2</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<Type>String</Type>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>City</DataField>
+														<DataSource>FMAddressTable</DataSource>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormStringControl">
+														<Name>FMAddressTable_StateCopy2</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<Type>String</Type>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>State</DataField>
+														<DataSource>FMAddressTable</DataSource>
+													</AxFormControl>
+												</Controls>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormIntegerControl">
+												<Name>FMAddressTable_ZipCodeCopy2</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<Type>Integer</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>ZipCode</DataField>
+												<DataSource>FMAddressTable</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMAddressTable_CountryCopy2</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<Type>String</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>Country</DataField>
+												<DataSource>FMAddressTable</DataSource>
+												<DisplayLength>20</DisplayLength>
+												<DisplayLengthMode>Fixed</DisplayLengthMode>
+											</AxFormControl>
+										</Controls>
+										<ColumnsMode>Fill</ColumnsMode>
+										<Caption>@SYS2952</Caption>
+										<Scrollbars>Auto</Scrollbars>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>CustomerPaymentInfo</Name>
+										<AutoDeclaration>Yes</AutoDeclaration>
+										<HeightMode>Auto</HeightMode>
+										<Pattern>Custom</Pattern>
+										<Type>TabPage</Type>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormActionPaneControl">
+												<Name>PaymentSectionToolbar</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<Type>ActionPane</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormButtonGroupControl">
+														<Name>PaymentSectionButtonGroup</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<HeightMode>Auto</HeightMode>
+														<Type>ButtonGroup</Type>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormCommandButtonControl">
+																<Name>AddPaymentButton1</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>Auto</HeightMode>
+																<Type>CommandButton</Type>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Command>New</Command>
+																<NormalImage>Add</NormalImage>
+																<Text>@SYS60080</Text>
+															</AxFormControl>
+															<AxFormControl xmlns=""
+																i:type="AxFormCommandButtonControl">
+																<Name>RemovePaymentButton</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>Auto</HeightMode>
+																<Type>CommandButton</Type>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Command>DeleteRecord</Command>
+																<NormalImage>Remove</NormalImage>
+																<Text>@SYS135131</Text>
+															</AxFormControl>
+														</Controls>
+														<DataSource>FMPaymentInformation</DataSource>
+													</AxFormControl>
+												</Controls>
+												<Style>Strip</Style>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>PaymentSimpleListDetails</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>SizeToAvailable</HeightMode>
+												<Type>Group</Type>
+												<WidthMode>SizeToAvailable</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormGridControl">
+														<Name>PaymentGrid</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<Type>Grid</Type>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormStringControl">
+																<Name>FMPaymentInformation_Name1</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>Auto</HeightMode>
+																<Type>String</Type>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<DataField>Name</DataField>
+																<DataSource>FMPaymentInformation</DataSource>
+															</AxFormControl>
+															<AxFormControl xmlns=""
+																i:type="AxFormStringControl">
+																<Name>FMPaymentInformation_CCN1</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>Auto</HeightMode>
+																<Type>String</Type>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<DataField>CCN</DataField>
+																<DataSource>FMPaymentInformation</DataSource>
+															</AxFormControl>
+														</Controls>
+														<DataSource>FMPaymentInformation</DataSource>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormGroupControl">
+														<Name>VerticalSplitter</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<HeightMode>Auto</HeightMode>
+														<Type>Group</Type>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls />
+														<ArrangeMethod>Auto</ArrangeMethod>
+														<Style>SplitterVerticalContainer</Style>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormTabControl">
+														<Name>PaymentDetailsTabs</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<Type>Tab</Type>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormTabPageControl">
+																<Name>PaymentInfoDetails</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>Auto</HeightMode>
+																<Type>TabPage</Type>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Controls>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormCheckBoxControl">
+																		<Name>FMPaymentInformation_IsPrimary</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>CheckBox</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>IsPrimary</DataField>
+																		<DataSource>FMPaymentInformation</DataSource>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormStringControl">
+																		<Name>FMPaymentInformation_Name2</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>String</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>Name</DataField>
+																		<DataSource>FMPaymentInformation</DataSource>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormComboBoxControl">
+																		<Name>FMPaymentInformation_State1</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>ComboBox</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>State</DataField>
+																		<DataSource>FMPaymentInformation</DataSource>
+																		<Items />
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormStringControl">
+																		<Name>FMPaymentInformation_CCN2</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>String</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>CCN</DataField>
+																		<DataSource>FMPaymentInformation</DataSource>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormGroupControl">
+																		<Name>ExpirationGroup</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>Group</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<Controls>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormStringControl">
+																				<Name>FMPaymentInformation_ExpirationMonth</Name>
+																				<AutoDeclaration>Yes</AutoDeclaration>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>String</Type>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<DataField>ExpirationMonth</DataField>
+																				<DataSource>FMPaymentInformation</DataSource>
+																			</AxFormControl>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormIntegerControl">
+																				<Name>FMPaymentInformation_ExpirationYear</Name>
+																				<AutoDeclaration>Yes</AutoDeclaration>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>Integer</Type>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<Alignment>Left</Alignment>
+																				<DataField>ExpirationYear</DataField>
+																				<DataSource>FMPaymentInformation</DataSource>
+																			</AxFormControl>
+																		</Controls>
+																		<ArrangeMethod>HorizontalWrap</ArrangeMethod>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormStringControl">
+																		<Name>FMPaymentInformation_CVV</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>String</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>CVV</DataField>
+																		<DataSource>FMPaymentInformation</DataSource>
+																	</AxFormControl>
+																</Controls>
+																<ArrangeMethod>Auto</ArrangeMethod>
+																<Columns>-1</Columns>
+																<ColumnsMode>Fill</ColumnsMode>
+																<Caption>@FLM91</Caption>
+																<DataSource>FMPaymentInformation</DataSource>
+																<FastTabExpanded>Yes</FastTabExpanded>
+															</AxFormControl>
+															<AxFormControl xmlns=""
+																i:type="AxFormTabPageControl">
+																<Name>BillingAddressDetails</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>Auto</HeightMode>
+																<Type>TabPage</Type>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Controls>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormStringControl">
+																		<Name>FMAddressTable_AddressLine1Copy1</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>String</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>AddressLine1</DataField>
+																		<DataSource>FmAddressTable_Billing</DataSource>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormStringControl">
+																		<Name>FMAddressTable_AddressLine2Copy1</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>String</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>AddressLine2</DataField>
+																		<DataSource>FmAddressTable_Billing</DataSource>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormStringControl">
+																		<Name>FMAddressTable_CityCopy1</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>String</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>City</DataField>
+																		<DataSource>FmAddressTable_Billing</DataSource>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormStringControl">
+																		<Name>FMAddressTable_StateCopy1</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>String</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>State</DataField>
+																		<DataSource>FmAddressTable_Billing</DataSource>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormIntegerControl">
+																		<Name>FMAddressTable_ZipCodeCopy1</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>Integer</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>ZipCode</DataField>
+																		<DataSource>FmAddressTable_Billing</DataSource>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormStringControl">
+																		<Name>FMAddressTable_CountryCopy1</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>String</Type>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<DataField>Country</DataField>
+																		<DataSource>FmAddressTable_Billing</DataSource>
+																		<DisplayLength>20</DisplayLength>
+																		<DisplayLengthMode>Fixed</DisplayLengthMode>
+																	</AxFormControl>
+																</Controls>
+																<ArrangeMethod>Auto</ArrangeMethod>
+																<Columns>-1</Columns>
+																<ColumnsMode>Fill</ColumnsMode>
+																<Caption>@SYS327092</Caption>
+																<DataSource>FmAddressTable_Billing</DataSource>
+																<FastTabExpanded>Yes</FastTabExpanded>
+															</AxFormControl>
+														</Controls>
+													</AxFormControl>
+												</Controls>
+												<ArrangeMethod>Auto</ArrangeMethod>
+												<Columns>3</Columns>
+											</AxFormControl>
+										</Controls>
+										<ArrangeMethod>Auto</ArrangeMethod>
+										<Caption>@SYS100269</Caption>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>CustomerComments</Name>
+										<AutoDeclaration>Yes</AutoDeclaration>
+										<HeightMode>Auto</HeightMode>
+										<Pattern>ToolbarList</Pattern>
+										<PatternVersion>1.2</PatternVersion>
+										<Type>TabPage</Type>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormActionPaneControl">
+												<Name>CommentsSectionToolbar</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<Type>ActionPane</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormButtonGroupControl">
+														<Name>CommentsSectionButtonGroup</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<HeightMode>Auto</HeightMode>
+														<Type>ButtonGroup</Type>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormCommandButtonControl">
+																<Name>AddCommentButton1</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>Auto</HeightMode>
+																<Type>CommandButton</Type>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Command>New</Command>
+																<NormalImage>Add</NormalImage>
+																<Text>@SYS60080</Text>
+															</AxFormControl>
+															<AxFormControl xmlns=""
+																i:type="AxFormCommandButtonControl">
+																<Name>RemoveCommentButton</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>Auto</HeightMode>
+																<Type>CommandButton</Type>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Command>DeleteRecord</Command>
+																<NormalImage>Remove</NormalImage>
+																<Text>@SYS135131</Text>
+															</AxFormControl>
+														</Controls>
+													</AxFormControl>
+												</Controls>
+												<DataSource>FMCustomerComments</DataSource>
+												<Style>Strip</Style>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGridControl">
+												<Name>CommentGrid</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<Type>Grid</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormDateTimeControl">
+														<Name>FMCustomerComments_Timestamp</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<HeightMode>Auto</HeightMode>
+														<Type>DateTime</Type>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>Timestamp</DataField>
+														<DataSource>FMCustomerComments</DataSource>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormStringControl">
+														<Name>FMCustomerComments_Comment</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<HeightMode>Auto</HeightMode>
+														<Type>String</Type>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<DataField>Comment</DataField>
+														<DataSource>FMCustomerComments</DataSource>
+													</AxFormControl>
+												</Controls>
+												<DataSource>FMCustomerComments</DataSource>
+											</AxFormControl>
+										</Controls>
+										<Caption>@SYS5343</Caption>
+										<DataSource>FMCustomerComments</DataSource>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>CustomerChartsPart</Name>
+										<AutoDeclaration>Yes</AutoDeclaration>
+										<HeightMode>Auto</HeightMode>
+										<Pattern>Custom</Pattern>
+										<Type>TabPage</Type>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormContainerControl">
+												<Name>FMBiCustomerRentalsPart</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<Type>Container</Type>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension>
+													<Name>FormPartControl</Name>
+													<ExtensionComponents>
+														<AxFormControlExtensionComponent xmlns=""
+															i:type="AxFormControlExtensionComponentComposite">
+															<Name>dataLinks</Name>
+															<ExtensionComponents>
+																<AxFormControlExtensionComponent xmlns=""
+																	i:type="AxFormControlExtensionComponentLeaf">
+																	<Name>FMCustomerRecIdFieldRelation</Name>
+																	<ComponentType>FormFieldRelationDataLink</ComponentType>
+																	<ExtensionProperties>
+																		<AxFormControlExtensionProperty>
+																			<Name>dataSource</Name>
+																			<Type>String</Type>
+																			<Value>FMCustomer</Value>
+																		</AxFormControlExtensionProperty>
+																		<AxFormControlExtensionProperty>
+																			<Name>dataField</Name>
+																			<Type>String</Type>
+																			<Value>RecId</Value>
+																		</AxFormControlExtensionProperty>
+																		<AxFormControlExtensionProperty>
+																			<Name>targetDataField</Name>
+																			<Type>String</Type>
+																			<Value>RecId</Value>
+																		</AxFormControlExtensionProperty>
+																		<AxFormControlExtensionProperty>
+																			<Name>targetDataSource</Name>
+																			<Type>String</Type>
+																			<Value>FMCustomerLink</Value>
+																		</AxFormControlExtensionProperty>
+																	</ExtensionProperties>
+																</AxFormControlExtensionComponent>
+															</ExtensionComponents>
+														</AxFormControlExtensionComponent>
+													</ExtensionComponents>
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>targetName</Name>
+															<Type>String</Type>
+															<Value>FMBiCustomerRentalsPart</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>parmRunMode</Name>
+															<Type>Enum</Type>
+															<TypeName>FormPartControlRunMode</TypeName>
+															<Value>Local</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>autoRefreshInterval</Name>
+															<Type>Int32</Type>
+															<Value>0</Value>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+												<Controls />
+											</AxFormControl>
+										</Controls>
+										<ArrangeMethod>Auto</ArrangeMethod>
+										<ColumnsMode>Fill</ColumnsMode>
+										<Caption>@FLM88</Caption>
+										<FastTabExpanded>Yes</FastTabExpanded>
+									</AxFormControl>
+								</Controls>
+								<AlignChild>No</AlignChild>
+								<ArrangeMethod>HorizontalRight</ArrangeMethod>
+								<Style>FastTabs</Style>
+							</AxFormControl>
+						</Controls>
+						<PanelStyle>Details</PanelStyle>
+						<Scrollbars>Auto</Scrollbars>
+						<Style>DetailsFormDetails</Style>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormTabPageControl">
+						<Name>TabPageGrid</Name>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<ElementPosition>1610612733</ElementPosition>
+						<FilterExpression>%1</FilterExpression>
+						<HeightMode>Auto</HeightMode>
+						<Type>TabPage</Type>
+						<VerticalSpacing>-1</VerticalSpacing>
+						<WidthMode>Auto</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>CustomFilterGroup</Name>
+								<Pattern>CustomAndQuickFilters</Pattern>
+								<PatternVersion>1.1</PatternVersion>
+								<Type>Group</Type>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl>
+										<Name>MainGridQuickFilter</Name>
+										<FormControlExtension>
+											<Name>QuickFilterControl</Name>
+											<ExtensionComponents />
+											<ExtensionProperties>
+												<AxFormControlExtensionProperty>
+													<Name>targetControlName</Name>
+													<Type>String</Type>
+													<Value>MainGrid</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>defaultColumnName</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+											</ExtensionProperties>
+										</FormControlExtension>
+									</AxFormControl>
+								</Controls>
+								<ArrangeMethod>HorizontalLeft</ArrangeMethod>
+								<FrameType>None</FrameType>
+								<Style>CustomFilter</Style>
+								<ViewEditMode>Edit</ViewEditMode>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormGridControl">
+								<Name>MainGrid</Name>
+								<ElementPosition>1431655764</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<Type>Grid</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>FMCustomer_FirstName1</Name>
+										<ElementPosition>477218588</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataField>FirstName</DataField>
+										<DataSource>FMCustomer</DataSource>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>FMCustomer_LastName1</Name>
+										<ElementPosition>715827882</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataField>LastName</DataField>
+										<DataSource>FMCustomer</DataSource>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>FMCustomer_CellPhone1</Name>
+										<ElementPosition>1670265058</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataField>CellPhone</DataField>
+										<DataSource>FMCustomer</DataSource>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>FMCustomer_DriverLicense1</Name>
+										<ElementPosition>954437176</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataField>DriverLicense</DataField>
+										<DataSource>FMCustomer</DataSource>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormStringControl">
+										<Name>FMCustomer_Email1</Name>
+										<ElementPosition>1908874352</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>String</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<DataField>Email</DataField>
+										<DataSource>FMCustomer</DataSource>
+									</AxFormControl>
+								</Controls>
+								<DataSource>FMCustomer</DataSource>
+								<DefaultAction>DefaultActionButton</DefaultAction>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormCommandButtonControl">
+								<Name>DefaultActionButton</Name>
+								<AutoDeclaration>Yes</AutoDeclaration>
+								<HeightMode>Auto</HeightMode>
+								<Type>CommandButton</Type>
+								<Visible>No</Visible>
+								<WidthMode>Auto</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Command>DetailsView</Command>
+							</AxFormControl>
+						</Controls>
+						<PanelStyle>Grid</PanelStyle>
+						<Scrollbars>Auto</Scrollbars>
+						<Style>DetailsFormGrid</Style>
+					</AxFormControl>
+				</Controls>
+				<AlignChild>No</AlignChild>
+				<ShowTabs>No</ShowTabs>
+			</AxFormControl>
+		</Controls>
+	</Design>
+	<Parts />
+</AxForm>

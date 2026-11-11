@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMCustomerReservations</title>
+</head>
+<body>
+    <div id="FMCustomerReservations">
+        <div data-dyn-role="metaModel: 'Toolbar'">
+            <div data-dyn-role="metaModel: 'ToolbarGroup'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Add', ImageType: 'Symbol', ImageName: 'New', ActionCommand: $navigate({templateId: 'FMReservationHub', resourceBundle: 'FMReservationHub'}, $create('Reservations'))"></button>
+            </div>
+        </div>
+         <div data-dyn-role="metaModel: 'List'" data-dyn-bind="DataSource: 'Reservations', DataFilter: 'State !== $dyn.OData.Entry.State.New' ">
+            <div data-dyn-role="metaModel: 'Template'" data-dyn-bind="TemplateId: 'reservationCard'"></div>
+        </div>
+        <div style="display: none" class="dyn-stop-binding" >
+            <div id="reservationCard" data-dyn-context="ModelContext" data-dyn-bind="extendedStyle:'card'">
+                <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageType: 'Base64', ImageName: $field('Image', 'MakeModel')" data-dyn-context="$model('Vehicle')"></span>
+                <div class="details">
+                    <h1 data-dyn-bind="text: $field('Description', 'Vehicle')"></h1>
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $format('{0} > {1}',$field('PickupDate'),$field('ReturnDate'))"></div>
+                </div>
+            </div>
+        </div>
+        <div data-dyn-template="templateId: 'Card', resourceBundle: 'Card'"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCustomerListController</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+///    The <c>FMCustomerListController</c> class is the controller class for the <c>FMCustomerList</c> report.
+/// </summary>
+class FMCustomerListController extends SrsReportRunController
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>construct</Name>
+				<Source><![CDATA[
+    public static FMCustomerListController construct(Args _args)
+    {
+        FMCustomerListController controller = new FMCustomerListController();
+        controller.parmReportName(ssrsreportstr(FMCustomerList, Report));
+        controller.parmArgs(_args);
+        return controller;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args args)
+    {
+        FMCustomerListController::construct(args).startOperation();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

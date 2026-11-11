@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxForm xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>FMCompleteRental</Name>
+	<SourceCode>
+		<Methods xmlns="">
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Form]  
+public class FMCompleteRental extends FormRun
+{
+    FormDataSource rentalDS;
+    FMVehicle vehicle;
+    FMRental rental;
+
+}
+]]></Source>
+			</Method>
+			<Method>
+				<Name>run</Name>
+				<Source><![CDATA[
+    public void run()
+    {        
+        super();         
+        
+        if(rental != null)
+        {
+            FMRental_EndDate.dateTimeValue(DateTimeUtil::applyTimeZoneOffset(DateTimeUtil::utcNow(), DateTimeUtil::getUserPreferredTimeZone()));
+            FMRental_StartMileage.value(rental.StartMileage); 
+            FMRental_EndMileage.value(rental.EndMileage); 
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>init</Name>
+				<Source><![CDATA[
+    public void init()
+    {
+        //If this form was opened with a Rental as context then
+        if(element.args() != null && element.args().record() != null) 
+        {
+            //Grab that Rental context
+            rentalDS = FormDataUtil::getFormDataSource(element.args().record());
+
+            if(element.args().record().TableId == tableNum(FMPickupAndReturnTable))
+            {
+                FMPickupAndReturnTable cacheRecord = element.args().record();
+                select firstonly forupdate rental where rental.RentalId == cacheRecord.RentalId;
+            }
+            else if(element.args().record().TableId == tableNum(FMRental))
+            {
+                rental = element.args().record();
+            }
+
+            if(rental != null)
+            {
+                select firstonly forupdate vehicle where vehicle.RecId == rental.Vehicle;
+            }
+
+        }
+
+        super();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+		<DataSources xmlns="" />
+		<DataControls xmlns="">
+			<Control>
+				<Name>OKButton</Name>
+				<Type>CommandButton</Type>
+				<Methods>
+					<Method>
+						<Name>clicked</Name>
+						<Source><![CDATA[
+        public void clicked()
+        {
+            FMCustomerComments dbComment;
+            utcdatetime currentDate = DateTimeUtil::utcNow(); 
+
+            Microsoft.Dynamics.Application.Instrumentation.FleetManagementEventSource::EventWriteXppTransactionStart("FleetManagement", "Complete a rental");
+
+            if(rental != null && vehicle != null)
+            {
+                if(FMRental_EndMileage.value() == 0)
+                {
+                    warning("Please update the vehicle's mileage!");
+                    return;
+                }
+                
+                if(Comment.text() != "")
+                {
+                    //Add a new comment for this customer
+                    dbComment.CustomerID = rental.Customer;
+                    dbComment.Timestamp = currentDate;
+                    dbComment.Comment = Comment.text();
+                    dbComment.insert();
+                }
+
+                // Return the vehicle and update the reservation status. Log Xpp Transaction discrete event
+                Microsoft.Dynamics.Application.Instrumentation.FleetManagementEventSource::EventWriteXppTransactionStart("FleetManagement", "Return vehicle");
+
+                ttsbegin;
+
+                vehicle.Status = FMVehicleStatus::InService;
+                vehicle.Mileage = FMRental_EndMileage.value(); 
+                vehicle.update(); 
+
+                rental.State = FMReservationState::Complete;
+                rental.EndDate = DateTimeUtil::removeTimeZoneOffset(FMRental_EndDate.dateTimeValue(), DateTimeUtil::getUserPreferredTimeZone()); 
+                rental.EndMileage = FMRental_EndMileage.value(); 
+                rental.update(); 
+
+                FMCreateNewServiceWorkflow::fmAddMaintenanceRecord(vehicle, rental);
+
+                ttscommit;
+
+                Microsoft.Dynamics.Application.Instrumentation.FleetManagementEventSource::EventWriteXppTransactionStop("FleetManagement", "Return vehicle");
+                info('This vehicle has been successfully queued for service!');
+
+                if(rentalDS.table() == tableNum(FMPickupAndReturnTable))
+                {
+                    //Delete updated record from backing cache
+                    FMPickupAndReturnTable cacheRecord = element.args().record();
+                    cacheRecord.delete();
+                }
+
+                rentalDS.research(true);
+            }
+
+            super();
+           
+            Microsoft.Dynamics.Application.Instrumentation.FleetManagementEventSource::EventWriteXppTransactionStop("FleetManagement", "Complete a rental");
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+		</DataControls>
+		<Members xmlns="" />
+	</SourceCode>
+	<DataSources />
+	<Design>
+		<Caption xmlns="">@FLM204</Caption>
+		<Pattern xmlns="">Dialog</Pattern>
+		<PatternVersion xmlns="">1.2</PatternVersion>
+		<Style xmlns="">Dialog</Style>
+		<WindowType xmlns="">Slider</WindowType>
+		<Controls xmlns="">
+			<AxFormControl xmlns=""
+				i:type="AxFormGroupControl">
+				<Name>DialogContent</Name>
+				<ElementPosition>715827882</ElementPosition>
+				<FilterExpression>%1</FilterExpression>
+				<HeightMode>SizeToAvailable</HeightMode>
+				<Pattern>FieldsFieldGroups</Pattern>
+				<PatternVersion>1.1</PatternVersion>
+				<Type>Group</Type>
+				<VerticalSpacing>-1</VerticalSpacing>
+				<WidthMode>SizeToAvailable</WidthMode>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormGroupControl">
+						<Name>FeedbackGroup</Name>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<Type>Group</Type>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormStringControl">
+								<Name>Comment</Name>
+								<AutoDeclaration>Yes</AutoDeclaration>
+								<Type>String</Type>
+								<FormControlExtension
+									i:nil="true" />
+								<Label>@SYS35300</Label>
+								<MultiLine>Yes</MultiLine>
+							</AxFormControl>
+						</Controls>
+						<Caption>@FLM546</Caption>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormGroupControl">
+						<Name>RentalGroup</Name>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<Type>Group</Type>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormDateTimeControl">
+								<Name>FMRental_EndDate</Name>
+								<AutoDeclaration>Yes</AutoDeclaration>
+								<Type>DateTime</Type>
+								<FormControlExtension
+									i:nil="true" />
+								<ExtendedDataType>EndDateTime</ExtendedDataType>
+								<Label>@FLM506</Label>
+								<TimeSeconds>No</TimeSeconds>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormIntegerControl">
+								<Name>FMRental_StartMileage</Name>
+								<AutoDeclaration>Yes</AutoDeclaration>
+								<Type>Integer</Type>
+								<FormControlExtension
+									i:nil="true" />
+								<ExtendedDataType>FMMileage</ExtendedDataType>
+								<Label>@FLM508</Label>
+								<ViewEditMode>View</ViewEditMode>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormIntegerControl">
+								<Name>FMRental_EndMileage</Name>
+								<AutoDeclaration>Yes</AutoDeclaration>
+								<Type>Integer</Type>
+								<FormControlExtension
+									i:nil="true" />
+								<ExtendedDataType>FMMileage</ExtendedDataType>
+								<Label>@FLM509</Label>
+							</AxFormControl>
+						</Controls>
+						<Caption>@FLM547</Caption>
+					</AxFormControl>
+				</Controls>
+				<ColumnsMode>Fill</ColumnsMode>
+				<Style>DialogContent</Style>
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormButtonGroupControl">
+				<Name>ButtonGroup</Name>
+				<ElementPosition>1073741822</ElementPosition>
+				<FilterExpression>%1</FilterExpression>
+				<LeftMode>AutoLeft</LeftMode>
+				<Type>ButtonGroup</Type>
+				<VerticalSpacing>-1</VerticalSpacing>
+				<WidthMode>SizeToAvailable</WidthMode>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormCommandButtonControl">
+						<Name>OKButton</Name>
+						<ElementPosition>1073741822</ElementPosition>
+						<FilterExpression>%1</FilterExpression>
+						<HeightMode>Auto</HeightMode>
+						<Type>CommandButton</Type>
+						<VerticalSpacing>-1</VerticalSpacing>
+						<WidthMode>Auto</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Command>OK</Command>
+						<DefaultButton>Yes</DefaultButton>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormCommandButtonControl">
+						<Name>CancelButton</Name>
+						<ElementPosition>1610612733</ElementPosition>
+						<FilterExpression>%1</FilterExpression>
+						<HeightMode>Auto</HeightMode>
+						<Type>CommandButton</Type>
+						<VerticalSpacing>-1</VerticalSpacing>
+						<WidthMode>Auto</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Command>Cancel</Command>
+						<SaveRecord>No</SaveRecord>
+					</AxFormControl>
+				</Controls>
+				<ArrangeMethod>HorizontalRight</ArrangeMethod>
+				<Style>DialogCommitContainer</Style>
+			</AxFormControl>
+		</Controls>
+	</Design>
+	<Parts />
+</AxForm>

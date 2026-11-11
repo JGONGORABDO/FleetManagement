@@ -1,0 +1,1 @@
+This folder contains "database" category of images such as cars and people. Should be removed from the depot in the future.

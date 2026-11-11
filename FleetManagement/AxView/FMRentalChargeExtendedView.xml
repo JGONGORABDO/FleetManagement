@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalChargeExtendedView</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMRentalChargeExtendedView extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>compColumnRentalStartDate</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///   Computed column expression to provide a DATE field for Rental Start Date
+    /// </summary>
+    public static str compColumnRentalStartDate()
+    {
+
+        return strFmt("convert(datetime, convert( date, %1))", SysComputedColumn::returnfield(tableStr(FMRentalChargeExtendedView), tableStr(FMRental), fieldStr(FMRental, StartDate)));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>compColumnRentalTranstDate</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///   Computed column expression to provide a DATE field for Rental Trans Date
+    /// </summary>
+    public static str compColumnRentalTranstDate()
+    {
+
+        return strFmt("convert(datetime, convert( date, %1))", SysComputedColumn::returnfield(tableStr(FMRentalChargeExtendedView), tableStr(FMRental), fieldStr(FMRental, EndDate)));
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Customer</Name>
+			<DataField>Customer</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>EndDate</Name>
+			<DataField>EndDate</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>EndFuelLevel</Name>
+			<DataField>EndFuelLevel</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>EndMileage</Name>
+			<DataField>EndMileage</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>PaymentInformationID</Name>
+			<DataField>PaymentInformationID</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>RentalId</Name>
+			<DataField>RentalId</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>_Del_StartDate</Name>
+			<DataField>StartDate</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>StartFuelLevel</Name>
+			<DataField>StartFuelLevel</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>StartMileage</Name>
+			<DataField>StartMileage</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>State</Name>
+			<DataField>State</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Vehicle</Name>
+			<DataField>Vehicle</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ChargeType</Name>
+			<DataField>ChargeType</DataField>
+			<DataSource>FMRentalCharge</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Description</Name>
+			<DataField>Description</DataField>
+			<DataSource>FMRentalCharge</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ExtendedAmount</Name>
+			<DataField>ExtendedAmount</DataField>
+			<DataSource>FMRentalCharge</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>PerUnitAmount</Name>
+			<DataField>PerUnitAmount</DataField>
+			<DataSource>FMRentalCharge</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Quantity</Name>
+			<DataField>Quantity</DataField>
+			<DataSource>FMRentalCharge</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>_Del_TranDate</Name>
+			<DataField>EndDate</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldComputedDate">
+			<Name>TranDate</Name>
+			<ExtendedDataType>EndDate</ExtendedDataType>
+			<ViewMethod>compColumnRentalTranstDate</ViewMethod>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldComputedDate">
+			<Name>StartDate</Name>
+			<ExtendedDataType>StartDate</ExtendedDataType>
+			<ViewMethod>compColumnRentalStartDate</ViewMethod>
+		</AxViewField>
+	</Fields>
+	<Indexes />
+	<Mappings />
+	<Relations />
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods />
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMRental</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMRental</Table>
+				<DataSources>
+					<AxQuerySimpleEmbeddedDataSource>
+						<Name>FMRentalCharge</Name>
+						<DynamicFields>Yes</DynamicFields>
+						<Table>FMRentalCharge</Table>
+						<DataSources />
+						<DerivedDataSources />
+						<Fields />
+						<Ranges />
+						<Relations>
+							<AxQuerySimpleDataSourceRelation>
+								<Name>QueryDataSourceRelation1</Name>
+								<Field>RentalId</Field>
+								<JoinDataSource>FMRental</JoinDataSource>
+								<RelatedField>RentalId</RelatedField>
+							</AxQuerySimpleDataSourceRelation>
+						</Relations>
+					</AxQuerySimpleEmbeddedDataSource>
+				</DataSources>
+				<DerivedDataSources />
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxView>

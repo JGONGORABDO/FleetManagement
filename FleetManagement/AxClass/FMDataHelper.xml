@@ -1,0 +1,2597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMDataHelper</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMDataHelper
+{
+    #define.FMSvcTechUserId('FMSvcTec')
+    #define.FMClerkUserId('FMClerk')
+    #define.FMManagerUserId('FMMgr')
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>initializeNumberSequence</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Create a number sequence reference for the default scope.
+    /// </summary>
+    /// <param name = "_edt">The extended data type of the number seqeunce.</param>
+    private static void initializeNumberSequence(ExtendedTypeId _edt, boolean resetWizardDefaults)
+    {
+        NumberSequenceReference sequenceReference;
+        NumberSequenceTable sequence;
+        NumberSeqDatatype dataTypeObject;
+        NumberSequenceDatatype dataTypeRecord;
+        NumberSeqScope scope;
+
+        if (_edt)
+        {
+            sequenceReference = NumberSequenceTable::autoCreate(_edt);
+            if (sequenceReference && resetWizardDefaults)
+            {
+                ttsbegin;
+                sequence = NumberSequenceTable::find(sequenceReference.NumberSequenceId, true);
+                if (sequence)
+                {
+                    dataTypeObject = NumberSeqDatatype::construct();
+                    dataTypeObject.find(_edt);
+                    scope = NumberSeqScopeFactory::createDefaultScope(dataTypeObject);
+
+                    dataTypeRecord = NumberSequenceDatatype::find(dataTypeObject.parmRecId());
+
+                    sequence.AllowChangeDown = dataTypeRecord.WizardAllowChangeDown;
+                    sequence.AllowChangeUp = dataTypeRecord.WizardAllowChangeUp;
+                    sequence.AnnotatedFormat = dataTypeRecord.wizardAnnotatedFormat(scope, dataTypeRecord.wizardHighest, true);
+                    sequence.Continuous = dataTypeRecord.WizardContinuous;
+                    sequence.FetchAheadQty = dataTypeRecord.WizardFetchAheadQty;
+                    sequence.Format = dataTypeRecord.wizardFormat(scope, dataTypeRecord.WizardHighest, true);
+                    sequence.Highest = dataTypeRecord.WizardHighest;
+                    sequence.Lowest = dataTypeRecord.WizardLowest;
+                    sequence.Manual = dataTypeRecord.WizardManual;
+                    sequence.NextRec = 1;
+                    sequence.update();
+                }
+                ttscommit;
+            }
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args _args)
+    {
+        FmDataHelper::cleanupBrokenNumberSequences();
+
+        FMDataHelper::ConfigureTotalsEngine();
+
+        FmDataHelper::populateData_Silent();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ConfigureTotalsEngine</Name>
+				<Source><![CDATA[
+    public static void ConfigureTotalsEngine()
+    {
+        FMParameters FMParam = FMParameters::find(true);
+
+        ttsbegin;
+        FMParam.TotalsEngine = "Default";
+        FMParam.update();
+        ttscommit;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>cleanupBrokenNumberSequences</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Some of the NumberSequenceDatatype records referr to non-existent modules.
+    /// This method deletes them so that number sequence setup can succeed.
+    /// </summary>
+    private static void cleanupBrokenNumberSequences()
+    {
+        NumberSequenceDatatype nsdt;
+
+        ttsbegin;
+
+        delete_from nsdt where nsdt.module == -1;
+
+        ttscommit;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>cleanup</Name>
+				<Source><![CDATA[
+    public static void cleanup() 
+    {
+        FMVehicle vehicle;
+
+        FMRental rental;
+        FMRentalCharge rentalCharge;
+        FMChargeType chargetype;
+        FMCustGroup custGroup;
+
+        FMCustomer customer;
+        FMVehicleMake make;
+        FMVehicleModel model;
+        FMSUVSafetyRating safetyRating;
+        FMVehicleRate vehicleRate;
+
+        FMComments com; 
+        FMCustomerComments custComments; 
+
+        FMAddressTable address;
+        FMPaymentInformation payments;
+        FMModelRate makeModelRate;
+        FMCarColor carColors;
+        
+        OMUserRoleOrganization userRoleOrganization;
+
+        delete_from address;
+        delete_from payments;
+        delete_from makeModelRate;
+        delete_from carColors;
+        delete_from custComments; 
+        delete_from com; 
+        
+
+        delete_from vehicle;
+
+        delete_from rental;
+        delete_from rentalCharge;
+        delete_from chargetype;
+
+        delete_from customer;
+        delete_from custGroup;
+
+        delete_from make;
+        delete_from model;
+
+        delete_from safetyRating;
+
+        delete_from vehicleRate;
+        delete_from userRoleOrganization;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>createOperatingUnit</Name>
+				<Source><![CDATA[
+    public static void createOperatingUnit(DirPartyName name, OMOperatingUnitType ouType, NameAlias nameAlias)
+    {
+        OMOperatingUnit ou;
+
+        select firstonly ou where ou.Name == name;
+        if (!ou)
+        {
+            ou.omOperatingUnitType = ouType;
+            ou.Name = name;
+            ou.NameAlias = nameAlias;
+            ou.insert();
+            ou.clear();
+        }
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>IsManagedDataAccess</Name>
+				<Source><![CDATA[
+    public static boolean IsManagedDataAccess()
+    {
+        return Microsoft.Dynamics.Ax.Xpp.DataAccess.Helper::IsManagedDataAccess();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmCarClassInsert</Name>
+				<Source><![CDATA[
+    public static void fmCarClassInsert()
+    {   
+        FMCarClass carClass;
+        FMVehicleModel model;
+        UnitofWork uoW;
+        OMOperatingUnit ou;
+        
+        // added car colors white, gray and orange. updated car counts to reflect unique car per vin
+        FMCarColor color;
+        
+
+        uoW = new UnitofWork();
+
+        ///////////////////////////////////////////
+        //     Adventure Works Fuji Models       //
+        ///////////////////////////////////////////
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            select firstonly model where model.Model == 'Fuji';
+        }
+        else
+        {
+            select firstonly forupdate model where model.Model == 'Fuji';
+        }
+        
+        // Red Adventure Works Fuji 1
+        model.VehicleCount = model.VehicleCount +1;
+        uoW.updateonSaveChanges(model);
+        select firstonly color where color.Name == 'Red';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Fuji_1';
+        carClass.Description = '2013 Adventure Works Fuji';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Recalled;
+        carClass.FuelType = FMFuelType::Standard;
+        carClass.GrossVehicleWeight =2000;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 300;
+        carClass.Vin = '2FMDA51636B116436';
+        carClass.Mpg = 32;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Very sporty car, small trunk';
+        select firstonly ou where ou.Name == 'Redmond';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+
+        // Red Adventure Works Fuji 2
+        model.VehicleCount = model.VehicleCount +1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        carClass=null;
+        select firstonly color where color.Name == 'Red';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Fuji_2';
+        carClass.Description = '2013 Adventure Works Fuji';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Standard;
+        carClass.GrossVehicleWeight =2000;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 1010;
+        carClass.Vin = '1HGEJ8226VL008613';
+        carClass.Mpg = 32;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Very sporty car, small trunk';
+        select firstonly ou where ou.Name == 'Redmond';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+
+        carClass=null;
+        // White Adventure Works Fuji 1
+        model.VehicleCount = model.VehicleCount +1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;        
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Fuji_3';
+        carClass.Description = '2013 Adventure Works Fuji';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Standard;
+        carClass.GrossVehicleWeight =2000;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 10;
+        carClass.Vin = '3VWDC01H8SM681440';
+        carClass.Mpg = 32;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Very sporty car, small trunk';
+        select firstonly ou where ou.Name == 'Redmond';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+
+        ///////////////////////////////////////////
+        //     Adventure Works Makalu Models     //
+        ///////////////////////////////////////////
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            select firstonly model where model.Model == 'Makalu';
+        }
+        else
+        {
+            select firstonly forupdate model where model.Model == 'Makalu';
+        }        
+        carClass=null;
+        // Red Adventure Works Makalu 1
+        model.VehicleCount = model.VehicleCount + 1;
+        uoW.updateonSaveChanges(model);
+        select firstonly color where color.Name == 'Red';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Makalu_1';
+        carClass.Description = '2014 Adventure Works Makalu';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2200;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 120;
+        carClass.Vin = '9BWCA0306HP364681';
+        carClass.Mpg = 27;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes AWD.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // Red Adventure Works Makalu 2
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'Red';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Makalu_2';
+        carClass.Description = '2014 Adventure Works Makalu';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2200;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 2320;
+        carClass.Vin = '2FTEF25H1FC272098';
+        carClass.Mpg = 27;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes AWD.';
+        select firstonly ou where ou.Name == 'Downtown Seattle';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // White Adventure Works Makalu 3
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Makalu_3';
+        carClass.Description = '2014 Adventure Works Makalu';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2200;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 110;
+        carClass.Vin = '1GTJK34U11F677019';
+        carClass.Mpg = 27;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes AWD.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // White Adventure Works Makalu 4
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Makalu_4';
+        carClass.Description = '2014 Adventure Works Makalu';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2200;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 1210;
+        carClass.Vin = 'JT2BG22K710182787';
+        carClass.Mpg = 27;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes AWD.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // White Adventure Works Makalu 5
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Makalu_5';
+        carClass.Description = '2014 Adventure Works Makalu';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2200;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 4210;
+        carClass.Vin = 'JM1BK324991205263';
+        carClass.Mpg = 27;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes AWD.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // White Adventure Works Makalu 6
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Makalu_6';
+        carClass.Description = '2014 Adventure Works Makalu';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2200;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 240;
+        carClass.Vin = 'JM1BK324991205263';
+        carClass.Mpg = 27;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes AWD.';
+        select firstonly ou where ou.Name == 'Downtown Seattle';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // White Adventure Works Makalu 7
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Makalu_7';
+        carClass.Description = '2014 Adventure Works Makalu';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2200;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 10;
+        carClass.Vin = '1B7GG2AN41S020726';
+        carClass.Mpg = 27;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes AWD.';
+        select firstonly ou where ou.Name == 'LAX Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+
+        ///////////////////////////////////////////
+        //     Adventure Works Shasta Models     //
+        ///////////////////////////////////////////
+        carClass=null;        
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            select firstonly model where model.Model == 'Shasta';
+        }
+        else
+        {
+            select firstonly forupdate model where model.Model == 'Shasta';
+        }
+        // Gray Adventure Works Shasta 1
+        model.VehicleCount = model.VehicleCount + 1;
+        uoW.updateonSaveChanges(model);
+        select firstonly color where color.Name == 'Gray';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Shasta_1';
+        carClass.Description = '2012 Adventure Works Shasta';
+        carClass.Color = FMColor::Gray;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =1800;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 390;
+        carClass.Vin = 'JH4KA8265PC545754';
+        carClass.Mpg = 20;
+        carClass.Transmission = FMTransmission::Manual;
+        carClass.Note = 'Includes Twin Turbo.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 2;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // Gray Adventure Works Shasta 2
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'Gray';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Shasta_2';
+        carClass.Description = '2012 Adventure Works Shasta';
+        carClass.Color = FMColor::Gray;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =1800;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 8560;
+        carClass.Vin = 'WVWHL7ANXAE092381';
+        carClass.Mpg = 20;
+        carClass.Transmission = FMTransmission::Manual;
+        carClass.Note = 'Includes Twin Turbo.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 2;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // Gray Adventure Works Shasta 3
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'Gray';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Shasta_3';
+        carClass.Description = '2012 Adventure Works Shasta';
+        carClass.Color = FMColor::Gray;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =1800;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 230;
+        carClass.Vin = '1GTCS1940Y8177518';
+        carClass.Mpg = 20;
+        carClass.Transmission = FMTransmission::Manual;
+        carClass.Note = 'Includes Twin Turbo.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 2;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // Gray Adventure Works Shasta 4
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'Gray';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'AdventureWorks_Shasta_4';
+        carClass.Description = '2012 Adventure Works Shasta';
+        carClass.Color = FMColor::Gray;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =1800;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 4560;
+        carClass.Vin = '5GZLRVED0AJ854587';
+        carClass.Mpg = 20;
+        carClass.Transmission = FMTransmission::Manual;
+        carClass.Note = 'Includes Twin Turbo.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 2;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+
+        ///////////////////////////////////////////
+        //            Adatum One Models          //
+        ///////////////////////////////////////////
+        carClass=null;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            select firstonly model where model.Model == 'One';
+        }
+        else
+        {
+            select firstonly forupdate model where model.Model == 'One';
+        }                
+        // Red Adatum One 1
+        model.VehicleCount = model.VehicleCount + 1;
+        uoW.updateonSaveChanges(model);
+        select firstonly color where color.Name == 'Red';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Adatum_One_1';
+        carClass.Description = '2013 Adatum One';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Standard;
+        carClass.GrossVehicleWeight =1700;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 290;
+        carClass.Vin = 'JA3AD69F74U965454';
+        carClass.Mpg = 31;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes hatchback trunk.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 5;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // Red Adatum One 2
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'Red';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Adatum_One_2';
+        carClass.Description = '2013 Adatum One';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Standard;
+        carClass.GrossVehicleWeight =1700;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 90;
+        carClass.Vin = '2G2AF69A7B1250266';
+        carClass.Mpg = 31;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes hatchback trunk.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 5;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // White Adatum One 3
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Adatum_One_3';
+        carClass.Description = '2013 Adatum One';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Standard;
+        carClass.GrossVehicleWeight =1700;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 4390;
+        carClass.Vin = '1FTDF14F2BN093305';
+        carClass.Mpg = 31;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes hatchback trunk.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 5;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // White Adatum One 4
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Adatum_One_4';
+        carClass.Description = '2013 Adatum One';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Standard;
+        carClass.GrossVehicleWeight =1700;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 12;
+        carClass.Vin = '1FTFF26G4BN744132';
+        carClass.Mpg = 31;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes hatchback trunk.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 5;
+        uoW.insertonSaveChanges(carClass);
+
+        ///////////////////////////////////////////
+        //          Adatum Four Models           //
+        ///////////////////////////////////////////
+        carClass=null;
+        select firstonly model where model.Model == 'Four';
+
+        // Red Adatum Four 1
+        model.VehicleCount = model.VehicleCount + 1;
+        uoW.updateonSaveChanges(model);
+        select firstonly color where color.Name == 'Red';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Adatum_Four_1';
+        carClass.Description = '2014 Adatum Four';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2400;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 290;
+        carClass.Vin = 'JM1BW6220J0446336';
+        carClass.Mpg = 26;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes front driver and passenger seat warmers.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 5;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // Red Adatum Four 2
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'Red';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Adatum_Four_2';
+        carClass.Description = '2014 Adatum Four';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2400;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 120;
+        carClass.Vin = 'WAUXL58E15A104563';
+        carClass.Mpg = 26;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Includes front driver and passenger seat warmers.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 4;
+        carClass.SeatingCapacity = 5;
+        uoW.insertonSaveChanges(carClass);
+
+        ///////////////////////////////////////////
+        //          Adatum Ninety-Nine Models    //
+        ///////////////////////////////////////////
+        carClass=null;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            select firstonly model where model.Model == 'Ninety-Nine';
+        }
+        else
+        {
+            select firstonly forupdate model where model.Model == 'Ninety-Nine';
+        }                
+        // Orange Adatum Niniety-Nine 1
+        model.VehicleCount = model.VehicleCount + 1;
+        uoW.updateonSaveChanges(model);
+        select firstonly color where color.Name == 'Orange';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Adatum_Ninety-Nine_1';
+        carClass.Description = '2014 Adatum Ninety-Nine';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2400;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 290;
+        carClass.Vin = 'JM1BW6220J0446336';
+        carClass.Mpg = 21;
+        carClass.Transmission = FMTransmission::Manual;
+        carClass.Note = 'All models are hardtop convertibles.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 2;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // Orange Adatum Niniety-Nine 2
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'Orange';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Adatum_Ninety-Nine_2';
+        carClass.Description = '2014 Adatum Ninety-Nine';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2400;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 40;
+        carClass.Vin = '5TBEV54167S941329';
+        carClass.Mpg = 21;
+        carClass.Transmission = FMTransmission::Manual;
+        carClass.Note = 'All models are hardtop convertibles.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 2;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // Orange Adatum Niniety-Nine 3
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'Orange';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Adatum_Ninety-Nine_3';
+        carClass.Description = '2014 Adatum Ninety-Nine';
+        carClass.Color = FMColor::Red;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =2400;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 410;
+        carClass.Vin = '2CTFLGEY3A6372986';
+        carClass.Mpg = 21;
+        carClass.Transmission = FMTransmission::Manual;
+        carClass.Note = 'All models are hardtop convertibles.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 2;
+        carClass.SeatingCapacity = 4;
+        uoW.insertonSaveChanges(carClass);
+
+        ///////////////////////////////////////////
+        //         Proseware KX Models           //
+        ///////////////////////////////////////////
+        carClass=null;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            select firstonly model where model.Model == 'KX';
+        }
+        else
+        {
+            select firstonly forupdate model where model.Model == 'KX';
+        }                
+        // White Proseware KX 1
+        model.VehicleCount = model.VehicleCount + 1;
+        uoW.updateonSaveChanges(model);
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Proseware_KX_1';
+        carClass.Description = '2013 Proseware KX';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =1400;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 290;
+        carClass.Vin = '2GTEC14K0L1406089';
+        carClass.Mpg = 20;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Hybrids equipped with extra cupholders.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 2;
+        carClass.SeatingCapacity = 2 ;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // White Proseware KX 2
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Proseware_KX_2';
+        carClass.Description = '2013 Proseware KX';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =1400;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 290;
+        carClass.Vin = 'YS3AK35D3J3718520';
+        carClass.Mpg = 20;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Hybrids equipped with extra cupholders.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 2;
+        carClass.SeatingCapacity = 2;
+        uoW.insertonSaveChanges(carClass);
+        carClass=null;
+        // White Proseware KX 3
+        model.VehicleCount = model.VehicleCount + 1;
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            uoW.updateonSaveChanges(model);
+        }
+        select firstonly color where color.Name == 'White';
+        carClass.ColorID = color.RecId;
+        carClass.fmVehicleModel(model);
+        carClass.VehicleId = 'Proseware_KX_3';
+        carClass.Description = '2013 Proseware KX';
+        carClass.Color = FMColor::White;
+        carClass.Status = FMVehicleStatus::Available;
+        carClass.FuelType = FMFuelType::Premium;
+        carClass.GrossVehicleWeight =1400;
+        carClass.GpsEnabled = FMGPSEnabled::Yes;
+        carClass.Mileage = 290;
+        carClass.Vin = '1GCHK34D07E261749';
+        carClass.Mpg = 20;
+        carClass.Transmission = FMTransmission::Auto;
+        carClass.Note = 'Hybrids equipped with extra cupholders.';
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        carClass.OmInternalOrganization = ou.RecId;
+        carClass.NumberOfDoors = 2;
+        carClass.SeatingCapacity = 2;
+        uoW.insertonSaveChanges(carClass);
+
+        uoW.saveChanges();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmChargeTypeInsert</Name>
+				<Source><![CDATA[
+    public static void fmChargeTypeInsert()
+    {
+        FMChargeType chargetype;
+        container imageContainer;
+        resourceNode resourceNode;
+
+        //PopulateChargeType
+        ttsbegin;
+        chargetype.ChargeType = 'Car pickup';
+        chargetype.Description = 'We arrange pickup from another location.';
+        chargetype.PerUnitAmount = 35;
+        chargetype.DefaultQuantity = 1;
+        resourceNode = SysResource::getResourceNode(resourceStr(VehiclePickup));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            chargetype.Image = imageContainer;
+        }
+        chargetype.insert();
+
+        chargetype.ChargeType = 'Carbon fee';
+        chargetype.Description = 'Help offset carbon emissions.';
+        chargetype.PerUnitAmount = 5;
+        chargetype.DefaultQuantity = 1;
+        resourceNode = SysResource::getResourceNode(resourceStr(CarbonFee));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            chargetype.Image = imageContainer;
+        }
+        chargetype.insert();
+
+        chargetype.ChargeType = 'Tank refill';
+        chargetype.Description = 'We refill the gas tank.';
+        chargetype.PerUnitAmount = 40;
+        chargetype.DefaultQuantity = 1;
+        resourceNode = SysResource::getResourceNode(resourceStr(Refuel));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            chargetype.Image = imageContainer;
+        }
+        chargetype.insert();
+
+        // former Addons
+        chargetype.ChargeType = 'Tire Chains';
+        chargetype.Description = 'A set of chains for snowy destinations.';
+        chargetype.DefaultQuantity = 4;
+        chargetype.PerUnitAmount = 2.0;
+        resourceNode = SysResource::getResourceNode(resourceStr(TireChains));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            chargetype.Image = imageContainer;
+        }
+        chargetype.insert();
+        
+        chargetype.ChargeType = 'Child Seat';
+        chargetype.Description = 'Child seats for small children.';
+        chargetype.DefaultQuantity = 1;
+        chargetype.PerUnitAmount = 10.0;
+        resourceNode = SysResource::getResourceNode(resourceStr(ChildSeat));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            chargetype.Image = imageContainer;
+        }
+        chargetype.insert();
+
+        chargetype.ChargeType = 'GPS';
+        chargetype.Description = 'Comes preloaded with a local map.';
+        chargetype.PerUnitAmount = 20.0;
+        chargetype.DefaultQuantity = 1;
+        resourceNode = SysResource::getResourceNode(resourceStr(GPS));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            chargetype.Image = imageContainer;
+        }
+        chargetype.insert();
+        
+        chargetype.ChargeType = 'Satellite Radio';
+        chargetype.Description = 'Satellite radio provides over 50 channels.';
+        chargetype.PerUnitAmount = 15.0;
+        chargetype.DefaultQuantity = 1;
+        resourceNode = SysResource::getResourceNode(resourceStr(SatelliteRadio));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            chargetype.Image = imageContainer;
+        }
+        chargetype.insert();
+        ttscommit;
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmCustGroupInsert</Name>
+				<Source><![CDATA[
+    public static void fmCustGroupInsert()
+    {
+        FMCustGroup custGroup;
+
+        //PopulateCustGroup
+        ttsbegin;
+        custGroup.CustGroup = 'non_mem_1';
+        custGroup.Description = 'Non-Member';
+        custGroup.insert();
+        custGroup.CustGroup = 'adv_mem_1';
+        custGroup.Description = 'Advantage Member';
+        custGroup.insert();
+        custGroup.CustGroup = 'exec_mem_1';
+        custGroup.Description = 'Executive Member';
+        custGroup.insert();
+        ttscommit;
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmCustomerInsert</Name>
+				<Source><![CDATA[
+    public static void fmCustomerInsert()
+    {
+        FMCustomer customer;
+        
+        FMAddressTable address;
+        FMPaymentInformation payment;
+        
+       
+        resourceNode resourceNode;
+        container imageContainer;
+
+        //Populate Customer
+        ttsbegin;
+        customer.FirstName = 'Charlie';
+        customer.LastName = 'Carson';
+        customer.CellPhone = '662-555-0149';
+        customer.DriverLicense = 'WA00000000000000';
+        customer.Email = 'charlie@contoso.com';
+        customer.CustGroup = 'adv_mem_1';
+        
+        address.AddressLine1 = '3456 Oak Lane';
+        address.City = 'Auburn';
+        address.Country = 'US';
+        address.State = 'WA';
+        address.ZipCode = 98116;
+        address.insert();
+        customer.AddressID = address.RecId;
+
+        resourceNode = SysResource::getResourceNode(resourceStr(VinceGray_png));
+        if (resourceNode != null)
+        {            
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.Image = imageContainer;            
+        }
+
+        resourceNode = SysResource::getResourceNode(resourceStr(DriversLicense_png));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.LicenseImage = imageContainer;
+        }
+        //END
+        customer.insert();
+
+        //////////////////////////////////////////////////////////////////////////////
+
+        customer.FirstName = 'Eduardo';
+        customer.LastName = 'Cobo';
+        customer.CellPhone = '937-555-0105';
+        customer.DriverLicense = 'WA00000000000001';
+        customer.Email = 'eduardo@contoso.com';
+        customer.CustGroup = 'non_mem_1';
+        
+        address.AddressLine1 = '123 Magnolia Court';
+        address.City = 'Berkeley';
+        address.Country = 'US';
+        address.State = 'CA';
+        address.ZipCode = 94116;
+        address.insert();
+        customer.AddressID = address.RecId;
+        
+        resourceNode = SysResource::getResourceNode(resourceStr(TonyMadigan_png));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.Image = imageContainer;
+        }
+
+        resourceNode = SysResource::getResourceNode(resourceStr(DriversLicense_png));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.LicenseImage = imageContainer;
+        }
+        //END
+        
+        customer.insert();
+
+        //////////////////////////////////////////////////////////////////////////////
+
+        customer.FirstName = 'Lars';
+        customer.LastName = 'Guisti';
+        customer.CellPhone = '787-555-0189';
+        customer.DriverLicense = 'WA00000000000002';
+        customer.Email = 'lars@contoso.com';
+        customer.CustGroup = 'adv_mem_1';
+        
+        address.AddressLine1 = '456 Silver Drive';
+        address.City = 'Arkansas City';
+        address.Country = 'US';
+        address.State = 'AK';
+        address.ZipCode = 71601;
+        address.insert();
+        customer.AddressID = address.RecId;
+        
+        resourceNode = SysResource::getResourceNode(resourceStr(LukeWalters_png));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.Image = imageContainer;
+        }
+
+        resourceNode = SysResource::getResourceNode(resourceStr(DriversLicense_png));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.LicenseImage = imageContainer;
+        }
+        //END
+     
+        customer.insert();
+
+        //////////////////////////////////////////////////////////////////////////////
+
+        customer.FirstName = 'Pierre';
+        customer.LastName = 'Schindler';
+        customer.CellPhone = '415-555-0138';
+        customer.DriverLicense = 'WA00000000000003';
+        customer.Email = 'pierre@contoso.com';
+        customer.CustGroup = 'non_mem_1';
+
+        
+        address.AddressLine1 = '456 Peach Street';        
+        address.City = 'Huntsville';
+        address.Country = 'US';
+        address.State = 'AL';
+        address.ZipCode = 35004;
+        address.insert();
+        customer.AddressID = address.RecId;
+        
+        resourceNode = SysResource::getResourceNode(resourceStr(LarsGiusti_png));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.Image = imageContainer;
+        }
+
+        resourceNode = SysResource::getResourceNode(resourceStr(DriversLicense_png));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.LicenseImage = imageContainer;
+        }
+        //END
+       
+        customer.insert();
+
+        //////////////////////////////////////////////////////////////////////////////
+
+        customer.FirstName = 'Ted';
+        customer.LastName = 'Howard';
+        customer.CellPhone = '423-555-0152';
+        customer.DriverLicense = 'WA00000000000004';
+        customer.Email = 'ted@contoso.com';
+        customer.CustGroup = 'non_mem_1';
+        
+        address.AddressLine1 = '789 Pear Street';      
+        address.City = 'Madison Heights';
+        address.Country = 'US';
+        address.State = 'MI';
+        address.ZipCode = 48216;
+        address.insert();
+        customer.AddressID = address.RecId;
+        
+        resourceNode = SysResource::getResourceNode(resourceStr(JohnRamirez_png));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.Image = imageContainer;
+        }
+
+        resourceNode = SysResource::getResourceNode(resourceStr(DriversLicense_png));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.LicenseImage = imageContainer;
+        }
+        //END
+
+        customer.insert();
+        
+        //////////////////////////////////////////////////////////////////////////////
+
+        customer.FirstName = 'Inga';
+        customer.LastName = 'Numadutir';
+        customer.CellPhone = '719-555-0137';
+        customer.DriverLicense = 'WA00000000000005';
+        customer.Email = 'inga@contoso.com';
+        customer.CustGroup = 'exec_mem_1';       
+        
+        address.AddressLine1 = '234 Main Street';
+        address.City = 'Amea';
+        address.Country = 'US';
+        address.State = 'IA';
+        address.ZipCode = 50144;
+        address.insert();
+        customer.AddressID = address.RecId;
+        
+        resourceNode = SysResource::getResourceNode(resourceStr(Nandita));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.Image = imageContainer;
+        }
+
+        resourceNode = SysResource::getResourceNode(resourceStr(DriversLicense_png));
+        if (resourceNode != null)
+        {
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            customer.LicenseImage = imageContainer;
+        }
+        //END
+
+        customer.insert();
+        
+        ttscommit;
+        
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmMakeModelInsert</Name>
+				<Source><![CDATA[
+    public static void fmMakeModelInsert()
+    {
+        FMVehicleMake make;
+        FMVehicleModel model;
+        FMModelRate rate;
+        UnitofWork uoW;
+
+        resourceNode resourceNode;
+        container imageContainer;
+
+        ttsbegin;
+        make.Make = 'Adatum';
+        make.insert();
+        make.Make = 'Adventure Works';
+        make.insert();
+        make.Make = 'Litware';
+        make.insert();
+        make.Make = 'Proseware';
+        make.insert();
+        ttscommit;        
+        
+        uoW = new UnitofWork();
+
+        // Litware Models
+        select firstonly make where make.Make == 'Litware';
+        model.Model = 'Whistler';        
+        model.Year = 2014;
+        model.VehicleCount = 0;        
+        model.ModelSpec = 'Litware made Whistler truck';
+        model.fmVehicleMake(make);
+        
+
+        resourceNode = SysResource::getResourceNode(resourceStr(Litware_Whistler_yellow));
+        if (resourceNode != null)
+        {
+            //resourceNode.AOTload();
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            model.Image = imageContainer;
+            model.ImageFormat = 'png';
+        }
+
+        uoW.insertonSaveChanges(model);
+        model=null;
+        model.Model = 'McKinley';        
+        model.Year = 2013;
+        model.VehicleCount = 0;        
+        model.ModelSpec = 'Litware made McKinley truck';
+        model.fmVehicleMake(make);
+
+        resourceNode = SysResource::getResourceNode(resourceStr(Litware_McKinley_redwhite));
+        if (resourceNode != null)
+        {
+            //resourceNode.AOTload();
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            model.Image = imageContainer;
+            model.ImageFormat = 'png';
+        }
+
+        uoW.insertonSaveChanges(model);
+        model=null;
+        model.Model = 'Litware Four';        
+        model.Year = 2014;
+        model.VehicleCount = 0;        
+        model.ModelSpec = 'Litware made Litware Four SUV';
+        model.fmVehicleMake(make);
+
+        resourceNode = SysResource::getResourceNode(resourceStr(Litware_LitwareFour_gray));
+        if (resourceNode != null)
+        {
+            //resourceNode.AOTload();
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            model.Image = imageContainer;
+            model.ImageFormat = 'png';
+        }
+
+        uoW.insertonSaveChanges(model);
+        model=null;
+        // Adventure Works models
+        select firstonly make where make.Make == 'Adventure Works';
+        model.Model = 'Fuji';        
+        model.Year = 2013;
+        model.VehicleCount = 0;        
+        model.ModelSpec = 'Adventure Works made Fuji car';
+        model.fmVehicleMake(make);
+        
+        resourceNode = SysResource::getResourceNode(resourceStr(AdventureWorks_Fuji_red));
+        if (resourceNode != null)
+        {
+            //  resourceNode.AOTload();
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            model.Image = imageContainer;
+            model.ImageFormat = 'png';
+        }
+
+        uoW.insertonSaveChanges(model);
+        model=null;
+        model.Model = 'Makalu';        
+        model.Year = 2014;
+        model.VehicleCount = 0;       
+        model.ModelSpec = 'Adventure Works made Makalu car';
+        model.fmVehicleMake(make);
+
+        resourceNode = SysResource::getResourceNode(resourceStr(AdventureWorks_Makalu_red));
+        if (resourceNode != null)
+        {
+            //   resourceNode.AOTload();
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            model.Image = imageContainer;
+            model.ImageFormat = 'png';
+        }
+
+        uoW.insertonSaveChanges(model);
+        model=null;
+        model.Model = 'Shasta';        
+        model.Year = 2012;
+        model.VehicleCount = 0;        
+        model.ModelSpec = 'Adventure Works made Shasta car';
+        model.fmVehicleMake(make);
+
+        resourceNode = SysResource::getResourceNode(resourceStr(AdventureWorks_Shasta_gray));
+        if (resourceNode != null)
+        {
+            //   resourceNode.AOTload();
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            model.Image = imageContainer;
+            model.ImageFormat = 'png';
+        }
+
+        uoW.insertonSaveChanges(model);
+        model=null;
+        // Adatum Models
+        select firstonly make where make.Make == 'Adatum';
+        model.Model = 'Four';        
+        model.Year = 2013;
+        model.VehicleCount = 0;        
+        model.ModelSpec = 'Adatum made Four car';
+        model.fmVehicleMake(make);
+
+        resourceNode = SysResource::getResourceNode(resourceStr(Adatum_Four_red));
+        if (resourceNode != null)
+        {
+            // resourceNode.AOTload();
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            model.Image = imageContainer;
+            model.ImageFormat = 'png';
+        }
+
+        uoW.insertonSaveChanges(model);
+        model=null;
+        model.Model = 'Ninety-Nine';        
+        model.Year = 2014;
+        model.VehicleCount = 0;        
+        model.ModelSpec = 'Adatum made Ninety-Nine car';
+        model.fmVehicleMake(make);
+
+        resourceNode = SysResource::getResourceNode(resourceStr(Adatum_Ninetynine_orange));
+        if (resourceNode != null)
+        {
+            // resourceNode.AOTload();
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            model.Image = imageContainer;
+            model.ImageFormat = 'png';
+        }
+
+        uoW.insertonSaveChanges(model);
+        model=null;
+        model.Model = 'One';        
+        model.Year = 2013;
+        model.VehicleCount = 0;        
+        model.ModelSpec = 'Adatum made One car';
+        model.fmVehicleMake(make);
+
+        resourceNode = SysResource::getResourceNode(resourceStr(Adatum_One_white));
+        if (resourceNode != null)
+        {
+            // resourceNode.AOTload();
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            model.Image = imageContainer;
+            model.ImageFormat = 'png';
+        }
+
+        uoW.insertonSaveChanges(model);
+        model=null;
+        // Proseware Models
+        select firstonly make where make.Make == 'Proseware';
+        model.Model = 'KX';        
+        model.Year = 2013;
+        model.VehicleCount = 0;        
+        model.ModelSpec = 'Proseware made KX car';
+        model.fmVehicleMake(make);
+
+        resourceNode = SysResource::getResourceNode(resourceStr(Proseware_KX_white));
+        if (resourceNode != null)
+        {
+            // resourceNode.AOTload();
+            imageContainer = SysResource::getResourceNodeData(resourceNode);
+            model.Image = imageContainer;
+            model.ImageFormat = 'png';
+        }
+
+        uoW.insertonSaveChanges(model);
+
+        uoW.saveChanges();
+
+        
+        ttsbegin;
+
+        rate.RatePerWeek = 300;
+        rate.RatePerDay = 45;
+        select firstonly model where model.Model == 'McKinley';
+        rate.MakeModelId = model.RecId;
+        rate.insert();
+
+        rate.RatePerWeek = 320;
+        rate.RatePerDay = 47;
+        select firstonly model where model.Model == 'Whistler';
+        rate.MakeModelId = model.RecId;
+        rate.insert();
+
+        rate.RatePerWeek = 270;
+        rate.RatePerDay = 40;
+        select firstonly model where model.Model == 'Litware Four';
+        rate.MakeModelId = model.RecId;
+        rate.insert();
+
+        rate.RatePerWeek = 250;
+        rate.RatePerDay = 37;
+        select firstonly model where model.Model == 'Makalu';
+        rate.MakeModelId = model.RecId;
+        rate.insert();
+
+        rate.RatePerWeek = 260;
+        rate.RatePerDay = 40;
+        select firstonly model where model.Model == 'Shasta';
+        rate.MakeModelId = model.RecId;
+        rate.insert();
+
+        rate.RatePerWeek = 195;
+        rate.RatePerDay = 30;
+        select firstonly model where model.Model == 'Fuji';
+        rate.MakeModelId = model.RecId;
+        rate.insert();
+
+        rate.RatePerWeek = 290;
+        rate.RatePerDay = 45;
+        select firstonly model where model.Model == 'Four';
+        rate.MakeModelId = model.RecId;
+        rate.insert();
+
+        rate.RatePerWeek = 220;
+        rate.RatePerDay = 35;
+        select firstonly model where model.Model == 'One';
+        rate.MakeModelId = model.RecId;
+        rate.insert();
+
+        rate.RatePerWeek = 305;
+        rate.RatePerDay = 45;
+        select firstonly model where model.Model == 'Ninety-Nine';
+        rate.MakeModelId = model.RecId;
+        rate.insert();
+
+        rate.RatePerWeek = 195;
+        rate.RatePerDay = 30;
+        select firstonly model where model.Model == 'KX';
+        rate.MakeModelId = model.RecId;
+        rate.insert();
+        ttscommit;        
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmRentalAndRentalChargeInsert</Name>
+				<Source><![CDATA[
+    public static void fmRentalAndRentalChargeInsert()
+    {
+        List scenarioList = new List(Types::Class);
+
+        void process()
+        {
+            FMRentalScenarios rentalScarios = new FMRentalScenarios();
+            FMRentalDetails rentalDtCur;
+
+            ListEnumerator en = scenarioList.getEnumerator();
+            while (en.moveNext())
+            {
+                // access the current entry in the list of scenarios
+                rentalDtCur = en.current();                
+
+                // insert the active rental scenario
+                rentalScarios.insertRentalEntity(rentalDtCur);
+            }
+        }
+
+
+        ///////////////////////////////////
+        // Vehicle Rental Information -        Driver's License,  Location,   Discount,      VID, Year, DateKey
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000000', 'REDMOND', 'Winter Madness', 0, 2010, 0));  // Customer: Charlie Carson
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000001', 'SEATAC', 'Winter Madness', 1, 2012, 0));   // Customer: Eduardo Cobo
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000002', 'SEATAC', 'Winter Madness', 1, 2013, 0));   // Customer: Lars Guisti
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000001', 'SEATAC', 'Winter Madness', 1, 2012, 0));   // Customer: Eduardo Cobo
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000004', 'SANJOSE', 'Winter Madness', 1, 2013, 0));  // Customer: Ted Howard
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000005', 'SEATAC', 'VIP Customer', 0, 2013, 0));     // Customer: Inga Numadutir
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000000', 'REDMOND', 'VIP Customer', 3, 2012, 0));    // Customer: Charlie Carson
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000002', 'SEATAC', 'Winter Madness', 3, 2012, 0));   // Customer: Lars Guisti
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000000', 'REDMOND', 'VIP Customer', 3, 2013, 0));    // Customer: Charlie Carson
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000001', 'REDMOND', 'Winter Madness', 2, 2012, 0));  // Customer: Eduardo Cobo
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000000', 'REDMOND', 'VIP Customer', 1, 2012, 0));    // Customer: Charlie Carson
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000004', 'SANJOSE', 'Winter Madness', 2, 2013, 0));  // Customer: Ted Howard
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000001', 'SEATAC', 'Winter Madness', 2, 2012, 0));   // Customer: Eduardo Cobo
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000002', 'REDMOND', 'Winter Madness', 3, 2013, 0));  // Customer: Lars Guisti
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000001', 'SEATAC', 'Winter Madness', 1, 2013, 0));   // Customer: Eduardo Cobo
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000005', 'SEATAC', 'VIP Customer', 1, 2013, 0));     // Customer: Inga Numadutir
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000000', 'REDMOND', 'VIP Customer', 2, 2012, 0));    // Customer: Charlie Carson
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000002', 'SEATAC', 'Winter Madness', 3, 2011, 0));   // Customer: Lars Guisti
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000002', 'REDMOND', 'Winter Madness', 3, 2010, 0));  // Customer: Lars Guisti
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000000', 'REDMOND', 'Winter Madness', 0, 2012, 0));  // Customer: Charlie Carson
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000000', 'REDMOND', 'Winter Madness', 1, 2010, 0));  // Customer: Charlie Carson
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000004', 'SANJOSE', 'Winter Madness', 0, 2013, 0));  // Customer: Ted Howard
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000000', 'REDMOND', 'VIP Customer', 3, 2013, 0));    // Customer: Charlie Carson
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000000', 'REDMOND', 'Winter Madness', 0, 2011, 0));  // Customer: Charlie Carson
+
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000005', 'SEATAC', 'VIP Customer', 2, 2013, 2));     // Customer: Inga Numadutir, returning today
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000002', 'SEATAC', 'Winter Madness', 1, 2013, 2));   // Customer: Lars Guisti, returning today
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000004', 'SANJOSE', 'Winter Madness', 0, 2013, 2));  // Customer: Ted Howard, returning today
+
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000000', 'REDMOND', 'VIP Customer', 3, 2013, 1));    // Customer: Charlie Carson, picking up today
+        scenarioList.addEnd(new FMRentalDetails('WA00000000000001', 'REDMOND', 'Winter Madness', 1, 2013, 1));  // Customer: Eduardo Cobo, picking up today
+        
+        // import the scenarios outlined
+        process();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmsuvInsert</Name>
+				<Source><![CDATA[
+    public static void fmsuvInsert()
+    {
+        FMSUV suv;
+        FMVehicleModel model;
+        FMSUVSafetyRating safetyRating;
+        UnitofWork uoW;
+        OMOperatingUnit ou;
+        FMCarColor color;
+      
+        uoW = new UnitofWork();
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            select firstonly model where model.Model == 'Litware Four';
+        }
+        else
+        {
+            select firstonly forupdate model where model.Model == 'Litware Four';
+        }        
+        model.VehicleCount = model.VehicleCount +1;
+        uoW.updateonSaveChanges(model);
+        select firstonly color where color.Name == 'Red';
+        suv.ColorID = color.RecId;
+        suv.fmVehicleModel(model);
+        suv.VehicleId = 'Litware_LitwareFour_1';
+        suv.Description = '2014 Litware Four';
+        suv.Color = FMColor::Red;
+        suv.Status = FMVehicleStatus::Available;
+        suv.FuelType = FMFuelType::Standard;
+        suv.GrossVehicleWeight =4500;
+        suv.GpsEnabled = FMGPSEnabled::No;
+        suv.Mileage = 60060;
+        suv.Vin = '2J4FY19P0NJ710529';
+        suv.Mpg = 19;
+        suv.Transmission = FMTransmission::Auto;
+        suv.Note = 'All models have AWD.';
+        select firstonly ou where ou.Name == 'Redmond';
+        suv.OmInternalOrganization = ou.RecId;
+        suv.NumberOfDoors = 4;
+        suv.SeatingCapacity = 5;
+        select firstonly safetyRating where safetyRating.SafetyRatingId == 'Litware_LitwareFour';
+        suv.fmsuvSafetyRating(safetyRating);
+        suv.ThirdRowCapacity = 0;
+        suv.TurningRadius = '1';
+        suv.GroundClearance = '1';
+
+        uoW.insertonSaveChanges(suv);
+
+        uoW.saveChanges();
+
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmsuvSafetyRatingInsert</Name>
+				<Source><![CDATA[
+    public static void fmsuvSafetyRatingInsert()
+    {
+        FMSUVSafetyRating safetyRating;
+
+        ttsbegin;
+        safetyRating.SafetyRatingId = 'Litware_LitwareFour';
+        safetyRating.RollOverRating = 1;
+        safetyRating.OverallRating = 1;
+        safetyRating.insert();
+        ttscommit;
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmVehicleRateInsert</Name>
+				<Source><![CDATA[
+    public static void fmVehicleRateInsert()
+    {
+
+        FMTruck truck;
+        FMCarClass carClass;
+        FMSUV suv;
+        FMVehicleRate vehicleRate;
+        UnitofWork uoW;
+
+        uoW = new UnitofWork();
+
+        while select truck where truck.VehicleId LIKE 'Litware_Whistler*'
+        {
+            vehicleRate=null;
+            vehicleRate.ValidFrom = 1\1\2009;
+            vehicleRate.ValidTo = 1\1\2050;
+            vehicleRate.RatePerDay =47;
+            vehicleRate.RatePerWeek = 320;
+            vehicleRate.fmVehicle(truck);
+            uoW.insertonSaveChanges(vehicleRate);
+        }
+
+        while select truck where truck.VehicleId LIKE 'Litware_McKinley*'
+        {
+            vehicleRate=null;
+            vehicleRate.ValidFrom = 1\1\2009;
+            vehicleRate.ValidTo = 1\1\2050;
+            vehicleRate.RatePerDay =45;
+            vehicleRate.RatePerWeek = 300;
+            vehicleRate.fmVehicle(truck);
+            uoW.insertonSaveChanges(vehicleRate);
+        }
+
+        while select suv where suv.VehicleId LIKE 'Litware_LitwareFour*'
+        {
+            vehicleRate=null;
+            vehicleRate.ValidFrom = 1\1\2009;
+            vehicleRate.ValidTo = 1\1\2050;
+            vehicleRate.RatePerDay =40;
+            vehicleRate.RatePerWeek = 270;
+            vehicleRate.fmVehicle(suv);
+            uoW.insertonSaveChanges(vehicleRate);
+        }
+        
+        while select carClass where carClass.VehicleId LIKE 'AdventureWorks_Fuji*'
+        {
+            vehicleRate=null;
+            vehicleRate.ValidFrom = 1\1\2009;
+            vehicleRate.ValidTo = 1\1\2050;
+            vehicleRate.RatePerDay =30;
+            vehicleRate.RatePerWeek = 195;
+            vehicleRate.fmVehicle(carClass);
+            uoW.insertonSaveChanges(vehicleRate);
+        }
+
+        while select carClass where carClass.VehicleId LIKE 'AdventureWorks_Makalu*'
+        {
+            vehicleRate=null;
+            vehicleRate.ValidFrom = 1\1\2009;
+            vehicleRate.ValidTo = 1\1\2050;
+            vehicleRate.RatePerDay =37;
+            vehicleRate.RatePerWeek = 250;
+            vehicleRate.fmVehicle(carClass);
+            uoW.insertonSaveChanges(vehicleRate);
+        }
+
+        while select carClass where carClass.VehicleId LIKE 'AdventureWorks_Shasta*'
+        {
+            vehicleRate=null;
+            vehicleRate.ValidFrom = 1\1\2009;
+            vehicleRate.ValidTo = 1\1\2050;
+            vehicleRate.RatePerDay =40;
+            vehicleRate.RatePerWeek = 260;
+            vehicleRate.fmVehicle(carClass);
+            uoW.insertonSaveChanges(vehicleRate);
+        }
+
+        while select carClass where carClass.VehicleId LIKE 'Adatum_One*'
+        {
+            vehicleRate=null;
+            vehicleRate.ValidFrom = 1\1\2009;
+            vehicleRate.ValidTo = 1\1\2050;
+            vehicleRate.RatePerDay =35;
+            vehicleRate.RatePerWeek = 220;
+            vehicleRate.fmVehicle(carClass);
+            uoW.insertonSaveChanges(vehicleRate);
+        }
+
+        while select carClass where carClass.VehicleId LIKE 'Adatum_Four*'
+        {
+            vehicleRate=null;
+            vehicleRate.ValidFrom = 1\1\2009;
+            vehicleRate.ValidTo = 1\1\2050;
+            vehicleRate.RatePerDay =45;
+            vehicleRate.RatePerWeek = 290;
+            vehicleRate.fmVehicle(carClass);
+            uoW.insertonSaveChanges(vehicleRate);
+        }
+
+        while select carClass where carClass.VehicleId LIKE 'Adatum_Ninety-Nine*'
+        {
+            vehicleRate=null;
+            vehicleRate.ValidFrom = 1\1\2009;
+            vehicleRate.ValidTo = 1\1\2050;
+            vehicleRate.RatePerDay =45;
+            vehicleRate.RatePerWeek = 305;
+            vehicleRate.fmVehicle(carClass);
+            uoW.insertonSaveChanges(vehicleRate);
+        }
+
+        while select carClass where carClass.VehicleId LIKE 'Proseware_KX*'
+        {
+            vehicleRate=null;
+            vehicleRate.ValidFrom = 1\1\2009;
+            vehicleRate.ValidTo = 1\1\2050;
+            vehicleRate.RatePerDay =30;
+            vehicleRate.RatePerWeek = 195;
+            vehicleRate.fmVehicle(carClass);
+            uoW.insertonSaveChanges(vehicleRate);
+        }
+
+        uoW.saveChanges();
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmColorInsert</Name>
+				<Source><![CDATA[
+    public static void fmColorInsert()
+    {
+        FMCarColor colors;
+
+        ttsbegin;
+        colors.Name = "White";
+        colors.HexValue = "ffffff";
+        colors.insert();
+
+        colors.Name = "Gray";
+        colors.HexValue = "a0a0a0";
+        colors.insert();
+
+        colors.Name = "Red";
+        colors.HexValue = "e00707";
+        colors.insert();
+
+        colors.Name = "Orange";
+        colors.HexValue = "ff9900";
+        colors.insert();
+
+        colors.Name = "Yellow";
+        colors.HexValue = "ffff66";
+        colors.insert();
+        ttscommit;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmVehicleTruckInsert</Name>
+				<Source><![CDATA[
+    public static void fmVehicleTruckInsert()
+    {
+        FMVehicleModel model,model1;
+        FMTruck truck;
+        UnitofWork uoW;
+        OMOperatingUnit ou;
+        
+        FMCarColor color;
+        
+        uoW = new UnitofWork();
+
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            select firstonly model where model.Model == 'Whistler';
+        }
+        else
+        {
+            select firstonly forupdate model where model.Model == 'Whistler';
+        }        
+        model.VehicleCount = model.VehicleCount + 1;
+        uoW.updateonSaveChanges(model);
+        select firstonly color where color.Name == 'Yellow';
+        truck.ColorID = color.RecId;
+        truck.fmVehicleModel(model);
+        truck.VehicleId = 'Litware_Whistler_1';
+        truck.Description = '2014 Litware Whistler';
+        truck.Color = FMColor::Yellow;
+        truck.Status = FMVehicleStatus::Available;
+        truck.FuelType = FMFuelType::Standard;
+        truck.GrossVehicleWeight =4000;
+        truck.GpsEnabled = FMGPSEnabled::Yes;
+        truck.Mileage = 1000;
+        truck.Vin = '2G3AL54R3L2477333';
+        truck.Mpg = 10;
+        truck.Transmission = FMTransmission::Manual;
+        truck.Note = 'Includes tow accesories.';
+        select firstonly ou where ou.Name == 'Redmond';
+        truck.OmInternalOrganization = ou.RecId;
+        truck.MovingSpace = 10;
+        truck.FloorSpace = 10;
+        truck.MaxLoad = 10;
+        uoW.insertonSaveChanges(truck);        
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            select firstonly model1 where model1.Model == 'McKinley';
+        }
+        else
+        {
+            select firstonly forupdate model1 where model1.Model == 'McKinley';
+        }        
+        model1.VehicleCount = model1.VehicleCount +1;
+        uoW.updateonSaveChanges(model1);
+        select firstonly color where color.Name == 'Red';
+        truck=null;
+        truck.ColorID = color.RecId;
+        truck.fmVehicleModel(model);
+        truck.VehicleId = 'Litware_McKinley_1';
+        truck.Description = '1975 Litware McKinley';
+        truck.Color = FMColor::Red;
+        truck.Status = FMVehicleStatus::Available;
+        truck.FuelType = FMFuelType::Standard;
+        truck.GrossVehicleWeight =5500;
+        truck.GpsEnabled = FMGPSEnabled::No;
+        truck.Mileage = 78060;
+        truck.Vin = '1FBSS31L8YH264269';
+        truck.Mpg = 15;
+        truck.Transmission = FMTransmission::Auto;
+        truck.Note = '97 x 22 inch cargo box.';
+        select firstonly ou where ou.Name == 'Redmond';
+        truck.OmInternalOrganization = ou.RecId;
+        truck.MovingSpace = 15;
+        truck.FloorSpace = 15;
+        truck.MaxLoad = 15;
+        uoW.insertonSaveChanges(truck);        
+        if(!FMDataHelper::IsManagedDataAccess())
+        {
+            select firstonly forupdate model where model.Model == 'McKinley';
+            model.VehicleCount = model.VehicleCount +1;
+            uoW.updateonSaveChanges(model);
+        }
+        else
+        {
+            model1.VehicleCount = model1.VehicleCount +1;
+        }
+        truck=null;
+        select firstonly color where color.Name == 'Red';
+        truck.ColorID = color.RecId;
+        truck.fmVehicleModel(model);
+        truck.VehicleId = 'Litware_McKinley_2';
+        truck.Description = '1975 Litware McKinley';
+        truck.Color = FMColor::Red;
+        truck.Status = FMVehicleStatus::Available;
+        truck.FuelType = FMFuelType::Standard;
+        truck.GrossVehicleWeight =5500;
+        truck.GpsEnabled = FMGPSEnabled::No;
+        truck.Mileage = 100060;
+        truck.Vin = '1FBSS31L8YH264269';
+        truck.Mpg = 15;
+        truck.Transmission = FMTransmission::Auto;
+        truck.Note = '97 x 22 inch cargo box.';
+        select firstonly ou where ou.Name == 'Redmond';
+        truck.OmInternalOrganization = ou.RecId;
+        truck.MovingSpace = 15;
+        truck.FloorSpace = 15;
+        truck.MaxLoad = 15;
+        uoW.insertonSaveChanges(truck);
+
+        uoW.saveChanges();
+
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>numberSequenceSetup</Name>
+				<Source><![CDATA[
+    public static void numberSequenceSetup()
+    {
+        NumberSeqScope scope;
+        MenuFunction wizard = new MenuFunction('NumberSequenceWizard', MenuItemType::Action);
+
+        NumberSeqModuleRental moduleRental = new NumberSeqModuleRental();
+        moduleRental.load();
+
+        scope = NumberSeqScopeFactory::createGlobalScope();
+        NumberSequenceTable::autoCreate(extendedTypeNum(FMRentalId), scope);
+        moduleRental.loadModule();
+
+        wizard.run();
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>numberSequenceSetup_Silent</Name>
+				<Source><![CDATA[
+    public static void numberSequenceSetup_Silent()
+    {
+
+        info('Setup fleet management sequences... ');
+        new NumberSeqModuleRental().loadModule();
+        FMDataHelper::initializeNumberSequence(extendedtypenum(FMRentalId), true);
+        FMDataHelper::initializeNumberSequence(extendedtypenum(FmVehicleId), true);
+        FMDataHelper::initializeNumberSequence(extendedtypenum(OMOperatingUnitNumber), false);
+        FMDataHelper::initializeNumberSequence(extendedtypenum(DirPartyNumber), false);
+        FMDataHelper::initializeNumberSequence(extendedtypenum(LogisticsLocationId), false);
+
+        info('Setup workflow number sequences... ');
+        FMDataHelperWF::SetupWorkflowNumberSequences();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>orgModelInsert</Name>
+				<Source><![CDATA[
+    public static void orgModelInsert()
+    {
+
+        OMHierarchyType omht;
+        OMHierarchyPurpose omhp;
+
+        CompanyInfo ci;
+
+        OMOrganizationHierarchy hierarchy;
+        OMOrganizationNode pnode, cnode, tnode;
+        OMMultipleHierarchy     hierarchyHelper;
+        OMOperatingUnit ou;
+
+
+
+
+        int64 recId;
+
+
+
+        //////////////////////////////////////////////////////////////////////////////////
+        // Clear out old data
+        //////////////////////////////////////////////////////////////////////////////////
+        ttsbegin;
+
+        select firstonly omht where omht.Name == 'Fleet Management Organization Hierarchy';
+        recId = omht.RecId;
+        delete_from omhp where omhp.HierarchyType == recId;
+        delete_from omht where omht.Name == 'Fleet Management Organization Hierarchy';
+
+        ttscommit;
+
+        //////////////////////////////////////////////////////////////////////////////////
+        // Create Hierarchy
+        //////////////////////////////////////////////////////////////////////////////////
+        ttsbegin;
+
+        hierarchyHelper = OMMultipleHierarchy::construct('Fleet Management Organization Hierarchy');
+        hierarchy = new OMOrganizationHierarchy( hierarchyHelper );
+        hierarchy.enterEditMode(false);
+
+        //Create a legal entity
+
+        select firstonly ci where ci.DataArea == 'FM';
+        if (!ci)
+        {
+
+            ci.Name = 'FM Inc Corporate Office';
+            ci.DataArea = 'FM';
+            ci.insert();
+        }
+
+        // Create Branches
+
+
+        FMDataHelper::createOperatingUnit('California',OMOperatingUnitType::OMBranchFM, 'Californa');
+        FMDataHelper::createOperatingUnit('Washington',OMOperatingUnitType::OMBranchFM, 'Washington');
+
+        // Create Locations
+        FMDataHelper::createOperatingUnit('Redmond', OMOperatingUnitType::OMRentalLocationFM, 'Redmond');
+        FMDataHelper::createOperatingUnit('SEATAC Airport', OMOperatingUnitType::OMRentalLocationFM, 'SEATAC');
+        FMDataHelper::createOperatingUnit('Downtown Seattle', OMOperatingUnitType::OMRentalLocationFM, 'Seattle');
+        FMDataHelper::createOperatingUnit('San Jose', OMOperatingUnitType::OMRentalLocationFM, 'SJC');
+        FMDataHelper::createOperatingUnit('Los Angeles', OMOperatingUnitType::OMRentalLocationFM, 'Los Angeles');
+        FMDataHelper::createOperatingUnit('LAX Airport', OMOperatingUnitType::OMRentalLocationFM, 'LAX');
+
+
+        ttscommit;
+
+        //////////////////////////////////////////////////////////////////////////////////
+        // Link nodes in hierarchy
+        //////////////////////////////////////////////////////////////////////////////////
+
+
+        // Get and set root LE node
+        select firstonly ci where (ci.Name == 'FM Inc Corporate Office' && ci.DataArea == 'FM');
+        pnode = hierarchy.addRootNode(ci.RecId);
+        tnode = pnode;
+
+        // Add California Branch
+        select firstonly ou where ou.Name == 'California';
+        cnode = hierarchy.createNode(ou.RecId);
+        hierarchy.addChild(pnode, cnode);
+
+        pnode = cnode;
+
+        select firstonly ou where ou.Name == 'San Jose';
+        cnode = hierarchy.createNode(ou.RecId);
+        hierarchy.addChild(pnode, cnode);
+
+        select firstonly ou where ou.Name == 'Los Angeles';
+        cnode = hierarchy.createNode(ou.RecId);
+        hierarchy.addChild(pnode, cnode);
+
+        select firstonly ou where ou.Name == 'LAX Airport';
+        cnode = hierarchy.createNode(ou.RecId);
+        hierarchy.addChild(pnode, cnode);
+
+
+        // Add Washington Branch
+        select firstonly ou where ou.Name == 'Washington';
+        cnode = hierarchy.createNode(ou.RecId);
+        hierarchy.addChild(tnode, cnode);
+
+        pnode = cnode;
+
+        select firstonly ou where ou.Name == 'Redmond';
+        cnode = hierarchy.createNode(ou.RecId);
+        hierarchy.addChild(pnode, cnode);
+
+        select firstonly ou where ou.Name == 'SEATAC Airport';
+        cnode = hierarchy.createNode(ou.RecId);
+        hierarchy.addChild(pnode, cnode);
+
+        select firstonly RecId from ou where ou.Name == 'Downtown Seattle';
+        cnode = hierarchy.createNode(ou.RecId);
+        hierarchy.addChild(pnode, cnode);
+
+        // Publish it!
+        //hierarchy.Publish( DateTimeUtil::utcNow(), '');
+        hierarchy.publish(2011-01-01T00:00:00,'');
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populateData</Name>
+				<Source><![CDATA[
+    public static void populateData()
+    {
+        info('Dropping all tables');
+        FMDataHelper::cleanup();
+
+        info('Setting Up Number Sequences - first pass...');
+        FMDataHelper::numberSequenceSetup();
+
+        info('Creating Org Model...');
+        FMDataHelper::orgModelInsert();
+
+        info('Setting Up Number Sequences - second pass...');
+        FMDataHelper::numberSequenceSetup();
+
+        //FM Table inserts
+        
+        info('Creating Colors...');
+        FMDataHelper::fmColorInsert();
+        
+        info('Creating Customer Groups...');
+        FMDataHelper::fmCustGroupInsert();
+
+        info('Creating customers...');
+        FMDataHelper::fmCustomerInsert();
+
+        info('Creating Make/Model...');
+        FMDataHelper::fmMakeModelInsert();
+
+        info('Creating SUV Safety Rating...');
+        FMDataHelper::fmsuvSafetyRatingInsert();
+
+        info('Creating Truck...');
+        FMDataHelper::fmVehicleTruckInsert();
+
+        info('Creating Cars...');
+        FMDataHelper::fmCarClassInsert();
+
+        info('Creating SUVs...');
+        FMDataHelper::fmsuvInsert();
+
+        info('Creating Vehicle Rate...');
+        FMDataHelper::fmVehicleRateInsert();
+
+        info('Creating Charge Type...');
+        FMDataHelper::fmChargeTypeInsert();
+
+        info('Creating Rental and Rental Charge...');
+        FMDataHelper::fmRentalAndRentalChargeInsert();
+
+        info('Creating Fleet vehicle maintenance workflow... ');
+        FMDataHelperWF::CreateFleetMaintenanceWorkflow();
+
+        info('Done!');
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populateData_Silent</Name>
+				<Source><![CDATA[
+    public static void populateData_Silent()
+    {
+        info('Dropping all tables');
+        FMDataHelper::cleanup();
+
+        //App Setup
+        info('Setting Up Number Sequences...');
+        FMDataHelper::numberSequenceSetup_Silent();
+
+        info('Creating Org Model...');
+        FMDataHelper::orgModelInsert();
+
+        //FM Table inserts
+
+        info('Creating Colors...');
+        FMDataHelper::fmColorInsert();
+
+        info('Creating Customer Groups...');
+        FMDataHelper::fmCustGroupInsert();
+
+        info('Creating customers...');
+        FMDataHelper::fmCustomerInsert();
+
+        info('Creating Make/Model...');
+        FMDataHelper::fmMakeModelInsert();
+
+        info('Creating SUV Safety Rating...');
+        FMDataHelper::fmsuvSafetyRatingInsert();
+
+        info('Creating Truck...');
+        FMDataHelper::fmVehicleTruckInsert();
+
+        info('Creating Cars...');
+        FMDataHelper::fmCarClassInsert();
+
+        info('Creating SUVs...');
+        FMDataHelper::fmsuvInsert();
+
+        info('Creating Vehicle Rate...');
+        FMDataHelper::fmVehicleRateInsert();
+
+        info('Creating Charge Type...');
+        FMDataHelper::fmChargeTypeInsert();
+
+        info('Creating Rental and Rental Charge...');
+        FMDataHelper::fmRentalAndRentalChargeInsert();
+       
+        info('Setup workflow arifacts...');
+        FMDataHelper::setupWorkflowArtifacts();
+        
+        info('Completed Fleet Management data setup');
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populateExtendedData</Name>
+				<Source><![CDATA[
+    public static void populateExtendedData()
+    {
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>setSecurityRoles</Name>
+				<Source><![CDATA[
+    public static void setSecurityRoles()
+    {
+        SecurityRole        fmServiceTech;
+        SecurityRole        fmClerk;
+        SecurityRole        fmManager;
+        SecurityRole        systemUser;
+        SecurityRole        admin;
+        SecurityUserRole    userRoles;
+
+        ttsbegin;
+
+        select firstonly RecId from fmServiceTech  where fmServiceTech.AotName == 'FMServiceTech';
+        select firstonly RecId from fmClerk        where fmClerk.AotName       == 'FMClerk';
+        select firstonly RecId from fmManager      where fmManager.AotName     == 'FMManager';
+        select firstonly RecId from systemUser     where systemUser.AotName    == 'SystemUser';
+        select firstonly RecId from admin          where admin.AotName         == '-SYSADMIN-';
+
+        // Delete existing user roles
+        delete_from userRoles where (userRoles.User != 'Admin' && userRoles.SecurityRole != admin.RecId);
+
+        // Add new Roles
+        select firstonly forupdate userRoles;
+        userRoles.User = 'serv';
+        userRoles.SecurityRole = systemUser.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = 'serv';
+        userRoles.SecurityRole = fmServiceTech.RecId;
+        userRoles.insert();
+
+
+        select firstonly forupdate userRoles;
+        userRoles.User = 'clerk';
+        userRoles.SecurityRole = systemUser.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = 'clerk';
+        userRoles.SecurityRole = fmClerk.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = 'mgr1';
+        userRoles.SecurityRole = systemUser.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = 'mgr1';
+        userRoles.SecurityRole = fmManager.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = 'mgr2';
+        userRoles.SecurityRole = systemUser.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = 'mgr2';
+        userRoles.SecurityRole = fmManager.RecId;
+        userRoles.insert();
+
+        /************  Setup roles for FMSvcTech *************/
+        delete_from userRoles where userRoles.User == #FMSvcTechUserId;
+        select firstonly forupdate userRoles;
+        userRoles.User = #FMSvcTechUserId;
+        userRoles.SecurityRole = fmServiceTech.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = #FMSvcTechUserId;
+        userRoles.SecurityRole = systemUser.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = #FMSvcTechUserId;
+        userRoles.SecurityRole = admin.RecId;
+        userRoles.insert();
+
+        /************  Setup roles for FMClerk *************/
+        delete_from userRoles where userRoles.User == #FMClerkUserId;
+        select firstonly forupdate userRoles;
+        userRoles.User = #FMClerkUserId;
+        userRoles.SecurityRole = fmClerk.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = #FMClerkUserId;
+        userRoles.SecurityRole = systemUser.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = #FMClerkUserId;
+        userRoles.SecurityRole = admin.RecId;
+        userRoles.insert();
+
+        /************  Setup roles for FMManager *************/
+        delete_from userRoles where userRoles.User == #FMManagerUserId;
+        select firstonly forupdate userRoles;
+        userRoles.User = #FMManagerUserId;
+        userRoles.SecurityRole = fmManager.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = #FMManagerUserId;
+        userRoles.SecurityRole = systemUser.RecId;
+        userRoles.insert();
+
+        select firstonly forupdate userRoles;
+        userRoles.User = #FMManagerUserId;
+        userRoles.SecurityRole = admin.RecId;
+        userRoles.insert();
+
+        ttscommit;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>setUserLocations</Name>
+				<Source><![CDATA[
+    public static void setUserLocations()
+    {
+        SecurityRole        fmServiceTech;
+        SecurityRole        fmClerk;
+        SecurityRole        fmManager1;
+        SecurityRole        fmManager2;
+        SecurityRole        fmSelfService;
+
+        OMOperatingUnit         redmondLocation;
+        OMOperatingUnit         seatacLocation;
+        OMOperatingUnit         wa;
+        OMOperatingUnit         ca;
+
+        OMUserRoleOrganization  userRoleOrg;
+        OMHierarchyType         omht;
+        OMHierarchyPurpose      omhp;
+
+        ttsbegin;
+
+        select firstonly RecId from fmServiceTech  where fmServiceTech.AotName == 'FMServiceTech';
+        select firstonly RecId from fmClerk        where fmClerk.AotName      == 'FMClerk';
+        select firstonly RecId from fmManager1     where fmManager1.AotName    == 'FMManager';
+        select firstonly RecId from fmManager2     where fmManager2.AotName   == 'FMManager';
+        select firstonly RecId from fmSelfService  where fmSelfService.AotName== 'FMSelfServ';
+
+        select firstonly redmondLocation where redmondLocation.Name == 'Redmond';
+        select firstonly seatacLocation  where seatacLocation.Name  == 'SEATAC Airport';
+
+        select firstonly RecId from wa where wa.Name == 'Washington';
+        select firstonly RecId from ca  where ca.Name  == 'California';
+        select firstonly RecId from omht where omht.Name == 'Fleet Management Organization Hierarchy';
+
+        // Start Fresh
+        delete_from userRoleOrg;
+
+        // Add user-role-location links
+        select firstonly forupdate userRoleOrg;
+        userRoleOrg.SecurityRole = fmServiceTech.RecId;
+        userRoleOrg.User = 'serv';
+        userRoleOrg.omInternalOrganization = redmondLocation.RecId;
+        userRoleOrg.omHierarchyType = omht.RecId;
+        userRoleOrg.insert();
+
+        select firstonly forupdate userRoleOrg;
+        userRoleOrg.SecurityRole = fmClerk.RecId;
+        userRoleOrg.User = 'clerk';
+        userRoleOrg.omInternalOrganization = redmondLocation.RecId;
+        userRoleOrg.omHierarchyType = omht.RecId;
+        userRoleOrg.insert();
+
+        select firstonly forupdate userRoleOrg;
+        userRoleOrg.SecurityRole = fmManager1.RecId;
+        userRoleOrg.User = 'mgr1';
+        userRoleOrg.omInternalOrganization = wa.RecId;
+        userRoleOrg.omHierarchyType = omht.RecId;
+        userRoleOrg.insert();
+
+        select firstonly forupdate userRoleOrg;
+        userRoleOrg.SecurityRole = fmManager2.RecId;
+        userRoleOrg.User = 'mgr2';
+        userRoleOrg.omInternalOrganization = ca.RecId;
+        userRoleOrg.omHierarchyType = omht.RecId;
+        userRoleOrg.insert();
+
+        select firstonly forupdate userRoleOrg;
+        userRoleOrg.SecurityRole = fmSelfService.RecId;
+        userRoleOrg.User = 'self';
+        userRoleOrg.omInternalOrganization = redmondLocation.RecId;
+        userRoleOrg.omHierarchyType = omht.RecId;
+        userRoleOrg.insert();
+
+        select  firstonly forupdate omhp;
+        omhp.HierarchyType = omht.RecId;
+        omhp.HierarchyPurpose = HierarchyPurpose::Security;
+        omhp.insert();
+
+        ttscommit;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>usersInsert</Name>
+				<Source><![CDATA[
+    public static void usersInsert()
+    {
+        #define.AdminId('Admin')
+        UserInfo userInfo;
+        SecurityUserRole userRole;
+        SysUserInfo sysUserInfo;
+
+        void addUser(str 20 _userId, str _userName, str _userSid, str 20 _userAlias, str _userDomain, str _defaultCompany = curext())
+        {
+
+            delete_from userRole where userRole.User == _userId;
+
+            //Check if user already exists, and remove it
+            select forupdate firstonly userInfo where userInfo.NetworkAlias == _userAlias;
+            userInfo.delete();
+            select forupdate firstonly sysUserInfo where sysUserInfo.Id == userInfo.Id;
+            sysUserInfo.delete();
+
+
+            //Copy default information from admin user
+            select firstonly userInfo where userInfo.Id == #AdminId;
+
+            //User info
+            userInfo.Id = _userId;
+            userInfo.Name = _userName;
+
+            //Account information
+            userInfo.Sid = _userSid;
+            userInfo.NetworkAlias = _userAlias;
+            userInfo.NetworkDomain = _userDomain;
+
+            //Default company
+            userInfo.Company = _defaultCompany;
+
+            //Enable
+            userInfo.Enable = NoYes::Yes;
+            userInfo.EnabledOnce = NoYes::Yes;
+
+            userInfo.insert();
+
+            select firstonly sysUserInfo where sysUserInfo.Id == _userId;
+            if(sysUserInfo.RecId == 0)
+            {
+                sysUserInfo.Id = _userId;
+                sysUserInfo.insert();
+            }
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>setupWorkflowArtifacts</Name>
+				<Source><![CDATA[
+    private static void setupWorkflowArtifacts()
+    {
+        info('Setup workflow execution user account...');
+        FMDataHelperWF::SetWorkflowExecutionUserAccount();
+
+        info('Setup workflow batch jobs...');
+        FMDataHelperWF::SetupWorkflowBatchJobs();
+
+        info('Creating Fleet vehicle maintenance workflow...');
+        FMDataHelperWF::CreateFleetMaintenanceWorkflow();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

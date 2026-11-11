@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCarClass</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMCarClass extends FMVehicle
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>doAnnualMaintenance</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// DoAnnualMaintenance
+    /// </summary>
+    public void doAnnualMaintenance()
+    {
+        info(strFmt('Carring out matainance for car %1; checking seating capacity %2 ', this.vin, this.SeatingCapacity));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>insert</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// insert
+    /// </summary>
+    public void insert()
+    {
+        super();
+
+        if (infolog.globalCache().get('FleetSample', 'InsertOrderInfo', false))
+        {
+            info(strFmt('%1 inserted: recID %2', Global::tableId2Name(this.TableId),this.RecId));
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>validateField</Name>
+				<Source><![CDATA[
+    public boolean validateField(FieldId _fieldIdToCheck)
+    {
+        boolean ret;
+
+        ret = super(_fieldIdToCheck);
+
+        if(ret)
+        {
+            switch (_fieldIdToCheck)
+            {
+                case fieldnum(FMCarClass, NumberOfDoors):
+                    if(this.NumberOfDoors < 0) 
+                    {    
+                        ret = checkFailed("Number of doors must be greater than 0");
+                    }
+                    break;
+
+                    
+                case fieldnum(FMCarClass, SeatingCapacity):
+                    if(this.SeatingCapacity < 0) 
+                    {
+                        ret = checkFailed("Seating capacity must be greater than 0");
+                    }
+                    break; 
+            }
+        }
+
+        return ret;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>@SYS172552</DeveloperDocumentation>
+	<Label>@FLM159</Label>
+	<SingularLabel>Car</SingularLabel>
+	<Extends>FMVehicle</Extends>
+	<Modules>FleetManagement</Modules>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<SupportInheritance>Yes</SupportInheritance>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>NumberOfDoors</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>SeatingCapacity</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>NumberOfDoors</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>SeatingCapacity</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>NumberOfDoors</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMNumberOfDoors</ExtendedDataType>
+			<Label>@FLM160</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>SeatingCapacity</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMSeatingCapacity</ExtendedDataType>
+			<Label>@FLM161</Label>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes>
+		<AxTableIndex>
+			<Name>FMCarClassIdx</Name>
+			<AllowDuplicates>Yes</AllowDuplicates>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>NumberOfDoors</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+	</Indexes>
+	<Mappings />
+	<Relations>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>FMVehicle1_65751</Name>
+			<Cardinality>ZeroOne</Cardinality>
+			<RelatedTable>FMVehicle</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelationshipType>Specialization</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>RecId</Name>
+					<Field>RecId</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+			<Index>RecId</Index>
+		</AxTableRelation>
+	</Relations>
+	<StateMachines />
+</AxTable>

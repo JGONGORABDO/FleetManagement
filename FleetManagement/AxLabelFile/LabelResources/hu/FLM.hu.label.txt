@@ -1,0 +1,784 @@
+﻿@FLM41=Címkefájlok létrehozva: 2011. 03. 04.
+ ;By user Admin
+@FLM42=Piros
+ ;Fleet colors
+@FLM43=Kék
+ ;Fleet colors
+@FLM44=Zöld
+ ;Fleet colors
+@FLM46=Kép választása
+ ;Fleet label
+@FLM47=Módosítás
+ ;Fleet label
+@FLM48=Eltávolítás
+ ;Fleet label
+@FLM49=Vevő
+ ;Fleet label
+@FLM50=Nyitva
+ ;Fleet label
+@FLM51=Új
+ ;Fleet label
+@FLM52=Kölcsönzés
+ ;Fleet label
+@FLM53=Általános
+ ;Fleet label
+@FLM55=Megjelenítés
+ ;Fleet label
+@FLM56=Törlés
+ ;Fleet label
+@FLM57=Mellékletek
+ ;Fleet label
+@FLM58=Befejeződött
+ ;Fleet label
+@FLM59=Kölcsönzési költségek
+ ;Fleet label
+@FLM60=Kölcsönzési időszak
+ ;Fleet label
+@FLM61=Kezdő
+ ;Fleet label
+@FLM62=Záró
+ ;Fleet label
+@FLM63=Megtett távolság
+ ;Fleet label
+@FLM64=Kezdő
+ ;Fleet label
+@FLM65=Záró
+ ;Fleet label
+@FLM66=Üzemanyagszintek
+ ;Fleet label
+@FLM67=Átvétel
+ ;Fleet label
+@FLM68=Költségek
+ ;Fleet label
+@FLM69=Költség hozzáadása
+ ;Fleet label
+@FLM70=Teherautók belefoglalása
+ ;Fleet label
+@FLM71=Kölcsönzések
+ ;Fleet label
+@FLM72=Szerkesztés
+ ;Fleet label
+@FLM73=Flottakezelés konfigurációja
+ ;Fleet label
+@FLM74=Járműgyártmányok és -modellek
+ ;Fleet label
+@FLM75=Járműgyártmányok és -modellek definiálása
+ ;Fleet label
+@FLM76=Definiálja a készleten lévő járművek gyártmányát és modelljét, és adja meg a modellt bemutató képet is.
+ ;Fleet label
+@FLM77=Modell képe
+ ;Fleet label
+@FLM78=Tallózás...
+ ;Fleet label
+@FLM79=Új gyártmány
+ ;Fleet label
+@FLM80=Új modell
+ ;Fleet label
+@FLM81=Kölcsönzés költségtípusai
+ ;Fleet label
+@FLM82=Költségtípusok definiálása
+ ;Fleet label
+@FLM83=A költségtípusok az egyes kölcsönzési költségek kategorizálására használhatók. Így könnyebben nyomon követheti a költségeket.
+ ;Fleet label
+@FLM84=SUV biztonsági besorolásai
+ ;Fleet label
+@FLM85=SUV biztonsági besorolásainak definiálása
+ ;Fleet label
+@FLM86=Járművek
+ ;Fleet label
+@FLM87=Karbantartás
+ ;Fleet label
+@FLM88=Előzmények
+ ;Fleet label
+@FLM89=Korábbi díjszabások
+ ;Fleet label
+@FLM90=Díjszabások
+ ;Fleet label
+@FLM91=Részletek
+ ;Fleet label
+@FLM92=Személyautó és SUV adatai
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=Teherautó adatai
+ ;Fleet label
+@FLM95=Járművek
+ ;Fleet label
+@FLM96=Elérhetőség
+ ;Fleet label
+@FLM97=Hely
+ ;Fleet label
+@FLM98=Karbantartás
+ ;Fleet label
+@FLM99=Rekord
+ ;Fleet label
+@FLM100=Lista
+ ;Fleet label
+@FLM101=Járműazonosító
+ ;Fleet label
+@FLM102=Jármű díjszabási dátumának kezelője
+ ;Fleet label
+@FLM103=Új verzió
+ ;Fleet label
+@FLM104=Jármű karbantartása
+ ;Fleet label
+@FLM105=Flottakezelés
+ ;Fleet label
+@FLM106=Legutóbbi kölcsönzések
+ ;Fleet label
+@FLM107=Saját belső szervezetek a biztonsági hozzáféréshez
+ ;Fleet label
+@FLM108=Azok a járművek, amelyekhez a felhasználó biztonsági hozzáféréssel rendelkezik.
+ ;Fleet label
+@FLM109=Azok a belső szervezetek, amelyekhez a felhasználó hozzáféréssel rendelkezik.
+ ;Fleet label
+@FLM110=Teherautók
+ ;Fleet label
+@FLM111=SUV autók
+ ;Fleet label
+@FLM112=Vevői megjelenítési oldalak menüje
+ ;Fleet label
+@FLM113=Műveletek
+ ;Fleet label
+@FLM114=Jármű menü
+ ;Fleet label
+@FLM115=Jármű-megjelenítési oldalak menüje
+ ;Fleet label
+@FLM116=Fiók - elavult
+ ;Fleet label
+@FLM117=Kölcsönzés helye - elavult
+ ;Fleet label
+@FLM118=Régió - elavult
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Üzemanyag típusa
+ ;Fleet label
+@FLM123=Normál
+ ;Fleet label
+@FLM124=Prémium
+ ;Fleet label
+@FLM125=GPS engedélyezve
+ ;Fleet label
+@FLM126=Olajcsere
+ ;Fleet label
+@FLM127=Javítás
+ ;Fleet label
+@FLM128=Megelőző karbantartás
+ ;Fleet label
+@FLM129=Vizsgálatra vár
+ ;Fleet label
+@FLM130=Szervizelésre vár
+ ;Fleet label
+@FLM131=Jóváhagyásra vár
+ ;Fleet label
+@FLM132=Tisztításra vár
+ ;Fleet label
+@FLM133=Kész
+ ;Fleet label
+@FLM134=Átvitel
+ ;Fleet label
+@FLM135=Automatikus
+ ;Fleet label
+@FLM136=Manuális
+ ;Fleet label
+@FLM137=Elérhető
+ ;Fleet label
+@FLM138=Szervizben
+ ;Fleet label
+@FLM139=Bérelt
+ ;Fleet label
+@FLM140=Sérült
+ ;Fleet label
+@FLM141=Visszahívott
+ ;Fleet label
+@FLM142=Függőben
+ ;Fleet label
+@FLM143=Jármű típusa
+ ;Fleet label
+@FLM144=Ismeretlen
+ ;Fleet label
+@FLM145=Teherautó
+ ;Fleet label
+@FLM146=Személyautó
+ ;Fleet label
+@FLM147=Költségtípus
+ ;Fleet label
+@FLM148=Gépjármű-vezetői jogosítvány
+ ;Fleet label
+@FLM149=Gyártmány és modell
+ ;Fleet label
+@FLM150=Megjegyzések
+ ;Fleet label
+@FLM151=Járműkölcsönzési adatok
+ ;Fleet label
+@FLM152=Biztonsági besorolás azonosítója
+ ;Fleet label
+@FLM153=SUV biztonsági besorolása
+ ;Fleet label
+@FLM154=Összes kölcsönzés
+ ;Fleet label
+@FLM155=Gyártmány
+ ;Fleet label
+@FLM156=Jármű gyártmánya
+ ;Fleet label
+@FLM157=Modell
+ ;Fleet label
+@FLM158=Jármű modellje
+ ;Fleet label
+@FLM159=Személyautók
+ ;Fleet label
+@FLM160=Ajtók
+ ;Fleet label
+@FLM161=Ülések száma
+ ;Fleet label
+@FLM162=Költségtípusok
+ ;Fleet label
+@FLM163=Lejárat dátuma
+ ;Fleet label
+@FLM164=Megtett távolság kiindulási értéke
+ ;Fleet label
+@FLM165=Megtett távolság záró értéke
+ ;Fleet label
+@FLM166=Kezdő üzemanyagszint
+ ;Fleet label
+@FLM167=Záró üzemanyagszint
+ ;Fleet label
+@FLM168=Járműkölcsönzési adatok
+ ;Fleet label
+@FLM169=Harmadik sor üléseinek száma
+ ;Fleet label
+@FLM170=Fordulókörsugár
+ ;Fleet label
+@FLM171=Szabad magasság
+ ;Fleet label
+@FLM172=Borulási minősítés
+ ;Fleet label
+@FLM173=Általános minősítés
+ ;Fleet label
+@FLM174=Mozgástér
+ ;Fleet label
+@FLM175=Padló területe
+ ;Fleet label
+@FLM176=Maximális terhelés
+ ;Fleet label
+@FLM177=Típus
+ ;Fleet label
+@FLM178=Jármű bruttó tömege
+ ;Fleet label
+@FLM179=Jármű állapota
+ ;Fleet label
+@FLM180=Szervezet
+ ;Fleet label
+@FLM181=Áttekintési csoport
+ ;Fleet label
+@FLM182=Járműgyártmányok
+ ;Fleet label
+@FLM183=Járműmodellek
+ ;Fleet label
+@FLM184=Jármű képe
+ ;Fleet label
+@FLM185=Modell műszaki adatai
+ ;Fleet label
+@FLM186=Képformátum
+ ;Fleet label
+@FLM187=Jármű díjszabása
+ ;Fleet label
+@FLM188=Napi díj
+ ;Fleet label
+@FLM189=Heti díj
+ ;Fleet label
+@FLM190=Szerepkörhöz társított saját belső szervezetek
+ ;Fleet label
+@FLM191=A felhasználó szerepköréhez társított belső szervezeteket tartalmazó tábla
+ ;Fleet label
+@FLM192=A DimAttributeOMBranch nézet az OMOperatingUnit tábla fiókirodaként megjelölt összes rekordját tartalmazza.
+ ;Fleet label
+@FLM193=A DimAttributeOMRegion nézet az OMOperatingUnit tábla régióként megjelölt összes rekordját tartalmazza.
+ ;Fleet label
+@FLM194=A DimAttributeOMRentalLocation nézet az OMOperatingUnit tábla kölcsönzési helyként megjelölt összes rekordját tartalmazza.
+ ;Fleet label
+@FLM195=Flottakezelési központ
+ ;Fleet label
+@FLM196=Hozzáadás
+ ;Fleet label
+@FLM197=Jelenlegi kölcsönzések
+ ;Fleet label
+@FLM198=Hozzárendelt járművek
+ ;Fleet label
+@FLM199=Elérhető járművek
+ ;Fleet label
+@FLM200=Visszahívott járművek
+ ;Fleet label
+@FLM201=Befejeződött
+ ;Fleet label
+@FLM202=Folyamatban
+ ;Fleet label
+@FLM203=Korábbi díjszabás
+ ;Fleet label
+@FLM204=Teljes kölcsönzés
+ ;Fleet label
+@FLM205=Jármű tisztítása
+ ;Fleet label
+@FLM206=Jármű vizsgálata
+ ;Fleet label
+@FLM207=Jármű szervizelése
+ ;Fleet label
+@FLM208=Szervizelés jóváhagyása
+ ;Fleet label
+@FLM209=Vevő adatai
+ ;Fleet label
+@FLM210=Név
+ ;Fleet label
+@FLM211=Jogosítvány
+ ;Fleet label
+@FLM212=Cím
+ ;Fleet label
+@FLM213=Telefon
+ ;Fleet label
+@FLM214=E-mail cím
+ ;Fleet label
+@FLM215=Fizetési adatok
+ ;Fleet label
+@FLM216=Hitelkártya
+ ;Fleet label
+@FLM217=Lejárat
+ ;Fleet label
+@FLM218=Dátum
+ ;Fleet label
+@FLM219=Kölcsönzés kezdete
+ ;Fleet label
+@FLM220=Záró dátum
+ ;Fleet label
+@FLM221=Leírás
+ ;Fleet label
+@FLM222=Mennyiség
+ ;Fleet label
+@FLM223=Kiterjesztett
+ ;Fleet label
+@FLM224=Jármű adatai
+ ;Fleet label
+@FLM225=Gyártmány és modell
+ ;Fleet label
+@FLM226=Napi ár
+ ;Fleet label
+@FLM227=Heti ár
+ ;Fleet label
+@FLM228=Jármű áttekintési része
+ ;Fleet label
+@FLM229=Szín
+ ;Fleet label
+@FLM230=Állapot
+ ;Fleet label
+@FLM231=Hozzárendelt jármű
+ ;Fleet label
+@FLM232=Flottakezelési jelzések
+ ;Fleet label
+@FLM233=Felhasználók korlátozása üzleti egységekre
+ ;Fleet label
+@FLM234=Saját hozzáférés a biztonsági hozzáférésű járművekhez
+ ;Fleet label
+@FLM235=Kölcsönzési rekordok önkiszolgáló rendszere
+ ;Fleet label
+@FLM236=Flottakezelési adminisztrátor
+ ;Fleet label
+@FLM237=Kölcsönzési adminisztrátor
+ ;Fleet label
+@FLM238=Flottakezelési fiókvezető
+ ;Fleet label
+@FLM239=Kölcsönzési fiókvezető
+ ;Fleet label
+@FLM240=Flottakezelési szerviztechnikus
+ ;Fleet label
+@FLM241=Szerviztechnikus
+ ;Fleet label
+@FLM242=Munkafolyamat használata
+ ;Fleet label
+@FLM243=Az elérhető autók készletét megjelenítő szolgáltatáscsoport
+ ;Fleet label
+@FLM244=Ajtók száma
+ ;Number of doors in the FM vehicle
+@FLM245=Kiterjesztett összeg
+ ;Fleet label
+@FLM246=Üzemanyagszint
+ ;Fleet label
+@FLM247=Szabad magasság
+ ;Fleet label
+@FLM248=Teherautó padlóterülete
+ ;Fleet label
+@FLM249=Maximális terhelés
+ ;Fleet label
+@FLM250=Fej feletti tér
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Minősítés
+ ;Fleet label
+@FLM253=Kölcsönzés összesen
+ ;Fleet label
+@FLM254=Ülések
+ ;Fleet label
+@FLM255=Költségtípus
+ ;Fleet label (table)
+@FLM256=Kapacitás
+ ;Fleet label
+@FLM257=Fordulókörsugár
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Munkafolyamat lekérdezése
+ ;Fleet label
+@FLM260=Karbantartási rekord
+ ;Fleet label
+@FLM261=Új kölcsönzés
+ ;Fleet label
+@FLM262=Összes kölcsönzés
+ ;Fleet label
+@FLM263=Flotta beállítása
+ ;Fleet label
+@FLM264=Összes jármű
+ ;Fleet label
+@FLM265=Díjszabás dátumai
+ ;Fleet label
+@FLM268=Fiókok _DEMO_
+ ;Fleet label
+@FLM269=Kölcsönzési helyek _DEMO_
+ ;Fleet label
+@FLM270=Régiók _DEMO_
+ ;Fleet label
+@FLM271=Tisztítás befejezve
+ ;Fleet label
+@FLM272=Vevők törlése
+ ;Fleet label
+@FLM273=Kijelölt kölcsönzések törlése
+ ;Fleet label
+@FLM274=Kijelölt jármű törlése
+ ;Fleet label
+@FLM275=Vizsgálat befejeződött
+ ;Fleet label
+@FLM276=Szervizelés befejeződött
+ ;Fleet label
+@FLM278=Munkafolyamat elindítása
+ ;Fleet label
+@FLM279=Szervizelés jóváhagyása
+ ;Fleet label
+@FLM280=Szervizelés megtagadása
+ ;Fleet label
+@FLM281=Szervizelés elutasítása
+ ;Fleet label
+@FLM282=Kijelölt járművek törlése
+ ;Fleet label
+@FLM283=Munkafolyamat-konfiguráció
+ ;Fleet label
+@FLM284=Fiókok létrehozása vagy módosítása
+ ;Fleet label
+@FLM285=Kölcsönzési helyek létrehozása vagy módosítása
+ ;Fleet label
+@FLM286=Régiók létrehozása vagy módosítása
+ ;Fleet label
+@FLM287=Vevő hozzáadása/szerkesztése
+ ;Fleet label
+@FLM288=Járműkölcsönzési azonosító
+ ;Fleet label (table)
+@FLM289=Kölcsönzési költség hozzáadása/szerkesztése
+ ;Fleet label
+@FLM290=Költség részletei
+ ;Fleet label
+@FLM291=Kölcsönzés részletei
+ ;Fleet label
+@FLM292=Kölcsönzés szerkesztése
+ ;Fleet label
+@FLM293=Kölcsönzések vevő szerint
+ ;Fleet label
+@FLM294=Kölcsönzések modell szerint
+ ;Fleet label
+@FLM295=Jármű hozzáadása/szerkesztése
+ ;Fleet label
+@FLM296=Legközelebbi kölcsönzések
+ ;Fleet label
+@FLM297=Kölcsönzések jármű szerint
+ ;Fleet label
+@FLM298=Lásd az online súgót.
+ ;Fleet label
+@FLM299=Kölcsönzés költségtípusa
+ ;Fleet label
+@FLM300=Megtett távolság rögzítése
+ ;Fleet label
+@FLM301=Flotta folyamatciklusa
+ ;Fleet label
+@FLM302=Flotta – Flotta beállításának kezelése
+ ;Fleet label
+@FLM303=Flotta – Vevőrekordok szerkesztése
+ ;Fleet label
+@FLM304=Flotta – Vevők kezelése
+ ;Fleet label
+@FLM305=Flotta – Készletkezelés
+ ;Fleet label
+@FLM306=Flotta – Autók kölcsönzése
+ ;Fleet label
+@FLM307=Flotta – Vevőrekordok megtekintése
+ ;Fleet label
+@FLM308=Flotta – Készlet megtekintése
+ ;Fleet label
+@FLM309=Flotta – Munkafolyamat adminisztrátora
+ ;Fleet label
+@FLM310=Jármű színe
+ ;Fleet label
+@FLM311=Flotta – Munkafolyamat vezetője
+ ;Fleet label
+@FLM312=Flotta – Munkafolyamat szerviztechnikusa
+ ;Fleet label
+@FLM313=Flotta – Alapvető feladatkörök
+ ;Fleet label
+@FLM314=Flotta – Autók kezelése
+ ;Fleet label
+@FLM315=Flotta szabványos folyamatciklusa
+ ;Fleet label
+@FLM316=Jármű megtett távolsága
+ ;Fleet label
+@FLM317=Költség
+ ;Fleet label
+@FLM318=Magasság
+ ;Fleet label
+@FLM54=Vevők
+ ;Fleet label
+@FLM266=Hitelkártya lejárata
+ ;Fleet label (table)
+@FLM277=Gépjármű-vezetői jogosítvány
+ ;Fleet label (table)
+@FLM320=Vevőlista
+ ;Fleet label (report menu item)
+@FLM321=Vevőlista jelentés
+ ;Fleet label (report menu item help text)
+@FLM267=Munkafolyamat beállítása
+ ;Fleet label
+@FLM400=Jármű-karbantartási munkafolyamat
+ ;Fleet label
+@FLM500=Választott fizetési mód
+ ;Fleet label
+@FLM501=Fehér
+ ;Fleet colors
+@FLM502=Szürke
+ ;Fleet colors
+@FLM503=Sárga
+ ;Fleet colors
+@FLM504=Narancssárga
+ ;Fleet colors
+@FLM505=Átvétel
+ ;Fleet label
+@FLM506=Leadás
+ ;Fleet label
+@FLM507=Kölcsönzés kezdete
+ ;Fleet label
+@FLM401=Foglaláskezelés
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Előző megtett távolság
+ ;Fleet label for returning vehicle slider
+@FLM509=Új megtett távolság
+ ;Fleet label for returning vehicle slider
+@FLM510=Járműkölcsönzés
+ ;Fleet label
+@FLM512=Kiegészítő költségek
+ ;Fleet label
+@FLM513=Megtakarítás
+ ;Fleet label
+@FLM514=Új foglalás
+ ;New reservation menu item label
+@FLM515=Gyártás éve
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Lejárat éve
+ ;Expiration year label
+@FLM517=Vevők jelentése
+ ;Fleet tile label
+@FLM518=Meglévő foglalások
+ ;Fleet tile label
+@FLM519=Lejárt kölcsönzések
+ ;Fleet tile label
+@FLM520=Fizetés neve
+ ;Fleet PaymentInfo field label
+@FLM521=Kártyaellenőrző kód
+ ;Fleet label
+@FLM522=Lejárat hónapja
+ ;Expiration month label
+@FLM523=A kártyán szereplő név
+ ;Fleet name on credit card
+@FLM524=Jármű díjszabási előzményei
+ ;Fleet form label
+@FLM525=Új megjegyzés
+ ;Fleet dialog caption
+@FLM526=Új vevő
+ ;Fleet dialog caption
+@FLM527=Új fizetési adatok
+ ;Fleet dialog caption
+@FLM528=Tartozék hozzáadása
+ ;Fleet dialog caption
+@FLM529=Válasszon vevőt
+ ;Fleet dialog caption
+@FLM530=Átvételre kész
+ ;Fleet ReservationState enum option
+@FLM531=Címrekord azonosítója
+ ;Fleet label
+@FLM532=Szín hexadecimális kódja
+ ;Fleet label
+@FLM533=Szín azonosítója
+ ;Fleet label
+@FLM534=Szín neve
+ ;Fleet label
+@FLM535=Engedmény azonosítója
+ ;Fleet label
+@FLM536=Fizetési adatok azonosítója
+ ;Fleet label
+@FLM537=Foglalás azonosítója
+ ;Fleet label
+@FLM539=Kölcsönzött járművek
+ ;Fleet label
+@FLM540=Flottakezelés
+ ;Fleet menu label
+@FLM541=Bemutató adatok betöltése
+ ;Fleet button text
+@FLM542=Díjszabás előzményei
+ ;Fleet button text
+@FLM543=Vevő módosítása
+ ;Fleet dialog label
+@FLM544=Jármű választása
+ ;Fleet button text
+@FLM545=Minden foglalás
+ ;Fleet grid title
+@FLM546=Vevői visszajelzés
+ ;Fleet group label
+@FLM547=Kölcsönzési adatok
+ ;Fleet group label
+@FLM548=Költség képe
+ ;Fleet group label
+@FLM549=Adatok beállítása
+ ;Fleet tab label
+@FLM550=Jármű adatai
+ ;Fleet group label
+@FLM551=Elérhető járművek
+ ;Fleet chart label
+@FLM552=Járműkölcsönzési állapot
+ ;Fleet chart label
+@FLM553=Jármű modell szerint – bevétel
+ ;Fleet chart label
+@FLM554=Átvétel ma
+ ;Fleet panorama label
+@FLM555=Leadás holnap
+ ;Fleet panorama label
+@FLM556=Kölcsönzési díjak
+ ;Fleet panorama label
+@FLM558=Foglalási adatok
+ ;Fleet panorama label
+@FLM559=Tartozékok
+ ;Fleet panorama label
+@FLM560=Jellemzők
+ ;Fleet group label
+@FLM561=Átvételi adatok
+ ;Fleet field label
+@FLM562=Leadási adatok
+ ;Fleet field label
+@FLM563=Kölcsönzések listája
+ ;Fleet report label
+@FLM564=Mintavevők, -kölcsönzések és -járművek létrehozása
+ ;Fleet TOC label
+@FLM565=Ez csak pár másodpercet vesz igénybe.  
+ ;New Comment
+@FLM322=Kölcsönzések vevő szerint
+ ;Fleet report label
+@FLM566=Vevődiagramok
+ ;Fleet form part caption
+@FLM567=Jármű bevételi diagramja
+ ;Fleet form part caption
+@FLM601=Flottakezelés – Kölcsönzések
+ ;Fleet rental entity
+@FLM602=Flottakezelés – Vevők
+ ;Fleet customer entity
+@FLM603=Mintaalkalmazás
+ ;Label for the sample applet name
+@FLM604=A kisalkalmazás keretrendszerének bemutatásához és teszteléséhez használt mintaalkalmazás.
+ ;Label for the sample applet description
+@FLM605=További részletek
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Vevő helyei
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=A sablon a vevők helyeinek térképét tartalmazza.
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Kölcsönzések állapot szerint
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=A sablon a kölcsönzési állapotok számait tartalmazza.
+ ;Rentals by status template description
+FMCustomerEntityView=Flottakezelés – Vevők – entitás megtekintése
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Flottakezelés – Vevők – entitás karbantartása
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Flottakezelés – Kölcsönzések – entitás megtekintése
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Flottakezelés – Kölcsönzések – entitás karbantartása
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Tevékenység – entitás megtekintése
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Tevékenység – entitás karbantartása
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Kategória – entitás megtekintése
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Kategória – entitás karbantartása
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Jogi személy – entitás megtekintése
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Jogi személy – entitás karbantartása
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Sortulajdonság – entitás megtekintése
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Sortulajdonság – entitás karbantartása
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Időszak – entitás megtekintése
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Időszak – entitás karbantartása
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Projekt – entitás megtekintése
+ ;View privilege for RCADProject
+RCADProjectMaintain=Projekt – entitás karbantartása
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Időnyilvántartás – entitás megtekintése
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Időnyilvántartás – entitás karbantartása
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Idő-nyilvántartási bejegyzés – entitás megtekintése
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Idő-nyilvántartási bejegyzés – entitás karbantartása
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Idő-nyilvántartási beállítások – entitás megtekintése
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Idő-nyilvántartási beállítások – entitás karbantartása
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Idő-nyilvántartási munkafolyamat-előzmények – entitás megtekintése
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Idő-nyilvántartási munkafolyamat-előzmények – entitás karbantartása
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Munkafolyamatelőzmény-elem – entitás megtekintése
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Munkafolyamatelőzmény-elem – entitás karbantartása
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Kölcsönzések keresése
+FMTemplateCustomerInformationDisplayName=Vevő adatai
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=A sablon tartalmazza a vevőre vonatkozó alapvető információkat és a kölcsönzései listáját.
+ ;Fleet customer information template description
+DataCreated=A mintaadatok létrehozva.
+DataRestored=A mintaadatok visszaállítva.
+DataRestoreConfirm=Ezzel visszaállítja az összes flottakezelési adatot az eredeti állapotába. Biztosan ezt szeretné tenni?
+Branch=Bankfiók _DEMO_
+ ;Branch operating unit type
+RentalLocation=Kölcsönzés helye _DEMO_
+ ;Rental location operating unit type
+Region=Régió _DEMO_
+ ;Region operating unit type
+Timestamp=Időbélyeg
+ ;Comment timestamp
+CustomerImage=Vevő képe
+ ;Fleet label
+Analytics=Elemzés
+ ;used on Fleet clerk workspace for Analytics section

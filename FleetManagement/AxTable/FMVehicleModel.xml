@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehicleModel</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMVehicleModel extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>FMVehicleMake</Name>
+				<Source><![CDATA[
+    public FMVehicleMake FMVehicleMake(FMVehicleMake _relatedTable = null)
+    {
+        if (prmIsDefault(_relatedTable))
+        {
+            return this.setLink('FMVehicleMake');
+        }
+        else
+        {
+            // Bug 3135762: setLink does not seem to work
+            this.Make = _relatedTable.RecId;
+            return this.setLink('FMVehicleMake', _relatedTable);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>vehicleImage</Name>
+				<Source><![CDATA[
+    public display container vehicleImage()
+    {
+        ImageReference imgRef;
+        container imgContainer = this.Image;
+
+        if(imgContainer == connull())
+        {
+            imgRef = ImageReference::constructForSymbol("Vehicle");
+            imgContainer = imgRef.pack();
+        }
+
+        return imgContainer;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>YearMakeModel</Name>
+				<Source><![CDATA[
+    public display str YearMakeModel()
+    {
+        str yearMakeModel = int2str(this.Year) + " " + this.Model;
+        FMVehicleMake fmmake;
+        select firstonly fmmake where fmmake.RecId == this.Make;
+        if (fmmake)
+        {
+            yearMakeModel = int2str(this.Year) + " " + fmmake.Make + " " + this.Model;
+        }
+        return yearMakeModel;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>validateField</Name>
+				<Source><![CDATA[
+    public boolean validateField(FieldId _fieldIdToCheck)
+    {
+        boolean ret;
+        int currentYear; 
+
+        ret = super(_fieldIdToCheck);
+
+        if(ret)        
+        {
+            switch (_fieldIdToCheck)
+            {
+                case fieldnum(FMVehicleModel, Year):                    
+                    currentYear = DateTimeUtil::year(DateTimeUtil::getSystemDateTime());
+
+                    if(this.Year < currentYear-10 || this.Year > currentYear+1) 
+                    {
+                        ret = checkFailed("Model year must be between " + int2str(currentYear-10) + " and " + int2str(currentYear+1));
+                    }
+                    break;
+
+            }
+        }
+
+        return ret;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>@SYS172552</DeveloperDocumentation>
+	<FormRef>FMSetup</FormRef>
+	<Label>@FLM183</Label>
+	<SingularLabel>Vehicle model</SingularLabel>
+	<TableGroup>Main</TableGroup>
+	<TitleField1>RecId</TitleField1>
+	<TitleField2>Model</TitleField2>
+	<CacheLookup>Found</CacheLookup>
+	<Modules>FleetManagement</Modules>
+	<ReplacementKey>ReplacementKey</ReplacementKey>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Make</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Model</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Make</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Model</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ModelSpec</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Make</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Model</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Make</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Model</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Image</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ImageFormat</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Make</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Model</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ModelSpec</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Year</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleCount</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldContainer">
+			<Name>Image</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Bitmap</ExtendedDataType>
+			<Label>@FLM184</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>ImageFormat</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>ImageFormat</ExtendedDataType>
+			<Label>@FLM186</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>Make</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMVehicleMakeRecId</ExtendedDataType>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>Model</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMVehicleModelId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>ModelSpec</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMNote</ExtendedDataType>
+			<Label>@FLM185</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>Year</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMVehicleModelYear</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>VehicleCount</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes>
+		<AxTableIndex>
+			<Name>ReplacementKey</Name>
+			<AlternateKey>Yes</AlternateKey>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>Make</DataField>
+				</AxTableIndexField>
+				<AxTableIndexField>
+					<DataField>Model</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+	</Indexes>
+	<Mappings />
+	<Relations>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>VehicleMake</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<CreateNavigationPropertyMethods>Yes</CreateNavigationPropertyMethods>
+			<RelatedTable>FMVehicleMake</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>Make</Name>
+					<Field>Make</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+			<Index>RecId</Index>
+		</AxTableRelation>
+	</Relations>
+	<StateMachines />
+</AxTable>

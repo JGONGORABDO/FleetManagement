@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxEnum xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehicle_DisplayRelationType</Name>
+	<Label>@FLM143</Label>
+	<EnumValues>
+		<AxEnumValue>
+			<Name>Unknown</Name>
+			<Label>@FLM144</Label>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>FMVehicle</Name>
+			<Label>@FLM86</Label>
+			<Value>1</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>FMTruck</Name>
+			<Label>@FLM145</Label>
+			<Value>2</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>FMCarClass</Name>
+			<Label>@FLM146</Label>
+			<Value>3</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>FMSUV</Name>
+			<Label>@FLM93</Label>
+			<Value>4</Value>
+		</AxEnumValue>
+	</EnumValues>
+</AxEnum>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxLabelFile xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FleetSecurityDuties_en-SG</Name>
+	<LabelContentFileName>FleetSecurityDuties.en-SG.label.txt</LabelContentFileName>
+	<LabelFileId>FleetSecurityDuties</LabelFileId>
+	<Language>en-SG</Language>
+	<RelativeUriInModelStore>FleetManagement\FleetManagement\AxLabelFile\LabelResources\en-SG\FleetSecurityDuties.en-SG.label.txt</RelativeUriInModelStore>
+</AxLabelFile>

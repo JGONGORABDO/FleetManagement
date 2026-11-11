@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxQuery xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxQuerySimple">
+	<Name>FMWorkflowQuery</Name>
+	<SourceCode>
+		<Methods>
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Query]
+public class FMWorkflowQuery extends QueryRun
+{
+}
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<Title>@FLM259</Title>
+	<DataSources>
+		<AxQuerySimpleRootDataSource>
+			<Name>FMVehicleMaintenance</Name>
+			<DynamicFields>Yes</DynamicFields>
+			<Table>FMVehicleMaintenance</Table>
+			<DataSources>
+				<AxQuerySimpleEmbeddedDataSource>
+					<Name>FMVehicle_1</Name>
+					<DynamicFields>Yes</DynamicFields>
+					<Table>FMVehicle</Table>
+					<DataSources />
+					<Fields />
+					<Ranges />
+					<Relations>
+						<AxQuerySimpleDataSourceRelation>
+							<Name>Relation</Name>
+							<JoinDataSource>FMVehicleMaintenance</JoinDataSource>
+							<JoinRelationName>FMVehicle</JoinRelationName>
+						</AxQuerySimpleDataSourceRelation>
+					</Relations>
+				</AxQuerySimpleEmbeddedDataSource>
+			</DataSources>
+			<Fields />
+			<Ranges />
+			<GroupBy />
+			<Having />
+			<OrderBy />
+		</AxQuerySimpleRootDataSource>
+	</DataSources>
+</AxQuery>

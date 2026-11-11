@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxForm xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>FMRentalTotals_FactBox</Name>
+	<SourceCode>
+		<Methods xmlns="">
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Form]
+public class FMRentalTotals_FactBox extends FormRun
+{
+}
+]]></Source>
+			</Method>
+		</Methods>
+		<DataSources xmlns="" />
+		<DataControls xmlns="" />
+		<Members xmlns="" />
+	</SourceCode>
+	<DataSources>
+		<AxFormDataSource xmlns="">
+			<Name>FMRental</Name>
+			<Table>FMRental</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>Comments</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Customer</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>EndDate</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>EndFuelLevel</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>EndMileage</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>PaymentInformationID</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RentalId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>StartDate</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>StartFuelLevel</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>StartMileage</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>State</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Vehicle</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>VehicleRatePerDay</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>VehicleRatePerWeek</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>VehicleRateTotal</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+	</DataSources>
+	<Design>
+		<Pattern xmlns="">FormPartFactboxCard</Pattern>
+		<PatternVersion xmlns="">UX7 1.0</PatternVersion>
+		<Style xmlns="">FormPart</Style>
+		<Controls xmlns="">
+			<AxFormControl xmlns=""
+				i:type="AxFormRealControl">
+				<Name>VehicleRental</Name>
+				<AutoDeclaration>Yes</AutoDeclaration>
+				<HeightMode>Auto</HeightMode>
+				<Type>Real</Type>
+				<WidthMode>Auto</WidthMode>
+				<FormControlExtension
+					i:nil="true" />
+				<DataField>VehicleRateTotal</DataField>
+				<DataSource>FMRental</DataSource>
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormRealControl">
+				<Name>RentalChargesTotal</Name>
+				<AutoDeclaration>Yes</AutoDeclaration>
+				<HeightMode>Auto</HeightMode>
+				<Type>Real</Type>
+				<WidthMode>Auto</WidthMode>
+				<FormControlExtension
+					i:nil="true" />
+				<DataMethod>rentalChargesTotal</DataMethod>
+				<DataSource>FMRental</DataSource>
+				<Label>@FLM512</Label>
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormRealControl">
+				<Name>SavingsTotal</Name>
+				<AutoDeclaration>Yes</AutoDeclaration>
+				<HeightMode>Auto</HeightMode>
+				<Type>Real</Type>
+				<WidthMode>Auto</WidthMode>
+				<FormControlExtension
+					i:nil="true" />
+				<DataMethod>savings</DataMethod>
+				<DataSource>FMRental</DataSource>
+				<Label>@FLM513</Label>
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormRealControl">
+				<Name>Total</Name>
+				<AutoDeclaration>Yes</AutoDeclaration>
+				<HeightMode>Auto</HeightMode>
+				<Type>Real</Type>
+				<WidthMode>Auto</WidthMode>
+				<FormControlExtension
+					i:nil="true" />
+				<DataMethod>totals</DataMethod>
+				<DataSource>FMRental</DataSource>
+				<Label>@FLM253</Label>
+			</AxFormControl>
+		</Controls>
+	</Design>
+	<Parts />
+</AxForm>

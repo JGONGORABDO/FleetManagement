@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxSecurityPolicy xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMBURestrict</Name>
+	<ConstrainedTable>Yes</ConstrainedTable>
+	<Enabled>No</Enabled>
+	<Label>@FLM233</Label>
+	<PrimaryTable>FMVehicle</PrimaryTable>
+	<Query>FMBURestrict</Query>
+	<ConstrainedTables>
+		<AxSecurityPolicyConstrainedEntity xmlns=""
+			i:type="AxSecurityPolicyConstrainedTable">
+			<Name>FMVehicleMaintenance</Name>
+			<ConstrainedTables />
+			<TableRelation>VehicleRelation</TableRelation>
+		</AxSecurityPolicyConstrainedEntity>
+		<AxSecurityPolicyConstrainedEntity xmlns=""
+			i:type="AxSecurityPolicyConstrainedTable">
+			<Name>FMRental</Name>
+			<ConstrainedTables />
+			<TableRelation>FMVehicle</TableRelation>
+		</AxSecurityPolicyConstrainedEntity>
+	</ConstrainedTables>
+</AxSecurityPolicy>

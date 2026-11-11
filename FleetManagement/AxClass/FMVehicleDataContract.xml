@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehicleDataContract</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[DataContractAttribute]
+public class FMVehicleDataContract
+{
+    str _VIN;
+    str _Make;
+    str _Model;
+    str _Mileage;
+    str _Color;
+    int _MPG;
+    str _transmission;
+    str _AssembledIn;
+    str _CarFactsSummary;
+    FMVehicleStatus _Status;
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>CarFactsSummary</Name>
+				<Source><![CDATA[
+    public str CarFactsSummary(str carFactsSummary = _CarFactsSummary)
+    {
+        _CarFactsSummary = carFactsSummary;
+        return _CarFactsSummary;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Make</Name>
+				<Source><![CDATA[
+    [DataMemberAttribute]
+    public str Make(str make = _Make)
+    {
+        _Make = make;
+        return _Make;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Model</Name>
+				<Source><![CDATA[
+    [DataMemberAttribute]
+    public str Model(str model = _Model)
+    {
+        _Model = model;
+        return _Model;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Status</Name>
+				<Source><![CDATA[
+    public FMVehicleStatus Status(FMVehicleStatus status = _Status )
+    {
+        _Status = status;
+        return _Status;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>VIN</Name>
+				<Source><![CDATA[
+    [DataMemberAttribute]
+    public str VIN(str vin = _VIN)
+    {
+        _VIN = vin;
+        return _VIN;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

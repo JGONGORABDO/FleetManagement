@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Manter dados da entidade Global para a gestão de dados 
+DataManagementFleetMasterEntitiesView=Ver dados da entidade Global para a gestão de dados 

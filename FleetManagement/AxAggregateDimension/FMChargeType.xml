@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxAggregateDimension xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V2">
+	<Name>FMChargeType</Name>
+	<Label>@FLM162</Label>
+	<Table>FMChargeType</Table>
+	<Attributes>
+		<AxDimensionAttribute xmlns="">
+			<Name>ChargeType</Name>
+			<NameField>ChargeType</NameField>
+			<Usage>Key</Usage>
+			<ValueField>ChargeType</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>ChargeType</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>ChargeDescription</Name>
+			<NameField>Description</NameField>
+			<ValueField>Description</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>Description</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+	</Attributes>
+	<Hierarchies />
+</AxAggregateDimension>

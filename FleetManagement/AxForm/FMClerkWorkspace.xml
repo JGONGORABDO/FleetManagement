@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxForm xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>FMClerkWorkspace</Name>
+	<SourceCode>
+		<Methods xmlns="">
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Form] 
+public class FMClerkWorkspace extends FormRun
+{
+    private boolean initReportControl = true;
+
+}
+]]></Source>
+			</Method>
+			<Method>
+				<Name>initAnalyticalReport</Name>
+				<Source><![CDATA[
+    protected void initAnalyticalReport()
+    {
+        if (!initReportControl)
+        {
+            return;
+        }
+
+        // Note: secure entry point into the Workspace's Analytics report
+        if (Global::hasMenuItemAccess(menuItemDisplayStr(FMClerkWorkspace), MenuItemType::Display))
+        {
+            FMPBIWorkspaceController controller = new FMPBIWorkspaceController();
+            PBIReportHelper::initializeReportControl('FMPBIWorkspaces', powerBIReportGroup);
+        }
+
+        initReportControl = false;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>init</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Initializes the form.
+    /// </summary>
+    public void init()
+    {
+        super();
+        this.initAnalyticalReport();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+		<DataSources xmlns="" />
+		<DataControls xmlns="" />
+		<Members xmlns="" />
+	</SourceCode>
+	<DataSources />
+	<Design>
+		<Caption xmlns="">@FLM401</Caption>
+		<Pattern xmlns="">TabbedWorkspace</Pattern>
+		<PatternVersion xmlns="">1.0</PatternVersion>
+		<ShowDeleteButton xmlns="">No</ShowDeleteButton>
+		<ShowNewButton xmlns="">No</ShowNewButton>
+		<Style xmlns="">Workspace</Style>
+		<ViewEditMode xmlns="">View</ViewEditMode>
+		<Controls xmlns="">
+			<AxFormControl xmlns=""
+				i:type="AxFormActionPaneControl">
+				<Name>ActionPane</Name>
+				<Type>ActionPane</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormButtonGroupControl">
+						<Name>WorkspaceButtonGroup</Name>
+						<Type>ButtonGroup</Type>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormMenuFunctionButtonControl">
+								<Name>FmNewCustomerMenuItemButton</Name>
+								<Type>MenuFunctionButton</Type>
+								<FormControlExtension
+									i:nil="true" />
+								<MenuItemName>FMCustomer</MenuItemName>
+								<NormalImage>New</NormalImage>
+								<OpenMode>New</OpenMode>
+								<Text>@FLM526</Text>
+							</AxFormControl>
+						</Controls>
+					</AxFormControl>
+				</Controls>
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormTabControl">
+				<Name>FormTabControl1</Name>
+				<Type>Tab</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormTabPageControl">
+						<Name>Workspace</Name>
+						<Type>TabPage</Type>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormTabControl">
+								<Name>PanoramaBody</Name>
+								<AllowEdit>No</AllowEdit>
+								<AutoDeclaration>Yes</AutoDeclaration>
+								<ExtendedStyle>tab_simpleFastTab</ExtendedStyle>
+								<Type>Tab</Type>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>SummaryTileSection</Name>
+										<AutoDeclaration>Yes</AutoDeclaration>
+										<ExtendedStyle>workspace_tileLayout</ExtendedStyle>
+										<HeightMode>Auto</HeightMode>
+										<Pattern>SectionTiles</Pattern>
+										<PatternVersion>1.1</PatternVersion>
+										<Type>TabPage</Type>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormMenuFunctionButtonControl">
+												<Name>FmCurrentRentalsShortWideTile</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<Type>MenuFunctionButton</Type>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension>
+													<Name>TileButtonControl</Name>
+													<ExtensionComponents />
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>tile</Name>
+															<Type>String</Type>
+															<Value>FmCurrentRentalsShortWideTile</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>tileDisplay</Name>
+															<Type>Enum</Type>
+															<TypeName>TileDisplay</TypeName>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormMenuFunctionButtonControl">
+												<Name>FMOverdueReturnsShortWideTile</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<Type>MenuFunctionButton</Type>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension>
+													<Name>TileButtonControl</Name>
+													<ExtensionComponents />
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>tile</Name>
+															<Type>String</Type>
+															<Value>FMOverdueReturnsShortWideTile</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>tileDisplay</Name>
+															<Type>Enum</Type>
+															<TypeName>TileDisplay</TypeName>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormMenuFunctionButtonControl">
+												<Name>FMAllRentalsShortWideTile</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<Type>MenuFunctionButton</Type>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension>
+													<Name>TileButtonControl</Name>
+													<ExtensionComponents />
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>tile</Name>
+															<Type>String</Type>
+															<Value>FMAllRentalsShortWideTile</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>tileDisplay</Name>
+															<Type>Enum</Type>
+															<TypeName>TileDisplay</TypeName>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormMenuFunctionButtonControl">
+												<Name>NewRentalTile</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<Type>MenuFunctionButton</Type>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension>
+													<Name>TileButtonControl</Name>
+													<ExtensionComponents />
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>tile</Name>
+															<Type>String</Type>
+															<Value>FMNewRentalTile</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>tileDisplay</Name>
+															<Type>Enum</Type>
+															<TypeName>TileDisplay</TypeName>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormMenuFunctionButtonControl">
+												<Name>TotalRevenueKPITile</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<Type>MenuFunctionButton</Type>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension>
+													<Name>TileButtonControl</Name>
+													<ExtensionComponents />
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>tile</Name>
+															<Type>String</Type>
+															<Value>FMRevenueKPITile</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>tileDisplay</Name>
+															<Type>Enum</Type>
+															<TypeName>TileDisplay</TypeName>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormMenuFunctionButtonControl">
+												<Name>FMAllCustomersTile</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<Type>MenuFunctionButton</Type>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension>
+													<Name>TileButtonControl</Name>
+													<ExtensionComponents />
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>tile</Name>
+															<Type>String</Type>
+															<Value>FMAllCustomersTile</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>tileDisplay</Name>
+															<Type>Enum</Type>
+															<TypeName>TileDisplay</TypeName>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+											</AxFormControl>
+										</Controls>
+										<ArrangeMethod>HorizontalLeft</ArrangeMethod>
+										<Caption>@SYS15560</Caption>
+										<FastTabExpanded>Yes</FastTabExpanded>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>TabbedListSection</Name>
+										<Pattern>SectionTabbedList</Pattern>
+										<PatternVersion>1.1</PatternVersion>
+										<Type>TabPage</Type>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormTabControl">
+												<Name>TabbedLists</Name>
+												<Height>500</Height>
+												<HeightMode>Manual</HeightMode>
+												<Type>Tab</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormTabPageControl">
+														<Name>PickingUpTodayContainer</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<HeightMode>Auto</HeightMode>
+														<Type>TabPage</Type>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormContainerControl">
+																<Name>PickingUpTodayPart</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>SizeToAvailable</HeightMode>
+																<Type>Container</Type>
+																<WidthMode>SizeToAvailable</WidthMode>
+																<FormControlExtension>
+																	<Name>FormPartControl</Name>
+																	<ExtensionComponents>
+																		<AxFormControlExtensionComponent xmlns=""
+																			i:type="AxFormControlExtensionComponentComposite">
+																			<Name>dataLinks</Name>
+																			<ExtensionComponents />
+																		</AxFormControlExtensionComponent>
+																	</ExtensionComponents>
+																	<ExtensionProperties>
+																		<AxFormControlExtensionProperty>
+																			<Name>targetName</Name>
+																			<Type>String</Type>
+																			<Value>FMPickingUpTodayPart</Value>
+																		</AxFormControlExtensionProperty>
+																		<AxFormControlExtensionProperty>
+																			<Name>parmRunMode</Name>
+																			<Type>Enum</Type>
+																			<TypeName>FormPartControlRunMode</TypeName>
+																			<Value>Local</Value>
+																		</AxFormControlExtensionProperty>
+																		<AxFormControlExtensionProperty>
+																			<Name>autoRefreshInterval</Name>
+																			<Type>Int32</Type>
+																			<Value>0</Value>
+																		</AxFormControlExtensionProperty>
+																	</ExtensionProperties>
+																</FormControlExtension>
+																<Controls />
+															</AxFormControl>
+														</Controls>
+														<Caption>@FLM554</Caption>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormTabPageControl">
+														<Name>ReturningTodayContainer</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<HeightMode>Auto</HeightMode>
+														<Type>TabPage</Type>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormContainerControl">
+																<Name>ReturningTodayPart</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>SizeToAvailable</HeightMode>
+																<Type>Container</Type>
+																<WidthMode>SizeToAvailable</WidthMode>
+																<FormControlExtension>
+																	<Name>FormPartControl</Name>
+																	<ExtensionComponents>
+																		<AxFormControlExtensionComponent xmlns=""
+																			i:type="AxFormControlExtensionComponentComposite">
+																			<Name>dataLinks</Name>
+																			<ExtensionComponents />
+																		</AxFormControlExtensionComponent>
+																	</ExtensionComponents>
+																	<ExtensionProperties>
+																		<AxFormControlExtensionProperty>
+																			<Name>targetName</Name>
+																			<Type>String</Type>
+																			<Value>FMReturningRentalTodayPart</Value>
+																		</AxFormControlExtensionProperty>
+																		<AxFormControlExtensionProperty>
+																			<Name>parmRunMode</Name>
+																			<Type>Enum</Type>
+																			<TypeName>FormPartControlRunMode</TypeName>
+																			<Value>Local</Value>
+																		</AxFormControlExtensionProperty>
+																		<AxFormControlExtensionProperty>
+																			<Name>autoRefreshInterval</Name>
+																			<Type>Int32</Type>
+																			<Value>0</Value>
+																		</AxFormControlExtensionProperty>
+																	</ExtensionProperties>
+																</FormControlExtension>
+																<Controls />
+															</AxFormControl>
+														</Controls>
+														<Caption>@FLM555</Caption>
+													</AxFormControl>
+												</Controls>
+												<ArrangeMethod>Vertical</ArrangeMethod>
+												<Style>VerticalTabs</Style>
+											</AxFormControl>
+										</Controls>
+										<Caption>@FLM71</Caption>
+										<FastTabExpanded>Yes</FastTabExpanded>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>ChartSection</Name>
+										<AutoDeclaration>Yes</AutoDeclaration>
+										<HeightMode>Auto</HeightMode>
+										<Pattern>SectionStackedChart</Pattern>
+										<PatternVersion>1.1</PatternVersion>
+										<Type>TabPage</Type>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormContainerControl">
+												<Name>BIChartsPart</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<Type>Container</Type>
+												<FormControlExtension>
+													<Name>FormPartControl</Name>
+													<ExtensionComponents>
+														<AxFormControlExtensionComponent xmlns=""
+															i:type="AxFormControlExtensionComponentComposite">
+															<Name>dataLinks</Name>
+															<ExtensionComponents />
+														</AxFormControlExtensionComponent>
+													</ExtensionComponents>
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>targetName</Name>
+															<Type>String</Type>
+															<Value>FMBiChartsPart</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>parmRunMode</Name>
+															<Type>Enum</Type>
+															<TypeName>FormPartControlRunMode</TypeName>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>autoRefreshInterval</Name>
+															<Type>Int32</Type>
+															<Value>0</Value>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+												<Controls />
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormContainerControl">
+												<Name>BIChartsPart_VehicleByModel</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<Type>Container</Type>
+												<FormControlExtension>
+													<Name>FormPartControl</Name>
+													<ExtensionComponents>
+														<AxFormControlExtensionComponent xmlns=""
+															i:type="AxFormControlExtensionComponentComposite">
+															<Name>dataLinks</Name>
+															<ExtensionComponents />
+														</AxFormControlExtensionComponent>
+													</ExtensionComponents>
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>targetName</Name>
+															<Type>String</Type>
+															<Value>FMBiChartPart_VehicleByModel</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>parmRunMode</Name>
+															<Type>Enum</Type>
+															<TypeName>FormPartControlRunMode</TypeName>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>autoRefreshInterval</Name>
+															<Type>Int32</Type>
+															<Value>0</Value>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+												<Controls />
+											</AxFormControl>
+										</Controls>
+										<ColumnsMode>Fill</ColumnsMode>
+										<Caption>@SYS326</Caption>
+										<FastTabExpanded>Yes</FastTabExpanded>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>PowerBITabPage</Name>
+										<AutoDeclaration>Yes</AutoDeclaration>
+										<Pattern>SectionPowerBI</Pattern>
+										<PatternVersion>1.0</PatternVersion>
+										<Type>TabPage</Type>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl>
+												<Name>PowerBIControl</Name>
+												<FormControlExtension>
+													<Name>PowerBIControl</Name>
+													<ExtensionComponents />
+													<ExtensionProperties />
+												</FormControlExtension>
+											</AxFormControl>
+										</Controls>
+										<Caption>@PowerBIIntegration:PowerBISectionCaption</Caption>
+										<FastTabExpanded>Yes</FastTabExpanded>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormTabPageControl">
+										<Name>LinksSection</Name>
+										<Pattern>SectionRelatedLinks</Pattern>
+										<PatternVersion>1.1</PatternVersion>
+										<Type>TabPage</Type>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>CommonRelatedLinksGroup</Name>
+												<Type>Group</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormMenuFunctionButtonControl">
+														<Name>FMRentalMenuItem</Name>
+														<Type>MenuFunctionButton</Type>
+														<FormControlExtension
+															i:nil="true" />
+														<ButtonDisplay>TextOnly</ButtonDisplay>
+														<MenuItemName>FMRental</MenuItemName>
+														<Style>Link</Style>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormMenuFunctionButtonControl">
+														<Name>FMRental_UpcomingMenuItem</Name>
+														<Type>MenuFunctionButton</Type>
+														<FormControlExtension
+															i:nil="true" />
+														<ButtonDisplay>TextOnly</ButtonDisplay>
+														<MenuItemName>FMRental_Upcoming</MenuItemName>
+														<Style>Link</Style>
+													</AxFormControl>
+												</Controls>
+												<Caption>@SYS26806</Caption>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>ReportRelatedLinksGroup</Name>
+												<Type>Group</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormMenuFunctionButtonControl">
+														<Name>FMCustomersListReport</Name>
+														<Type>MenuFunctionButton</Type>
+														<FormControlExtension
+															i:nil="true" />
+														<ButtonDisplay>TextOnly</ButtonDisplay>
+														<MenuItemName>FMCustomersListReport</MenuItemName>
+														<MenuItemType>Output</MenuItemType>
+														<Style>Link</Style>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormMenuFunctionButtonControl">
+														<Name>FMRentalsByCustReport</Name>
+														<Type>MenuFunctionButton</Type>
+														<FormControlExtension
+															i:nil="true" />
+														<ButtonDisplay>TextOnly</ButtonDisplay>
+														<MenuItemName>FMRentalsByCustReport</MenuItemName>
+														<MenuItemType>Output</MenuItemType>
+														<Style>Link</Style>
+														<Text>@FLM563</Text>
+													</AxFormControl>
+												</Controls>
+												<Caption>@SYS6845</Caption>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>SetupRelatedLinksGroup</Name>
+												<Type>Group</Type>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormMenuFunctionButtonControl">
+														<Name>FMSetupMenuItem</Name>
+														<Type>MenuFunctionButton</Type>
+														<FormControlExtension
+															i:nil="true" />
+														<ButtonDisplay>TextOnly</ButtonDisplay>
+														<MenuItemName>FMSetup</MenuItemName>
+														<Style>Link</Style>
+													</AxFormControl>
+												</Controls>
+												<Caption>@SYS26269</Caption>
+											</AxFormControl>
+										</Controls>
+										<ColumnsMode>Fill</ColumnsMode>
+										<Caption>@SYS72248</Caption>
+										<FastTabExpanded>Yes</FastTabExpanded>
+									</AxFormControl>
+								</Controls>
+								<Style>FastTabs</Style>
+							</AxFormControl>
+						</Controls>
+						<Caption>@SYS319419</Caption>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormTabPageControl">
+						<Name>Analytics</Name>
+						<Type>TabPage</Type>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>PowerBIReportGroup</Name>
+								<AutoDeclaration>Yes</AutoDeclaration>
+								<HeightMode>SizeToAvailable</HeightMode>
+								<Type>Group</Type>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls />
+							</AxFormControl>
+						</Controls>
+						<Caption>@FLM:Analytics</Caption>
+					</AxFormControl>
+				</Controls>
+			</AxFormControl>
+		</Controls>
+	</Design>
+	<Parts />
+</AxForm>

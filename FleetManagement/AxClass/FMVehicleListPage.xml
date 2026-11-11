@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehicleListPage</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMVehicleListPage 
+{
+    private List vehicleListInternal;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    public void new()
+    {
+        vehicleListInternal = new List(Types::Class);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>vehicleList</Name>
+				<Source><![CDATA[
+    [SysAppCollection(classStr(FMVehicleListPageItem), "Vehicle list")]
+    public List vehicleList(List _value=vehicleListInternal)
+    {
+        vehicleListInternal = _value;
+        return vehicleListInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getAllVehicles</Name>
+				<Source><![CDATA[
+    public static FMVehicleListPage getAllVehicles(SysAppEntityContext _entityContext, List _filterContextList)
+    {
+        FMVehicle vehicleTable;
+        FMVehicleModel vehicleModel;   
+        FMVehicleListPage vehicleListPage = new FMVehicleListPage();
+
+        while select * from vehicleTable
+            join vehicleModel
+            order by vehicleTable.VehicleId
+            where vehicleTable.VehicleModel == vehicleModel.RecId
+        {
+            FMVehicleListPageItem vehicleItem = new FMVehicleListPageItem();
+            vehicleItem.populate(vehicleTable, vehicleModel);
+
+            vehicleListPage.vehicleList().addEnd(vehicleItem);
+        }
+
+        return vehicleListPage;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

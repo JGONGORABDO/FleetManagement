@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Obsługa danych jednostki głównej na potrzeby zarządzania danymi 
+DataManagementFleetMasterEntitiesView=Wyświetlanie danych jednostki głównej na potrzeby zarządzania danymi 

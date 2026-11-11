@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMActiveReservationListItem</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMActiveReservationListItem extends FMReservationPage
+{
+    private str rentalIdInternal;
+    private utcdatetime startDateInternal;
+    private utcdatetime endDateInternal;
+    private FMReservationState rentalStatusInternal;
+    private FMCustomerRefGroup customerInternal;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>customer</Name>
+				<Source><![CDATA[
+    [SysAppRelational]
+    public FMCustomerRefGroup customer(FMCustomerRefGroup _value = customerInternal)
+    {
+        customerInternal = _value;
+        return customerInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>startDate</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRental, StartDate), "Pickup")]
+    public utcdatetime startDate(utcdatetime _value=startDateInternal)
+    {
+        startDateInternal = _value;
+        return startDateInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>endDate</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRental, EndDate), "Return")]
+    public utcdatetime endDate(utcdatetime _value=endDateInternal)
+    {
+        endDateInternal = _value;
+        return endDateInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalStatus</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRental, State), "Status")]
+    public FMReservationState rentalStatus(FMReservationState _value=rentalStatusInternal)
+    {
+        rentalStatusInternal = _value;
+        return rentalStatusInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalId</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRental, RentalId), "Rental ID")]
+    public str rentalId(str _value=rentalIdInternal)
+    {
+        rentalIdInternal = _value;
+        return rentalIdInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populate</Name>
+				<Source><![CDATA[
+    public void populate(FMRental _rentalTable)
+    {
+        this.rentalId(_rentalTable.RentalId);
+        this.startDate(_rentalTable.StartDate);
+        this.endDate(_rentalTable.EndDate);
+        this.rentalStatus(_rentalTable.State);
+        this.recId(_rentalTable.RecId);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

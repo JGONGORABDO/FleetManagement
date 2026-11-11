@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Customer</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class Customer extends common
+{
+}
+]]></Declaration>
+		<Methods />
+	</SourceCode>
+	<CollectionName>Customers</CollectionName>
+	<IsPublic>Yes</IsPublic>
+	<Updatable>Yes</Updatable>
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>AddressID</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CellPhone</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Email</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>LicenseImage</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Image</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>FirstName</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>DriverLicense</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>LastName</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>FirstName</Name>
+			<DataField>FirstName</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>LastName</Name>
+			<DataField>LastName</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>DriverLicense</Name>
+			<DataField>DriverLicense</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>AddressID</Name>
+			<DataField>AddressID</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>CellPhone</Name>
+			<DataField>CellPhone</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Email</Name>
+			<DataField>Email</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>LicenseImage</Name>
+			<DataField>LicenseImage</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Image</Name>
+			<DataField>Image</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+	</Fields>
+	<Indexes />
+	<Mappings />
+	<Relations>
+		<AxViewRelation>
+			<Name>PrimaryAddressRelation</Name>
+			<Cardinality>ZeroOne</Cardinality>
+			<RelatedTable>Address</RelatedTable>
+			<RelatedTableCardinality>ZeroOne</RelatedTableCardinality>
+			<RelatedTableRole>PrimaryAddress</RelatedTableRole>
+			<RelationshipType>Association</RelationshipType>
+			<Role>Customer</Role>
+			<Constraints>
+				<AxViewRelationConstraint xmlns=""
+					i:type="AxViewRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>AddressID</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxViewRelationConstraint>
+			</Constraints>
+		</AxViewRelation>
+	</Relations>
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods />
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMCustomer</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMCustomer</Table>
+				<DataSources />
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxView>

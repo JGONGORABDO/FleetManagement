@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalChargeListItem</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[SysAppEntity(tableStr(FMRentalCharge), methodStr(FMRentalChargeListItem, recId))]
+class FMRentalChargeListItem
+{
+    private str descriptionInternal;
+    private FMRentalChargeType rentalChargeTypeInternal;
+    private int64 recIdInternal;
+    private real unitAmountInternal;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>description</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRentalCharge, Description), "Description")]
+    public str description(str _value=descriptionInternal)
+    {
+        descriptionInternal = _value;
+        return descriptionInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalChargeType</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRentalCharge, ChargeType ), "Charge type")]
+    public FMRentalChargeType rentalChargeType(FMRentalChargeType _value=rentalChargeTypeInternal)
+    {
+        rentalChargeTypeInternal = _value;
+        return rentalChargeTypeInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>unitAmount</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRentalCharge, PerUnitAmount), "Per unit amount")]
+    public real unitAmount(real _value=unitAmountInternal)
+    {
+        unitAmountInternal = _value;
+        return unitAmountInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>recId</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRentalCharge, RecId), "RecId")]
+    public int64 recId(int64 _value=recIdInternal)
+    {
+        recIdInternal = _value;
+        return recIdInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populate</Name>
+				<Source><![CDATA[
+    public void populate(FMRentalCharge _rentalChargeTable)
+    {
+        this.description(_rentalChargeTable.Description);
+        this.rentalChargeType(_rentalChargeTable.ChargeType);
+        this.unitAmount(_rentalChargeTable.PerUnitAmount);
+        this.recId(_rentalChargeTable.RecId);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getRentalChargeDetails</Name>
+				<Source><![CDATA[
+    public static FMRentalChargeListItem getRentalChargeDetails(SysAppEntityContext _entityContext, List _filterContextList)
+    {
+        if (_entityContext && _entityContext.entityId())
+        {
+            int64 recId = str2Int64(_entityContext.entityId());
+            
+            FMRentalCharge rentalCharge;
+            select firstonly * from rentalCharge
+                where rentalCharge.RecId == recId;
+        
+            FMRentalChargeListItem rentalChargeItem = new FMRentalChargeListItem();
+            rentalChargeItem.populate(rentalCharge);
+
+            return rentalChargeItem;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

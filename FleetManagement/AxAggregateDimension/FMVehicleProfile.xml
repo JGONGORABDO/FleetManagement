@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxAggregateDimension xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V2">
+	<Name>FMVehicleProfile</Name>
+	<Table>FMVehicleExtendedView</Table>
+	<Attributes>
+		<AxDimensionAttribute xmlns="">
+			<Name>VehicleIdentifier</Name>
+			<NameField>VehicleIdentifier</NameField>
+			<Usage>Key</Usage>
+			<ValueField>VehicleIdentifier</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>VehicleIdentifier</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>VIN</Name>
+			<NameField>VIN</NameField>
+			<ValueField>VIN</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>VIN</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>VehicleMake</Name>
+			<NameField>Make</NameField>
+			<ValueField>Make</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>Make</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>VehicleModel</Name>
+			<NameField>Model</NameField>
+			<ValueField>Model</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>Model</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>VehicleYear</Name>
+			<NameField>Year</NameField>
+			<ValueField>Year</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>Year</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>VehicleColor</Name>
+			<NameField>ColorName</NameField>
+			<ValueField>ColorName</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>ColorName</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>VehicleDescription</Name>
+			<NameField>Description</NameField>
+			<ValueField>Description</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>Description</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>FuelType</Name>
+			<NameField>FuelType</NameField>
+			<ValueField>FuelType</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>FuelType</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>VehicleTransmission</Name>
+			<NameField>Transmission</NameField>
+			<ValueField>Transmission</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>Transmission</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>VehicleStatus</Name>
+			<NameField>Status</NameField>
+			<ValueField>Status</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>Status</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>VehicleMPG</Name>
+			<NameField>MPG</NameField>
+			<ValueField>MPG</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>MPG</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+		<AxDimensionAttribute xmlns="">
+			<Name>DisplayRelationType</Name>
+			<NameField>DisplayRelationType</NameField>
+			<Type>Caption</Type>
+			<ValueField>DisplayRelationType</ValueField>
+			<KeyFields>
+				<AxDimensionFieldReference>
+					<DimensionField>DisplayRelationType</DimensionField>
+				</AxDimensionFieldReference>
+			</KeyFields>
+		</AxDimensionAttribute>
+	</Attributes>
+	<Hierarchies>
+		<AxDimensionHierarchyBase xmlns=""
+			i:type="AxDimensionAttributeHierarchy">
+			<Name>MakeModel</Name>
+			<Levels>
+				<AxDimensionHierarchyLevel>
+					<Name>Make</Name>
+					<SourceAttribute>VehicleMake</SourceAttribute>
+				</AxDimensionHierarchyLevel>
+				<AxDimensionHierarchyLevel>
+					<Name>Model</Name>
+					<SourceAttribute>VehicleModel</SourceAttribute>
+				</AxDimensionHierarchyLevel>
+				<AxDimensionHierarchyLevel>
+					<Name>ModelYear</Name>
+					<SourceAttribute>VehicleYear</SourceAttribute>
+				</AxDimensionHierarchyLevel>
+				<AxDimensionHierarchyLevel>
+					<Name>VIN</Name>
+					<SourceAttribute>VIN</SourceAttribute>
+				</AxDimensionHierarchyLevel>
+			</Levels>
+		</AxDimensionHierarchyBase>
+	</Hierarchies>
+</AxAggregateDimension>

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IgnoreDiagnostics xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FleetManagement_BPSuppressions</Name>
+	<Items>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://SecurityPrivilege/FMCustomerEntityView</Path>
+			<Moniker>BPErrorPrivilegeNotCoveredByDuty</Moniker>
+			<Message>BPErrorPrivilegeNotCoveredByDuty: The privilege 'FMCustomerEntityView' is not referenced on any duty.</Message>
+			<Justification>Empty justification.</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://SecurityPrivilege/FMWorkflowClerk</Path>
+			<Moniker>BPErrorPrivilegeNotCoveredByDuty</Moniker>
+			<Message>BPErrorPrivilegeNotCoveredByDuty: The privilege 'FMWorkflowClerk' is not referenced on any duty.</Message>
+			<Justification>Empty justification.</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://SecurityPrivilege/FMWorkflowServiceTech</Path>
+			<Moniker>BPErrorPrivilegeNotCoveredByDuty</Moniker>
+			<Message>BPErrorPrivilegeNotCoveredByDuty: The privilege 'FMWorkflowServiceTech' is not referenced on any duty.</Message>
+			<Justification>Empty justification.</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://SecurityPrivilege/FMCustomerEntityMaintain</Path>
+			<Moniker>BPErrorPrivilegeNotCoveredByDuty</Moniker>
+			<Message>BPErrorPrivilegeNotCoveredByDuty: The privilege 'FMCustomerEntityMaintain' is not referenced on any duty.</Message>
+			<Justification>Empty justification.</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://SecurityPrivilege/FMRentalEntityMaintain</Path>
+			<Moniker>BPErrorPrivilegeNotCoveredByDuty</Moniker>
+			<Message>BPErrorPrivilegeNotCoveredByDuty: The privilege 'FMRentalEntityMaintain' is not referenced on any duty.</Message>
+			<Justification>Empty justification.</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://SecurityPrivilege/FMUseWorkflow/SecurityEntryPointReference/FMWorkflowDelegate</Path>
+			<Moniker>BPErrorPreventRedundantEntryPointUnsetGrant</Moniker>
+			<Message>Entry point 'FMWorkflowDelegate' grant is set to 'Unset'</Message>
+			<Justification>Empty justification.</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://SecurityPrivilege/FMUseWorkflow/SecurityEntryPointReference/FMWorkflowResubmit</Path>
+			<Moniker>BPErrorPreventRedundantEntryPointUnsetGrant</Moniker>
+			<Message>Entry point 'FMWorkflowResubmit' grant is set to 'Unset'</Message>
+			<Justification>Empty justification.</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://SecurityPrivilege/FMWorkflowManager</Path>
+			<Moniker>BPErrorPrivilegeNotCoveredByDuty</Moniker>
+			<Message>BPErrorPrivilegeNotCoveredByDuty: The privilege 'FMWorkflowManager' is not referenced on any duty.</Message>
+			<Justification>Empty justification.</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://SecurityPrivilege/FMRentalEntityView</Path>
+			<Moniker>BPErrorPrivilegeNotCoveredByDuty</Moniker>
+			<Message>BPErrorPrivilegeNotCoveredByDuty: The privilege 'FMRentalEntityView' is not referenced on any duty.</Message>
+			<Justification>Empty justification.</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Form/FMReservationsReport/FormDesign/FormDesign</Path>
+			<Moniker>BPWarningFormDesignOrControlsWithCustomPattern</Moniker>
+			<Message>BPWarningFormDesignOrControlsWithCustomPattern: 'FormDesign' is using the 'Custom' pattern. Please apply one of the other available patterns.</Message>
+			<Justification>Report form</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Form/FMCustomer/FormDesign/FormDesign/FormTabControl/Tab/FormTabPageControl/TabPageDetails/FormTabControl/TabHeader/FormTabPageControl/CustomerPaymentInfo</Path>
+			<Moniker>BPWarningFormDesignOrControlsWithCustomPattern</Moniker>
+			<Message>BPWarningFormDesignOrControlsWithCustomPattern: 'CustomerPaymentInfo' is using the 'Custom' pattern. Please apply one of the other available patterns.</Message>
+			<Justification>Nested SLD with complex details</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Form/FMCustomer/FormDesign/FormDesign/FormTabControl/Tab/FormTabPageControl/TabPageDetails/FormTabControl/TabHeader/FormTabPageControl/CustomerChartsPart</Path>
+			<Moniker>BPWarningFormDesignOrControlsWithCustomPattern</Moniker>
+			<Message>BPWarningFormDesignOrControlsWithCustomPattern: 'CustomerChartsPart' is using the 'Custom' pattern. Please apply one of the other available patterns.</Message>
+			<Justification>Nonworkspace form part containing chart</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Form/FMMakeModel_FactBox/FormDesign/FormDesign</Path>
+			<Moniker>BPWarningFormDesignOrControlsWithCustomPattern</Moniker>
+			<Message>BPWarningFormDesignOrControlsWithCustomPattern: 'FormDesign' is using the 'Custom' pattern. Please apply one of the other available patterns.</Message>
+			<Justification>Custom because it has an Image #ControlNotSupportedByPattern</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Form/FMBiCustomerRentalsPart/FormDesign/FormDesign</Path>
+			<Moniker>BPWarningFormDesignOrControlsWithCustomPattern</Moniker>
+			<Message>BPWarningFormDesignOrControlsWithCustomPattern: 'FormDesign' is using the 'Custom' pattern. Please apply one of the other available patterns.</Message>
+			<Justification>Currently 2 charts in one form  #ExtraChart</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Form/FMVehicleModel_Part/FormDesign/FormDesign</Path>
+			<Moniker>BPWarningFormDesignOrControlsWithCustomPattern</Moniker>
+			<Message>BPWarningFormDesignOrControlsWithCustomPattern: 'FormDesign' is using the 'Custom' pattern. Please apply one of the other available patterns.</Message>
+			<Justification>Custom because it has an Image #ControlNotSupportedByPattern</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Form/FMSetup/FormDesign/FormDesign/FormTabControl/FMSetup/FormTabPageControl/ModuleSetup/FormGroupControl/ModuleSetupBody</Path>
+			<Moniker>BPWarningFormDesignOrControlsWithCustomPattern</Moniker>
+			<Message>BPWarningFormDesignOrControlsWithCustomPattern: 'ModuleSetupBody' is using the 'Custom' pattern. Please apply one of the other available patterns.</Message>
+			<Justification>Contains a button formatted such that it doesn't fit with existing subpatterns. #ControlNotSupportedByPattern</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Form/FMSetup/FormDesign/FormDesign/FormTabControl/FMSetup/FormTabPageControl/ChargeType/FormGroupControl/ChargeTypeBody/FormGroupControl/ChargeTypeGroup2</Path>
+			<Moniker>BPWarningFormDesignOrControlsWithCustomPattern</Moniker>
+			<Message>BPWarningFormDesignOrControlsWithCustomPattern: 'ChargeTypeGroup2' is using the 'Custom' pattern. Please apply one of the other available patterns.</Message>
+			<Justification>Contains an image preview and upload button. #ControlNotSupportedByPatterns</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Form/FMSetup/FormDesign/FormDesign/FormTabControl/FMSetup/FormTabPageControl/MakeModel/FormGroupControl/MakeModelBody2</Path>
+			<Moniker>BPWarningFormDesignOrControlsWithCustomPattern</Moniker>
+			<Message>BPWarningFormDesignOrControlsWithCustomPattern: 'MakeModelBody2' is using the 'Custom' pattern. Please apply one of the other available patterns.</Message>
+			<Justification>Contains hidden tree controls referenced in code and other complicated logic. #NeedsDomainKnowledge</Justification>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>BestPractices</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Class/FMPBIReportsHandler/Method/buildReportDrillThru</Path>
+			<Moniker>BPXmlDocMalformed</Moniker>
+			<Message>BPXmlDocMalformed: The XML documentation for 'buildReportDrillThru' is not well-formed.</Message>
+			<Justification>New failures caused by platform metadata provider fix</Justification>
+		</Diagnostic>
+	</Items>
+</IgnoreDiagnostics>

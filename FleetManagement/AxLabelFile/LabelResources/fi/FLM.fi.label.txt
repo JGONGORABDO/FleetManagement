@@ -1,0 +1,784 @@
+﻿@FLM41=Etikettitiedostot luotu 3.4.2011
+ ;By user Admin
+@FLM42=Punainen
+ ;Fleet colors
+@FLM43=Sininen
+ ;Fleet colors
+@FLM44=Vihreä
+ ;Fleet colors
+@FLM46=Valitse kuva
+ ;Fleet label
+@FLM47=Muuta
+ ;Fleet label
+@FLM48=Poista
+ ;Fleet label
+@FLM49=Asiakas
+ ;Fleet label
+@FLM50=Avoin
+ ;Fleet label
+@FLM51=Luo uusi
+ ;Fleet label
+@FLM52=Vuokraus
+ ;Fleet label
+@FLM53=Yleiset
+ ;Fleet label
+@FLM55=Näkymä
+ ;Fleet label
+@FLM56=Poista
+ ;Fleet label
+@FLM57=Liitteet
+ ;Fleet label
+@FLM58=Valmis
+ ;Fleet label
+@FLM59=Vuokraveloitukset
+ ;Fleet label
+@FLM60=Vuokrakausi
+ ;Fleet label
+@FLM61=Mistä
+ ;Fleet label
+@FLM62=Mihin
+ ;Fleet label
+@FLM63=Kilometrit
+ ;Fleet label
+@FLM64=Aloitus
+ ;Fleet label
+@FLM65=Lopetus
+ ;Fleet label
+@FLM66=Polttoaineen määrät
+ ;Fleet label
+@FLM67=Nouto
+ ;Fleet label
+@FLM68=Kulut
+ ;Fleet label
+@FLM69=Lisää kulu
+ ;Fleet label
+@FLM70=Sisällytä kuorma-autot
+ ;Fleet label
+@FLM71=Vuokrakohteet
+ ;Fleet label
+@FLM72=Muokkaa
+ ;Fleet label
+@FLM73=Kuljetuskaluston hallinnan konfigurointi
+ ;Fleet label
+@FLM74=Ajoneuvojen valmistajat ja mallit
+ ;Fleet label
+@FLM75=Määritä ajoneuvojen valmistajat ja mallit
+ ;Fleet label
+@FLM76=Määritä varastosi ajoneuvojen valmistajat ja mallit, mukaan lukien mallin kuva.
+ ;Fleet label
+@FLM77=Mallin kuva
+ ;Fleet label
+@FLM78=Selaa...
+ ;Fleet label
+@FLM79=Uusi valmistaja
+ ;Fleet label
+@FLM80=Uusi malli
+ ;Fleet label
+@FLM81=Vuokrauksen kulutyypit
+ ;Fleet label
+@FLM82=Määritä kulutyypit
+ ;Fleet label
+@FLM83=Kulutyyppejä käytetään luokittelemaan jokainen vuokrakulu. Tämä antaa sinulle mahdollisuuden seurata kustannuksia helpommin.
+ ;Fleet label
+@FLM84=Katumaasturin turvallisuusluokitukset
+ ;Fleet label
+@FLM85=Määritä katumaasturin turvallisuusluokitukset
+ ;Fleet label
+@FLM86=Ajoneuvot
+ ;Fleet label
+@FLM87=Ylläpidä
+ ;Fleet label
+@FLM88=Historia
+ ;Fleet label
+@FLM89=Historialliset hinnat
+ ;Fleet label
+@FLM90=Hinnat
+ ;Fleet label
+@FLM91=Tiedot
+ ;Fleet label
+@FLM92=Autojen ja katumaastureiden tiedot
+ ;Fleet label
+@FLM93=Katumaasturi
+ ;Fleet label
+@FLM94=Kuorma-auton tiedot
+ ;Fleet label
+@FLM95=Ajoneuvot
+ ;Fleet label
+@FLM96=Saatavuus
+ ;Fleet label
+@FLM97=Sijainti
+ ;Fleet label
+@FLM98=Ylläpito
+ ;Fleet label
+@FLM99=Tietue
+ ;Fleet label
+@FLM100=Luettelo
+ ;Fleet label
+@FLM101=Ajoneuvon tunnus
+ ;Fleet label
+@FLM102=Ajoneuvon hinnan päivämäärän hallinta
+ ;Fleet label
+@FLM103=Uusi versio
+ ;Fleet label
+@FLM104=Ajoneuvon ylläpito
+ ;Fleet label
+@FLM105=Kuljetuskaluston hallinta
+ ;Fleet label
+@FLM106=Viimeisimmät vuokraukset
+ ;Fleet label
+@FLM107=Omat sisäiset organisaatiot käyttöoikeuden määrittämiseksi
+ ;Fleet label
+@FLM108=Ajoneuvot, joihin käyttäjällä on käyttöoikeus
+ ;Fleet label
+@FLM109=Sisäiset organisaatiot, joihin käyttäjällä on käyttöoikeus
+ ;Fleet label
+@FLM110=Kuorma-autot
+ ;Fleet label
+@FLM111=Katumaasturit
+ ;Fleet label
+@FLM112=Valikko asiakkaille sivujen tarkastelemiseksi
+ ;Fleet label
+@FLM113=Toimenpiteet
+ ;Fleet label
+@FLM114=Ajoneuvovalikko
+ ;Fleet label
+@FLM115=Valikko ajoneuvojen sivujen tarkastelemiseksi
+ ;Fleet label
+@FLM116=Haara - vanhentunut
+ ;Fleet label
+@FLM117=Vuokraamon sijainti - vanhentunut
+ ;Fleet label
+@FLM118=Alue - vanhentunut
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Polttoaineen tyyppi
+ ;Fleet label
+@FLM123=Vakio
+ ;Fleet label
+@FLM124=Premium
+ ;Fleet label
+@FLM125=GPS käytössä
+ ;Fleet label
+@FLM126=Öljynvaihto
+ ;Fleet label
+@FLM127=Korjaukset
+ ;Fleet label
+@FLM128=Ennalta ehkäisevä huolto
+ ;Fleet label
+@FLM129=Odottaa tarkastusta
+ ;Fleet label
+@FLM130=Odottaa palvelua
+ ;Fleet label
+@FLM131=Odottaa hyväksyntää
+ ;Fleet label
+@FLM132=Odottaa puhdistusta
+ ;Fleet label
+@FLM133=Valmis
+ ;Fleet label
+@FLM134=Vaihteisto
+ ;Fleet label
+@FLM135=Automaattinen
+ ;Fleet label
+@FLM136=Manuaalinen
+ ;Fleet label
+@FLM137=Käytettävissä
+ ;Fleet label
+@FLM138=Huollossa
+ ;Fleet label
+@FLM139=Vuokrattu
+ ;Fleet label
+@FLM140=Vaurioitunut
+ ;Fleet label
+@FLM141=Peruutettu
+ ;Fleet label
+@FLM142=Odottaa
+ ;Fleet label
+@FLM143=Ajoneuvon tyyppi
+ ;Fleet label
+@FLM144=Tuntematon
+ ;Fleet label
+@FLM145=Kuorma-auto
+ ;Fleet label
+@FLM146=Auto
+ ;Fleet label
+@FLM147=Kulutyyppi
+ ;Fleet label
+@FLM148=Ajokortti
+ ;Fleet label
+@FLM149=Malli
+ ;Fleet label
+@FLM150=Huomautukset
+ ;Fleet label
+@FLM151=Ajoneuvon vuokraustiedot
+ ;Fleet label
+@FLM152=Turvallisuusluokituksen tunnus
+ ;Fleet label
+@FLM153=Katumaasturin turvallisuusluokitus
+ ;Fleet label
+@FLM154=Vuokrakohteet yhteensä
+ ;Fleet label
+@FLM155=Valmistaja
+ ;Fleet label
+@FLM156=Ajoneuvon valmistaja
+ ;Fleet label
+@FLM157=Malli
+ ;Fleet label
+@FLM158=Ajoneuvon malli
+ ;Fleet label
+@FLM159=Autot
+ ;Fleet label
+@FLM160=Ovet
+ ;Fleet label
+@FLM161=Istuinpaikat
+ ;Fleet label
+@FLM162=Kulutyypit
+ ;Fleet label
+@FLM163=Vanhentumispäivä
+ ;Fleet label
+@FLM164=Aloituskilometrit
+ ;Fleet label
+@FLM165=Lopetuskilometrit
+ ;Fleet label
+@FLM166=Polttoaine alussa
+ ;Fleet label
+@FLM167=Polttoaine lopussa
+ ;Fleet label
+@FLM168=Ajoneuvon vuokraustiedot
+ ;Fleet label
+@FLM169=Kolmannen rivin kapasiteetti
+ ;Fleet label
+@FLM170=Kääntösäde
+ ;Fleet label
+@FLM171=Maavara
+ ;Fleet label
+@FLM172=Roll over -luokitus
+ ;Fleet label
+@FLM173=Yleisluokitus
+ ;Fleet label
+@FLM174=Siirtotila
+ ;Fleet label
+@FLM175=Lattiatila
+ ;Fleet label
+@FLM176=Enimmäiskuormitus
+ ;Fleet label
+@FLM177=Tyyppi
+ ;Fleet label
+@FLM178=Ajoneuvon bruttopaino
+ ;Fleet label
+@FLM179=Ajoneuvon tila
+ ;Fleet label
+@FLM180=Organisaatio
+ ;Fleet label
+@FLM181=Esikatseluryhmä
+ ;Fleet label
+@FLM182=Ajoneuvovalmistajat
+ ;Fleet label
+@FLM183=Ajoneuvomallit
+ ;Fleet label
+@FLM184=Ajoneuvon kuva
+ ;Fleet label
+@FLM185=Mallin tekniset tiedot
+ ;Fleet label
+@FLM186=Kuvan muoto
+ ;Fleet label
+@FLM187=Ajoneuvojen hinnat
+ ;Fleet label
+@FLM188=Päiväkohtainen kurssi
+ ;Fleet label
+@FLM189=Viikon hinta
+ ;Fleet label
+@FLM190=Sisäiset organisaationi rooliin liittyen
+ ;Fleet label
+@FLM191=Taulukko, joka sisältää käyttäjän rooliin liitetyt sisäiset organisaatiot
+ ;Fleet label
+@FLM192=DimAttributeOMBranch-näkymä sisältää kaikki haaroiksi merkityt OMOperatingUnit-taulun tietueet.
+ ;Fleet label
+@FLM193=DimAttributeOMRegion-näkymä sisältää kaikki alueiksi merkityt OMOperatingUnit-taulun tietueet
+ ;Fleet label
+@FLM194=DimAttributeOMRentalLocation-näkymä sisältää kaikki vuokraamon sijainniksi merkityt OMOperatingUnit-taulun tietueet.
+ ;Fleet label
+@FLM195=Kuljetuskaluston hallintakeskus
+ ;Fleet label
+@FLM196=Lisää
+ ;Fleet label
+@FLM197=Nykyiset vuokraukset
+ ;Fleet label
+@FLM198=Liitetyt ajoneuvot
+ ;Fleet label
+@FLM199=Käytettävissä olevat ajoneuvot
+ ;Fleet label
+@FLM200=Peruutetut ajoneuvot
+ ;Fleet label
+@FLM201=Valmis
+ ;Fleet label
+@FLM202=Käsittelyssä
+ ;Fleet label
+@FLM203=Historiallinen hinta
+ ;Fleet label
+@FLM204=Koko vuokraus
+ ;Fleet label
+@FLM205=Puhdista ajoneuvo
+ ;Fleet label
+@FLM206=Tutki ajoneuvo
+ ;Fleet label
+@FLM207=Huolla ajoneuvo
+ ;Fleet label
+@FLM208=Huollon hyväksyminen
+ ;Fleet label
+@FLM209=Asiakastiedot
+ ;Fleet label
+@FLM210=Nimi
+ ;Fleet label
+@FLM211=Lisenssi
+ ;Fleet label
+@FLM212=Osoite
+ ;Fleet label
+@FLM213=Puhelin
+ ;Fleet label
+@FLM214=Sähköposti
+ ;Fleet label
+@FLM215=Maksun tiedot
+ ;Fleet label
+@FLM216=Luottokortti
+ ;Fleet label
+@FLM217=Päättyminen
+ ;Fleet label
+@FLM218=Päivämäärä
+ ;Fleet label
+@FLM219=Vuokrauksen alku
+ ;Fleet label
+@FLM220=Päättymispäivä
+ ;Fleet label
+@FLM221=Kuvaus
+ ;Fleet label
+@FLM222=Määrä
+ ;Fleet label
+@FLM223=Laajennettu
+ ;Fleet label
+@FLM224=Ajoneuvon tiedot
+ ;Fleet label
+@FLM225=Valmistaja ja malli
+ ;Fleet label
+@FLM226=Päivähinta
+ ;Fleet label
+@FLM227=Viikkohinta
+ ;Fleet label
+@FLM228=Ajoneuvon esikatseluosa
+ ;Fleet label
+@FLM229=Väri
+ ;Fleet label
+@FLM230=Tila
+ ;Fleet label
+@FLM231=Liitetty ajoneuvo
+ ;Fleet label
+@FLM232=Kuljetuskaluston hallintavihjeet
+ ;Fleet label
+@FLM233=Rajoita käyttäjät liiketoimintayksiköihin
+ ;Fleet label
+@FLM234=Oma käyttöoikeus ajoneuvoihin käyttöoikeuden määrittämiseksi
+ ;Fleet label
+@FLM235=Vuokratietueiden itsepalvelu
+ ;Fleet label
+@FLM236=Kuljetuskaluston hallintavirkailija
+ ;Fleet label
+@FLM237=Vuokravirkailija
+ ;Fleet label
+@FLM238=Kuljetuskaluston hallinnan haaran hallinta
+ ;Fleet label
+@FLM239=Vuokrapaikan haaran hallinta
+ ;Fleet label
+@FLM240=Kuljetuskaluston hallinnan huoltoteknikko
+ ;Fleet label
+@FLM241=Huoltoteknikko
+ ;Fleet label
+@FLM242=Käytä työnkulkua
+ ;Fleet label
+@FLM243=Palveluryhmä, joka paljastaa käytettävissä olevan autovaraston
+ ;Fleet label
+@FLM244=Ovien lukumäärä
+ ;Number of doors in the FM vehicle
+@FLM245=Laajennettu summa
+ ;Fleet label
+@FLM246=Polttoaineen määrä
+ ;Fleet label
+@FLM247=Maavara
+ ;Fleet label
+@FLM248=Kuorma-auton lattiapinta
+ ;Fleet label
+@FLM249=Enimmäiskuormitus
+ ;Fleet label
+@FLM250=Tila yläpuolella siirron aikana
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Luokitus
+ ;Fleet label
+@FLM253=Vuokrat yhteensä
+ ;Fleet label
+@FLM254=Istuinpaikat
+ ;Fleet label
+@FLM255=Kulutyyppi
+ ;Fleet label (table)
+@FLM256=Kapasiteetti
+ ;Fleet label
+@FLM257=Kääntösäde
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Työnkulkukysely
+ ;Fleet label
+@FLM260=Ylläpitotietue
+ ;Fleet label
+@FLM261=Uusi vuokraus
+ ;Fleet label
+@FLM262=Kaikki vuokrakohteet
+ ;Fleet label
+@FLM263=Kaluston asetus
+ ;Fleet label
+@FLM264=Kaikki ajoneuvot
+ ;Fleet label
+@FLM265=Hinnan päivämäärät
+ ;Fleet label
+@FLM268=Haarat _DEMO_
+ ;Fleet label
+@FLM269=Vuokraamojen sijainnit _DEMO_
+ ;Fleet label
+@FLM270=Alueet _DEMO_
+ ;Fleet label
+@FLM271=Puhdistus valmis
+ ;Fleet label
+@FLM272=Poista asiakkaat
+ ;Fleet label
+@FLM273=Poista valitut vuokrakohteet
+ ;Fleet label
+@FLM274=Poista valittu ajoneuvo
+ ;Fleet label
+@FLM275=Tarkastus valmis
+ ;Fleet label
+@FLM276=Palvelu valmis
+ ;Fleet label
+@FLM278=Aloita työnkulku
+ ;Fleet label
+@FLM279=Hyväksy huolto
+ ;Fleet label
+@FLM280=Kiellä huolto
+ ;Fleet label
+@FLM281=Hylkää palvelu
+ ;Fleet label
+@FLM282=Poista valitut ajoneuvot
+ ;Fleet label
+@FLM283=Työnkulkumääritys
+ ;Fleet label
+@FLM284=Luo tai päivitä haaroja
+ ;Fleet label
+@FLM285=Luo tai päivitä vuokraamojen sijainteja
+ ;Fleet label
+@FLM286=Luo tai päivitä alueita
+ ;Fleet label
+@FLM287=Lisää asiakas/muokkaa asiakasta
+ ;Fleet label
+@FLM288=Ajoneuvon vuokraustunnus
+ ;Fleet label (table)
+@FLM289=Lisää vuokrausmaksu/muokkaa vuokrausmaksua
+ ;Fleet label
+@FLM290=Veloitustiedot
+ ;Fleet label
+@FLM291=Vuokrauksen erittely
+ ;Fleet label
+@FLM292=Muokkaa vuokrausta
+ ;Fleet label
+@FLM293=Vuokraukset asiakkaan mukaan
+ ;Fleet label
+@FLM294=Vuokraukset mallin mukaan
+ ;Fleet label
+@FLM295=Lisää ajoneuvo/muokkaa ajoneuvoa
+ ;Fleet label
+@FLM296=Tulevat vuokraukset
+ ;Fleet label
+@FLM297=Vuokraukset ajoneuvoittain
+ ;Fleet label
+@FLM298=Katso online-ohje
+ ;Fleet label
+@FLM299=Vuokrauksen veloituksen tyyppi
+ ;Fleet label
+@FLM300=Tallenna kilometrit
+ ;Fleet label
+@FLM301=Kaluston prosessijakso
+ ;Fleet label
+@FLM302=Kalusto - hallitse kaluston asetusta
+ ;Fleet label
+@FLM303=Kalusto - muokkaa asiakastietueita
+ ;Fleet label
+@FLM304=Kalusto - hallitse asiakkaita
+ ;Fleet label
+@FLM305=Kalusto - hallitse varastoa
+ ;Fleet label
+@FLM306=Kalusto - vuokraa autoja
+ ;Fleet label
+@FLM307=Kalusto - näytä asiakastietueet
+ ;Fleet label
+@FLM308=Kalusto - näytä varasto
+ ;Fleet label
+@FLM309=Kalusto - työnkulun virkailija
+ ;Fleet label
+@FLM310=Ajoneuvon väri
+ ;Fleet label
+@FLM311=Kalusto - työnkulun hallinta
+ ;Fleet label
+@FLM312=Kalusto - työnkulun huoltoteknikko
+ ;Fleet label
+@FLM313=Kalusto - perustehtävät
+ ;Fleet label
+@FLM314=Kalusto - hallitse autoja
+ ;Fleet label
+@FLM315=Kaluston vakioprosessijakso
+ ;Fleet label
+@FLM316=Ajoneuvon kilometrit
+ ;Fleet label
+@FLM317=Kustannus
+ ;Fleet label
+@FLM318=Maavara
+ ;Fleet label
+@FLM54=Asiakkaat
+ ;Fleet label
+@FLM266=Luottokortin vanheneminen
+ ;Fleet label (table)
+@FLM277=Ajokortti
+ ;Fleet label (table)
+@FLM320=Asiakasluettelo
+ ;Fleet label (report menu item)
+@FLM321=Asiakasluetteloraportti
+ ;Fleet label (report menu item help text)
+@FLM267=Työnkulkuasetus
+ ;Fleet label
+@FLM400=Ajoneuvon ylläpidon työnkulku
+ ;Fleet label
+@FLM500=Ensisijainen maksutapa
+ ;Fleet label
+@FLM501=Valkoinen
+ ;Fleet colors
+@FLM502=Harmaa
+ ;Fleet colors
+@FLM503=Keltainen
+ ;Fleet colors
+@FLM504=Oranssi
+ ;Fleet colors
+@FLM505=Nouto
+ ;Fleet label
+@FLM506=Palaa
+ ;Fleet label
+@FLM507=Aloita vuokraus
+ ;Fleet label
+@FLM401=Varausten hallinta
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Edelliset kilometrit
+ ;Fleet label for returning vehicle slider
+@FLM509=Uudet kilometrit
+ ;Fleet label for returning vehicle slider
+@FLM510=Ajoneuvon vuokraus
+ ;Fleet label
+@FLM512=Lisäkustannukset
+ ;Fleet label
+@FLM513=Säästöt
+ ;Fleet label
+@FLM514=Uusi varaus
+ ;New reservation menu item label
+@FLM515=Mallin vuosi
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Vanhenemisvuosi
+ ;Expiration year label
+@FLM517=Asiakasraportti
+ ;Fleet tile label
+@FLM518=Olemassa olevat varaukset
+ ;Fleet tile label
+@FLM519=Erääntyneet vuokraukset
+ ;Fleet tile label
+@FLM520=Maksun nimi
+ ;Fleet PaymentInfo field label
+@FLM521=Kortin tarkistusnumero
+ ;Fleet label
+@FLM522=Vanhenemiskuukausi
+ ;Expiration month label
+@FLM523=Kortissa oleva nimi
+ ;Fleet name on credit card
+@FLM524=Ajoneuvojen hintahistoria
+ ;Fleet form label
+@FLM525=Uusi kommentti
+ ;Fleet dialog caption
+@FLM526=Uusi asiakas
+ ;Fleet dialog caption
+@FLM527=Uuden maksun tiedot
+ ;Fleet dialog caption
+@FLM528=Lisää tarvike
+ ;Fleet dialog caption
+@FLM529=Valitse asiakas
+ ;Fleet dialog caption
+@FLM530=Valmis noudettavaksi
+ ;Fleet ReservationState enum option
+@FLM531=Osoitetietueen tunnus
+ ;Fleet label
+@FLM532=Värin heksadesimaalikoodi
+ ;Fleet label
+@FLM533=Värin tunnus
+ ;Fleet label
+@FLM534=Värin nimi
+ ;Fleet label
+@FLM535=Alennuksen tunnus
+ ;Fleet label
+@FLM536=Maksutietojen tunnus
+ ;Fleet label
+@FLM537=Varaustunnus
+ ;Fleet label
+@FLM539=Vuokratut ajoneuvot
+ ;Fleet label
+@FLM540=Kuljetuskaluston hallinta
+ ;Fleet menu label
+@FLM541=Lataa demotiedot
+ ;Fleet button text
+@FLM542=Hintahistoria
+ ;Fleet button text
+@FLM543=Muuta asiakasta
+ ;Fleet dialog label
+@FLM544=Valitse ajoneuvo
+ ;Fleet button text
+@FLM545=Kaikki varaukset
+ ;Fleet grid title
+@FLM546=Asiakaspalaute
+ ;Fleet group label
+@FLM547=Vuokraustiedot
+ ;Fleet group label
+@FLM548=Kulukuva
+ ;Fleet group label
+@FLM549=Tietojen asetus
+ ;Fleet tab label
+@FLM550=Ajoneuvon tiedot
+ ;Fleet group label
+@FLM551=Käytettävissä olevat ajoneuvot
+ ;Fleet chart label
+@FLM552=Ajoneuvon vuokraustila
+ ;Fleet chart label
+@FLM553=Ajoneuvot mallin mukaan - tuotto
+ ;Fleet chart label
+@FLM554=Nouto tänään
+ ;Fleet panorama label
+@FLM555=Palautus tänään
+ ;Fleet panorama label
+@FLM556=Vuokramaksut
+ ;Fleet panorama label
+@FLM558=Varaustiedot
+ ;Fleet panorama label
+@FLM559=Lisätarvikkeet
+ ;Fleet panorama label
+@FLM560=Ominaisuudet
+ ;Fleet group label
+@FLM561=Noutotiedot
+ ;Fleet field label
+@FLM562=Palautustiedot
+ ;Fleet field label
+@FLM563=Vuokrakohdeluettelo
+ ;Fleet report label
+@FLM564=Luo malliasiakkaita, -vuokrauksia ja -ajoneuvoja
+ ;Fleet TOC label
+@FLM565=Tämä kestää vain muutaman sekunnin.
+ ;New Comment
+@FLM322=Vuokraukset asiakkaan mukaan
+ ;Fleet report label
+@FLM566=Asiakaskaaviot
+ ;Fleet form part caption
+@FLM567=Ajoneuvon tuottokaavio
+ ;Fleet form part caption
+@FLM601=Kuljetuskaluston hallinnan vuokraukset
+ ;Fleet rental entity
+@FLM602=Kuljetuskaluston hallinnan asiakkaat
+ ;Fleet customer entity
+@FLM603=Mallisovelma
+ ;Label for the sample applet name
+@FLM604=Sovelman kehyksen testaamiseen ja esittelyyn käytettävä näytesovelma
+ ;Label for the sample applet description
+@FLM605=Katso lisää
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Asiakassijainnit
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Malli sisältää asiakassijaintien kartan
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Vuokraukset tilojen mukaan
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Malli sisältää vuokraustilojen määrät
+ ;Rentals by status template description
+FMCustomerEntityView=Näytä kuljetuskaluston hallinnan asiakkaiden yksikkö
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Ylläpidä kuljetuskaluston hallinnan asiakkaiden yksikköä
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Näytä kuljetuskaluston hallinnan vuokrausten yksikkö
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Ylläpidä kuljetuskaluston hallinnan vuokrausten yksikköä
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Näytä tehtävän yksikkö
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Ylläpidä tehtävän yksikköä
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Näytä luokan yksikkö
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Ylläpidä luokan yksikköä
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Näytä yrityksen yksikkö
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Ylläpidä yrityksen yksikköä
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Näytä rivin ominaisuuden yksikkö
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Ylläpidä rivin ominaisuuden yksikköä
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Näytä kauden yksikkö
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Ylläpidä kauden yksikköä
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Näytä projektin yksikkö
+ ;View privilege for RCADProject
+RCADProjectMaintain=Ylläpidä projektin yksikköä
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Näytä aikaraportin yksikkö
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Ylläpidä aikaraportin yksikköä
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Näytä aikaraporttimerkinnän yksikkö
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Ylläpidä aikaraporttimerkinnän yksikköä
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Näytä aikaraportin asetusten yksikkö
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Ylläpidä aikaraportin asetusten yksikköä
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Näytä aikaraportin työnkulkuhistorian yksikkö
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Ylläpidä aikaraportin työnkulkuhistorian yksikköä
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Näytä työnkulkuhistorian nimikkeen yksikkö
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Ylläpidä työnkulkuhistorian nimikkeen yksikköä
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Etsi vuokrakohteet
+FMTemplateCustomerInformationDisplayName=Asiakkaan tiedot
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Malli sisältää asiakkaiden perustietoja sekä luettelon heidän vuokrauksistaan
+ ;Fleet customer information template description
+DataCreated=Mallitiedot luotu.
+DataRestored=Mallitiedot palautettu.
+DataRestoreConfirm=Tämä palauttaa kuljetuskaluston hallinnan tiedot alkuperäiseen tilaan. Haluatko palauttaa tiedot?
+Branch=Haara _DEMO_
+ ;Branch operating unit type
+RentalLocation=Vuokraamon sijainti _DEMO_
+ ;Rental location operating unit type
+Region=Alue _DEMO_
+ ;Region operating unit type
+Timestamp=Aikaleima
+ ;Comment timestamp
+CustomerImage=Asiakkaan kuva
+ ;Fleet label
+Analytics=Analytiikka
+ ;used on Fleet clerk workspace for Analytics section

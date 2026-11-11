@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Entitätsdaten 'Master' für die Datenverwaltung verwalten 
+DataManagementFleetMasterEntitiesView=Entitätsdaten 'Master' für die Datenverwaltung anzeigen 

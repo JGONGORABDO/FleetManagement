@@ -1,0 +1,1989 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxForm xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>FMSetup</Name>
+	<SourceCode>
+		<Methods xmlns="">
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Form]
+public class FMSetup extends FormRun
+{
+    container imageContainer;
+    FileUpload uploadControl;
+    FileUpload accessoryUpload;
+
+    //** Initial Positioning for FMVehicleModel Start
+    FMVehicleModel startupFMVehicleModel;
+    //** Initial Positioning for FMVehicleModel End
+}
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fillMakeForParent</Name>
+				<Source><![CDATA[
+    public void fillMakeForParent(int _idx, anytype _data)
+    {
+        FMVehicleModel modelTable;
+        FormTreeItem treeItem;
+
+        while select Model, Make, RecId from modelTable order by Model where modelTable.Make == _data
+        {
+            // BP Deviation Documented
+            treeItem = new FormTreeItem(modelTable.Model, 0, 0, modelTable.RecId);
+            makeModelTree.addItem(_idx, 0, treeItem);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>init</Name>
+				<Source><![CDATA[
+    public void init()
+    {
+        SecurityRights rights;
+        FMVehicleModel fmvm;
+
+        super();
+
+        rights = SecurityRights::construct();
+
+        if (!rights.isSystemAdministrator())
+        {
+            ModuleSetup.visible(false);
+        }
+
+        //when uploading a vehicle model image, this method is called upon completion
+        uploadControl = FileUpload1;
+        uploadControl.notifyUploadCompleted +=  eventhandler(this.UploadCompleted);
+
+        //when uploading an image for an accessory, this method is called upon completion.        
+        accessoryUpload = ChargeImageUpload;
+        accessoryUpload.notifyUploadCompleted +=  eventhandler(this.AccessoryUploadCompleted);        
+
+        //** Initial Positioning for FMVehicleModel Start
+        if(element.args().lookupTable() == tableNum(FMVehicleModel) &&
+            element.args().lookupField() == fieldNum(FMVehicleModel, RecId))
+        {
+            select * from fmvm where fmvm.RecId == str2int64(element.args().lookupValue());
+            if(fmvm)
+            {
+                element.args().lookupTable(tableNum(FMVehicleMake));
+                element.args().lookupValue(int642str(fmvm.Make));
+
+                startupFMVehicleModel = fmvm;
+            }
+        }
+        //** Initial Positioning for FMVehicleModel End
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>loadMakes</Name>
+				<Source><![CDATA[
+    private void loadMakes()
+    {
+        FMVehicleMake   makeTable;
+
+        FormTreeItem    treeItem;
+
+        while select makeTable order by Make
+        {
+            // BP Deviation Documented
+            treeItem = new FormTreeItem(makeTable.Make, 0, 1, makeTable.RecId);
+            makeModelTree.addItem(0, 0, treeItem);
+        }
+        makeModelTree.selectEx(makeModelTree.getFirstVisible(), true);
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>makeExpanded</Name>
+				<Source><![CDATA[
+    public void makeExpanded()
+    {
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>run</Name>
+				<Source><![CDATA[
+    public void run()
+    {
+        element.loadMakes();
+        super();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>treeSelectionChanged</Name>
+				<Source><![CDATA[
+    public void treeSelectionChanged()
+    {
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>close</Name>
+				<Source><![CDATA[
+    public void close()
+    {
+        // when the form closes, release the eventhandler for file upload callback
+        super();
+        uploadControl.notifyUploadCompleted -=  eventhandler(this.UploadCompleted);
+        accessoryUpload.notifyUploadCompleted -= eventhandler(this.AccessoryUploadCompleted);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>UploadCompleted</Name>
+				<Source><![CDATA[
+    /// <summary> 
+    /// This method is called by the file upload mechanism, when the upload completes
+    /// </summary>
+    public void UploadCompleted()
+    {
+        FileUploadTemporaryStorageResult fileUploadResult = FileUpload1.getFileUploadResult();
+        
+        if (fileUploadResult != null && fileUploadResult.getUploadStatus())
+        {
+            FMVehicleModel.Image = ImageReference::GetPackedBinaryData(fileUploadResult.getDownloadUrl());
+        }
+        else
+        {
+            warning("@SYS89176");
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>AccessoryUploadCompleted</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// This method is called by the file upload mechanism, when the upload completes
+    /// </summary>
+    public void AccessoryUploadCompleted()
+    {
+        FileUploadTemporaryStorageResult fileUploadResult = ChargeImageUpload.getFileUploadResult();
+        
+        if (fileUploadResult != null && fileUploadResult.getUploadStatus())
+        {
+            FMChargeType.Image = ImageReference::GetPackedBinaryData(fileUploadResult.getDownloadUrl());
+        }
+        else
+        {
+            warning("@SYS89176");
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+		<DataSources xmlns="">
+			<DataSource>
+				<Name>FMVehicleModel</Name>
+				<Methods>
+					<Method>
+						<Name>executeQuery</Name>
+						<Source><![CDATA[
+        public void executeQuery()
+        {
+            super();
+
+            //** Initial Positioning for FMVehicleModel Start
+            if(startupFMVehicleModel)
+            {                
+                this.positionToRecord(startupFMVehicleModel);
+                startupFMVehicleModel = null;                
+            }
+            //** Initial Positioning for FMVehicleModel End
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+				<Fields />
+			</DataSource>
+		</DataSources>
+		<DataControls xmlns="">
+			<Control>
+				<Name>SetupDemoDataButton</Name>
+				<Type>Button</Type>
+				<Methods>
+					<Method>
+						<Name>clicked</Name>
+						<Source><![CDATA[
+        public void clicked()
+        {
+            FMRental rental; 
+
+            super();
+
+            select firstonly rental; 
+
+            if(rental == null)
+            {
+                FMDataHelper::main(null);
+                Box::info('@FLM:DataCreated');
+            }
+            else if (Box::yesNo('@FLM:DataRestoreConfirm', DialogButton::No) == DialogButton::Yes)
+            {
+                FMDataHelper::main(null);
+                Box::info('@FLM:DataRestored');
+            }
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+			<Control>
+				<Name>ChargeType</Name>
+				<Type>TabPage</Type>
+				<Methods>
+					<Method>
+						<Name>pageActivated</Name>
+						<Source><![CDATA[
+        public void pageActivated()
+        {
+            super();
+            fmChargeType_ds.executeQuery();
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+			<Control>
+				<Name>NewMakeButton</Name>
+				<Type>Button</Type>
+				<Methods>
+					<Method>
+						<Name>clicked</Name>
+						<Source><![CDATA[
+        void clicked()
+        {
+            super();
+
+            // Make.activatePage();
+            fmVehicleMake_ds.create(true);
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+			<Control>
+				<Name>NewModelButton</Name>
+				<Type>Button</Type>
+				<Methods>
+					<Method>
+						<Name>clicked</Name>
+						<Source><![CDATA[
+        void clicked()
+        {
+            FormTreeItem treeItem;
+
+            super();
+
+            fmVehicleModel_ds.create();
+            treeItem =  makeModelTree.getItem(makeModelTree.getFirstSelected());
+
+            fmVehicleModel.Make = treeItem.data();
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+			<Control>
+				<Name>MakeModelTree</Name>
+				<Type>Tree</Type>
+				<Methods>
+					<Method>
+						<Name>expanding</Name>
+						<Source><![CDATA[
+        public boolean expanding(int _idx, FormTreeExpand _action, anytype _data)
+        {
+            boolean ret;
+
+            element.fillMakeForParent(_idx, _data);
+
+            ret = super(_idx, _action, _data);
+
+            return ret;
+        }
+
+]]></Source>
+					</Method>
+					<Method>
+						<Name>selectionChanged</Name>
+						<Source><![CDATA[
+        public void selectionChanged(FormTreeItem _oldItem, FormTreeItem _newItem, FormTreeSelect _how)
+        {
+            int rootIdx;
+            int64 parentRecId;
+
+            super(_oldItem, _newItem, _how);
+
+            // Probably should use a better method to figure out type.
+            rootIdx = makeModelTree.getRoot();
+
+            if (makeModelTree.getParent(_newItem.idx()) != makeModelTree.getRoot())
+            {
+                make.activatePage();
+                fmVehicleMake_ds.positionToRecordByValue(fieldNum(FMVehicleMake, RecId), int642str(_newItem.data()));
+            }
+            else
+            {
+                model.activatePage();
+
+                parentRecId = makeModelTree.getItem(makeModelTree.getParent(_newItem.idx())).data();
+
+                fmVehicleMake_ds.positionToRecordByValue(fieldNum(FMVehicleMake, RecId), int642str(parentRecId));                
+            }
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+			<Control>
+				<Name>SUVSafetyRatings</Name>
+				<Type>TabPage</Type>
+				<Methods>
+					<Method>
+						<Name>pageActivated</Name>
+						<Source><![CDATA[
+        public void pageActivated()
+        {
+            super();
+            fmsuvSafetyRating_ds.executeQuery();
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+		</DataControls>
+		<Members xmlns="" />
+	</SourceCode>
+	<DataSources>
+		<AxFormDataSource xmlns="">
+			<Name>FMChargeType</Name>
+			<Table>FMChargeType</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>ChargeType</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>DefaultQuantity</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Description</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Image</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>PerUnitAmount</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<InsertIfEmpty>No</InsertIfEmpty>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+		<AxFormDataSource xmlns="">
+			<Name>FMSUVSafetyRating</Name>
+			<Table>FMSUVSafetyRating</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>OverallRating</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RollOverRating</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>SafetyRatingId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<InsertIfEmpty>No</InsertIfEmpty>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+		<AxFormDataSource xmlns="">
+			<Name>FMVehicleMake</Name>
+			<Table>FMVehicleMake</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>Make</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<InsertIfEmpty>No</InsertIfEmpty>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+		<AxFormDataSource xmlns="">
+			<Name>FMVehicleModel</Name>
+			<Table>FMVehicleModel</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>Image</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>ImageFormat</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Make</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Model</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>ModelSpec</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>VehicleCount</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Year</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<JoinSource>FMVehicleMake</JoinSource>
+			<InsertIfEmpty>No</InsertIfEmpty>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+	</DataSources>
+	<Design>
+		<Caption xmlns="">@FLM73</Caption>
+		<Pattern xmlns="">TableOfContents</Pattern>
+		<PatternVersion xmlns="">1.1</PatternVersion>
+		<SetCompany xmlns="">No</SetCompany>
+		<Style xmlns="">TableOfContents</Style>
+		<Controls xmlns="">
+			<AxFormControl xmlns=""
+				i:type="AxFormTabControl">
+				<Name>FMSetup</Name>
+				<AlignControl>No</AlignControl>
+				<ElementPosition>1073741823</ElementPosition>
+				<FilterExpression>%1</FilterExpression>
+				<Type>Tab</Type>
+				<VerticalSpacing>-1</VerticalSpacing>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormTabPageControl">
+						<Name>ModuleSetup</Name>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<HeightMode>Auto</HeightMode>
+						<Type>TabPage</Type>
+						<WidthMode>Auto</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>ModuleSetupTitle</Name>
+								<ElementPosition>715827882</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<Skip>Yes</Skip>
+								<Type>Group</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormStaticTextControl">
+										<Name>ModuleSetupMainInstruction</Name>
+										<ElementPosition>1073741822</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Skip>Yes</Skip>
+										<Type>StaticText</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>SizeToAvailable</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<BackgroundColorRGB>
+											<Red>15</Red>
+											<Green>0</Green>
+											<Blue>0</Blue>
+										</BackgroundColorRGB>
+										<ColorScheme>RGB</ColorScheme>
+										<FontSize>13</FontSize>
+										<ForegroundColorRGB>
+											<Red>0</Red>
+											<Green>51</Green>
+											<Blue>153</Blue>
+										</ForegroundColorRGB>
+										<Style>MainInstruction</Style>
+										<Text>@FLM564</Text>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormStaticTextControl">
+										<Name>ModuleSetupSecondary</Name>
+										<ElementPosition>1073741822</ElementPosition>
+										<ExtendedStyle>dialog_secondaryInstruction</ExtendedStyle>
+										<FilterExpression>%1</FilterExpression>
+										<Skip>Yes</Skip>
+										<Type>StaticText</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>SizeToAvailable</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<BackgroundColorRGB>
+											<Red>15</Red>
+											<Green>0</Green>
+											<Blue>0</Blue>
+										</BackgroundColorRGB>
+										<ColorScheme>RGB</ColorScheme>
+										<FontSize>13</FontSize>
+										<ForegroundColorRGB>
+											<Red>0</Red>
+											<Green>51</Green>
+											<Blue>153</Blue>
+										</ForegroundColorRGB>
+										<Text>@FLM565</Text>
+									</AxFormControl>
+								</Controls>
+								<AllowUserSetup>No</AllowUserSetup>
+								<BottomMargin>14</BottomMargin>
+								<BottomMarginMode>Fixed</BottomMarginMode>
+								<LeftMargin>23</LeftMargin>
+								<LeftMarginMode>Fixed</LeftMarginMode>
+								<RightMargin>14</RightMargin>
+								<RightMarginMode>Fixed</RightMarginMode>
+								<TopMargin>19</TopMargin>
+								<TopMarginMode>Fixed</TopMarginMode>
+								<BackStyle>Opaque</BackStyle>
+								<BackgroundColor>WindowBackground</BackgroundColor>
+								<FrameType>None</FrameType>
+								<Style>TOCTitleContainer</Style>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>ModuleSetupBody</Name>
+								<HeightMode>SizeToAvailable</HeightMode>
+								<Pattern>Custom</Pattern>
+								<Type>Group</Type>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormButtonControl">
+										<Name>SetupDemoDataButton</Name>
+										<AutoDeclaration>Yes</AutoDeclaration>
+										<HeightMode>Auto</HeightMode>
+										<Type>Button</Type>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Text>@SYS14364</Text>
+									</AxFormControl>
+								</Controls>
+								<FrameType>None</FrameType>
+							</AxFormControl>
+						</Controls>
+						<Caption>@FLM549</Caption>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormTabPageControl">
+						<Name>ChargeType</Name>
+						<ElementPosition>1288490187</ElementPosition>
+						<FilterExpression>%1</FilterExpression>
+						<Height>0</Height>
+						<HeightMode>SizeToAvailable</HeightMode>
+						<Type>TabPage</Type>
+						<VerticalSpacing>-1</VerticalSpacing>
+						<Width>0</Width>
+						<WidthMode>SizeToAvailable</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>ChargeTypeTitle</Name>
+								<ElementPosition>1073741822</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<Skip>Yes</Skip>
+								<Type>Group</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormStaticTextControl">
+										<Name>ChargeTypeMain</Name>
+										<ElementPosition>1073741822</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Skip>Yes</Skip>
+										<Type>StaticText</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>SizeToAvailable</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<BackgroundColorRGB>
+											<Red>15</Red>
+											<Green>0</Green>
+											<Blue>0</Blue>
+										</BackgroundColorRGB>
+										<ColorScheme>RGB</ColorScheme>
+										<FontSize>13</FontSize>
+										<ForegroundColorRGB>
+											<Red>0</Red>
+											<Green>51</Green>
+											<Blue>153</Blue>
+										</ForegroundColorRGB>
+										<Style>MainInstruction</Style>
+										<Text>@FLM82</Text>
+									</AxFormControl>
+								</Controls>
+								<AllowUserSetup>No</AllowUserSetup>
+								<FrameType>None</FrameType>
+								<Style>TOCTitleContainer</Style>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>ChargeTypeBody</Name>
+								<ElementPosition>1610612733</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<HeightMode>SizeToAvailable</HeightMode>
+								<Pattern>ToolbarList</Pattern>
+								<PatternVersion>1.2</PatternVersion>
+								<Type>Group</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormActionPaneControl">
+										<Name>ChargeTypeActionPane</Name>
+										<ElementPosition>1073741822</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Type>ActionPane</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormActionPaneTabControl">
+												<Name>ChargeTypeActionTab</Name>
+												<ElementPosition>1431655764</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>ActionPaneTab</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormButtonGroupControl">
+														<Name>ChargeTypeRecordGroup</Name>
+														<ElementPosition>1431655764</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<HeightMode>Auto</HeightMode>
+														<Left>0</Left>
+														<Type>ButtonGroup</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormCommandButtonControl">
+																<Name>ChargeTypeNewButton</Name>
+																<ElementPosition>1073741822</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>CommandButton</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Command>New</Command>
+																<NormalImage>Add</NormalImage>
+																<Text>@SYS60080</Text>
+															</AxFormControl>
+															<AxFormControl xmlns=""
+																i:type="AxFormCommandButtonControl">
+																<Name>ChargeTypeDeleteButton</Name>
+																<ElementPosition>1610612734</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>CommandButton</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Command>DeleteRecord</Command>
+																<NormalImage>Remove</NormalImage>
+																<Text>@SYS135131</Text>
+															</AxFormControl>
+														</Controls>
+													</AxFormControl>
+												</Controls>
+												<AlignChild>No</AlignChild>
+												<AlignChildren>No</AlignChildren>
+											</AxFormControl>
+										</Controls>
+										<AlignChild>No</AlignChild>
+										<AlignChildren>No</AlignChildren>
+										<DataSource>FMChargeType</DataSource>
+										<Style>Strip</Style>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormGridControl">
+										<Name>ChargeTypeGrid</Name>
+										<ElementPosition>1610612733</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Type>Grid</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMChargeType_ChageType</Name>
+												<ElementPosition>1073741822</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>ChargeType</DataField>
+												<DataSource>FMChargeType</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormRealControl">
+												<Name>FMChargeType_PerUnitAmount</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<Type>Real</Type>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>PerUnitAmount</DataField>
+												<DataSource>FMChargeType</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMChargeType_Description</Name>
+												<ElementPosition>1610612733</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<Width>500</Width>
+												<WidthMode>Manual</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>Description</DataField>
+												<DataSource>FMChargeType</DataSource>
+											</AxFormControl>
+										</Controls>
+										<DataSource>FMChargeType</DataSource>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormGroupControl">
+										<Name>ChargeTypeGroup2</Name>
+										<AutoDeclaration>Yes</AutoDeclaration>
+										<HeightMode>Auto</HeightMode>
+										<Pattern>Custom</Pattern>
+										<Type>Group</Type>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormImageControl">
+												<Name>ChargeImage</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<ElementPosition>1073741822</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Height>205</Height>
+												<HeightMode>Manual</HeightMode>
+												<Type>Image</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<Width>205</Width>
+												<WidthMode>Manual</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>Image</DataField>
+												<DataSource>FMChargeType</DataSource>
+												<ShowLabel>No</ShowLabel>
+											</AxFormControl>
+											<AxFormControl>
+												<Name>ChargeImageUpload</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension>
+													<Name>FileUpload</Name>
+													<ExtensionComponents />
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>fileNameLabel</Name>
+															<Type>String</Type>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>browseText</Name>
+															<Type>String</Type>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>style</Name>
+															<Type>Enum</Type>
+															<TypeName>FileUploadStyle</TypeName>
+															<Value>Minimal</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>fileTypesAccepted</Name>
+															<Type>String</Type>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>baseFileUploadStrategyClassName</Name>
+															<Type>String</Type>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>imageMaxWidth</Name>
+															<Type>Int32</Type>
+															<Value>0</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>imageMaxHeight</Name>
+															<Type>Int32</Type>
+															<Value>0</Value>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+											</AxFormControl>
+										</Controls>
+										<ArrangeMethod>Auto</ArrangeMethod>
+										<Columns>2</Columns>
+										<Caption>@FLM548</Caption>
+									</AxFormControl>
+								</Controls>
+								<FrameType>None</FrameType>
+							</AxFormControl>
+						</Controls>
+						<Caption>@FLM81</Caption>
+						<Scrollbars>Auto</Scrollbars>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormTabPageControl">
+						<Name>MakeModel</Name>
+						<ElementPosition>858993458</ElementPosition>
+						<FilterExpression>%1</FilterExpression>
+						<Height>0</Height>
+						<HeightMode>SizeToAvailable</HeightMode>
+						<Type>TabPage</Type>
+						<VerticalSpacing>-1</VerticalSpacing>
+						<Width>0</Width>
+						<WidthMode>SizeToAvailable</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>MakeModelTitle</Name>
+								<ElementPosition>715827882</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<Skip>Yes</Skip>
+								<Type>Group</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormStaticTextControl">
+										<Name>MakeModelMain1</Name>
+										<ElementPosition>1073741822</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Skip>Yes</Skip>
+										<Type>StaticText</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>SizeToAvailable</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<BackgroundColorRGB>
+											<Red>15</Red>
+											<Green>0</Green>
+											<Blue>0</Blue>
+										</BackgroundColorRGB>
+										<ColorScheme>RGB</ColorScheme>
+										<FontSize>13</FontSize>
+										<ForegroundColorRGB>
+											<Red>0</Red>
+											<Green>51</Green>
+											<Blue>153</Blue>
+										</ForegroundColorRGB>
+										<Style>MainInstruction</Style>
+										<Text>@FLM75</Text>
+									</AxFormControl>
+								</Controls>
+								<AllowUserSetup>No</AllowUserSetup>
+								<BottomMargin>14</BottomMargin>
+								<BottomMarginMode>Fixed</BottomMarginMode>
+								<LeftMargin>23</LeftMargin>
+								<LeftMarginMode>Fixed</LeftMarginMode>
+								<RightMargin>14</RightMargin>
+								<RightMarginMode>Fixed</RightMarginMode>
+								<TopMargin>19</TopMargin>
+								<TopMarginMode>Fixed</TopMarginMode>
+								<BackStyle>Opaque</BackStyle>
+								<BackgroundColor>WindowBackground</BackgroundColor>
+								<FrameType>None</FrameType>
+								<Style>TOCTitleContainer</Style>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>MakeModelBody2</Name>
+								<HeightMode>SizeToAvailable</HeightMode>
+								<Pattern>Custom</Pattern>
+								<Type>Group</Type>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormGroupControl">
+										<Name>Group</Name>
+										<ElementPosition>1073741823</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>SizeToAvailable</HeightMode>
+										<Type>Group</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>Group1</Name>
+												<ElementPosition>1073741822</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>SizeToAvailable</HeightMode>
+												<Type>Group</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormActionPaneControl">
+														<Name>ActionPane1</Name>
+														<ElementPosition>1073741822</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<HeightMode>Auto</HeightMode>
+														<Type>ActionPane</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<WidthMode>SizeToContent</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormActionPaneTabControl">
+																<Name>ActionPaneTab1</Name>
+																<ElementPosition>1431655764</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>ActionPaneTab</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Controls>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormButtonGroupControl">
+																		<Name>ButtonGroup1</Name>
+																		<ElementPosition>1431655764</ElementPosition>
+																		<FilterExpression>%1</FilterExpression>
+																		<HeightMode>Auto</HeightMode>
+																		<Left>0</Left>
+																		<Type>ButtonGroup</Type>
+																		<VerticalSpacing>-1</VerticalSpacing>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<Controls>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormCommandButtonControl">
+																				<Name>CommandButton</Name>
+																				<ElementPosition>1073741822</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>CommandButton</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<ButtonDisplay>TextWithImageLeft</ButtonDisplay>
+																				<Command>New</Command>
+																				<NormalImage>Add</NormalImage>
+																				<Text>@SYS60080</Text>
+																			</AxFormControl>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormCommandButtonControl">
+																				<Name>CommandButton1</Name>
+																				<ElementPosition>1610612733</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>CommandButton</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<ButtonDisplay>TextWithImageLeft</ButtonDisplay>
+																				<Command>DeleteRecord</Command>
+																				<NormalImage>Remove</NormalImage>
+																				<Text>@SYS135131</Text>
+																			</AxFormControl>
+																		</Controls>
+																	</AxFormControl>
+																</Controls>
+																<AlignChild>No</AlignChild>
+																<AlignChildren>No</AlignChildren>
+															</AxFormControl>
+														</Controls>
+														<AlignChild>No</AlignChild>
+														<AlignChildren>No</AlignChildren>
+														<DataSource>FMVehicleMake</DataSource>
+														<Style>Strip</Style>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormGridControl">
+														<Name>Grid</Name>
+														<ElementPosition>1610612734</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<HeightMode>Auto</HeightMode>
+														<Type>Grid</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<WidthMode>SizeToContent</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormStringControl">
+																<Name>StringEdit</Name>
+																<ElementPosition>1431655764</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>String</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<DataField>Make</DataField>
+																<DataSource>FMVehicleMake</DataSource>
+															</AxFormControl>
+														</Controls>
+														<DataSource>FMVehicleMake</DataSource>
+														<MultiSelect>No</MultiSelect>
+														<ShowRowLabels>No</ShowRowLabels>
+													</AxFormControl>
+												</Controls>
+												<ArrangeMethod>Auto</ArrangeMethod>
+												<RightMargin>20</RightMargin>
+												<RightMarginMode>Fixed</RightMarginMode>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>Group2</Name>
+												<ElementPosition>1610612733</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>SizeToAvailable</HeightMode>
+												<Type>Group</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormActionPaneControl">
+														<Name>ActionPane2</Name>
+														<ElementPosition>1073741822</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<HeightMode>Auto</HeightMode>
+														<Type>ActionPane</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<WidthMode>SizeToContent</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormActionPaneTabControl">
+																<Name>ActionPaneTab2</Name>
+																<ElementPosition>1431655764</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>ActionPaneTab</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Controls>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormButtonGroupControl">
+																		<Name>ButtonGroup2</Name>
+																		<ElementPosition>1431655764</ElementPosition>
+																		<FilterExpression>%1</FilterExpression>
+																		<HeightMode>Auto</HeightMode>
+																		<Left>0</Left>
+																		<Type>ButtonGroup</Type>
+																		<VerticalSpacing>-1</VerticalSpacing>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<Controls>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormCommandButtonControl">
+																				<Name>CommandButton2</Name>
+																				<ElementPosition>1073741822</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>CommandButton</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<Command>New</Command>
+																				<NormalImage>Add</NormalImage>
+																				<Text>@SYS60080</Text>
+																			</AxFormControl>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormCommandButtonControl">
+																				<Name>CommandButton3</Name>
+																				<ElementPosition>1610612733</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>CommandButton</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<Command>DeleteRecord</Command>
+																				<NormalImage>Remove</NormalImage>
+																				<Text>@SYS135131</Text>
+																			</AxFormControl>
+																		</Controls>
+																		<DataSource>FMVehicleModel</DataSource>
+																	</AxFormControl>
+																</Controls>
+																<AlignChild>No</AlignChild>
+																<AlignChildren>No</AlignChildren>
+															</AxFormControl>
+														</Controls>
+														<AlignChild>No</AlignChild>
+														<AlignChildren>No</AlignChildren>
+														<DataSource>FMVehicleModel</DataSource>
+														<Style>Strip</Style>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormGridControl">
+														<Name>Grid1</Name>
+														<ElementPosition>1610612733</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<HeightMode>Auto</HeightMode>
+														<Type>Grid</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<WidthMode>SizeToContent</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormStringControl">
+																<Name>FMVehicleModel_Model1</Name>
+																<ElementPosition>1073741822</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>String</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<DataField>Model</DataField>
+																<DataSource>FMVehicleModel</DataSource>
+															</AxFormControl>
+															<AxFormControl xmlns=""
+																i:type="AxFormIntegerControl">
+																<Name>FMVehicleModel_Year</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<HeightMode>Auto</HeightMode>
+																<Type>Integer</Type>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<DataField>Year</DataField>
+																<DataSource>FMVehicleModel</DataSource>
+																<Label>@SYS32606</Label>
+															</AxFormControl>
+															<AxFormControl xmlns=""
+																i:type="AxFormStringControl">
+																<Name>FMVehicleModel_ModelSpec1</Name>
+																<ElementPosition>1610612733</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>String</Type>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<DataField>ModelSpec</DataField>
+																<DataSource>FMVehicleModel</DataSource>
+															</AxFormControl>
+														</Controls>
+														<DataSource>FMVehicleModel</DataSource>
+														<MultiSelect>No</MultiSelect>
+														<ShowRowLabels>No</ShowRowLabels>
+														<VisibleCols>3</VisibleCols>
+														<VisibleColsMode>Fixed</VisibleColsMode>
+													</AxFormControl>
+												</Controls>
+												<ArrangeMethod>Auto</ArrangeMethod>
+											</AxFormControl>
+										</Controls>
+										<ArrangeMethod>Auto</ArrangeMethod>
+										<Columns>2</Columns>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormGroupControl">
+										<Name>ImageGroup</Name>
+										<ElementPosition>1431655764</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<HeightMode>Auto</HeightMode>
+										<Type>Group</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>Auto</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormImageControl">
+												<Name>ImageField</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<ElementPosition>1073741822</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Height>200</Height>
+												<HeightMode>Manual</HeightMode>
+												<Type>Image</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<Width>200</Width>
+												<WidthMode>Manual</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>Image</DataField>
+												<DataSource>FMVehicleModel</DataSource>
+												<ShowLabel>No</ShowLabel>
+											</AxFormControl>
+											<AxFormControl>
+												<Name>FileUpload1</Name>
+												<AutoDeclaration>Yes</AutoDeclaration>
+												<HeightMode>Auto</HeightMode>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension>
+													<Name>FileUpload</Name>
+													<ExtensionComponents />
+													<ExtensionProperties>
+														<AxFormControlExtensionProperty>
+															<Name>fileNameLabel</Name>
+															<Type>String</Type>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>browseText</Name>
+															<Type>String</Type>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>style</Name>
+															<Type>Enum</Type>
+															<TypeName>FileUploadStyle</TypeName>
+															<Value>Minimal</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>fileTypesAccepted</Name>
+															<Type>String</Type>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>baseFileUploadStrategyClassName</Name>
+															<Type>String</Type>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>imageMaxWidth</Name>
+															<Type>Int32</Type>
+															<Value>0</Value>
+														</AxFormControlExtensionProperty>
+														<AxFormControlExtensionProperty>
+															<Name>imageMaxHeight</Name>
+															<Type>Int32</Type>
+															<Value>0</Value>
+														</AxFormControlExtensionProperty>
+													</ExtensionProperties>
+												</FormControlExtension>
+											</AxFormControl>
+										</Controls>
+										<ArrangeMethod>Auto</ArrangeMethod>
+										<Columns>2</Columns>
+										<Caption>@FLM77</Caption>
+										<DataSource>FMVehicleModel</DataSource>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormGroupControl">
+										<Name>MakeModelBody</Name>
+										<ElementPosition>1789569705</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Height>0</Height>
+										<HeightMode>SizeToAvailable</HeightMode>
+										<Type>Group</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<Visible>No</Visible>
+										<Width>0</Width>
+										<WidthMode>SizeToAvailable</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormActionPaneControl">
+												<Name>ActionPane</Name>
+												<ElementPosition>1073741822</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>ActionPane</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<Width>0</Width>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormActionPaneTabControl">
+														<Name>ActionPaneTab</Name>
+														<ElementPosition>1431655764</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<HeightMode>Auto</HeightMode>
+														<Type>ActionPaneTab</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormButtonGroupControl">
+																<Name>ButtonGroup</Name>
+																<ElementPosition>1431655764</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Left>0</Left>
+																<Type>ButtonGroup</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Controls>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormMenuButtonControl">
+																		<Name>NewMenuButton</Name>
+																		<ElementPosition>1073741822</ElementPosition>
+																		<FilterExpression>%1</FilterExpression>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>MenuButton</Type>
+																		<VerticalSpacing>-1</VerticalSpacing>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<Controls>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormButtonControl">
+																				<Name>NewMakeButton</Name>
+																				<ElementPosition>1073741822</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>Button</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<Text>@FLM79</Text>
+																			</AxFormControl>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormButtonControl">
+																				<Name>NewModelButton</Name>
+																				<ElementPosition>1610612733</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>Button</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<Text>@FLM80</Text>
+																			</AxFormControl>
+																		</Controls>
+																		<Big>Yes</Big>
+																		<Text>@FLM51</Text>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormButtonControl">
+																		<Name>DeleteButton</Name>
+																		<ElementPosition>1610612733</ElementPosition>
+																		<FilterExpression>%1</FilterExpression>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>Button</Type>
+																		<VerticalSpacing>-1</VerticalSpacing>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<Big>Yes</Big>
+																		<Text>@FLM56</Text>
+																	</AxFormControl>
+																</Controls>
+															</AxFormControl>
+														</Controls>
+														<AlignChild>No</AlignChild>
+														<AlignChildren>No</AlignChildren>
+													</AxFormControl>
+												</Controls>
+												<AlignChild>No</AlignChild>
+												<AlignChildren>No</AlignChildren>
+												<Style>Strip</Style>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormGroupControl">
+												<Name>Body</Name>
+												<ElementPosition>1610612733</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<Height>0</Height>
+												<HeightMode>SizeToAvailable</HeightMode>
+												<Type>Group</Type>
+												<VerticalSpacingMode>Fixed</VerticalSpacingMode>
+												<Width>0</Width>
+												<WidthMode>SizeToAvailable</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormGroupControl">
+														<Name>Tree</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<ElementPosition>715827882</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Height>0</Height>
+														<HeightMode>SizeToAvailable</HeightMode>
+														<Type>Group</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<Width>200</Width>
+														<WidthMode>Manual</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls />
+														<ArrangeMethod>Auto</ArrangeMethod>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormGroupControl">
+														<Name>TreeContainer</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<ElementPosition>1073741823</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Height>0</Height>
+														<HeightMode>SizeToAvailable</HeightMode>
+														<Type>Group</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<Width>200</Width>
+														<WidthMode>Manual</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormTreeControl">
+																<Name>MakeModelTree</Name>
+																<AutoDeclaration>Yes</AutoDeclaration>
+																<ElementPosition>1431655764</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<Height>0</Height>
+																<HeightMode>SizeToAvailable</HeightMode>
+																<Type>Tree</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<Width>0</Width>
+																<FormControlExtension
+																	i:nil="true" />
+																<Border>SingleLine</Border>
+																<HasLines>No</HasLines>
+															</AxFormControl>
+														</Controls>
+														<ArrangeMethod>Auto</ArrangeMethod>
+														<RightMargin>1</RightMargin>
+														<RightMarginMode>Fixed</RightMarginMode>
+														<Style>BorderlessGridContainer</Style>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormGroupControl">
+														<Name>VSplitter</Name>
+														<AutoDeclaration>Yes</AutoDeclaration>
+														<ElementPosition>1431655764</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<HeightMode>Auto</HeightMode>
+														<Type>Group</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls />
+														<ArrangeMethod>Auto</ArrangeMethod>
+														<Style>SplitterVerticalContainer</Style>
+													</AxFormControl>
+													<AxFormControl xmlns=""
+														i:type="AxFormGroupControl">
+														<Name>Detail</Name>
+														<ElementPosition>1789569705</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<Height>0</Height>
+														<HeightMode>SizeToAvailable</HeightMode>
+														<Type>Group</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<Width>0</Width>
+														<WidthMode>SizeToAvailable</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormTabControl">
+																<Name>MakeModelSwitcher</Name>
+																<AlignControl>No</AlignControl>
+																<ElementPosition>1431655764</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>Tab</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<Controls>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormTabPageControl">
+																		<Name>Make</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<ElementPosition>1073741822</ElementPosition>
+																		<FilterExpression>%1</FilterExpression>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>TabPage</Type>
+																		<VerticalSpacing>-1</VerticalSpacing>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<Controls>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormStringControl">
+																				<Name>FMVehicleMake_Make</Name>
+																				<ElementPosition>1431655764</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>String</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<DataField>Make</DataField>
+																				<DataSource>FMVehicleMake</DataSource>
+																			</AxFormControl>
+																		</Controls>
+																		<ArrangeMethod>Auto</ArrangeMethod>
+																		<ColumnsMode>Fill</ColumnsMode>
+																		<Caption>@FLM155</Caption>
+																		<Scrollbars>Auto</Scrollbars>
+																	</AxFormControl>
+																	<AxFormControl xmlns=""
+																		i:type="AxFormTabPageControl">
+																		<Name>Model</Name>
+																		<AutoDeclaration>Yes</AutoDeclaration>
+																		<ElementPosition>1610612733</ElementPosition>
+																		<FilterExpression>%1</FilterExpression>
+																		<HeightMode>Auto</HeightMode>
+																		<Type>TabPage</Type>
+																		<VerticalSpacing>-1</VerticalSpacing>
+																		<WidthMode>Auto</WidthMode>
+																		<FormControlExtension
+																			i:nil="true" />
+																		<Controls>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormReferenceGroupControl">
+																				<Name>FMVehicleModel_Make</Name>
+																				<ElementPosition>715827882</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>ReferenceGroup</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<Controls>
+																					<AxFormControl xmlns=""
+																						i:type="AxFormStringControl">
+																						<Name>FMVehicleModel_Make_Make</Name>
+																						<DataRelationPath>VehicleMake</DataRelationPath>
+																						<FilterExpression>%1</FilterExpression>
+																						<HeightMode>Auto</HeightMode>
+																						<Type>String</Type>
+																						<VerticalSpacing>-1</VerticalSpacing>
+																						<WidthMode>Auto</WidthMode>
+																						<FormControlExtension
+																							i:nil="true" />
+																					</AxFormControl>
+																				</Controls>
+																				<DataSource>FMVehicleModel</DataSource>
+																				<ReferenceField>Make</ReferenceField>
+																			</AxFormControl>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormStringControl">
+																				<Name>FMVehicleModel_Model</Name>
+																				<ElementPosition>1073741823</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>String</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<DataField>Model</DataField>
+																				<DataSource>FMVehicleModel</DataSource>
+																			</AxFormControl>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormStringControl">
+																				<Name>FMVehicleModel_ModelSpec</Name>
+																				<ElementPosition>1431655764</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>String</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<DataField>ModelSpec</DataField>
+																				<DataSource>FMVehicleModel</DataSource>
+																			</AxFormControl>
+																			<AxFormControl xmlns=""
+																				i:type="AxFormImageControl">
+																				<Name>FMVehicleModel_Image</Name>
+																				<ElementPosition>1789569705</ElementPosition>
+																				<FilterExpression>%1</FilterExpression>
+																				<HeightMode>Auto</HeightMode>
+																				<Type>Image</Type>
+																				<VerticalSpacing>-1</VerticalSpacing>
+																				<WidthMode>Auto</WidthMode>
+																				<FormControlExtension
+																					i:nil="true" />
+																				<Label>@FLM184</Label>
+																				<ShowLabel>No</ShowLabel>
+																			</AxFormControl>
+																		</Controls>
+																		<ArrangeMethod>Auto</ArrangeMethod>
+																		<Columns>-1</Columns>
+																		<ColumnsMode>Fill</ColumnsMode>
+																		<Caption>@FLM157</Caption>
+																		<Scrollbars>Auto</Scrollbars>
+																	</AxFormControl>
+																</Controls>
+																<AlignChild>No</AlignChild>
+																<ShowTabs>No</ShowTabs>
+															</AxFormControl>
+														</Controls>
+														<ArrangeMethod>Auto</ArrangeMethod>
+													</AxFormControl>
+												</Controls>
+												<ArrangeMethod>Auto</ArrangeMethod>
+												<Columns>3</Columns>
+												<Columnspace>0</Columnspace>
+												<ColumnspaceMode>Fixed</ColumnspaceMode>
+												<RightMargin>5</RightMargin>
+												<RightMarginMode>Fixed</RightMarginMode>
+											</AxFormControl>
+										</Controls>
+										<ArrangeMethod>Auto</ArrangeMethod>
+										<LeftMargin>20</LeftMargin>
+										<LeftMarginMode>Fixed</LeftMarginMode>
+									</AxFormControl>
+								</Controls>
+								<FrameType>None</FrameType>
+							</AxFormControl>
+						</Controls>
+						<BottomMargin>0</BottomMargin>
+						<BottomMarginMode>Fixed</BottomMarginMode>
+						<LeftMargin>0</LeftMargin>
+						<LeftMarginMode>Fixed</LeftMarginMode>
+						<RightMargin>0</RightMargin>
+						<RightMarginMode>Fixed</RightMarginMode>
+						<TopMargin>0</TopMargin>
+						<TopMarginMode>Fixed</TopMarginMode>
+						<Caption>@FLM74</Caption>
+						<Scrollbars>Auto</Scrollbars>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormTabPageControl">
+						<Name>SUVSafetyRatings</Name>
+						<ElementPosition>1717986916</ElementPosition>
+						<FilterExpression>%1</FilterExpression>
+						<HeightMode>Auto</HeightMode>
+						<Type>TabPage</Type>
+						<VerticalSpacing>-1</VerticalSpacing>
+						<WidthMode>Auto</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>SUVSafetyRatingsTitle</Name>
+								<ElementPosition>1073741822</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<Skip>Yes</Skip>
+								<Type>Group</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormStaticTextControl">
+										<Name>MakeModelMain</Name>
+										<ElementPosition>1431655764</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Skip>Yes</Skip>
+										<Type>StaticText</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<WidthMode>SizeToAvailable</WidthMode>
+										<FormControlExtension
+											i:nil="true" />
+										<BackgroundColorRGB>
+											<Red>15</Red>
+											<Green>0</Green>
+											<Blue>0</Blue>
+										</BackgroundColorRGB>
+										<ColorScheme>RGB</ColorScheme>
+										<FontSize>13</FontSize>
+										<ForegroundColorRGB>
+											<Red>0</Red>
+											<Green>51</Green>
+											<Blue>153</Blue>
+										</ForegroundColorRGB>
+										<Style>MainInstruction</Style>
+										<Text>@FLM85</Text>
+									</AxFormControl>
+								</Controls>
+								<AllowUserSetup>No</AllowUserSetup>
+								<FrameType>None</FrameType>
+								<Style>TOCTitleContainer</Style>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormGroupControl">
+								<Name>SUVSafeyRatingsBody</Name>
+								<ElementPosition>1610612733</ElementPosition>
+								<FilterExpression>%1</FilterExpression>
+								<HeightMode>SizeToAvailable</HeightMode>
+								<Pattern>ToolbarList</Pattern>
+								<PatternVersion>1.2</PatternVersion>
+								<Type>Group</Type>
+								<VerticalSpacing>-1</VerticalSpacing>
+								<WidthMode>SizeToAvailable</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormActionPaneControl">
+										<Name>SUVSafetyRatingsActionPane</Name>
+										<ElementPosition>1073741822</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Type>ActionPane</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormActionPaneTabControl">
+												<Name>SUVSafetyRatingsActionTab</Name>
+												<ElementPosition>1431655764</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>ActionPaneTab</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<Controls>
+													<AxFormControl xmlns=""
+														i:type="AxFormButtonGroupControl">
+														<Name>SUVSafetyRatingsButtonGroup</Name>
+														<ElementPosition>1431655764</ElementPosition>
+														<FilterExpression>%1</FilterExpression>
+														<HeightMode>Auto</HeightMode>
+														<Left>0</Left>
+														<Type>ButtonGroup</Type>
+														<VerticalSpacing>-1</VerticalSpacing>
+														<WidthMode>Auto</WidthMode>
+														<FormControlExtension
+															i:nil="true" />
+														<Controls>
+															<AxFormControl xmlns=""
+																i:type="AxFormCommandButtonControl">
+																<Name>SUVSafetyRatingsNewButton</Name>
+																<ElementPosition>1073741822</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>CommandButton</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<ButtonDisplay>TextWithImageLeft</ButtonDisplay>
+																<Command>New</Command>
+																<NormalImage>Add</NormalImage>
+																<Text>@SYS60080</Text>
+															</AxFormControl>
+															<AxFormControl xmlns=""
+																i:type="AxFormCommandButtonControl">
+																<Name>SUVSafetyRatingsDeleteButton</Name>
+																<ElementPosition>1610612734</ElementPosition>
+																<FilterExpression>%1</FilterExpression>
+																<HeightMode>Auto</HeightMode>
+																<Type>CommandButton</Type>
+																<VerticalSpacing>-1</VerticalSpacing>
+																<WidthMode>Auto</WidthMode>
+																<FormControlExtension
+																	i:nil="true" />
+																<ButtonDisplay>TextWithImageLeft</ButtonDisplay>
+																<Command>DeleteRecord</Command>
+																<NormalImage>Remove</NormalImage>
+																<Text>@SYS135131</Text>
+															</AxFormControl>
+														</Controls>
+													</AxFormControl>
+												</Controls>
+												<AlignChild>No</AlignChild>
+												<AlignChildren>No</AlignChildren>
+											</AxFormControl>
+										</Controls>
+										<AlignChild>No</AlignChild>
+										<AlignChildren>No</AlignChildren>
+										<DataSource>FMSUVSafetyRating</DataSource>
+										<Style>Strip</Style>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormGridControl">
+										<Name>SUVSafetyRatingsGrid</Name>
+										<ElementPosition>1610612733</ElementPosition>
+										<FilterExpression>%1</FilterExpression>
+										<Type>Grid</Type>
+										<VerticalSpacing>-1</VerticalSpacing>
+										<FormControlExtension
+											i:nil="true" />
+										<Controls>
+											<AxFormControl xmlns=""
+												i:type="AxFormStringControl">
+												<Name>FMSUVSafetyRating_Name</Name>
+												<ElementPosition>858993458</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>String</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>SafetyRatingId</DataField>
+												<DataSource>FMSUVSafetyRating</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormIntegerControl">
+												<Name>FMSUVSafetyRating_RollOverRating</Name>
+												<ElementPosition>1288490187</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>Integer</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>RollOverRating</DataField>
+												<DataSource>FMSUVSafetyRating</DataSource>
+											</AxFormControl>
+											<AxFormControl xmlns=""
+												i:type="AxFormIntegerControl">
+												<Name>FMSUVSafetyRating_OverallRating</Name>
+												<ElementPosition>1717986916</ElementPosition>
+												<FilterExpression>%1</FilterExpression>
+												<HeightMode>Auto</HeightMode>
+												<Type>Integer</Type>
+												<VerticalSpacing>-1</VerticalSpacing>
+												<WidthMode>Auto</WidthMode>
+												<FormControlExtension
+													i:nil="true" />
+												<DataField>OverallRating</DataField>
+												<DataSource>FMSUVSafetyRating</DataSource>
+											</AxFormControl>
+										</Controls>
+										<DataSource>FMSUVSafetyRating</DataSource>
+									</AxFormControl>
+								</Controls>
+								<FrameType>None</FrameType>
+							</AxFormControl>
+						</Controls>
+						<Caption>@FLM84</Caption>
+						<Scrollbars>Auto</Scrollbars>
+					</AxFormControl>
+				</Controls>
+				<AlignChild>No</AlignChild>
+				<Style>VerticalTabs</Style>
+			</AxFormControl>
+		</Controls>
+	</Design>
+	<Parts />
+</AxForm>

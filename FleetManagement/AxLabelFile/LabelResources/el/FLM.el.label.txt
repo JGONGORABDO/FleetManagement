@@ -1,0 +1,784 @@
+﻿@FLM41=Δημιουργήθηκαν αρχεία ετικετών στις 3/4/2011
+ ;By user Admin
+@FLM42=Κόκκινο
+ ;Fleet colors
+@FLM43=Μπλε
+ ;Fleet colors
+@FLM44=Πράσινο
+ ;Fleet colors
+@FLM46=Επιλογή εικόνας
+ ;Fleet label
+@FLM47=Αλλαγή
+ ;Fleet label
+@FLM48=Κατάργηση
+ ;Fleet label
+@FLM49=Πελάτης
+ ;Fleet label
+@FLM50=Ανοιχτό
+ ;Fleet label
+@FLM51=Δημιουργία
+ ;Fleet label
+@FLM52=Ενοικίαση
+ ;Fleet label
+@FLM53=Γενικά
+ ;Fleet label
+@FLM55=Προβολή
+ ;Fleet label
+@FLM56=Διαγραφή
+ ;Fleet label
+@FLM57=Συνημμένα
+ ;Fleet label
+@FLM58=Ολοκληρώθηκε
+ ;Fleet label
+@FLM59=Χρεώσεις ενοικίασης
+ ;Fleet label
+@FLM60=Περίοδος ενοικίασης
+ ;Fleet label
+@FLM61=Από
+ ;Fleet label
+@FLM62=Έως
+ ;Fleet label
+@FLM63=Χιλιομετρική απόσταση
+ ;Fleet label
+@FLM64=Έναρξη
+ ;Fleet label
+@FLM65=Λήξη
+ ;Fleet label
+@FLM66=Στάθμες καυσίμων
+ ;Fleet label
+@FLM67=Παραλαβή
+ ;Fleet label
+@FLM68=Χρεώσεις
+ ;Fleet label
+@FLM69=Προσθήκη χρέωσης
+ ;Fleet label
+@FLM70=Συμπερίληψη φορτηγών
+ ;Fleet label
+@FLM71=Ενοικιάσεις
+ ;Fleet label
+@FLM72=Επεξεργασία
+ ;Fleet label
+@FLM73=Ρύθμιση παραμέτρων διαχείρισης στόλου
+ ;Fleet label
+@FLM74=Μάρκες και μοντέλα οχημάτων
+ ;Fleet label
+@FLM75=Ορισμός μαρκών και μοντέλων οχημάτων
+ ;Fleet label
+@FLM76=Ορίστε τη μάρκα και τα μοντέλα των οχημάτων στο απόθεμά σας, συμπεριλαμβανομένης μιας αντιπροσωπευτικής εικόνας για το μοντέλο.
+ ;Fleet label
+@FLM77=Εικόνα μοντέλου
+ ;Fleet label
+@FLM78=Αναζήτηση...
+ ;Fleet label
+@FLM79=Νέα μάρκα
+ ;Fleet label
+@FLM80=Νέο μοντέλο
+ ;Fleet label
+@FLM81=Τύποι χρέωσης ενοικίασης
+ ;Fleet label
+@FLM82=Ορισμός τύπων χρέωσης
+ ;Fleet label
+@FLM83=Οι τύποι χρεώσεων χρησιμοποιούνται για την κατηγοριοποίηση κάθε χρέωσης ενοικίασης. Αυτό σας επιτρέπει να παρακολουθείτε τα έξοδά σας ευκολότερα.
+ ;Fleet label
+@FLM84=Αξιολογήσεις ασφάλειας SUV
+ ;Fleet label
+@FLM85=Ορισμός αξιολογήσεων ασφάλειας SUV
+ ;Fleet label
+@FLM86=Οχήματα
+ ;Fleet label
+@FLM87=Διατήρηση
+ ;Fleet label
+@FLM88=Ιστορικό
+ ;Fleet label
+@FLM89=Ιστορικές χρεώσεις
+ ;Fleet label
+@FLM90=Χρεώσεις
+ ;Fleet label
+@FLM91=Λεπτομέρειες
+ ;Fleet label
+@FLM92=Πληροφορίες αυτοκινήτου και SUV
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=Πληροφορίες φορτηγού
+ ;Fleet label
+@FLM95=Οχήματα
+ ;Fleet label
+@FLM96=Διαθεσιμότητα
+ ;Fleet label
+@FLM97=Τοποθεσία
+ ;Fleet label
+@FLM98=Διατήρηση
+ ;Fleet label
+@FLM99=Καρτέλα
+ ;Fleet label
+@FLM100=Λίστα
+ ;Fleet label
+@FLM101=Αναγνωριστικό οχήματος
+ ;Fleet label
+@FLM102=Διαχειριστής ημερομηνίας τιμών οχήματος
+ ;Fleet label
+@FLM103=Νέα έκδοση
+ ;Fleet label
+@FLM104=Συντήρηση οχήματος
+ ;Fleet label
+@FLM105=Διαχείριση στόλου
+ ;Fleet label
+@FLM106=Πρόσφατες ενοικιάσεις
+ ;Fleet label
+@FLM107=Οι εσωτερικοί μου οργανισμοί για πρόσβαση ασφάλειας
+ ;Fleet label
+@FLM108=Οχήματα στα οποία ο χρήστης έχει πρόσβαση ασφαλείας
+ ;Fleet label
+@FLM109=Εσωτερικοί οργανισμοί στους οποίους έχει πρόσβαση ο χρήστης
+ ;Fleet label
+@FLM110=Φορτηγά
+ ;Fleet label
+@FLM111=SUV
+ ;Fleet label
+@FLM112=Μενού για σελίδες προβολής πελατών
+ ;Fleet label
+@FLM113=Ενέργειες
+ ;Fleet label
+@FLM114=Μενού οχήματος
+ ;Fleet label
+@FLM115=Μενού για σελίδες προβολής οχημάτων
+ ;Fleet label
+@FLM116=Υποκατάστημα - Υπό απόσυρση
+ ;Fleet label
+@FLM117=Τοποθεσία ενοικίασης - Υπό απόσυρση
+ ;Fleet label
+@FLM118=Περιοχή - Υπό απόσυρση
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Τύπος καυσίμου
+ ;Fleet label
+@FLM123=Τυπικό
+ ;Fleet label
+@FLM124=Premium
+ ;Fleet label
+@FLM125=Ενεργοποιημένο GPS
+ ;Fleet label
+@FLM126=Αλλαγή λαδιού
+ ;Fleet label
+@FLM127=Επιδιόρθωση
+ ;Fleet label
+@FLM128=Προληπτική συντήρηση
+ ;Fleet label
+@FLM129=Αναμονή εξέτασης
+ ;Fleet label
+@FLM130=Αναμονή σέρβις
+ ;Fleet label
+@FLM131=Αναμονή έγκρισης
+ ;Fleet label
+@FLM132=Αναμονή καθαρισμού
+ ;Fleet label
+@FLM133=Τέλος
+ ;Fleet label
+@FLM134=Μετάδοση
+ ;Fleet label
+@FLM135=Αυτόματα
+ ;Fleet label
+@FLM136=Μη αυτόματα
+ ;Fleet label
+@FLM137=Διαθέσιμος
+ ;Fleet label
+@FLM138=Σε λειτουργία
+ ;Fleet label
+@FLM139=Νοικιασμένο
+ ;Fleet label
+@FLM140=Κατεστραμμένο
+ ;Fleet label
+@FLM141=Ανακλήθηκε
+ ;Fleet label
+@FLM142=Σε εκκρεμότητα
+ ;Fleet label
+@FLM143=Τύπος οχήματος
+ ;Fleet label
+@FLM144=Άγνωστο
+ ;Fleet label
+@FLM145=Φορτηγό
+ ;Fleet label
+@FLM146=Αυτοκίνητο
+ ;Fleet label
+@FLM147=Τύπος χρέωσης
+ ;Fleet label
+@FLM148=Άδεια οδήγησης
+ ;Fleet label
+@FLM149=Μάρκα μοντέλο
+ ;Fleet label
+@FLM150=Σημειώσεις
+ ;Fleet label
+@FLM151=Πληροφορίες ενοικίασης οχήματος
+ ;Fleet label
+@FLM152=Αναγνωριστικό αξιολόγησης ασφάλειας
+ ;Fleet label
+@FLM153=Αξιολόγηση ασφάλειας SUV
+ ;Fleet label
+@FLM154=Σύνολο ενοικιάσεων
+ ;Fleet label
+@FLM155=Μάρκα
+ ;Fleet label
+@FLM156=Μάρκα οχήματος
+ ;Fleet label
+@FLM157=Μοντέλο
+ ;Fleet label
+@FLM158=Μοντέλο οχήματος
+ ;Fleet label
+@FLM159=Αυτοκίνητα
+ ;Fleet label
+@FLM160=Πόρτες
+ ;Fleet label
+@FLM161=Χωρητικότητα καθισμάτων
+ ;Fleet label
+@FLM162=Τύποι χρέωσης
+ ;Fleet label
+@FLM163=Ημερομηνία λήξης
+ ;Fleet label
+@FLM164=Απόσταση σε χιλιόμετρα έναρξης
+ ;Fleet label
+@FLM165=Απόσταση σε χιλιόμετρα λήξης
+ ;Fleet label
+@FLM166=Στάθμη καυσίμου έναρξης
+ ;Fleet label
+@FLM167=Στάθμη καυσίμου λήξης
+ ;Fleet label
+@FLM168=Πληροφορίες ενοικίασης οχήματος
+ ;Fleet label
+@FLM169=Χωρητικότητα τρίτης σειράς
+ ;Fleet label
+@FLM170=Ακτίνα στροφής
+ ;Fleet label
+@FLM171=Απόσταση από το έδαφος
+ ;Fleet label
+@FLM172=Αξιολόγηση ανατροπής
+ ;Fleet label
+@FLM173=Συνολική αξιολόγηση
+ ;Fleet label
+@FLM174=Ελεύθερος χώρος
+ ;Fleet label
+@FLM175=Δάπεδο
+ ;Fleet label
+@FLM176=Μέγιστο φορτίο
+ ;Fleet label
+@FLM177=Τύπος
+ ;Fleet label
+@FLM178=Μεικτό βάρος οχήματος
+ ;Fleet label
+@FLM179=Κατάσταση οχήματος
+ ;Fleet label
+@FLM180=Οργανισμός
+ ;Fleet label
+@FLM181=Ομάδα προεπισκόπησης
+ ;Fleet label
+@FLM182=Μάρκες οχημάτων
+ ;Fleet label
+@FLM183=Μοντέλα οχημάτων
+ ;Fleet label
+@FLM184=Εικόνα οχήματος
+ ;Fleet label
+@FLM185=Προδιαγραφή μοντέλου
+ ;Fleet label
+@FLM186=Μορφή εικόνας
+ ;Fleet label
+@FLM187=Χρεώσεις οχημάτων
+ ;Fleet label
+@FLM188=Χρέωση ανά ημέρα
+ ;Fleet label
+@FLM189=Χρέωση ανά εβδομάδα
+ ;Fleet label
+@FLM190=Οι εσωτερικοί μου οργανισμοί που συσχετίζονται με έναν ρόλο
+ ;Fleet label
+@FLM191=Πίνακας που περιέχει εσωτερικούς οργανισμούς που συσχετίζονται με τον ρόλο του χρήστη
+ ;Fleet label
+@FLM192=Η προβολή DimAttributeOMBranch περιέχει όλες τις καρτέλες από τον πίνακα OMOperatingUnit που επισημαίνονται ως Υποκατάστημα.
+ ;Fleet label
+@FLM193=Η προβολή DimAttributeOMRegion περιέχει όλες τις καρτέλες από τον πίνακα OMOperatingUnit που επισημαίνονται ως Περιοχές.
+ ;Fleet label
+@FLM194=Η προβολή DimAttributeOMRentalLocation περιέχει όλες τις καρτέλες από τον πίνακα OMOperatingUnit που επισημαίνονται ως Τοποθεσία ενοικίασης.
+ ;Fleet label
+@FLM195=Κέντρο διαχείρισης στόλου
+ ;Fleet label
+@FLM196=Προσθήκη
+ ;Fleet label
+@FLM197=Τρέχουσες ενοικιάσεις
+ ;Fleet label
+@FLM198=Εκχωρημένα οχήματα
+ ;Fleet label
+@FLM199=Διαθέσιμα οχήματα
+ ;Fleet label
+@FLM200=Ανακαλούμενα οχήματα
+ ;Fleet label
+@FLM201=Ολοκληρώθηκε
+ ;Fleet label
+@FLM202=Σε εξέλιξη
+ ;Fleet label
+@FLM203=Ιστορική χρέωση
+ ;Fleet label
+@FLM204=Πλήρης ενοικίαση
+ ;Fleet label
+@FLM205=Καθαρό όχημα
+ ;Fleet label
+@FLM206=Εξέταση οχήματος
+ ;Fleet label
+@FLM207=Όχημα εξυπηρέτησης
+ ;Fleet label
+@FLM208=Έγκριση υπηρεσίας
+ ;Fleet label
+@FLM209=Στοιχεία πελάτη
+ ;Fleet label
+@FLM210=Όνομα
+ ;Fleet label
+@FLM211=Άδεια χρήσης
+ ;Fleet label
+@FLM212=Διεύθυνση
+ ;Fleet label
+@FLM213=Τηλέφωνο
+ ;Fleet label
+@FLM214=E-mail
+ ;Fleet label
+@FLM215=Πληροφορίες πληρωμής
+ ;Fleet label
+@FLM216=Πιστωτική κάρτα
+ ;Fleet label
+@FLM217=Λήξη
+ ;Fleet label
+@FLM218=Ημερομηνία
+ ;Fleet label
+@FLM219=Έναρξη ενοικίασης
+ ;Fleet label
+@FLM220=Ημερομηνία λήξης
+ ;Fleet label
+@FLM221=Περιγραφή
+ ;Fleet label
+@FLM222=Ποσότητα
+ ;Fleet label
+@FLM223=Επεκτάθηκε
+ ;Fleet label
+@FLM224=Λεπτομέρειες οχήματος
+ ;Fleet label
+@FLM225=Μάρκα και μοντέλο
+ ;Fleet label
+@FLM226=Ημερήσια χρέωση
+ ;Fleet label
+@FLM227=Εβδομαδιαία χρέωση
+ ;Fleet label
+@FLM228=Μέρος προεπισκόπησης οχήματος
+ ;Fleet label
+@FLM229=Χρώμα
+ ;Fleet label
+@FLM230=Κατάσταση
+ ;Fleet label
+@FLM231=Εκχωρημένο όχημα
+ ;Fleet label
+@FLM232=Υποδείξεις διαχείρισης στόλου
+ ;Fleet label
+@FLM233=Περιορισμός χρηστών σε επιχειρηματικές μονάδες
+ ;Fleet label
+@FLM234=Η πρόσβασή μου σε οχήματα για πρόσβαση ασφάλειας
+ ;Fleet label
+@FLM235=Αυτοεξυπηρέτηση για καρτέλες ενοικίασης
+ ;Fleet label
+@FLM236=Υπάλληλος διαχείρισης στόλου
+ ;Fleet label
+@FLM237=Υπάλληλος γραφείου ενοικίασης
+ ;Fleet label
+@FLM238=Διευθυντής υποκαταστήματος διαχείρισης στόλου
+ ;Fleet label
+@FLM239=Διευθυντής υποκαταστήματος γραφείου ενοικίασης
+ ;Fleet label
+@FLM240=Τεχνικός σέρβις διαχείρισης στόλου
+ ;Fleet label
+@FLM241=Τεχνικός σέρβις
+ ;Fleet label
+@FLM242=Χρήση ροής εργασίας
+ ;Fleet label
+@FLM243=Ομάδα υπηρεσιών που εκθέτει το διαθέσιμο απόθεμα αυτοκινήτων
+ ;Fleet label
+@FLM244=Αριθμός θυρών
+ ;Number of doors in the FM vehicle
+@FLM245=Εκτεταμένο ποσό
+ ;Fleet label
+@FLM246=Στάθμη καυσίμων
+ ;Fleet label
+@FLM247=Απόσταση από το έδαφος
+ ;Fleet label
+@FLM248=Χώρος δαπέδου φορτηγού
+ ;Fleet label
+@FLM249=Μέγιστο φορτίο
+ ;Fleet label
+@FLM250=Ελεύθερος χώρος οροφής
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Αξιολόγηση
+ ;Fleet label
+@FLM253=Σύνολο ενοικιάσεων
+ ;Fleet label
+@FLM254=Καθίσματα
+ ;Fleet label
+@FLM255=Τύπος χρέωσης
+ ;Fleet label (table)
+@FLM256=Χωρητικότητα
+ ;Fleet label
+@FLM257=Ακτίνα στροφής
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Ερώτημα ροής εργασίας
+ ;Fleet label
+@FLM260=Καρτέλα συντήρησης
+ ;Fleet label
+@FLM261=Νέα ενοικίαση
+ ;Fleet label
+@FLM262=Όλες οι ενοικιάσεις
+ ;Fleet label
+@FLM263=Ρύθμιση στόλου
+ ;Fleet label
+@FLM264=Όλα τα οχήματα
+ ;Fleet label
+@FLM265=Ημερομηνίες χρέωσης
+ ;Fleet label
+@FLM268=Υποκαταστήματα _DEMO_
+ ;Fleet label
+@FLM269=Τοποθεσίες ενοικίασης _DEMO_
+ ;Fleet label
+@FLM270=Περιοχές _DEMO_
+ ;Fleet label
+@FLM271=Ο καθαρισμός ολοκληρώθηκε
+ ;Fleet label
+@FLM272=Διαγραφή πελατών
+ ;Fleet label
+@FLM273=Διαγραφή επιλεγμένων ενοικιάσεων
+ ;Fleet label
+@FLM274=Διαγραφή επιλεγμένου οχήματος
+ ;Fleet label
+@FLM275=Η εξέταση ολοκληρώθηκε
+ ;Fleet label
+@FLM276=Η υπηρεσία ολοκληρώθηκε
+ ;Fleet label
+@FLM278=Έναρξη ροής εργασίας
+ ;Fleet label
+@FLM279=Έγκριση υπηρεσίας
+ ;Fleet label
+@FLM280=Άρνηση υπηρεσίας
+ ;Fleet label
+@FLM281=Απόρριψη υπηρεσίας
+ ;Fleet label
+@FLM282=Διαγραφή επιλεγμένων οχημάτων
+ ;Fleet label
+@FLM283=Ρύθμιση παραμέτρων ροής εργασίας
+ ;Fleet label
+@FLM284=Δημιουργία ή ενημέρωση υποκαταστημάτων
+ ;Fleet label
+@FLM285=Δημιουργία ή ενημέρωση τοποθεσιών ενοικίασης
+ ;Fleet label
+@FLM286=Δημιουργία ή ενημέρωση περιοχών
+ ;Fleet label
+@FLM287=Προσθήκη/επεξεργασία πελάτη
+ ;Fleet label
+@FLM288=Αναγνωριστικό ενοικίασης οχήματος
+ ;Fleet label (table)
+@FLM289=Προσθήκη/επεξεργασία χρέωσης ενοικίασης
+ ;Fleet label
+@FLM290=Λεπτομέρειες χρέωσης
+ ;Fleet label
+@FLM291=Λεπτομέρειες ενοικίασης
+ ;Fleet label
+@FLM292=Επεξεργασία ενοικίασης
+ ;Fleet label
+@FLM293=Ενοικιάσεις ανά πελάτη
+ ;Fleet label
+@FLM294=Ενοικιάσεις ανά μοντέλο
+ ;Fleet label
+@FLM295=Προσθήκη/επεξεργασία οχήματος
+ ;Fleet label
+@FLM296=Επερχόμενες ενοικιάσεις
+ ;Fleet label
+@FLM297=Ενοικιάσεις ανά όχημα
+ ;Fleet label
+@FLM298=Δείτε ηλεκτρονική βοήθεια
+ ;Fleet label
+@FLM299=Τύπος χρέωσης ενοικίασης
+ ;Fleet label
+@FLM300=Καταγραφή χιλιομετρικής απόστασης
+ ;Fleet label
+@FLM301=Κύκλος διεργασίας στόλου
+ ;Fleet label
+@FLM302=Στόλος - Ρύθμιση διαχείρισης στόλου
+ ;Fleet label
+@FLM303=Στόλος - Επεξεργασία καρτελών πελατών
+ ;Fleet label
+@FLM304=Στόλος - Διαχείριση πελατών
+ ;Fleet label
+@FLM305=Στόλος - Διαχείριση αποθέματος
+ ;Fleet label
+@FLM306=Στόλος - Ενοικίαση αυτοκινήτων
+ ;Fleet label
+@FLM307=Στόλος - Προβολή καρτελών πελατών
+ ;Fleet label
+@FLM308=Στόλος - Προβολή αποθέματος
+ ;Fleet label
+@FLM309=Στόλος - Υπάλληλος ροής εργασίας
+ ;Fleet label
+@FLM310=Χρώμα οχήματος
+ ;Fleet label
+@FLM311=Στόλος - Διαχειριστής ροής εργασιών
+ ;Fleet label
+@FLM312=Στόλος - Τεχνικός σέρβις ροής εργασιών
+ ;Fleet label
+@FLM313=Στόλος - Βασικά καθήκοντα
+ ;Fleet label
+@FLM314=Στόλος - Διαχείριση αυτοκινήτων
+ ;Fleet label
+@FLM315=Τυπικός κύκλος διεργασίας στόλου
+ ;Fleet label
+@FLM316=Χιλιομετρική απόσταση οχήματος
+ ;Fleet label
+@FLM317=Κόστος
+ ;Fleet label
+@FLM318=Εκκαθάριση
+ ;Fleet label
+@FLM54=Πελάτες
+ ;Fleet label
+@FLM266=Λήξη πιστωτικής κάρτας
+ ;Fleet label (table)
+@FLM277=Άδεια οδήγησης
+ ;Fleet label (table)
+@FLM320=Κατάλογος πελατών
+ ;Fleet label (report menu item)
+@FLM321=Αναφορά καταλόγου πελατών
+ ;Fleet label (report menu item help text)
+@FLM267=Ρύθμιση ροής εργασίας
+ ;Fleet label
+@FLM400=Ροή εργασιών συντήρησης οχήματος
+ ;Fleet label
+@FLM500=Προτιμώμενη μέθοδος πληρωμής
+ ;Fleet label
+@FLM501=Λευκό
+ ;Fleet colors
+@FLM502=Γκρι
+ ;Fleet colors
+@FLM503=Κίτρινο
+ ;Fleet colors
+@FLM504=Πορτοκαλί
+ ;Fleet colors
+@FLM505=Παραλαβή
+ ;Fleet label
+@FLM506=Επιστροφή
+ ;Fleet label
+@FLM507=Έναρξη ενοικίασης
+ ;Fleet label
+@FLM401=Διαχείριση κρατήσεων
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Προηγούμενη χιλιομετρική απόσταση
+ ;Fleet label for returning vehicle slider
+@FLM509=Νέα χιλιομετρική απόσταση
+ ;Fleet label for returning vehicle slider
+@FLM510=Ενοικίαση οχήματος
+ ;Fleet label
+@FLM512=Πρόσθετες χρεώσεις
+ ;Fleet label
+@FLM513=Εξοικονόμηση
+ ;Fleet label
+@FLM514=Νέα κράτηση
+ ;New reservation menu item label
+@FLM515=Έτος μοντέλου
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Έτος λήξης
+ ;Expiration year label
+@FLM517=Αναφορά πελατών
+ ;Fleet tile label
+@FLM518=Υφιστάμενες κρατήσεις
+ ;Fleet tile label
+@FLM519=Εκπρόθεσμες ενοικιάσεις
+ ;Fleet tile label
+@FLM520=Όνομα πληρωμής
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=Μήνας λήξης
+ ;Expiration month label
+@FLM523=Όνομα στην κάρτα
+ ;Fleet name on credit card
+@FLM524=Ιστορικό χρεώσεων οχήματος
+ ;Fleet form label
+@FLM525=Νέο σχόλιο
+ ;Fleet dialog caption
+@FLM526=Νέος πελάτης
+ ;Fleet dialog caption
+@FLM527=Πληροφορίες νέας πληρωμής
+ ;Fleet dialog caption
+@FLM528=Προσθήκη αξεσουάρ
+ ;Fleet dialog caption
+@FLM529=Επιλογή πελάτη
+ ;Fleet dialog caption
+@FLM530=Έτοιμο για παραλαβή
+ ;Fleet ReservationState enum option
+@FLM531=Αναγνωριστικό διεύθυνσης παραλαβής
+ ;Fleet label
+@FLM532=Δεκαεξαδικός κωδικός χρώματος
+ ;Fleet label
+@FLM533=Αναγνωριστικό χρώματος
+ ;Fleet label
+@FLM534=Όνομα χρώματος
+ ;Fleet label
+@FLM535=Αναγνωριστικό έκπτωσης
+ ;Fleet label
+@FLM536=Αναγνωριστικό πληροφοριών πληρωμής
+ ;Fleet label
+@FLM537=Αναγνωριστικό κράτησης
+ ;Fleet label
+@FLM539=Ενοικιαζόμενα οχήματα
+ ;Fleet label
+@FLM540=Διαχείριση στόλου
+ ;Fleet menu label
+@FLM541=Φόρτωση δεδομένων επίδειξης
+ ;Fleet button text
+@FLM542=Ιστορικό χρεώσεων
+ ;Fleet button text
+@FLM543=Αλλαγή πελάτη
+ ;Fleet dialog label
+@FLM544=Επιλογή οχήματος
+ ;Fleet button text
+@FLM545=Όλες οι κρατήσεις
+ ;Fleet grid title
+@FLM546=Σχόλια πελατών
+ ;Fleet group label
+@FLM547=Πληροφορίες ενοικιάσεων
+ ;Fleet group label
+@FLM548=Εικόνα χρέωσης
+ ;Fleet group label
+@FLM549=Ρύθμιση δεδομένων
+ ;Fleet tab label
+@FLM550=Πληροφορίες οχήματος
+ ;Fleet group label
+@FLM551=Διαθέσιμα οχήματα
+ ;Fleet chart label
+@FLM552=Κατάσταση ενοικιαζόμενου οχήματος
+ ;Fleet chart label
+@FLM553=Όχημα ανά μοντέλο - έσοδα
+ ;Fleet chart label
+@FLM554=Παραλαβή σήμερα
+ ;Fleet panorama label
+@FLM555=Επιστροφή σήμερα
+ ;Fleet panorama label
+@FLM556=Χρεώσεις ενοικίασης
+ ;Fleet panorama label
+@FLM558=Λεπτομέρειες κράτησης
+ ;Fleet panorama label
+@FLM559=Αξεσουάρ
+ ;Fleet panorama label
+@FLM560=Δυνατότητες
+ ;Fleet group label
+@FLM561=Πληροφορίες παραλαβής
+ ;Fleet field label
+@FLM562=Πληροφορίες επιστροφής
+ ;Fleet field label
+@FLM563=Λίστα ενοικιάσεων
+ ;Fleet report label
+@FLM564=Δημιουργία δειγμάτων πελατών, ενοικιάσεων και οχημάτων
+ ;Fleet TOC label
+@FLM565=Αυτό θα διαρκέσει μόνο λίγα δευτερόλεπτα.  
+ ;New Comment
+@FLM322=Ενοικιάσεις ανά πελάτη
+ ;Fleet report label
+@FLM566=Διαγράμματα πελατών
+ ;Fleet form part caption
+@FLM567=Διάγραμμα εσόδων οχήματος
+ ;Fleet form part caption
+@FLM601=Ενοικιάσεις διαχείρισης στόλου
+ ;Fleet rental entity
+@FLM602=Πελάτες διαχείρισης στόλου
+ ;Fleet customer entity
+@FLM603=Δείγμα Applet
+ ;Label for the sample applet name
+@FLM604=Ένα δείγμα applet που χρησιμοποιήθηκε για την επίδειξη και τη δοκιμή του πλαισίου applet
+ ;Label for the sample applet description
+@FLM605=Δείτε περισσότερα
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Τοποθεσίες πελατών
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Το Πρότυπο παρέχει έναν χάρτη με τις τοποθεσίες πελατών
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Ενοικιάσεις ανά κατάσταση
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Το πρότυπο παρέχει το πλήθος κατάστασης ενοικιάσεων
+ ;Rentals by status template description
+FMCustomerEntityView=Προβολή οντότητας πελατών διαχείρισης στόλου
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Διατήρηση οντότητας πελατών διαχείρισης στόλου
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Προβολή οντότητας ενοικιάσεων διαχείρισης στόλου
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Διατήρηση οντότητας ενοικιάσεων διαχείρισης στόλου
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Προβολή οντότητας δραστηριότητας
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Διατήρηση οντότητας δραστηριότητας
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Προβολή οντότητας κατηγορίας
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Διατήρηση οντότητας κατηγορίας
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Προβολή υπόστασης νομικής οντότητας
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Διατήρηση υπόστασης νομικής οντότητας
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Προβολή οντότητας ιδιότητας γραμμής
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Διατήρηση οντότητας ιδιότητας γραμμής
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Προβολή οντότητας περιόδου
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Διατήρηση οντότητας περιόδου
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Προβολή οντότητας έργου
+ ;View privilege for RCADProject
+RCADProjectMaintain=Διατήρηση οντότητας έργου
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Προβολή οντότητας φύλλου κατανομής χρόνου
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Διατήρηση οντότητας φύλλου κατανομής χρόνου
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Προβολή οντότητας καταχώρησης φύλλου κατανομής χρόνου
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Διατήρηση οντότητας καταχώρησης φύλλου κατανομής χρόνου
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Προβολή οντότητας ρυθμίσεων φύλλου κατανομής χρόνου
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Διατήρηση οντότητας ρυθμίσεων φύλλου κατανομής χρόνου
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Προβολή οντότητας ιστορικού ροής εργασίας φύλλου κατανομής χρόνου
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Διατήρηση οντότητας ιστορικού ροής εργασίας φύλλου κατανομής χρόνου
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Προβολή οντότητας στοιχείου ιστορικού ροής εργασίας
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Διατήρηση οντότητας στοιχείου ιστορικού ροής εργασίας
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Βρείτε ενοικίαση
+FMTemplateCustomerInformationDisplayName=Πληροφορίες πελατών
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Το πρότυπο παρέχει βασικές πληροφορίες πελατών και μια λίστα με τις ενοικιάσεις τους
+ ;Fleet customer information template description
+DataCreated=Δημιουργήθηκε δείγμα δεδομένων.
+DataRestored=Έγινε επαναφορά των δειγμάτων δεδομένων.
+DataRestoreConfirm=Αυτό θα επαναφέρει όλα τα δεδομένα διαχείρισης στόλου στην αρχική τους κατάσταση. Αυτό θέλετε να κάνετε;
+Branch=Υποκατάστημα _DEMO_
+ ;Branch operating unit type
+RentalLocation=Τοποθεσία ενοικίασης _DEMO_
+ ;Rental location operating unit type
+Region=Περιοχή _DEMO_
+ ;Region operating unit type
+Timestamp=Χρονική σήμανση
+ ;Comment timestamp
+CustomerImage=Εικόνα πελάτη
+ ;Fleet label
+Analytics=Ανάλυση
+ ;used on Fleet clerk workspace for Analytics section

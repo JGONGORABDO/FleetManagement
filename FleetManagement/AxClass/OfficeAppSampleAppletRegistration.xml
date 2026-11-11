@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>OfficeAppSampleAppletRegistration</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+/// Defines the sample applet for use in the Office App.
+/// </summary>
+public class OfficeAppSampleAppletRegistration extends OfficeAppAppletRegistrationBase
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>getAppletID</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Gets the unique ID of the applet.
+    /// </summary>
+    /// <returns>The unique ID of the applet.</returns>
+    public str getAppletID()
+    {
+        return "Microsoft.Dynamics.Platform.Integration.Office.SampleApplet";
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getRelativeUrl</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Gets a URL describing the relative location of the applet on the CSU.
+    /// </summary>
+    /// <returns>A URL describing the relative location of the applet on the CSU.</returns>
+    public str getRelativeUrl()
+    {
+        return "/resources/html/OfficeAppSampleApplet.html";
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getName</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Gets the user-facing name of the applet.
+    /// </summary>
+    /// <returns>The user-facing name of the applet.</returns>
+    public str getName()
+    {
+        return literalStr("@FLM603");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getDescription</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Gets the user-facing description of the applet.
+    /// </summary>
+    /// <returns>The user-facing description of the applet.</returns>
+    public str getDescription()
+    {
+        return literalStr("@FLM604");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getRequiredAppVersion</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Gets the minimum version of the Dynamics Office App required by the applet to function.
+    /// </summary>
+    /// <returns>The minimum version of the Dynamics Office App required by the applet to function.</returns>
+    public str getRequiredAppVersion()
+    {
+        return "1.1.0.0";
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getSupportedApplications</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Gets a value representing the Office applications the applet supports. Implementing classes can
+    /// return an OfficeAppApplicationType member or use binary operators to represent support for more than
+    /// one application, such as OfficeAppApplicationType::Excel | OfficeAppApplicationType::Word.
+    /// </summary>
+    /// <returns>A value representing the Office applications the applet supports.</returns>
+    public int getSupportedApplications()
+    {
+        return 0;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getDependency</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Gets the ID of the applet that this applet is dependent on, or null if this applet has no dependency.
+    /// </summary>
+    /// <returns>The ID of the applet that this applet is dependent on, or null if this applet has no dependency.</returns>
+    public str getDependency()
+    {
+        return null;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

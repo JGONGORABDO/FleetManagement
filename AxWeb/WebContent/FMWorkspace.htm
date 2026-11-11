@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMWorkspace</title>
+</head>
+<body>
+    <div id="FMWorkspace" data-dyn-role="metaModel: 'Form'" data-dyn-bind="label: 'FMWorkspace'" data-dyn-context="$dyn.OData.CreateEndpoint('data/service.svc/')">
+        <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="ExtendedStyle: 'titleGroup'">
+            <div data-dyn-role="metaModel: 'DataBoundLabel'" data-dyn-bind="Style: 'TitleField', Value: 'Fleet management'"></div>
+        </div>
+        <div data-dyn-role="metaModel: { Type: 'Tab', Style: 'Panorama'}" data-dyn-bind="ShowHeader: true, ExtendedStyle: 'panoramaBody'">
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Columns: 'Auto', ArrangeMethod: 'Auto', ExtendedStyle:'tileContainer'">
+                <a data-dyn-role="metaModel: 'Tile'" data-dyn-bind="Style: 'Tile', Label: 'New Reservation', ActionCommand: $dialog({templateId: 'FMNewReservationDialog', resourceBundle: 'FMNewReservationDialog'}, $create('Customers'))"></a>
+                <a data-dyn-role="metaModel: 'Tile'" data-dyn-bind="Style: 'Tile', Label: 'Current Reservations', Count: '40'"></a>
+                <a data-dyn-role="metaModel: 'Tile'" data-dyn-bind="Style: 'Tile', Label: 'Existing Reservation'"></a>
+                <a data-dyn-role="metaModel: 'Tile'" data-dyn-bind="Style: 'Tile', Label: 'Return overdue', Count: '1'"></a>
+                <a data-dyn-role="metaModel: 'Tile'" data-dyn-bind="Style: 'Tile', Label: 'All customers', ActionCommand: $navigate({templateId: 'FMCustomerHub', resourceBundle: 'FMCustomerHub'})"></a>
+            </div>
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Label: 'Picking up today (12)', ArrangeMethod: 'Vertical'">
+                <div data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMPeopleExpectedToday', ResourceBundle: 'FMPeopleExpectedToday'}" data-dyn-context="$models('Reservations')"></div>
+            </div>
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Label: 'Returning today (31)', ArrangeMethod: 'Vertical'">
+                <div data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMPeopleReturningToday', ResourceBundle: 'FMPeopleReturningToday'}" data-dyn-context="$models('Reservations')"></div>
+            </div>
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Label: 'Fleet overview', ExtendedStyle: 'chartContainer'">
+                <div data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMFleetOverview', ResourceBundle: 'FMFleetOverview'}" data-dyn-context="$models('Reservations')"></div>
+            </div>
+        </div>
+        <div data-dyn-template="templateId: 'Workspace', resourceBundle: 'Workspace'"></div>
+    </div>
+</body>
+</html>

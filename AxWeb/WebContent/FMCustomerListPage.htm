@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+    <div id="FMCustomerListPage" data-dyn-role="metaModel: 'Form'" data-dyn-bind="label: 'Customers'" data-dyn-context="$dyn.OData.CreateEndpoint('data/service.svc')">
+        <div data-dyn-role="metaModel: 'Grid'" data-dyn-bind="DataSource: 'Customers'">
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'First Name', Value: $field('FirstName'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Last Name', Value: $field('LastName'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Cell Phone', Value: $field('CellPhone'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Driver License', Value: $field('DriverLicense'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Credit Card Number', Value: $field('CreditCardNum'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Email', Value: $field('Email')"></div>
+        </div>
+        <div data-dyn-role="metaModel: 'ActionPane'">
+            <div data-dyn-role="metaModel: 'ActionPaneTab'" data-dyn-bind="Label: 'Customer Actions', ImageType: 'Symbol', ImageName: 'CustomerActions'">
+                <div data-dyn-role="metaModel: 'ButtonGroup'">
+                    <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'New Reservation', ImageType: 'Symbol', ImageName: 'New'"></button>
+                </div>
+                <div data-dyn-role="metaModel: 'ButtonGroup'" data-dyn-bind="Label: 'Reservations'">
+                    <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Recent Reservations'"></button>
+                </div>
+            </div>
+        </div>
+        <div data-dyn-role="metaModel: 'ActionPane'" data-dyn-bind="Area: 'PrioritizedPage'">
+            <div data-dyn-role="metaModel: 'ButtonGroup'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'New', ImageType: 'Symbol', ImageName: 'New'"></button>
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Delete', ImageType: 'Symbol', ImageName: 'Delete'"></button>
+            </div>
+        </div>
+        <div data-dyn-role="metaModel: 'ActionPane'" data-dyn-bind="Area: 'SystemDefinedPage'">
+            <div data-dyn-role="metaModel: 'ButtonGroup'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Save', ImageType: 'Symbol', ImageName: 'Save'"></button>
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Pin', ImageType: 'Symbol', ImageName: 'Pin'"></button>
+            </div>
+            <!-- TODO: Replace CssClass binding with appropriate view model property binding when showing buttons on the left side of the application bar is implemented. -->
+            <div data-dyn-role="metaModel: 'ButtonGroup'" data-dyn-bind="CssClass: 'mainActionPaneButton'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Edit', ImageType: 'Symbol', ImageName: 'Edit'"></button>
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Views', ImageType: 'Symbol', ImageName: 'Favorite'"></button>
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Show Filters', ImageType: 'Symbol', ImageName: 'Filter'"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

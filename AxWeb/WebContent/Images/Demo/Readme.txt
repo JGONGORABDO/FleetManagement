@@ -1,0 +1,1 @@
+Images in this folder are demo data. Should be removed from the depot in the future.

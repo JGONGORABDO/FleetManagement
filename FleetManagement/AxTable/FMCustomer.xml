@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCustomer</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMCustomer extends common   
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>fullName</Name>
+				<Source><![CDATA[
+    public display FMName fullName()
+    {
+        return this.FirstName + ' ' + this.LastName;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>insert</Name>
+				<Source><![CDATA[
+    public void insert()
+    {
+        Microsoft.Dynamics.Application.Instrumentation.FleetManagementEventSource::EventWriteXppTransactionStart("FleetManagement", "Add a customer");
+        super();
+        Microsoft.Dynamics.Application.Instrumentation.FleetManagementEventSource::EventWriteXppTransactionStop("FleetManagement", "Add a customer");
+
+        if (infolog.globalCache().get('FleetSample', 'InsertOrderInfo', false))
+        {
+            info(strFmt('%1 inserted: recID %2', Global::tableId2Name(this.TableId),this.RecId));
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerImage</Name>
+				<Source><![CDATA[
+    public display container customerImage()
+    {
+        ImageReference imgRef;
+        container imgContainer = this.Image;
+
+        if(imgContainer == connull())
+        {
+            imgRef = ImageReference::constructForSymbol("Person");
+            imgContainer = imgRef.pack();
+        }
+
+        return imgContainer;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>@SYS172552</DeveloperDocumentation>
+	<FormRef>FMCustomer</FormRef>
+	<Label>@FLM54</Label>
+	<ListPageRef>FMCustomer</ListPageRef>
+	<SingularLabel>Customer</SingularLabel>
+	<TableGroup>Main</TableGroup>
+	<TitleField1>FirstName</TitleField1>
+	<TitleField2>LastName</TitleField2>
+	<CacheLookup>EntireTable</CacheLookup>
+	<Modules>FleetManagement</Modules>
+	<ReplacementKey>ReplacementKey</ReplacementKey>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>FirstName</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>LastName</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CellPhone</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Email</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>CellPhone</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>DriverLicense</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Email</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>FirstName</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>LastName</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>LicenseImage</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Image</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>AddressID</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CustGroup</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>FirstName</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>LastName</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CellPhone</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Email</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>FirstName</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>LastName</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CellPhone</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>FirstName</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>LastName</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>CellPhone</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Phone</ExtendedDataType>
+			<Label>@FLM213</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>DriverLicense</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMDriversLicense</ExtendedDataType>
+			<Label>@FLM277</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>Email</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Email</ExtendedDataType>
+			<Label>@FLM214</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>FirstName</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FirstName</ExtendedDataType>
+			<Label>@SYS32695</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>LastName</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>LastName</ExtendedDataType>
+			<Label>@SYS32697</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldContainer">
+			<Name>LicenseImage</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Bitmap</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldContainer">
+			<Name>Image</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Bitmap</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>AddressID</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMAddressRecId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>CustGroup</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMCustomerGroup</ExtendedDataType>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes>
+		<AxTableIndex>
+			<Name>ReplacementKey</Name>
+			<AlternateKey>Yes</AlternateKey>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>FirstName</DataField>
+				</AxTableIndexField>
+				<AxTableIndexField>
+					<DataField>LastName</DataField>
+				</AxTableIndexField>
+				<AxTableIndexField>
+					<DataField>DriverLicense</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+		<AxTableIndex>
+			<Name>FMCustomerIdx</Name>
+			<AllowDuplicates>Yes</AllowDuplicates>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>DriverLicense</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+	</Indexes>
+	<Mappings />
+	<Relations>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>PrimaryAddress</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedTable>FMAddressTable</RelatedTable>
+			<RelatedTableCardinality>ZeroOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>AddressID</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+		</AxTableRelation>
+		<AxTableRelation>
+			<Name>CustGroup</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedTable>FMCustGroup</RelatedTable>
+			<RelatedTableCardinality>ZeroOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>CustGroup</Field>
+					<RelatedField>CustGroup</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+		</AxTableRelation>
+	</Relations>
+	<StateMachines />
+</AxTable>

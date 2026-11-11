@@ -1,0 +1,784 @@
+﻿@FLM41=Sildifailid on loodud 3. aprillil 2011
+ ;By user Admin
+@FLM42=Punane
+ ;Fleet colors
+@FLM43=Sinine
+ ;Fleet colors
+@FLM44=Roheline
+ ;Fleet colors
+@FLM46=Pildi valimine
+ ;Fleet label
+@FLM47=Muuda
+ ;Fleet label
+@FLM48=Eemalda
+ ;Fleet label
+@FLM49=Klient
+ ;Fleet label
+@FLM50=Avatud
+ ;Fleet label
+@FLM51=Uus
+ ;Fleet label
+@FLM52=Rent
+ ;Fleet label
+@FLM53=Üldine
+ ;Fleet label
+@FLM55=Kuva
+ ;Fleet label
+@FLM56=Kustuta
+ ;Fleet label
+@FLM57=Manused
+ ;Fleet label
+@FLM58=Lõpetatud
+ ;Fleet label
+@FLM59=Renditasud
+ ;Fleet label
+@FLM60=Rendiperiood
+ ;Fleet label
+@FLM61=Alates
+ ;Fleet label
+@FLM62=Kuni
+ ;Fleet label
+@FLM63=Läbisõit
+ ;Fleet label
+@FLM64=Algus
+ ;Fleet label
+@FLM65=Lõpp
+ ;Fleet label
+@FLM66=Kütusetasemed
+ ;Fleet label
+@FLM67=Kättesaamine
+ ;Fleet label
+@FLM68=Tasud
+ ;Fleet label
+@FLM69=Tasu lisamine
+ ;Fleet label
+@FLM70=Veokite kaasamine
+ ;Fleet label
+@FLM71=Rentimised
+ ;Fleet label
+@FLM72=Redigeeri
+ ;Fleet label
+@FLM73=Sõidukipargi halduse konfigureerimine
+ ;Fleet label
+@FLM74=Sõiduki mark ja mudelid
+ ;Fleet label
+@FLM75=Sõiduki margi ja mudelite määratlemine
+ ;Fleet label
+@FLM76=Määratlege oma varude hulka kuuluvate sõidukite mark ja mudelid, muu hulgas mudelit illustreeriv pilt.
+ ;Fleet label
+@FLM77=Mudeli pilt
+ ;Fleet label
+@FLM78=Sirvi ...
+ ;Fleet label
+@FLM79=Uus mark
+ ;Fleet label
+@FLM80=Uus mudel
+ ;Fleet label
+@FLM81=Renditasu tüübid
+ ;Fleet label
+@FLM82=Tasutüüpide määratlemine
+ ;Fleet label
+@FLM83=Tasutüüpe kasutatakse iga renditasu kategooriasse paigutamiseks. See võimaldab hõlpsamini kulusid jälgida.
+ ;Fleet label
+@FLM84=Linnamaasturi ohutushinnangud
+ ;Fleet label
+@FLM85=Linnamaasturi ohutushinnangute määratlemine
+ ;Fleet label
+@FLM86=Sõidukid
+ ;Fleet label
+@FLM87=Hoolda
+ ;Fleet label
+@FLM88=Ajalugu
+ ;Fleet label
+@FLM89=Varasemad hinnad
+ ;Fleet label
+@FLM90=Määrad
+ ;Fleet label
+@FLM91=Üksikasjad
+ ;Fleet label
+@FLM92=Auto ja linnamaasturi teave
+ ;Fleet label
+@FLM93=Linnamaastur
+ ;Fleet label
+@FLM94=Veoki teave
+ ;Fleet label
+@FLM95=Sõidukid
+ ;Fleet label
+@FLM96=Kättesaadavus
+ ;Fleet label
+@FLM97=Asukoht
+ ;Fleet label
+@FLM98=Hooldus
+ ;Fleet label
+@FLM99=Kirje
+ ;Fleet label
+@FLM100=Loend
+ ;Fleet label
+@FLM101=Sõiduki ID
+ ;Fleet label
+@FLM102=Sõiduki hinna kuupäevahaldur
+ ;Fleet label
+@FLM103=Uus versioon
+ ;Fleet label
+@FLM104=Sõiduki hooldus
+ ;Fleet label
+@FLM105=Sõidukipargi haldus
+ ;Fleet label
+@FLM106=Hiljutised rentimised
+ ;Fleet label
+@FLM107=Minu turbejuurdepääsu siseorganisatsioonid
+ ;Fleet label
+@FLM108=Sõidukid, millele kasutajal on turvaline juurdepääs
+ ;Fleet label
+@FLM109=Siseorganisatsioonid, millele kasutajal on juurdepääs
+ ;Fleet label
+@FLM110=Veokid
+ ;Fleet label
+@FLM111=Linnamaasturid
+ ;Fleet label
+@FLM112=Kliendivaate lehtede menüü
+ ;Fleet label
+@FLM113=Tegevused
+ ;Fleet label
+@FLM114=Sõiduki menüü
+ ;Fleet label
+@FLM115=Sõidukivaate lehtede menüü
+ ;Fleet label
+@FLM116=Haru – aegunud
+ ;Fleet label
+@FLM117=Rentimise asukoht – aegunud
+ ;Fleet label
+@FLM118=Piirkond – aegunud
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Kütuse tüüp
+ ;Fleet label
+@FLM123=Standardne
+ ;Fleet label
+@FLM124=Preemia
+ ;Fleet label
+@FLM125=GPS-i võimalusega
+ ;Fleet label
+@FLM126=Õlivahetus
+ ;Fleet label
+@FLM127=Remont
+ ;Fleet label
+@FLM128=Korraline hooldus
+ ;Fleet label
+@FLM129=Ülevaatuse ootel
+ ;Fleet label
+@FLM130=Hoolduse ootel
+ ;Fleet label
+@FLM131=Kinnituse ootel
+ ;Fleet label
+@FLM132=Puhastamise ootel
+ ;Fleet label
+@FLM133=Valmis
+ ;Fleet label
+@FLM134=Käigukast
+ ;Fleet label
+@FLM135=Automaat
+ ;Fleet label
+@FLM136=Käsitsi
+ ;Fleet label
+@FLM137=Saadaval
+ ;Fleet label
+@FLM138=Hoolduses
+ ;Fleet label
+@FLM139=Renditud
+ ;Fleet label
+@FLM140=Kahjustatud
+ ;Fleet label
+@FLM141=Tagasi kutsutud
+ ;Fleet label
+@FLM142=Ootel
+ ;Fleet label
+@FLM143=Sõiduki tüüp
+ ;Fleet label
+@FLM144=Tundmatu
+ ;Fleet label
+@FLM145=Veok
+ ;Fleet label
+@FLM146=Auto
+ ;Fleet label
+@FLM147=Tasu tüüp
+ ;Fleet label
+@FLM148=Juhiluba
+ ;Fleet label
+@FLM149=Mark ja mudel
+ ;Fleet label
+@FLM150=Märkused
+ ;Fleet label
+@FLM151=Sõiduki renditeave
+ ;Fleet label
+@FLM152=Ohutusklassi ID
+ ;Fleet label
+@FLM153=Linnamaasturi ohutusklass
+ ;Fleet label
+@FLM154=Rentimisi kokku
+ ;Fleet label
+@FLM155=Mark
+ ;Fleet label
+@FLM156=Sõiduki mark
+ ;Fleet label
+@FLM157=Mudel
+ ;Fleet label
+@FLM158=Sõiduki mudel
+ ;Fleet label
+@FLM159=Autod
+ ;Fleet label
+@FLM160=Uksi
+ ;Fleet label
+@FLM161=Istekohtade arv
+ ;Fleet label
+@FLM162=Tasu tüübid
+ ;Fleet label
+@FLM163=Aegumiskuupäev
+ ;Fleet label
+@FLM164=Algläbisõit
+ ;Fleet label
+@FLM165=Lõppläbisõit
+ ;Fleet label
+@FLM166=Kütusetase alguses
+ ;Fleet label
+@FLM167=Kütusetase lõpus
+ ;Fleet label
+@FLM168=Sõiduki renditeave
+ ;Fleet label
+@FLM169=Kolmanda rea võimalus
+ ;Fleet label
+@FLM170=Pöörderaadius
+ ;Fleet label
+@FLM171=Kõrgus maapinnast
+ ;Fleet label
+@FLM172=Ümbermineku hinnang
+ ;Fleet label
+@FLM173=Üldhinnang
+ ;Fleet label
+@FLM174=Liikumisruum
+ ;Fleet label
+@FLM175=Põrandaruum
+ ;Fleet label
+@FLM176=Maksimumkoormus
+ ;Fleet label
+@FLM177=Tüüp
+ ;Fleet label
+@FLM178=Sõiduki brutokaal
+ ;Fleet label
+@FLM179=Sõiduki olek
+ ;Fleet label
+@FLM180=Organisatsioon
+ ;Fleet label
+@FLM181=Grupi eelvaade
+ ;Fleet label
+@FLM182=Sõidukimargid
+ ;Fleet label
+@FLM183=Veokimudelid
+ ;Fleet label
+@FLM184=Sõiduki pilt
+ ;Fleet label
+@FLM185=Mudeli andmed
+ ;Fleet label
+@FLM186=Pildi vorming
+ ;Fleet label
+@FLM187=Sõidukihinnad
+ ;Fleet label
+@FLM188=Päeva hind
+ ;Fleet label
+@FLM189=Nädala hind
+ ;Fleet label
+@FLM190=Rolliga seotud siseorganisatsioonid
+ ;Fleet label
+@FLM191=Tabel, mis sisaldab kasutaja rolliga seotud siseorganisatsioone
+ ;Fleet label
+@FLM192=Vaade DimAttributeOMBranch sisaldab kõiki tabeli OMOperatingUnit kirjeid, mis on harudena märgitud.
+ ;Fleet label
+@FLM193=Vaade DimAttributeOMRegion sisaldab kõiki tabeli OMOperatingUnit kirjeid, mis on regioonidena märgitud
+ ;Fleet label
+@FLM194=Vaade DimAttributeOMRentalLocation sisaldab kõiki tabeli OMOperatingUnit kirjeid, mis on rendiasukohtadena märgitud.
+ ;Fleet label
+@FLM195=Sõidukipargi halduskeskus
+ ;Fleet label
+@FLM196=Lisa
+ ;Fleet label
+@FLM197=Praegused rentimised
+ ;Fleet label
+@FLM198=Määratud sõidukid
+ ;Fleet label
+@FLM199=Saadaolevad sõidukid
+ ;Fleet label
+@FLM200=Tagasikutsutud sõidukid
+ ;Fleet label
+@FLM201=Lõpule viidud
+ ;Fleet label
+@FLM202=Pooleli
+ ;Fleet label
+@FLM203=Varasem hind
+ ;Fleet label
+@FLM204=Rendi lõpetamine
+ ;Fleet label
+@FLM205=Sõiduki puhastamine
+ ;Fleet label
+@FLM206=Sõiduki ülevaatamine
+ ;Fleet label
+@FLM207=Sõiduki hooldamine
+ ;Fleet label
+@FLM208=Hoolduse kinnitus
+ ;Fleet label
+@FLM209=Kliendi üksikasjad
+ ;Fleet label
+@FLM210=Nimi
+ ;Fleet label
+@FLM211=Litsents
+ ;Fleet label
+@FLM212=Aadress
+ ;Fleet label
+@FLM213=Telefon
+ ;Fleet label
+@FLM214=Meiliaadress
+ ;Fleet label
+@FLM215=Makseteave
+ ;Fleet label
+@FLM216=Krediitkaart
+ ;Fleet label
+@FLM217=Aegumine
+ ;Fleet label
+@FLM218=Kuupäev
+ ;Fleet label
+@FLM219=Rentimise algus
+ ;Fleet label
+@FLM220=Lõppkuupäev
+ ;Fleet label
+@FLM221=Kirjeldus
+ ;Fleet label
+@FLM222=Kogus
+ ;Fleet label
+@FLM223=Laiendatud
+ ;Fleet label
+@FLM224=Sõiduki üksikasjad
+ ;Fleet label
+@FLM225=Mark ja mudel
+ ;Fleet label
+@FLM226=Päevahind
+ ;Fleet label
+@FLM227=Nädalahind
+ ;Fleet label
+@FLM228=Sõiduki eelvaate osa
+ ;Fleet label
+@FLM229=Värv
+ ;Fleet label
+@FLM230=Olek
+ ;Fleet label
+@FLM231=Määratud sõiduk
+ ;Fleet label
+@FLM232=Sõidukipargi halduse vihjed
+ ;Fleet label
+@FLM233=Kasutajate piiramine äriüksustega
+ ;Fleet label
+@FLM234=Minu juurdepääs sõidukitele turbejuurdepääsuks
+ ;Fleet label
+@FLM235=Iseteenindus rendikirjete puhul
+ ;Fleet label
+@FLM236=Sõidukipargi halduse ametnik
+ ;Fleet label
+@FLM237=Rendiametnik
+ ;Fleet label
+@FLM238=Sõidukipargi halduse haru juht
+ ;Fleet label
+@FLM239=Rendiharu juht
+ ;Fleet label
+@FLM240=Sõidukipargi halduse hooldustehnik
+ ;Fleet label
+@FLM241=Hooldustehnik
+ ;Fleet label
+@FLM242=Töövoo kasutamine
+ ;Fleet label
+@FLM243=Teenusgrupp, mis näitab olemasolevaid autode varusid
+ ;Fleet label
+@FLM244=Uste arv
+ ;Number of doors in the FM vehicle
+@FLM245=Laiendatud summa
+ ;Fleet label
+@FLM246=Kütusetase
+ ;Fleet label
+@FLM247=Kõrgus maapinnast
+ ;Fleet label
+@FLM248=Veoki põrandaruum
+ ;Fleet label
+@FLM249=Maksimumkoormus
+ ;Fleet label
+@FLM250=Liikumisruum pea kohal
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Hinnang
+ ;Fleet label
+@FLM253=Rent kokku
+ ;Fleet label
+@FLM254=Istekohad
+ ;Fleet label
+@FLM255=Tasu tüüp
+ ;Fleet label (table)
+@FLM256=Võimsus
+ ;Fleet label
+@FLM257=Pöörderaadius
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Töövoo päring
+ ;Fleet label
+@FLM260=Hooldusajalugu
+ ;Fleet label
+@FLM261=Uus rent
+ ;Fleet label
+@FLM262=Kõik rentimised
+ ;Fleet label
+@FLM263=Sõidukipargi häälestus
+ ;Fleet label
+@FLM264=Kõik sõidukid
+ ;Fleet label
+@FLM265=Hinna kuupäevad
+ ;Fleet label
+@FLM268=Harud _DEMO_
+ ;Fleet label
+@FLM269=Rendiasukohad _DEMO_
+ ;Fleet label
+@FLM270=Regioonid _DEMO_
+ ;Fleet label
+@FLM271=Puhastamine lõpetatud
+ ;Fleet label
+@FLM272=Klientide kustutamine
+ ;Fleet label
+@FLM273=Valitud rentimiste kustutamine
+ ;Fleet label
+@FLM274=Valitud sõiduki kustutamine
+ ;Fleet label
+@FLM275=Ülevaatus on valmis
+ ;Fleet label
+@FLM276=Hooldus on valmis
+ ;Fleet label
+@FLM278=Töövoo käivitamine
+ ;Fleet label
+@FLM279=Hoolduse kinnitamine
+ ;Fleet label
+@FLM280=Hooldusest keeldumine
+ ;Fleet label
+@FLM281=Hoolduse tagasilükkamine
+ ;Fleet label
+@FLM282=Valitud sõidukite kustutamine
+ ;Fleet label
+@FLM283=Töövoo konfiguratsioon
+ ;Fleet label
+@FLM284=Harude loomine või värskendamine
+ ;Fleet label
+@FLM285=Rendiasukohtade loomine või uuendamine
+ ;Fleet label
+@FLM286=Regioonide loomine või värskendamine
+ ;Fleet label
+@FLM287=Kliendi lisamine/redigeerimine
+ ;Fleet label
+@FLM288=Sõiduki rendi ID
+ ;Fleet label (table)
+@FLM289=Renditasu lisamine/redigeerimine
+ ;Fleet label
+@FLM290=Tasu üksikasjad
+ ;Fleet label
+@FLM291=Rendi üksikasjad
+ ;Fleet label
+@FLM292=Rendi redigeerimine
+ ;Fleet label
+@FLM293=Rentimised kliendi järgi
+ ;Fleet label
+@FLM294=Rentimised mudeli järgi
+ ;Fleet label
+@FLM295=Sõiduki lisamine/redigeerimine
+ ;Fleet label
+@FLM296=Eesseisvad rentimised
+ ;Fleet label
+@FLM297=Rentimised sõiduki järgi
+ ;Fleet label
+@FLM298=Vt veebispikrit
+ ;Fleet label
+@FLM299=Renditasu tüüp
+ ;Fleet label
+@FLM300=Läbisõidu salvestamine
+ ;Fleet label
+@FLM301=Sõidukipargi protsessitsükkel
+ ;Fleet label
+@FLM302=Sõidukipark – sõidukipargi häälestuse haldus
+ ;Fleet label
+@FLM303=Sõidukipark – kliendikirjete redigeerimine
+ ;Fleet label
+@FLM304=Sõidukipark – klientide haldus
+ ;Fleet label
+@FLM305=Sõidukipark – varude haldus
+ ;Fleet label
+@FLM306=Sõidukipark – autode rentimine
+ ;Fleet label
+@FLM307=Sõidukipark – kliendikirjete vaatamine
+ ;Fleet label
+@FLM308=Sõidukipark – varude kuvamine
+ ;Fleet label
+@FLM309=Sõidukipark – töövooametnik
+ ;Fleet label
+@FLM310=Sõiduki värv
+ ;Fleet label
+@FLM311=Sõidukipark – töövoohaldur
+ ;Fleet label
+@FLM312=Sõidukipark – töövoo hooldustehnik
+ ;Fleet label
+@FLM313=Sõidukipark – põhikohustused
+ ;Fleet label
+@FLM314=Sõidukipark – autode haldus
+ ;Fleet label
+@FLM315=Sõidukipargi standardne protsessitsükkel
+ ;Fleet label
+@FLM316=Sõiduki läbisõit
+ ;Fleet label
+@FLM317=Kulu
+ ;Fleet label
+@FLM318=Kõrgus
+ ;Fleet label
+@FLM54=Kliendid
+ ;Fleet label
+@FLM266=Krediitkaardi aegumine
+ ;Fleet label (table)
+@FLM277=Juhiluba
+ ;Fleet label (table)
+@FLM320=Klientide loend
+ ;Fleet label (report menu item)
+@FLM321=Klientide loendi aruanne
+ ;Fleet label (report menu item help text)
+@FLM267=Töövoo häälestus
+ ;Fleet label
+@FLM400=Sõiduki hoolduse töövoog
+ ;Fleet label
+@FLM500=Eelistatud makseviis
+ ;Fleet label
+@FLM501=Valge
+ ;Fleet colors
+@FLM502=Hall
+ ;Fleet colors
+@FLM503=Kollane
+ ;Fleet colors
+@FLM504=Oranž
+ ;Fleet colors
+@FLM505=Vastuvõtt
+ ;Fleet label
+@FLM506=Tagastus
+ ;Fleet label
+@FLM507=Rentimise algus
+ ;Fleet label
+@FLM401=Reserveerimise haldus
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Eelmine läbisõit
+ ;Fleet label for returning vehicle slider
+@FLM509=Uus läbisõit
+ ;Fleet label for returning vehicle slider
+@FLM510=Sõidukirent
+ ;Fleet label
+@FLM512=Lisatasud
+ ;Fleet label
+@FLM513=Säästud
+ ;Fleet label
+@FLM514=Uus reserveerimine
+ ;New reservation menu item label
+@FLM515=Ehitusaasta
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Aegumisaasta
+ ;Expiration year label
+@FLM517=Klientide aruanne
+ ;Fleet tile label
+@FLM518=Olemasolevad reserveeringud
+ ;Fleet tile label
+@FLM519=Tähtaja ületanud rentimised
+ ;Fleet tile label
+@FLM520=Makse nimi
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=Aegumiskuu
+ ;Expiration month label
+@FLM523=Nimi kaardil
+ ;Fleet name on credit card
+@FLM524=Sõiduki hinnanguajalugu
+ ;Fleet form label
+@FLM525=Uus kommentaar
+ ;Fleet dialog caption
+@FLM526=Uus klient
+ ;Fleet dialog caption
+@FLM527=Uus makseteave
+ ;Fleet dialog caption
+@FLM528=Lisavarustuse lisamine
+ ;Fleet dialog caption
+@FLM529=Kliendi valimine
+ ;Fleet dialog caption
+@FLM530=Järeletulemiseks valmis
+ ;Fleet ReservationState enum option
+@FLM531=Aadressikirje ID
+ ;Fleet label
+@FLM532=Kuusteistkümmend-värvikood
+ ;Fleet label
+@FLM533=Värvi ID
+ ;Fleet label
+@FLM534=Värvi nimi
+ ;Fleet label
+@FLM535=Allahindluse ID
+ ;Fleet label
+@FLM536=Makseteabe ID
+ ;Fleet label
+@FLM537=Broneeringu ID
+ ;Fleet label
+@FLM539=Renditud sõidukid
+ ;Fleet label
+@FLM540=Sõidukipargi haldus
+ ;Fleet menu label
+@FLM541=Demoandmete laadimine
+ ;Fleet button text
+@FLM542=Hinnaajalugu
+ ;Fleet button text
+@FLM543=Muuda klienti
+ ;Fleet dialog label
+@FLM544=Sõiduki valimine
+ ;Fleet button text
+@FLM545=Kõik reserveerimised
+ ;Fleet grid title
+@FLM546=Kliendi tagasiside
+ ;Fleet group label
+@FLM547=Renditeave
+ ;Fleet group label
+@FLM548=Tasu pilt
+ ;Fleet group label
+@FLM549=Andmete seadistus
+ ;Fleet tab label
+@FLM550=Sõiduki teave
+ ;Fleet group label
+@FLM551=Saadaolevad sõidukid
+ ;Fleet chart label
+@FLM552=Sõiduki rendiolek
+ ;Fleet chart label
+@FLM553=Sõiduk mudeli järgi – tulu
+ ;Fleet chart label
+@FLM554=Kättesaamine täna
+ ;Fleet panorama label
+@FLM555=Tagastamine täna
+ ;Fleet panorama label
+@FLM556=Rendihinnad
+ ;Fleet panorama label
+@FLM558=Reserveerimise üksikasjad
+ ;Fleet panorama label
+@FLM559=Lisavarustus
+ ;Fleet panorama label
+@FLM560=Funktsioonid
+ ;Fleet group label
+@FLM561=Kättesaamise teave
+ ;Fleet field label
+@FLM562=Tagastamise teave
+ ;Fleet field label
+@FLM563=Rentimiste loend
+ ;Fleet report label
+@FLM564=Klientide, rentimiste ja sõidukite näidiste loomine
+ ;Fleet TOC label
+@FLM565=See võtab aega vaid mõne sekundi.
+ ;New Comment
+@FLM322=Rentimised kliendi järgi
+ ;Fleet report label
+@FLM566=Kliendi graafikud
+ ;Fleet form part caption
+@FLM567=Sõiduki tulu graafik
+ ;Fleet form part caption
+@FLM601=Sõidukipargi halduse rentimised
+ ;Fleet rental entity
+@FLM602=Sõidukipargi halduse kliendid
+ ;Fleet customer entity
+@FLM603=Näidisaplet
+ ;Label for the sample applet name
+@FLM604=Näidisaplet, mida kasutatakse apleti raamistiku demonstreerimiseks ja proovimiseks
+ ;Label for the sample applet description
+@FLM605=Vt lisa
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Klientide asukohad
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Mall annab klientide asukohtade kaardi
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Rentimised oleku järgi
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Mall annab rentimiste olekute arvud
+ ;Rentals by status template description
+FMCustomerEntityView=Sõidukipargi halduse klientide üksuse kuvamine
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Sõidukipargi halduse klientide üksuse haldamine
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Sõidukipargi halduse rentimiste üksuse kuvamine
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Sõidukipargi halduse rentimiste üksuse haldamine
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Tegevuse üksuse kuvamine
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Tegevuse üksuse haldamine
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Kategooria üksuse kuvamine
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Kategooria üksuse haldamine
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Juriidilise isiku üksuse kuvamine
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Juriidilise isiku üksuse haldamine
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Reaatribuudi üksuse kuvamine
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Reaatribuudi üksuse haldamine
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Perioodiüksuse kuvamine
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Perioodiüksuse haldamine
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Projektiüksuse kuvamine
+ ;View privilege for RCADProject
+RCADProjectMaintain=Projektiüksuse haldamine
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Ajatabeli üksuse kuvamine
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Ajatabeli üksuse haldamine
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Ajatabeli kirje üksuse kuvamine
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Ajatabeli kirje üksuse haldamine
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Ajatabeli sätete üksuse kuvamine
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Ajatabeli sätete üksuse haldamine
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Ajatabeli töövoo ajaloo üksuse kuvamine
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Ajatabeli töövoo ajaloo üksuse haldamine
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Töövoo ajaloo üksuse kuvamine
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Töövoo ajaloo üksuse haldamine
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Otsi rentimisi
+FMTemplateCustomerInformationDisplayName=Klienditeave
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Mall esitab kliendi põhiteabe ja tema rendiloendi
+ ;Fleet customer information template description
+DataCreated=Näidisandmed on loodud.
+DataRestored=Näidisandmed on taastatud.
+DataRestoreConfirm=See taastab kõik sõidukipargi halduse andmed algsesse olekusse. Kas soovite seda teha?
+Branch=Haru _DEMO_
+ ;Branch operating unit type
+RentalLocation=Rendiasukoht _DEMO_
+ ;Rental location operating unit type
+Region=Regioon _DEMO_
+ ;Region operating unit type
+Timestamp=Ajatempel
+ ;Comment timestamp
+CustomerImage=Kliendi pilt
+ ;Fleet label
+Analytics=Analüütika
+ ;used on Fleet clerk workspace for Analytics section

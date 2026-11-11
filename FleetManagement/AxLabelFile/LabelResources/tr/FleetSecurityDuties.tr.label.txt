@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Veri yönetimi için Ana varlık verilerini koru 
+DataManagementFleetMasterEntitiesView=Veri yönetimi için Ana varlık verilerini görüntüle 

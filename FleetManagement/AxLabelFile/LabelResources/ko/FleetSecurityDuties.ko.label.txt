@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=데이터 관리를 위한 마스터 엔터티 데이터 유지 
+DataManagementFleetMasterEntitiesView=데이터 관리를 위한 마스터 엔터티 데이터 보기 

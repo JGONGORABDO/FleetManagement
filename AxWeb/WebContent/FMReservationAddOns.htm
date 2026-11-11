@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMReservationAddOns</title>
+</head>
+<body>
+    <div id="FMReservationAddOns">
+        <div data-dyn-role="metaModel: 'Toolbar'">
+            <div data-dyn-role="metaModel: 'ToolbarGroup'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Add', ImageType: 'Symbol', ImageName: 'New', ActionCommand: $dialog({templateId: 'FMAddOnsDialog', resourceBundle: 'FMAddOnsDialog'},$create('ReservationAddOns'))"></button>
+            </div>
+        </div>
+        <div data-dyn-role="metaModel: 'List'" data-dyn-bind="DataSource: 'ReservationAddOns', DataFilter: 'State !== $dyn.OData.Entry.State.New' ">
+            <div data-dyn-role="metaModel: 'Template'" data-dyn-bind="TemplateId: 'addonscard'"></div>
+        </div>
+        <div style="display: none" class="dyn-stop-binding">
+            <div id="addonscard" data-dyn-context="ModelContext" data-dyn-bind="extendedStyle:'card'">
+                <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageName: $field('Image','AddOns'), ImageType: 'Base64'"></span>
+                <div class="details">
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('Name', 'AddOns')"></div>
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $format('${0}/day',$field('Rate', 'AddOns'))"></div>
+                </div>
+            </div>
+        </div>
+        <div data-dyn-template="templateId: 'Card', resourceBundle: 'Card'"></div>
+    </div>
+</body>
+</html>

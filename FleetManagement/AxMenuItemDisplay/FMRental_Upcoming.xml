@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxMenuItemDisplay xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V1">
+	<Name>FMRental_Upcoming</Name>
+	<DisabledResource>0</DisabledResource>
+	<FormViewOption>Grid</FormViewOption>
+	<Label>@FLM197</Label>
+	<NormalResource>0</NormalResource>
+	<Object>FMRental</Object>
+	<Query>FMRental_Current</Query>
+</AxMenuItemDisplay>

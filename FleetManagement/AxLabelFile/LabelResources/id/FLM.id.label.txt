@@ -1,0 +1,784 @@
+﻿@FLM41=File label dibuat pada 4/3/2011
+ ;By user Admin
+@FLM42=Merah
+ ;Fleet colors
+@FLM43=Biru
+ ;Fleet colors
+@FLM44=Hijau
+ ;Fleet colors
+@FLM46=Pilih gambar
+ ;Fleet label
+@FLM47=Ubah
+ ;Fleet label
+@FLM48=Hapus
+ ;Fleet label
+@FLM49=Pelanggan
+ ;Fleet label
+@FLM50=Buka
+ ;Fleet label
+@FLM51=Baru
+ ;Fleet label
+@FLM52=Rental
+ ;Fleet label
+@FLM53=Umum
+ ;Fleet label
+@FLM55=Lihat
+ ;Fleet label
+@FLM56=Hapus
+ ;Fleet label
+@FLM57=Lampiran
+ ;Fleet label
+@FLM58=Selesai
+ ;Fleet label
+@FLM59=Biaya rental
+ ;Fleet label
+@FLM60=Masa sewa rental
+ ;Fleet label
+@FLM61=Dari
+ ;Fleet label
+@FLM62=Untuk
+ ;Fleet label
+@FLM63=Jarak tempuh
+ ;Fleet label
+@FLM64=Mulai
+ ;Fleet label
+@FLM65=Akhir
+ ;Fleet label
+@FLM66=Tingkat bahan bakar
+ ;Fleet label
+@FLM67=Ambil
+ ;Fleet label
+@FLM68=Biaya
+ ;Fleet label
+@FLM69=Tambahkan biaya
+ ;Fleet label
+@FLM70=Sertakan truk
+ ;Fleet label
+@FLM71=Rental
+ ;Fleet label
+@FLM72=Edit
+ ;Fleet label
+@FLM73=Konfigurasi manajemen armada
+ ;Fleet label
+@FLM74=Tahun pembuatan dan model kendaraan
+ ;Fleet label
+@FLM75=Tentukan tahun pembuatan dan model kendaraan
+ ;Fleet label
+@FLM76=Tentukan tahun pembuatan dan model kendaraan dalam inventaris Anda, termasuk gambar representatif untuk model tersebut.
+ ;Fleet label
+@FLM77=Gambar model
+ ;Fleet label
+@FLM78=Telusuri...
+ ;Fleet label
+@FLM79=Tahun pembuatan baru
+ ;Fleet label
+@FLM80=Model baru
+ ;Fleet label
+@FLM81=Jenis biaya rental
+ ;Fleet label
+@FLM82=Tentukan jenis biaya
+ ;Fleet label
+@FLM83=Jenis biaya digunakan untuk mengkategorikan setiap biaya sewa. Ini memungkinkan Anda melacak biaya dengan lebih mudah.
+ ;Fleet label
+@FLM84=Peringkat keselamatan SUV
+ ;Fleet label
+@FLM85=Tentukan peringkat keselamatan SUV
+ ;Fleet label
+@FLM86=Kendaraan
+ ;Fleet label
+@FLM87=Pertahankan
+ ;Fleet label
+@FLM88=Riwayat
+ ;Fleet label
+@FLM89=Tingkat riwayat
+ ;Fleet label
+@FLM90=Tarif
+ ;Fleet label
+@FLM91=Detail
+ ;Fleet label
+@FLM92=Informasi mobil dan SUV
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=Informasi truk
+ ;Fleet label
+@FLM95=Kendaraan
+ ;Fleet label
+@FLM96=Ketersediaan
+ ;Fleet label
+@FLM97=Lokasi
+ ;Fleet label
+@FLM98=Pemeliharaan
+ ;Fleet label
+@FLM99=Data
+ ;Fleet label
+@FLM100=Daftar
+ ;Fleet label
+@FLM101=ID Kendaraan
+ ;Fleet label
+@FLM102=Manajer tanggal tarif kendaraan
+ ;Fleet label
+@FLM103=Versi baru
+ ;Fleet label
+@FLM104=Pemeliharaan kendaraan
+ ;Fleet label
+@FLM105=Manajemen armada
+ ;Fleet label
+@FLM106=Rental terbaru
+ ;Fleet label
+@FLM107=Organisasi internal saya untuk akses keamanan
+ ;Fleet label
+@FLM108=Kendaraan yang pengguna memiliki akses keamanan
+ ;Fleet label
+@FLM109=Organisasi internal yang dapat diakses oleh pengguna
+ ;Fleet label
+@FLM110=Truk
+ ;Fleet label
+@FLM111=SUV
+ ;Fleet label
+@FLM112=Menu untuk halaman tampilan pelanggan
+ ;Fleet label
+@FLM113=Tindakan
+ ;Fleet label
+@FLM114=Menu kendaraan
+ ;Fleet label
+@FLM115=Menu untuk halaman tampilan kendaraan
+ ;Fleet label
+@FLM116=Cabang - Tidak digunakan lagi
+ ;Fleet label
+@FLM117=Lokasi sewa - Tidak digunakan lagi
+ ;Fleet label
+@FLM118=Wilayah - Tidak digunakan lagi
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Jenis bahan bakar
+ ;Fleet label
+@FLM123=Standar
+ ;Fleet label
+@FLM124=Premium
+ ;Fleet label
+@FLM125=GPS diaktifkan
+ ;Fleet label
+@FLM126=Penggantian oli
+ ;Fleet label
+@FLM127=Perbaiki
+ ;Fleet label
+@FLM128=Pemeliharaan preventif
+ ;Fleet label
+@FLM129=Menunggu pemeriksaan
+ ;Fleet label
+@FLM130=Menunggu layanan
+ ;Fleet label
+@FLM131=Menunggu persetujuan
+ ;Fleet label
+@FLM132=Menunggu pembersihan
+ ;Fleet label
+@FLM133=Selesai
+ ;Fleet label
+@FLM134=Transmisi
+ ;Fleet label
+@FLM135=Otomatis
+ ;Fleet label
+@FLM136=Manual
+ ;Fleet label
+@FLM137=Tersedia
+ ;Fleet label
+@FLM138=Dalam layanan
+ ;Fleet label
+@FLM139=Sewaan
+ ;Fleet label
+@FLM140=Rusak
+ ;Fleet label
+@FLM141=Ditarik
+ ;Fleet label
+@FLM142=Tertunda
+ ;Fleet label
+@FLM143=Jenis kendaraan
+ ;Fleet label
+@FLM144=Tidak diketahui
+ ;Fleet label
+@FLM145=Truk
+ ;Fleet label
+@FLM146=Mobil
+ ;Fleet label
+@FLM147=Jenis biaya
+ ;Fleet label
+@FLM148=SIM
+ ;Fleet label
+@FLM149=Model tahun pembuatan
+ ;Fleet label
+@FLM150=Catatan
+ ;Fleet label
+@FLM151=Info sewa kendaraan
+ ;Fleet label
+@FLM152=ID peringkat keselamatan
+ ;Fleet label
+@FLM153=Peringkat keselamatan SUV
+ ;Fleet label
+@FLM154=Total sewa
+ ;Fleet label
+@FLM155=Tahun pembuatan
+ ;Fleet label
+@FLM156=Tahun pembuatan kendaraan
+ ;Fleet label
+@FLM157=Model
+ ;Fleet label
+@FLM158=Model kendaraan
+ ;Fleet label
+@FLM159=Mobil
+ ;Fleet label
+@FLM160=Pintu
+ ;Fleet label
+@FLM161=Kapasitas tempat duduk
+ ;Fleet label
+@FLM162=Jenis biaya
+ ;Fleet label
+@FLM163=Tanggal kedaluwarsa
+ ;Fleet label
+@FLM164=Mulai jarak tempuh
+ ;Fleet label
+@FLM165=Akhiri jarak tempuh
+ ;Fleet label
+@FLM166=Mulai tingkat bahan bakar
+ ;Fleet label
+@FLM167=Akhiri tingkat bahan bakar
+ ;Fleet label
+@FLM168=Info sewa kendaraan
+ ;Fleet label
+@FLM169=Kapasitas baris ketiga
+ ;Fleet label
+@FLM170=Radius belok
+ ;Fleet label
+@FLM171=Jarak bebas ke tanah
+ ;Fleet label
+@FLM172=Peringkat berguling
+ ;Fleet label
+@FLM173=Peringkat keseluruhan
+ ;Fleet label
+@FLM174=Ruang bergerak
+ ;Fleet label
+@FLM175=Ruang lantai
+ ;Fleet label
+@FLM176=Muatan maksimum
+ ;Fleet label
+@FLM177=Jenis
+ ;Fleet label
+@FLM178=Bobot kendaraan kotor
+ ;Fleet label
+@FLM179=Status kendaraan
+ ;Fleet label
+@FLM180=Organisasi
+ ;Fleet label
+@FLM181=Grup pratinjau
+ ;Fleet label
+@FLM182=Tahun pembuatan kendaraan
+ ;Fleet label
+@FLM183=Model kendaraan
+ ;Fleet label
+@FLM184=Gambar kendaraan
+ ;Fleet label
+@FLM185=Spesifikasi model
+ ;Fleet label
+@FLM186=Format gambar
+ ;Fleet label
+@FLM187=Tarif kendaraan
+ ;Fleet label
+@FLM188=Tarif per hari
+ ;Fleet label
+@FLM189=Tingkat per minggu
+ ;Fleet label
+@FLM190=Organisasi internal saya terkait dengan peran
+ ;Fleet label
+@FLM191=Tabel yang berisi organisasi internal terkait peran pengguna
+ ;Fleet label
+@FLM192=Tampilan DimAttributeOMBranch berisi semua data dari tabel OMOperatingUnit yang ditandai sebagai Cabang.
+ ;Fleet label
+@FLM193=Tampilan DimAttributeOMRegion berisi semua data dari tabel OMOperatingUnit yang ditandai sebagai Wilayah.
+ ;Fleet label
+@FLM194=Tampilan DimAttributeOMRentalLocation berisi semua data dari tabel OMOperatingUnit yang ditandai sebagai Lokasi Rental.
+ ;Fleet label
+@FLM195=Pusat manajemen armada
+ ;Fleet label
+@FLM196=Tambahkan
+ ;Fleet label
+@FLM197=Rental saat ini
+ ;Fleet label
+@FLM198=Kendaraan yang ditetapkan
+ ;Fleet label
+@FLM199=Kendaraan yang tersedia
+ ;Fleet label
+@FLM200=Kendaraan yang ditarik
+ ;Fleet label
+@FLM201=Selesai
+ ;Fleet label
+@FLM202=Dalam proses
+ ;Fleet label
+@FLM203=Tingkat historis
+ ;Fleet label
+@FLM204=Rental lengkap
+ ;Fleet label
+@FLM205=Hapus kendaraan
+ ;Fleet label
+@FLM206=Periksa kendaraan
+ ;Fleet label
+@FLM207=Servis kendaraan
+ ;Fleet label
+@FLM208=Persetujuan servis
+ ;Fleet label
+@FLM209=Detail pelanggan
+ ;Fleet label
+@FLM210=Nama
+ ;Fleet label
+@FLM211=Lisensi
+ ;Fleet label
+@FLM212=Alamat
+ ;Fleet label
+@FLM213=Telepon
+ ;Fleet label
+@FLM214=Email
+ ;Fleet label
+@FLM215=Informasi pembayaran
+ ;Fleet label
+@FLM216=Kartu kredit
+ ;Fleet label
+@FLM217=Kedaluwarsa
+ ;Fleet label
+@FLM218=Tanggal
+ ;Fleet label
+@FLM219=Rental mulai
+ ;Fleet label
+@FLM220=Tanggal akhir
+ ;Fleet label
+@FLM221=Deskripsi
+ ;Fleet label
+@FLM222=Kuantitas
+ ;Fleet label
+@FLM223=Diperpanjang
+ ;Fleet label
+@FLM224=Detail kendaraan
+ ;Fleet label
+@FLM225=Tahun pembuatan dan model
+ ;Fleet label
+@FLM226=Tarif harian
+ ;Fleet label
+@FLM227=Tarif mingguan
+ ;Fleet label
+@FLM228=Bagian pratinjau kendaraan
+ ;Fleet label
+@FLM229=Warna
+ ;Fleet label
+@FLM230=Status
+ ;Fleet label
+@FLM231=Kendaraan yang ditetapkan
+ ;Fleet label
+@FLM232=Petunjuk manajemen armada
+ ;Fleet label
+@FLM233=Batasi pengguna ke Unit Bisnis
+ ;Fleet label
+@FLM234=Akses saya ke kendaraan untuk akses keamanan
+ ;Fleet label
+@FLM235=Layanan mandiri untuk catatan rental
+ ;Fleet label
+@FLM236=Petugas manajemen armada
+ ;Fleet label
+@FLM237=Petugas sewa
+ ;Fleet label
+@FLM238=Manajer cabang manajemen armada
+ ;Fleet label
+@FLM239=Manajer cabang rental
+ ;Fleet label
+@FLM240=Teknisi layanan manajemen armada
+ ;Fleet label
+@FLM241=Teknisi servis
+ ;Fleet label
+@FLM242=Gunakan alur kerja
+ ;Fleet label
+@FLM243=Grup layanan yang memaparkan inventaris mobil yang tersedia
+ ;Fleet label
+@FLM244=Jumlah pintu
+ ;Number of doors in the FM vehicle
+@FLM245=Jumlah yang diperluas
+ ;Fleet label
+@FLM246=Tingkat bahan bakar
+ ;Fleet label
+@FLM247=Jarak bebas ke tanah
+ ;Fleet label
+@FLM248=Ruang lantai truk
+ ;Fleet label
+@FLM249=Muatan maksimum
+ ;Fleet label
+@FLM250=Ruang bergerak di atas kepala
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Peringkat
+ ;Fleet label
+@FLM253=Total rental
+ ;Fleet label
+@FLM254=Tempat duduk
+ ;Fleet label
+@FLM255=Jenis biaya
+ ;Fleet label (table)
+@FLM256=Kapasitas
+ ;Fleet label
+@FLM257=Radius belok
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Kueri alur kerja
+ ;Fleet label
+@FLM260=Data pemeliharaan
+ ;Fleet label
+@FLM261=Rental baru
+ ;Fleet label
+@FLM262=Semua rental
+ ;Fleet label
+@FLM263=Penyiapan armada
+ ;Fleet label
+@FLM264=Semua kendaraan
+ ;Fleet label
+@FLM265=Tanggal tarif
+ ;Fleet label
+@FLM268=Cabang _DEMO_
+ ;Fleet label
+@FLM269=Lokasi rental _DEMO_
+ ;Fleet label
+@FLM270=Wilayah _DEMO_
+ ;Fleet label
+@FLM271=Penghapusan selesai
+ ;Fleet label
+@FLM272=Hapus pelanggan
+ ;Fleet label
+@FLM273=Hapus rental yang dipilih
+ ;Fleet label
+@FLM274=Hapus kendaraan yang dipilih
+ ;Fleet label
+@FLM275=Ujian selesai
+ ;Fleet label
+@FLM276=Layanan selesai
+ ;Fleet label
+@FLM278=Mulai alur kerja
+ ;Fleet label
+@FLM279=Setujui servis
+ ;Fleet label
+@FLM280=Tolak servis
+ ;Fleet label
+@FLM281=Tolak layanan
+ ;Fleet label
+@FLM282=Hapus kendaraan yang dipilih
+ ;Fleet label
+@FLM283=Konfigurasi alur kerja
+ ;Fleet label
+@FLM284=Buat atau perbarui cabang
+ ;Fleet label
+@FLM285=Buat atau perbarui lokasi rental
+ ;Fleet label
+@FLM286=Buat atau perbarui wilayah
+ ;Fleet label
+@FLM287=Tambahkan/edit pelanggan
+ ;Fleet label
+@FLM288=ID rental kendaraan
+ ;Fleet label (table)
+@FLM289=Tambah/edit biaya rental
+ ;Fleet label
+@FLM290=Detail biaya
+ ;Fleet label
+@FLM291=Detail rental
+ ;Fleet label
+@FLM292=Edit rental
+ ;Fleet label
+@FLM293=Rental oleh pelanggan
+ ;Fleet label
+@FLM294=Rental per model
+ ;Fleet label
+@FLM295=Tambahkan/edit kendaraan
+ ;Fleet label
+@FLM296=Rental yang akan datang
+ ;Fleet label
+@FLM297=Rental berdasarkan kendaraan
+ ;Fleet label
+@FLM298=Lihat bantuan online
+ ;Fleet label
+@FLM299=Jenis biaya rental
+ ;Fleet label
+@FLM300=Catat jarak tempuh
+ ;Fleet label
+@FLM301=Siklus proses armada
+ ;Fleet label
+@FLM302=Armada - Kelola penyiapan Armada
+ ;Fleet label
+@FLM303=Armada - Edit data pelanggan
+ ;Fleet label
+@FLM304=Armada - Kelola pelanggan
+ ;Fleet label
+@FLM305=Armada - Kelola inventaris
+ ;Fleet label
+@FLM306=Armada - Sewa mobil
+ ;Fleet label
+@FLM307=Armada - Lihat data pelanggan
+ ;Fleet label
+@FLM308=Armada - Lihat inventaris
+ ;Fleet label
+@FLM309=Armada - Petugas alur kerja
+ ;Fleet label
+@FLM310=Warna kendaraan
+ ;Fleet label
+@FLM311=Armada - Manajer alur kerja
+ ;Fleet label
+@FLM312=Armada - Teknisi servis alur kerja
+ ;Fleet label
+@FLM313=Armada - Tugas dasar
+ ;Fleet label
+@FLM314=Armada - Kelola mobil
+ ;Fleet label
+@FLM315=Siklus proses standar armada
+ ;Fleet label
+@FLM316=Jarak tempuh kendaraan
+ ;Fleet label
+@FLM317=Biaya
+ ;Fleet label
+@FLM318=Jarak bebas
+ ;Fleet label
+@FLM54=Pelanggan
+ ;Fleet label
+@FLM266=Kedaluwarsa kartu kredit
+ ;Fleet label (table)
+@FLM277=SIM
+ ;Fleet label (table)
+@FLM320=Daftar pelanggan
+ ;Fleet label (report menu item)
+@FLM321=Laporan daftar pelanggan
+ ;Fleet label (report menu item help text)
+@FLM267=Penyiapan alur kerja
+ ;Fleet label
+@FLM400=Alur kerja pemeliharaan kendaraan
+ ;Fleet label
+@FLM500=Metode pembayaran yang dipilih
+ ;Fleet label
+@FLM501=Putih
+ ;Fleet colors
+@FLM502=Abu-Abu
+ ;Fleet colors
+@FLM503=Kuning
+ ;Fleet colors
+@FLM504=Oranye
+ ;Fleet colors
+@FLM505=Ambil
+ ;Fleet label
+@FLM506=Kembali
+ ;Fleet label
+@FLM507=Mulai rental
+ ;Fleet label
+@FLM401=Manajemen reservasi
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Jarak tempuh sebelumnya
+ ;Fleet label for returning vehicle slider
+@FLM509=Jarak tempuh baru
+ ;Fleet label for returning vehicle slider
+@FLM510=Rental kendaraan
+ ;Fleet label
+@FLM512=Biaya tambahan
+ ;Fleet label
+@FLM513=Penghematan
+ ;Fleet label
+@FLM514=Reservasi baru
+ ;New reservation menu item label
+@FLM515=Tahun model
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Tahun kedaluwarsa
+ ;Expiration year label
+@FLM517=Laporan pelanggan
+ ;Fleet tile label
+@FLM518=Reservasi yang ada
+ ;Fleet tile label
+@FLM519=Rental jatuh tempo
+ ;Fleet tile label
+@FLM520=Nama pembayaran
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=Bulan kedaluwarsa
+ ;Expiration month label
+@FLM523=Nama pada kartu
+ ;Fleet name on credit card
+@FLM524=Riwayat tarif kendaraan
+ ;Fleet form label
+@FLM525=Komentar baru
+ ;Fleet dialog caption
+@FLM526=Pelanggan baru
+ ;Fleet dialog caption
+@FLM527=Informasi pembayaran baru
+ ;Fleet dialog caption
+@FLM528=Tambahkan aksesori
+ ;Fleet dialog caption
+@FLM529=Pilih pelanggan
+ ;Fleet dialog caption
+@FLM530=Siap diambil
+ ;Fleet ReservationState enum option
+@FLM531=ID data alamat
+ ;Fleet label
+@FLM532=Kode heksadesimal warna
+ ;Fleet label
+@FLM533=ID warna
+ ;Fleet label
+@FLM534=Nama warna
+ ;Fleet label
+@FLM535=ID diskon
+ ;Fleet label
+@FLM536=ID informasi pembayaran
+ ;Fleet label
+@FLM537=ID reservasi
+ ;Fleet label
+@FLM539=Kendaraan sewaan
+ ;Fleet label
+@FLM540=Manajemen armada
+ ;Fleet menu label
+@FLM541=Muat data demo
+ ;Fleet button text
+@FLM542=Nilai riwayat
+ ;Fleet button text
+@FLM543=Ubah pelanggan
+ ;Fleet dialog label
+@FLM544=Pilih kendaraan
+ ;Fleet button text
+@FLM545=Semua reservasi
+ ;Fleet grid title
+@FLM546=Umpan balik pelanggan
+ ;Fleet group label
+@FLM547=Informasi rental
+ ;Fleet group label
+@FLM548=Ubah gambar
+ ;Fleet group label
+@FLM549=Penyiapan data
+ ;Fleet tab label
+@FLM550=Informasi kendaraan
+ ;Fleet group label
+@FLM551=Kendaraan yang Tersedia
+ ;Fleet chart label
+@FLM552=Status Rental Kendaraan
+ ;Fleet chart label
+@FLM553=Kendaraan menurut model - pendapatan
+ ;Fleet chart label
+@FLM554=Pengambilan hari ini
+ ;Fleet panorama label
+@FLM555=Kembali hari ini
+ ;Fleet panorama label
+@FLM556=Tarif rental
+ ;Fleet panorama label
+@FLM558=Detail reservasi
+ ;Fleet panorama label
+@FLM559=Aksesori
+ ;Fleet panorama label
+@FLM560=Fitur
+ ;Fleet group label
+@FLM561=Informasi pengambilan
+ ;Fleet field label
+@FLM562=Informasi pengembalian
+ ;Fleet field label
+@FLM563=Daftar rental
+ ;Fleet report label
+@FLM564=Buat sampel pelanggan, rental, dan kendaraan
+ ;Fleet TOC label
+@FLM565=Ini hanya akan menghabiskan waktu beberapa detik.  
+ ;New Comment
+@FLM322=Rental oleh Pelanggan
+ ;Fleet report label
+@FLM566=Grafik pelanggan
+ ;Fleet form part caption
+@FLM567=Diagram pendapatan kendaraan
+ ;Fleet form part caption
+@FLM601=Rental Manajemen Armada
+ ;Fleet rental entity
+@FLM602=Pelanggan Manajemen Armada
+ ;Fleet customer entity
+@FLM603=Sampel Applet
+ ;Label for the sample applet name
+@FLM604=Sampel applet yang digunakan untuk mendemonstrasikan dan menguji kerangka kerja applet
+ ;Label for the sample applet description
+@FLM605=Lihat selengkapnya
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Lokasi pelanggan
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Template menyediakan peta lokasi pelanggan
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Rental berdasarkan status
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Template menyediakan jumlah status rental
+ ;Rentals by status template description
+FMCustomerEntityView=Lihat entitas Pelanggan Manajemen Armada
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Pertahankan entitas Pelanggan Manajemen Armada
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Lihat entitas Rental Manajemen Armada
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Pertahankan entitas Rental Manajemen Armada
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Lihat entitas Aktivitas
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Pertahankan entitas Aktivitas
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Lihat entitas Kategori
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Pertahankan entitas Kategori
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Lihat entitas Badan hukum
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Pertahankan entitas Badan hukum
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Lihat entitas properti Baris
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Pertahankan entitas properti Baris
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Lihat entitas Periode
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Pertahankan entitas Periode
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Lihat entitas Proyek
+ ;View privilege for RCADProject
+RCADProjectMaintain=Pertahankan entitas Proyek
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Lihat entitas Lembar Waktu
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Pertahankan entitas Lembar Waktu
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Lihat entitas entri Lembar Waktu
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Pertahankan entitas entri Lembar Waktu
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Lihat entitas pengaturan Lembar Waktu
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Pertahankan entitas pengaturan Lembar Waktu
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Lihat entitas riwayat alur kerja Lembar Waktu
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Pertahankan entitas riwayat alur kerja Lembar Waktu
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Lihat entitas item riwayat Alur Kerja
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Pertahankan entitas item riwayat Alur Kerja
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Temukan rental
+FMTemplateCustomerInformationDisplayName=Informasi pelanggan
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Template menyediakan informasi pelanggan dasar dan daftar rental mereka
+ ;Fleet customer information template description
+DataCreated=Data sampel dibuat.
+DataRestored=Data sampel dipulihkan.
+DataRestoreConfirm=Ini akan mengembalikan semua data Manajemen Armada ke status semula. Apakah ini yang ingin Anda lakukan?
+Branch=Cabang _DEMO_
+ ;Branch operating unit type
+RentalLocation=Lokasi rental _DEMO_
+ ;Rental location operating unit type
+Region=Wilayah _DEMO_
+ ;Region operating unit type
+Timestamp=Stempel waktu
+ ;Comment timestamp
+CustomerImage=Gambar pelanggan
+ ;Fleet label
+Analytics=Analitik
+ ;used on Fleet clerk workspace for Analytics section

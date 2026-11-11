@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMPBIReportsController</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+///    The <c>FMPBIReportsController</c> class is used to orchestrate the user experience when accessing the <c>FMPBIReports</c> collection
+/// </summary>
+public class FMPBIReportsController extends PBIReportControllerBase
+{
+    str reportPageName = '';
+    List selectedValues = new List(Types::String);
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>pageName</Name>
+				<Source><![CDATA[
+    protected str pageName()
+    {
+        return reportPageName;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>showFilterPane</Name>
+				<Source><![CDATA[
+    protected boolean showFilterPane()
+    {
+        return true;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>showNavContentPane</Name>
+				<Source><![CDATA[
+    protected boolean showNavContentPane()
+    {
+        return true;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>applyCompanyFilter</Name>
+				<Source><![CDATA[
+    protected boolean applyCompanyFilter()
+    {
+        return false;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>basicFilters</Name>
+				<Source><![CDATA[
+    protected List basicFilters()
+    {
+        List reportFilters = new List(Types::Class);
+
+        // check to see if filters are available
+        if (!selectedValues.empty())
+        {
+            str tableName, columnName;
+
+            // adapt the filters to the active view
+            switch (reportPageName)
+            {
+                case 'ReportSection2':
+                    tableName = 'FMAggregateMeasurements_FMRentalCharges';
+                    columnName = 'CHARGETYPE';
+                    break;
+                case 'ReportSection3':
+                    tableName = 'FMAggregateMeasurements_FMCustomerProflie';
+                    columnName = 'CUSTOMERLASTNAME';
+                    break;
+            }
+
+            PBIReportBasicFilter filter = PBIReportBasicFilter::construct(tableName, columnName, PBIReportBasicFilterOperator::In, selectedValues);
+            reportFilters.addEnd(filter);
+        }
+
+        return reportFilters;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>setSelectedValues</Name>
+				<Source><![CDATA[
+    private void setSelectedValues(List _selectedValues)
+    {
+        ListEnumerator valuesEnum = _selectedValues.getEnumerator();
+        while (valuesEnum.moveNext())
+        {
+            selectedValues.addEnd(valuesEnum.current());
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>setupReportRunParams</Name>
+				<Source><![CDATA[
+    private PBIReportRunParameters setupReportRunParams(str _reportPageName)
+    {
+        // note - target Report Page (e.g. Visual Tab)
+        reportPageName = _reportPageName;
+        
+        // populate and return the report run parameters for the session
+        PBIReportRunParameters reportRunParams = new PBIReportRunParameters();        
+        reportRunParams.parmResourceName('FMPBIReports');
+        reportRunParams.parmShowFilterPane(this.showFilterPane());
+        reportRunParams.parmShowNavContentPane(this.showNavContentPane());
+        reportRunParams.parmPageName(reportPageName);
+        reportRunParams.parmIsEmbedded(true);
+        reportRunParams.parmApplyCompanyFilter(this.applyCompanyFilter());
+        reportRunParams.parmCompanyFilterTableName(this.companyFilterTableName());
+        reportRunParams.parmCompanyFilterColumnName(this.companyFilterColumnName());
+        return reportRunParams;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args _args)
+    {
+        // select the default view based on menu item used to launch the report
+        str pageName = '';        
+        switch (_args.menuItemName())
+        {
+            case 'FMPBIVehicleAnalytics':
+                pageName = 'ReportSection1';
+                break;
+            case 'FMRevenueAnalytics':
+                pageName = 'ReportSection2';
+                break;
+            case 'FMCustomerAnalytics':
+                pageName = 'ReportSection3';
+                break;
+        }
+
+        // intialize the contrller object
+        FMPBIReportsController controller = new FMPBIReportsController();
+        if (_args.object())
+        {
+            // filter the target using selected values
+            controller.setSelectedValues(_args.object() as List);
+        }
+        controller.setupReportRunParams(pageName);
+        controller.run(_args);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

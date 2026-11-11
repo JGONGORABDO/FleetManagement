@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMDataHelperWF</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMDataHelperWF
+{
+    private static 
+    str FMVehicleMaintenanceProjectionDataSource = 'FMVehicleMaintenance_1';
+    private static 
+    str FMVehicleMaintenanceDocument = "FMWorkflowDocument";
+    private static
+    SysDictWorkflowType workflowMetadata = null;
+    
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>SetupWorkflowBatchJobs</Name>
+				<Source><![CDATA[
+    public static void SetupWorkflowBatchJobs()
+    {
+        WorkflowSetupForm form = new WorkflowSetupForm();
+
+        ttsbegin;
+        form.parmBatchData().parmMessageBatchGroup('');
+        form.parmBatchData().parmDueDateBatchGroup('');
+        form.parmBatchData().parmDueDateTimeValue(4); 
+        form.parmBatchData().parmNotificationBatchGroup('');
+        form.parmBatchData().parmNotificationTimeValue(30); // 30 minutes
+        form.parmDueDateJobBatchInfoExists(false);
+        form.parmMessageJobBatchInfoExists(false);
+        form.parmNotificationJobBatchInfoExists(false);
+        form.saveFormData();
+        ttsCommit;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>CreateFleetMaintenanceWorkflow</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Creates workflow based on the - FMVehicleMaintenanceWorkflowType
+    /// Used in Fleet vehicle maintenance workflow process.
+    /// </summary>
+    public static void CreateFleetMaintenanceWorkflow()
+    {
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.WorkflowModel fleetMaintenanceWorkflow;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.WorkflowModel configurationSave;
+
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.ApprovalElement serviceApproval;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.TaskElement examineVehicle;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.TaskElement serviceVehicle;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.TaskElement cleanVehicle;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.ConditionalGatewayElement serviceNeeded;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.ConditionalGatewayElement onlyOilChange;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.BranchProperty branch;
+
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.StepElement stepConfiguration;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.StepCollection stepCollection;
+
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.ExpressionProperty serviceNeededExpression;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.ExpressionProperty onlyOilChangeExpression;
+
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement linkServiceNeeded2ExamineVehicle;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement linkServiceNeeded2Cleaning;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement linkExamineVehicle2OnlyOilChange;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement linkOnlyOilChange2ServiceVehicle;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement linkOnlyOilChange2ServiceApproval;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement linkServiceApproval2ServiceVehicle;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement linkServiceVehicle2Cleaning;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement linkCleaning2End;
+
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextCollection textCollection;
+        Microsoft.Dynamics.AX.Framework.Workflow.Model.WorkflowProperty workflowProperty;
+
+        System.Collections.IEnumerator enumerator;
+
+        WorkflowVersionTable  versionTable;
+
+        new InteropPermission(InteropKind::ClrInterop).assert();
+
+        fleetMaintenanceWorkflow = Microsoft.Dynamics.AX.Framework.Workflow.Model.WorkflowModel::Create(workflowtypestr(FMVehicleMaintenanceWorkflowType), curext());
+        workflowProperty = fleetMaintenanceWorkflow.get_WorkflowElement();
+        textCollection = workflowProperty.get_SubmissionInstructions();
+        if(textCollection == null)
+        {
+            textCollection = Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextCollection::Create(workflowProperty, Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextType::Submit);
+        }
+        textCollection.Add(Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextCollectionProperty::Create(workflowProperty,
+            Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextProperty::Create(workflowProperty, 'en-us', 'Fleet workflow submit instruction')));
+        
+        /***********************************************************************
+        *************************     CREATE ELEMENTS **************************
+        ************************************************************************/
+
+        // Conditional Gateway - Service Needed?
+        serviceNeeded = Microsoft.Dynamics.AX.Framework.Workflow.Model.ConditionalGatewayElement::Create(fleetMaintenanceWorkflow);
+        serviceNeeded.set_Name('Service Needed?');
+        serviceNeeded.set_Condition(Microsoft.Dynamics.AX.Framework.Workflow.Model.ExpressionProperty::Create(serviceNeeded, FMVehicleMaintenanceDocument));
+        serviceNeededExpression = serviceNeeded.get_Condition();
+        serviceNeededExpression.set_ExpressionModel(FMDataHelperWF::GetServiceNeededExpression());
+        fleetMaintenanceWorkflow.AddElement(serviceNeeded);
+
+        // Task element - Examine vehicle
+        examineVehicle = Microsoft.Dynamics.AX.Framework.Workflow.Model.TaskElement::Create(fleetMaintenanceWorkflow, workflowtaskstr(FMExamineVehicle));
+        examineVehicle.set_Name('Examine Vehicle');
+        stepCollection = examineVehicle.get_Steps();
+        enumerator = stepCollection.GetEnumerator();
+        while(enumerator.MoveNext())
+        {
+            stepConfiguration = enumerator.get_Current();
+            stepConfiguration.AddSubject(Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextProperty::Create(stepConfiguration, 'en-us', 'Examine vehicle'));
+            stepConfiguration.AddInstruction(Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextProperty::Create(stepConfiguration, 'en-us', 'Examine vehicle immediately'));
+            stepConfiguration.set_Assignment(Microsoft.Dynamics.AX.Framework.Workflow.Model.AssignmentProperty::CreateUser(stepConfiguration, 'Admin'));
+            stepConfiguration.set_DueDate(Microsoft.Dynamics.AX.Framework.Workflow.Model.DurationProperty::CreateDay(stepConfiguration, 1));
+        }
+        fleetMaintenanceWorkflow.AddElement(examineVehicle);
+
+        // Approval Element - Service Approval
+        serviceApproval = Microsoft.Dynamics.AX.Framework.Workflow.Model.ApprovalElement::Create(fleetMaintenanceWorkflow, workflowapprovalstr(FMServiceApproval));
+        serviceApproval.set_Name('Service Approval');
+        stepCollection = serviceApproval.get_Steps();
+        enumerator = stepCollection.GetEnumerator();
+        while(enumerator.MoveNext())
+        {
+            stepConfiguration = enumerator.get_Current();
+            stepConfiguration.AddSubject(Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextProperty::Create(stepConfiguration, 'en-us', 'Vehicle service approval'));
+            stepConfiguration.AddInstruction(Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextProperty::Create(stepConfiguration, 'en-us', 'Approve Vehicle service immediately!'));
+            stepConfiguration.set_CompletionPolicy( Microsoft.Dynamics.AX.Framework.Workflow.Model.CompletionPolicy::Single);
+            stepConfiguration.set_Assignment(Microsoft.Dynamics.AX.Framework.Workflow.Model.AssignmentProperty::CreateUser(stepConfiguration, 'Admin'));
+            //Bug 3135771: Original assignmnt uses Hierarchy condition --> LineManager.Level == 1. This depends on HcmWorker/HcmPosition data, and because of this dependency
+            // the approval currently is not being setup with hierarchy assignment. We instead use the equivalent role assignment to the FMManager instead as a workaround.
+            stepConfiguration.set_DueDate(Microsoft.Dynamics.AX.Framework.Workflow.Model.DurationProperty::CreateDay(stepConfiguration, 1));
+        }
+        fleetMaintenanceWorkflow.AddElement(serviceApproval);
+
+        // Conditional Gateway - Only Oil Change?
+        onlyOilChange = Microsoft.Dynamics.AX.Framework.Workflow.Model.ConditionalGatewayElement::Create(fleetMaintenanceWorkflow);
+        onlyOilChange.set_Name('Only Oil Change?');
+        onlyOilChange.set_Condition(Microsoft.Dynamics.AX.Framework.Workflow.Model.ExpressionProperty::Create(onlyOilChange, FMVehicleMaintenanceDocument));
+        onlyOilChangeExpression = onlyOilChange.get_Condition();
+        onlyOilChangeExpression.set_ExpressionModel(FMDataHelperWF::GetOnlyOilChangeExpression());
+        fleetMaintenanceWorkflow.AddElement(onlyOilChange);
+
+        // Task element - Service vehicle
+        serviceVehicle = Microsoft.Dynamics.AX.Framework.Workflow.Model.TaskElement::Create(fleetMaintenanceWorkflow, workflowtaskstr(FMServiceVehicle));
+        serviceVehicle.set_Name('Service Vehicle');
+        stepCollection = serviceVehicle.get_Steps();
+        enumerator = stepCollection.GetEnumerator();
+        while(enumerator.MoveNext())
+        {
+            stepConfiguration = enumerator.get_Current();
+            stepConfiguration.AddSubject(Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextProperty::Create(stepConfiguration, 'en-us', 'Service vehicle'));
+            stepConfiguration.AddInstruction(Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextProperty::Create(stepConfiguration, 'en-us', 'Service vehicle immediately!'));
+            stepConfiguration.set_Assignment(Microsoft.Dynamics.AX.Framework.Workflow.Model.AssignmentProperty::CreateUser(stepConfiguration, 'Admin'));
+            stepConfiguration.set_DueDate(Microsoft.Dynamics.AX.Framework.Workflow.Model.DurationProperty::CreateDay(stepConfiguration, 1));
+        }
+        fleetMaintenanceWorkflow.AddElement(serviceVehicle);
+
+        // Task element - Cleaning
+        cleanVehicle = Microsoft.Dynamics.AX.Framework.Workflow.Model.TaskElement::Create(fleetMaintenanceWorkflow, workflowtaskstr(FMCleanVehicle));
+        cleanVehicle.set_Name('Cleaning');
+        stepCollection = cleanVehicle.get_Steps();
+        enumerator = stepCollection.GetEnumerator();
+        while(enumerator.MoveNext())
+        {
+            stepConfiguration = enumerator.get_Current();
+            stepConfiguration.AddSubject(Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextProperty::Create(stepConfiguration, 'en-us', 'Clean vehicle'));
+            stepConfiguration.AddInstruction(Microsoft.Dynamics.AX.Framework.Workflow.Model.MessageTextProperty::Create(stepConfiguration, 'en-us', 'Clean vehicle immediately!'));
+            stepConfiguration.set_Assignment(Microsoft.Dynamics.AX.Framework.Workflow.Model.AssignmentProperty::CreateUser(stepConfiguration, 'Admin'));
+            stepConfiguration.set_DueDate(Microsoft.Dynamics.AX.Framework.Workflow.Model.DurationProperty::CreateDay(stepConfiguration, 1));
+        }
+        fleetMaintenanceWorkflow.AddElement(cleanVehicle);
+
+        /***********************************************************************
+        *************************     CREATE LINKS *****************************
+        ************************************************************************/
+
+        // Create link for: Start element to Service Needed
+        fleetMaintenanceWorkflow.AddRelationship(Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement::Create(fleetMaintenanceWorkflow, fleetMaintenanceWorkflow.GetStartElement(), serviceNeeded));
+
+        // Create link for: Service Needed to Examine Vehicle (True Branch)
+        linkServiceNeeded2ExamineVehicle = Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement::Create(fleetMaintenanceWorkflow, serviceNeeded, examineVehicle);
+        branch = serviceNeeded.get_EvaluationTrue();
+        branch.set_LinkId(linkServiceNeeded2ExamineVehicle.get_Id());
+        fleetMaintenanceWorkflow.AddRelationship(linkServiceNeeded2ExamineVehicle);
+
+        // Create link for: Service Needed to Cleaning (False Branch)
+        linkServiceNeeded2Cleaning = Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement::Create(fleetMaintenanceWorkflow, serviceNeeded, cleanVehicle);
+        branch = serviceNeeded.get_EvaluationFalse();
+        branch.set_LinkId(linkServiceNeeded2Cleaning.get_Id());
+        fleetMaintenanceWorkflow.AddRelationship(linkServiceNeeded2Cleaning);
+
+        // Create link for: Examine Vehicle to Only Oil Change.
+        linkExamineVehicle2OnlyOilChange = Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement::Create(fleetMaintenanceWorkflow, examineVehicle, onlyOilChange);
+        fleetMaintenanceWorkflow.AddRelationship(linkExamineVehicle2OnlyOilChange);
+
+        // Create link for: Only Oil Change to Service Vehicle (True Branch)
+        linkOnlyOilChange2ServiceVehicle = Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement::Create(fleetMaintenanceWorkflow, onlyOilChange, serviceVehicle);
+        branch = onlyOilChange.get_EvaluationTrue();
+        branch.set_LinkId(linkOnlyOilChange2ServiceVehicle.get_Id());
+        fleetMaintenanceWorkflow.AddRelationship(linkOnlyOilChange2ServiceVehicle);
+
+        // Create link for: Service Needed to Service Approval (False Branch)
+        linkOnlyOilChange2ServiceApproval = Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement::Create(fleetMaintenanceWorkflow, onlyOilChange, serviceApproval);
+        branch = onlyOilChange.get_EvaluationFalse();
+        branch.set_LinkId(linkOnlyOilChange2ServiceApproval.get_Id());
+        fleetMaintenanceWorkflow.AddRelationship(linkOnlyOilChange2ServiceApproval);
+
+        // Create link for: Service Approval to Service Vehicle.
+        linkServiceApproval2ServiceVehicle = Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement::Create(fleetMaintenanceWorkflow, serviceApproval, serviceVehicle);
+        fleetMaintenanceWorkflow.AddRelationship(linkServiceApproval2ServiceVehicle);
+
+        // Create link for: Service Vehicle to Cleaning
+        linkServiceVehicle2Cleaning = Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement::Create(fleetMaintenanceWorkflow, serviceVehicle, cleanVehicle);
+        fleetMaintenanceWorkflow.AddRelationship(linkServiceVehicle2Cleaning);
+
+        // Create link for: Cleaning to End
+        linkCleaning2End = Microsoft.Dynamics.AX.Framework.Workflow.Model.LinkElement::Create(fleetMaintenanceWorkflow, cleanVehicle, fleetMaintenanceWorkflow.GetEndElement());
+        fleetMaintenanceWorkflow.AddRelationship(linkCleaning2End);
+
+        // BP deviation documented
+        configurationSave = fleetMaintenanceWorkflow.Save();
+
+        ttsbegin;
+        versionTable = WorkflowVersionTable::find(configurationSave.get_Id(), true);
+        versionTable.Enabled = NoYes::Yes;
+        versionTable.Valid = 0;
+        versionTable.update();
+        ttscommit;
+
+        CodeAccessPermission::revertAssert();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>GetServiceNeededExpression</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Create the ExpressionModel for the ServiceNeeded Conditional gateway
+    /// </summary>
+    /// <returns>ExpressionModel object</returns>
+    private static Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionModel GetServiceNeededExpression()
+    {
+        return FMDataHelperWF::buildExpressionModel(fieldstr(FMVehicleMaintenance, Mileage),
+                    '3000',
+                    Microsoft.Dynamics.AX.Framework.Expression.Model.NumericOperator::GreaterThanOrEqualTo,
+                    -1);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>GetOnlyOilChangeExpression</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Create the ExpressionModel for the ServiceNeeded Conditional gateway
+    /// </summary>
+    /// <returns>ExpressionModel object</returns>
+    private static Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionModel GetOnlyOilChangeExpression()
+    {
+        FMServiceType serviceType;
+        str enumValueNameLocalized;
+        int enumNewValue;
+        enumValueNameLocalized = enum2str(FMServiceType::New);
+        enumNewValue = str2enum(serviceType, enumValueNameLocalized);
+        return FMDataHelperWF::buildExpressionModel(fieldstr(FMVehicleMaintenance, ServiceType),
+                    int2str(enumNewValue),
+                    -1,
+                    Microsoft.Dynamics.AX.Framework.Expression.Model.EnumOperator::EqualTo);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>buildExpressionModel</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Helper to build expression for use in fleet vehicle
+    /// maintenance workflow
+    /// </summary>
+    /// <param name = "fieldName">Field name for use in expression</param>
+    /// <param name = "fieldValue">Field value to set</param>
+    /// <param name = "numericOperator">Operator if field type is numeric. -1 otherwise</param>
+    /// <param name = "enumOperator">Operator if field type is enum. -1 otherwise</param>
+    /// <returns></returns>
+    private static Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionModel buildExpressionModel(str fieldName,
+                                                                                                  str fieldValue,
+                                                                                                  Microsoft.Dynamics.AX.Framework.Expression.Model.NumericOperator numericOperator,
+                                                                                                  Microsoft.Dynamics.AX.Framework.Expression.Model.EnumOperator enumOperator)
+    {
+        str dataSourceName;
+        Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionProjection runtimeProjection;
+        Microsoft.Dynamics.AX.Framework.Expression.Model.Field field;
+        Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionOrElement expressionDefinition;
+        Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionModel model;
+        Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionAndElement andElement;
+        
+        Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionLiteralElement literalElement;
+        Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionLiteralEnumElement enumLiteralElement;
+        Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionLiteralNumericElement numericLiteralElement;
+
+        // Get runtime projection and field
+        if(workflowMetadata == null)
+        {
+            workflowMetadata = WorkflowModel::getWorkflowMetadata(workFlowTypeStr(FMVehicleMaintenanceWorkflowType));
+        }
+        runtimeProjection = SysWorkflowExpression::getDesignTimeProjectionModel(workflowMetadata.document());
+        dataSourceName = FMDataHelperWF::getWorkflowQueryDataSourceName(workflowMetadata.document());
+        field = runtimeProjection.GetField(dataSourceName, fieldName);
+        
+        // Create the literal element
+        literalElement = Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionLiteralElement::Create(field);
+        if(field.get_Type() == Microsoft.Dynamics.AX.Framework.Expression.Model.FieldType::Number)
+        {
+            numericLiteralElement = literalElement as Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionLiteralNumericElement;
+            numericLiteralElement.set_NumericOperator(numericOperator);
+            numericLiteralElement.set_NumericValue(str2int64(fieldValue));
+        }
+
+        if(field.get_Type() == Microsoft.Dynamics.AX.Framework.Expression.Model.FieldType::Enum)
+        {
+            enumLiteralElement = literalElement as Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionLiteralEnumElement;
+            enumLiteralElement.set_EnumOperator(enumOperator);
+            enumLiteralElement.set_EnumValue(str2int(fieldValue));
+        }
+
+        // Create Expression definition and add element
+        expressionDefinition = Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionOrElement::Create();
+        andElement = Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionAndElement::Create();
+        andElement.AddDesignElement(literalElement);
+        expressionDefinition.AddAndElement(andElement);
+
+        // Create ExpressionModel
+        model = Microsoft.Dynamics.AX.Framework.Expression.Model.ExpressionModel::Create(runtimeProjection, expressionDefinition);
+        return model;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getWorkflowQueryDataSourceName</Name>
+				<Source><![CDATA[
+    private static str getWorkflowQueryDataSourceName(str document)
+    {
+        WorkflowDocument    workflowDocument;
+        Query query;
+        str dataSourceName = '';
+        workflowDocument = classfactory.createClass(className2Id(document));
+        if (workflowDocument)
+        {
+            query = workflowDocument.getQuery();
+            dataSourceName = query.dataSourceNo(1).name();
+        }
+        return dataSourceName;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>SetupWorkflowNumberSequences</Name>
+				<Source><![CDATA[
+    public static void SetupWorkflowNumberSequences(str _wfConfigNumSeqCode = 'RNRCTP1_WF')
+    {
+        #resource
+        #resource
+        #admin
+        NumberSequenceCode  numCode = _wfConfigNumSeqCode;
+        NumberSequenceReference numRefInstanceNumber, numRefSequence, numRefAlerts;
+
+        NumberSeqScope globalScope;
+
+        // *** Workflow ***
+        ExtendedTypeId edtInstanceNumber = extendedTypeNum(WorkflowInstanceNumber);
+        ExtendedTypeId edtSequenceNumber = extendedTypeNum(WorkflowSequenceNumber);
+
+        // ***   Alerts ***
+        NumberSequenceCode   numCodeAlerts = 'RuleID1';
+        ExtendedTypeId edtEventRuleId = extendedTypeNum(EventRuleId);
+
+        // Create global scope for number sequences
+        globalScope = NumberSeqScopeFactory::createGlobalScope();
+
+        // Set global number sequence for WorkflowInstanceNumber
+        numRefInstanceNumber = NumberSequenceReference::findByDatatypeAndScope(edtInstanceNumber, globalScope.getId(true), true);
+        if(numRefInstanceNumber.NumberSequenceId == 0)
+        {
+            NumberSequenceTable::autoCreate(edtInstanceNumber, globalScope, numCode, NoYes::No, '');
+        }
+
+        // Set global number sequence for WorkflowSequenceNumber
+        numRefSequence = NumberSequenceReference::findByDatatypeAndScope(edtSequenceNumber, globalScope.getId(true), true);
+        if(numRefSequence.NumberSequenceId == 0)
+        {
+            NumberSequenceTable::autoCreate(edtSequenceNumber, globalScope, numCode, NoYes::No, '');
+        }
+
+        // Find the number sequence reference for Alert in current company
+        numRefAlerts = NumberSequenceReference::findByDatatypeAndScope(edtEventRuleId, globalScope.getId(true), true);
+        if(numRefAlerts.NumberSequenceId == 0)
+        {
+            NumberSequenceTable::autoCreate(edtEventRuleId, globalScope, numCodeAlerts, NoYes::No, '');
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>SetWorkflowExecutionUserAccount</Name>
+				<Source><![CDATA[
+    public static void SetWorkflowExecutionUserAccount(str userId = 'Admin',
+                                                       str domainName='',
+                                                       str userAlias='')
+    {
+        AxaptaUserManager axUserManager;
+
+        axUserManager = new AxaptaUserManager();
+        axUserManager.setWorkflowExecutionUserAccount(userId, domainName, userAlias);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>CreateAxUserGroupForFleet</Name>
+				<Source><![CDATA[
+    public static void CreateAxUserGroupForFleet(str userGroupId, str userGroupName)
+    {
+        UserGroupInfo userGroupInfo;
+
+        ttsbegin;
+        select firstonly forUpdate userGroupInfo where userGroupInfo.id == userGroupId;
+        if(!userGroupInfo)
+        {
+            userGroupInfo.id = userGroupId;
+            userGroupInfo.name = userGroupName;
+            userGroupInfo.insert();
+        }
+        ttscommit;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>AddUsersToAxUserGroup</Name>
+				<Source><![CDATA[
+    public static void AddUsersToAxUserGroup(str userGroupId, str userId)
+    {
+        UserGroupList userGroupList;
+
+        ttsbegin;
+        select forUpdate firstonly userGroupList where
+            userGroupList.groupId == userGroupId &&
+            userGroupList.userId == userId;
+        if(!userGroupList)
+        {
+            userGroupList.groupId = userGroupId;
+            userGroupList.userId = userId;
+            userGroupList.insert();
+        }
+        ttscommit;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

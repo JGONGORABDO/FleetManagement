@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Tvarkyti duomenų valdymo bendruosius objekto duomenis 
+DataManagementFleetMasterEntitiesView=Peržiūrėti duomenų valdymo bendruosius objekto duomenis 

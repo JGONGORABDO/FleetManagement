@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalCheckoutCustomization</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMRentalCheckoutCustomization
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>fmRentalCheckoutDriverCheckEventhandler</Name>
+				<Source><![CDATA[
+    static public void fmRentalCheckoutDriverCheckEventhandler(FMRental fmrentalrecord, Struct rentalConfirmation)
+    {
+        //this is the method where you need to call out to the Driving Record Service to check the current customer's driving history
+
+        FMCustomer  fmCustomer;
+        System.String         driverlicensenumber;
+        boolean     hasGoodDrivingRecord = true;
+
+
+
+        select firstonly *  from fmCustomer where fmCustomer.RecId == fmrentalrecord.Customer;
+
+
+        driverlicensenumber = fmCustomer.DriverLicense;
+
+
+        //hasGoodDrivingRecord = FMDrivingRecordChecker.Class1::DoesDriverHaveGoodDrivingHistory(driverlicensenumber);
+
+
+        if(hasGoodDrivingRecord == false)
+        {
+            rentalConfirmation.value('OkToRent', false);
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>ModelRate</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class ModelRate extends common 
+{
+}
+]]></Declaration>
+		<Methods />
+	</SourceCode>
+	<CollectionName>ModelRates</CollectionName>
+	<IsPublic>Yes</IsPublic>
+	<Updatable>Yes</Updatable>
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>RatePerWeek</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>RatePerDay</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>MakeModelId</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>MakeModelId</Name>
+			<DataField>MakeModelId</DataField>
+			<DataSource>FMModelRate</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>RatePerWeek</Name>
+			<DataField>RatePerWeek</DataField>
+			<DataSource>FMModelRate</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>RatePerDay</Name>
+			<DataField>RatePerDay</DataField>
+			<DataSource>FMModelRate</DataSource>
+		</AxViewField>
+	</Fields>
+	<Indexes />
+	<Mappings />
+	<Relations>
+		<AxViewRelation>
+			<Name>MakeModelRelation</Name>
+			<Cardinality>ZeroOne</Cardinality>
+			<RelatedTable>MakeModel</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelatedTableRole>MakeModel</RelatedTableRole>
+			<Role>Rate</Role>
+			<Constraints>
+				<AxViewRelationConstraint xmlns=""
+					i:type="AxViewRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>MakeModelId</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxViewRelationConstraint>
+			</Constraints>
+		</AxViewRelation>
+	</Relations>
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods />
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMModelRate</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMModelRate</Table>
+				<DataSources />
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxView>

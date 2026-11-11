@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMUpdateCustomerAction</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMUpdateCustomerAction extends FMCustomerPage
+{
+    private str custEmail;
+    private str driversLicense;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>driverLicenseNumber</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, DriverLicense), "Drivers license")]
+    public str driverLicenseNumber(str _value=driversLicense)
+    {
+        driversLicense = _value;
+        return driversLicense;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerEmail</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, Email), "Email")]
+    public str customerEmail(str _value=custEmail)
+    {
+        custEmail = _value;
+        return custEmail;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>validate</Name>
+				<Source><![CDATA[
+    public boolean validate(SysAppResponse _response)
+    {
+        boolean validationPassed = true;
+
+        if (this.driverLicenseNumber() == "")
+        {
+            _response.addMessage(new SysAppResponseMessage("Driver license number should be specified", SysAppMessageType::Error));
+            validationPassed = false;
+        }
+
+        if (this.customerEmail() == "")
+        {
+            _response.addMessage(new SysAppResponseMessage("Customer email address should be specified", SysAppMessageType::Error));
+            validationPassed = false;
+        }
+
+        return validationPassed;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>updateCustomerDetails</Name>
+				<Source><![CDATA[
+    public SysAppResponse updateCustomerDetails(SysAppEntityContext _entityContext, List _filterContextList)
+    {
+        SysAppResponse response = new SysAppResponse();
+        
+        if (this.validate(response))
+        {
+            int64 recIdPassed = str2Int64(_entityContext.entityId());
+      
+            if (recIdPassed)
+            {
+                FMCustomer customer;
+                ttsbegin;
+                select firstonly forupdate * from customer
+                    where Customer.RecId == recIdPassed;
+
+                if (customer.RecId)
+                {
+                    customer.Email = this.customerEmail();
+                    customer.DriverLicense = this.driverLicenseNumber();
+                    customer.update();
+                }
+            
+                ttscommit;
+
+                response.addCommit(_entityContext);
+            }
+        }
+        return response;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

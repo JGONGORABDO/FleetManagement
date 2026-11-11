@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EntityCard</title>
+</head>
+<body>
+    <div id="EntityCard" class="entityCard">
+        <div class="card">
+            <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageType:'URL', ImageName: $field('Thumbnail')"></span>
+            <div class="details">
+                <h1 data-dyn-bind="text: $format('{0} {1}',$field('FirstName'), $field('LastName'))"></h1>
+                <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('AddressLine1', 'PrimaryAddress')"></div>
+                <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $format('{0} {1} {2}', $field('City', 'PrimaryAddress'), $field('State', 'PrimaryAddress'), $field('ZipCode', 'PrimaryAddress'))"></div>
+                <div data-dyn-role="metaModel: 'Toolbar'">
+                    <div data-dyn-role="metaModel: 'ToolbarGroup'">
+                        <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="ImageType: 'Symbol', ImageName: 'Phone'"></button>
+                        <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="ImageType: 'Symbol', ImageName: 'Mail'"></button>
+                    </div>
+                </div>
+                <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('CellPhone')"></div>
+                <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageType:'URL', ImageName: $field('License'), Width: '200px', Height: '150px'"></span>
+                <div class="details">
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: 'Drivers license number'"></div>
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('DriverLicense')"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

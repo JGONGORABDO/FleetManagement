@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalEventHandler</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMRentalEventHandler
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>FMRentalUpdatingEvent</Name>
+				<Source><![CDATA[
+    [DataEventHandler(tablestr(FMRental),DataEventType::Updating)]
+    public static void FMRentalUpdatingEvent(Common c, DataEventArgs e)
+    {
+        FMRental rental = c;
+
+        if (rental.orig().Vehicle != rental.Vehicle ||
+            rental.orig().rentalLengthInDays() != rental.rentalLengthInDays())
+        {
+            FMTotalsEngineBase::GetInstance().calculateRentalVehicleRate(rental);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FMRentalInsertingEvent</Name>
+				<Source><![CDATA[
+    [DataEventHandler(tablestr(FMRental),DataEventType::Inserting)]
+    public static void FMRentalInsertingEvent(Common c, DataEventArgs e)
+    {
+        FMRental rental = c;
+
+        FMTotalsEngineBase::GetInstance().calculateRentalVehicleRate(rental);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

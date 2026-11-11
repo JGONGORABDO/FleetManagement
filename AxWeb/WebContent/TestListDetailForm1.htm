@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+    <div id="TestListDetailForm1" data-dyn-role="metaModel: 'Form'" data-dyn-bind="label: 'OData binding'" data-dyn-context="$dyn.OData.CreateEndpoint('data/service.svc/')">
+        <div data-dyn-role="metaModel: { Type: 'Tab', Style: 'Panorama'}" data-dyn-bind="ShowHeader: true">
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Label: 'Fleet Customers'">
+                <div data-dyn-role="metaModel: 'Grid'" data-dyn-bind="DataSource: 'Customers', DataFilter: 'State !== $dyn.OData.Entry.State.New' ">
+                    <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'First Name', Value: $field('FirstName'), AllowEdit: false"></div>
+                    <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Last Name', Value: $field('LastName'), AllowEdit: false"></div>
+                </div>
+            </div>
+
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Label: 'Customer Details'" data-dyn-context="$selected('Customers')">
+                    <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'First Name', Value: $field('FirstName'), AllowEdit: false"></div>
+
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Last Name', Value: $field('LastName'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Cell Phone', Value: $field('CellPhone'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Driver License', Value: $field('DriverLicense'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Credit Card Number', Value: $field('CreditCardNum'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Email', Value: $field('Email')"></div>
+            </div>
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Label: 'Customer Reservations'" data-dyn-context="$models('Reservations',$selected('Customers'))">
+                <div data-dyn-role="metaModel: 'Grid'" data-dyn-bind="DataSource: 'Reservations', DataFilter: 'State !== $dyn.OData.Entry.State.New' ">
+                    <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Reservation Id', Value: $field('ReservationId'), AllowEdit: false"></div>
+                    <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Start Date', Value: $field('PickupDate'), AllowEdit: false"></div>
+                    <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'End Date', Value: $field('ReturnDate'), AllowEdit: false"></div>
+                </div>
+            </div>
+        </div>
+
+          <div data-dyn-role="metaModel: 'ActionPane'" data-dyn-bind="Area: 'PrioritizedPage'">
+            <div data-dyn-role="metaModel: 'ButtonGroup'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'New', ImageType: 'Symbol', ImageName: 'New', ActionCommand: $dialog('TestListDetailForm1_NewCustomer', $create('Customers'))"></button>
+                    <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Edit', ImageType: 'Symbol', ImageName: 'Edit', ActionCommand: $dialog('TestListDetailForm1_NewCustomer', $edit())" data-dyn-context="$dyn.clientForm.viewModel($selected('Customers'))"></button>
+                    <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Delete', ImageType: 'Symbol', ImageName: 'Delete', ActionCommand: $save($delete())" data-dyn-context="$dyn.clientForm.viewModel($selected('Customers'))"></button>
+                    <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Navigate', ActionCommand: $navigate({templateId: 'FMWorkspace', resourceBundle: 'FMWorkspace'})"></button>
+            </div>
+        </div>
+
+
+    <!-- in page templates -->
+    <div class="dyn-stop-binding" style="display: none">
+        <div id="TestListDetailForm1_NewCustomer" data-dyn-role="metaModel:'Group'" data-dyn-bind="Label: 'NEW CUSTOMER'">
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'First Name', Value: $field('FirstName')"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Last Name', Value: $field('LastName')"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Cell Phone', Value: $field('CellPhone')"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Email', Value: $field('Email')"></div>
+
+            <!-- Using plain simple div as the button group as no dynControl seems to know how to lay out buttons horizontally -->
+            <div>
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Save', ActionCommand: $close($save())"></button>
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Cancel', ActionCommand: $close($revert())"></button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

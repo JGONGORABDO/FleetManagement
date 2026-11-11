@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehicleMaintenance</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMVehicleMaintenance extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>FMVehicle</Name>
+				<Source><![CDATA[
+    public FMVehicle FMVehicle(FMVehicle _relatedTable = null)
+    {
+        if (prmIsDefault(_relatedTable))
+        {
+            return this.setLink('FMVehicle');
+        }
+        else
+        {
+            // Bug 3135762: setLink does not seem to work
+            this.VehicleRelation = _relatedTable.RecId;
+            return this.setLink('FMVehicle', _relatedTable);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>setWorkflowStatus</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Sets the workflow status for an action state.
+    /// </summary>
+    /// <param name="_fmvRecId">
+    /// The record ID of the <c>FMVehicleMaintenance</c> record for which to set the workflow status.
+    /// </param>
+    /// <param name="__workflowApprovalStatus">
+    /// The workflow status to set.
+    /// </param>
+    public static void setWorkflowStatus(
+        RecId                       _fmvRecId,
+        FMStatus                    _workflowStatus)
+    {
+        FMVehicleMaintenance  fMVehicleMaintenance;
+
+        select forupdate  fMVehicleMaintenance where fMVehicleMaintenance.RecId == _fmvRecId;
+        if(fMVehicleMaintenance)
+        {        
+            ttsbegin;
+            fMVehicleMaintenance.Status   = _workflowStatus;
+            fMVehicleMaintenance.update();
+            ttscommit;
+        }        
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>@SYS172552</DeveloperDocumentation>
+	<Label>@FLM104</Label>
+	<TitleField1>Mileage</TitleField1>
+	<TitleField2>Status</TitleField2>
+	<Modules>FleetManagement</Modules>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Mileage</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>DateStarted</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>DateCompleted</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Cost</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>DateCompleted</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>DateStarted</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Details</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Mileage</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ServiceType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Status</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleRelation</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>Cost</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMCost</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldDate">
+			<Name>DateCompleted</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>EndDate</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldDate">
+			<Name>DateStarted</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>StartDate</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>Details</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMNote</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>Mileage</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMMileage</ExtendedDataType>
+			<Label>@FLM63</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>ServiceType</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<Label>@SYS81754</Label>
+			<EnumType>FMServiceType</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>Status</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<Label>@FLM230</Label>
+			<EnumType>FMStatus</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>VehicleRelation</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>RefRecId</ExtendedDataType>
+			<Label>@FLM86</Label>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes>
+		<AxTableIndex>
+			<Name>FMVehicleIdx</Name>
+			<AllowDuplicates>Yes</AllowDuplicates>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>VehicleRelation</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+	</Indexes>
+	<Mappings />
+	<Relations>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>VehicleRelation</Name>
+			<Cardinality>OneMore</Cardinality>
+			<CreateNavigationPropertyMethods>Yes</CreateNavigationPropertyMethods>
+			<RelatedTable>FMVehicle</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>VehicleRelation</Name>
+					<Field>VehicleRelation</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+			<Index>RecId</Index>
+		</AxTableRelation>
+	</Relations>
+	<StateMachines />
+</AxTable>

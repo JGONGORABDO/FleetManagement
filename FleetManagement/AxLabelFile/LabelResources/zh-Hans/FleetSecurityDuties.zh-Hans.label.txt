@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=维护数据管理的主实体数据 
+DataManagementFleetMasterEntitiesView=查看数据管理的主实体数据 

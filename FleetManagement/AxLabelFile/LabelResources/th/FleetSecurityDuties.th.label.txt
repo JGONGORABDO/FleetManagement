@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=รักษาข้อมูลเอนทิตี้หลักสำหรับการจัดการข้อมูล 
+DataManagementFleetMasterEntitiesView=ดูข้อมูลเอนทิตี้หลักสำหรับการจัดการข้อมูล 

@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Vedligehold masterenhedsdata for datastyring 
+DataManagementFleetMasterEntitiesView=Vis masterenhedsdata for datastyring 

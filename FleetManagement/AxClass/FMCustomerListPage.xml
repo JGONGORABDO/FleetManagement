@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCustomerListPage</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMCustomerListPage
+{
+    private List customerListInternal;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    public void new()
+    {
+        customerListInternal = new List(Types::Class);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerList</Name>
+				<Source><![CDATA[
+    [SysAppCollection(classStr(FMCustomerListItem), "Customer list")]
+    public List customerList(List _value=customerListInternal)
+    {
+        customerListInternal = _value;
+        return customerListInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getAllCustomers</Name>
+				<Source><![CDATA[
+    public static FMCustomerListPage getAllCustomers(SysAppEntityContext _entityContext, List _filterContextList)
+    {
+        FMCustomer customerTable;
+        FMAddressTable addressTable;
+        FMCustomerListPage customerListDC = new FMCustomerListPage();
+
+        Query q = new Query();
+        QueryBuildDataSource qbdsCustomer =q.addDataSource(tableNum(FMCustomer));
+        qbdsCustomer.addSortField(fieldNum(FMCustomer, FirstName), SortOrder::Ascending);
+        
+        //This is handling search more filter
+        if (_filterContextList.elements() > 0)
+        {
+            var listEnumerator = _filterContextList.getEnumerator();
+            if (listEnumerator.moveNext())
+            {
+                SysAppFilterContext filterContext = listEnumerator.current();
+                str entityName = filterContext.entityName();
+
+                if (entityName == tableStr(FMCustomer))
+                {
+                    str fieldName = filterContext.filterFieldName();
+
+                    var valueListEnumerator = filterContext.filterFieldValueList().getEnumerator();
+                    if (valueListEnumerator.moveNext())
+                    {
+                        str fieldValue = valueListEnumerator.current();
+                        var qbRange = qbdsCustomer.addRange(fieldName2Id(customerTable.TableId, fieldName));    
+                        qbRange.value(strFmt("*%1*", fieldValue));                                     
+                    }
+                }
+            }
+        }
+
+        QueryRun qr = new QueryRun(q);
+        
+        //To demonstrate search more functionality i am restricting the number of rows returned to 3
+        int recordCount = 0;
+        while (qr.next() && recordCount < 3)
+        {
+            recordCount++;
+            customerTable = qr.get(customerTable.TableId);
+
+            FMCustomerListItem customerDC = new FMCustomerListItem();
+            customerDC.populate(customerTable);
+
+            customerListDC.customerList().addEnd(customerDC);
+        }
+
+        return customerListDC;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

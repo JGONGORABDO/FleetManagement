@@ -1,0 +1,784 @@
+﻿@FLM41=Файлы меток, созданные 03.04.2011
+ ;By user Admin
+@FLM42=Красный
+ ;Fleet colors
+@FLM43=Голубой
+ ;Fleet colors
+@FLM44=Зеленый
+ ;Fleet colors
+@FLM46=Выбрать изображение
+ ;Fleet label
+@FLM47=Изменить
+ ;Fleet label
+@FLM48=Удалить
+ ;Fleet label
+@FLM49=Клиент
+ ;Fleet label
+@FLM50=Открыть
+ ;Fleet label
+@FLM51=Создать
+ ;Fleet label
+@FLM52=Аренда
+ ;Fleet label
+@FLM53=Общее
+ ;Fleet label
+@FLM55=Просмотр
+ ;Fleet label
+@FLM56=Удалить
+ ;Fleet label
+@FLM57=Вложения
+ ;Fleet label
+@FLM58=Завершить
+ ;Fleet label
+@FLM59=Накладные расходы на аренду
+ ;Fleet label
+@FLM60=Период аренды
+ ;Fleet label
+@FLM61=С
+ ;Fleet label
+@FLM62=По
+ ;Fleet label
+@FLM63=Пробег в милях
+ ;Fleet label
+@FLM64=Начало
+ ;Fleet label
+@FLM65=Конец
+ ;Fleet label
+@FLM66=Уровни топлива
+ ;Fleet label
+@FLM67=Отправка
+ ;Fleet label
+@FLM68=Накладные расходы
+ ;Fleet label
+@FLM69=Добавить накладные расходы
+ ;Fleet label
+@FLM70=Включить грузовики
+ ;Fleet label
+@FLM71=Арендованные транспортные средства
+ ;Fleet label
+@FLM72=Изменить
+ ;Fleet label
+@FLM73=Конфигурация управления автопарком
+ ;Fleet label
+@FLM74=Марки и модели транспортных средств
+ ;Fleet label
+@FLM75=Определить марки и модели транспортных средств
+ ;Fleet label
+@FLM76=Определение марки и модели транспортных средств в запасах, включая наглядное изображение модели.
+ ;Fleet label
+@FLM77=Изображение модели
+ ;Fleet label
+@FLM78=Обзор...
+ ;Fleet label
+@FLM79=Новая марка
+ ;Fleet label
+@FLM80=Новая модель
+ ;Fleet label
+@FLM81=Типы накладных расходов на аренду
+ ;Fleet label
+@FLM82=Определить типы накладных расходов
+ ;Fleet label
+@FLM83=Типы накладных расходов используются для классификации каждого накладного расхода на аренду. Это облегчает отслеживание затрат.
+ ;Fleet label
+@FLM84=Оценки безопасности внедорожника
+ ;Fleet label
+@FLM85=Определить оценки безопасности внедорожника
+ ;Fleet label
+@FLM86=Транспортные средства
+ ;Fleet label
+@FLM87=Поддерживать
+ ;Fleet label
+@FLM88=История
+ ;Fleet label
+@FLM89=Исторические ставки
+ ;Fleet label
+@FLM90=Ставки
+ ;Fleet label
+@FLM91=Сведения
+ ;Fleet label
+@FLM92=Сведения об автомобилях и внедорожниках
+ ;Fleet label
+@FLM93=Внедорожник
+ ;Fleet label
+@FLM94=Сведения о грузовиках
+ ;Fleet label
+@FLM95=Транспортные средства
+ ;Fleet label
+@FLM96=Доступность
+ ;Fleet label
+@FLM97=Местонахождение
+ ;Fleet label
+@FLM98=Обслуживание
+ ;Fleet label
+@FLM99=Запись
+ ;Fleet label
+@FLM100=Список
+ ;Fleet label
+@FLM101=Код транспортного средства
+ ;Fleet label
+@FLM102=Диспетчер дат ставок по транспортным средствам
+ ;Fleet label
+@FLM103=Новая версия
+ ;Fleet label
+@FLM104=Обслуживание транспортного средства
+ ;Fleet label
+@FLM105=Управление автопарком
+ ;Fleet label
+@FLM106=Последние арендованные транспортные средства
+ ;Fleet label
+@FLM107=Мои внутренние организации для безопасного доступа
+ ;Fleet label
+@FLM108=Транспортные средства, к которым пользователь имеет безопасный доступ
+ ;Fleet label
+@FLM109=Внутренние организации, к которым пользователь имеет доступ
+ ;Fleet label
+@FLM110=Грузовики
+ ;Fleet label
+@FLM111=Внедорожники
+ ;Fleet label
+@FLM112=Меню для страниц просмотра клиентов
+ ;Fleet label
+@FLM113=Действия
+ ;Fleet label
+@FLM114=Меню транспортного средства
+ ;Fleet label
+@FLM115=Меню для страниц просмотра транспортных средств
+ ;Fleet label
+@FLM116=Филиал — устарело
+ ;Fleet label
+@FLM117=Местонахождение аренды — устарело
+ ;Fleet label
+@FLM118=Регион — устарело
+ ;Fleet label
+@FLM119=Передний привод
+ ;Fleet label
+@FLM120=Задний привод
+ ;Fleet label
+@FLM121=Полный привод
+ ;Fleet label
+@FLM122=Тип топлива
+ ;Fleet label
+@FLM123=Стандартный
+ ;Fleet label
+@FLM124=Премиум
+ ;Fleet label
+@FLM125=С поддержкой GPS
+ ;Fleet label
+@FLM126=Замена масла
+ ;Fleet label
+@FLM127=Ремонт
+ ;Fleet label
+@FLM128=Профилактическое обслуживание
+ ;Fleet label
+@FLM129=Ожидает проверки
+ ;Fleet label
+@FLM130=Ожидает обслуживания
+ ;Fleet label
+@FLM131=Ожидает утверждения
+ ;Fleet label
+@FLM132=Ожидает очистки
+ ;Fleet label
+@FLM133=Готово
+ ;Fleet label
+@FLM134=Коробка передач
+ ;Fleet label
+@FLM135=Авто
+ ;Fleet label
+@FLM136=Ручная
+ ;Fleet label
+@FLM137=Доступно
+ ;Fleet label
+@FLM138=На обслуживании
+ ;Fleet label
+@FLM139=Взято в аренду
+ ;Fleet label
+@FLM140=Повреждено
+ ;Fleet label
+@FLM141=Отозвано
+ ;Fleet label
+@FLM142=Ожидание
+ ;Fleet label
+@FLM143=Тип транспортного средства
+ ;Fleet label
+@FLM144=Неизвестно
+ ;Fleet label
+@FLM145=Грузовик
+ ;Fleet label
+@FLM146=Автомобиль
+ ;Fleet label
+@FLM147=Тип накладных расходов
+ ;Fleet label
+@FLM148=Водительские права
+ ;Fleet label
+@FLM149=Модель марки
+ ;Fleet label
+@FLM150=Примечания
+ ;Fleet label
+@FLM151=Сведения об арендованном транспортном средстве
+ ;Fleet label
+@FLM152=Код оценки безопасности
+ ;Fleet label
+@FLM153=Оценка безопасности внедорожника
+ ;Fleet label
+@FLM154=Всего сдано в аренду
+ ;Fleet label
+@FLM155=Марка
+ ;Fleet label
+@FLM156=Марка транспортного средства
+ ;Fleet label
+@FLM157=Модель
+ ;Fleet label
+@FLM158=Модель транспортного средства
+ ;Fleet label
+@FLM159=Автомобили
+ ;Fleet label
+@FLM160=Двери
+ ;Fleet label
+@FLM161=Число мест
+ ;Fleet label
+@FLM162=Типы накладных расходов
+ ;Fleet label
+@FLM163=Дата окончания срока действия
+ ;Fleet label
+@FLM164=Мили в начале
+ ;Fleet label
+@FLM165=Мили в конце
+ ;Fleet label
+@FLM166=Уровень топлива в начале
+ ;Fleet label
+@FLM167=Уровень топлива в конце
+ ;Fleet label
+@FLM168=Сведения об арендованном транспортном средстве
+ ;Fleet label
+@FLM169=Места в третьем ряду
+ ;Fleet label
+@FLM170=Радиус поворота
+ ;Fleet label
+@FLM171=Клиренс
+ ;Fleet label
+@FLM172=Оценка опрокидывания
+ ;Fleet label
+@FLM173=Общая оценка
+ ;Fleet label
+@FLM174=Подвижное пространство
+ ;Fleet label
+@FLM175=Площадь пола
+ ;Fleet label
+@FLM176=Предельная нагрузка
+ ;Fleet label
+@FLM177=Тип
+ ;Fleet label
+@FLM178=Вес брутто транспортного средства
+ ;Fleet label
+@FLM179=Статус транспортного средства
+ ;Fleet label
+@FLM180=Организация
+ ;Fleet label
+@FLM181=Предварительный просмотр группы
+ ;Fleet label
+@FLM182=Марки транспортных средств
+ ;Fleet label
+@FLM183=Модели транспортных средств
+ ;Fleet label
+@FLM184=Изображение транспортного средства
+ ;Fleet label
+@FLM185=Спецификация модели
+ ;Fleet label
+@FLM186=Формат изображения
+ ;Fleet label
+@FLM187=Ставки по транспортным средствам
+ ;Fleet label
+@FLM188=Ставка в день
+ ;Fleet label
+@FLM189=Ставка в неделю
+ ;Fleet label
+@FLM190=Мои внутренние организации, связанные с ролью
+ ;Fleet label
+@FLM191=Таблица, содержащая внутренние организации, связанные с ролью пользователя
+ ;Fleet label
+@FLM192=Представление DimAttributeOMBranch содержит все записи из таблицы OMOperatingUnit, отмеченные как "Филиал".
+ ;Fleet label
+@FLM193=Представление DimAttributeOMRegion содержит все записи из таблицы OMOperatingUnit, отмеченные как "Регионы".
+ ;Fleet label
+@FLM194=Представление DimAttributeOMRentalLocation содержит все записи из таблицы OMOperatingUnit, отмеченные как "Расположение аренды".
+ ;Fleet label
+@FLM195=Центр управления автопарком
+ ;Fleet label
+@FLM196=Добавить
+ ;Fleet label
+@FLM197=Текущие арендованные транспортные средства
+ ;Fleet label
+@FLM198=Назначенные транспортные средства
+ ;Fleet label
+@FLM199=Доступные транспортные средства
+ ;Fleet label
+@FLM200=Отозванные транспортные средства
+ ;Fleet label
+@FLM201=Завершено
+ ;Fleet label
+@FLM202=В обработке
+ ;Fleet label
+@FLM203=Историческая ставка
+ ;Fleet label
+@FLM204=Форма аренды
+ ;Fleet label
+@FLM205=Очистить транспортное средство
+ ;Fleet label
+@FLM206=Проверить транспортное средство
+ ;Fleet label
+@FLM207=Выполнить обслуживание транспортного средства
+ ;Fleet label
+@FLM208=Утверждение обслуживания
+ ;Fleet label
+@FLM209=Сведения о клиенте
+ ;Fleet label
+@FLM210=Имя
+ ;Fleet label
+@FLM211=Лицензия
+ ;Fleet label
+@FLM212=Адрес
+ ;Fleet label
+@FLM213=Телефон
+ ;Fleet label
+@FLM214=Эл. почта
+ ;Fleet label
+@FLM215=Информация о платеже
+ ;Fleet label
+@FLM216=Кредитная карта
+ ;Fleet label
+@FLM217=Истечение срока
+ ;Fleet label
+@FLM218=Дата
+ ;Fleet label
+@FLM219=Начало аренды
+ ;Fleet label
+@FLM220=Дата окончания
+ ;Fleet label
+@FLM221=Описание
+ ;Fleet label
+@FLM222=Количество
+ ;Fleet label
+@FLM223=Расширено
+ ;Fleet label
+@FLM224=Сведения о транспортном средстве
+ ;Fleet label
+@FLM225=Марка и модель
+ ;Fleet label
+@FLM226=Суточная ставка
+ ;Fleet label
+@FLM227=Еженедельная ставка
+ ;Fleet label
+@FLM228=Часть предварительного просмотра транспортного средства
+ ;Fleet label
+@FLM229=Цвет
+ ;Fleet label
+@FLM230=Статус
+ ;Fleet label
+@FLM231=Назначенное транспортное средство
+ ;Fleet label
+@FLM232=Подсказки по управлению автопарком
+ ;Fleet label
+@FLM233=Ограничить пользователей по подразделениям
+ ;Fleet label
+@FLM234=Мой доступ к транспортным средствам для безопасного доступа
+ ;Fleet label
+@FLM235=Самообслуживание для записей по аренде
+ ;Fleet label
+@FLM236=Сотрудник по управлению автопарком
+ ;Fleet label
+@FLM237=Сотрудник по аренде
+ ;Fleet label
+@FLM238=Менеджер филиала по управлению автопарком
+ ;Fleet label
+@FLM239=Менеджер филиала по аренде
+ ;Fleet label
+@FLM240=Сервисный специалист по управлению автопарком
+ ;Fleet label
+@FLM241=Сервисный специалист
+ ;Fleet label
+@FLM242=Использовать workflow-процесс
+ ;Fleet label
+@FLM243=Группа обслуживания, представляющая доступные запасы автомобилей
+ ;Fleet label
+@FLM244=Количество дверей
+ ;Number of doors in the FM vehicle
+@FLM245=Расширенная сумма
+ ;Fleet label
+@FLM246=Уровень топлива
+ ;Fleet label
+@FLM247=Клиренс
+ ;Fleet label
+@FLM248=Площадь пола грузовика
+ ;Fleet label
+@FLM249=Предельная нагрузка
+ ;Fleet label
+@FLM250=Верхнее подвижное пространство
+ ;Fleet label
+@FLM251=Миль на галлон
+ ;Fleet label
+@FLM252=Оценка
+ ;Fleet label
+@FLM253=Всего сдано в аренду
+ ;Fleet label
+@FLM254=Места
+ ;Fleet label
+@FLM255=Тип накладных расходов
+ ;Fleet label (table)
+@FLM256=Мощность
+ ;Fleet label
+@FLM257=Радиус поворота
+ ;Fleet label
+@FLM258=Регистрационный номер транспортного средства
+ ;Fleet label
+@FLM259=Запрос workflow-процесса
+ ;Fleet label
+@FLM260=Запись обслуживания
+ ;Fleet label
+@FLM261=Создать аренду
+ ;Fleet label
+@FLM262=Все арендованные транспортные средства
+ ;Fleet label
+@FLM263=Настройка автопарка
+ ;Fleet label
+@FLM264=Все транспортные средства
+ ;Fleet label
+@FLM265=Даты ставки
+ ;Fleet label
+@FLM268=Филиалы _DEMO_
+ ;Fleet label
+@FLM269=Расположения аренды _DEMO_
+ ;Fleet label
+@FLM270=Регионы _DEMO_
+ ;Fleet label
+@FLM271=Очистка завершена
+ ;Fleet label
+@FLM272=Удалить клиентов
+ ;Fleet label
+@FLM273=Удалить выбранные арендованные транспортные средства
+ ;Fleet label
+@FLM274=Удалить выбранное транспортное средство
+ ;Fleet label
+@FLM275=Проверка завершена
+ ;Fleet label
+@FLM276=Обслуживание завершено
+ ;Fleet label
+@FLM278=Начать workflow-процесс
+ ;Fleet label
+@FLM279=Утвердить обслуживание
+ ;Fleet label
+@FLM280=Отказать в обслуживании
+ ;Fleet label
+@FLM281=Отклонить обслуживание
+ ;Fleet label
+@FLM282=Удалить выбранные транспортные средства
+ ;Fleet label
+@FLM283=Конфигурация workflow-процесса
+ ;Fleet label
+@FLM284=Создание или обновление филиалов
+ ;Fleet label
+@FLM285=Создание или обновление расположений аренды
+ ;Fleet label
+@FLM286=Создание или обновление регионов
+ ;Fleet label
+@FLM287=Добавить/изменить клиента
+ ;Fleet label
+@FLM288=Код арендованного транспортного средства
+ ;Fleet label (table)
+@FLM289=Добавить/изменить накладные расходы на аренду
+ ;Fleet label
+@FLM290=Сведения о накладных расходах
+ ;Fleet label
+@FLM291=Сведения об аренде
+ ;Fleet label
+@FLM292=Изменить арендованное транспортное средство
+ ;Fleet label
+@FLM293=Аренды по клиенту
+ ;Fleet label
+@FLM294=Аренды по модели
+ ;Fleet label
+@FLM295=Добавить/изменить транспортное средство
+ ;Fleet label
+@FLM296=Предстоящие аренды
+ ;Fleet label
+@FLM297=Аренды по транспортному средству
+ ;Fleet label
+@FLM298=См. интерактивную справку
+ ;Fleet label
+@FLM299=Тип накладных расходов на аренду
+ ;Fleet label
+@FLM300=Записать пробег в милях
+ ;Fleet label
+@FLM301=Цикл обработки автопарка
+ ;Fleet label
+@FLM302=Автопарк — настройка управления автопарком
+ ;Fleet label
+@FLM303=Автопарк — изменение записей клиентов
+ ;Fleet label
+@FLM304=Автопарк — управление клиентами
+ ;Fleet label
+@FLM305=Автопарк — управление запасами
+ ;Fleet label
+@FLM306=Автопарк — аренда автомобилей
+ ;Fleet label
+@FLM307=Автопарк — просмотр записей клиентов
+ ;Fleet label
+@FLM308=Автопарк — просмотр запасов
+ ;Fleet label
+@FLM309=Автопарк — сотрудник по workflow-процессу
+ ;Fleet label
+@FLM310=Цвет транспортного средства
+ ;Fleet label
+@FLM311=Автопарк — менеджер по workflow-процессу
+ ;Fleet label
+@FLM312=Автопарк — сервисный специалист по workflow-процессу
+ ;Fleet label
+@FLM313=Автопарк — основные обязанности
+ ;Fleet label
+@FLM314=Автопарк — управление автомобилями
+ ;Fleet label
+@FLM315=Стандартный цикл обработки автопарка
+ ;Fleet label
+@FLM316=Пробег транспортного средства в милях
+ ;Fleet label
+@FLM317=Стоимость
+ ;Fleet label
+@FLM318=Клиренс
+ ;Fleet label
+@FLM54=Клиенты
+ ;Fleet label
+@FLM266=Дата окончания срока действия кредитной карты
+ ;Fleet label (table)
+@FLM277=Водительские права
+ ;Fleet label (table)
+@FLM320=Список клиентов
+ ;Fleet label (report menu item)
+@FLM321=Отчет по списку клиентов
+ ;Fleet label (report menu item help text)
+@FLM267=Настройка workflow-процесса
+ ;Fleet label
+@FLM400=Workflow-процесс обслуживания транспортного средства
+ ;Fleet label
+@FLM500=Предпочтительный способ оплаты
+ ;Fleet label
+@FLM501=Белый
+ ;Fleet colors
+@FLM502=Серый
+ ;Fleet colors
+@FLM503=Желтый
+ ;Fleet colors
+@FLM504=Оранжевый
+ ;Fleet colors
+@FLM505=Отправка
+ ;Fleet label
+@FLM506=Возврат
+ ;Fleet label
+@FLM507=Начать период аренды
+ ;Fleet label
+@FLM401=Управление резервированием
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Предыдущий пробег в милях
+ ;Fleet label for returning vehicle slider
+@FLM509=Новый пробег в милях
+ ;Fleet label for returning vehicle slider
+@FLM510=Арендованное транспортное средство
+ ;Fleet label
+@FLM512=Дополнительные накладные расходы
+ ;Fleet label
+@FLM513=Сбережения
+ ;Fleet label
+@FLM514=Создать резервирование
+ ;New reservation menu item label
+@FLM515=Год модели
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Год окончания срока действия
+ ;Expiration year label
+@FLM517=Отчет по клиентам
+ ;Fleet tile label
+@FLM518=Существующие резервирования
+ ;Fleet tile label
+@FLM519=Просроченные аренды
+ ;Fleet tile label
+@FLM520=Имя платежа
+ ;Fleet PaymentInfo field label
+@FLM521=CVV-код
+ ;Fleet label
+@FLM522=Месяц окончания срока действия
+ ;Expiration month label
+@FLM523=Имя на карте
+ ;Fleet name on credit card
+@FLM524=История ставок по транспортным средствам
+ ;Fleet form label
+@FLM525=Новый комментарий
+ ;Fleet dialog caption
+@FLM526=Новый клиент
+ ;Fleet dialog caption
+@FLM527=Новая информация о платеже
+ ;Fleet dialog caption
+@FLM528=Добавление дополнения
+ ;Fleet dialog caption
+@FLM529=Выбор клиента
+ ;Fleet dialog caption
+@FLM530=Готово к отправке
+ ;Fleet ReservationState enum option
+@FLM531=Код записи адреса
+ ;Fleet label
+@FLM532=Шестнадцатеричный цветовой код
+ ;Fleet label
+@FLM533=Код цвета
+ ;Fleet label
+@FLM534=Название цвета
+ ;Fleet label
+@FLM535=Код скидки
+ ;Fleet label
+@FLM536=Код информации о платеже
+ ;Fleet label
+@FLM537=Код резервирования
+ ;Fleet label
+@FLM539=Арендованные транспортные средства
+ ;Fleet label
+@FLM540=Управление автопарком
+ ;Fleet menu label
+@FLM541=Загрузить демонстрационные данные
+ ;Fleet button text
+@FLM542=История ставок
+ ;Fleet button text
+@FLM543=Изменение клиента
+ ;Fleet dialog label
+@FLM544=Выбрать транспортное средство
+ ;Fleet button text
+@FLM545=Все резервирования
+ ;Fleet grid title
+@FLM546=Обратная связь с клиентами
+ ;Fleet group label
+@FLM547=Информация об аренде
+ ;Fleet group label
+@FLM548=Изображение накладных расходов
+ ;Fleet group label
+@FLM549=Настройка данных
+ ;Fleet tab label
+@FLM550=Информация о транспортном средстве
+ ;Fleet group label
+@FLM551=Доступные транспортные средства
+ ;Fleet chart label
+@FLM552=Статус арендованного транспортного средства
+ ;Fleet chart label
+@FLM553=Транспортное средство по модели — выручка
+ ;Fleet chart label
+@FLM554=Отправка сегодня
+ ;Fleet panorama label
+@FLM555=Возврат сегодня
+ ;Fleet panorama label
+@FLM556=Ставки аренды
+ ;Fleet panorama label
+@FLM558=Сведения о резервировании
+ ;Fleet panorama label
+@FLM559=Дополнения
+ ;Fleet panorama label
+@FLM560=Функции
+ ;Fleet group label
+@FLM561=Информация об отправке
+ ;Fleet field label
+@FLM562=Информация о возврате
+ ;Fleet field label
+@FLM563=Список арендованных транспортных средств
+ ;Fleet report label
+@FLM564=Создать образец клиентов, арендованных транспортных средств и транспортных средств
+ ;Fleet TOC label
+@FLM565=Это займет несколько секунд.
+ ;New Comment
+@FLM322=Аренды по клиенту
+ ;Fleet report label
+@FLM566=Диаграммы клиентов
+ ;Fleet form part caption
+@FLM567=Диаграмма выручки по транспортным средствам
+ ;Fleet form part caption
+@FLM601=Управления автопарком — аренда
+ ;Fleet rental entity
+@FLM602=Управление автопарком — клиенты
+ ;Fleet customer entity
+@FLM603=Образец приложения
+ ;Label for the sample applet name
+@FLM604=Образец приложения, используемый для демонстрации и тестирования платформы приложения.
+ ;Label for the sample applet description
+@FLM605=Дополнительные сведения
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Местонахождения клиентов
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Шаблон содержит карту местонахождений клиентов.
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Аренды по статусу
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Шаблон содержит количество аренд по статусу.
+ ;Rentals by status template description
+FMCustomerEntityView=Просмотр объекта управления автопарком (клиенты)
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Ведение объекта управления автопарком (клиенты)
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Просмотр объекта управления автопарком (аренда)
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Ведение объекта управления автопарком (аренда)
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Просмотр объекта мероприятия
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Ведение объекта мероприятия
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Просмотр объекта категории
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Ведение объекта категории
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Просмотр объекта юридического лица
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Ведение объекта юридического лица
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Просмотр объекта свойства строк
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Ведение объекта свойства строк
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Просмотр объекта периода
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Ведение объекта периода
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Просмотр объекта проекта
+ ;View privilege for RCADProject
+RCADProjectMaintain=Ведение объекта проекта
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Просмотр объекта табеля учета рабочего времени
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Ведение объекта табеля учета рабочего времени
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Просмотр объекта записи табеля учета рабочего времени
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Ведение объекта записи табеля учета рабочего времени
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Просмотр объекта параметров табеля учета рабочего времени
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Ведение объекта параметров табеля учета рабочего времени
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Просмотр объекта истории workflow-процесса табеля учета рабочего времени
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Ведение объекта истории workflow-процесса табеля учета рабочего времени
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Просмотр объекта элемента истории workflow-процесса
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Ведение объекта элемента истории workflow-процесса
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Поиск арендованных транспортных средств
+FMTemplateCustomerInformationDisplayName=Информация о клиенте
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Шаблон предоставляет базовую информацию о клиенте и список арендованных ими объектов
+ ;Fleet customer information template description
+DataCreated=Образец данных создан.
+DataRestored=Образец данных восстановлен.
+DataRestoreConfirm=Для всех данных управления автопарком будут восстановлено исходное состояние. Вы хотите сделать именно это?
+Branch=Филиал _DEMO_
+ ;Branch operating unit type
+RentalLocation=Местонахождение аренды _DEMO_
+ ;Rental location operating unit type
+Region=Область _DEMO_
+ ;Region operating unit type
+Timestamp=Метка времени
+ ;Comment timestamp
+CustomerImage=Изображение клиента
+ ;Fleet label
+Analytics=Аналитика
+ ;used on Fleet clerk workspace for Analytics section

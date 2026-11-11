@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Gestisci dati entità anagrafica per la gestione dati
+DataManagementFleetMasterEntitiesView=Visualizza dati entità anagrafica per la gestione dati

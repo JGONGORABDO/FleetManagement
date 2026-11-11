@@ -1,0 +1,784 @@
+﻿@FLM41=Etikettfiler opprettet 4/3/2011
+ ;By user Admin
+@FLM42=Rød
+ ;Fleet colors
+@FLM43=Blå
+ ;Fleet colors
+@FLM44=Grønn
+ ;Fleet colors
+@FLM46=Velg bilde
+ ;Fleet label
+@FLM47=Endre
+ ;Fleet label
+@FLM48=Fjern
+ ;Fleet label
+@FLM49=Kunde
+ ;Fleet label
+@FLM50=Åpne
+ ;Fleet label
+@FLM51=Ny
+ ;Fleet label
+@FLM52=Utleie
+ ;Fleet label
+@FLM53=Generelt
+ ;Fleet label
+@FLM55=Vis
+ ;Fleet label
+@FLM56=Slett
+ ;Fleet label
+@FLM57=Vedlegg
+ ;Fleet label
+@FLM58=Fullfør
+ ;Fleet label
+@FLM59=Utleiegebyrer
+ ;Fleet label
+@FLM60=Utleieperiode
+ ;Fleet label
+@FLM61=Fra
+ ;Fleet label
+@FLM62=Til
+ ;Fleet label
+@FLM63=Kilometer
+ ;Fleet label
+@FLM64=Start
+ ;Fleet label
+@FLM65=Slutt
+ ;Fleet label
+@FLM66=Drivstoffnivåer
+ ;Fleet label
+@FLM67=Henting
+ ;Fleet label
+@FLM68=Gebyrer
+ ;Fleet label
+@FLM69=Legg til gebyr
+ ;Fleet label
+@FLM70=Inkluder lastebiler
+ ;Fleet label
+@FLM71=Utleie
+ ;Fleet label
+@FLM72=Rediger
+ ;Fleet label
+@FLM73=Konfigurasjon av flåtestyring
+ ;Fleet label
+@FLM74=Kjøretøysmerke og -modeller
+ ;Fleet label
+@FLM75=Definer kjøretøysmerker og -modeller
+ ;Fleet label
+@FLM76=Definer merket og modellene for kjøretøyene i beholdningen, inkludert et representativt bilde av modellen.
+ ;Fleet label
+@FLM77=Modellbilde
+ ;Fleet label
+@FLM78=Bla gjennom...
+ ;Fleet label
+@FLM79=Nytt merke
+ ;Fleet label
+@FLM80=Ny modell
+ ;Fleet label
+@FLM81=Typer utleiegebyr
+ ;Fleet label
+@FLM82=Definer gebyrtyper
+ ;Fleet label
+@FLM83=Gebyrtyper brukes til å kategorisere hvert utleiegebyr. Dette gjør at du lettere kan spore kostnadene.
+ ;Fleet label
+@FLM84=SUV-sikkerhetsvurderinger
+ ;Fleet label
+@FLM85=Definer SUV-sikkerhetsvurderinger
+ ;Fleet label
+@FLM86=Kjøretøyer
+ ;Fleet label
+@FLM87=Vedlikehold
+ ;Fleet label
+@FLM88=Historikk
+ ;Fleet label
+@FLM89=Historiske satser
+ ;Fleet label
+@FLM90=Satser
+ ;Fleet label
+@FLM91=Detaljer
+ ;Fleet label
+@FLM92=Bil- og SUV-informasjon
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=Lastebilinformasjon
+ ;Fleet label
+@FLM95=Kjøretøyer
+ ;Fleet label
+@FLM96=Tilgjengelighet
+ ;Fleet label
+@FLM97=Plassering
+ ;Fleet label
+@FLM98=Vedlikehold
+ ;Fleet label
+@FLM99=Post
+ ;Fleet label
+@FLM100=Liste
+ ;Fleet label
+@FLM101=Vognkort
+ ;Fleet label
+@FLM102=Datobehandling for kjøretøyssats
+ ;Fleet label
+@FLM103=Ny versjon
+ ;Fleet label
+@FLM104=Vedlikehold av kjøretøy
+ ;Fleet label
+@FLM105=Flåtestyring
+ ;Fleet label
+@FLM106=Nylig utleie
+ ;Fleet label
+@FLM107=Mine interne organisasjoner for sikkerhetstilgang
+ ;Fleet label
+@FLM108=Kjøretøy som brukeren har sikkerhetstilgang til
+ ;Fleet label
+@FLM109=Interne organisasjoner som brukeren har tilgang til
+ ;Fleet label
+@FLM110=Lastebiler
+ ;Fleet label
+@FLM111=SUVer
+ ;Fleet label
+@FLM112=Meny for kundevisningssider
+ ;Fleet label
+@FLM113=Handlinger
+ ;Fleet label
+@FLM114=Kjøretøysmeny
+ ;Fleet label
+@FLM115=Meny for visningssider for kjøretøy
+ ;Fleet label
+@FLM116=Avdeling – avskrevet
+ ;Fleet label
+@FLM117=Utleiested – avskrevet
+ ;Fleet label
+@FLM118=Område – avskrevet
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Drivstofftype
+ ;Fleet label
+@FLM123=Standard
+ ;Fleet label
+@FLM124=Bonus
+ ;Fleet label
+@FLM125=GPS aktivert
+ ;Fleet label
+@FLM126=Oljeskift
+ ;Fleet label
+@FLM127=Reparasjon
+ ;Fleet label
+@FLM128=Forebyggende vedlikehold
+ ;Fleet label
+@FLM129=Venter på undersøkelse
+ ;Fleet label
+@FLM130=Venter på service
+ ;Fleet label
+@FLM131=Venter på godkjenning
+ ;Fleet label
+@FLM132=Venter på rengjøring
+ ;Fleet label
+@FLM133=Utført
+ ;Fleet label
+@FLM134=Overføring
+ ;Fleet label
+@FLM135=Automatisk
+ ;Fleet label
+@FLM136=Manuelt
+ ;Fleet label
+@FLM137=Tilgjengelig
+ ;Fleet label
+@FLM138=I bruk
+ ;Fleet label
+@FLM139=Leid ut
+ ;Fleet label
+@FLM140=Skadet
+ ;Fleet label
+@FLM141=Tilbakekalt
+ ;Fleet label
+@FLM142=Venter
+ ;Fleet label
+@FLM143=Kjøretøytype
+ ;Fleet label
+@FLM144=Ukjent
+ ;Fleet label
+@FLM145=Lastebil
+ ;Fleet label
+@FLM146=Bil
+ ;Fleet label
+@FLM147=Gebyrtype
+ ;Fleet label
+@FLM148=Førerkort
+ ;Fleet label
+@FLM149=Modell
+ ;Fleet label
+@FLM150=Merknader
+ ;Fleet label
+@FLM151=Utleieinformasjon for kjøretøy
+ ;Fleet label
+@FLM152=ID for sikkerhetsvurdering
+ ;Fleet label
+@FLM153=SUV-sikkerhetsvurdering
+ ;Fleet label
+@FLM154=Total utleie
+ ;Fleet label
+@FLM155=Fabrikat
+ ;Fleet label
+@FLM156=Kjøretøysmerke
+ ;Fleet label
+@FLM157=Modell
+ ;Fleet label
+@FLM158=Kjøretøysmodell
+ ;Fleet label
+@FLM159=Biler
+ ;Fleet label
+@FLM160=Dører
+ ;Fleet label
+@FLM161=Sitteplasser
+ ;Fleet label
+@FLM162=Gebyrtyper
+ ;Fleet label
+@FLM163=Utløpsdato
+ ;Fleet label
+@FLM164=Startkilometer
+ ;Fleet label
+@FLM165=Sluttkilometer
+ ;Fleet label
+@FLM166=Drivstoffnivå ved start
+ ;Fleet label
+@FLM167=Drivstoffnivå ved avslutning
+ ;Fleet label
+@FLM168=Utleieinformasjon for kjøretøy
+ ;Fleet label
+@FLM169=Kapasitet på tredje rad
+ ;Fleet label
+@FLM170=Svingradius
+ ;Fleet label
+@FLM171=Bakkeklaring
+ ;Fleet label
+@FLM172=Velteklassifisering
+ ;Fleet label
+@FLM173=Samlet vurdering
+ ;Fleet label
+@FLM174=Bevegelsesplass
+ ;Fleet label
+@FLM175=Gulvplass
+ ;Fleet label
+@FLM176=Maksimal last
+ ;Fleet label
+@FLM177=Type
+ ;Fleet label
+@FLM178=Totalvekt av kjøretøy
+ ;Fleet label
+@FLM179=Kjøretøysstatus
+ ;Fleet label
+@FLM180=Organisasjon
+ ;Fleet label
+@FLM181=Forhåndsvisningsgruppe
+ ;Fleet label
+@FLM182=Kjøretøysmerker
+ ;Fleet label
+@FLM183=Kjøretøysmodeller
+ ;Fleet label
+@FLM184=Kjøretøysbilde
+ ;Fleet label
+@FLM185=Modellspesifikasjon
+ ;Fleet label
+@FLM186=Bildeformat
+ ;Fleet label
+@FLM187=Kjøretøyssatser
+ ;Fleet label
+@FLM188=Sats per dag
+ ;Fleet label
+@FLM189=Sats per uke
+ ;Fleet label
+@FLM190=Mine interne organisasjoner som er tilknyttet en rolle
+ ;Fleet label
+@FLM191=Tabell som inneholder interne organisasjoner som er knyttet til brukerens rolle
+ ;Fleet label
+@FLM192=DimAttributeOMBranch-visningen inneholder alle poster fra OMOperatingUnit-tabellen som er merket som Avdeling.
+ ;Fleet label
+@FLM193=DimAttributeOMRegion-visningen inneholder alle poster fra OMOperatingUnit-tabellen som er merket som Områder.
+ ;Fleet label
+@FLM194=HcmDepartmentCube-visningen inneholder alle poster fra OMOperatingUnit-tabellen som er merket som Utleiested.
+ ;Fleet label
+@FLM195=Flåtestyringssenter
+ ;Fleet label
+@FLM196=Legg til
+ ;Fleet label
+@FLM197=Nåværende utleie
+ ;Fleet label
+@FLM198=Tilordnede kjøretøyer
+ ;Fleet label
+@FLM199=Tilgjengelige kjøretøyer
+ ;Fleet label
+@FLM200=Tilbakekalte kjøretøyer
+ ;Fleet label
+@FLM201=Fullført
+ ;Fleet label
+@FLM202=Pågår
+ ;Fleet label
+@FLM203=Historisk sats
+ ;Fleet label
+@FLM204=Fullfør utleie
+ ;Fleet label
+@FLM205=Rengjør kjøretøy
+ ;Fleet label
+@FLM206=Undersøk kjøretøy
+ ;Fleet label
+@FLM207=Utfør service på kjøretøy
+ ;Fleet label
+@FLM208=Servicegodkjenning
+ ;Fleet label
+@FLM209=Kundedetaljer
+ ;Fleet label
+@FLM210=Navn
+ ;Fleet label
+@FLM211=Førerkort
+ ;Fleet label
+@FLM212=Adresse
+ ;Fleet label
+@FLM213=Telefon
+ ;Fleet label
+@FLM214=E-post
+ ;Fleet label
+@FLM215=Betalingsinformasjon
+ ;Fleet label
+@FLM216=Kredittkort
+ ;Fleet label
+@FLM217=Utløp
+ ;Fleet label
+@FLM218=Dato
+ ;Fleet label
+@FLM219=Utleiestart
+ ;Fleet label
+@FLM220=Sluttdato
+ ;Fleet label
+@FLM221=Beskrivelse
+ ;Fleet label
+@FLM222=Antall
+ ;Fleet label
+@FLM223=Utvidet
+ ;Fleet label
+@FLM224=Kjøretøysdetaljer
+ ;Fleet label
+@FLM225=Merke og modell
+ ;Fleet label
+@FLM226=Dagspris
+ ;Fleet label
+@FLM227=Ukespris
+ ;Fleet label
+@FLM228=Forhåndsvisningsdel for kjøretøy
+ ;Fleet label
+@FLM229=Farge
+ ;Fleet label
+@FLM230=Status
+ ;Fleet label
+@FLM231=Tilordnet kjøretøy
+ ;Fleet label
+@FLM232=Flåtestyringsindikatorer
+ ;Fleet label
+@FLM233=Begrens brukere til forretningsenheter
+ ;Fleet label
+@FLM234=Min tilgang til kjøretøy for sikkerhetstilgang
+ ;Fleet label
+@FLM235=Selvbetjening for utleieposter
+ ;Fleet label
+@FLM236=Flåtestyringsassistent
+ ;Fleet label
+@FLM237=Utleieassistent
+ ;Fleet label
+@FLM238=Avdelingsleder for flåtestyring
+ ;Fleet label
+@FLM239=Avdelingsleder for utleie
+ ;Fleet label
+@FLM240=Servicetekniker for flåtestyring
+ ;Fleet label
+@FLM241=Servicetekniker
+ ;Fleet label
+@FLM242=Bruk arbeidsflyt
+ ;Fleet label
+@FLM243=Servicegruppe som viser tilgjengelig bilbeholdning
+ ;Fleet label
+@FLM244=Antall dører
+ ;Number of doors in the FM vehicle
+@FLM245=Utvidet beløp
+ ;Fleet label
+@FLM246=Drivstoffnivå
+ ;Fleet label
+@FLM247=Bakkeklaring
+ ;Fleet label
+@FLM248=Gulvplass i lastebil
+ ;Fleet label
+@FLM249=Maksimal last
+ ;Fleet label
+@FLM250=Bevegelsesplass i høyden
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Vurdering
+ ;Fleet label
+@FLM253=Utleietotal
+ ;Fleet label
+@FLM254=Antall seter
+ ;Fleet label
+@FLM255=Gebyrtype
+ ;Fleet label (table)
+@FLM256=Kapasitet
+ ;Fleet label
+@FLM257=Svingradius
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Arbeidsflytspørring
+ ;Fleet label
+@FLM260=Vedlikeholdspost
+ ;Fleet label
+@FLM261=Ny utleie
+ ;Fleet label
+@FLM262=All utleie
+ ;Fleet label
+@FLM263=Flåteoppsett
+ ;Fleet label
+@FLM264=Alle kjøretøyer
+ ;Fleet label
+@FLM265=Satsdatoer
+ ;Fleet label
+@FLM268=Avdelinger _DEMO_
+ ;Fleet label
+@FLM269=Utleiesteder _DEMO_
+ ;Fleet label
+@FLM270=Områder _DEMO_
+ ;Fleet label
+@FLM271=Rengjøring fullført
+ ;Fleet label
+@FLM272=Slett kunder
+ ;Fleet label
+@FLM273=Slett valgt utleie
+ ;Fleet label
+@FLM274=Slett valgt kjøretøy
+ ;Fleet label
+@FLM275=Undersøkelse fullført
+ ;Fleet label
+@FLM276=Service fullført
+ ;Fleet label
+@FLM278=Start arbeidsflyt
+ ;Fleet label
+@FLM279=Godkjenn service
+ ;Fleet label
+@FLM280=Avslå service
+ ;Fleet label
+@FLM281=Avvis tjeneste
+ ;Fleet label
+@FLM282=Slett valgte kjøretøy
+ ;Fleet label
+@FLM283=Konfigurasjon av arbeidsflyt
+ ;Fleet label
+@FLM284=Opprett eller oppdater avdelinger
+ ;Fleet label
+@FLM285=Opprett eller oppdater uteleiesteder
+ ;Fleet label
+@FLM286=Opprett eller oppdater områder
+ ;Fleet label
+@FLM287=Legg til/rediger kunde
+ ;Fleet label
+@FLM288=ID for kjøretøysutleie
+ ;Fleet label (table)
+@FLM289=Legg til/rediger utleiegebyr
+ ;Fleet label
+@FLM290=Avgiftsdetaljer
+ ;Fleet label
+@FLM291=Utleiedetaljer
+ ;Fleet label
+@FLM292=Rediger utleie
+ ;Fleet label
+@FLM293=Utleie etter kunde
+ ;Fleet label
+@FLM294=Utleie per modell
+ ;Fleet label
+@FLM295=Legg til/rediger kjøretøy
+ ;Fleet label
+@FLM296=Kommende utleie
+ ;Fleet label
+@FLM297=Utleie etter kjøretøy
+ ;Fleet label
+@FLM298=Se nettbasert hjelp
+ ;Fleet label
+@FLM299=Avgiftstype for utleie
+ ;Fleet label
+@FLM300=Registrer kilometer
+ ;Fleet label
+@FLM301=Flåteprosessyklus
+ ;Fleet label
+@FLM302=Flåte - Behandle flåteoppsett
+ ;Fleet label
+@FLM303=Flåte - Rediger kundeposter
+ ;Fleet label
+@FLM304=Flåte - Behandle kunder
+ ;Fleet label
+@FLM305=Flåte - Administrer beholdning
+ ;Fleet label
+@FLM306=Flåte - Lei biler
+ ;Fleet label
+@FLM307=Flåte - Vis kundeposter
+ ;Fleet label
+@FLM308=Flåte - Vis beholdning
+ ;Fleet label
+@FLM309=Flåte - Arbeidsflytassistent
+ ;Fleet label
+@FLM310=Kjøretøysfarge
+ ;Fleet label
+@FLM311=Flåte - Arbeidsflytleder
+ ;Fleet label
+@FLM312=Flåte - Servicetekniker for arbeidsflyt
+ ;Fleet label
+@FLM313=Flåte - Grunnleggende plikter
+ ;Fleet label
+@FLM314=Flåte - Administrer biler
+ ;Fleet label
+@FLM315=Prosessyklus for flåtestandard
+ ;Fleet label
+@FLM316=Kjørelengde for kjøretøy
+ ;Fleet label
+@FLM317=Kostnad
+ ;Fleet label
+@FLM318=Klaring
+ ;Fleet label
+@FLM54=Kunder
+ ;Fleet label
+@FLM266=Kredittkortutløp
+ ;Fleet label (table)
+@FLM277=Førerkort
+ ;Fleet label (table)
+@FLM320=Kundeliste
+ ;Fleet label (report menu item)
+@FLM321=Kundelisterapport
+ ;Fleet label (report menu item help text)
+@FLM267=Arbeidsflytoppsett
+ ;Fleet label
+@FLM400=Arbeidsflyt for vedlikehold av kjøretøy
+ ;Fleet label
+@FLM500=Foretrukket betalingsmåte
+ ;Fleet label
+@FLM501=Hvit
+ ;Fleet colors
+@FLM502=Grå
+ ;Fleet colors
+@FLM503=Gul
+ ;Fleet colors
+@FLM504=Oransje
+ ;Fleet colors
+@FLM505=Henting
+ ;Fleet label
+@FLM506=Returner
+ ;Fleet label
+@FLM507=Start utleie
+ ;Fleet label
+@FLM401=Reservasjonsbehandling
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Forrige kjørelengde
+ ;Fleet label for returning vehicle slider
+@FLM509=Ny kjørelengde
+ ;Fleet label for returning vehicle slider
+@FLM510=Kjøretøysutleie
+ ;Fleet label
+@FLM512=Tilleggsavgifter
+ ;Fleet label
+@FLM513=Besparelse
+ ;Fleet label
+@FLM514=Ny reservasjon
+ ;New reservation menu item label
+@FLM515=Modellår
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Utløpsår
+ ;Expiration year label
+@FLM517=Kunderapport
+ ;Fleet tile label
+@FLM518=Eksisterende reservasjoner
+ ;Fleet tile label
+@FLM519=Forfalt utleie
+ ;Fleet tile label
+@FLM520=Betalingsnavn
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=Utløpsmåned
+ ;Expiration month label
+@FLM523=Navn på kort
+ ;Fleet name on credit card
+@FLM524=Historikk for kjøretøyssats
+ ;Fleet form label
+@FLM525=Ny kommentar
+ ;Fleet dialog caption
+@FLM526=Ny kunde
+ ;Fleet dialog caption
+@FLM527=Ny betalingsinformasjon
+ ;Fleet dialog caption
+@FLM528=Legg til tilbehør
+ ;Fleet dialog caption
+@FLM529=Velg en kunde
+ ;Fleet dialog caption
+@FLM530=Klar for plukking
+ ;Fleet ReservationState enum option
+@FLM531=Adressepost-ID
+ ;Fleet label
+@FLM532=Heksadesimal kode for farge
+ ;Fleet label
+@FLM533=Farge-ID
+ ;Fleet label
+@FLM534=Fargenavn
+ ;Fleet label
+@FLM535=Rabatt-ID
+ ;Fleet label
+@FLM536=ID for betalingsinformasjon
+ ;Fleet label
+@FLM537=Reservasjons-ID
+ ;Fleet label
+@FLM539=Utleide kjøretøyer
+ ;Fleet label
+@FLM540=Flåtestyring
+ ;Fleet menu label
+@FLM541=Last inn demonstrasjonsdata
+ ;Fleet button text
+@FLM542=Satshistorikk
+ ;Fleet button text
+@FLM543=Endre kunde
+ ;Fleet dialog label
+@FLM544=Velg kjøretøy
+ ;Fleet button text
+@FLM545=Alle reservasjoner
+ ;Fleet grid title
+@FLM546=Tilbakemeldinger fra kunde
+ ;Fleet group label
+@FLM547=Utleieinformasjon
+ ;Fleet group label
+@FLM548=Avgiftsbilde
+ ;Fleet group label
+@FLM549=Dataoppsett
+ ;Fleet tab label
+@FLM550=Kjøretøysinformasjon
+ ;Fleet group label
+@FLM551=Tilgjengelige kjøretøyer
+ ;Fleet chart label
+@FLM552=Utleiestatus for kjøretøy
+ ;Fleet chart label
+@FLM553=Kjøretøy etter modell - inntekter
+ ;Fleet chart label
+@FLM554=Henter i dag
+ ;Fleet panorama label
+@FLM555=Returnerer i dag
+ ;Fleet panorama label
+@FLM556=Leiepriser
+ ;Fleet panorama label
+@FLM558=Reservasjonsdetaljer
+ ;Fleet panorama label
+@FLM559=Tilbehør
+ ;Fleet panorama label
+@FLM560=Funksjoner
+ ;Fleet group label
+@FLM561=Henteinformasjon
+ ;Fleet field label
+@FLM562=Returinformasjon
+ ;Fleet field label
+@FLM563=Utleieliste
+ ;Fleet report label
+@FLM564=Opprett eksempler for kunder, utleie og kjøretøyer
+ ;Fleet TOC label
+@FLM565=Dette tar bare noen få sekunder.  
+ ;New Comment
+@FLM322=Utleie etter kunde
+ ;Fleet report label
+@FLM566=Kundediagrammer
+ ;Fleet form part caption
+@FLM567=Diagram for kjøretøysinntekter
+ ;Fleet form part caption
+@FLM601=Flåtestyringsutleie
+ ;Fleet rental entity
+@FLM602=Flåtestyringskunder
+ ;Fleet customer entity
+@FLM603=Eksempelapplet
+ ;Label for the sample applet name
+@FLM604=En eksempelapplet som brukes til å demonstrere og teste appletrammeverket
+ ;Label for the sample applet description
+@FLM605=Vis mer
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Kundelokasjoner
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Malen viser et kart over kundelokasjoner
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Utleie etter status
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Malen viser antall utleiestatuser
+ ;Rentals by status template description
+FMCustomerEntityView=Vis enhet for flåtestyringskunder
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Vedlikehold enhet for flåtestyringskunder
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Vis enhet for flåtestyringsutleie
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Vedlikehold enhet for flåtestyringsutleie
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Vis aktivitetsenhet
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Vedlikehold aktivitetsenhet
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Vis kategorienhet
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Vedlikehold kategorienhet
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Vis enhet for juridisk enhet
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Vedlikehold enhet for juridisk enhet
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Vis enhet for linjeegenskap
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Vedlikehold enhet for linjeegenskap
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Vis periodeenhet
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Vedlikehold periodeenhet
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Vis prosjektenhet
+ ;View privilege for RCADProject
+RCADProjectMaintain=Vedlikehold prosjektenhet
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Vis enhet for timeregistrering
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Vedlikehold enhet for timeregistrering
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Vis enhet for timeregistreringsoppføring
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Vedlikehold enhet for timeregistreringsoppføring
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Vis enhet for timeregistreringsinnstillinger
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Vedlikehold enhet for timeregistreringsinnstillinger
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Vis enhet for arbeidsflytlogg for timeregistrering
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Vedlikehold enhet for arbeidsflytlogg for timeregistrering
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Vis enhet for element i arbeidsflytlogg
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Vedlikehold enhet for element i arbeidsflytlogg
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Søk etter utleie
+FMTemplateCustomerInformationDisplayName=Kundeinformasjon
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Malen viser grunnleggende kundeinformasjon og en liste over utleie
+ ;Fleet customer information template description
+DataCreated=Eksempeldata er opprettet.
+DataRestored=Eksempeldataene er gjenopprettet.
+DataRestoreConfirm=Dette gjenoppretter alle flåtebehandlingsdata til den opprinnelige tilstanden. Vil du gjøre dette?
+Branch=Avdeling _DEMO_
+ ;Branch operating unit type
+RentalLocation=Utleiested _DEMO_
+ ;Rental location operating unit type
+Region=Område _DEMO_
+ ;Region operating unit type
+Timestamp=Tidsstempel
+ ;Comment timestamp
+CustomerImage=Kundebilde
+ ;Fleet label
+Analytics=Analyse
+ ;used on Fleet clerk workspace for Analytics section

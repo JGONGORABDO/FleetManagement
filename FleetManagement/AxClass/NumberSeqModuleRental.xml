@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>NumberSeqModuleRental</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class  NumberSeqModuleRental extends NumberSeqApplicationModule
+{
+    /*
+    Detailed description of how to setup references for number sequences can
+    be found i method loadModule() on the 'father' class: NumberSeqApplicationModule.
+    */
+
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>buildModulesMapSubscriber</Name>
+				<Source><![CDATA[
+    [SubscribesTo(classstr(NumberSeqGlobal),delegatestr(NumberSeqGlobal,buildModulesMapDelegate))]
+    static void buildModulesMapSubscriber(Map numberSeqModuleNamesMap)
+    {
+        NumberSeqGlobal::addModuleToMap(classnum(NumberSeqModuleRental), numberSeqModuleNamesMap);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>loadModule</Name>
+				<Source><![CDATA[
+    public void loadModule()
+    {
+        NumberSeqDatatype datatype = NumberSeqDatatype::construct();
+
+        /* Setup Vehicle id */
+        datatype.parmDatatypeId(extendedtypenum(FMVehicleId));
+        datatype.parmReferenceHelp(literalstr('FMVehicleID'));
+        datatype.parmWizardIsContinuous(false);
+        datatype.parmWizardIsManual(NoYes::No);
+        datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        datatype.parmSortField(1);
+
+        //datatype.addParameterType(NumberSeqParameterType::OperatingUnit, true, false);
+        this.create(datatype);
+
+
+        /* Setup Rental id */
+        datatype.parmDatatypeId(extendedtypenum(FMRentalId));
+        datatype.parmReferenceHelp(literalstr('FMRentalID'));
+        datatype.parmWizardIsContinuous(false);
+        datatype.parmWizardIsManual(NoYes::No);
+        datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        datatype.parmSortField(1);
+
+        //datatype.addParameterType(NumberSeqParameterType::, true, false);
+        this.create(datatype);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>numberSeqModule</Name>
+				<Source><![CDATA[
+    public NumberSeqModule numberSeqModule()
+    {
+        return NumberSeqModule::FleetManagement;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

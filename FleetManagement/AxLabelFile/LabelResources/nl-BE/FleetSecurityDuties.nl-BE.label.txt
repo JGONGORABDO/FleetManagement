@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Hoofdentiteitgegevens voor gegevensbeheer onderhouden 
+DataManagementFleetMasterEntitiesView=Hoofdentiteitgegevens voor gegevensbeheer weergeven 

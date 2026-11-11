@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCreateCustomerAction</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMCreateCustomerAction extends FMCustomerPage
+{
+    private  str firstName;
+    private str lastName;
+    private str custEmail;
+    private str driversLicense;
+    private str cellPhone;
+    private str custAddressLine1;
+    private str city;
+    private  str state;
+    private int zipCode;
+    private str countryRegion;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>customerFirstName</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, FirstName), "First name")]
+    public str customerFirstName(str _value=firstName)
+    {
+        firstName = _value;
+        return firstName;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerLastName</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, LastName), "Last name")]
+    public str customerLastName(str _value=lastName)
+    {
+        lastName = _value;
+        return lastName;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>driverLicenseNumber</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, DriverLicense), "Drivers license")]
+    public str driverLicenseNumber(str _value=driversLicense)
+    {
+        driversLicense = _value;
+        return driversLicense;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerPhone</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, CellPhone), "Phone")]
+    public str customerPhone(str _value=cellPhone)
+    {
+        cellPhone = _value;
+        return cellPhone;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerEmail</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, Email), "Email")]
+    public str customerEmail(str _value=custEmail)
+    {
+        custEmail = _value;
+        return custEmail;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>addressLine1</Name>
+				<Source><![CDATA[
+    [SysAppProjection("Address line 1")]
+    public str addressLine1(str _value=custAddressLine1)
+    {
+        custAddressLine1 = _value;
+        return custAddressLine1;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>addressCity</Name>
+				<Source><![CDATA[
+    [SysAppProjection("City")]
+    public str addressCity(str _value=city)
+    {
+        city = _value;
+        return city;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>addressState</Name>
+				<Source><![CDATA[
+    [SysAppProjection("State")]
+    public str addressState(str _value=state)
+    {
+        state = _value;
+        return state;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>addressZipCode</Name>
+				<Source><![CDATA[
+    [SysAppProjection("Zip code")]
+    public int addressZipCode(int _value=zipCode)
+    {
+        zipCode = _value;
+        return zipCode;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>addressCountryRegion</Name>
+				<Source><![CDATA[
+    [SysAppProjection("Country / region")]
+    public str addressCountryRegion(str _value=countryRegion)
+    {
+        countryRegion = _value;
+        return countryRegion;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>validate</Name>
+				<Source><![CDATA[
+    public boolean validate(SysAppResponse _response)
+    {
+        boolean validationPassed = true;
+
+        if (this.customerFirstName() == "")
+        {
+            //You can directly add messages to response or use info(), warning() and error() functions to log messages.
+            //Messages logged by infolog will also be captured and shown to mobile client
+            _response.addMessage(new SysAppResponseMessage("Customer first name should be specified", SysAppMessageType::Error));
+            validationPassed = false;
+        }
+
+        if (this.customerLastName() == "")
+        {
+            _response.addMessage(new SysAppResponseMessage("Customer last name should be specified", SysAppMessageType::Error));
+            validationPassed = false;
+        }
+
+        if (this.customerEmail() == "")
+        {
+            //Messages logged by infolog will also be captured and shown to mobile client
+            warning("EMail is not provided");
+            error("EMail is not provided");
+            info("EMail is not provided");
+            validationPassed = false;
+        }
+
+        return validationPassed;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>addCustomer</Name>
+				<Source><![CDATA[
+    public SysAppResponse addCustomer(SysAppEntityContext _entityContext, List _filterContextList)
+    {
+        SysAppResponse response = new SysAppResponse();
+        
+        if (this.validate(response))
+        {            
+            FMCustomer customerTable;
+            FMAddressTable addressTable;
+
+            ttsbegin;
+            customerTable.FirstName = this.customerFirstName();
+            customerTable.LastName = this.customerLastName();
+            customerTable.DriverLicense = this.driverLicenseNumber();
+            customerTable.Email = this.customerEmail();
+
+            addressTable.AddressLine1 = this.addressLine1();
+            addressTable.City = this.addressCity();
+            addressTable.State = this.addressState();
+            addressTable.ZipCode = this.addressZipCode();
+            addressTable.Country = this.addressCountryRegion();
+            addressTable.Insert();
+
+            customerTable.AddressID = addressTable.RecId;
+            customerTable.Insert();
+            ttscommit;
+
+            //Need to add a commit on the entity datasource. This records the recId of the entity comitted and it will be sent back to mobile client.
+            response.addCommit(SysAppEntityContext::constructFromBuffer(customerTable));
+        }
+
+        return response;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

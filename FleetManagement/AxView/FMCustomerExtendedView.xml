@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCustomerExtendedView</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMCustomerExtendedView extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>compColCustomerExtendedGroup</Name>
+				<Source><![CDATA[
+    private static str compColCustomerExtendedGroup()
+    {
+        str sReturn;
+
+        // Build the SQL command that generates the computed Column
+        sReturn = 'Group 1';
+        
+        return sReturn;
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>FirstName</Name>
+			<DataField>FirstName</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>LastName</Name>
+			<DataField>LastName</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>CustGroup</Name>
+			<DataField>Description</DataField>
+			<DataSource>FMCustGroup</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>AddressLine1</Name>
+			<DataField>AddressLine1</DataField>
+			<DataSource>FMAddressTable</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>AddressLine2</Name>
+			<DataField>AddressLine2</DataField>
+			<DataSource>FMAddressTable</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>City</Name>
+			<DataField>City</DataField>
+			<DataSource>FMAddressTable</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Country</Name>
+			<DataField>Country</DataField>
+			<DataSource>FMAddressTable</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>State</Name>
+			<DataField>State</DataField>
+			<DataSource>FMAddressTable</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ZipCode</Name>
+			<DataField>ZipCode</DataField>
+			<DataSource>FMAddressTable</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>CustomerAccountNo</Name>
+			<DataField>RecId</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+	</Fields>
+	<Indexes />
+	<Mappings />
+	<Relations />
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods />
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMCustomer</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMCustomer</Table>
+				<DataSources>
+					<AxQuerySimpleEmbeddedDataSource>
+						<Name>FMAddressTable</Name>
+						<DynamicFields>Yes</DynamicFields>
+						<Table>FMAddressTable</Table>
+						<DataSources />
+						<Fields />
+						<Ranges />
+						<Relations>
+							<AxQuerySimpleDataSourceRelation>
+								<Name>QueryDataSourceRelation1</Name>
+								<Field>AddressID</Field>
+								<JoinDataSource>FMCustomer</JoinDataSource>
+								<RelatedField>RecId</RelatedField>
+							</AxQuerySimpleDataSourceRelation>
+						</Relations>
+					</AxQuerySimpleEmbeddedDataSource>
+					<AxQuerySimpleEmbeddedDataSource>
+						<Name>FMCustGroup</Name>
+						<DynamicFields>Yes</DynamicFields>
+						<Table>FMCustGroup</Table>
+						<DataSources />
+						<Fields />
+						<Ranges />
+						<Relations>
+							<AxQuerySimpleDataSourceRelation>
+								<Name>QueryDataSourceRelation1</Name>
+								<Field>CustGroup</Field>
+								<JoinDataSource>FMCustomer</JoinDataSource>
+								<RelatedField>CustGroup</RelatedField>
+							</AxQuerySimpleDataSourceRelation>
+						</Relations>
+					</AxQuerySimpleEmbeddedDataSource>
+				</DataSources>
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxView>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxQuery xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxQuerySimple">
+	<Name>FMDyanmicRoleAssignmentWorkerPosition</Name>
+	<SourceCode>
+		<Methods>
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Query]
+public class FMDyanmicRoleAssignmentWorkerPosition extends QueryRun
+{
+}
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DataSources>
+		<AxQuerySimpleRootDataSource>
+			<Name>UserInfo_1</Name>
+			<DynamicFields>Yes</DynamicFields>
+			<Table>UserInfo</Table>
+			<DataSources>
+				<AxQuerySimpleEmbeddedDataSource>
+					<Name>DirPersonUser_1</Name>
+					<DynamicFields>Yes</DynamicFields>
+					<Table>DirPersonUser</Table>
+					<DataSources>
+						<AxQuerySimpleEmbeddedDataSource>
+							<Name>DirPerson_1</Name>
+							<DynamicFields>Yes</DynamicFields>
+							<Table>DirPerson</Table>
+							<DataSources>
+								<AxQuerySimpleEmbeddedDataSource>
+									<Name>FMWorker_1</Name>
+									<Table>FMWorker</Table>
+									<DataSources />
+									<Fields>
+										<AxQuerySimpleDataSourceField>
+											<Name>Person</Name>
+											<Field>Person</Field>
+										</AxQuerySimpleDataSourceField>
+										<AxQuerySimpleDataSourceField>
+											<Name>PersonnelNumber</Name>
+											<Field>PersonnelNumber</Field>
+										</AxQuerySimpleDataSourceField>
+										<AxQuerySimpleDataSourceField>
+											<Name>DEL_Shadow_DataAreaId</Name>
+											<Field>DEL_Shadow_DataAreaId</Field>
+										</AxQuerySimpleDataSourceField>
+										<AxQuerySimpleDataSourceField>
+											<Name>RecId</Name>
+											<Field>RecId</Field>
+										</AxQuerySimpleDataSourceField>
+										<AxQuerySimpleDataSourceField>
+											<Name>RecVersion</Name>
+											<Field>RecVersion</Field>
+										</AxQuerySimpleDataSourceField>
+										<AxQuerySimpleDataSourceField>
+											<Name>Partition</Name>
+											<Field>Partition</Field>
+										</AxQuerySimpleDataSourceField>
+										<AxQuerySimpleDataSourceField>
+											<Name>PositionValidFrom</Name>
+											<Field>PositionValidFrom</Field>
+										</AxQuerySimpleDataSourceField>
+										<AxQuerySimpleDataSourceField>
+											<Name>PositionValidTo</Name>
+											<Field>PositionValidTo</Field>
+										</AxQuerySimpleDataSourceField>
+										<AxQuerySimpleDataSourceField>
+											<Name>PositionId</Name>
+											<Field>PositionId</Field>
+										</AxQuerySimpleDataSourceField>
+										<AxQuerySimpleDataSourceField>
+											<Name>RelationshipGroup</Name>
+											<Field>RelationshipGroup</Field>
+										</AxQuerySimpleDataSourceField>
+										<AxQuerySimpleDataSourceField>
+											<Name>RelationshipType</Name>
+											<Field>RelationshipType</Field>
+										</AxQuerySimpleDataSourceField>
+									</Fields>
+									<Ranges />
+									<Relations>
+										<AxQuerySimpleDataSourceRelation>
+											<Name>QueryDataSourceRelation1</Name>
+											<Field>RecId</Field>
+											<JoinDataSource>DirPerson_1</JoinDataSource>
+											<RelatedField>Person</RelatedField>
+										</AxQuerySimpleDataSourceRelation>
+									</Relations>
+								</AxQuerySimpleEmbeddedDataSource>
+							</DataSources>
+							<Fields />
+							<Ranges />
+							<Relations>
+								<AxQuerySimpleDataSourceRelation>
+									<Name>PersonParty</Name>
+									<Field>PersonParty</Field>
+									<JoinDataSource>DirPersonUser_1</JoinDataSource>
+									<RelatedField>RecId</RelatedField>
+								</AxQuerySimpleDataSourceRelation>
+							</Relations>
+						</AxQuerySimpleEmbeddedDataSource>
+					</DataSources>
+					<Fields />
+					<Ranges />
+					<Relations>
+						<AxQuerySimpleDataSourceRelation>
+							<Name>id</Name>
+							<Field>id</Field>
+							<JoinDataSource>UserInfo_1</JoinDataSource>
+							<RelatedField>User</RelatedField>
+						</AxQuerySimpleDataSourceRelation>
+					</Relations>
+				</AxQuerySimpleEmbeddedDataSource>
+			</DataSources>
+			<Fields />
+			<Ranges />
+			<GroupBy />
+			<Having />
+			<OrderBy />
+		</AxQuerySimpleRootDataSource>
+	</DataSources>
+</AxQuery>

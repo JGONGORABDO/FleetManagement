@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMTotalsEngine</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[System.ComponentModel.Composition.ExportMetadataAttribute("TotalsEngine", "Default"),
+System.ComponentModel.Composition.ExportAttribute("Dynamics.AX.Application.FMTotalsEngineBase")]
+class FMTotalsEngine extends FMTotalsEngineBase
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>construct</Name>
+				<Source><![CDATA[
+    public static FMTotalsEngine construct()
+    {
+        FMTotalsEngine engine = new FMTotalsEngine();
+        return engine;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>calculateRentalVehicleRate</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Calculates the totals for the given rental. Does not persists result in DB, only updates valued in parameter buffer
+    /// </summary>
+    /// <param name = "_rental"></param>
+    public void calculateRentalVehicleRate(FMRental _rental)
+    {        
+        _rental.VehicleRateTotal = _rental.rentalLengthInDays() * _rental.VehicleRatePerDay;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>calculateDiscountedVehicleRateForPeriod</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// </summary>
+    /// <param name = "rental"></param>
+    /// <returns>The discounted vehicle rate</returns>
+    private real calculateDiscountedVehicleRateForPeriod(FMRental _rental)
+    {
+        real discountedVehicleRate;
+        int rentalPeriodInDays = _rental.rentalLengthInDays();
+
+        discountedVehicleRate = (rentalPeriodInDays div 7) * _rental.VehicleRatePerWeek + (rentalPeriodInDays mod 7) * _rental.VehicleRatePerDay;
+
+        return discountedVehicleRate;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>chargesTotals</Name>
+				<Source><![CDATA[
+    public FMChargesTotal chargesTotals(FMRental _rental)
+    {
+        FMRentalCharge  rentalCharge;
+
+        if (_rental.RentalId)
+        {
+            select firstonly sum(ExtendedAmount) from rentalCharge
+                where rentalCharge.RentalId == _rental.RentalId;
+        }
+
+        return rentalCharge.ExtendedAmount > 0 ? rentalCharge.ExtendedAmount : 0;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>totals</Name>
+				<Source><![CDATA[
+    public FMRentalTotal totals(FMRental _rental)
+    {
+        real discountedVehicleRate = this.calculateDiscountedVehicleRateForPeriod(_rental);
+        FMRentalTotal result = discountedVehicleRate + this.chargesTotals(_rental);
+
+        return result > 0 ? result : 0;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>savings</Name>
+				<Source><![CDATA[
+    public FMSavingsTotal savings(FMRental _rental)
+    {
+        real discountedVehicleRate = this.calculateDiscountedVehicleRateForPeriod(_rental);
+        return discountedVehicleRate - _rental.VehicleRateTotal;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

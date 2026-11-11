@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMSUV</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMSUV extends FMCarClass
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>doAnnualMaintenance</Name>
+				<Source><![CDATA[
+    public void doAnnualMaintenance()
+    {
+        info(strFmt('Carring out matainance for suv %1: checking turning radius %2', this.Vin, this.TurningRadius));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>insert</Name>
+				<Source><![CDATA[
+    public void insert()
+    {
+        super();
+
+        if (infolog.globalCache().get('FleetSample', 'InsertOrderInfo', false))
+        {
+            info(strFmt('%1 inserted: recID %2', Global::tableId2Name(this.TableId),this.RecId));
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FMSUVSafetyRating</Name>
+				<Source><![CDATA[
+    public FMSUVSafetyRating FMSUVSafetyRating(FMSUVSafetyRating _relatedTable = null)
+    {
+        if (prmIsDefault(_relatedTable))
+        {
+            return this.setLink('FMSUVSafetyRating');
+        }
+        else
+        {
+            // Bug 3135762: setLink does not seem to work
+            this.SUVSafetyRating = _relatedTable.RecId;
+            return this.setLink('FMSUVSafetyRating', _relatedTable);
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>@SYS172552</DeveloperDocumentation>
+	<Label>@FLM111</Label>
+	<SingularLabel>SUV</SingularLabel>
+	<Extends>FMCarClass</Extends>
+	<Modules>FleetManagement</Modules>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<SupportInheritance>Yes</SupportInheritance>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>SUVSafetyRating</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>GroundClearance</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>SUVSafetyRating</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ThirdRowCapacity</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>TurningRadius</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>GroundClearance</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMGroundClearance</ExtendedDataType>
+			<Label>@FLM318</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>SUVSafetyRating</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMSUVSafetyRatingRecId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>ThirdRowCapacity</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMThirdRowCapacity</ExtendedDataType>
+			<Label>@FLM169</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>TurningRadius</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMTurningRadius</ExtendedDataType>
+			<Label>@FLM170</Label>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes>
+		<AxTableIndex>
+			<Name>FMSUVSafetyRatingIdx</Name>
+			<AllowDuplicates>Yes</AllowDuplicates>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>SUVSafetyRating</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+	</Indexes>
+	<Mappings />
+	<Relations>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>FMCarClassSUV</Name>
+			<Cardinality>ZeroOne</Cardinality>
+			<RelatedTable>FMCarClass</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelationshipType>Specialization</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>RecId</Name>
+					<Field>RecId</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+			<Index>RecId</Index>
+		</AxTableRelation>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>FMSUVSafetyRating</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<CreateNavigationPropertyMethods>Yes</CreateNavigationPropertyMethods>
+			<RelatedTable>FMSUVSafetyRating</RelatedTable>
+			<RelatedTableCardinality>ZeroOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>SUVSafetyRating</Name>
+					<Field>SUVSafetyRating</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+			<Index>RecId</Index>
+		</AxTableRelation>
+	</Relations>
+	<StateMachines />
+</AxTable>

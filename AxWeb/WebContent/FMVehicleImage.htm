@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMVehicleImage</title>
+</head>
+<body>
+    <div id="FMVehicleImage">
+        <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageName: $field('Image','MakeModel'), ImageType: 'Base64', Height: 200, Width: 425"></span>
+        <div data-dyn-role="metaModel:'Group'" data-dyn-bind="Columns: '3', ArrangeMethod: 'Horizontal'">
+            <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageName: $field('Image','MakeModel'), ImageType: 'Base64', Height: 65, Width: 135"></span>
+            <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageName: $field('Image','MakeModel'), ImageType: 'Base64', Height: 65, Width: 135"></span>
+            <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageName: $field('Image','MakeModel'), ImageType: 'Base64', Height: 65, Width: 135"></span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMPaymentInformation</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMPaymentInformation extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>creditExpiration</Name>
+				<Source><![CDATA[
+    public display FMPaymentCreditExpiration creditExpiration()
+    {
+        return this.ExpirationMonth + "/" + int2str(this.ExpirationYear); 
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>validateField</Name>
+				<Source><![CDATA[
+    public boolean validateField(FieldId _fieldIdToCheck)
+    {
+        boolean ret;
+        int value;
+        int currentYear;
+
+        ret = super(_fieldIdToCheck);
+
+        if(ret)
+        {
+            switch (_fieldIdToCheck)
+            {
+                case fieldnum(FMPaymentInformation, CCN):
+                    if(str2int64(this.CCN) <= 0 || strlen(this.CCN) != 16) 
+                    {
+                        ret = checkFailed("Credit card must be a 16-digit number");
+                    }
+                    break; 
+
+                case fieldnum(FMPaymentInformation,CVV): 
+                    if(str2int64(this.CVV) <= 0 || strlen(this.CVV) != 3) 
+                    {
+                        ret = checkFailed("CVV mustbe a 3-digit number");
+                    }
+                    break;
+
+                case fieldnum(FMPaymentInformation, ExpirationMonth):
+                    value = str2int(this.ExpirationMonth); 
+                    if(value < 1 || value > 12) 
+                    {
+                        ret = checkFailed("Expiration month must be a valid month (1-12)");
+                    }
+                    break;
+
+                case fieldnum(FMPaymentInformation, ExpirationYear):                    
+                
+                    currentYear = DateTimeUtil::year(DateTimeUtil::getSystemDateTime());
+
+                    if(this.ExpirationYear < currentYear || this.ExpirationYear > currentYear+10)
+                    {
+                        ret = checkFailed("Expiration year must be between " + int2str(currentYear) + " and " + int2str(currentYear + 10));
+                    }
+                    break;
+
+            }
+        }
+
+        return ret;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>TODO</DeveloperDocumentation>
+	<Label>@FLM215</Label>
+	<TitleField1>Name</TitleField1>
+	<TitleField2>CCN</TitleField2>
+	<Modules>FleetManagement</Modules>
+	<ReplacementKey>NaturalKey</ReplacementKey>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>NameOnCard</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CCN</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CVV</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ExpirationMonth</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ExpirationYear</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Name</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>CustomerID</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Name</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>AddressID</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CCN</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CVV</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ExpirationMonth</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ExpirationYear</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>State</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>IsPrimary</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>NameOnCard</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>CustomerID</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMCustomerRecId</ExtendedDataType>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>Name</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMPaymentName</ExtendedDataType>
+			<Label>@FLM520</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>AddressID</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMAddressRecId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>CCN</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMPaymentCCN</ExtendedDataType>
+			<Label>@FLM216</Label>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>CVV</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMPaymentCVV</ExtendedDataType>
+			<Label>@FLM521</Label>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>ExpirationMonth</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMPaymentMonth</ExtendedDataType>
+			<Label>@FLM522</Label>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>ExpirationYear</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMPaymentExpirationYear</ExtendedDataType>
+			<Label>@FLM516</Label>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>State</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<Label>@FLM230</Label>
+			<EnumType>FMPaymentState</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>IsPrimary</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<Label>@FLM500</Label>
+			<EnumType>NoYes</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>NameOnCard</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMName</ExtendedDataType>
+			<Label>@FLM523</Label>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes>
+		<AxTableIndex>
+			<Name>NaturalKey</Name>
+			<AlternateKey>Yes</AlternateKey>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>CustomerID</DataField>
+				</AxTableIndexField>
+				<AxTableIndexField>
+					<DataField>CCN</DataField>
+				</AxTableIndexField>
+				<AxTableIndexField>
+					<DataField>Name</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+	</Indexes>
+	<Mappings />
+	<Relations>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>CustomerRelation</Name>
+			<Cardinality>ZeroOne</Cardinality>
+			<RelatedTable>FMCustomer</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>CustomerID</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+		</AxTableRelation>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>AddressRelation</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedTable>FMAddressTable</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>AddressID</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+		</AxTableRelation>
+	</Relations>
+	<StateMachines />
+</AxTable>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMEmployeeComments</title>
+</head>
+<body>
+    <div id="FMEmployeeComments">
+        <div data-dyn-role="metaModel: 'Toolbar'">
+            <div data-dyn-role="metaModel: 'ToolbarGroup'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Add', ImageType: 'Symbol', ImageName: 'New'"></button>
+            </div>
+        </div>
+        <div data-dyn-role="metaModel: 'List'">
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Value: $field('Employee'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('Comment')"></div>
+        </div>
+    </div>
+</body>
+</html>

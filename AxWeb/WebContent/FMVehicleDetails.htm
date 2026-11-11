@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMVehicleDetails</title>
+</head>
+<body>
+    <!-- Represents a page using a template with placeholders -->
+    <div id="FMVehicleDetails">
+        <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="Label: 'PRICE'">
+            <!--<div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Total price', Value: $format('${0}', FMVehicleListPageViewModel.calculateCostOfReservation($field('RatePerDay', 'Rate'))), AllowEdit:false"></div>-->
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Rate per day', Value: $field('RatePerDay', $model('Rate',$model('MakeModel'))), AllowEdit:false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Rate per week', Value: $field('RatePerWeek', $model('Rate',$model('MakeModel'))), AllowEdit:false"></div>
+        </div>
+        <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="Label: 'VEHICLE INFORMATION'">
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'VIN', Value: $field('VIN'), AllowEdit:false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Seats', Value: $field('SeatingCapacity'), AllowEdit:false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Number of doors', Value: $field('NumberOfDoors'), AllowEdit:false"></div>
+            <!-- Refactor later to use color enum correctly -->
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Colors Available', Value: $field('Color'), AllowEdit:false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Additional features', Value: $field('Note'), AllowEdit:false"></div>
+        </div>
+    </div>
+    <div data-dyn-script="FMVehicleListPage.js"></div>
+</body>
+</html>

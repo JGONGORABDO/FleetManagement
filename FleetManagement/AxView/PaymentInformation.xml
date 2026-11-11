@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>PaymentInformation</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class PaymentInformation extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>ValidatePaymentInformation</Name>
+				<Source><![CDATA[
+    /// <summary> 
+    /// OData Service Action to validate the payment information, updating its state after execution.
+    /// 
+    /// As an example of a stateful action, we are assuming that this action can only be done after validating
+    /// it is not already approved.  The second attribute being false means that only in certain states will this
+    /// action be exposed, and the thrid attribute provides the method to determine the state.
+    /// </summary>
+    [SysODataActionAttribute("Validate", true)]
+    public boolean ValidatePaymentInformation()
+    {
+        // Note, all actions are already wrapped in a transactions: no need to ttsbegin/commit or .Write()
+        if (!this.ValidateCanValidatePaymentInformation())
+        {
+            // The framework does not call the validate except when WCF Data Services is requesting information about 
+            // whether to expose the action publicly in metadata.  However, whether exposed or not, someone who knows
+            // the url to invoke the action and the parameters to pass in can ALWAYS invoke the action.  To prevent the 
+            // use of actions during invalid state, they should use their validate method again when the action is 
+            // executed and handle on bad state appropriately.  
+            return false;
+        }
+
+        this.State = FMPaymentState::Approved;
+        // Deliverable 3135766: plug into some more complex algorithm to approve the credit card
+        
+        return true; // return true if successful update
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ValidateCanValidatePaymentInformation</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Returns true if valid (State of the payment is set and is not already approved).  Otherwise, returns false if approved.
+    /// </summary>
+    public boolean ValidateCanValidatePaymentInformation()
+    {
+        // Because this could be a projection of only certain fields, first ensure that this field is actually set
+        //if (this.fieldState(fieldname2id(tablename2id("PaymentInformation"), "State")) != FieldState::NotSet)
+        // {
+        if (this.State != FMPaymentState::Approved)
+        {
+            return true;
+        }
+        // }
+        return false;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<CollectionName>AllPaymentInformation</CollectionName>
+	<IsPublic>Yes</IsPublic>
+	<Updatable>Yes</Updatable>
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>AddressID</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CustomerID</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CVV</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ExpirationMonth</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ExpirationYear</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>State</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>IsPrimary</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>CCN</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Name</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>AddressID</Name>
+			<DataField>AddressID</DataField>
+			<DataSource>FMPaymentInformation</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>CCN</Name>
+			<DataField>CCN</DataField>
+			<DataSource>FMPaymentInformation</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>CustomerID</Name>
+			<DataField>CustomerID</DataField>
+			<DataSource>FMPaymentInformation</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>CVV</Name>
+			<DataField>CVV</DataField>
+			<DataSource>FMPaymentInformation</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ExpirationMonth</Name>
+			<DataField>ExpirationMonth</DataField>
+			<DataSource>FMPaymentInformation</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ExpirationYear</Name>
+			<DataField>ExpirationYear</DataField>
+			<DataSource>FMPaymentInformation</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Name</Name>
+			<DataField>Name</DataField>
+			<DataSource>FMPaymentInformation</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>State</Name>
+			<DataField>State</DataField>
+			<DataSource>FMPaymentInformation</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>IsPrimary</Name>
+			<DataField>IsPrimary</DataField>
+			<DataSource>FMPaymentInformation</DataSource>
+		</AxViewField>
+	</Fields>
+	<Indexes />
+	<Mappings />
+	<Relations>
+		<AxViewRelation>
+			<Name>AddressRelation</Name>
+			<Cardinality>ExactlyOne</Cardinality>
+			<RelatedTable>Address</RelatedTable>
+			<RelatedTableCardinality>ZeroOne</RelatedTableCardinality>
+			<RelatedTableRole>PaymentAddress</RelatedTableRole>
+			<Role>PaymentInformation</Role>
+			<Constraints>
+				<AxViewRelationConstraint xmlns=""
+					i:type="AxViewRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>AddressID</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxViewRelationConstraint>
+			</Constraints>
+		</AxViewRelation>
+		<AxViewRelation>
+			<Name>CustomerRelation</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedTable>Customer</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelatedTableRole>Customer</RelatedTableRole>
+			<Role>AllPaymentInformation</Role>
+			<Constraints>
+				<AxViewRelationConstraint xmlns=""
+					i:type="AxViewRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>CustomerID</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxViewRelationConstraint>
+			</Constraints>
+		</AxViewRelation>
+	</Relations>
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods />
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMPaymentInformation</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMPaymentInformation</Table>
+				<DataSources />
+				<DerivedDataSources />
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxView>

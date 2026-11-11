@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Ylläpidä tietojen hallinnan pääyksikön tietoja 
+DataManagementFleetMasterEntitiesView=Näytä tietojen hallinnan pääyksikön tiedot 

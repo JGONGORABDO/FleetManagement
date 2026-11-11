@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<z:anyType xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxCompilerMetadata" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+	<IsPublic>true</IsPublic>
+	<Methods>
+		<Method>
+			<Name>buildReportDrillThru</Name>
+			<IsStatic>true</IsStatic>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SubscribesTo</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<Type>Intrinsic</Type>
+							<TypeValue>classstr</TypeValue>
+							<AdditionalData>
+								<AxAttributeParameter>
+									<TypeValue>PowerBIReportControl</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<AdditionalData />
+								</AxAttributeParameter>
+							</AdditionalData>
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<Type>Intrinsic</Type>
+							<TypeValue>delegatestr</TypeValue>
+							<AdditionalData>
+								<AxAttributeParameter>
+									<TypeValue>PowerBIReportControl</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<TypeValue>buildReportDrillThru</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<AdditionalData />
+								</AxAttributeParameter>
+							</AdditionalData>
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>PBIReportSelectedData</TypeName>
+					<Name>data</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<TypeName></TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>onClickFMPBIWorkspaces</Name>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>PBIReportSelectedData</TypeName>
+					<Name>_data</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<TypeName></TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>onClickFMPBIReports</Name>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>PBIReportSelectedData</TypeName>
+					<Name>_data</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<TypeName></TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>getSelectedValues</Name>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>PBIReportSelectedData</TypeName>
+					<Name>_data</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>List</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>name</Name>
+			<Visibility>Protected</Visibility>
+			<ReturnType>
+				<Type>String</Type>
+				<TypeName></TypeName>
+			</ReturnType>
+		</Method>
+	</Methods>
+</z:anyType>

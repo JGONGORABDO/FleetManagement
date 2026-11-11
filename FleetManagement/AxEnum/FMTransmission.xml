@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxEnum xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMTransmission</Name>
+	<Label>@FLM134</Label>
+	<EnumValues>
+		<AxEnumValue>
+			<Name>Auto</Name>
+			<Label>@FLM135</Label>
+			<Value>1</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>Manual</Name>
+			<Label>@FLM136</Label>
+			<Value>2</Value>
+		</AxEnumValue>
+	</EnumValues>
+</AxEnum>

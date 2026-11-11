@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxQuery xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxQuerySimple">
+	<Name>FMVehicles</Name>
+	<SourceCode>
+		<Methods>
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Query]
+public class FMVehicles extends QueryRun
+{
+}
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DataSources>
+		<AxQuerySimpleRootDataSource>
+			<Name>FMVehicle_1</Name>
+			<Table>FMVehicle</Table>
+			<DataSources>
+				<AxQuerySimpleEmbeddedDataSource>
+					<Name>FMRental_1</Name>
+					<DynamicFields>Yes</DynamicFields>
+					<Table>FMRental</Table>
+					<DataSources />
+					<Fields />
+					<Ranges />
+					<JoinMode>OuterJoin</JoinMode>
+					<Relations>
+						<AxQuerySimpleDataSourceRelation>
+							<Name>Relation</Name>
+							<JoinDataSource>FMVehicle_1</JoinDataSource>
+							<JoinRelationName>FMVehicle</JoinRelationName>
+						</AxQuerySimpleDataSourceRelation>
+					</Relations>
+				</AxQuerySimpleEmbeddedDataSource>
+			</DataSources>
+			<Fields>
+				<AxQuerySimpleDataSourceField>
+					<Name>Color</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>Color</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>Description</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>Description</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>FuelType</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>FuelType</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>GPSEnabled</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>GPSEnabled</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>GrossVehicleWeight</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>GrossVehicleWeight</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>InstanceRelationType</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>InstanceRelationType</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>Mileage</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>Mileage</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>MPG</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>MPG</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>RecId</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>RecId</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>recVersion</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>recVersion</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>relationType</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>relationType</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>Transmission</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>Transmission</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>VehicleId</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>VehicleId</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>VIN</Name>
+					<DerivedTable>FMVehicle</DerivedTable>
+					<Field>VIN</Field>
+				</AxQuerySimpleDataSourceField>
+			</Fields>
+			<Ranges />
+			<GroupBy />
+			<Having />
+			<OrderBy />
+		</AxQuerySimpleRootDataSource>
+	</DataSources>
+</AxQuery>

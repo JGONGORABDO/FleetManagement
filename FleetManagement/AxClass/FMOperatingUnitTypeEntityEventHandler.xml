@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMOperatingUnitTypeEntityEventHandler</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+/// The <c>FMOperatingUnitTypeEntityEventHandler</c> class manages entity events for operating unit types.
+/// </summary>
+public class FMOperatingUnitTypeEntityEventHandler
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>OMOperatingUnitEntityHelper_gettingOperatingUnitTypeStrMap</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Handles getting the fleet management operating unit type entity value string and operating unit type enum value pairs.
+    /// </summary>
+    /// <param name="_operatingUnitTypeStrMap">
+    /// The <c>Map</c> instance containing the operating unit type entity value string and operating unit type enum value pairs.
+    /// </param>
+    [SubscribesTo(classStr(OMOperatingUnitEntityHelper), staticDelegateStr(OMOperatingUnitEntityHelper, gettingOperatingUnitTypeStrMap))]
+    public static void OMOperatingUnitEntityHelper_gettingOperatingUnitTypeStrMap(Map _operatingUnitTypeStrMap)
+    {
+        if (_operatingUnitTypeStrMap)
+        {
+            _operatingUnitTypeStrMap.insert('Branch', OMOperatingUnitType::OMBranchFM);
+            _operatingUnitTypeStrMap.insert('RentalLocation', OMOperatingUnitType::OMRentalLocationFM);
+            _operatingUnitTypeStrMap.insert('Region', OMOperatingUnitType::OMRegionFM);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DirPartyBaseEntity_onMappingEntityToDataSource</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Handles the <c>DirPartyBaseEntity</c> entity mapping entity to data source event.
+    /// </summary>
+    /// <param name="_sender">
+    /// The entity instance.
+    /// </param>
+    /// <param name="_eventArgs">
+    /// The data event args.
+    /// </param>
+    [DataEventHandler(tableStr(DirPartyBaseEntity), DataEventType::MappingEntityToDataSource)]
+    public static void DirPartyBaseEntity_onMappingEntityToDataSource(Common _sender, DataEventArgs _eventArgs)
+    {
+        DataEntityContextEventArgs eventArgs = _eventArgs as DataEntityContextEventArgs;
+        DataEntityDataSourceRuntimeContext dataSourceCtx = eventArgs.parmEntityDataSourceContext();
+
+        if (dataSourceCtx.name() == dataEntityDataSourceStr(DirPartyBaseEntity, DirPartyTable))
+        {
+            DirPartyBaseEntity dirPartyBaseEntity = _sender as DirPartyBaseEntity;
+
+            if (dirPartyBaseEntity.PartyType == DirUtility::PARTYTYPE_OPERATINGUNIT
+                && dirPartyBaseEntity.OperatingUnitType == OMOperatingUnitType::None
+                && dirPartyBaseEntity.OperatingUnitTypeStr != '')
+            {
+                OMOperatingUnitType operatingUnitType = OMOperatingUnitEntityHelper::getOperatingUnitTypeForTypeStr(dirPartyBaseEntity.OperatingUnitTypeStr);
+
+                if (operatingUnitType && operatingUnitType != OMOperatingUnitType::None)
+                {
+                    dirPartyBaseEntity.OperatingUnitType = operatingUnitType;
+                }
+            }
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>NumberSequencesReferenceEntity_onMappingEntityToDataSource</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Handles the <c>NumberSequencesReferenceEntity</c> entity mapping entity to data source event.
+    /// </summary>
+    /// <param name="_sender">
+    /// The entity instance.
+    /// </param>
+    /// <param name="_eventArgs">
+    /// The data event args.
+    /// </param>
+    [DataEventHandler(tableStr(NumberSequencesReferenceEntity), DataEventType::MappingEntityToDataSource)]
+    public static void NumberSequencesReferenceEntity_onMappingEntityToDataSource(Common _sender, DataEventArgs _eventArgs)
+    {
+        DataEntityContextEventArgs entityContextEventArgs = _eventArgs as DataEntityContextEventArgs;
+        DataEntityRuntimeContext entityCtx = entityContextEventArgs.parmEntityContext();
+        DataEntityDataSourceRuntimeContext dataSourceCtx = entityContextEventArgs.parmEntityDataSourceContext();
+        
+        if (entityCtx.getDatabaseOperation() == DataEntityDatabaseOperation::Insert 
+            || entityCtx.getDatabaseOperation() == DataEntityDatabaseOperation::Update)
+        {
+            if (dataSourceCtx.name() == dataEntityDataSourceStr(NumberSequencesReferenceEntity, NumberSequenceScope))
+            {
+                NumberSequencesReferenceEntity numberSequencesReferenceEntity = _sender as NumberSequencesReferenceEntity;
+
+                if (numberSequencesReferenceEntity.ScopeType == NumberSequenceType::OperatingUnitType)
+                {
+                    OMOperatingUnitType operatingUnitType = OMOperatingUnitEntityHelper::getOperatingUnitTypeForTypeStr(numberSequencesReferenceEntity.ScopeValue);
+
+                    if (operatingUnitType && operatingUnitType != OMOperatingUnitType::None)
+                    {
+                        NumberSequenceScope numberSequenceScope = dataSourceCtx.getBuffer() as NumberSequenceScope;
+                        numberSequenceScope.OperatingUnitType = operatingUnitType;
+                    }
+                }
+            }
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

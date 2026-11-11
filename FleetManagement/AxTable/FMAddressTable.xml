@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMAddressTable</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMAddressTable extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>cityStateZip</Name>
+				<Source><![CDATA[
+    public display str cityStateZip()
+    {     
+        return this.City + " " + this.State + " " + int2str(this.ZipCode); 
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>combinedAddress</Name>
+				<Source><![CDATA[
+    public display str combinedAddress()
+    {
+        return this.AddressLine1 + " " + this.AddressLine2; 
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FullAddress</Name>
+				<Source><![CDATA[
+    public display str FullAddress()
+    {
+        return this.AddressLine1 + " " + this.AddressLine2 + " " + this.City + " " + this.State + " " + int2Str(this.ZipCode) + " " + this.Country;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>Contains the customer addresses</DeveloperDocumentation>
+	<TitleField1>AddressLine1</TitleField1>
+	<TitleField2>City</TitleField2>
+	<Modules>FleetManagement</Modules>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>AddressLine1</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>AddressLine2</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>City</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>State</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ZipCode</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Country</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>AddressLine1</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>AddressLine2</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>City</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>State</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ZipCode</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Country</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>AddressLine1</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>AddressLine2</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>City</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>State</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Country</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ZipCode</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>AddressLine1</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMAddress</ExtendedDataType>
+			<Label>@SYS119524</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>AddressLine2</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMAddress</ExtendedDataType>
+			<Label>@SYS119525</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>City</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMCity</ExtendedDataType>
+			<Label>@SYS129977</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>State</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMState</ExtendedDataType>
+			<Label>@SYS21924</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>ZipCode</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMZipCode</ExtendedDataType>
+			<Label>@SYS113530</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>Country</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMCountry</ExtendedDataType>
+			<Label>@SYS120586</Label>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes />
+	<Mappings />
+	<Relations />
+	<StateMachines />
+</AxTable>

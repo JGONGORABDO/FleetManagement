@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMPBIReportsHandler</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMPBIReportsHandler
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>buildReportDrillThru</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// The <c>FMPBIReportsHandler</c> class is the interaction handler for the Fleet Management Analytical Workspaces & Reports
+    /// </summary>
+    [SubscribesTo(classstr(PowerBIReportControl), delegatestr(PowerBIReportControl, buildReportDrillThru))]
+    public static void buildReportDrillThru(PBIReportSelectedData data)
+    {
+        // validate external input
+        if (!data)
+        {
+            return;
+        }
+
+        // handle the user navigations
+        FMPBIReportsHandler pbiReportsHandler = new FMPBIReportsHandler();
+        switch (data.report().displayName())
+        {
+            case 'FMPBIReports':                // FMPBIReports interactions
+                pbiReportsHandler.onClickFMPBIReports(data);
+                break;
+            case 'FMPBIWorkspaces':             // FMPBIWorkspaces interactions
+                pbiReportsHandler.onClickFMPBIWorkspaces(data);
+                break;
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>onClickFMPBIWorkspaces</Name>
+				<Source><![CDATA[
+    private void onClickFMPBIWorkspaces(PBIReportSelectedData _data)
+    {
+        // get the report filters based on selection context
+        List selectedValues = this.getSelectedValues(_data);
+
+        // select the target based on the visual
+        MenuItemNameDisplay menuItemReport;
+        switch (_data.visual().title())
+        {
+            case 'TOTAL REVENUE by CHARGE TYPE':
+                menuItemReport = menuItemDisplayStr('FMRevenueAnalytics');
+                break;
+            case 'TOTAL REVENUE by CUSTOMER':
+                menuItemReport = menuItemDisplayStr('FMCustomerAnalytics');
+                break;
+            default:
+                // no navigation associated with selected visual
+                return;
+        }
+        
+        // navigate to target form
+        Args args = new Args();
+        args.caller(this);
+        args.object(selectedValues);
+        new MenuFunction(menuItemReport, MenuItemType::Display).run(args);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>onClickFMPBIReports</Name>
+				<Source><![CDATA[
+    private void onClickFMPBIReports(PBIReportSelectedData _data)
+    {
+        // get the report filters based on selection context
+        List selectedValues = this.getSelectedValues(_data);
+
+        // select the target based on the visual
+        switch (_data.visual().title())
+        {
+            case 'Open customer details':
+                // navigate to target form
+                Args args = new Args();
+                args.caller(this);
+
+                DirPartyTable dirParty;
+                if (!selectedValues.empty())
+                {
+                    ListEnumerator values = selectedValues.getEnumerator();
+                    if (values.moveNext())
+                    {
+                        select * from dirParty where dirParty.Name like values.current();
+                        if (dirParty)
+                        {
+                            args.record(dirParty);
+                        }
+                    }
+                }
+                new MenuFunction('CustTableListPage', MenuItemType::Display).run(args);
+                break;
+        }
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getSelectedValues</Name>
+				<Source><![CDATA[
+    private List getSelectedValues(PBIReportSelectedData _data)
+    {
+        List selectedValues = new List(Types::String);
+        if (_data && _data.dataPoints())
+        {
+            ListEnumerator enumDataPoints = _data.dataPoints().getEnumerator();
+            while (enumDataPoints.moveNext())
+            {
+                // access the data point(s) clicked by the user
+                PBIReportSelectedDataPoint pbiDataPoint = enumDataPoints.current();
+                List identities = pbiDataPoint.identities();
+                if (identities)
+                {
+                    // access the identity(s) of the selected data point
+                    ListEnumerator enumIdentities = identities.getEnumerator();
+                    while (enumIdentities.moveNext())
+                    {
+                        // capture value associated with selected data point
+                        PBIReportSelectedDataPointIdentity dataPointIdentity = enumIdentities.current();                        
+                        selectedValues.addEnd(dataPointIdentity.identityEquals());
+                    }
+                }
+            }
+        }
+
+        return selectedValues;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>name</Name>
+				<Source><![CDATA[
+    // method referenced by target form
+    protected str name()
+    {
+        return formStr(DirPartyTable);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

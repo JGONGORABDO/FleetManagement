@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMCompanionWorkspace</title>
+</head>
+<body>
+    <link data-dyn-css="FMCompanion.css" rel="stylesheet" type="text/css" />
+    <div id="FMCompanion" data-dyn-role="metaModel: 'Form'" data-dyn-bind="Columns: '1', ArrangeMethod: 'Auto'" data-dyn-context="$dyn.OData.CreateEndpoint('data/service.svc/')">
+        <div style="width: 100%;" data-dyn-role="metaModel: { Type: 'Tab', Style: 'Panorama'}" data-dyn-bind="ShowHeader: true, ExtendedStyle: 'panoramaBody'">
+            <div class="landingPage" data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Columns: '1', ArrangeMethod: 'Vertical'">
+                <div class="landingPage-content">
+                    <div class="landingPage-tile">
+                        <div class="landingPage-tile-count" data-dyn-bind="text: $count($models('Customers'))"></div>
+                        <div class="landingPage-title-label">People expected today</div>
+                        <div class="landingPage-tile-updated">
+                            <span class="landingPage-tile-updated-label">Last updated: </span>
+                            <span class="landingPage-tile-updated-value">now</span>
+                        </div>
+                    </div>
+                    <div class="landingPage-chart-container">
+                        <!-- TODO: Shouldn't need inline style -->
+                        <div class="landingPage-chart" style="width: 360px; height: 360px" data-dyn-bind="pieChart: {
+                            title: {
+                                text: 'ALL VEHICLES - AVAILABLITY',
+                            },
+                            series: [{
+                                name: '# of vehicles',
+                                data: [
+                                    ['Rented', $value($count($models('Customers')))],
+                                    ['Maintenance', 8],
+                                    ['Available', 45],
+                                ]
+                            }]
+                        }"></div>
+                    </div>
+                </div>
+            </div>
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="ExtendedStyle: 'landingDetails', Label: 'My customers', ArrangeMethod: 'HorizontalWrap'">
+                <div class="customerCard" data-dyn-bind="click: $dialog({templateId: 'FMCompNewReservationDialog', resourceBundle: 'FMCompNewReservationDialog'}, $create('Customers'))">
+                    <div class="details">
+                        <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: 'Add customer'"></div>
+                    </div>
+                </div>
+                <div data-dyn-inline="true" data-dyn-bind="foreach: $models('Customers')">
+                    <div class="customerCard" data-dyn-bind="extendedStyle: $dyn.value($field('LastName')) ? ($dyn.value($field('LastName')).toString().startsWith('S') ? 'red' : ( $dyn.value($field('FirstName')).toString().startsWith('A') ? 'gold' : 'blue')) : 'blue', click: $navigate({templateId: 'FMCompCustomerHub', resourceBundle: 'FMCompCustomerHub'},$edit($data))" data-dyn-context="$dyn.clientForm.viewModel($data)">
+                        <div class="details">
+                            <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageType: 'URL', ImageName: $field('Thumbnail')"></span>
+                            <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $value($field('FirstName')) + ' ' + $value($field('LastName'))"></div>
+                        </div>
+                    </div>
+                </div>
+                <div data-dyn-template="templateId: 'Card', resourceBundle: 'Card'"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

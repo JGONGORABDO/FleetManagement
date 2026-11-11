@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Διατήρηση των κύριων δεδομένων οντότητας για διαχείριση δεδομένων 
+DataManagementFleetMasterEntitiesView=Προβολή των κύριων δεδομένων οντότητας για διαχείριση δεδομένων 

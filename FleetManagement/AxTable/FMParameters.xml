@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMParameters</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMParameters extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>find</Name>
+				<Source><![CDATA[
+    public static FMParameters find(boolean _forUpdate = false)
+    {
+        FMParameters result;
+
+        result.selectForUpdate(_forUpdate);
+
+        select firstonly * from result;
+
+        if (!result)
+        {
+            ttsbegin;
+            result.clear();
+            result.initDefault();
+            result.insert();
+            ttscommit;
+
+            result.selectForUpdate(_forUpdate);
+            select firstonly * from result;
+        }
+
+        return result;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>initDefault</Name>
+				<Source><![CDATA[
+    private void initDefault()
+    {
+        // The value in TotalsEngine field has to match one of the values
+        // from the System.ComponentModel.Composition.ExportMetadataAttribute on the totals classes
+        this.TotalsEngine = "Default";
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>Contains Fleet management parameters</DeveloperDocumentation>
+	<TableGroup>Parameter</TableGroup>
+	<CacheLookup>EntireTable</CacheLookup>
+	<Modules>FleetManagement</Modules>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>TotalsEngine</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>TotalsEngine</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<StringSize>40</StringSize>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes />
+	<Mappings />
+	<Relations />
+	<StateMachines />
+</AxTable>

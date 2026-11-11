@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hub</title>
+</head>
+<body>
+    <!-- The hub is a resource bundle that container a 
+        - hub extended style (a css stylesheet called hub.css and a JS stylesheet called hub.js)
+        - hub page template that exposes the following placeholders:
+            hubCaption - Represents the page's caption or area name such as the customer area.
+            hubTitle - Represents the title describes the context of the form such as a customer name.
+            hubMasterList - TODO: Will be added in the future
+            hubDetails (multiple allowed) - A hub has elements which represent the main content of the hub.
+    -->
+    <div id="hub" class="hub" data-dyn-host>
+        <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="ExtendedStyle: 'titleGroup'">
+            <div class="formCaption">
+                <div data-dyn-content="replace: '.hubCaption'"></div>
+            </div>
+            <div class="titleField">
+                <div data-dyn-content="replace: '.hubTitle'"></div>
+            </div>
+        </div>
+        <div data-dyn-role="metaModel: { Type: 'Tab', Style: 'Panorama'}" data-dyn-bind="ShowHeader: true, ExtendedStyle: 'hubPanoramaBody'">
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Visible: false, ArrangeMethod: 'Vertical', ExtendedStyle: 'hubListContainer', Label: $('.hubMasterList', this).attr('aria-label')">
+                 <div data-dyn-content="replace: '.hubMasterList'"></div>
+            </div>
+            <!-- Wraps each hub element with a panorama item. -->
+            <div data-dyn-content="foreach: '.hubDetails'">
+                <!-- Usage of $('.hubDetails', this).attr('aria-label') may imply that this is not a modeled template -->
+                <!-- TODO: What if the title changes (or is differed) Should this be obserable? (which probably is not by default for this scenario) -->
+                <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="ArrangeMethod: 'Vertical', Label: $('.hubDetails', this).attr('aria-label')">
+                    <div data-dyn-content="replace: $content"></div>
+                </div>
+            </div>
+        </div>
+        <div data-dyn-role="metaModel: 'ActionPane'">
+            <div data-dyn-role="metaModel: 'ButtonGroup'" data-dyn-bind="ExtendedStyle: 'mainActionPaneButton'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Edit', ImageType: 'Symbol', ImageName: 'Edit'"></button>
+                <!-- TODO: Investigate the 'slow' animation in the context of style -->
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Show List', ImageType: 'Symbol', ImageName: 'ShowList', ActionCommand: function() { $('.hubListContainer').toggle('slow') }"></button>
+            </div>
+        </div>
+    </div>
+    <div data-dyn-script="hub.js"></div>
+    <link data-dyn-css="hub.css" rel="stylesheet" type="text/css" />
+</body>
+</html>

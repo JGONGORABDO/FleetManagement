@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxSecurityPolicy xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMSelfServ</Name>
+	<ConstrainedTable>Yes</ConstrainedTable>
+	<Enabled>No</Enabled>
+	<Label>@FLM235</Label>
+	<PrimaryTable>FMRental</PrimaryTable>
+	<Query>fmselfServ</Query>
+	<ConstrainedTables>
+		<AxSecurityPolicyConstrainedEntity xmlns=""
+			i:type="AxSecurityPolicyConstrainedTable">
+			<Name>FMCustomer</Name>
+			<ConstrainedTables />
+			<TableRelation>FMCustomer</TableRelation>
+		</AxSecurityPolicyConstrainedEntity>
+		<AxSecurityPolicyConstrainedEntity xmlns=""
+			i:type="AxSecurityPolicyConstrainedTable">
+			<Name>FMRentalCharge</Name>
+			<ConstrainedTables />
+			<TableRelation>FMRental</TableRelation>
+		</AxSecurityPolicyConstrainedEntity>
+		<AxSecurityPolicyConstrainedEntity xmlns=""
+			i:type="AxSecurityPolicyConstrainedTable">
+			<Name>FMVehicle</Name>
+			<ConstrainedTables />
+			<TableRelation>FMVehicle</TableRelation>
+		</AxSecurityPolicyConstrainedEntity>
+	</ConstrainedTables>
+</AxSecurityPolicy>

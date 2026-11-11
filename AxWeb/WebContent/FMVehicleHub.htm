@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMVehicleHub</title>
+</head>
+<body>
+    <!-- Represents a page using a template with placeholders -->
+    <div id="FMVehicleHub" data-dyn-template="templateId: 'hub', resourceBundle: 'hub'" data-dyn-role="metaModel: 'Form'" data-dyn-context="$dyn.OData.CreateEndpoint('data/service.svc/')">
+        <div class="hubTitle" data-dyn-role="metaModel: 'Context'" data-dyn-context="$selected('Vehicles')">
+            <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('Description')"></div>
+        </div>
+        <div class="hubMasterList" aria-label="Vehicle Information" data-dyn-role="metaModel: 'List'" data-dyn-bind="DataSource: 'Vehicles'">
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Vehicle Id', Value: $field('VehicleId'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Description', Value: $field('Description'), AllowEdit: false"></div>
+        </div>
+        <div class="hubDetails" data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMVehicleImage', ResourceBundle: 'FMVehicleImage'}" data-dyn-context="$selected('Vehicles')"></div>
+        <div class="hubDetails" aria-label="Details" data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMVehicleDetails', ResourceBundle: 'FMVehicleDetails'}" data-dyn-context="$selected('Vehicles')"></div>
+        <div class="hubDetails" aria-label="Performance" data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMVehiclePerformance', ResourceBundle: 'FMVehiclePerformance'}" data-dyn-context="$selected('Vehicles')"></div>
+        <div data-dyn-role="metaModel: 'ActionPane'">
+            <div data-dyn-role="metaModel: 'ButtonGroup'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Select vehicle', ImageType: 'Symbol', ImageName: 'Edit', ActionCommand: $navigate({templateId: 'FMReservationHub', resourceBundle: 'FMReservationHub'})"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

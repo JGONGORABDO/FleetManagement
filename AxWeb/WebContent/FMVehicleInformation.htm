@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMVehicleInformation</title>
+</head>
+<body>
+    <div id="FMVehicleInformation">
+        <!-- $dyn.clientForm.viewModel($model('Vehicle', $model('Reservations'))) -->
+        <div data-dyn-role="metaModel: 'Toolbar'">
+            <div data-dyn-role="metaModel: 'ToolbarGroup'">
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Select vehicle', ActionCommand: $navigate({templateId: 'FMVehicleListPage', resourceBundle: 'FMVehicleListPage'})"></button>
+            </div>
+        </div>
+        <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="Label: 'SELECTED VEHICLE'">
+            <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('Description', 'Vehicle')"></div>
+            <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageName: $field('Image', $model('MakeModel', $model('Vehicle'))), ImageType: 'Base64', Height: 110, Width: 220"></span>
+            <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="Columns: '3', ArrangeMethod:'Horizontal'">
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Rate per day', Value: $field('RatePerDay', $model('Rate', $model('MakeModel', $model('Vehicle')))), AllowEdit:false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'VIN', Value: $field('VIN', 'Vehicle'), AllowEdit:false"></div>
+            </div>
+        </div>
+        <!-- Dynamically adding the Card stylesheet -->
+        <div data-dyn-template="templateId: 'Card', resourceBundle: 'Card'"></div>
+    </div>
+</body>
+</html>

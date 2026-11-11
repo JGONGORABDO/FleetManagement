@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AxLabelFile xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>FLM_zh-Hant</Name>
+  <LabelContentFileName>FLM.zh-Hant.label.txt</LabelContentFileName>
+  <LabelFileId>FLM</LabelFileId>
+  <Language>zh-Hant</Language>
+  <RelativeUriInModelStore>FleetManagement\FleetManagement\AxLabelFile\LabelResources\zh-Hant\FLM.zh-Hant.label.txt</RelativeUriInModelStore>
+</AxLabelFile>

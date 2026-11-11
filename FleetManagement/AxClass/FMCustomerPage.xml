@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCustomerPage</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[SysAppEntity(tableStr(FMCustomer), methodStr(FMCustomerPage, recId))]
+class FMCustomerPage
+{
+    protected int64 recIdInternal;
+    
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>recId</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, RecId), "RecId")]
+    public int64 recId(int64 _value=recIdInternal)
+    {
+        recIdInternal = _value;
+        return recIdInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>deleteCustomer</Name>
+				<Source><![CDATA[
+    public static SysAppResponse deleteCustomer(SysAppEntityContext _entityContext, List _filterContextList)
+    {
+        SysAppResponse response = new SysAppResponse();
+        
+        if (_entityContext.entityId())
+        {
+            int64 recIdPassed = str2Int64(_entityContext.entityId());
+            FMCustomer customer;
+            FMAddressTable address;
+
+            ttsbegin;
+            select * from customer
+                where customer.RecId == recIdPassed;
+
+            if (customer.RecId)
+            {
+                delete_from address
+                    where address.RecId == customer.AddressId;
+
+                delete_from customer
+                    where Customer.RecId == recIdPassed;
+            }
+            ttscommit;
+
+            response.addCommit(_entityContext);
+        }
+
+        return response;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

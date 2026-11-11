@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMChargeType</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMChargeType extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>insert</Name>
+				<Source><![CDATA[
+    public void insert()
+    {
+        super();
+        if (infolog.globalCache().get('FleetSample', 'InsertOrderInfo', false))
+        {
+            info(strFmt('%1 inserted: recID %2', Global::tableId2Name(this.TableId),this.RecId));
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>find</Name>
+				<Source><![CDATA[
+    public static FMChargeType find(FMChargeTypeId _chargeTypeId, boolean _forupdate = false)
+    {
+        FMChargeType result;
+
+        result.selectForUpdate(_forupdate);
+        
+        select firstonly result where result.ChargeType == _chargeTypeId;
+
+        return result;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>accessoryImage</Name>
+				<Source><![CDATA[
+    public display container accessoryImage()
+    {
+        ImageReference imgRef;
+        container imgContainer = this.Image;
+
+        if(imgContainer == connull())
+        {
+            imgRef = ImageReference::constructForSymbol("Tag");
+            imgContainer = imgRef.pack();
+        }
+
+        return imgContainer;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>@SYS172552</DeveloperDocumentation>
+	<Label>@FLM162</Label>
+	<SingularLabel>Charge type</SingularLabel>
+	<TableGroup>Reference</TableGroup>
+	<TitleField1>ChargeType</TitleField1>
+	<TitleField2>Description</TitleField2>
+	<CacheLookup>EntireTable</CacheLookup>
+	<Modules>FleetManagement</Modules>
+	<ReplacementKey>ChargeType</ReplacementKey>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>ChargeType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Description</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>PerUnitAmount</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>ChargeType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Description</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Image</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>PerUnitAmount</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>DefaultQuantity</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>ChargeType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Description</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>ChargeType</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>ChargeType</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMChargeTypeId</ExtendedDataType>
+			<Label>@FLM299</Label>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>Description</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMDescription</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldContainer">
+			<Name>Image</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Bitmap</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>PerUnitAmount</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMRate</ExtendedDataType>
+			<Label>@SYS23163</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>DefaultQuantity</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMQuantity</ExtendedDataType>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes>
+		<AxTableIndex>
+			<Name>ChargeType</Name>
+			<AlternateKey>Yes</AlternateKey>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>ChargeType</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+	</Indexes>
+	<Mappings />
+	<Relations />
+	<StateMachines />
+</AxTable>

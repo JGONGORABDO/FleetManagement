@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehicle</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public abstract class FMVehicle extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>initValue</Name>
+				<Source><![CDATA[
+    public void initValue()
+    {
+        //this.setDisplayRelationType();
+
+        super();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>insert</Name>
+				<Source><![CDATA[
+    public void insert()
+    {
+
+        this.setDisplayRelationType();
+
+        super();
+
+        if (infolog.globalCache().get('FleetSample', 'InsertOrderInfo', false))
+        {
+            info(strFmt('%1 inserted: recID %2', Global::tableId2Name(this.TableId),this.RecId));
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>setDisplayRelationType</Name>
+				<Source><![CDATA[
+    private void setDisplayRelationType()
+    {
+        DictEnum enumType = new DictEnum(enumNum(FMVehicle_DisplayRelationType));
+        int enumValue;
+
+        if (this.DisplayRelationType != FMVehicle_DisplayRelationType::Unknown)
+        {
+            return;
+        }
+
+        enumValue = enumType.symbol2Value(this.getInstanceRelationType());
+        if (enumValue == 255) // symbol2Value returns 255 if cannot convert
+        {
+            throw error(strFmt('No %1 enum element found for EnumValue %2',
+                enumStr(FMVehicle_DisplayRelationType),
+                this.getInstanceRelationType()));
+        }
+        else
+        {
+            this.DisplayRelationType = enumValue;
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>OMInternalOrganization</Name>
+				<Source><![CDATA[
+    public OMInternalOrganization OMInternalOrganization(OMInternalOrganization _relatedTable = null)
+    {
+        if (prmIsDefault(_relatedTable))
+        {
+            return this.setLink('OMInternalOrganization');
+        }
+        else
+        {
+            return this.setLink('OMInternalOrganization', _relatedTable);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FMVehicleModel</Name>
+				<Source><![CDATA[
+    public FMVehicleModel FMVehicleModel(FMVehicleModel _relatedTable = null)
+    {
+        if (prmIsDefault(_relatedTable))
+        {
+            return this.setLink('FMVehicleModel');
+        }
+        else
+        {
+            // Bug 3135762: setLink does not seem to work
+            this.VehicleModel = _relatedTable.RecId;
+            return this.setLink('FMVehicleModel', _relatedTable);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FullDescription</Name>
+				<Source><![CDATA[
+    public display str FullDescription()
+    {
+        return enum2Str(this.Color) + " " + this.Description;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Status</Name>
+				<Source><![CDATA[
+    public display str Status(FMVehicle vehicle)
+    {
+        return enum2Str(vehicle.Status);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>@SYS172552</DeveloperDocumentation>
+	<FormRef>FMVehicle</FormRef>
+	<Label>@FLM95</Label>
+	<SingularLabel>Vehicle</SingularLabel>
+	<TableGroup>Main</TableGroup>
+	<TitleField1>VehicleId</TitleField1>
+	<TitleField2>Description</TitleField2>
+	<Abstract>Yes</Abstract>
+	<CacheLookup>FoundAndEmpty</CacheLookup>
+	<InstanceRelationType>InstanceRelationType</InstanceRelationType>
+	<Modules>FleetManagement</Modules>
+	<ReplacementKey>ReplacementKey</ReplacementKey>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<SupportInheritance>Yes</SupportInheritance>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>VIN</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Color</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>VehicleId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>DisplayRelationType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Description</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VIN</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Mileage</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>VehicleId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleModel</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Description</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>VehicleId</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Color</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Description</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>DisplayRelationType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>FuelType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>GPSEnabled</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>GrossVehicleWeight</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>InstanceRelationType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>MPG</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Note</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>OMInternalOrganization</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Status</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Transmission</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleModel</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VIN</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ColorID</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>DetailsGroup</Name>
+			<Label>@FLM91</Label>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>VehicleModel</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>MPG</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Color</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>GPSEnabled</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>FuelType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Description</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Mileage</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>PreviewGroup</Name>
+			<Label>@FLM181</Label>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>VehicleId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Description</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>Color</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<Label>@FLM310</Label>
+			<EnumType>FMColor</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>Description</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMDescription</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>DisplayRelationType</Name>
+			<AllowEdit>No</AllowEdit>
+			<AllowEditOnCreate>No</AllowEditOnCreate>
+			<AssetClassification>System Metadata</AssetClassification>
+			<EnumType>FMVehicle_DisplayRelationType</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>FuelType</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<Label>@FLM122</Label>
+			<EnumType>FMFuelType</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>GPSEnabled</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<EnumType>FMGPSEnabled</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>GrossVehicleWeight</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMGrossVehicleWeight</ExtendedDataType>
+			<Label>@FLM178</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>InstanceRelationType</Name>
+			<AllowEdit>No</AllowEdit>
+			<AllowEditOnCreate>No</AllowEditOnCreate>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>RelationType</ExtendedDataType>
+			<Label>@FLM177</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>Mileage</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMMileage</ExtendedDataType>
+			<Label>@FLM316</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>MPG</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMMPG</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>Note</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMNote</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>OMInternalOrganization</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>RefRecId</ExtendedDataType>
+			<Label>@FLM180</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>Status</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<Label>@FLM179</Label>
+			<EnumType>FMVehicleStatus</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>Transmission</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<EnumType>FMTransmission</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>VehicleId</Name>
+			<AllowEdit>No</AllowEdit>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMVehicleId</ExtendedDataType>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>VehicleModel</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMVehicleModelRecId</ExtendedDataType>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>VIN</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMVIN</ExtendedDataType>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>ColorID</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMColorId</ExtendedDataType>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes>
+		<AxTableIndex>
+			<Name>FMVehicleModelIdx</Name>
+			<AllowDuplicates>Yes</AllowDuplicates>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>VehicleModel</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+		<AxTableIndex>
+			<Name>ReplacementKey</Name>
+			<AlternateKey>Yes</AlternateKey>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>VehicleId</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+		<AxTableIndex>
+			<Name>OMInternalOrganizationIdx</Name>
+			<AllowDuplicates>Yes</AllowDuplicates>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>OMInternalOrganization</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+		<AxTableIndex>
+			<Name>FMVehicleStatusIdx</Name>
+			<AllowDuplicates>Yes</AllowDuplicates>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>Status</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+	</Indexes>
+	<Mappings />
+	<Relations>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>BULocation</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<CreateNavigationPropertyMethods>Yes</CreateNavigationPropertyMethods>
+			<RelatedTable>OMInternalOrganization</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>OMInternalOrganization</Name>
+					<Field>OMInternalOrganization</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+			<Index>RecId</Index>
+		</AxTableRelation>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>VehicleModel</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<CreateNavigationPropertyMethods>Yes</CreateNavigationPropertyMethods>
+			<RelatedTable>FMVehicleModel</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>VehicleModel</Name>
+					<Field>VehicleModel</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+			<Index>RecId</Index>
+		</AxTableRelation>
+	</Relations>
+	<StateMachines />
+</AxTable>

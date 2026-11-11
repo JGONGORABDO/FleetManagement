@@ -1,0 +1,784 @@
+﻿@FLM41=Etikettfiler skapade 2011-04-03
+ ;By user Admin
+@FLM42=Röd
+ ;Fleet colors
+@FLM43=Blå
+ ;Fleet colors
+@FLM44=Grön
+ ;Fleet colors
+@FLM46=Välj bild
+ ;Fleet label
+@FLM47=Ändra
+ ;Fleet label
+@FLM48=Ta bort
+ ;Fleet label
+@FLM49=Kund
+ ;Fleet label
+@FLM50=Öppna
+ ;Fleet label
+@FLM51=Nytt
+ ;Fleet label
+@FLM52=Hyrestillfälle
+ ;Fleet label
+@FLM53=Allmänt
+ ;Fleet label
+@FLM55=Visa
+ ;Fleet label
+@FLM56=Radera
+ ;Fleet label
+@FLM57=Bilagor
+ ;Fleet label
+@FLM58=Slutförd
+ ;Fleet label
+@FLM59=Hyresavgifter
+ ;Fleet label
+@FLM60=Hyresperiod
+ ;Fleet label
+@FLM61=Från
+ ;Fleet label
+@FLM62=Till
+ ;Fleet label
+@FLM63=Körsträcka
+ ;Fleet label
+@FLM64=Starta
+ ;Fleet label
+@FLM65=Slut
+ ;Fleet label
+@FLM66=Bränslenivåer
+ ;Fleet label
+@FLM67=Upphämtning
+ ;Fleet label
+@FLM68=Avgifter
+ ;Fleet label
+@FLM69=Lägg till avgift
+ ;Fleet label
+@FLM70=Inkludera lastbilar
+ ;Fleet label
+@FLM71=Hyrestillfällen
+ ;Fleet label
+@FLM72=Redigera
+ ;Fleet label
+@FLM73=Konfiguration av vagnsparkshantering
+ ;Fleet label
+@FLM74=Fordonsfabrikat och modeller
+ ;Fleet label
+@FLM75=Definiera fordonsfabrikat och modeller
+ ;Fleet label
+@FLM76=Definiera fabrikatet och modellerna för fordonen i ditt lager tillsammans med en representativ bild av modellen.
+ ;Fleet label
+@FLM77=Modellbild
+ ;Fleet label
+@FLM78=Bläddra...
+ ;Fleet label
+@FLM79=Nytt bilmärke
+ ;Fleet label
+@FLM80=Ny modell
+ ;Fleet label
+@FLM81=Avgiftstyper för hyrestillfälle
+ ;Fleet label
+@FLM82=Definiera avgiftstyper
+ ;Fleet label
+@FLM83=Avgiftstyper används för att kategorisera varje hyrestillägg. Det gör det enklare att spåra dina kostnader.
+ ;Fleet label
+@FLM84=Säkerhetsklassningar för suvar
+ ;Fleet label
+@FLM85=Definiera säkerhetsklassningar för suvar
+ ;Fleet label
+@FLM86=Fordon
+ ;Fleet label
+@FLM87=Underhåll
+ ;Fleet label
+@FLM88=Historik
+ ;Fleet label
+@FLM89=Historiska tariffer
+ ;Fleet label
+@FLM90=Tariffer
+ ;Fleet label
+@FLM91=Information
+ ;Fleet label
+@FLM92=Bil- och suvinformation
+ ;Fleet label
+@FLM93=Suv
+ ;Fleet label
+@FLM94=Information om lastbil
+ ;Fleet label
+@FLM95=Fordon
+ ;Fleet label
+@FLM96=Tillgänglighet
+ ;Fleet label
+@FLM97=Plats
+ ;Fleet label
+@FLM98=Underhåll
+ ;Fleet label
+@FLM99=Post
+ ;Fleet label
+@FLM100=Lista
+ ;Fleet label
+@FLM101=Fordons-ID
+ ;Fleet label
+@FLM102=Datumhanterare för fordonstariff
+ ;Fleet label
+@FLM103=Ny version
+ ;Fleet label
+@FLM104=Fordonsunderhåll
+ ;Fleet label
+@FLM105=Hantering av vagnpark
+ ;Fleet label
+@FLM106=Senaste hyrestillfällen
+ ;Fleet label
+@FLM107=Mina interna organisationer för säkerhetsåtkomst
+ ;Fleet label
+@FLM108=Fordon som användaren har säkerhetsåtkomst till
+ ;Fleet label
+@FLM109=Interna organisationer som användaren har tillgång till
+ ;Fleet label
+@FLM110=Lastbilar
+ ;Fleet label
+@FLM111=Suvar
+ ;Fleet label
+@FLM112=Meny för sidor för visning av kunder
+ ;Fleet label
+@FLM113=Åtgärder
+ ;Fleet label
+@FLM114=Fordonsmeny
+ ;Fleet label
+@FLM115=Meny för sidor för visning av fordon
+ ;Fleet label
+@FLM116=Avdelning - avskriven
+ ;Fleet label
+@FLM117=Hyresplats - avskriven
+ ;Fleet label
+@FLM118=Region - avskriven
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Bränsletyp
+ ;Fleet label
+@FLM123=Standard
+ ;Fleet label
+@FLM124=Premium
+ ;Fleet label
+@FLM125=GPS aktiverad
+ ;Fleet label
+@FLM126=Oljebyte
+ ;Fleet label
+@FLM127=Reparation
+ ;Fleet label
+@FLM128=Förebyggande underhåll
+ ;Fleet label
+@FLM129=Väntar på undersökning
+ ;Fleet label
+@FLM130=Väntar på service
+ ;Fleet label
+@FLM131=Väntar på godkännande
+ ;Fleet label
+@FLM132=Väntar på rengöring
+ ;Fleet label
+@FLM133=Klart
+ ;Fleet label
+@FLM134=Växellåda
+ ;Fleet label
+@FLM135=Automatisk
+ ;Fleet label
+@FLM136=Manuell
+ ;Fleet label
+@FLM137=Disponibel
+ ;Fleet label
+@FLM138=I tjänst
+ ;Fleet label
+@FLM139=Hyrd
+ ;Fleet label
+@FLM140=Skadad
+ ;Fleet label
+@FLM141=Återkallad
+ ;Fleet label
+@FLM142=Pågående
+ ;Fleet label
+@FLM143=Fordonstyp
+ ;Fleet label
+@FLM144=Okänd
+ ;Fleet label
+@FLM145=Lastbil
+ ;Fleet label
+@FLM146=Bil
+ ;Fleet label
+@FLM147=Tilläggstyp
+ ;Fleet label
+@FLM148=Körkort
+ ;Fleet label
+@FLM149=Fabrikat och modell
+ ;Fleet label
+@FLM150=Noteringar
+ ;Fleet label
+@FLM151=Hyrinfo för fordon
+ ;Fleet label
+@FLM152=Säkerhetsklassnings-id
+ ;Fleet label
+@FLM153=Säkerhetsklassning för suv
+ ;Fleet label
+@FLM154=Totalt antal hyrestillfällen
+ ;Fleet label
+@FLM155=Fabrikat
+ ;Fleet label
+@FLM156=Fordonets fabrikat
+ ;Fleet label
+@FLM157=Modell
+ ;Fleet label
+@FLM158=Fordonets modell
+ ;Fleet label
+@FLM159=Bilar
+ ;Fleet label
+@FLM160=Antal dörrar
+ ;Fleet label
+@FLM161=Antal passagerare
+ ;Fleet label
+@FLM162=Tilläggstyper
+ ;Fleet label
+@FLM163=Utgångsdatum
+ ;Fleet label
+@FLM164=Körsträcka vid start
+ ;Fleet label
+@FLM165=Avslutande körsträcka
+ ;Fleet label
+@FLM166=Bränslenivå vid start
+ ;Fleet label
+@FLM167=Avslutande bränslenivå
+ ;Fleet label
+@FLM168=Hyrinfo för fordon
+ ;Fleet label
+@FLM169=Kapacitet för tredje raden
+ ;Fleet label
+@FLM170=Vändradie
+ ;Fleet label
+@FLM171=Markfrigång
+ ;Fleet label
+@FLM172=Betyg i test av vältrisk
+ ;Fleet label
+@FLM173=Sammanlagt betyg
+ ;Fleet label
+@FLM174=Lastvolym
+ ;Fleet label
+@FLM175=Golvyta
+ ;Fleet label
+@FLM176=Maximal last
+ ;Fleet label
+@FLM177=Typ
+ ;Fleet label
+@FLM178=Fordonets bruttovikt
+ ;Fleet label
+@FLM179=Fordonets status
+ ;Fleet label
+@FLM180=Organisation
+ ;Fleet label
+@FLM181=Förhandsgranska grupp
+ ;Fleet label
+@FLM182=Fordonsfabrikat
+ ;Fleet label
+@FLM183=Fordonsmodeller
+ ;Fleet label
+@FLM184=Fordonsbild
+ ;Fleet label
+@FLM185=Modellspecifikation
+ ;Fleet label
+@FLM186=Bildformat
+ ;Fleet label
+@FLM187=Fordonstariffer
+ ;Fleet label
+@FLM188=Tariff per dag
+ ;Fleet label
+@FLM189=Tariff per vecka
+ ;Fleet label
+@FLM190=Mina interna organisationer som är associerade med en roll
+ ;Fleet label
+@FLM191=Register som innehåller interna organisationer som associeras med användarens roll
+ ;Fleet label
+@FLM192=Vyn DimAttributeOMBranch innehåller alla poster från tabellen OMOperatingUnit som är markerade som avdelningar.
+ ;Fleet label
+@FLM193=Vyn DimAttributeOMRegion innehåller alla poster från tabellen OMOperatingUnit som är markerade som regioner
+ ;Fleet label
+@FLM194=Vyn DimAttributeOMRentalLocation innehåller alla poster från tabellen OMOperatingUnit som är markerade som hyresplatser.
+ ;Fleet label
+@FLM195=Center för hantering av vagnpark
+ ;Fleet label
+@FLM196=Lägg till
+ ;Fleet label
+@FLM197=Aktuella hyrestillfällen
+ ;Fleet label
+@FLM198=Tilldelade fordon
+ ;Fleet label
+@FLM199=Tillgängliga fordon
+ ;Fleet label
+@FLM200=Återkallade fordon
+ ;Fleet label
+@FLM201=Slutförd
+ ;Fleet label
+@FLM202=Pågår
+ ;Fleet label
+@FLM203=Historisk tariff
+ ;Fleet label
+@FLM204=Slutfört hyrestillfälle
+ ;Fleet label
+@FLM205=Rent fordon
+ ;Fleet label
+@FLM206=Undersök fordonet
+ ;Fleet label
+@FLM207=Ge fordonet service
+ ;Fleet label
+@FLM208=Godkännande av service
+ ;Fleet label
+@FLM209=Kundinformation
+ ;Fleet label
+@FLM210=Namn
+ ;Fleet label
+@FLM211=Licens
+ ;Fleet label
+@FLM212=Adress
+ ;Fleet label
+@FLM213=Telefon
+ ;Fleet label
+@FLM214=E-post
+ ;Fleet label
+@FLM215=Betalningsinformation
+ ;Fleet label
+@FLM216=Kreditkort
+ ;Fleet label
+@FLM217=Utgång
+ ;Fleet label
+@FLM218=Datum
+ ;Fleet label
+@FLM219=Hyresstart
+ ;Fleet label
+@FLM220=Slutdatum
+ ;Fleet label
+@FLM221=Beskrivning
+ ;Fleet label
+@FLM222=Kvantitet
+ ;Fleet label
+@FLM223=Utökat
+ ;Fleet label
+@FLM224=Fordonsinformation
+ ;Fleet label
+@FLM225=Fabrikat och modell
+ ;Fleet label
+@FLM226=Dagstariff
+ ;Fleet label
+@FLM227=Veckotariff
+ ;Fleet label
+@FLM228=Del för förhandsgranskning av fordon
+ ;Fleet label
+@FLM229=Färg
+ ;Fleet label
+@FLM230=Status
+ ;Fleet label
+@FLM231=Tilldelat fordon
+ ;Fleet label
+@FLM232=Stackikoner för hantering av vagnpark
+ ;Fleet label
+@FLM233=Begränsa användare till affärsenheter
+ ;Fleet label
+@FLM234=Min åtkomst till fordon för säkerhetsåtkomst
+ ;Fleet label
+@FLM235=Självbetjäning för hyresposter
+ ;Fleet label
+@FLM236=Ansvarig för hantering av vagnpark
+ ;Fleet label
+@FLM237=Uthyrningsansvarig
+ ;Fleet label
+@FLM238=Avdelningschef för hantering av vagnpark
+ ;Fleet label
+@FLM239=Chef för uthyrningsavdelning
+ ;Fleet label
+@FLM240=Servicetekniker för hantering av vagnpark
+ ;Fleet label
+@FLM241=Servicetekniker
+ ;Fleet label
+@FLM242=Använd arbetsflöde
+ ;Fleet label
+@FLM243=Tjänstgrupp som exponerar de tillgängliga bilarna
+ ;Fleet label
+@FLM244=Antal dörrar
+ ;Number of doors in the FM vehicle
+@FLM245=Utökat belopp
+ ;Fleet label
+@FLM246=Bränslenivå
+ ;Fleet label
+@FLM247=Markfrigång
+ ;Fleet label
+@FLM248=Golvyta i lastbil
+ ;Fleet label
+@FLM249=Maxlast
+ ;Fleet label
+@FLM250=Omkostnad, lastvolym
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Bedömning
+ ;Fleet label
+@FLM253=Hyrestillfällen totalt
+ ;Fleet label
+@FLM254=Sittplatser
+ ;Fleet label
+@FLM255=Tilläggstyp
+ ;Fleet label (table)
+@FLM256=Kapacitet
+ ;Fleet label
+@FLM257=Vändradie
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Arbetsflödesfråga
+ ;Fleet label
+@FLM260=Underhållspost
+ ;Fleet label
+@FLM261=Nytt hyrestillfälle
+ ;Fleet label
+@FLM262=Alla hyrestillfällen
+ ;Fleet label
+@FLM263=Ställa in vagnpark
+ ;Fleet label
+@FLM264=Alla fordon
+ ;Fleet label
+@FLM265=Prisdatum
+ ;Fleet label
+@FLM268=Avdelningar _DEMO_
+ ;Fleet label
+@FLM269=Hyresplatser _DEMO_
+ ;Fleet label
+@FLM270=Regioner _DEMO_
+ ;Fleet label
+@FLM271=Rensningen slutförd
+ ;Fleet label
+@FLM272=Ta bort kunder
+ ;Fleet label
+@FLM273=Radera valda hyrestillfällen
+ ;Fleet label
+@FLM274=Radera valt fordon
+ ;Fleet label
+@FLM275=Undersökningen slutförd
+ ;Fleet label
+@FLM276=Service slutförd
+ ;Fleet label
+@FLM278=Starta arbetsflöde
+ ;Fleet label
+@FLM279=Godkänn service
+ ;Fleet label
+@FLM280=Neka service
+ ;Fleet label
+@FLM281=Avvisa service
+ ;Fleet label
+@FLM282=Radera valda fordon
+ ;Fleet label
+@FLM283=Arbetsflödeskonfiguration
+ ;Fleet label
+@FLM284=Skapa eller uppdatera avdelningar
+ ;Fleet label
+@FLM285=Skapa eller uppdatera hyresplatser
+ ;Fleet label
+@FLM286=Skapa eller uppdatera regioner
+ ;Fleet label
+@FLM287=Lägg till/redigera kund
+ ;Fleet label
+@FLM288=Hyres-ID för fordon
+ ;Fleet label (table)
+@FLM289=Lägg till /redigera hyrespris
+ ;Fleet label
+@FLM290=Debitera detaljer
+ ;Fleet label
+@FLM291=Hyresdetaljer
+ ;Fleet label
+@FLM292=Redigera hyrestillfälle
+ ;Fleet label
+@FLM293=Hyrestillfällen per kund
+ ;Fleet label
+@FLM294=Hyrestillfällen per modell
+ ;Fleet label
+@FLM295=Lägg till/redigera fordon
+ ;Fleet label
+@FLM296=Kommande hyrestillfällen
+ ;Fleet label
+@FLM297=Hyrestillfällen per fordon
+ ;Fleet label
+@FLM298=Se onlinehjälpen
+ ;Fleet label
+@FLM299=Avgiftstyp för hyrestillfälle
+ ;Fleet label
+@FLM300=Registrera körsträcka
+ ;Fleet label
+@FLM301=Processcykel för vagnpark
+ ;Fleet label
+@FLM302=Vagnpark – hantera inställningar för vagnpark
+ ;Fleet label
+@FLM303=Vagnpark – redigera kundposter
+ ;Fleet label
+@FLM304=Vagnpark – hantera kunder
+ ;Fleet label
+@FLM305=Vagnpark – hantera lager
+ ;Fleet label
+@FLM306=Vagnpark – hyrbilar
+ ;Fleet label
+@FLM307=Vagnpark – visa kundposter
+ ;Fleet label
+@FLM308=Vagnpark – visa lager
+ ;Fleet label
+@FLM309=Vagnpark – ansvarig för arbetsflöde
+ ;Fleet label
+@FLM310=Fordonets färg
+ ;Fleet label
+@FLM311=Vagnpark – hanterare för arbetsflöde
+ ;Fleet label
+@FLM312=Vagnpark – servicetekniker för arbetsflöde
+ ;Fleet label
+@FLM313=Vagnpark – grundläggande behörigheter
+ ;Fleet label
+@FLM314=Vagnpark – hantera bilar
+ ;Fleet label
+@FLM315=Standardprocesscykel för vagnpark
+ ;Fleet label
+@FLM316=Fordonets körsträcka
+ ;Fleet label
+@FLM317=Kostnad
+ ;Fleet label
+@FLM318=Markfrigång
+ ;Fleet label
+@FLM54=Kunder
+ ;Fleet label
+@FLM266=Kreditkortets utgångsdatum
+ ;Fleet label (table)
+@FLM277=Körkort
+ ;Fleet label (table)
+@FLM320=Kundlista
+ ;Fleet label (report menu item)
+@FLM321=Rapport över kundlista
+ ;Fleet label (report menu item help text)
+@FLM267=Ställa in arbetsflöden
+ ;Fleet label
+@FLM400=Arbetsflöde för fordonsunderhåll
+ ;Fleet label
+@FLM500=Föredraget betalningssätt
+ ;Fleet label
+@FLM501=Vit
+ ;Fleet colors
+@FLM502=Grå
+ ;Fleet colors
+@FLM503=Gul
+ ;Fleet colors
+@FLM504=Orange
+ ;Fleet colors
+@FLM505=Upphämtning
+ ;Fleet label
+@FLM506=Retur
+ ;Fleet label
+@FLM507=Starta hyrestillfälle
+ ;Fleet label
+@FLM401=Hantering av reservationer
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Föregående körsträcka
+ ;Fleet label for returning vehicle slider
+@FLM509=Ny körsträcka
+ ;Fleet label for returning vehicle slider
+@FLM510=Uthyrning av fordon
+ ;Fleet label
+@FLM512=Ytterligare avgifter
+ ;Fleet label
+@FLM513=Besparingar
+ ;Fleet label
+@FLM514=Ny reservation
+ ;New reservation menu item label
+@FLM515=Modellår
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Utgångsår
+ ;Expiration year label
+@FLM517=Kundrapport
+ ;Fleet tile label
+@FLM518=Befintliga reservationer
+ ;Fleet tile label
+@FLM519=Förfallna hyrestillfällen
+ ;Fleet tile label
+@FLM520=Betalningsnamn
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=Utgångsmånad
+ ;Expiration month label
+@FLM523=Namn på kortet
+ ;Fleet name on credit card
+@FLM524=Historik för fordonstariffer
+ ;Fleet form label
+@FLM525=Ny kommentar
+ ;Fleet dialog caption
+@FLM526=Ny kund
+ ;Fleet dialog caption
+@FLM527=Ny betalningsinformation
+ ;Fleet dialog caption
+@FLM528=Lägg till tillbehör
+ ;Fleet dialog caption
+@FLM529=Välj en kund
+ ;Fleet dialog caption
+@FLM530=Klart för upphämtning
+ ;Fleet ReservationState enum option
+@FLM531=ID för adresspost
+ ;Fleet label
+@FLM532=Hexadecimal kod för färg
+ ;Fleet label
+@FLM533=Färg-ID
+ ;Fleet label
+@FLM534=Färgnamn
+ ;Fleet label
+@FLM535=Rabatt-ID
+ ;Fleet label
+@FLM536=Betalningsinformations-ID
+ ;Fleet label
+@FLM537=Reservations-ID
+ ;Fleet label
+@FLM539=Hyrda fordon
+ ;Fleet label
+@FLM540=Hantering av vagnpark
+ ;Fleet menu label
+@FLM541=Läs in demodata
+ ;Fleet button text
+@FLM542=Tariffhistorik
+ ;Fleet button text
+@FLM543=Byt kund
+ ;Fleet dialog label
+@FLM544=Välj fordon
+ ;Fleet button text
+@FLM545=Alla reservationer
+ ;Fleet grid title
+@FLM546=Kundfeedback
+ ;Fleet group label
+@FLM547=Hyresinformation
+ ;Fleet group label
+@FLM548=Avgift, bild
+ ;Fleet group label
+@FLM549=Inställning av data
+ ;Fleet tab label
+@FLM550=Fordonsinformation
+ ;Fleet group label
+@FLM551=Tillgängliga fordon
+ ;Fleet chart label
+@FLM552=Hyrstatus för fordon
+ ;Fleet chart label
+@FLM553=Fordon per modell – intäkt
+ ;Fleet chart label
+@FLM554=Hämtar i dag
+ ;Fleet panorama label
+@FLM555=Återlämnar i dag
+ ;Fleet panorama label
+@FLM556=Hyrespriser
+ ;Fleet panorama label
+@FLM558=Reservationsinformation
+ ;Fleet panorama label
+@FLM559=Tillbehör
+ ;Fleet panorama label
+@FLM560=Funktioner
+ ;Fleet group label
+@FLM561=Information om hämtning
+ ;Fleet field label
+@FLM562=Information om återlämning
+ ;Fleet field label
+@FLM563=Lista över hyrestillfällen
+ ;Fleet report label
+@FLM564=Skapa demokunder, demohyrestillfällen och demofordon
+ ;Fleet TOC label
+@FLM565=Det tar bara några sekunder.  
+ ;New Comment
+@FLM322=Hyrestillfällen per kund
+ ;Fleet report label
+@FLM566=Kunddiagram
+ ;Fleet form part caption
+@FLM567=Diagram över fordonsintäkt
+ ;Fleet form part caption
+@FLM601=Hantering av uthyrning av vagnpark
+ ;Fleet rental entity
+@FLM602=Hantering av vagnpark – kunder
+ ;Fleet customer entity
+@FLM603=Provapplet
+ ;Label for the sample applet name
+@FLM604=En provapplet som används för att demonstrera och testa appletens ramverk
+ ;Label for the sample applet description
+@FLM605=Läs mer
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Kundläge
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Mallen innehåller en karta med kundläge
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Hyrestillfällen per status
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Mallen innehåller beräkningar av uthyrningsstatus
+ ;Rentals by status template description
+FMCustomerEntityView=Visa Hantering av vagnpark – kunder
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Bibehåll Hantering av vagnpark – kunder
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Visa Hantering av uthyrning av vagnpark
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Bibehåll Hantering av uthyrning av vagnpark
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Visa Aktivitetsenhet
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Bibehåll Aktivitetsenhet
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Visa Kategorienhet
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Bibehåll Kategorienhet
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Visa Juridisk person
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Bibehåll Juridisk person
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Visa Radegenskap
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Bibehåll Radegenskap
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Visa Period
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Bibehåll Period
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Visa Projekt
+ ;View privilege for RCADProject
+RCADProjectMaintain=Bibehåll Projekt
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Visa Tidrapport
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Bibehåll Tidrapport
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Visa Tidrapportspost
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Bibehåll Tidrapportspost
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Visa Inställningar för tidrapport
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Bibehåll Inställningar för tidrapport
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Visa Arbetsflödeshistorik för tidrapport
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Bibehåll Arbetsflödeshistorik för tidrapport
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Visa Arbetsflödeshistoriksobjekt
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Bibehåll Arbetsflödeshistoriksobjekt
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Sök efter hyrestillfällen
+FMTemplateCustomerInformationDisplayName=Kundinformation
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Mallen tillhandahåller grundläggande information om kunden och en lista över dess hyrestillfällen
+ ;Fleet customer information template description
+DataCreated=Demodata har skapats.
+DataRestored=Demodata har återställts.
+DataRestoreConfirm=Detta återställer alla data för Hantering av vagnpark till ursprungsläget. Vill du göra det?
+Branch=Avdelning _DEMO_
+ ;Branch operating unit type
+RentalLocation=Hyresplats _DEMO_
+ ;Rental location operating unit type
+Region=Region _DEMO_
+ ;Region operating unit type
+Timestamp=Tidsstämpel
+ ;Comment timestamp
+CustomerImage=Kundbild
+ ;Fleet label
+Analytics=Analyser
+ ;used on Fleet clerk workspace for Analytics section

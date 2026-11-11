@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxEdt xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxEdtString">
+	<Name>FMState</Name>
+	<Label>@SYS21924</Label>
+	<ReferenceTable>FMAddressTable</ReferenceTable>
+	<ArrayElements />
+	<Relations />
+	<TableReferences />
+	<StringSize>3</StringSize>
+</AxEdt>

@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Adatkezelés entitásalap-adatainak karbantartása 
+DataManagementFleetMasterEntitiesView=Adatkezelés entitásalap-adatainak megtekintése 

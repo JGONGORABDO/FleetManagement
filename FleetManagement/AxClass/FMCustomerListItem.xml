@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCustomerListItem</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMCustomerListItem extends FMCustomerPage
+{
+    private str customerFirstNameInternal;
+    private str customerLastNameInternal;
+    private ImageReference custImage;
+    private str driversLicense;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>customerFirstName</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, FirstName), "Customer first name")]
+    public str customerFirstName(str _value=customerFirstNameInternal)
+    {
+        customerFirstNameInternal = _value;
+        return customerFirstNameInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerLastName</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, LastName), "Customer last name")]
+    public str customerLastName(str _value=customerLastNameInternal)
+    {
+        customerLastNameInternal = _value;
+        return customerLastNameInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerImage</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, Image), "Customer image")]
+    public ImageReference customerImage(ImageReference _value=custImage)
+    {
+        custImage = _value;
+        return custImage;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>driverLicenseNumber</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, DriverLicense), "Drivers license")]
+    public str driverLicenseNumber(str _value=driversLicense)
+    {
+        driversLicense = _value;
+        return driversLicense;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populate</Name>
+				<Source><![CDATA[
+    public void populate(FMCustomer _customerTable)
+    {
+        this.customerFirstName(_customerTable.FirstName);
+        this.customerLastName(_customerTable.LastName);
+        this.driverLicenseNumber(_customerTable.DriverLicense);
+
+        if (_customerTable.Image != conNull())
+        {
+            Image img = new Image();
+            img.setData(_customerTable.Image);
+            this.customerImage(ImageReference::constructForImage(img));
+        }
+
+        this.RecId(_customerTable.RecId);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

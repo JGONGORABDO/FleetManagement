@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Bibehåll Huvuddatatabell för datahantering
+DataManagementFleetMasterEntitiesView=Visa Huvuddatatabell för datahantering

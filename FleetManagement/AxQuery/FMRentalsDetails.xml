@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxQuery xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxQuerySimple">
+	<Name>FMRentalsDetails</Name>
+	<SourceCode>
+		<Methods>
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Query]
+public class FMRentalsDetails extends QueryRun
+{
+}
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DataSources>
+		<AxQuerySimpleRootDataSource>
+			<Name>FMRental</Name>
+			<Table>FMRental</Table>
+			<DataSources>
+				<AxQuerySimpleEmbeddedDataSource>
+					<Name>FMRentalCharge</Name>
+					<Table>FMRentalCharge</Table>
+					<DataSources />
+					<DerivedDataSources />
+					<Fields>
+						<AxQuerySimpleDataSourceField>
+							<Name>ChargeType</Name>
+							<Field>ChargeType</Field>
+						</AxQuerySimpleDataSourceField>
+						<AxQuerySimpleDataSourceField>
+							<Name>ExtendedAmount</Name>
+							<Field>ExtendedAmount</Field>
+						</AxQuerySimpleDataSourceField>
+						<AxQuerySimpleDataSourceField>
+							<Name>TransDate</Name>
+							<Field>TransDate</Field>
+						</AxQuerySimpleDataSourceField>
+					</Fields>
+					<Ranges />
+					<Relations>
+						<AxQuerySimpleDataSourceRelation>
+							<Name>QueryDataSourceRelation1</Name>
+							<Field>RentalId</Field>
+							<JoinDataSource>FMRental</JoinDataSource>
+							<RelatedField>RentalId</RelatedField>
+						</AxQuerySimpleDataSourceRelation>
+					</Relations>
+				</AxQuerySimpleEmbeddedDataSource>
+				<AxQuerySimpleEmbeddedDataSource>
+					<Name>FMCustomer</Name>
+					<Table>FMCustomer</Table>
+					<DataSources>
+						<AxQuerySimpleEmbeddedDataSource>
+							<Name>FMCustGroup</Name>
+							<Table>FMCustGroup</Table>
+							<DataSources />
+							<DerivedDataSources />
+							<Fields>
+								<AxQuerySimpleDataSourceField>
+									<Name>Description</Name>
+									<Field>Description</Field>
+								</AxQuerySimpleDataSourceField>
+							</Fields>
+							<Ranges />
+							<Relations>
+								<AxQuerySimpleDataSourceRelation>
+									<Name>QueryDataSourceRelation1</Name>
+									<Field>CustGroup</Field>
+									<JoinDataSource>FMCustomer</JoinDataSource>
+									<RelatedField>CustGroup</RelatedField>
+								</AxQuerySimpleDataSourceRelation>
+							</Relations>
+						</AxQuerySimpleEmbeddedDataSource>
+					</DataSources>
+					<DerivedDataSources />
+					<Fields>
+						<AxQuerySimpleDataSourceField>
+							<Name>CellPhone</Name>
+							<Field>CellPhone</Field>
+						</AxQuerySimpleDataSourceField>
+						<AxQuerySimpleDataSourceField>
+							<Name>CustGroup</Name>
+							<Field>CustGroup</Field>
+						</AxQuerySimpleDataSourceField>
+						<AxQuerySimpleDataSourceField>
+							<Name>DriverLicense</Name>
+							<Field>DriverLicense</Field>
+						</AxQuerySimpleDataSourceField>
+						<AxQuerySimpleDataSourceField>
+							<Name>Email</Name>
+							<Field>Email</Field>
+						</AxQuerySimpleDataSourceField>
+						<AxQuerySimpleDataSourceField>
+							<Name>FirstName</Name>
+							<Field>FirstName</Field>
+						</AxQuerySimpleDataSourceField>
+						<AxQuerySimpleDataSourceField>
+							<Name>LastName</Name>
+							<Field>LastName</Field>
+						</AxQuerySimpleDataSourceField>
+						<AxQuerySimpleDataSourceField>
+							<Name>Image</Name>
+							<Field>Image</Field>
+						</AxQuerySimpleDataSourceField>
+					</Fields>
+					<Ranges />
+					<Relations>
+						<AxQuerySimpleDataSourceRelation>
+							<Name>QueryDataSourceRelation1</Name>
+							<Field>Customer</Field>
+							<JoinDataSource>FMRental</JoinDataSource>
+							<RelatedField>RecId</RelatedField>
+						</AxQuerySimpleDataSourceRelation>
+					</Relations>
+				</AxQuerySimpleEmbeddedDataSource>
+				<AxQuerySimpleEmbeddedDataSource>
+					<Name>FMVehicle</Name>
+					<Table>FMVehicle</Table>
+					<DataSources />
+					<DerivedDataSources />
+					<Fields>
+						<AxQuerySimpleDataSourceField>
+							<Name>Color</Name>
+							<Field>Color</Field>
+						</AxQuerySimpleDataSourceField>
+						<AxQuerySimpleDataSourceField>
+							<Name>Description</Name>
+							<Field>Description</Field>
+						</AxQuerySimpleDataSourceField>
+						<AxQuerySimpleDataSourceField>
+							<Name>FuelType</Name>
+							<Field>FuelType</Field>
+						</AxQuerySimpleDataSourceField>
+					</Fields>
+					<Ranges />
+					<Relations>
+						<AxQuerySimpleDataSourceRelation>
+							<Name>QueryDataSourceRelation1</Name>
+							<Field>Vehicle</Field>
+							<JoinDataSource>FMRental</JoinDataSource>
+							<RelatedField>RecId</RelatedField>
+						</AxQuerySimpleDataSourceRelation>
+					</Relations>
+				</AxQuerySimpleEmbeddedDataSource>
+			</DataSources>
+			<DerivedDataSources />
+			<Fields>
+				<AxQuerySimpleDataSourceField>
+					<Name>Comments</Name>
+					<Field>Comments</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>EndDate</Name>
+					<Field>EndDate</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>StartDate</Name>
+					<Field>StartDate</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>RentalId</Name>
+					<Field>RentalId</Field>
+				</AxQuerySimpleDataSourceField>
+				<AxQuerySimpleDataSourceField>
+					<Name>VehicleRateTotal</Name>
+					<Field>VehicleRateTotal</Field>
+				</AxQuerySimpleDataSourceField>
+			</Fields>
+			<Ranges />
+			<GroupBy />
+			<Having />
+			<OrderBy />
+		</AxQuerySimpleRootDataSource>
+	</DataSources>
+</AxQuery>

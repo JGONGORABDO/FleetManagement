@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>MakeModel</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class MakeModel extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>GetColorsByAvailability</Name>
+				<Source><![CDATA[
+    /// <summary> 
+    /// OData Action: GetColorsByAvailability
+    /// 
+    /// Returns all Colors available to this MakeModel.
+    /// </summary>
+    [SysODataActionAttribute("GetColors", true),
+     SysODataCollectionAttribute("return", Types::Record, "CarColor")]
+    public List GetColorsByAvailability(boolean onlyAvailableVehicles)
+    {
+        Vehicle vehicle;
+        CarColor color;
+        Map colorNameMap = new Map(Types::String, Types::Record);
+        int64 thisRecId = this.RecId;
+        List returnList = new List(Types::Record);
+        while select vehicle where 
+            vehicle.Status == FMVehicleStatus::Available && 
+            vehicle.VehicleModel == thisRecId
+        {
+            select color where color.RecId == vehicle.ColorID;
+            if (!colorNameMap.exists(color.HexValue))
+            {
+                colorNameMap.insert(color.HexValue, color);
+                returnList.addEnd(color);
+            }
+        }
+        return returnList;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<CollectionName>MakeModels</CollectionName>
+	<IsPublic>Yes</IsPublic>
+	<Updatable>Yes</Updatable>
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Year</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>AvailableCount</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Image</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Make</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Model</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Make</Name>
+			<DataField>Make</DataField>
+			<DataSource>FMVehicleMake</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Image</Name>
+			<DataField>Image</DataField>
+			<DataSource>FMVehicleModel</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Model</Name>
+			<DataField>Model</DataField>
+			<DataSource>FMVehicleModel</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Year</Name>
+			<DataField>Year</DataField>
+			<DataSource>FMVehicleModel</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>AvailableCount</Name>
+			<DataField>VehicleCount</DataField>
+			<DataSource>FMVehicleModel</DataSource>
+		</AxViewField>
+	</Fields>
+	<Indexes>
+		<AxViewIndex>
+			<Name>Index1</Name>
+			<AlternateKey>Yes</AlternateKey>
+			<Fields>
+				<AxViewIndexField>
+					<DataField>Make</DataField>
+				</AxViewIndexField>
+				<AxViewIndexField>
+					<DataField>Model</DataField>
+				</AxViewIndexField>
+				<AxViewIndexField>
+					<DataField>Year</DataField>
+				</AxViewIndexField>
+			</Fields>
+		</AxViewIndex>
+	</Indexes>
+	<Mappings />
+	<Relations />
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods />
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMVehicleModel</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMVehicleModel</Table>
+				<DataSources>
+					<AxQuerySimpleEmbeddedDataSource>
+						<Name>FMVehicleMake</Name>
+						<DynamicFields>Yes</DynamicFields>
+						<Table>FMVehicleMake</Table>
+						<DataSources />
+						<Fields />
+						<Ranges />
+						<Relations>
+							<AxQuerySimpleDataSourceRelation>
+								<Name>QueryDataSourceRelation1</Name>
+								<Field>Make</Field>
+								<JoinDataSource>FMVehicleModel</JoinDataSource>
+								<RelatedField>RecId</RelatedField>
+							</AxQuerySimpleDataSourceRelation>
+						</Relations>
+					</AxQuerySimpleEmbeddedDataSource>
+				</DataSources>
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxView>

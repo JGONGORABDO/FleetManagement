@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMCustomerHub</title>
+</head>
+<body>
+    <!-- Represents a page using a template with placeholders -->
+    <div id="FMCustomerHub" data-dyn-template="templateId: 'hub', resourceBundle: 'hub'" data-dyn-role="metaModel: 'Form'" data-dyn-context="$dyn.OData.CreateEndpoint('data/service.svc/')">
+        <!-- Fills in a placeholder called hubCaption -->
+        <div class="hubCaption" data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: 'Customer'"></div>
+        <div class="hubTitle" data-dyn-role="metaModel: 'Context'" data-dyn-context="$selected('Customers')">
+            <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $format('{0} {1}', $field('FirstName'), $field('LastName'))"></div>
+        </div>
+        <div class="hubMasterList" aria-label="Customer Information" data-dyn-role="metaModel: 'List'" data-dyn-bind="DataSource: 'Customers'">
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'First Name', Value: $field('FirstName'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Last Name', Value: $field('LastName'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Last Name', Value: $field('Email'), AllowEdit: false"></div>
+        </div>
+        <!-- TODO: Refactor to use data-binding rather than attribute aria-label -->
+        <div class="hubDetails" aria-label="Customer Information" data-dyn-role="metaModel:  { Type: 'Part', TemplateId: 'FMCustomerInfo', ResourceBundle: 'FMCustomerInfo'}" data-dyn-context="$selected('Customers')"></div>
+        <div class="hubDetails" aria-label="Reservations" data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMCustomerReservations', ResourceBundle: 'FMCustomerReservations'}" data-dyn-context="$selected('Customers')"></div>
+        <div class="hubDetails" aria-label="Payment information" data-dyn-role="metaModel: { Type: 'Part', TemplateId: 'FMCustomerPaymentInfo', ResourceBundle: 'FMCustomerPaymentInfo'}" data-dyn-context="$models('AllPaymentInformation', $selected('Customers'))"></div>
+        <div data-dyn-role="metaModel: 'ActionPane'">
+            <div data-dyn-role="metaModel: 'ActionPaneTab'" data-dyn-bind="Label: 'Customer Actions', ImageType: 'Symbol', ImageName: 'Stop'">
+                <div data-dyn-role="metaModel: 'ButtonGroup'">
+                    <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'New Reservation', ImageType: 'Symbol', ImageName: 'New'"></button>
+                </div>
+                <div data-dyn-role="metaModel: 'ButtonGroup'" data-dyn-bind="Label: 'Reservations'">
+                    <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Recent Reservations'"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

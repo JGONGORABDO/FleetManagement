@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCreateReservationAction</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMCreateReservationAction extends FMReservationPage
+{
+    private utcdatetime startDateInternal;
+    private utcdatetime endDateInternal;
+    private int64 customerRecIdInternal;
+    private int64 vehicleRecIdInternal;
+    NoYesError NoYesErrorInternal;
+    private FMRentalChargeType rentalChargeTypeInternal;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>customerRecId</Name>
+				<Source><![CDATA[
+    [
+        SysAppLookupField(tableStr(FMCustomer)),
+        SysAppField(fieldStr(FMRental, Customer), "Select customer")
+    ]
+    public int64 customerRecId(int64 _value = customerRecIdInternal)
+    {
+        customerRecIdInternal = _value;
+        return customerRecIdInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>vehicleRecId</Name>
+				<Source><![CDATA[
+    [
+        SysAppLookupField(tableStr(FMVehicle)),
+        SysAppField(fieldStr(FMRental, Vehicle), "Select vehicle")
+    ]
+    public int64 vehicleRecId(int64 _value = vehicleRecIdInternal)
+    {
+        vehicleRecIdInternal = _value;
+        return vehicleRecIdInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalChargeType</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRentalCharge, ChargeType ), "Charge type")]
+    public FMRentalChargeType rentalChargeType(FMRentalChargeType _value=rentalChargeTypeInternal)
+    {
+        rentalChargeTypeInternal = _value;
+        return rentalChargeTypeInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>startDate</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRental, StartDate), "Pickup")]
+    public utcdatetime startDate(utcdatetime _value=startDateInternal)
+    {
+        startDateInternal = _value;
+        return startDateInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>endDate</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRental, EndDate), "Return")]
+    public utcdatetime endDate(utcdatetime _value=endDateInternal)
+    {
+        endDateInternal = _value;
+        return endDateInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>validate</Name>
+				<Source><![CDATA[
+    public boolean validate(SysAppResponse _response)
+    {
+        boolean validationPassed = true;
+
+        if (!customerRecIdInternal)
+        {
+            _response.addMessage(new SysAppResponseMessage("Customer should be selected", SysAppMessageType::Error));
+            validationPassed = false;
+        }
+
+        if (!customerRecIdInternal)
+        {
+            _response.addMessage(new SysAppResponseMessage("Vehicle should be selected", SysAppMessageType::Error));
+            validationPassed = false;
+        }
+
+        return validationPassed;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>createReservation</Name>
+				<Source><![CDATA[
+    public SysAppResponse createReservation(SysAppEntityContext _entityContext, List _filterContextList)
+    {
+        SysAppResponse response = new SysAppResponse();
+
+        if (this.validate(response))
+        {
+            FMRental rentalTable;
+
+            rentalTable.Customer = customerRecIdInternal;
+            rentalTable.Vehicle = vehicleRecIdInternal;
+            rentalTable.StartDate = startDateInternal;
+            rentalTable.EndDate = endDateInternal;
+
+            ttsbegin;
+            rentalTable.insert();
+            ttscommit;
+
+            response.addCommit(SysAppEntityContext::constructFromBuffer(rentalTable));
+        }
+
+        return response;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

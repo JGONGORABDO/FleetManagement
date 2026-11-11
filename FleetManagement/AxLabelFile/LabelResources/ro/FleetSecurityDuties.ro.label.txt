@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Întrețineți datele entității principale pentru gestionarea datelor 
+DataManagementFleetMasterEntitiesView=Vizualizați datele entității principale pentru gestionarea datelor 

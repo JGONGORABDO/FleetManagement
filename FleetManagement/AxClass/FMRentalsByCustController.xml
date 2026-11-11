@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalsByCustController</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+///    The <c>FMRentalsByCustController</c> class is the controller class for the <c>FMRentalsByCust</c> report.
+/// </summary>
+class FMRentalsByCustController extends SrsReportRunController
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>preRunModifyContract</Name>
+				<Source><![CDATA[
+    protected void preRunModifyContract()
+    {    
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>construct</Name>
+				<Source><![CDATA[
+    public static FMRentalsByCustController construct(Args _args)
+    {
+        FMRentalsByCustController controller = new FMRentalsByCustController();
+        controller.parmReportName(ssrsreportstr(FMRentalsByCustomer, Report));
+        controller.parmArgs(_args);
+        return controller;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args args)
+    {
+        FMRentalsByCustController::construct(args).startOperation();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

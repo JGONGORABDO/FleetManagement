@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMReservationInformation</title>
+</head>
+<body>
+    <div id="FMReservationInformation">
+        <div data-dyn-role="metaModel:'Group'" data-dyn-bind="Label: 'RENTAL PERIOD'">
+            <!--<div data-dyn-role="metaModel:'Date'" data-dyn-bind="Label:'Hello'"></div>-->
+            <div data-dyn-role="metaModel: 'DateTime'" data-dyn-bind="Label: 'Pickup date and time', Value: $field('PickupDate')"></div>
+            <div data-dyn-role="metaModel: 'DateTime'" data-dyn-bind="Label: 'Return date and time', Value: $field('ReturnDate')"></div>
+            <label data-dyn-role="metaModel: 'CheckBox'" data-dyn-bind="Label:'Return to other location'"></label>
+        </div>
+       <div data-dyn-role="metaModel:'Group'" data-dyn-bind="Label: 'DISCOUNTS'">
+            <div data-dyn-role="metaModel: 'Toolbar'">
+                <div data-dyn-role="metaModel: 'ToolbarGroup'">
+                    <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Add', ImageType: 'Symbol', ImageName: 'New'"></button>
+                </div>
+            </div>
+           <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: 'Summer madness (-15%)'"></div>
+        </div>
+    </div>
+</body>
+</html>

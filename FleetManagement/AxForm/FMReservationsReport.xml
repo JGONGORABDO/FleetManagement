@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxForm xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>FMReservationsReport</Name>
+	<SourceCode>
+		<Methods xmlns="">
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Form]
+public class FMReservationsReport extends FormRun
+{
+    DictEnum vehicleColors;
+
+    Map chartControlMap;
+    str titleString;
+
+    #define.VehicleColorEnumID("ColorId:")
+
+    #define.AliasCategory("category")
+    #define.AliasNoRentals("totalRentals")
+    #define.AliasRevenue("totalRevenue")
+
+}
+]]></Source>
+			</Method>
+			<Method>
+				<Name>init</Name>
+				<Source><![CDATA[
+    public void init()
+    {
+        super();
+
+        vehicleColors = new DictEnum(enumnum(FMColor));
+
+        // create a new contrainer map for the chart controls created dynamically
+        chartControlMap = new Map(Types::String, Types::Integer);
+        
+        // hide the modeled chart which is used to access the data source fields
+        ChartHome.visible(true);
+        ChartReport.visible(false);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>run</Name>
+				<Source><![CDATA[
+    public void run()
+    {
+        // fill the navigation tree
+        this.fillTree();
+
+        super();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>addNavTreeItem</Name>
+				<Source><![CDATA[
+    // internal method used to create tree navigation items
+    private TreeItemIdx addNavTreeItem(str _label, int _treeItemIdx, str _itemId, boolean _children)
+    {
+        // Home/Root
+        int itemIdx = SysFormTreeControl::addTreeItem(DrillDownTree,
+                                                        _label,
+                                                        _treeItemIdx,
+                                                        _itemId,
+                                                        _children);
+
+        // return the item of the newly created item
+        return itemIdx;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>selectTreeItem</Name>
+				<Source><![CDATA[
+    // select a tree item
+    private void selectTreeItem(TreeItemIdx _selectedIdx)
+    {
+        FormTreeItem treeItem = DrillDownTree.getItem(_selectedIdx);
+        treeItem.stateChecked(FormTreeCheckedState::Checked);
+        DrillDownTree.setItem(treeItem);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fillTree</Name>
+				<Source><![CDATA[
+    // create drill down tree
+    private void fillTree()
+    {
+        // clear out existing navigation items
+        DrillDownTree.deleteAll();
+
+        // Home/Root
+        TreeItemIdx pivotItemIdx = this.addNavTreeItem("Reservations by customer", FormTreeAdd::Root, "ReservationsByCust", false);
+        
+        // set the default state to selected
+        this.selectTreeItem(pivotItemIdx);
+
+        // Vehicle colors
+        pivotItemIdx = this.addNavTreeItem("Vehicle colors", FormTreeAdd::Root, "VehicleColor", true);
+        //for (int i = 1; i < vehicleColors.values(); i++)
+        //{
+        //    str displayText = vehicleColors.value2Label(i);
+        //    this.addNavTreeItem(displayText, pivotItemIdx, strfmt("%1%2", #VehicleColorEnumID, vehicleColors.value2Name(i)), false);
+        //}
+
+        // Customer group
+        pivotItemIdx = this.addNavTreeItem("Customer groups", FormTreeAdd::Root, "CustGroup", false);
+
+        // Customer regions
+        pivotItemIdx = this.addNavTreeItem("Customers by state", FormTreeAdd::Root, "CustState", false);
+
+        // SysFormTreeControl::expandTree(DrillDownTree, pivotItemIdx);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+		<DataSources xmlns="" />
+		<DataControls xmlns="">
+			<Control>
+				<Name>DrillDownTree</Name>
+				<Type>Tree</Type>
+				<Methods>
+					<Method>
+						<Name>selectionChanged</Name>
+						<Source><![CDATA[
+        public void selectionChanged(FormTreeItem _OldItem, FormTreeItem _NewItem, FormTreeSelect _how)
+        {
+            super(_OldItem, _NewItem, _how);
+            
+            str itemIdentifer = _NewItem.data();
+            if (strcmp(itemIdentifer, "ReservationsByCust") != 0)
+            {
+                str mdxQuery, selection;
+
+                // empty the temporary data set
+                delete_from tmpChartReportingData;
+
+                // toggle the active chart
+                ChartHome.visible(false);
+                   
+                // initialize the form data set used by the Reporting Chart
+                this.populateChartDataSet(itemIdentifer);
+
+                // decorate chart properties based on user selection
+                if (itemIdentifer == "VehicleColor")
+                {
+                    // add a new composition chart control
+                    this.addCompositionChartControl(itemIdentifer);
+                }
+                else
+                {
+                    // add a new composition chart control
+                    this.addTrendChartControl(itemIdentifer);
+                }
+
+                // re-execute the form data source
+                TmpChartReportingData_DS.research();
+            }
+            else
+            {
+                 // delete all of the unselected controls
+                 this.deleteUnselectedCtrls();
+
+                 // toggle the active chart
+                 ChartHome.visible(true);
+            }
+        }
+
+]]></Source>
+					</Method>
+					<Method>
+						<Name>populateFilteredView</Name>
+						<Source><![CDATA[
+        // initialize chart reporting data set for filtered views
+        private void populateFilteredView(QueryBuildDataSource _qds, str _itemIdentifer)
+        {
+            str selection;
+
+            // Dimension value: quarter
+            _qds.addSelectionFieldWithAlias(#AliasCategory, fieldNum(FMRentalActivity, Quarter));
+            _qds.addGroupByField(fieldNum(FMRentalActivity, Quarter));
+            
+            // View sort: order by quarter
+            _qds.addOrderByField(fieldNum(FMRentalActivity, Quarter), SortOrder::Descending);
+            
+            // extract the enum identifier
+            selection = strDel(_itemIdentifer, 1, strlen(#VehicleColorEnumID));
+
+            // format control title string
+            titleString = "Vehicle color: " + selection;
+                
+            // View filter: vehicle color
+            QueryBuildRange qbr = _qds.addRange(fieldnum(FMRentalActivity, VehicleColor));
+            qbr.value(selection);
+        }
+
+]]></Source>
+					</Method>
+					<Method>
+						<Name>populateChartDataSet</Name>
+						<Source><![CDATA[
+        // initialize chart reporting data set
+        private void populateChartDataSet(str _itemIdentifer)
+        {
+            try
+            {
+                SysQueryRun::ExecuteInManagedStack(true);
+
+                Query q = new Query();
+
+                // query an aggregate entity and select desired measures
+                QueryBuildDataSource  qds = q.addDataSource(tableNum(FMRentalActivity));
+                qds.addSelectionFieldWithAlias(#AliasNoRentals, fieldNum(FMRentalActivity, NoRentals), SelectionField::Sum);
+                qds.addSelectionFieldWithAlias(#AliasRevenue, fieldNum(FMRentalActivity, TotalRevenue), SelectionField::Sum);
+
+                switch(_itemIdentifer)
+                {
+                    case "VehicleColor":
+                        titleString = "Vehilce colors";
+
+                        // Dimension value: vehicle color
+                        qds.addSelectionFieldWithAlias(#AliasCategory, fieldNum(FMRentalActivity, VehicleColor));
+                        qds.addGroupByField(fieldNum(FMRentalActivity, VehicleColor));
+                        break;
+                    case "CustGroup":
+                        titleString = "Customer groups";
+
+                        // Dimension value: customer group
+                        qds.addSelectionFieldWithAlias(#AliasCategory, fieldNum(FMRentalActivity, CustomerGroup));
+                        qds.addGroupByField(fieldNum(FMRentalActivity, CustomerGroup));
+                        break;
+                    case "CustState":
+                        titleString = "Customer states";
+
+                        // Dimension value: customer state
+                        qds.addSelectionFieldWithAlias(#AliasCategory, fieldNum(FMRentalActivity, CustomerState));
+                        qds.addGroupByField(fieldNum(FMRentalActivity, CustomerState));
+                        break;
+                    default:
+                        // process user selections for dynamic menu items
+                        this.populateFilteredView(qds, _itemIdentifer);
+                }
+
+                // run the query and insert the query results into the form datasource
+                Map m = new Map(Types::String, Types::String);
+                m.insert(#AliasCategory, fieldStr(TmpChartReportingData, categoryString));
+                m.insert(#AliasNoRentals, fieldStr(TmpChartReportingData, value2Int));
+                m.insert(#AliasRevenue, fieldStr(TmpChartReportingData, value1Real));
+
+                int rowCount = QueryRun::runAndPopulate(q, TmpChartReportingData, m);
+            }
+            finally
+            {
+                SysQueryRun::ExecuteInManagedStack(false);
+            }
+        }
+
+]]></Source>
+					</Method>
+					<Method>
+						<Name>deleteUnselectedCtrls</Name>
+						<Source><![CDATA[
+        // deletes all unselected chart controls
+        private void deleteUnselectedCtrls()
+        {
+            // check for the presence of mapped controls
+            if (chartControlMap.elements() > 0)
+            {
+                // create a temporary map to cache the selected controls
+                Map selectedMap = new Map(Types::String, Types::Integer);
+
+                // run through the list of mapped controls
+                MapEnumerator enumerator = chartControlMap.getEnumerator();
+                while (enumerator.moveNext())
+                {
+                    // delete the control and remove it from the map
+                    element.design().removeControl(enumerator.currentValue());
+                }
+
+                // maintain the list of selected controls
+                chartControlMap = selectedMap;
+            }
+        }
+
+]]></Source>
+					</Method>
+					<Method>
+						<Name>addCompositionChartControl</Name>
+						<Source><![CDATA[
+        // creates a chart control: Pie chart
+        private void addCompositionChartControl(str _name)
+        {
+            List dataSetsList = new List(Types::Class);
+            List seriesList = new List(Types::Class);
+
+            // delete all of the unselected controls
+            this.deleteUnselectedCtrls();
+
+            // Add a chart control instance to the chart tab page on the form.
+            SysChart chartCtrl = ContentGroup.addControlEx(classStr(SysChart), _name) as SysChart;
+            chartCtrl.NoInteractions(false);
+            
+            // create a chart title object
+            SysChartTitle chartTitle = new SysChartTitle();
+            chartTitle.parmText(titleString);
+            chartCtrl.Title(chartTitle);
+
+            // create the data set bindings
+            SysChartDataSet dataSet = new SysChartDataSet();
+
+            // initialize the form data set used by the Reporting Chart
+            dataSet.parmCategoryField("categoryString");
+            dataSet.parmDataSource("TmpChartReportingData");
+            dataSet.parmDataSetName("SysBuildChartDataSet1");
+            dataSetsList.addEnd(dataSet);
+
+            // update the data binding collection
+            chartCtrl.DataSets(dataSetsList);
+
+            // create the chart measures
+            SysChartMeasure measure = new SysChartMeasure();
+            measure.parmChartType(SysChartType::Pie);
+            measure.parmDataLabels(SysChartDataLabels::None);
+            measure.parmTitle("Revenue");
+            measure.parmDataSet("SysBuildChartDataSet1");
+            measure.parmName("Rentals");
+            measure.parmValueField("value2Int");
+            seriesList.addEnd(measure);
+
+            // update the series collection
+            chartCtrl.Measures(seriesList);
+
+            // add a new chart control and add to contrainer map
+            chartControlMap.insert(_name, chartCtrl.id());
+        }
+
+]]></Source>
+					</Method>
+					<Method>
+						<Name>addTrendChartControl</Name>
+						<Source><![CDATA[
+        // creates a chart control: Column & Line
+        private void addTrendChartControl(str _name)
+        {
+            List dataSetsList = new List(Types::Class);
+            List seriesList = new List(Types::Class);
+            List axisList = new List(Types::Class);
+            List buttonsToAdd = new List(Types::Enum);
+
+            // delete all of the unselected controls
+            this.deleteUnselectedCtrls();
+            
+            // Add a chart control instance to the chart tab page on the form.
+            SysChart chartCtrl = ContentGroup.addControlEx(classStr(SysChart), _name) as SysChart;
+            chartCtrl.NoInteractions(false);
+            chartCtrl.Toolbar(true);
+
+            switch(_name)
+            {
+                case "CustState":
+                case "CustGroup":
+                    buttonsToAdd.addEnd(SysChartButtonType::Default);
+                    buttonsToAdd.addEnd(SysChartButtonType::Line);
+                    buttonsToAdd.addEnd(SysChartButtonType::Column);
+                    buttonsToAdd.addEnd(SysChartButtonType::Bar);
+                    buttonsToAdd.addEnd(SysChartButtonType::Funnel);
+                    buttonsToAdd.addEnd(SysChartButtonType::Pie);
+                    buttonsToAdd.addEnd(SysChartButtonType::StackedColumn);
+                    buttonsToAdd.addEnd(SysChartButtonType::StackedColumnAndLine);
+                    break;
+                default:
+                    buttonsToAdd.addEnd(SysChartButtonType::Default);
+                    buttonsToAdd.addEnd(SysChartButtonType::Line);
+                    buttonsToAdd.addEnd(SysChartButtonType::Column);
+                    buttonsToAdd.addEnd(SysChartButtonType::Bar);
+            }
+
+            chartCtrl.Buttons(buttonsToAdd);
+            
+            // create a chart title object
+            SysChartTitle chartTitle = new SysChartTitle();
+            chartTitle.parmText(titleString);
+            chartCtrl.Title(chartTitle);
+            
+            // create the data set bindings
+            SysChartDataSet dataSet = new SysChartDataSet();
+            dataSet.parmCategoryField("categoryString");
+            dataSet.parmDataSource("TmpChartReportingData");
+            dataSet.parmDataSetName("SysBuildChartDataSet1");
+            dataSetsList.addEnd(dataSet);
+
+            // update the data binding collection
+            chartCtrl.DataSets(dataSetsList);
+
+            // create the primary Y-Axis for the chart
+            SysChartYAxis chartAxis1 = new SysChartYAxis();
+            chartAxis1.parmName("SysBuildChartYAxis1");
+            chartAxis1.parmVisible(true);
+            axisList.addEnd(chartAxis1);
+
+            // create the secondary Y-Axis for the chart
+            SysChartYAxis chartAxis2 = new SysChartYAxis();
+            chartAxis2.parmName("SysBuildChartYAxis2");
+            chartAxis2.parmVisible(true);
+            axisList.addEnd(chartAxis2);
+
+            // update the Y-Axis collection
+            chartCtrl.YAxes(axisList);
+
+            // create the chart measure: Column
+            SysChartMeasure measure1 = new SysChartMeasure();
+            measure1.parmChartType(SysChartType::Column);
+            measure1.parmDataLabels(SysChartDataLabels::None);
+            measure1.parmYAxisName("SysBuildChartYAxis1");
+            measure1.parmTitle("Revenue");
+            measure1.parmDataSet("SysBuildChartDataSet1");
+            measure1.parmName("TotalAmt");
+            measure1.parmValueField("value1Real");
+            measure1.parmButtonMap("{\"Default\":\"Column\",\"Line\":\"Line\",\"Bar\":\"Bar\",\"Column\":\"Column\",\"Pie\":\"Pie\",\"Funnel\":\"Funnel\",\"StackedColumn\":\"StackedColumn\",\"StackedColumnAndLine\":\"Line\"}");
+            seriesList.addEnd(measure1);
+
+            // create the chart measure: Line
+            SysChartMeasure measure2 = new SysChartMeasure();
+            measure2.parmChartType(SysChartType::Line);
+            measure2.parmDataLabels(SysChartDataLabels::None);
+            measure2.parmYAxisName("SysBuildChartYAxis2");
+            measure2.parmTitle("Rentals");
+            measure2.parmDataSet("SysBuildChartDataSet1");
+            measure2.parmName("Rentals");
+            measure2.parmValueField("value2Int");
+            measure2.parmButtonMap("{\"Default\":\"Line\",\"Line\":\"Line\",\"Bar\":\"Bar\",\"Column\":\"Column\",\"StackedColumn\":\"StackedColumn\",\"StackedColumnAndLine\":\"StackedColumn\"}");
+            seriesList.addEnd(measure2);
+            
+            // update the series collection
+            chartCtrl.Measures(seriesList);
+
+            // add a new chart control and add to contrainer map
+            chartControlMap.insert(_name, chartCtrl.id());
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+			<Control>
+				<Name>OnRefresh</Name>
+				<Type>Button</Type>
+				<Methods>
+					<Method>
+						<Name>clicked</Name>
+						<Source><![CDATA[
+        public void clicked()
+        {
+            super();
+
+            // iterate through the list of selected items
+            TreeItemIdx idx = DrillDownTree.getFirstSelected();
+            while (idx)
+            {
+                //do something
+                idx = DrillDownTree.getNextSelected(idx);
+            }
+
+            // re-execute the form data source
+            TmpChartReportingData_DS.research();
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+		</DataControls>
+		<Members xmlns="" />
+	</SourceCode>
+	<DataSources>
+		<AxFormDataSource xmlns="">
+			<Name>TmpChartReportingData</Name>
+			<Table>TmpChartReportingData</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>categoryDate</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>categoryDateTime</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>categoryString</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>DataAreaId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>groupBy</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>value1Int</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>value1Real</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>value2Int</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>value2Real</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>value3Int</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>value3Real</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>value4Int</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>value4Real</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>value5Int</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>value5Real</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+	</DataSources>
+	<Design>
+		<Caption xmlns="">Customer activity reports</Caption>
+		<Columns xmlns="">3</Columns>
+		<Pattern xmlns="">Custom</Pattern>
+		<Style xmlns="">SimpleListDetails</Style>
+		<Controls xmlns="">
+			<AxFormControl xmlns=""
+				i:type="AxFormGroupControl">
+				<Name>FormBodyGroup</Name>
+				<Type>Group</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormGroupControl">
+						<Name>DrillDownGroup</Name>
+						<Type>Group</Type>
+						<WidthMode>SizeToAvailable</WidthMode>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormTreeControl">
+								<Name>DrillDownTree</Name>
+								<AutoDeclaration>Yes</AutoDeclaration>
+								<Height>450</Height>
+								<HeightMode>Manual</HeightMode>
+								<Type>Tree</Type>
+								<FormControlExtension
+									i:nil="true" />
+								<CascadeSelect>No</CascadeSelect>
+								<SingleSelection>No</SingleSelection>
+							</AxFormControl>
+							<AxFormControl xmlns=""
+								i:type="AxFormButtonControl">
+								<Name>OnRefresh</Name>
+								<Height>20</Height>
+								<HeightMode>Manual</HeightMode>
+								<Type>Button</Type>
+								<Width>70</Width>
+								<WidthMode>Manual</WidthMode>
+								<FormControlExtension
+									i:nil="true" />
+								<Text>Refresh</Text>
+							</AxFormControl>
+						</Controls>
+					</AxFormControl>
+				</Controls>
+				<Columns>2</Columns>
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormGroupControl">
+				<Name>ContentGroup</Name>
+				<AutoDeclaration>Yes</AutoDeclaration>
+				<Type>Group</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormContainerControl">
+						<Name>ChartHome</Name>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<Type>Container</Type>
+						<FormControlExtension>
+							<Name>FormPartControl</Name>
+							<ExtensionComponents>
+								<AxFormControlExtensionComponent xmlns=""
+									i:type="AxFormControlExtensionComponentComposite">
+									<Name>dataLinks</Name>
+									<ExtensionComponents />
+								</AxFormControlExtensionComponent>
+							</ExtensionComponents>
+							<ExtensionProperties>
+								<AxFormControlExtensionProperty>
+									<Name>targetName</Name>
+									<Type>String</Type>
+									<Value>FMReservationsByCustPart</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmRunMode</Name>
+									<Type>Enum</Type>
+									<TypeName>FormPartControlRunMode</TypeName>
+									<Value>Remote</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>autoRefreshInterval</Name>
+									<Type>Int32</Type>
+									<Value>0</Value>
+								</AxFormControlExtensionProperty>
+							</ExtensionProperties>
+						</FormControlExtension>
+						<Controls />
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormContainerControl">
+						<Name>ChartReport</Name>
+						<AutoDeclaration>Yes</AutoDeclaration>
+						<Type>Container</Type>
+						<FormControlExtension>
+							<Name>SysChart</Name>
+							<ExtensionComponents>
+								<AxFormControlExtensionComponent xmlns=""
+									i:type="AxFormControlExtensionComponentComposite">
+									<Name>parmDataSets</Name>
+									<ExtensionComponents>
+										<AxFormControlExtensionComponent xmlns=""
+											i:type="AxFormControlExtensionComponentLeaf">
+											<Name>SysBuildChartDataSet1</Name>
+											<ComponentType>SysBuildChartDataSet</ComponentType>
+											<ExtensionProperties>
+												<AxFormControlExtensionProperty>
+													<Name>parmDataSource</Name>
+													<Type>String</Type>
+													<Value>TmpChartReportingData</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmCategoryField</Name>
+													<Type>String</Type>
+													<Value>categoryString</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmGroupBy</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+											</ExtensionProperties>
+										</AxFormControlExtensionComponent>
+									</ExtensionComponents>
+								</AxFormControlExtensionComponent>
+								<AxFormControlExtensionComponent xmlns=""
+									i:type="AxFormControlExtensionComponentComposite">
+									<Name>parmMeasures</Name>
+									<ExtensionComponents>
+										<AxFormControlExtensionComponent xmlns=""
+											i:type="AxFormControlExtensionComponentLeaf">
+											<Name>Total</Name>
+											<ComponentType>SysBuildChartMeasure</ComponentType>
+											<ExtensionProperties>
+												<AxFormControlExtensionProperty>
+													<Name>parmChartType</Name>
+													<Type>Enum</Type>
+													<TypeName>SysChartType</TypeName>
+													<Value>Column</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmTitle</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmDataLabels</Name>
+													<Type>Enum</Type>
+													<TypeName>SysChartDataLabels</TypeName>
+													<Value>None</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmDataSet</Name>
+													<Type>String</Type>
+													<Value>SysBuildChartDataSet1</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmMeasureField</Name>
+													<Type>String</Type>
+													<Value>value1Real</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmUseSecondaryYAxis</Name>
+													<Type>Enum</Type>
+													<TypeName>boolean</TypeName>
+													<Value>False</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmSecondaryYAxisName</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmClickMenuItemType</Name>
+													<Type>Enum</Type>
+													<TypeName>MenuItemType</TypeName>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmClickMenuItemName</Name>
+													<Type>ExtendedDataType</Type>
+													<TypeName>MenuItemName</TypeName>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmKeyField</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmParameter1</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmParameter2</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+											</ExtensionProperties>
+										</AxFormControlExtensionComponent>
+										<AxFormControlExtensionComponent xmlns=""
+											i:type="AxFormControlExtensionComponentLeaf">
+											<Name>Rentals</Name>
+											<ComponentType>SysBuildChartMeasure</ComponentType>
+											<ExtensionProperties>
+												<AxFormControlExtensionProperty>
+													<Name>parmChartType</Name>
+													<Type>Enum</Type>
+													<TypeName>SysChartType</TypeName>
+													<Value>Line</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmTitle</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmDataLabels</Name>
+													<Type>Enum</Type>
+													<TypeName>SysChartDataLabels</TypeName>
+													<Value>None</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmDataSet</Name>
+													<Type>String</Type>
+													<Value>SysBuildChartDataSet1</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmMeasureField</Name>
+													<Type>String</Type>
+													<Value>value2Int</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmUseSecondaryYAxis</Name>
+													<Type>Enum</Type>
+													<TypeName>boolean</TypeName>
+													<Value>False</Value>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmSecondaryYAxisName</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmClickMenuItemType</Name>
+													<Type>Enum</Type>
+													<TypeName>MenuItemType</TypeName>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmClickMenuItemName</Name>
+													<Type>ExtendedDataType</Type>
+													<TypeName>MenuItemName</TypeName>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmKeyField</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmParameter1</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+												<AxFormControlExtensionProperty>
+													<Name>parmParameter2</Name>
+													<Type>String</Type>
+												</AxFormControlExtensionProperty>
+											</ExtensionProperties>
+										</AxFormControlExtensionComponent>
+									</ExtensionComponents>
+								</AxFormControlExtensionComponent>
+								<AxFormControlExtensionComponent xmlns=""
+									i:type="AxFormControlExtensionComponentComposite">
+									<Name>parmSecondaryYAxes</Name>
+									<ExtensionComponents />
+								</AxFormControlExtensionComponent>
+							</ExtensionComponents>
+							<ExtensionProperties>
+								<AxFormControlExtensionProperty>
+									<Name>parmLegendEnabled</Name>
+									<Type>Enum</Type>
+									<TypeName>boolean</TypeName>
+									<Value>True</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmLegendAlignment</Name>
+									<Type>Enum</Type>
+									<TypeName>SysChartHorizontalAlignment</TypeName>
+									<Value>Auto</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmLegendPosition</Name>
+									<Type>Enum</Type>
+									<TypeName>SysChartVerticalAlignment</TypeName>
+									<Value>Auto</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmLegendLayout</Name>
+									<Type>Enum</Type>
+									<TypeName>SysChartLegendLayout</TypeName>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmTitleAlignment</Name>
+									<Type>Enum</Type>
+									<TypeName>SysChartHorizontalAlignment</TypeName>
+									<Value>Auto</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmText</Name>
+									<Type>String</Type>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmTitlePosition</Name>
+									<Type>Enum</Type>
+									<TypeName>SysChartVerticalAlignment</TypeName>
+									<Value>Auto</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmSerializedButtons</Name>
+									<Type>String</Type>
+									<Value>Bar;Column;Pie;Funnel;Line</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmYAxisTitle</Name>
+									<Type>String</Type>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmYAxisVisible</Name>
+									<Type>Enum</Type>
+									<TypeName>boolean</TypeName>
+									<Value>True</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmXAxisTitle</Name>
+									<Type>String</Type>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmClickMenuItemType</Name>
+									<Type>Enum</Type>
+									<TypeName>MenuItemType</TypeName>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmClickMenuItemName</Name>
+									<Type>ExtendedDataType</Type>
+									<TypeName>MenuItemName</TypeName>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmInteractionsDisabled</Name>
+									<Type>Enum</Type>
+									<TypeName>boolean</TypeName>
+									<Value>False</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmToolbarEnabled</Name>
+									<Type>Enum</Type>
+									<TypeName>boolean</TypeName>
+									<Value>True</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmZoomLimit</Name>
+									<Type>Enum</Type>
+									<TypeName>SysChartDateTimeInterval</TypeName>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmPadMargin</Name>
+									<Type>Int32</Type>
+									<Value>0</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmCrosshairsEnabled</Name>
+									<Type>Enum</Type>
+									<TypeName>boolean</TypeName>
+									<Value>False</Value>
+								</AxFormControlExtensionProperty>
+								<AxFormControlExtensionProperty>
+									<Name>parmTooltipShared</Name>
+									<Type>Enum</Type>
+									<TypeName>boolean</TypeName>
+									<Value>False</Value>
+								</AxFormControlExtensionProperty>
+							</ExtensionProperties>
+						</FormControlExtension>
+						<Controls />
+					</AxFormControl>
+				</Controls>
+			</AxFormControl>
+		</Controls>
+	</Design>
+	<Parts />
+</AxForm>

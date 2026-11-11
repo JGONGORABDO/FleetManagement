@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehiclePage</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[SysAppEntity(tableStr(FMVehicle), methodStr(FMVehiclePage, recId))]
+class FMVehiclePage
+{
+    public int64 recIdInternal;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>recId</Name>
+				<Source><![CDATA[
+    [SysAppFieldAttribute(fieldStr(FMVehicle, RecId), "RecId")]
+    public int64 recId(int64 _value=recIdInternal)
+    {
+        recIdInternal = _value;
+        return recIdInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populate</Name>
+				<Source><![CDATA[
+    public void populate(FMVehicle _vehicleTable)
+    {
+        this.RecId(_vehicleTable.RecId);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

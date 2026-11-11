@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxWorkflowTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V2">
+	<Name>FMVehicleMaintenanceWorkflowType</Name>
+	<CanceledEventHandler>FMWorkflowCanceledEventHandler</CanceledEventHandler>
+	<Category>FMCategory</Category>
+	<Document>FMWorkflowDocument</Document>
+	<DocumentMenuItem>FmWorkflowDocumentMenuItem</DocumentMenuItem>
+	<HelpText>@FLM400</HelpText>
+	<Label>@FLM104</Label>
+	<SubmitToWorkflowMenuItem>FMSubmitMenuItem</SubmitToWorkflowMenuItem>
+	<LineItemWorkflows />
+	<SupportedElements>
+		<AxWorkflowElementReference xmlns="">
+			<Name>AutomatedTaskFMRecordMileage</Name>
+			<ElementName>FMRecordMileage</ElementName>
+			<Type>AutomatedTask</Type>
+		</AxWorkflowElementReference>
+		<AxWorkflowElementReference xmlns="">
+			<Name>ApprovalFMServiceApproval</Name>
+			<ElementName>FMServiceApproval</ElementName>
+		</AxWorkflowElementReference>
+		<AxWorkflowElementReference xmlns="">
+			<Name>TaskFMCleanVehicle</Name>
+			<ElementName>FMCleanVehicle</ElementName>
+			<Type>Task</Type>
+		</AxWorkflowElementReference>
+		<AxWorkflowElementReference xmlns="">
+			<Name>TaskFMServiceVehicle</Name>
+			<ElementName>FMServiceVehicle</ElementName>
+			<Type>Task</Type>
+		</AxWorkflowElementReference>
+		<AxWorkflowElementReference xmlns="">
+			<Name>TaskFMExamineVehicle</Name>
+			<ElementName>FMExamineVehicle</ElementName>
+			<Type>Task</Type>
+		</AxWorkflowElementReference>
+	</SupportedElements>
+</AxWorkflowTemplate>

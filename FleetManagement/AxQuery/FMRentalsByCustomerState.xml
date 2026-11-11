@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxQuery xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxQuerySimple">
+	<Name>FMRentalsByCustomerState</Name>
+	<SourceCode>
+		<Methods>
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Query]
+public class FMRentalsByCustomerState extends QueryRun
+{
+}
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DataSources>
+		<AxQuerySimpleRootDataSource>
+			<Name>FMRentalCustomerView</Name>
+			<Table>FMRentalCustomerView</Table>
+			<DataSources />
+			<Fields>
+				<AxQuerySimpleDataSourceField xmlns=""
+					i:type="AxQuerySimpleDataSourceFieldCount">
+					<Name>StartMileage</Name>
+					<Field>StartMileage</Field>
+				</AxQuerySimpleDataSourceField>
+			</Fields>
+			<Ranges />
+			<GroupBy>
+				<AxQuerySimpleGroupByField>
+					<Name>QueryGroupByField2</Name>
+					<DataSource>FMRentalCustomerView</DataSource>
+					<Field>Customer</Field>
+				</AxQuerySimpleGroupByField>
+				<AxQuerySimpleGroupByField>
+					<Name>QueryGroupByField1</Name>
+					<DataSource>FMRentalCustomerView</DataSource>
+					<Field>CustomerName</Field>
+				</AxQuerySimpleGroupByField>
+				<AxQuerySimpleGroupByField>
+					<Name>QueryGroupByField3</Name>
+					<DataSource>FMRentalCustomerView</DataSource>
+					<Field>State</Field>
+				</AxQuerySimpleGroupByField>
+			</GroupBy>
+			<Having />
+			<OrderBy />
+		</AxQuerySimpleRootDataSource>
+	</DataSources>
+</AxQuery>

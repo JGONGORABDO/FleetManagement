@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMTotalsEngineBase</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[Microsoft.Dynamics.AX.Platform.Extensibility.ExportInterfaceAttribute()]
+public abstract class FMTotalsEngineBase
+{
+    static FMTotalsEngineBase _instance;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>calculateRentalVehicleRate</Name>
+				<Source><![CDATA[
+    public void calculateRentalVehicleRate(FMRental _rental)
+    {
+        throw error("Base method needs implementation");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>chargesTotals</Name>
+				<Source><![CDATA[
+    public FMChargesTotal chargesTotals(FMRental _rental)
+    {
+        throw error("Base method needs implementation");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>totals</Name>
+				<Source><![CDATA[
+    public FMRentalTotal totals(FMRental _rental)
+    {
+        throw error("Base method needs implementation");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>savings</Name>
+				<Source><![CDATA[
+    public FMSavingsTotal savings(FMRental _rental)
+    {
+        throw error("Base method needs implementation");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>GetInstance</Name>
+				<Source><![CDATA[
+    public static FMTotalsEngineBase GetInstance()
+    {
+        SysPluginMetadataCollection meta;
+        FMParameters FMParam;
+
+        if (!_instance)
+        {
+            FMParam = FMParameters::find();
+            meta = new SysPluginMetadataCollection();
+            // the {key,value} pair from the SetManagedValue call should match the {key,value} pair from the attribute on the plugin class
+            meta.SetManagedValue("TotalsEngine", FMParam.TotalsEngine);
+
+            _instance = SysPluginFactory::Instance("Dynamics.AX.Application", classStr(FMTotalsEngineBase), meta) as FMTotalsEngineBase;
+            if (!_instance)
+            {
+                warning('SysPluginFactory could not initialize totals engine - using default. Consider running fleet setup.');
+                _instance = FMTotalsEngine::construct();
+            }
+        }
+
+        return _instance;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>SetInstance</Name>
+				<Source><![CDATA[
+    public static void SetInstance(FMTotalsEngineBase instance)
+    {
+        _instance = instance;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

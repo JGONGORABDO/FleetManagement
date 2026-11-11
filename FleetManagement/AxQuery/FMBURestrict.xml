@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxQuery xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxQuerySimple">
+	<Name>FMBURestrict</Name>
+	<SourceCode>
+		<Methods>
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Query]
+public class FMBURestrict extends QueryRun
+{
+}
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DataSources>
+		<AxQuerySimpleRootDataSource>
+			<Name>FMVehicle_1</Name>
+			<DynamicFields>Yes</DynamicFields>
+			<Table>FMVehicle</Table>
+			<DataSources>
+				<AxQuerySimpleEmbeddedDataSource>
+					<Name>OMExplodedOrganizationSecurityGraph_1</Name>
+					<DynamicFields>Yes</DynamicFields>
+					<Table>OMExplodedOrganizationSecurityGraph</Table>
+					<DataSources>
+						<AxQuerySimpleEmbeddedDataSource>
+							<Name>OMUserRoleOrganization_1</Name>
+							<DynamicFields>Yes</DynamicFields>
+							<Table>OMUserRoleOrganization</Table>
+							<DataSources />
+							<Fields />
+							<Ranges>
+								<AxQuerySimpleDataSourceRange>
+									<Name>User</Name>
+									<Field>User</Field>
+									<Value>(CurrentUserID())</Value>
+								</AxQuerySimpleDataSourceRange>
+							</Ranges>
+							<Relations>
+								<AxQuerySimpleDataSourceRelation>
+									<Name>OMHierarchyType</Name>
+									<Field>OMHierarchyType</Field>
+									<JoinDataSource>OMExplodedOrganizationSecurityGraph_1</JoinDataSource>
+									<RelatedField>OMHierarchyType</RelatedField>
+								</AxQuerySimpleDataSourceRelation>
+								<AxQuerySimpleDataSourceRelation>
+									<Name>AncestorOrganization</Name>
+									<Field>AncestorOrganization</Field>
+									<JoinDataSource>OMExplodedOrganizationSecurityGraph_1</JoinDataSource>
+									<RelatedField>OMInternalOrganization</RelatedField>
+								</AxQuerySimpleDataSourceRelation>
+							</Relations>
+						</AxQuerySimpleEmbeddedDataSource>
+					</DataSources>
+					<Fields />
+					<Ranges />
+					<JoinMode>ExistsJoin</JoinMode>
+					<Relations>
+						<AxQuerySimpleDataSourceRelation>
+							<Name>OMInternalOrganization</Name>
+							<Field>OMInternalOrganization</Field>
+							<JoinDataSource>FMVehicle_1</JoinDataSource>
+							<RelatedField>Organization</RelatedField>
+						</AxQuerySimpleDataSourceRelation>
+					</Relations>
+				</AxQuerySimpleEmbeddedDataSource>
+			</DataSources>
+			<Fields />
+			<Ranges />
+			<GroupBy />
+			<Having />
+			<OrderBy />
+		</AxQuerySimpleRootDataSource>
+	</DataSources>
+</AxQuery>

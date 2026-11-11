@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=維護用於資料管理的主實體資料 
+DataManagementFleetMasterEntitiesView=檢視用於資料管理的主實體資料 

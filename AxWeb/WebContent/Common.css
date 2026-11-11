@@ -1,0 +1,48 @@
+/* This is a control style */
+.tileContainer > .multicolumnlayout-columnContainer {
+	width: 320px; 
+}
+
+/* .chartContainer? control style, maybe a tileContainer? */
+.chartContainer > .multicolumnlayout-columnContainer {
+	width: 680px !important; 
+}
+
+/* TODO: Remove this class when showing buttons on the left side of the application bar is implemented. */
+.mainActionPaneButton
+{
+    position: absolute !important;
+    left: 0;
+}
+
+/* TODO: Remove when the root view control has this as its base style*/
+.primaryConductor > .clientFormRoot  {
+    position: absolute;
+    top: 40px;
+    left: 120px;
+    right: 0;
+    bottom: 0;
+}
+
+/* TODO: temporary change - need to realign with form caption */
+.primaryConductor > .clientFormRoot .formCaption  {  
+	font-size: 14.66px;
+	text-transform: uppercase;
+	color: #505050;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: initial;
+	line-height: initial;
+}
+
+/* TODO: temporary change - need to realign with form caption */
+.primaryConductor > .clientFormRoot .titleField  {  
+	font: normal normal 200 56px/72px 'Segoe UI Light';
+	margin-bottom: 10px;
+	white-space: nowrap;
+}
+
+.primaryConductor > .clientFormRoot .titleField .staticText, .primaryConductor > .clientFormRoot .formCaption  .staticText {
+	margin-left: 0;
+	margin-top: 0;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehicleInventoryServiceClass</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMVehicleInventoryServiceClass
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>RetrieveAvailableVehicles</Name>
+				<Source><![CDATA[
+    [AifCollectionTypeAttribute('return', Types::Class, classStr(FMVehicleDataContract))]
+    public List RetrieveAvailableVehicles()
+    {
+        List result = new List(Types::Class);
+        FMVehicleDataContract vehicle;
+        FMVehicle bufferVehicle;
+        FMVehicleModel modelrecord;
+
+
+        while select * from bufferVehicle where FMVehicleStatus::Available == bufferVehicle.Status
+        {            
+            vehicle = new FMVehicleDataContract();
+            vehicle.Make(bufferVehicle.Description);
+            vehicle.VIN(bufferVehicle.VIN);
+            
+            select firstonly *  from modelrecord where modelrecord.RecId == bufferVehicle.VehicleModel;
+
+            vehicle.Model(modelrecord.Model);
+
+            result.addEnd(vehicle);            
+        }
+
+        return result;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

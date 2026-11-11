@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>TmpChartReportingData</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class TmpChartReportingData extends common
+{
+}
+]]></Declaration>
+		<Methods />
+	</SourceCode>
+	<TableType>InMemory</TableType>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>groupBy</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>String30</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>value1Int</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Integer</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>value1Real</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Amount</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>value2Int</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Integer</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>value2Real</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Amount</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>value3Int</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Integer</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>value3Real</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Amount</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>value4Int</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Integer</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>value4Real</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Amount</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>value5Int</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Integer</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>value5Real</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>Amount</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>categoryString</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>String30</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldDate">
+			<Name>categoryDate</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>TransDate</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldUtcDateTime">
+			<Name>categoryDateTime</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>UTCTimestamp</ExtendedDataType>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes />
+	<Mappings />
+	<Relations />
+	<StateMachines />
+</AxTable>

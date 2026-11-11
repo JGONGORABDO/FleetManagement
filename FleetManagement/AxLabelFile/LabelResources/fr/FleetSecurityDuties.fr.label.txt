@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Tenir à jour les données d'entité principales pour la gestion des données 
+DataManagementFleetMasterEntitiesView=Afficher les données d'entité principales pour la gestion des données 

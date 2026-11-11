@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMNewReservationDialog</title>
+</head>
+<body>
+    <!-- TODO: Reconcile page with none companion version -->
+    <div id="FMCompNewReservationDialog" data-dyn-role="metaModel: 'Form'">
+        <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="CssClass: 'titleGroup'">
+            <div data-dyn-role="metaModel: 'DataBoundLabel'" data-dyn-bind="Style: 'FormCaption', Value: 'New Reservation'"></div>
+        </div>
+        <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="Label: 'Customer'">
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'First name', Value: $field('FirstName')"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Last name', Value: $field('LastName')"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Phone number', Value: $field('CellPhone')"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Drivers license number', Value: $field('DriverLicense')"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Email', Value: $field('Email')"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'License Scan URL', Value: $field('License')"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Thumbnail URL', Value: $field('Thumbnail')"></div>
+            <div>
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Save', ActionCommand: $close($navigate({templateId: 'FMCompCustomerHub', resourceBundle: 'FMCompCustomerHub'},$save()))"></button>
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Cancel', ActionCommand: $close($revert())"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

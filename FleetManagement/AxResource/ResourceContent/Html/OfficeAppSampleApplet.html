@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <!-- Import styles used -->
+    <link href="../Styles/OfficeAppSampleApplet.css" rel="stylesheet" type="text/css" />
+
+    <!-- Import common libraries -->
+    <script src="../../OfficeApps/Public/ext/jquery-1.7.2.js" type="text/javascript"></script>
+    <script src="../../OfficeApps/Public/ext/globalize/globalize.js" type="text/javascript"></script>
+
+    <!-- Import Dynamics Office App libraries -->
+    <script src="../../OfficeApps/Public/AppletScripts.min.js" type="text/javascript"></script>
+
+    <!-- Import custom JavaScript for the applet -->
+    <script src="../Scripts/OfficeAppSampleApplet.js" type="text/javascript"></script>
+
+    <!-- Run a script that sets a function to run when the document is initialized - the script that is run should setup messaging for the applet -->
+    <script type="text/javascript">
+        $(document).ready(sampleApplet.onDocumentReady);
+    </script>
+</head>
+<body>
+    <!-- Applet content -->
+    <span id="valueInputLabel"></span>
+    <input id="valueInput" />
+    <button id="applyButton" class="dynamicsTextButton"></button>
+    <button id="toUpperCaseButton" class="dynamicsTextButton"></button>
+    <button id="toLowerCaseButton" class="dynamicsTextButton"></button>
+</body>
+</html>

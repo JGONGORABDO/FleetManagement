@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxEnum xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMStatus</Name>
+	<EnumValues>
+		<AxEnumValue>
+			<Name>New</Name>
+			<Label>@FLM51</Label>
+			<Value>2</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>AwaitingExamination</Name>
+			<Label>@FLM129</Label>
+			<Value>3</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>AwaitingService</Name>
+			<Label>@FLM130</Label>
+			<Value>4</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>AwaitingApproval</Name>
+			<Label>@FLM131</Label>
+			<Value>5</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>AwaitingCleaning</Name>
+			<Label>@FLM132</Label>
+			<Value>1</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>Done</Name>
+			<Label>@FLM133</Label>
+		</AxEnumValue>
+	</EnumValues>
+</AxEnum>

@@ -1,0 +1,784 @@
+﻿@FLM41=03/04/2011 tarihinde oluşturulan etiketler
+ ;By user Admin
+@FLM42=Kırmızı
+ ;Fleet colors
+@FLM43=Mavi
+ ;Fleet colors
+@FLM44=Yeşil
+ ;Fleet colors
+@FLM46=Resim seç
+ ;Fleet label
+@FLM47=Değiştir
+ ;Fleet label
+@FLM48=Kaldır
+ ;Fleet label
+@FLM49=Müşteri
+ ;Fleet label
+@FLM50=Açık
+ ;Fleet label
+@FLM51=Yeni
+ ;Fleet label
+@FLM52=Kiralama
+ ;Fleet label
+@FLM53=Genel
+ ;Fleet label
+@FLM55=Görüntüle
+ ;Fleet label
+@FLM56=Sil
+ ;Fleet label
+@FLM57=Ekler
+ ;Fleet label
+@FLM58=Tamamlandı
+ ;Fleet label
+@FLM59=Kiralama masrafları
+ ;Fleet label
+@FLM60=Kiralama dönemi
+ ;Fleet label
+@FLM61=Başlangıç
+ ;Fleet label
+@FLM62=Bitiş
+ ;Fleet label
+@FLM63=Mesafe
+ ;Fleet label
+@FLM64=Başlangıç
+ ;Fleet label
+@FLM65=Bitiş
+ ;Fleet label
+@FLM66=Yakıt düzeyleri
+ ;Fleet label
+@FLM67=Çekme
+ ;Fleet label
+@FLM68=Masraflar
+ ;Fleet label
+@FLM69=Masraf ekle
+ ;Fleet label
+@FLM70=Kamyonları dahil et
+ ;Fleet label
+@FLM71=Kiralamalar
+ ;Fleet label
+@FLM72=Düzenle
+ ;Fleet label
+@FLM73=Filo yönetimi konfigürasyonu
+ ;Fleet label
+@FLM74=Araç marka ve modelleri
+ ;Fleet label
+@FLM75=Araç marka ve modellerini tanımla
+ ;Fleet label
+@FLM76=Stoğunuzdaki araçların marka ve modellerini model için temsili bir resimle birlikte tanımlayın.
+ ;Fleet label
+@FLM77=Model resmi
+ ;Fleet label
+@FLM78=Gözat...
+ ;Fleet label
+@FLM79=Yeni marka
+ ;Fleet label
+@FLM80=Yeni model
+ ;Fleet label
+@FLM81=Kiralama masraf türleri
+ ;Fleet label
+@FLM82=Masraf türlerini tanımla
+ ;Fleet label
+@FLM83=Masraf türleri kiralama ücretlerini kategorilere ayırmak için kullanılır. Bu maliyetleri daha kolay izlemenize olanak sağlar.
+ ;Fleet label
+@FLM84=SUV emniyet değerlendirmeleri
+ ;Fleet label
+@FLM85=SUV emniyet değerlendirmelerini tanımla
+ ;Fleet label
+@FLM86=Araçlar
+ ;Fleet label
+@FLM87=Koru
+ ;Fleet label
+@FLM88=Geçmiş
+ ;Fleet label
+@FLM89=Geçmiş oranları
+ ;Fleet label
+@FLM90=Oranlar
+ ;Fleet label
+@FLM91=Ayrıntılar
+ ;Fleet label
+@FLM92=Araç ve SUV bilgileri
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=Kamyon bilgileri
+ ;Fleet label
+@FLM95=Araçlar
+ ;Fleet label
+@FLM96=Kullanılabilirlik
+ ;Fleet label
+@FLM97=Yerleşim
+ ;Fleet label
+@FLM98=Bakım
+ ;Fleet label
+@FLM99=Kayıt
+ ;Fleet label
+@FLM100=Liste
+ ;Fleet label
+@FLM101=Araç kodu
+ ;Fleet label
+@FLM102=Araç oran tarihi yöneticisi
+ ;Fleet label
+@FLM103=Yeni sürüm
+ ;Fleet label
+@FLM104=Araç bakımı
+ ;Fleet label
+@FLM105=Filo yönetimi
+ ;Fleet label
+@FLM106=Son kiralamalar
+ ;Fleet label
+@FLM107=Güvenlik erişimi için dahili kuruluşlarım
+ ;Fleet label
+@FLM108=Kullanıcının güvenlik erişimi olan araçlar
+ ;Fleet label
+@FLM109=Kullanıcının erişimi olan iç kuruluşlar
+ ;Fleet label
+@FLM110=Kamyonlar
+ ;Fleet label
+@FLM111=SUV'ler
+ ;Fleet label
+@FLM112=Müşteri görünümü sayfaları menüsü
+ ;Fleet label
+@FLM113=Eylemler
+ ;Fleet label
+@FLM114=Araç menüsü
+ ;Fleet label
+@FLM115=Araç görünümü sayfaları menüsü
+ ;Fleet label
+@FLM116=Şube - Kaldırıldı
+ ;Fleet label
+@FLM117=Kiralama yeri - Kaldırıldı
+ ;Fleet label
+@FLM118=Bölge - Kaldırıldı
+ ;Fleet label
+@FLM119=İLETME
+ ;Fleet label
+@FLM120=GERİ SAR
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Yakıt türü
+ ;Fleet label
+@FLM123=Standart
+ ;Fleet label
+@FLM124=Prim
+ ;Fleet label
+@FLM125=GPS etkin
+ ;Fleet label
+@FLM126=Yağ değişikliği
+ ;Fleet label
+@FLM127=Onarım
+ ;Fleet label
+@FLM128=Önleyici bakım
+ ;Fleet label
+@FLM129=İnceleme bekleniyor
+ ;Fleet label
+@FLM130=Servis bekliyor
+ ;Fleet label
+@FLM131=Onay bekliyor
+ ;Fleet label
+@FLM132=Temizleme bekliyor
+ ;Fleet label
+@FLM133=Bitti
+ ;Fleet label
+@FLM134=İletim
+ ;Fleet label
+@FLM135=Otomatik
+ ;Fleet label
+@FLM136=El ile
+ ;Fleet label
+@FLM137=Uygun
+ ;Fleet label
+@FLM138=Hizmette
+ ;Fleet label
+@FLM139=Kiralanan
+ ;Fleet label
+@FLM140=Hasarlı
+ ;Fleet label
+@FLM141=Geri çağrıldı
+ ;Fleet label
+@FLM142=Beklemede
+ ;Fleet label
+@FLM143=Araç türü
+ ;Fleet label
+@FLM144=Bilinmiyor
+ ;Fleet label
+@FLM145=Kamyon
+ ;Fleet label
+@FLM146=Araç
+ ;Fleet label
+@FLM147=Masraf türü
+ ;Fleet label
+@FLM148=Sürücü belgesi
+ ;Fleet label
+@FLM149=Marka ve model
+ ;Fleet label
+@FLM150=Notlar
+ ;Fleet label
+@FLM151=Araç kiralama bilgileri
+ ;Fleet label
+@FLM152=Emniyet değerlendirme kodu
+ ;Fleet label
+@FLM153=SUV emniyet değerlendirmesi
+ ;Fleet label
+@FLM154=Toplam kiralama
+ ;Fleet label
+@FLM155=Marka
+ ;Fleet label
+@FLM156=Araç markası
+ ;Fleet label
+@FLM157=Model
+ ;Fleet label
+@FLM158=Araç modeli
+ ;Fleet label
+@FLM159=Araba
+ ;Fleet label
+@FLM160=Kapı
+ ;Fleet label
+@FLM161=Yolcu kapasitesi
+ ;Fleet label
+@FLM162=Masraf türleri
+ ;Fleet label
+@FLM163=Bitiş tarihi
+ ;Fleet label
+@FLM164=Başlangıç mesafesi
+ ;Fleet label
+@FLM165=Bitiş mesafesi
+ ;Fleet label
+@FLM166=Başlangıç yakıt düzeyi
+ ;Fleet label
+@FLM167=Bitiş yakıt düzeyi
+ ;Fleet label
+@FLM168=Araç kiralama bilgileri
+ ;Fleet label
+@FLM169=Üçüncü satır kapasite
+ ;Fleet label
+@FLM170=Dönüş yarıçapı
+ ;Fleet label
+@FLM171=Zeminden yükseklik
+ ;Fleet label
+@FLM172=Derecelendirmeyi geri al
+ ;Fleet label
+@FLM173=Genel derecelendirme
+ ;Fleet label
+@FLM174=Hareket alanı
+ ;Fleet label
+@FLM175=Zemin alanı
+ ;Fleet label
+@FLM176=En fazla yük
+ ;Fleet label
+@FLM177=Tür
+ ;Fleet label
+@FLM178=Brüt araç ağırlığı
+ ;Fleet label
+@FLM179=Araç durumu
+ ;Fleet label
+@FLM180=Kuruluş
+ ;Fleet label
+@FLM181=Önizleme grubu
+ ;Fleet label
+@FLM182=Araç markaları
+ ;Fleet label
+@FLM183=Araç modelleri
+ ;Fleet label
+@FLM184=Araç resmi
+ ;Fleet label
+@FLM185=Model belirtimi
+ ;Fleet label
+@FLM186=Resim biçimi
+ ;Fleet label
+@FLM187=Araç oranları
+ ;Fleet label
+@FLM188=Günlük ücret:
+ ;Fleet label
+@FLM189=Haftalık oran
+ ;Fleet label
+@FLM190=Bir rol ile ilişkili dahili kuruluşlarım
+ ;Fleet label
+@FLM191=Kullanıcı rolüyle ilişkili dahili kuruluşları içeren tablo
+ ;Fleet label
+@FLM192=DimAttributeOMBranch görünümü OMOperatingUnit tablosunda Şube olarak işaretlenen tüm kayıtları içerir.
+ ;Fleet label
+@FLM193=DimAttributeOMRegion görünümü OMOperatingUnit tablosunda Bölge olarak işaretlenen tüm kayıtları içerir
+ ;Fleet label
+@FLM194=DimAttributeOMRentalLocation görünümü OMOperatingUnit tablosunda Kiralama Konumu olarak işaretlenen tüm kayıtları içerir.
+ ;Fleet label
+@FLM195=Filo yönetimi merkezi
+ ;Fleet label
+@FLM196=Ekle
+ ;Fleet label
+@FLM197=Geçerli kiralamalar
+ ;Fleet label
+@FLM198=Atanan araçlar
+ ;Fleet label
+@FLM199=Kullanılabilir araçlar
+ ;Fleet label
+@FLM200=Geri çağırılan araçlar
+ ;Fleet label
+@FLM201=Tamamlandı
+ ;Fleet label
+@FLM202=Devam ediyor
+ ;Fleet label
+@FLM203=Geçmiş oran
+ ;Fleet label
+@FLM204=Tam kiralama
+ ;Fleet label
+@FLM205=Temiz araç
+ ;Fleet label
+@FLM206=Aracı incele
+ ;Fleet label
+@FLM207=Araca servis uygula
+ ;Fleet label
+@FLM208=Servis onayı
+ ;Fleet label
+@FLM209=Müşteri ayrıntıları
+ ;Fleet label
+@FLM210=Ad
+ ;Fleet label
+@FLM211=Lisans
+ ;Fleet label
+@FLM212=Adres
+ ;Fleet label
+@FLM213=Telefon
+ ;Fleet label
+@FLM214=E-posta
+ ;Fleet label
+@FLM215=Ödeme bilgileri
+ ;Fleet label
+@FLM216=Kredi kartı
+ ;Fleet label
+@FLM217=Bitiş
+ ;Fleet label
+@FLM218=Tarih
+ ;Fleet label
+@FLM219=Kiralama başlangıcı
+ ;Fleet label
+@FLM220=Bitiş tarihi
+ ;Fleet label
+@FLM221=Açıklama
+ ;Fleet label
+@FLM222=Miktar
+ ;Fleet label
+@FLM223=Uzatıldı
+ ;Fleet label
+@FLM224=Araç ayrıntıları
+ ;Fleet label
+@FLM225=Marka ve model
+ ;Fleet label
+@FLM226=Günlük oran
+ ;Fleet label
+@FLM227=Haftalık oran
+ ;Fleet label
+@FLM228=Araç önizleme bölümü
+ ;Fleet label
+@FLM229=Renk
+ ;Fleet label
+@FLM230=Durum
+ ;Fleet label
+@FLM231=Atanan araç
+ ;Fleet label
+@FLM232=Filo yönetimi desteleri
+ ;Fleet label
+@FLM233=Kullanıcıları BU ile sınırla
+ ;Fleet label
+@FLM234=Güvenlik erişimi için araçlara erişimim
+ ;Fleet label
+@FLM235=Kiralama kayıtları için self servis
+ ;Fleet label
+@FLM236=Filo yönetimi memuru
+ ;Fleet label
+@FLM237=Kiralama memuru
+ ;Fleet label
+@FLM238=Filo yönetimi şube yöneticisi
+ ;Fleet label
+@FLM239=Kiralama şube yöneticisi
+ ;Fleet label
+@FLM240=Filo yönetimi servis teknisyeni
+ ;Fleet label
+@FLM241=Servis teknisyeni
+ ;Fleet label
+@FLM242=İş akışı kullan
+ ;Fleet label
+@FLM243=Kullanılabilir araç stoğu sunan hizmet grubu
+ ;Fleet label
+@FLM244=Kapı sayısı
+ ;Number of doors in the FM vehicle
+@FLM245=Genişletilmiş tutar
+ ;Fleet label
+@FLM246=Yakıt düzeyi
+ ;Fleet label
+@FLM247=Zeminden yükseklik
+ ;Fleet label
+@FLM248=Kamyon zemin alanı
+ ;Fleet label
+@FLM249=Maksimum yük
+ ;Fleet label
+@FLM250=Genel hareket alanı
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Derecelendirme
+ ;Fleet label
+@FLM253=Toplam kiralama
+ ;Fleet label
+@FLM254=Oturma
+ ;Fleet label
+@FLM255=Masraf türü
+ ;Fleet label (table)
+@FLM256=Kapasite
+ ;Fleet label
+@FLM257=Dönüş yarıçapı
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=İş akışı sorgusu
+ ;Fleet label
+@FLM260=Bakım kaydı
+ ;Fleet label
+@FLM261=Yeni kiralama
+ ;Fleet label
+@FLM262=Tüm kiralamalar
+ ;Fleet label
+@FLM263=Filo kurulumu
+ ;Fleet label
+@FLM264=Tüm araçlar
+ ;Fleet label
+@FLM265=Oran tarihleri
+ ;Fleet label
+@FLM268=Şubeler _DEMO_
+ ;Fleet label
+@FLM269=Kiralama konumları _DEMO_
+ ;Fleet label
+@FLM270=Bölgeler _DEMO_
+ ;Fleet label
+@FLM271=Temizleme tamamlandı
+ ;Fleet label
+@FLM272=Müşterileri sil
+ ;Fleet label
+@FLM273=Seçili kiralamaları sil
+ ;Fleet label
+@FLM274=Seçili aracı sil
+ ;Fleet label
+@FLM275=İnceleme tamamlandı
+ ;Fleet label
+@FLM276=Servis tamamlandı
+ ;Fleet label
+@FLM278=İş akışını başlat
+ ;Fleet label
+@FLM279=Servisi onayla
+ ;Fleet label
+@FLM280=Servisi reddet
+ ;Fleet label
+@FLM281=Servisi reddet
+ ;Fleet label
+@FLM282=Seçili araçları sil
+ ;Fleet label
+@FLM283=İş akışı konfigürasyonu
+ ;Fleet label
+@FLM284=Şubeleri oluştur veya güncelleştir
+ ;Fleet label
+@FLM285=Kiralama konumlarını oluştur veya güncelleştir
+ ;Fleet label
+@FLM286=Bölgeleri oluştur veya güncelleştir
+ ;Fleet label
+@FLM287=Müşteri ekle/düzenle
+ ;Fleet label
+@FLM288=Araç kiralama kodu
+ ;Fleet label (table)
+@FLM289=Kiralama ücreti ekle/düzenle
+ ;Fleet label
+@FLM290=Masraf ayrıntıları
+ ;Fleet label
+@FLM291=Kiralama ayrıntıları
+ ;Fleet label
+@FLM292=Kiralamayı düzenle
+ ;Fleet label
+@FLM293=Müşteri tarafından kiralamalar
+ ;Fleet label
+@FLM294=Model başına kiralamalar
+ ;Fleet label
+@FLM295=Araç ekle/düzenle
+ ;Fleet label
+@FLM296=Gelecekteki kiralamalar
+ ;Fleet label
+@FLM297=Araca göre kiralamalar
+ ;Fleet label
+@FLM298=Çevrimiçi yardıma bakın
+ ;Fleet label
+@FLM299=Kiralama masraf türü
+ ;Fleet label
+@FLM300=Mesafeyi kaydet
+ ;Fleet label
+@FLM301=Filo işlem döngüsü
+ ;Fleet label
+@FLM302=Filo - Filo kurulumunu yönet
+ ;Fleet label
+@FLM303=Filo - Müşteri kayıtlarını düzenle
+ ;Fleet label
+@FLM304=Filo - Müşterileri yönet
+ ;Fleet label
+@FLM305=Filo - Stok yönetimi
+ ;Fleet label
+@FLM306=Filo - Otomobil kirala
+ ;Fleet label
+@FLM307=Filo - Müşteri kayıtlarını görüntüle
+ ;Fleet label
+@FLM308=Filo - Stoğu görüntüle
+ ;Fleet label
+@FLM309=Filo - İş akışı memuru
+ ;Fleet label
+@FLM310=Araç rengi
+ ;Fleet label
+@FLM311=Filo - İş akışı yöneticisi
+ ;Fleet label
+@FLM312=Filo - İş akışı servis teknisyeni
+ ;Fleet label
+@FLM313=Filo - Temel görevler
+ ;Fleet label
+@FLM314=Filo - Otomobilleri yönet
+ ;Fleet label
+@FLM315=Filo standart işlem döngüsü
+ ;Fleet label
+@FLM316=Araç mesafesi
+ ;Fleet label
+@FLM317=Maliyet
+ ;Fleet label
+@FLM318=Tasfiye
+ ;Fleet label
+@FLM54=Müşteriler
+ ;Fleet label
+@FLM266=Kredi kartı süresi dolma
+ ;Fleet label (table)
+@FLM277=Sürücü belgesi
+ ;Fleet label (table)
+@FLM320=Müşteri listesi
+ ;Fleet label (report menu item)
+@FLM321=Müşteri listesi raporu
+ ;Fleet label (report menu item help text)
+@FLM267=İş akışı kurulumu
+ ;Fleet label
+@FLM400=Araç bakımı iş akışı
+ ;Fleet label
+@FLM500=Tercih edilen ödeme yöntemi
+ ;Fleet label
+@FLM501=Beyaz
+ ;Fleet colors
+@FLM502=Gri
+ ;Fleet colors
+@FLM503=Sarı
+ ;Fleet colors
+@FLM504=Turuncu
+ ;Fleet colors
+@FLM505=Çekme
+ ;Fleet label
+@FLM506=İade et
+ ;Fleet label
+@FLM507=Kiralama başlat
+ ;Fleet label
+@FLM401=Rezervasyon yönetimi
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Önceki mesafe
+ ;Fleet label for returning vehicle slider
+@FLM509=Yeni mesafe
+ ;Fleet label for returning vehicle slider
+@FLM510=Araç kiralama
+ ;Fleet label
+@FLM512=Ek masraflar
+ ;Fleet label
+@FLM513=Tasarruflar
+ ;Fleet label
+@FLM514=Yeni rezervasyon
+ ;New reservation menu item label
+@FLM515=Model yılı
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Son tarih yılı
+ ;Expiration year label
+@FLM517=Müşteri raporu
+ ;Fleet tile label
+@FLM518=Mevcut rezervasyonlar
+ ;Fleet tile label
+@FLM519=Vadesi geçmiş kiralamalar
+ ;Fleet tile label
+@FLM520=Ödeme adı
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=Son ay
+ ;Expiration month label
+@FLM523=Karttaki ad
+ ;Fleet name on credit card
+@FLM524=Araç oranı geçmişi
+ ;Fleet form label
+@FLM525=Yeni açıklama
+ ;Fleet dialog caption
+@FLM526=Yeni müşteri
+ ;Fleet dialog caption
+@FLM527=Yeni ödeme bilgileri
+ ;Fleet dialog caption
+@FLM528=Donatı ekle
+ ;Fleet dialog caption
+@FLM529=Müşteri seçin
+ ;Fleet dialog caption
+@FLM530=Çekme için hazır
+ ;Fleet ReservationState enum option
+@FLM531=Adres kayıt kodu
+ ;Fleet label
+@FLM532=Rengin onaltılı kodu
+ ;Fleet label
+@FLM533=Renk kodu
+ ;Fleet label
+@FLM534=Renk adı
+ ;Fleet label
+@FLM535=İskonto kodu
+ ;Fleet label
+@FLM536=Ödeme bilgileri kodu
+ ;Fleet label
+@FLM537=Rezervasyon Kimliği
+ ;Fleet label
+@FLM539=Kiralanmış araçlar
+ ;Fleet label
+@FLM540=Filo yönetimi
+ ;Fleet menu label
+@FLM541=Gösteri verilerini yükle
+ ;Fleet button text
+@FLM542=Oran geçmişi
+ ;Fleet button text
+@FLM543=Müşteri değiştir
+ ;Fleet dialog label
+@FLM544=Araç seçin
+ ;Fleet button text
+@FLM545=Tüm rezervasyonlar
+ ;Fleet grid title
+@FLM546=Müşteri geribildirimi
+ ;Fleet group label
+@FLM547=Kiralama bilgileri
+ ;Fleet group label
+@FLM548=Masraf resmi
+ ;Fleet group label
+@FLM549=Veri kurulumu
+ ;Fleet tab label
+@FLM550=Araç bilgileri
+ ;Fleet group label
+@FLM551=Kullanılabilir Araçlar
+ ;Fleet chart label
+@FLM552=Araç Kiralama Durumu
+ ;Fleet chart label
+@FLM553=Modele göre araç - gelir
+ ;Fleet chart label
+@FLM554=Bugün çekme
+ ;Fleet panorama label
+@FLM555=Bugün iade
+ ;Fleet panorama label
+@FLM556=Kiralama fiyatları
+ ;Fleet panorama label
+@FLM558=Rezervasyon ayrıntıları
+ ;Fleet panorama label
+@FLM559=Aksesuarlar
+ ;Fleet panorama label
+@FLM560=Özellikler
+ ;Fleet group label
+@FLM561=Alma bilgileri
+ ;Fleet field label
+@FLM562=İade bilgileri
+ ;Fleet field label
+@FLM563=Kiralama listesi
+ ;Fleet report label
+@FLM564=Örnek müşteriler, kiralamalar ve araçlar oluştur
+ ;Fleet TOC label
+@FLM565=Bu işlem yalnızca birkaç saniye sürer.  
+ ;New Comment
+@FLM322=Müşteri Tarafından Kiralamalar
+ ;Fleet report label
+@FLM566=Müşteri grafikleri
+ ;Fleet form part caption
+@FLM567=Araç gelir grafiği
+ ;Fleet form part caption
+@FLM601=Filo Yönetimi Merkezi
+ ;Fleet rental entity
+@FLM602=Filo Yönetim Müşterileri
+ ;Fleet customer entity
+@FLM603=Örnek Uygulama
+ ;Label for the sample applet name
+@FLM604=Uygulaması çerçevesini göstermek ve test etmek için kullanılan bir örnek uygulama
+ ;Label for the sample applet description
+@FLM605=Daha fazla bilgi
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Müşteri yerleşimleri
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Şablon müşteri yerleşimlerinin bir haritasını sağlar
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Duruma göre kiralamalar
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Şablon kiralama durumu sayılarını sağlar
+ ;Rentals by status template description
+FMCustomerEntityView=Filo Yönetimi Müşterileri varlığını görüntüle
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Filo Yönetimi Müşterileri varlığını koru
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Filo Yönetimi Kiralamaları varlığını görüntüle
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Filo Yönetimi Kiralamaları varlığını koru
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Faaliyet varlığını görüntüle
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Faaliyet varlığını koru
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Kategori varlığını görüntüle
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Kategori varlığını koru
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Tüzel kişilik varlığını görüntüle
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Tüzel kişilik varlığını koru
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Satır özelliği varlığını görüntüle
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Satır özelliği varlığını koru
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Dönem varlığını görüntüle
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Dönem varlığını koru
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Proje varlığını görüntüle
+ ;View privilege for RCADProject
+RCADProjectMaintain=Proje varlığını koru
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Zaman çizelgesi varlığını görüntüle
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Zaman çizelgesi varlığını koru
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Zaman çizelgesi girişi varlığını görüntüle
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Zaman çizelgesi girişi varlığını koru
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Zaman çizelgesi ayarları varlığını görüntüle
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Zaman çizelgesi ayarları varlığını koru
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Zaman çizelgesi iş akışı geçmişi varlığını görüntüle
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Zaman çizelgesi iş akışı geçmişi varlığını koru
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=İş akışı geçmişi madde varlığını görüntüle
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=İş akışı geçmişi madde varlığını koru
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Kiralama bul
+FMTemplateCustomerInformationDisplayName=Müşteri bilgileri
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Şablon temel müşteri bilgilerini ve müşteri kiralamalarının listesini verir
+ ;Fleet customer information template description
+DataCreated=Örnek veriler oluşturuldu.
+DataRestored=Örnek veriler geri yüklendi.
+DataRestoreConfirm=Bu, tüm Filo Yönetimi verilerini ilk durumlarına geri yükleyecek. Bunu mu yapmak istiyorsunuz?
+Branch=Şube _DEMO_
+ ;Branch operating unit type
+RentalLocation=Kiralama konumu _DEMO_
+ ;Rental location operating unit type
+Region=Bölge _DEMO_
+ ;Region operating unit type
+Timestamp=Zaman damgası
+ ;Comment timestamp
+CustomerImage=Müşteri resmi
+ ;Fleet label
+Analytics=Analiz
+ ;used on Fleet clerk workspace for Analytics section

@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Udržovat data hlavní entity pro správu dat
+DataManagementFleetMasterEntitiesView=Zobrazit data hlavní entity pro správu dat

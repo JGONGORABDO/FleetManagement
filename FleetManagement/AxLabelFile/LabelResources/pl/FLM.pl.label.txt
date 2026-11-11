@@ -1,0 +1,784 @@
+﻿@FLM41=Pliki etykiet utworzone 2011-04-03
+ ;By user Admin
+@FLM42=Czerwony
+ ;Fleet colors
+@FLM43=Niebieski
+ ;Fleet colors
+@FLM44=Zielony
+ ;Fleet colors
+@FLM46=Wybierz obraz
+ ;Fleet label
+@FLM47=Zmień
+ ;Fleet label
+@FLM48=Usuń
+ ;Fleet label
+@FLM49=Odbiorca
+ ;Fleet label
+@FLM50=Otwórz
+ ;Fleet label
+@FLM51=Nowy
+ ;Fleet label
+@FLM52=Wynajem
+ ;Fleet label
+@FLM53=Ogólne
+ ;Fleet label
+@FLM55=Widok
+ ;Fleet label
+@FLM56=Usuń
+ ;Fleet label
+@FLM57=Załączniki
+ ;Fleet label
+@FLM58=Ukończono
+ ;Fleet label
+@FLM59=Opłaty za wynajem
+ ;Fleet label
+@FLM60=Okres wynajmu
+ ;Fleet label
+@FLM61=Od
+ ;Fleet label
+@FLM62=Do
+ ;Fleet label
+@FLM63=Przebieg
+ ;Fleet label
+@FLM64=Początek
+ ;Fleet label
+@FLM65=Koniec
+ ;Fleet label
+@FLM66=Poziomy paliwa
+ ;Fleet label
+@FLM67=Odbiór
+ ;Fleet label
+@FLM68=Opłaty
+ ;Fleet label
+@FLM69=Dodaj opłatę
+ ;Fleet label
+@FLM70=Uwzględnij ciężarówki
+ ;Fleet label
+@FLM71=Wynajmy
+ ;Fleet label
+@FLM72=Edytuj
+ ;Fleet label
+@FLM73=Konfiguracja zarządzania flotą
+ ;Fleet label
+@FLM74=Marka i modele pojazdów
+ ;Fleet label
+@FLM75=Definiuj marki i modele pojazdów
+ ;Fleet label
+@FLM76=Zdefiniuj markę i modele pojazdów w zapasach, dołączając reprezentatywny obraz modelu.
+ ;Fleet label
+@FLM77=Obraz modelu
+ ;Fleet label
+@FLM78=Przeglądaj...
+ ;Fleet label
+@FLM79=Nowa marka
+ ;Fleet label
+@FLM80=Nowy model
+ ;Fleet label
+@FLM81=Typy opłat za wynajem
+ ;Fleet label
+@FLM82=Definiuj typy opłat
+ ;Fleet label
+@FLM83=Typy opłat służą do kategoryzowania każdej opłaty za wynajem. Umożliwia to łatwiejsze śledzenie kosztów.
+ ;Fleet label
+@FLM84=Klasyfikacje bezpieczeństwa SUV-ów
+ ;Fleet label
+@FLM85=Definiuj klasyfikacje bezpieczeństwa SUV-ów
+ ;Fleet label
+@FLM86=Pojazdy
+ ;Fleet label
+@FLM87=Konserwacja
+ ;Fleet label
+@FLM88=Historia
+ ;Fleet label
+@FLM89=Stawki historyczne
+ ;Fleet label
+@FLM90=Stawki
+ ;Fleet label
+@FLM91=Szczegóły
+ ;Fleet label
+@FLM92=Informacje o samochodach osobowych i SUV-ach
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=Informacje o ciężarówkach
+ ;Fleet label
+@FLM95=Pojazdy
+ ;Fleet label
+@FLM96=Dostępność
+ ;Fleet label
+@FLM97=Lokalizacja
+ ;Fleet label
+@FLM98=Konserwacja
+ ;Fleet label
+@FLM99=Rekord
+ ;Fleet label
+@FLM100=Lista
+ ;Fleet label
+@FLM101=Identyfikator pojazdu
+ ;Fleet label
+@FLM102=Menedżer dat stawek za pojazdy
+ ;Fleet label
+@FLM103=Nowa wersja
+ ;Fleet label
+@FLM104=Konserwacja pojazdu
+ ;Fleet label
+@FLM105=Zarządzanie flotą
+ ;Fleet label
+@FLM106=Najnowsze wynajmy
+ ;Fleet label
+@FLM107=Moje wewnętrzne organizacje na potrzeby bezpiecznego dostępu
+ ;Fleet label
+@FLM108=Pojazdy, do których użytkownik ma bezpieczny dostęp
+ ;Fleet label
+@FLM109=Organizacje wewnętrzne, do których użytkownik ma dostęp
+ ;Fleet label
+@FLM110=Ciężarówki
+ ;Fleet label
+@FLM111=SUV-y
+ ;Fleet label
+@FLM112=Menu stron widoku odbiorców
+ ;Fleet label
+@FLM113=Akcje
+ ;Fleet label
+@FLM114=Menu Pojazd
+ ;Fleet label
+@FLM115=Menu stron widoku pojazdów
+ ;Fleet label
+@FLM116=Odział — przestarzałe
+ ;Fleet label
+@FLM117=Lokalizacja wynajmu — przestarzałe
+ ;Fleet label
+@FLM118=Region — przestarzałe
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Typ paliwa
+ ;Fleet label
+@FLM123=Standardowy
+ ;Fleet label
+@FLM124=Premium
+ ;Fleet label
+@FLM125=Włączony sygnał GPS
+ ;Fleet label
+@FLM126=Wymiana oleju
+ ;Fleet label
+@FLM127=Naprawa
+ ;Fleet label
+@FLM128=Konserwacja profilaktyczna
+ ;Fleet label
+@FLM129=Oczekuje na badanie
+ ;Fleet label
+@FLM130=Oczekuje na serwis
+ ;Fleet label
+@FLM131=Oczekuje na zatwierdzenie
+ ;Fleet label
+@FLM132=Oczekuje na czyszczenie
+ ;Fleet label
+@FLM133=Gotowe
+ ;Fleet label
+@FLM134=Skrzynia biegów
+ ;Fleet label
+@FLM135=Automatyczna
+ ;Fleet label
+@FLM136=Ręczna
+ ;Fleet label
+@FLM137=Dostępny
+ ;Fleet label
+@FLM138=W serwisie
+ ;Fleet label
+@FLM139=Wynajęty
+ ;Fleet label
+@FLM140=Uszkodzony
+ ;Fleet label
+@FLM141=Wycofany
+ ;Fleet label
+@FLM142=Oczekuje
+ ;Fleet label
+@FLM143=Typ pojazdu
+ ;Fleet label
+@FLM144=Nieznany
+ ;Fleet label
+@FLM145=Ciężarówka
+ ;Fleet label
+@FLM146=Samochód osobowy
+ ;Fleet label
+@FLM147=Typ opłaty
+ ;Fleet label
+@FLM148=Prawa jazdy
+ ;Fleet label
+@FLM149=Model marki
+ ;Fleet label
+@FLM150=Uwagi
+ ;Fleet label
+@FLM151=Informacje dotyczące wynajmu pojazdu
+ ;Fleet label
+@FLM152=Identyfikator klasyfikacji bezpieczeństwa
+ ;Fleet label
+@FLM153=Identyfikator bezpieczeństwa klasy SUV
+ ;Fleet label
+@FLM154=Łączna liczba wynajmów
+ ;Fleet label
+@FLM155=Marka
+ ;Fleet label
+@FLM156=Marka pojazdu
+ ;Fleet label
+@FLM157=Model
+ ;Fleet label
+@FLM158=Model pojazdu
+ ;Fleet label
+@FLM159=Samochody osobowe
+ ;Fleet label
+@FLM160=Drzwi
+ ;Fleet label
+@FLM161=Liczba miejsc
+ ;Fleet label
+@FLM162=Typy opłaty
+ ;Fleet label
+@FLM163=Data wygaśnięcia
+ ;Fleet label
+@FLM164=Przebieg początkowy
+ ;Fleet label
+@FLM165=Przebieg końcowy
+ ;Fleet label
+@FLM166=Początkowy poziom paliwa
+ ;Fleet label
+@FLM167=Końcowy poziom paliwa
+ ;Fleet label
+@FLM168=Informacje dotyczące wynajmu pojazdu
+ ;Fleet label
+@FLM169=Liczba miejsc w trzecim rzędzie
+ ;Fleet label
+@FLM170=Promień skrętu
+ ;Fleet label
+@FLM171=Prześwit
+ ;Fleet label
+@FLM172=Ocena przy dachowaniu
+ ;Fleet label
+@FLM173=Ocena ogólna
+ ;Fleet label
+@FLM174=Pojemność bagażnika
+ ;Fleet label
+@FLM175=Zajmowane miejsce
+ ;Fleet label
+@FLM176=Maksymalne obciążenie
+ ;Fleet label
+@FLM177=Typ
+ ;Fleet label
+@FLM178=Masa pojazdu brutto
+ ;Fleet label
+@FLM179=Stan pojazdu
+ ;Fleet label
+@FLM180=Organizacja
+ ;Fleet label
+@FLM181=Wyświetl podgląd grupy
+ ;Fleet label
+@FLM182=Marki pojazdów
+ ;Fleet label
+@FLM183=Modele pojazdów
+ ;Fleet label
+@FLM184=Obraz pojazdu
+ ;Fleet label
+@FLM185=Specyfikacja modelu
+ ;Fleet label
+@FLM186=Format obrazu
+ ;Fleet label
+@FLM187=Stawki za pojazdy
+ ;Fleet label
+@FLM188=Stawka za dzień
+ ;Fleet label
+@FLM189=Stawka za tydzień
+ ;Fleet label
+@FLM190=Moje organizacje wewnętrzne skojarzone z rolą
+ ;Fleet label
+@FLM191=Tabela zawierająca organizacje wewnętrzne skojarzone z rolą użytkownika
+ ;Fleet label
+@FLM192=Widok DimAttributeOMBranch zawiera wszystkie rekordy z tabeli OMOperatingUnit oznaczone jako Oddział.
+ ;Fleet label
+@FLM193=Widok DimAttributeOMRegion zawiera wszystkie rekordy z tabeli OMOperatingUnit oznaczone jako Region.
+ ;Fleet label
+@FLM194=Widok DimAttributeOMRentalLocation zawiera wszystkie rekordy z tabeli OMOperatingUnit, oznaczone jako Lokalizacja wynajmu.
+ ;Fleet label
+@FLM195=Centrum zarządzania flotą
+ ;Fleet label
+@FLM196=Dodaj
+ ;Fleet label
+@FLM197=Aktualne wynajmy
+ ;Fleet label
+@FLM198=Przypisane pojazdy
+ ;Fleet label
+@FLM199=Dostępne pojazdy
+ ;Fleet label
+@FLM200=Wycofane pojazdy
+ ;Fleet label
+@FLM201=Zakończono
+ ;Fleet label
+@FLM202=W toku
+ ;Fleet label
+@FLM203=Stawka historyczna
+ ;Fleet label
+@FLM204=Zakończ wynajem
+ ;Fleet label
+@FLM205=Wyczyść pojazd
+ ;Fleet label
+@FLM206=Wykonaj badanie pojazdu
+ ;Fleet label
+@FLM207=Serwisuj pojazd
+ ;Fleet label
+@FLM208=Zatwierdzenie serwisu
+ ;Fleet label
+@FLM209=Szczegóły odbiorcy
+ ;Fleet label
+@FLM210=Imię i nazwisko
+ ;Fleet label
+@FLM211=Prawo jazdy
+ ;Fleet label
+@FLM212=Adres
+ ;Fleet label
+@FLM213=Telefon
+ ;Fleet label
+@FLM214=Adres e-mail
+ ;Fleet label
+@FLM215=Informacje o płatności
+ ;Fleet label
+@FLM216=Karta kredytowa
+ ;Fleet label
+@FLM217=Wygaśnięcie
+ ;Fleet label
+@FLM218=Data
+ ;Fleet label
+@FLM219=Rozpoczęcie wynajmu
+ ;Fleet label
+@FLM220=Data zakończenia
+ ;Fleet label
+@FLM221=Opis
+ ;Fleet label
+@FLM222=Ilość
+ ;Fleet label
+@FLM223=Rozszerzony
+ ;Fleet label
+@FLM224=Szczegóły pojazdu
+ ;Fleet label
+@FLM225=Marka i model
+ ;Fleet label
+@FLM226=Stawka dzienna
+ ;Fleet label
+@FLM227=Stawka tygodniowa
+ ;Fleet label
+@FLM228=Część podglądu pojazdu
+ ;Fleet label
+@FLM229=Kolor
+ ;Fleet label
+@FLM230=Stan
+ ;Fleet label
+@FLM231=Przypisany pojazd
+ ;Fleet label
+@FLM232=Wskaźniki zarządzania flotą
+ ;Fleet label
+@FLM233=Ogranicz użytkowników do jednostek biznesowych
+ ;Fleet label
+@FLM234=Mój dostęp do pojazdów na potrzeby bezpiecznego dostępu
+ ;Fleet label
+@FLM235=Samoobsługa rekordów wynajmu
+ ;Fleet label
+@FLM236=Pracownik ds. zarządzania flotą
+ ;Fleet label
+@FLM237=Pracownik ds. wynajmu
+ ;Fleet label
+@FLM238=Menedżer oddziału ds. zarządzania flotą
+ ;Fleet label
+@FLM239=Menedżer oddziału ds. wynajmu
+ ;Fleet label
+@FLM240=Zarządzanie flotą — serwisant
+ ;Fleet label
+@FLM241=Serwisant
+ ;Fleet label
+@FLM242=Użyj przepływu pracy
+ ;Fleet label
+@FLM243=Grupa usług uwidaczniająca dostępne zapasy samochodów
+ ;Fleet label
+@FLM244=Liczba drzwi
+ ;Number of doors in the FM vehicle
+@FLM245=Wartość
+ ;Fleet label
+@FLM246=Poziom paliwa
+ ;Fleet label
+@FLM247=Prześwit
+ ;Fleet label
+@FLM248=Zajmowane miejsce (ciężarówka)
+ ;Fleet label
+@FLM249=Maksymalne obciążenie
+ ;Fleet label
+@FLM250=Pojemność bagażnika dachowego
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Ocena
+ ;Fleet label
+@FLM253=Suma wynajmu
+ ;Fleet label
+@FLM254=Miejsca
+ ;Fleet label
+@FLM255=Typ opłaty
+ ;Fleet label (table)
+@FLM256=Pojemność
+ ;Fleet label
+@FLM257=Promień skrętu
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Zapytanie przepływu pracy
+ ;Fleet label
+@FLM260=Rekord konserwacji
+ ;Fleet label
+@FLM261=Nowy wynajem
+ ;Fleet label
+@FLM262=Wszystkie wynajmy
+ ;Fleet label
+@FLM263=Ustawienia floty
+ ;Fleet label
+@FLM264=Wszystkie pojazdy
+ ;Fleet label
+@FLM265=Daty stawki
+ ;Fleet label
+@FLM268=Oddziały _DEMO_
+ ;Fleet label
+@FLM269=Lokalizacje wynajmu _DEMO_
+ ;Fleet label
+@FLM270=Regiony _DEMO_
+ ;Fleet label
+@FLM271=Czyszczenie zakończone
+ ;Fleet label
+@FLM272=Usuń odbiorców
+ ;Fleet label
+@FLM273=Usuń wybrane wynajmy
+ ;Fleet label
+@FLM274=Usuń wybrany pojazd
+ ;Fleet label
+@FLM275=Badanie zakończone
+ ;Fleet label
+@FLM276=Serwis zakończony
+ ;Fleet label
+@FLM278=Rozpocznij przepływ pracy
+ ;Fleet label
+@FLM279=Zatwierdź serwis
+ ;Fleet label
+@FLM280=Odmów serwisu
+ ;Fleet label
+@FLM281=Odrzuć serwis
+ ;Fleet label
+@FLM282=Usuń wybrane pojazdy
+ ;Fleet label
+@FLM283=Konfiguracja przepływu pracy
+ ;Fleet label
+@FLM284=Utwórz lub zaktualizuj oddziały
+ ;Fleet label
+@FLM285=Utwórz lub zaktualizuj lokalizacje wynajmu
+ ;Fleet label
+@FLM286=Utwórz lub zaktualizuj regiony
+ ;Fleet label
+@FLM287=Dodaj/edytuj odbiorcę
+ ;Fleet label
+@FLM288=Identyfikator wynajmu pojazdu
+ ;Fleet label (table)
+@FLM289=Dodaj/edytuj opłatę za wynajem
+ ;Fleet label
+@FLM290=Szczegóły opłaty
+ ;Fleet label
+@FLM291=Szczegóły wynajmu
+ ;Fleet label
+@FLM292=Edytuj wynajem
+ ;Fleet label
+@FLM293=Wynajmy według odbiorców
+ ;Fleet label
+@FLM294=Wynajmy na model
+ ;Fleet label
+@FLM295=Dodaj/edytuj pojazd
+ ;Fleet label
+@FLM296=Nachodzące wynajmy
+ ;Fleet label
+@FLM297=Wynajmy według pojazdów
+ ;Fleet label
+@FLM298=Zobacz Pomoc online
+ ;Fleet label
+@FLM299=Typ opłaty za wynajem
+ ;Fleet label
+@FLM300=Zarejestruj przebieg
+ ;Fleet label
+@FLM301=Cykl przetwarzania floty
+ ;Fleet label
+@FLM302=Flota — zarządzanie ustawieniami floty
+ ;Fleet label
+@FLM303=Flota — edytowanie rekordów odbiorców
+ ;Fleet label
+@FLM304=Flota — zarządzanie odbiorcami
+ ;Fleet label
+@FLM305=Flota — zarządzanie zapasami
+ ;Fleet label
+@FLM306=Flota — wynajmowanie samochodów
+ ;Fleet label
+@FLM307=Flota — wyświetlanie rekordów odbiorców
+ ;Fleet label
+@FLM308=Flota — wyświetlanie zapasów
+ ;Fleet label
+@FLM309=Flota — pracownik ds. przepływów pracy
+ ;Fleet label
+@FLM310=Kolor pojazdu
+ ;Fleet label
+@FLM311=Flota — menedżer ds. przepływów pracy
+ ;Fleet label
+@FLM312=Flota — serwisant ds. przepływów pracy
+ ;Fleet label
+@FLM313=Flota — podstawowe obowiązki
+ ;Fleet label
+@FLM314=Flota — zarządzanie samochodami
+ ;Fleet label
+@FLM315=Cykl standardowego przetwarzania floty
+ ;Fleet label
+@FLM316=Przebieg pojazdu
+ ;Fleet label
+@FLM317=Koszt
+ ;Fleet label
+@FLM318=Prześwit
+ ;Fleet label
+@FLM54=Odbiorcy
+ ;Fleet label
+@FLM266=Wygaśnięcie karty kredytowej
+ ;Fleet label (table)
+@FLM277=Prawa jazdy
+ ;Fleet label (table)
+@FLM320=Lista odbiorców
+ ;Fleet label (report menu item)
+@FLM321=Raport listy odbiorców
+ ;Fleet label (report menu item help text)
+@FLM267=Ustawienia przepływu pracy
+ ;Fleet label
+@FLM400=Przepływ pracy konserwacji pojazdu
+ ;Fleet label
+@FLM500=Preferowana metoda płatności
+ ;Fleet label
+@FLM501=Biały
+ ;Fleet colors
+@FLM502=Szary
+ ;Fleet colors
+@FLM503=Żółty
+ ;Fleet colors
+@FLM504=Pomarańczowy
+ ;Fleet colors
+@FLM505=Odbiór
+ ;Fleet label
+@FLM506=Zwrot
+ ;Fleet label
+@FLM507=Rozpocznij wynajem
+ ;Fleet label
+@FLM401=Zarządzanie rezerwacjami
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Poprzedni przebieg
+ ;Fleet label for returning vehicle slider
+@FLM509=Nowy przebieg
+ ;Fleet label for returning vehicle slider
+@FLM510=Wynajem pojazdu
+ ;Fleet label
+@FLM512=Dodatkowe opłaty
+ ;Fleet label
+@FLM513=Oszczędności
+ ;Fleet label
+@FLM514=Nowa rezerwacja
+ ;New reservation menu item label
+@FLM515=Rok modelu
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Rok wygaśnięcia
+ ;Expiration year label
+@FLM517=Raport odbiorców
+ ;Fleet tile label
+@FLM518=Istniejące rezerwacje
+ ;Fleet tile label
+@FLM519=Przeterminowane wynajmy
+ ;Fleet tile label
+@FLM520=Nazwa płatności
+ ;Fleet PaymentInfo field label
+@FLM521=Kod CVV
+ ;Fleet label
+@FLM522=Miesiąc wygaśnięcia
+ ;Expiration month label
+@FLM523=Imię i nazwisko na karcie
+ ;Fleet name on credit card
+@FLM524=Historia stawek za pojazdy
+ ;Fleet form label
+@FLM525=Nowy komentarz
+ ;Fleet dialog caption
+@FLM526=Nowy odbiorca
+ ;Fleet dialog caption
+@FLM527=Nowe informacje o płatności
+ ;Fleet dialog caption
+@FLM528=Dodaj akcesorium
+ ;Fleet dialog caption
+@FLM529=Wybierz odbiorcę
+ ;Fleet dialog caption
+@FLM530=Gotowe do odbioru
+ ;Fleet ReservationState enum option
+@FLM531=Identyfikator rekordu adresu
+ ;Fleet label
+@FLM532=Szesnastkowy kod koloru
+ ;Fleet label
+@FLM533=Identyfikator koloru
+ ;Fleet label
+@FLM534=Nazwa koloru
+ ;Fleet label
+@FLM535=Identyfikator rabatu
+ ;Fleet label
+@FLM536=Identyfikator informacji o płatności
+ ;Fleet label
+@FLM537=Identyfikator rezerwacji
+ ;Fleet label
+@FLM539=Wynajęte pojazdy
+ ;Fleet label
+@FLM540=Zarządzanie flotą
+ ;Fleet menu label
+@FLM541=Załaduj dane demonstracyjne
+ ;Fleet button text
+@FLM542=Historia stawek
+ ;Fleet button text
+@FLM543=Zmień odbiorcę
+ ;Fleet dialog label
+@FLM544=Wybierz pojazd
+ ;Fleet button text
+@FLM545=Wszystkie rezerwacje
+ ;Fleet grid title
+@FLM546=Opinie odbiorców
+ ;Fleet group label
+@FLM547=Informacje o wynajmie
+ ;Fleet group label
+@FLM548=Obraz opłaty
+ ;Fleet group label
+@FLM549=Ustawienia danych
+ ;Fleet tab label
+@FLM550=Informacje o pojeździe
+ ;Fleet group label
+@FLM551=Dostępne pojazdy
+ ;Fleet chart label
+@FLM552=Stan wynajmu pojazdu
+ ;Fleet chart label
+@FLM553=Pojazdy według modeli — przychód
+ ;Fleet chart label
+@FLM554=Odbiór dzisiaj
+ ;Fleet panorama label
+@FLM555=Zwrot jutro
+ ;Fleet panorama label
+@FLM556=Stawki za wynajem
+ ;Fleet panorama label
+@FLM558=Szczegóły rezerwacji
+ ;Fleet panorama label
+@FLM559=Akcesoria
+ ;Fleet panorama label
+@FLM560=Funkcje
+ ;Fleet group label
+@FLM561=Informacje o odbiorze
+ ;Fleet field label
+@FLM562=Informacje o zwrocie
+ ;Fleet field label
+@FLM563=Lista wynajmów
+ ;Fleet report label
+@FLM564=Utwórz przykładowych odbiorców, wynajmy i pojazdy
+ ;Fleet TOC label
+@FLM565=To potrwa tylko kilka sekund.  
+ ;New Comment
+@FLM322=Wynajmy według odbiorców
+ ;Fleet report label
+@FLM566=Wykresy odbiorców
+ ;Fleet form part caption
+@FLM567=Wykres przychodów z pojazdów
+ ;Fleet form part caption
+@FLM601=Zarządzanie flotą — wynajmy
+ ;Fleet rental entity
+@FLM602=Zarządzanie flotą — odbiorcy
+ ;Fleet customer entity
+@FLM603=Przykładowy aplet
+ ;Label for the sample applet name
+@FLM604=Przykładowy aplet używany do demonstrowania i testowania struktury apletów
+ ;Label for the sample applet description
+@FLM605=Zobacz więcej
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Lokalizacje odbiorców
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Szablon dostarcza mapę lokalizacji odbiorców
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Wynajmy według stanów
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Szablon dostarcza liczby stanów wynajmu
+ ;Rentals by status template description
+FMCustomerEntityView=Wyświetlanie jednostki Zarządzanie flotą — odbiorcy
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Obsługa jednostki Zarządzanie flotą — odbiorcy
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Wyświetlanie jednostki Zarządzanie flotą — wynajmy
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Obsługa jednostki Zarządzanie flotą — wynajmy
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Wyświetlanie jednostki Działanie
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Obsługa jednostki Działanie
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Wyświetlanie jednostki Kategoria
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Obsługa jednostki Kategoria
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Wyświetlanie jednostki Firma
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Obsługa jednostki Firma
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Wyświetlanie jednostki Właściwość wiersza
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Obsługa jednostki Właściwość wiersza
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Wyświetlanie jednostki Okres
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Obsługa jednostki Okres
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Wyświetlanie jednostki Projekt
+ ;View privilege for RCADProject
+RCADProjectMaintain=Obsługa jednostki Projekt
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Wyświetlanie jednostki Karta czasu pracy
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Obsługa jednostki Karta czasu pracy
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Wyświetlanie jednostki Wpis karty czasu pracy
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Obsługa jednostki Wpis karty czasu pracy
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Wyświetlanie jednostki Ustawienia karty czasu pracy
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Obsługa jednostki Ustawienia karty czasu pracy
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Wyświetlanie jednostki Historia przepływu pracy karty czasu pracy
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Obsługa jednostki Historia przepływu pracy karty czasu pracy
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Wyświetlanie jednostki Pozycja historii przepływu pracy
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Obsługa jednostki Pozycja historii przepływu pracy
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Znajdź wynajmy
+FMTemplateCustomerInformationDisplayName=Informacje o odbiorcy
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Szablon dostarcza podstawowe informacje o odbiorcy i listę jego wynajmów
+ ;Fleet customer information template description
+DataCreated=Przykładowe dane zostały utworzone.
+DataRestored=Przykładowe dane zostały przywrócone.
+DataRestoreConfirm=Spowoduje to przywrócenie wszystkich danych modułu Zarządzanie flotą do oryginalnego stanu. Czy to właśnie chcesz zrobić?
+Branch=Oddział _DEMO_
+ ;Branch operating unit type
+RentalLocation=Lokalizacja wynajmu _DEMO_
+ ;Rental location operating unit type
+Region=Region _DEMO_
+ ;Region operating unit type
+Timestamp=Sygnatura czasowa
+ ;Comment timestamp
+CustomerImage=Zdjęcie odbiorcy
+ ;Fleet label
+Analytics=Analizy
+ ;used on Fleet clerk workspace for Analytics section

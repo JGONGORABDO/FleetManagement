@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMAllReservationListPage</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMAllReservationListPage
+{
+    private List rentalListInternal;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    public void new()
+    {
+        rentalListInternal = new List(Types::Class);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalList</Name>
+				<Source><![CDATA[
+    [SysAppCollection(classStr(FMAllReservationListItem), "Reservation list")]
+    public List rentalList(List _value=rentalListInternal)
+    {
+        rentalListInternal = _value;
+        return rentalListInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getAllReservations</Name>
+				<Source><![CDATA[
+    public static FMAllReservationListPage getAllReservations(SysAppEntityContext _entityContext, List _filterContextList)
+    {
+        FMRental rentalTable;
+        FMCustomer customerTable;
+        FMAddressTable addressTable;
+        FMVehicle vehicleTable;
+        FMAllReservationListPage rentalListPage = new FMAllReservationListPage();
+
+        while select * from rentalTable
+            join customerTable
+            join vehicleTable
+            join addressTable
+            order by rentalTable.RentalId desc
+            where rentalTable.Customer == customerTable.RecId
+                && rentalTable.Vehicle == vehicleTable.RecId   
+                && customerTable.AddressID == addressTable.RecId         
+        {
+            FMAllReservationListItem reservationListItem = new FMAllReservationListItem();
+            reservationListItem.populate(rentalTable);
+
+            reservationListItem.customer(new FMCustomerRefGroup());
+            reservationListItem.customer().populate(customerTable);
+
+            reservationListItem.vehicle(new FMVehicleRefGroup());
+            reservationListItem.vehicle().populate(vehicleTable);
+
+            rentalListPage.rentalList().addEnd(reservationListItem);
+        }
+
+        return rentalListPage;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IgnoreDiagnostics xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FleetManagement_CompileError</Name>
+	<Items>
+		<Diagnostic>
+			<DiagnosticType>ExternalReference</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Reference/Microsoft.Commerce.Flighting.Common</Path>
+			<Moniker>AssemblyFileNotFound</Moniker>
+			<Message>Assembly 'Microsoft.Xbox.Experimentation.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d91bba2b903dc20f' failed to load because it was not found.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Compile</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Class/FMDataHelper/Method/initializeNumberSequence</Path>
+			<ElementType>Class Method</ElementType>
+			<Moniker>ObsoleteEntityUsageWithReason</Moniker>
+			<Message>'wizardAnnotatedFormat' is obsolete: ''Please use wizardAnnotatedFormatV2 instead''.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Compile</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Class/FMDataHelper/Method/initializeNumberSequence</Path>
+			<ElementType>Class Method</ElementType>
+			<Moniker>ObsoleteEntityUsageWithReason</Moniker>
+			<Message>'wizardFormat' is obsolete: ''Please use wizardFormatV2 instead''.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Compile</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Class/FMDataHelper/Method/cleanupBrokenNumberSequences</Path>
+			<ElementType>Class Method</ElementType>
+			<Moniker>ExtensibleEnumInComparisonAgainstNumericalValue</Moniker>
+			<Message>Comparing a numerical value with extensible enum 'Extensible Enumeration(NumberSeqModule)' will yield unexpected results. Extensible enum values are not deterministically assigned to a numerical value.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Metadata</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>AxView/CarColor</Path>
+			<Moniker>ViewWithIndexes</Moniker>
+			<Message>You have added an index to a view, but AX7 views do not support indexing: No index will be added to the view in SQL server. We suggest removing the index.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Metadata</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>AxView/DimAttributeOMBranch</Path>
+			<Moniker>ViewWithIndexes</Moniker>
+			<Message>You have added an index to a view, but AX7 views do not support indexing: No index will be added to the view in SQL server. We suggest removing the index.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Metadata</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>AxView/Reservation</Path>
+			<Moniker>ViewWithIndexes</Moniker>
+			<Message>You have added an index to a view, but AX7 views do not support indexing: No index will be added to the view in SQL server. We suggest removing the index.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Metadata</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>AxView/Vehicle</Path>
+			<Moniker>ViewWithIndexes</Moniker>
+			<Message>You have added an index to a view, but AX7 views do not support indexing: No index will be added to the view in SQL server. We suggest removing the index.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Metadata</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>AxView/MakeModel</Path>
+			<Moniker>ViewWithIndexes</Moniker>
+			<Message>You have added an index to a view, but AX7 views do not support indexing: No index will be added to the view in SQL server. We suggest removing the index.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Metadata</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>AxView/DimAttributeOMRentalLocation</Path>
+			<Moniker>ViewWithIndexes</Moniker>
+			<Message>You have added an index to a view, but AX7 views do not support indexing: No index will be added to the view in SQL server. We suggest removing the index.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Metadata</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>AxView/DimAttributeOMRegion</Path>
+			<Moniker>ViewWithIndexes</Moniker>
+			<Message>You have added an index to a view, but AX7 views do not support indexing: No index will be added to the view in SQL server. We suggest removing the index.</Message>
+		</Diagnostic>
+		<Diagnostic>
+			<DiagnosticType>Compile</DiagnosticType>
+			<Severity>Warning</Severity>
+			<Path>dynamics://Form/FMClerkWorkspace/Method/initAnalyticalReport</Path>
+			<ElementType>Form Method</ElementType>
+			<Moniker>ObsoleteEntityUsageWithReason</Moniker>
+			<Message>'initializeReportControl' is obsolete: '"Please call method initializeReportControlV2 instead."'.</Message>
+		</Diagnostic>
+	</Items>
+</IgnoreDiagnostics>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxEnum xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMReservationState</Name>
+	<EnumValues>
+		<AxEnumValue>
+			<Name>New</Name>
+			<Label>@FLM51</Label>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>ReadyForPickup</Name>
+			<Label>@FLM530</Label>
+			<Value>1</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>InProgress</Name>
+			<Label>@SYS137068</Label>
+			<Value>2</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>Complete</Name>
+			<Label>@FLM58</Label>
+			<Value>3</Value>
+		</AxEnumValue>
+	</EnumValues>
+</AxEnum>

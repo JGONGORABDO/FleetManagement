@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMPickupAndReturn</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[SysDataSetExtension(classStr(FMPickupAndReturn)), // The name of this class
+SysDataSetCacheTableExtension(tableStr(FMPickupAndReturnTable))] // The name of the cache table
+class FMPickupAndReturn extends SysDataSetQuery implements SysIDataSet
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>parmRefreshFrequency</Name>
+				<Source><![CDATA[
+    public SysDataCacheRefreshFrequency parmRefreshFrequency()
+    {
+        return 600; // Cache refresh frequency, in seconds.
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>parmQueryableIdentifier</Name>
+				<Source><![CDATA[
+    public SysQueryableIdentifier parmQueryableIdentifier()
+    {
+        return queryStr(FMPickupAndReturnQuery); // The name of the query.
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>parmCacheTypeId</Name>
+				<Source><![CDATA[
+    public SysDataCacheTypeId parmCacheTypeId()
+    {
+        return tableNum(FMPickupAndReturnTable); // The name of the table.
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>parmQueryableToCacheMapping</Name>
+				<Source><![CDATA[
+    public Map parmQueryableToCacheMapping()
+    {
+        Map sourceToTargetMap = super();
+
+        return sourceToTargetMap;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>construct</Name>
+				<Source><![CDATA[
+    public static FMPickupAndReturn construct()
+    {
+        return new FMPickupAndReturn();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

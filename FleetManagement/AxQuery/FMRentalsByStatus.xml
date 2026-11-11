@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxQuery xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxQuerySimple">
+	<Name>FMRentalsByStatus</Name>
+	<SourceCode>
+		<Methods>
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Query]
+public class FMRentalsByStatus extends QueryRun
+{
+}
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DataSources>
+		<AxQuerySimpleRootDataSource>
+			<Name>FMRental</Name>
+			<Table>FMRental</Table>
+			<DataSources />
+			<Fields>
+				<AxQuerySimpleDataSourceField xmlns=""
+					i:type="AxQuerySimpleDataSourceFieldCount">
+					<Name>VehicleRatePerDay</Name>
+					<Field>VehicleRatePerDay</Field>
+				</AxQuerySimpleDataSourceField>
+			</Fields>
+			<Ranges />
+			<GroupBy>
+				<AxQuerySimpleGroupByField>
+					<Name>QueryGroupByField1</Name>
+					<DataSource>FMRental</DataSource>
+					<Field>State</Field>
+				</AxQuerySimpleGroupByField>
+			</GroupBy>
+			<Having />
+			<OrderBy />
+		</AxQuerySimpleRootDataSource>
+	</DataSources>
+</AxQuery>

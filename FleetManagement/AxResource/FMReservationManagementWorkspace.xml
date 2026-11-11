@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxResource xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMReservationManagementWorkspace</Name>
+	<FileName>FMReservationManagementWorkspace.xml</FileName>
+	<RelativeUriInModelStore>FleetManagement\FleetManagement\AxResource\ResourceContent\XmlDoc\FMReservationManagementWorkspace.xml</RelativeUriInModelStore>
+	<TypeOfResource>XmlDoc</TypeOfResource>
+</AxResource>

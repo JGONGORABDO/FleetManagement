@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxKPI xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRevenueExecutiveCurrentPrevious</Name>
+	<BadThreshold>50</BadThreshold>
+	<GoodThreshold>80</GoodThreshold>
+	<HelpText>@SYS96939</HelpText>
+	<Label>@SYS96939</Label>
+	<Measurement>FMAggregateMeasurements</Measurement>
+	<ThresholdType>Percentage</ThresholdType>
+	<Goal>
+		<GoalType>BasedOnMeasure</GoalType>
+		<Measure>TotalRevenue</Measure>
+		<MeasureGroup>FMRentalCharges</MeasureGroup>
+		<Ranges>
+			<AxKPIRange>
+				<Name>CustomerGroup</Name>
+				<Attribute>CustomerGroup</Attribute>
+				<DefaultValue>Executive Member</DefaultValue>
+				<Dimension>FMCustomerProflie</Dimension>
+				<FilterType>Value</FilterType>
+			</AxKPIRange>
+			<AxKPIRange>
+				<Name>PreviousYear</Name>
+				<Attribute>Year</Attribute>
+				<DefaultValue>1</DefaultValue>
+				<Dimension>TransationDate</Dimension>
+			</AxKPIRange>
+		</Ranges>
+	</Goal>
+	<Value>
+		<Measure>TotalRevenue</Measure>
+		<MeasureGroup>FMRentalCharges</MeasureGroup>
+		<Ranges>
+			<AxKPIRange>
+				<Name>CustomerGroup</Name>
+				<Attribute>CustomerGroup</Attribute>
+				<DefaultValue>Executive Member</DefaultValue>
+				<Dimension>FMCustomerProflie</Dimension>
+				<FilterType>Value</FilterType>
+			</AxKPIRange>
+			<AxKPIRange>
+				<Name>CurrentYear</Name>
+				<Attribute>Year</Attribute>
+				<DefaultValue>0</DefaultValue>
+				<Dimension>TransationDate</Dimension>
+			</AxKPIRange>
+		</Ranges>
+	</Value>
+</AxKPI>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Reservation</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class Reservation extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>GetDuration</Name>
+				<Source><![CDATA[
+    public static str GetDuration()
+    {
+        return
+            SysComputedColumn::getDateDiff(
+                SysComputedColumn::returnField(
+                tablestr(Reservation),
+                identifierStr(FMRental),
+                fieldstr(FMRental, StartDate)
+                ),
+                SysComputedColumn::returnField(
+                tablestr(Reservation),
+                identifierStr(FMRental),
+                fieldstr(FMRental, EndDate)
+                )            
+           );
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<CollectionName>Reservations</CollectionName>
+	<IsPublic>Yes</IsPublic>
+	<Updatable>Yes</Updatable>
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>ReturnDate</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>EndFuelLevel</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>EndMileage</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>PickupDate</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>StartFuelLevel</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>StartMileage</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>CustomerId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>PaymentInformationID</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>State</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Duration</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>ReservationId</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ReservationId</Name>
+			<DataField>RentalId</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ReturnDate</Name>
+			<DataField>EndDate</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>EndFuelLevel</Name>
+			<DataField>EndFuelLevel</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>EndMileage</Name>
+			<DataField>EndMileage</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>PickupDate</Name>
+			<DataField>StartDate</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>StartFuelLevel</Name>
+			<DataField>StartFuelLevel</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>StartMileage</Name>
+			<DataField>StartMileage</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>CustomerId</Name>
+			<DataField>Customer</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>PaymentInformationID</Name>
+			<DataField>PaymentInformationID</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>State</Name>
+			<DataField>State</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>VehicleId</Name>
+			<DataField>Vehicle</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldComputedString">
+			<Name>Duration</Name>
+			<ViewMethod>GetDuration</ViewMethod>
+			<StringSize>100</StringSize>
+		</AxViewField>
+	</Fields>
+	<Indexes>
+		<AxViewIndex>
+			<Name>RentalIndex</Name>
+			<AlternateKey>Yes</AlternateKey>
+			<Fields>
+				<AxViewIndexField>
+					<DataField>ReservationId</DataField>
+				</AxViewIndexField>
+			</Fields>
+		</AxViewIndex>
+	</Indexes>
+	<Mappings />
+	<Relations>
+		<AxViewRelation>
+			<Name>CustomerRelationship</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedTable>Customer</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelatedTableRole>Customer</RelatedTableRole>
+			<Role>Reservations</Role>
+			<Constraints>
+				<AxViewRelationConstraint xmlns=""
+					i:type="AxViewRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>CustomerId</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxViewRelationConstraint>
+			</Constraints>
+		</AxViewRelation>
+		<AxViewRelation>
+			<Name>PaymentRelation</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedTable>PaymentInformation</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelatedTableRole>PaymentInformation</RelatedTableRole>
+			<Role>Reservations</Role>
+			<Constraints>
+				<AxViewRelationConstraint xmlns=""
+					i:type="AxViewRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>PaymentInformationID</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxViewRelationConstraint>
+			</Constraints>
+		</AxViewRelation>
+		<AxViewRelation>
+			<Name>VehicleRelation</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedTable>Vehicle</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelatedTableRole>Vehicle</RelatedTableRole>
+			<Role>Reservations</Role>
+			<Constraints>
+				<AxViewRelationConstraint xmlns=""
+					i:type="AxViewRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>VehicleId</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxViewRelationConstraint>
+			</Constraints>
+		</AxViewRelation>
+	</Relations>
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods />
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMRental</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMRental</Table>
+				<DataSources />
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxView>

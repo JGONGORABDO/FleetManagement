@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMCustomerHub</title>
+</head>
+<body>
+    <!-- TODO: Reconcile page with none companion version -->
+    <div id="FMCompCustomerHub" data-dyn-template="templateId: 'hub', resourceBundle: 'hub'" data-dyn-role="metaModel: 'Form'">
+        <!-- Fills in a placeholder called hubCaption -->
+        <div class="hubCaption" data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: 'Customer'"></div>
+        <div class="hubTitle" data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $value($field('FirstName')) + ' ' + $value($field('LastName'))"></div>
+        <!-- TODO: Refactor to use data-binding rather than attribute aria-label -->
+        <div class="hubDetails" aria-label="Customer information" data-dyn-template="templateId: 'FMCustomerInfo', resourceBundle: 'FMCustomerInfo'" data-dyn-context="$dyn.clientForm.viewModel($data)"></div>
+        <div class="hubDetails" aria-label="Reservations" data-dyn-context="$models('Reservations')">
+            <div data-dyn-role="metaModel: 'Toolbar'" data-dyn-context="$dyn.clientForm.viewModel($parent()._parent())">
+                <div data-dyn-role="metaModel: 'ToolbarGroup'">
+                    <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Add', ImageType: 'Symbol', ImageName: 'New', ActionCommand: $dialog({templateId: 'FMCompNewReservation', resourceBundle: 'FMCompNewReservation'}, $create('Reservations'))"></button>
+                </div>
+            </div>
+            <div data-dyn-role="metaModel: 'Grid'" data-dyn-bind="DataSource: 'Reservations', DataFilter: 'State !== $dyn.OData.Entry.State.New' ">
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Reservation ID', Value: $field('ReservationId'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Pickup date', Value: new Date($value($field('PickupDate'))).toDateString(), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Return date', Value: new Date($value($field('ReturnDate'))).toDateString(), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Total', Value: $field('Total'), AllowEdit: false"></div>
+            </div>
+        </div>
+    </div>
+    <!-- TODO: Remove size workarround -->
+    <style type="text/css">
+        .panoramaItem + .panoramaItem + .panoramaItem, 
+        .panoramaItem + .panoramaItem + .panoramaItem .panoramaItem-content,
+        .panoramaItem + .panoramaItem + .panoramaItem .scroll-content,
+        .panoramaItem + .panoramaItem + .panoramaItem .layout-column
+        {
+            width:800px;
+        }
+    </style>
+</body>
+</html>

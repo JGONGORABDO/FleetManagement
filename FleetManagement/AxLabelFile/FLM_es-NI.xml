@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AxLabelFile xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>FLM_es-NI</Name>
+  <LabelContentFileName>FLM.es-NI.label.txt</LabelContentFileName>
+  <LabelFileId>FLM</LabelFileId>
+  <Language>es-NI</Language>
+  <RelativeUriInModelStore>FleetManagement\FleetManagement\AxLabelFile\LabelResources\es-NI\FLM.es-NI.label.txt</RelativeUriInModelStore>
+</AxLabelFile>

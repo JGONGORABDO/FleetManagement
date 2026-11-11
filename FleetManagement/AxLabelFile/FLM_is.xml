@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxLabelFile xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FLM_is</Name>
+	<LabelContentFileName>FLM.is.label.txt</LabelContentFileName>
+	<LabelFileId>FLM</LabelFileId>
+	<Language>is</Language>
+	<RelativeUriInModelStore>FleetManagement\FleetManagement\AxLabelFile\LabelResources\is\FLM.is.label.txt</RelativeUriInModelStore>
+</AxLabelFile>

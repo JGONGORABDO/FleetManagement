@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalCustomerView</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMRentalCustomerView extends common
+{
+}
+
+]]></Declaration>
+		<Methods />
+	</SourceCode>
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Customer</Name>
+			<DataField>Customer</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>EndDate</Name>
+			<DataField>EndDate</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>EndFuelLevel</Name>
+			<DataField>EndFuelLevel</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>EndMileage</Name>
+			<DataField>EndMileage</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>PaymentInformationID</Name>
+			<DataField>PaymentInformationID</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>RentalId</Name>
+			<DataField>RentalId</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>StartDate</Name>
+			<DataField>StartDate</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>StartFuelLevel</Name>
+			<DataField>StartFuelLevel</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>StartMileage</Name>
+			<DataField>StartMileage</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>State</Name>
+			<DataField>State</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Vehicle</Name>
+			<DataField>Vehicle</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>TranDate</Name>
+			<DataField>EndDate</DataField>
+			<DataSource>FMRental</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>CustomerName</Name>
+			<DataField>LastName</DataField>
+			<DataSource>FMCustomer</DataSource>
+		</AxViewField>
+	</Fields>
+	<Indexes />
+	<Mappings />
+	<Relations />
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods />
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMRental</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMRental</Table>
+				<DataSources>
+					<AxQuerySimpleEmbeddedDataSource>
+						<Name>FMCustomer</Name>
+						<DynamicFields>Yes</DynamicFields>
+						<Table>FMCustomer</Table>
+						<DataSources />
+						<DerivedDataSources />
+						<Fields />
+						<Ranges />
+						<UseRelations>Yes</UseRelations>
+						<Relations />
+					</AxQuerySimpleEmbeddedDataSource>
+				</DataSources>
+				<DerivedDataSources />
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxView>

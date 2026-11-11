@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxForm xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>FMBiReservationsByCustomer</Name>
+	<SourceCode>
+		<Methods xmlns="">
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Form]
+public class FMBiReservationsByCustomer extends FormRun
+{
+
+
+
+}
+]]></Source>
+			</Method>
+			<Method>
+				<Name>init</Name>
+				<Source><![CDATA[
+    public void init()
+    {
+        SysChartDrillThruParameters     contextObject;
+        str                             yValue;
+        str                             key;
+        QueryBuildRange                 queryBuildRange;
+
+        super();
+
+        if(element.args() && element.args().parmObject())
+        {
+            contextObject = element.args().parmObject();
+            yValue = contextObject.yValue();
+            key = contextObject.keyField();
+        }
+
+        if (yValue && key)
+        {
+            if (FMRentalCustomerView_ds.query().dataSourceNo(1))
+            {
+                queryBuildRange = FMRentalCustomerView_ds.query().dataSourceNo(1).addRange(fieldNum(FMRentalCustomerView, CustomerName));
+                queryBuildRange.value(key);
+            }
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+		<DataSources xmlns="" />
+		<DataControls xmlns="" />
+		<Members xmlns="" />
+	</SourceCode>
+	<DataSourceQuery>FMRentalsByCustomer</DataSourceQuery>
+	<DataSources>
+		<AxFormDataSource xmlns="">
+			<Name>FMRentalCustomerView</Name>
+			<Table>FMRentalCustomerView</Table>
+			<Fields>
+				<AxFormDataSourceField>
+					<DataField>Customer</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>CustomerName</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>EndDate</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>EndFuelLevel</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>EndMileage</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Partition</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>PaymentInformationID</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RecId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>RentalId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>StartDate</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>StartFuelLevel</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>StartMileage</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>State</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TableId</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>TranDate</DataField>
+				</AxFormDataSourceField>
+				<AxFormDataSourceField>
+					<DataField>Vehicle</DataField>
+				</AxFormDataSourceField>
+			</Fields>
+			<ReferencedDataSources />
+			<InsertIfEmpty>No</InsertIfEmpty>
+			<DataSourceLinks />
+			<DerivedDataSources />
+		</AxFormDataSource>
+	</DataSources>
+	<Design>
+		<ArrangeMethod xmlns="">Auto</ArrangeMethod>
+		<Caption xmlns="">Reservations by Customer (Click to drilldown...)</Caption>
+		<Pattern xmlns="">HubPartChart</Pattern>
+		<PatternVersion xmlns="">1.0</PatternVersion>
+		<Style xmlns="">FormPart</Style>
+		<ViewEditMode xmlns="">View</ViewEditMode>
+		<Controls xmlns="">
+			<AxFormControl xmlns=""
+				i:type="AxFormContainerControl">
+				<Name>ReservationsChart</Name>
+				<Type>Container</Type>
+				<FormControlExtension>
+					<Name>SysChart</Name>
+					<ExtensionComponents>
+						<AxFormControlExtensionComponent xmlns=""
+							i:type="AxFormControlExtensionComponentComposite">
+							<Name>parmDataSets</Name>
+							<ExtensionComponents>
+								<AxFormControlExtensionComponent xmlns=""
+									i:type="AxFormControlExtensionComponentLeaf">
+									<Name>SysBuildChartDataSet1</Name>
+									<ComponentType>SysBuildChartDataSet</ComponentType>
+									<ExtensionProperties>
+										<AxFormControlExtensionProperty>
+											<Name>parmDataSource</Name>
+											<Type>String</Type>
+											<Value>FMRentalCustomerView</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmCategoryField</Name>
+											<Type>String</Type>
+											<Value>CustomerName</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmGroupBy</Name>
+											<Type>String</Type>
+										</AxFormControlExtensionProperty>
+									</ExtensionProperties>
+								</AxFormControlExtensionComponent>
+							</ExtensionComponents>
+						</AxFormControlExtensionComponent>
+						<AxFormControlExtensionComponent xmlns=""
+							i:type="AxFormControlExtensionComponentComposite">
+							<Name>parmMeasures</Name>
+							<ExtensionComponents>
+								<AxFormControlExtensionComponent xmlns=""
+									i:type="AxFormControlExtensionComponentLeaf">
+									<Name>SysBuildChartMeasure1</Name>
+									<ComponentType>SysBuildChartMeasure</ComponentType>
+									<ExtensionProperties>
+										<AxFormControlExtensionProperty>
+											<Name>parmChartType</Name>
+											<Type>Enum</Type>
+											<TypeName>SysChartType</TypeName>
+											<Value>Column</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmTitle</Name>
+											<Type>String</Type>
+											<Value>Customer</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmDataLabels</Name>
+											<Type>Enum</Type>
+											<TypeName>SysChartDataLabels</TypeName>
+											<Value>Outside</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmDataSet</Name>
+											<Type>String</Type>
+											<Value>SysBuildChartDataSet1</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmMeasureField</Name>
+											<Type>String</Type>
+											<Value>StartMileage</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmUseSecondaryYAxis</Name>
+											<Type>Enum</Type>
+											<TypeName>boolean</TypeName>
+											<Value>False</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmSecondaryYAxisName</Name>
+											<Type>String</Type>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmClickMenuItemType</Name>
+											<Type>Enum</Type>
+											<TypeName>MenuItemType</TypeName>
+											<Value>Display</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmClickMenuItemName</Name>
+											<Type>ExtendedDataType</Type>
+											<TypeName>MenuItemName</TypeName>
+											<Value>FMBiReservationsByCustomerState</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmKeyField</Name>
+											<Type>String</Type>
+											<Value>Customer</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmParameter1</Name>
+											<Type>String</Type>
+											<Value>CustomerName</Value>
+										</AxFormControlExtensionProperty>
+										<AxFormControlExtensionProperty>
+											<Name>parmParameter2</Name>
+											<Type>String</Type>
+										</AxFormControlExtensionProperty>
+									</ExtensionProperties>
+								</AxFormControlExtensionComponent>
+							</ExtensionComponents>
+						</AxFormControlExtensionComponent>
+						<AxFormControlExtensionComponent xmlns=""
+							i:type="AxFormControlExtensionComponentComposite">
+							<Name>parmSecondaryYAxes</Name>
+							<ExtensionComponents />
+						</AxFormControlExtensionComponent>
+					</ExtensionComponents>
+					<ExtensionProperties>
+						<AxFormControlExtensionProperty>
+							<Name>parmLegendEnabled</Name>
+							<Type>Enum</Type>
+							<TypeName>boolean</TypeName>
+							<Value>True</Value>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmLegendAlignment</Name>
+							<Type>Enum</Type>
+							<TypeName>SysChartHorizontalAlignment</TypeName>
+							<Value>Auto</Value>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmLegendPosition</Name>
+							<Type>Enum</Type>
+							<TypeName>SysChartVerticalAlignment</TypeName>
+							<Value>Auto</Value>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmLegendLayout</Name>
+							<Type>Enum</Type>
+							<TypeName>SysChartLegendLayout</TypeName>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmTitleAlignment</Name>
+							<Type>Enum</Type>
+							<TypeName>SysChartHorizontalAlignment</TypeName>
+							<Value>Auto</Value>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmText</Name>
+							<Type>String</Type>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmTitlePosition</Name>
+							<Type>Enum</Type>
+							<TypeName>SysChartVerticalAlignment</TypeName>
+							<Value>Auto</Value>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmYAxisTitle</Name>
+							<Type>String</Type>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmYAxisVisible</Name>
+							<Type>Enum</Type>
+							<TypeName>boolean</TypeName>
+							<Value>True</Value>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmXAxisTitle</Name>
+							<Type>String</Type>
+							<Value>Rentals by Customer</Value>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmClickMenuItemType</Name>
+							<Type>Enum</Type>
+							<TypeName>MenuItemType</TypeName>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmClickMenuItemName</Name>
+							<Type>ExtendedDataType</Type>
+							<TypeName>MenuItemName</TypeName>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmSerializedButtons</Name>
+							<Type>String</Type>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmInteractionsDisabled</Name>
+							<Type>Enum</Type>
+							<TypeName>boolean</TypeName>
+							<Value>False</Value>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmZoomLimit</Name>
+							<Type>Enum</Type>
+							<TypeName>SysChartDateTimeInterval</TypeName>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmToolbarEnabled</Name>
+							<Type>Enum</Type>
+							<TypeName>boolean</TypeName>
+							<Value>False</Value>
+						</AxFormControlExtensionProperty>
+						<AxFormControlExtensionProperty>
+							<Name>parmPadMargin</Name>
+							<Type>Int32</Type>
+							<Value>0</Value>
+						</AxFormControlExtensionProperty>
+					</ExtensionProperties>
+				</FormControlExtension>
+				<Controls />
+			</AxFormControl>
+		</Controls>
+	</Design>
+	<Parts />
+</AxForm>

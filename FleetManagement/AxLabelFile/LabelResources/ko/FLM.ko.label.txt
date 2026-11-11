@@ -1,0 +1,784 @@
+﻿@FLM41=2011년 4월 3일에 생성된 레이블 파일
+ ;By user Admin
+@FLM42=빨강
+ ;Fleet colors
+@FLM43=파랑
+ ;Fleet colors
+@FLM44=녹색
+ ;Fleet colors
+@FLM46=이미지 선택
+ ;Fleet label
+@FLM47=변경
+ ;Fleet label
+@FLM48=제거
+ ;Fleet label
+@FLM49=고객
+ ;Fleet label
+@FLM50=열기
+ ;Fleet label
+@FLM51=신규
+ ;Fleet label
+@FLM52=렌터카
+ ;Fleet label
+@FLM53=일반
+ ;Fleet label
+@FLM55=보기
+ ;Fleet label
+@FLM56=삭제
+ ;Fleet label
+@FLM57=첨부 파일
+ ;Fleet label
+@FLM58=완료
+ ;Fleet label
+@FLM59=렌터카 요금
+ ;Fleet label
+@FLM60=대여 기간
+ ;Fleet label
+@FLM61=소스
+ ;Fleet label
+@FLM62=대상
+ ;Fleet label
+@FLM63=마일리지
+ ;Fleet label
+@FLM64=시작
+ ;Fleet label
+@FLM65=종료
+ ;Fleet label
+@FLM66=연료량
+ ;Fleet label
+@FLM67=수령
+ ;Fleet label
+@FLM68=요금
+ ;Fleet label
+@FLM69=요금 추가
+ ;Fleet label
+@FLM70=트럭 포함
+ ;Fleet label
+@FLM71=렌터카
+ ;Fleet label
+@FLM72=편집
+ ;Fleet label
+@FLM73=차량 관리 구성
+ ;Fleet label
+@FLM74=차량 제조사 및 모델
+ ;Fleet label
+@FLM75=차량 제조사 및 모델 정의
+ ;Fleet label
+@FLM76=모델의 대표 이미지를 포함하여 인벤토리에 있는 차량의 제조사와 모델을 정의합니다.
+ ;Fleet label
+@FLM77=모델 이미지
+ ;Fleet label
+@FLM78=찾아보기...
+ ;Fleet label
+@FLM79=신규 제조사
+ ;Fleet label
+@FLM80=신규 모델
+ ;Fleet label
+@FLM81=대여 요금 유형
+ ;Fleet label
+@FLM82=요금 유형 정의
+ ;Fleet label
+@FLM83=요금 유형은 각 대여 요금을 분류하는 데 사용됩니다. 이를 통해 비용을 더 쉽게 추적할 수 있습니다.
+ ;Fleet label
+@FLM84=SUV 안전 등급
+ ;Fleet label
+@FLM85=SUV 안전 등급 정의
+ ;Fleet label
+@FLM86=차량
+ ;Fleet label
+@FLM87=유지
+ ;Fleet label
+@FLM88=기록
+ ;Fleet label
+@FLM89=과거 등급
+ ;Fleet label
+@FLM90=비율
+ ;Fleet label
+@FLM91=세부 정보
+ ;Fleet label
+@FLM92=자동차 및 SUV 정보
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=트럭 정보
+ ;Fleet label
+@FLM95=차량
+ ;Fleet label
+@FLM96=이용 가능 여부
+ ;Fleet label
+@FLM97=위치
+ ;Fleet label
+@FLM98=유지 관리
+ ;Fleet label
+@FLM99=레코드
+ ;Fleet label
+@FLM100=목록
+ ;Fleet label
+@FLM101=차량 ID
+ ;Fleet label
+@FLM102=차량 요금 날짜 관리자
+ ;Fleet label
+@FLM103=새 버전
+ ;Fleet label
+@FLM104=차량 유지 관리
+ ;Fleet label
+@FLM105=차량 관리
+ ;Fleet label
+@FLM106=최근 렌터카
+ ;Fleet label
+@FLM107=보안 액세스를 위한 내 내부 조직
+ ;Fleet label
+@FLM108=사용자에게 보안 액세스 권한이 있는 차량
+ ;Fleet label
+@FLM109=사용자가 액세스할 수 있는 내부 조직
+ ;Fleet label
+@FLM110=트럭
+ ;Fleet label
+@FLM111=SUV
+ ;Fleet label
+@FLM112=고객 보기 페이지 메뉴
+ ;Fleet label
+@FLM113=작업
+ ;Fleet label
+@FLM114=차량 메뉴
+ ;Fleet label
+@FLM115=차량 보기 페이지 메뉴
+ ;Fleet label
+@FLM116=지점 - 사용되지 않음
+ ;Fleet label
+@FLM117=대여 위치 - 사용되지 않음
+ ;Fleet label
+@FLM118=지역 - 사용되지 않음
+ ;Fleet label
+@FLM119=FWD(전륜구동)
+ ;Fleet label
+@FLM120=RWD(후륜구동)
+ ;Fleet label
+@FLM121=AWD(사륜구동)
+ ;Fleet label
+@FLM122=연료 유형
+ ;Fleet label
+@FLM123=일반
+ ;Fleet label
+@FLM124=고급
+ ;Fleet label
+@FLM125=GPS 사용 가능
+ ;Fleet label
+@FLM126=오일 교환
+ ;Fleet label
+@FLM127=수리
+ ;Fleet label
+@FLM128=예방적 유지 관리
+ ;Fleet label
+@FLM129=검사 대기 중
+ ;Fleet label
+@FLM130=서비스 대기 중
+ ;Fleet label
+@FLM131=승인 대기 중
+ ;Fleet label
+@FLM132=청소 대기 중
+ ;Fleet label
+@FLM133=완료
+ ;Fleet label
+@FLM134=변속기
+ ;Fleet label
+@FLM135=자동
+ ;Fleet label
+@FLM136=수동
+ ;Fleet label
+@FLM137=사용 가능
+ ;Fleet label
+@FLM138=서비스 중
+ ;Fleet label
+@FLM139=대여 중
+ ;Fleet label
+@FLM140=손상됨
+ ;Fleet label
+@FLM141=리콜됨
+ ;Fleet label
+@FLM142=보류 중
+ ;Fleet label
+@FLM143=차량 유형
+ ;Fleet label
+@FLM144=알 수 없음
+ ;Fleet label
+@FLM145=트럭
+ ;Fleet label
+@FLM146=자동차
+ ;Fleet label
+@FLM147=요금 타입
+ ;Fleet label
+@FLM148=운전 면허증
+ ;Fleet label
+@FLM149=제조사 및 모델
+ ;Fleet label
+@FLM150=메모
+ ;Fleet label
+@FLM151=렌터카 정보
+ ;Fleet label
+@FLM152=안전 등급 ID
+ ;Fleet label
+@FLM153=SUV 안전 등급
+ ;Fleet label
+@FLM154=총 렌터카
+ ;Fleet label
+@FLM155=제조사
+ ;Fleet label
+@FLM156=차량 제조사
+ ;Fleet label
+@FLM157=모델
+ ;Fleet label
+@FLM158=차량 모델
+ ;Fleet label
+@FLM159=자동차
+ ;Fleet label
+@FLM160=도어
+ ;Fleet label
+@FLM161=좌석 정원
+ ;Fleet label
+@FLM162=요금 타입
+ ;Fleet label
+@FLM163=만료 날짜
+ ;Fleet label
+@FLM164=시작 마일리지
+ ;Fleet label
+@FLM165=최종 마일리지
+ ;Fleet label
+@FLM166=시작 연료량
+ ;Fleet label
+@FLM167=최종 연료량
+ ;Fleet label
+@FLM168=렌터카 정보
+ ;Fleet label
+@FLM169=3열 정원
+ ;Fleet label
+@FLM170=회전 반경
+ ;Fleet label
+@FLM171=최저 지상고
+ ;Fleet label
+@FLM172=전복 등급
+ ;Fleet label
+@FLM173=전체 등급
+ ;Fleet label
+@FLM174=활동 공간
+ ;Fleet label
+@FLM175=면적
+ ;Fleet label
+@FLM176=최대 하중
+ ;Fleet label
+@FLM177=형식
+ ;Fleet label
+@FLM178=차량 총중량
+ ;Fleet label
+@FLM179=차량 상태
+ ;Fleet label
+@FLM180=조직
+ ;Fleet label
+@FLM181=프리뷰 그룹
+ ;Fleet label
+@FLM182=차량 제조사
+ ;Fleet label
+@FLM183=차량 모델
+ ;Fleet label
+@FLM184=차량 이미지
+ ;Fleet label
+@FLM185=모델 사양
+ ;Fleet label
+@FLM186=이미지 형식
+ ;Fleet label
+@FLM187=차량 요금
+ ;Fleet label
+@FLM188=일별 요금
+ ;Fleet label
+@FLM189=주당 요금
+ ;Fleet label
+@FLM190=역할과 연결된 내 내부 조직
+ ;Fleet label
+@FLM191=사용자의 역할과 연결된 내부 조직이 포함된 테이블
+ ;Fleet label
+@FLM192=DimAttributeOMBranch 보기에는 OMOperatingUnit 테이블에 Branch로 표시된 모든 레코드가 포함되어 있습니다.
+ ;Fleet label
+@FLM193=DimAttributeOMRegion 보기에는 OMOperatingUnit 테이블에 Region으로 표시된 모든 레코드가 포함되어 있습니다.
+ ;Fleet label
+@FLM194=DimAttributeOMRentalLocation 보기에는 OMOperatingUnit 테이블에 Rental Location으로 표시된 모든 레코드가 포함되어 있습니다.
+ ;Fleet label
+@FLM195=차량 관리 센터
+ ;Fleet label
+@FLM196=추가
+ ;Fleet label
+@FLM197=현재 렌터카
+ ;Fleet label
+@FLM198=배정된 차량
+ ;Fleet label
+@FLM199=이용 가능한 차량
+ ;Fleet label
+@FLM200=리콜된 차량
+ ;Fleet label
+@FLM201=완료됨
+ ;Fleet label
+@FLM202=진행 중
+ ;Fleet label
+@FLM203=과거 등급
+ ;Fleet label
+@FLM204=완전 대여
+ ;Fleet label
+@FLM205=차량 청소
+ ;Fleet label
+@FLM206=차량 검사
+ ;Fleet label
+@FLM207=서비스 차량
+ ;Fleet label
+@FLM208=서비스 승인
+ ;Fleet label
+@FLM209=고객 세부 정보
+ ;Fleet label
+@FLM210=이름
+ ;Fleet label
+@FLM211=면허증
+ ;Fleet label
+@FLM212=주소
+ ;Fleet label
+@FLM213=전화
+ ;Fleet label
+@FLM214=이메일
+ ;Fleet label
+@FLM215=결제 정보
+ ;Fleet label
+@FLM216=신용 카드
+ ;Fleet label
+@FLM217=만료
+ ;Fleet label
+@FLM218=날짜
+ ;Fleet label
+@FLM219=대여 시작
+ ;Fleet label
+@FLM220=종료 날짜
+ ;Fleet label
+@FLM221=설명
+ ;Fleet label
+@FLM222=수량
+ ;Fleet label
+@FLM223=연장됨
+ ;Fleet label
+@FLM224=차량 세부 정보
+ ;Fleet label
+@FLM225=제조사 및 모델
+ ;Fleet label
+@FLM226=일일 요금
+ ;Fleet label
+@FLM227=주간 요금
+ ;Fleet label
+@FLM228=차량 프리뷰 부분
+ ;Fleet label
+@FLM229=색
+ ;Fleet label
+@FLM230=상태
+ ;Fleet label
+@FLM231=배정된 차량
+ ;Fleet label
+@FLM232=차량 관리 안내
+ ;Fleet label
+@FLM233=사용자를 BU로 제한
+ ;Fleet label
+@FLM234=보안 액세스를 위한 내 차량 액세스
+ ;Fleet label
+@FLM235=렌터카 기록 셀프 서비스
+ ;Fleet label
+@FLM236=차량 관리 사무원
+ ;Fleet label
+@FLM237=렌터카 사무원
+ ;Fleet label
+@FLM238=차량 관리 지점장
+ ;Fleet label
+@FLM239=렌터카 지점장
+ ;Fleet label
+@FLM240=차량 관리 서비스 기술자
+ ;Fleet label
+@FLM241=서비스 기술자
+ ;Fleet label
+@FLM242=워크플로 사용
+ ;Fleet label
+@FLM243=이용 가능한 자동차 인벤토리를 노출하는 서비스 그룹
+ ;Fleet label
+@FLM244=도어 수
+ ;Number of doors in the FM vehicle
+@FLM245=소계
+ ;Fleet label
+@FLM246=연료량
+ ;Fleet label
+@FLM247=최저 지상고
+ ;Fleet label
+@FLM248=트럭 면적
+ ;Fleet label
+@FLM249=최대 하중
+ ;Fleet label
+@FLM250=실내 천정 공간
+ ;Fleet label
+@FLM251=MPG(갤런당 마일)
+ ;Fleet label
+@FLM252=등급
+ ;Fleet label
+@FLM253=총 렌터카
+ ;Fleet label
+@FLM254=좌석
+ ;Fleet label
+@FLM255=요금 타입
+ ;Fleet label (table)
+@FLM256=생산 능력
+ ;Fleet label
+@FLM257=회전 반경
+ ;Fleet label
+@FLM258=VIN(차대번호)
+ ;Fleet label
+@FLM259=워크플로 쿼리
+ ;Fleet label
+@FLM260=유지 관리 기록
+ ;Fleet label
+@FLM261=신규 렌터카
+ ;Fleet label
+@FLM262=모든 렌터카
+ ;Fleet label
+@FLM263=차량 설정
+ ;Fleet label
+@FLM264=모든 차량
+ ;Fleet label
+@FLM265=요금 날짜
+ ;Fleet label
+@FLM268=지점 _DEMO_
+ ;Fleet label
+@FLM269=대여 위치 _DEMO_
+ ;Fleet label
+@FLM270=지역 _DEMO_
+ ;Fleet label
+@FLM271=청소 완료
+ ;Fleet label
+@FLM272=고객 삭제
+ ;Fleet label
+@FLM273=선택한 렌터카 삭제
+ ;Fleet label
+@FLM274=선택한 차량 삭제
+ ;Fleet label
+@FLM275=검사 완료
+ ;Fleet label
+@FLM276=서비스 완료
+ ;Fleet label
+@FLM278=워크플로 시작
+ ;Fleet label
+@FLM279=서비스 승인
+ ;Fleet label
+@FLM280=서비스 거부
+ ;Fleet label
+@FLM281=서비스 거부
+ ;Fleet label
+@FLM282=선택한 차량 삭제
+ ;Fleet label
+@FLM283=워크플로 구성
+ ;Fleet label
+@FLM284=지점 생성 또는 업데이트
+ ;Fleet label
+@FLM285=대여 위치 생성 또는 업데이트
+ ;Fleet label
+@FLM286=지역 생성 또는 업데이트
+ ;Fleet label
+@FLM287=고객 추가/수정
+ ;Fleet label
+@FLM288=차량 대여 ID
+ ;Fleet label (table)
+@FLM289=대여 요금 추가/수정
+ ;Fleet label
+@FLM290=요금 세부 정보
+ ;Fleet label
+@FLM291=렌터카 세부 정보
+ ;Fleet label
+@FLM292=렌터카 수정
+ ;Fleet label
+@FLM293=고객별 렌터카
+ ;Fleet label
+@FLM294=모델별 렌터카
+ ;Fleet label
+@FLM295=차량 추가/수정
+ ;Fleet label
+@FLM296=예정된 렌터카
+ ;Fleet label
+@FLM297=차량별 렌터카
+ ;Fleet label
+@FLM298=온라인 도움말 참조
+ ;Fleet label
+@FLM299=대여 요금 유형
+ ;Fleet label
+@FLM300=마일리지 기록
+ ;Fleet label
+@FLM301=차량 프로세스 주기
+ ;Fleet label
+@FLM302=차량 - 차량 설정 관리
+ ;Fleet label
+@FLM303=차량 - 고객 레코드 편집
+ ;Fleet label
+@FLM304=차량 - 고객 관리
+ ;Fleet label
+@FLM305=차량 - 인벤토리 관리
+ ;Fleet label
+@FLM306=차량 - 자동차 대여
+ ;Fleet label
+@FLM307=차량 - 고객 레코드 보기
+ ;Fleet label
+@FLM308=차량 - 인벤토리 보기
+ ;Fleet label
+@FLM309=차량 - 워크플로 사무원
+ ;Fleet label
+@FLM310=차량 색상
+ ;Fleet label
+@FLM311=차량 - 워크플로 관리자
+ ;Fleet label
+@FLM312=차량 - 워크플로 서비스 기술
+ ;Fleet label
+@FLM313=차량 - 기본 의무
+ ;Fleet label
+@FLM314=차량 - 자동차 관리
+ ;Fleet label
+@FLM315=차량 표준 프로세스 주기
+ ;Fleet label
+@FLM316=차량 마일리지
+ ;Fleet label
+@FLM317=비용
+ ;Fleet label
+@FLM318=정리
+ ;Fleet label
+@FLM54=고객
+ ;Fleet label
+@FLM266=신용카드 유효기간
+ ;Fleet label (table)
+@FLM277=운전 면허증
+ ;Fleet label (table)
+@FLM320=고객 목록
+ ;Fleet label (report menu item)
+@FLM321=고객 목록 보고서
+ ;Fleet label (report menu item help text)
+@FLM267=워크플로 설정
+ ;Fleet label
+@FLM400=차량 유지 관리 워크플로
+ ;Fleet label
+@FLM500=기본 결제 수단
+ ;Fleet label
+@FLM501=흰색
+ ;Fleet colors
+@FLM502=회색
+ ;Fleet colors
+@FLM503=노랑
+ ;Fleet colors
+@FLM504=주황
+ ;Fleet colors
+@FLM505=수령
+ ;Fleet label
+@FLM506=반납
+ ;Fleet label
+@FLM507=대여 시작
+ ;Fleet label
+@FLM401=예약 관리
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=이전 마일리지
+ ;Fleet label for returning vehicle slider
+@FLM509=새로운 마일리지
+ ;Fleet label for returning vehicle slider
+@FLM510=차량 대여
+ ;Fleet label
+@FLM512=추가 요금
+ ;Fleet label
+@FLM513=경비 절약
+ ;Fleet label
+@FLM514=신규 예약
+ ;New reservation menu item label
+@FLM515=연식
+ ;Field label for Year field in FmVehicleModel
+@FLM516=유효기간(년)
+ ;Expiration year label
+@FLM517=고객 보고서
+ ;Fleet tile label
+@FLM518=기존 예약
+ ;Fleet tile label
+@FLM519=연체된 렌터카
+ ;Fleet tile label
+@FLM520=결제 이름
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=유효기간(월)
+ ;Expiration month label
+@FLM523=카드에 표시된 이름
+ ;Fleet name on credit card
+@FLM524=차량 요금 기록
+ ;Fleet form label
+@FLM525=새 메모
+ ;Fleet dialog caption
+@FLM526=신규 고객
+ ;Fleet dialog caption
+@FLM527=신규 결제 정보
+ ;Fleet dialog caption
+@FLM528=액세서리 추가
+ ;Fleet dialog caption
+@FLM529=고객 선택
+ ;Fleet dialog caption
+@FLM530=수령 준비 완료
+ ;Fleet ReservationState enum option
+@FLM531=주소 Rec ID
+ ;Fleet label
+@FLM532=16진수 색상 코드
+ ;Fleet label
+@FLM533=색상 ID
+ ;Fleet label
+@FLM534=색상 이름
+ ;Fleet label
+@FLM535=할인 ID
+ ;Fleet label
+@FLM536=결제 정보 ID
+ ;Fleet label
+@FLM537=예약 ID
+ ;Fleet label
+@FLM539=대여된 차량
+ ;Fleet label
+@FLM540=차량 관리
+ ;Fleet menu label
+@FLM541=데모 데이터 로드
+ ;Fleet button text
+@FLM542=요금 기록
+ ;Fleet button text
+@FLM543=고객 변경
+ ;Fleet dialog label
+@FLM544=차량 선택
+ ;Fleet button text
+@FLM545=모든 예약
+ ;Fleet grid title
+@FLM546=고객 피드백
+ ;Fleet group label
+@FLM547=렌터카 정보
+ ;Fleet group label
+@FLM548=요금 이미지
+ ;Fleet group label
+@FLM549=데이터 설정
+ ;Fleet tab label
+@FLM550=차량 정보
+ ;Fleet group label
+@FLM551=이용 가능한 차량
+ ;Fleet chart label
+@FLM552=차량 대여 상태
+ ;Fleet chart label
+@FLM553=모델별 차량 - 수익
+ ;Fleet chart label
+@FLM554=오늘 수령
+ ;Fleet panorama label
+@FLM555=오늘 반납
+ ;Fleet panorama label
+@FLM556=대여 요금
+ ;Fleet panorama label
+@FLM558=예약 세부 정보
+ ;Fleet panorama label
+@FLM559=액세서리
+ ;Fleet panorama label
+@FLM560=기능
+ ;Fleet group label
+@FLM561=수령 정보
+ ;Fleet field label
+@FLM562=반납 정보
+ ;Fleet field label
+@FLM563=렌터카 목록
+ ;Fleet report label
+@FLM564=샘플 고객, 렌터카 및 차량 만들기
+ ;Fleet TOC label
+@FLM565=몇 초밖에 걸리지 않습니다.  
+ ;New Comment
+@FLM322=고객별 렌터카
+ ;Fleet report label
+@FLM566=고객 차트
+ ;Fleet form part caption
+@FLM567=차량 수익 차트
+ ;Fleet form part caption
+@FLM601=차량 관리 렌터카
+ ;Fleet rental entity
+@FLM602=차량 관리 고객
+ ;Fleet customer entity
+@FLM603=샘플 애플릿
+ ;Label for the sample applet name
+@FLM604=애플릿 프레임워크를 보여주고 테스트하는 데 사용되는 샘플 애플릿
+ ;Label for the sample applet description
+@FLM605=더 보기
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=고객 위치
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=고객 위치를 지도로 제공하는 템플릿
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=상태별 렌터카
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=대여 상태 카운트를 제공하는 템플릿
+ ;Rentals by status template description
+FMCustomerEntityView=차량 관리 고객 엔터티 보기
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=차량 관리 고객 엔터티 유지 관리
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=차량 관리 렌터카 엔터티 보기
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=차량 관리 렌터카 엔터티 유지 관리
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=활동 엔터티 보기
+ ;View privilege for RCADActivity
+RCADActivityMaintain=활동 엔터티 유지 관리
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=범주 엔터티 보기
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=범주 엔터티 유지 관리
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=법인 엔터티 보기
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=법인 엔터티 유지 관리
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=라인 속성 엔터티 보기
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=라인 속성 엔터티 유지 관리
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=기간 엔터티 보기
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=기간 엔터티 유지 관리
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=프로젝트 엔터티 보기
+ ;View privilege for RCADProject
+RCADProjectMaintain=프로젝트 엔터티 유지 관리
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=작업 시간 기록표 엔터티 보기
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=작업 시간 기록표 엔터티 유지 관리
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=작업 시간 기록표 항목 엔터티 보기
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=작업 시간 기록표 항목 엔터티 유지 관리
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=작업 시간 기록표 설정 엔터티 보기
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=작업 시간 기록표 설정 엔터티 유지 관리
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=작업 시간 기록표 워크플로 기록 엔터티 보기
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=작업 시간 기록표 워크플로 기록 엔터티 유지 관리
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=워크플로 기록 항목 엔터티 보기
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=워크플로 기록 항목 엔터티 유지 관리
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=렌터카 찾기
+FMTemplateCustomerInformationDisplayName=고객 정보
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=고객의 기본 정보와 렌터카 목록을 제공하는 템플릿
+ ;Fleet customer information template description
+DataCreated=샘플 데이터를 만들었습니다.
+DataRestored=샘플 데이터를 복원했습니다.
+DataRestoreConfirm=이 작업을 수행하면 모든 차량 관리 데이터가 원래 상태로 복원됩니다. 계속하시겠습니까?
+Branch=지점 _DEMO_
+ ;Branch operating unit type
+RentalLocation=대여 위치 _DEMO_
+ ;Rental location operating unit type
+Region=지역 _DEMO_
+ ;Region operating unit type
+Timestamp=타임스탬프
+ ;Comment timestamp
+CustomerImage=고객 이미지
+ ;Fleet label
+Analytics=분석
+ ;used on Fleet clerk workspace for Analytics section

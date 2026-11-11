@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>DMFFMEventHandler</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class DMFFMEventHandler
+{
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>defaultEntity</Name>
+				<Source><![CDATA[
+    [SubscribesTo(classstr(DMFDelegates), staticdelegatestr(DMFDelegates, defaultEntityDelegate))]
+    static void defaultEntity(DMFEntity _dmfEntity, str _strDmfEntityType, EventHandlerResult _eventHandlerResult)
+    {
+        _eventHandlerResult.result(false);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>defaultEntities</Name>
+				<Source><![CDATA[
+    [SubscribesTo(classstr(DMFDelegates), staticdelegatestr(DMFDelegates, defaultEntitiesDelegate))]
+    static void defaultEntities(List entities)
+    {
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

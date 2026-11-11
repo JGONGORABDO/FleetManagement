@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCustomerRefGroup</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMCustomerRefGroup extends FMCustomerPage
+{
+    private str customerFullNameInternal;
+    private ImageReference custImage;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>customerFullName</Name>
+				<Source><![CDATA[
+    [SysAppField(tableMethodStr(FMCustomer,fullName ), "Customer name")]
+    public str customerFullName(str _value=customerFullNameInternal)
+    {
+        customerFullNameInternal = _value;
+        return customerFullNameInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerImage</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, Image), "Customer image")]
+    public ImageReference customerImage(ImageReference _value=custImage)
+    {
+        custImage = _value;
+        return custImage;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populate</Name>
+				<Source><![CDATA[
+    public void populate(FMCustomer _customerTable)
+    {
+        this.customerFullName(_customerTable.fullName());
+        if (_customerTable.Image != conNull())
+        {
+            Image img = new Image();
+            img.setData(_customerTable.Image);
+            this.customerImage(ImageReference::constructForImage(img));
+        }
+
+        this.RecId(_customerTable.RecId);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

@@ -1,0 +1,31 @@
+﻿/* Represents a form style */
+
+.primaryConductor > .workspace {
+    background-color: #F4F4F4; /* $WorkspaceBackground */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.workspace .panoramaBody {
+    position: absolute;
+    left: 0;
+    top: 132px;
+    right: 0;
+    bottom: 0;
+}
+
+.workspace .panoramaContainer .multicolumnlayout-column:nth-of-type(1) > .panoramaItem {
+	margin-left: 120px;
+}
+
+.workspace .titleGroup {
+    position:absolute;
+    top: 40px; /* $NavigationBarHeight */
+    left:120px;
+    right: 0;
+    height:100px;
+}
+

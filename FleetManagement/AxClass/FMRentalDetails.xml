@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalDetails</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMRentalDetails
+{
+    str customerId;
+    str location;
+    str disc;
+    int vehicleIndex;
+    utcdatetime startDate;
+    utcdatetime endDate;
+    FMReservationState reservationState;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    public void new(str custId, str locId, str discount, int vehicle, int year, int dateKey)
+    {
+        customerId = custId;
+        location = locId;
+        disc = discount;
+        vehicleIndex = vehicle;
+        
+        // generate random dates for this rental
+        this.selectRentalDates(year, dateKey);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>CustId</Name>
+				<Source><![CDATA[
+    public str CustId()
+    {
+        return customerId;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Location</Name>
+				<Source><![CDATA[
+    public str Location()
+    {
+        return location;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Discount</Name>
+				<Source><![CDATA[
+    public str Discount()
+    {
+        return disc;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>VID</Name>
+				<Source><![CDATA[
+    public int VID()
+    {
+        return vehicleIndex;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>StartDate</Name>
+				<Source><![CDATA[
+    public utcdatetime StartDate()
+    {
+        return startDate;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>EndDate</Name>
+				<Source><![CDATA[
+    public utcdatetime EndDate()
+    {
+        return endDate;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ReservationState</Name>
+				<Source><![CDATA[
+    public FMReservationState ReservationState()
+    {
+        return reservationState;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>RandomDay</Name>
+				<Source><![CDATA[
+    utcdatetime RandomDay(date key)
+    {
+        utcdatetime dtKey = DateTimeUtil::newDateTime(key, 0);
+        RandomGenerate randGen = new RandomGenerate();
+        int maxNum = 365;
+
+        // need to account for current year
+        if (year(key) == year(DateTimeUtil::getToday(DateTimeUtil::getUserPreferredTimeZone())))
+        {
+            // reduce the window of days available
+            maxNum = dayOfYr(DateTimeUtil::getToday(DateTimeUtil::getUserPreferredTimeZone())) - 14;
+        }
+
+        // return a random date based on this key
+        return DateTimeUtil::addDays(dtKey, randGen.randomInt(1, maxNum));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>selectRentalDates</Name>
+				<Source><![CDATA[
+    void selectRentalDates(int yearVal, int dateKey)
+    {
+        date seedDate;
+
+        // create a utility for generating random data
+        RandomGenerate randGen = new RandomGenerate();
+
+        if (dateKey == 0)       // random dates
+        {
+            // establish a start date based on the first day of the year requested
+            seedDate = str2date(strfmt("01/01/%1", int2str(yearVal)), 123);
+
+            // create random start date in the year selected
+            startDate = this.RandomDay(seedDate);
+            endDate = DateTimeUtil::addDays(startDate, randGen.randomInt(1, 10));
+            reservationState = FMReservationState::Complete;
+        }
+        else if (dateKey == 1)   // pickup today
+        {
+            // ensure that the start date is today
+            startDate = DateTimeUtil::getSystemDateTime();
+            endDate = DateTimeUtil::addDays(startDate, randGen.randomInt(1, 10));
+            reservationState = FMReservationState::ReadyForPickup;
+        }
+        else                    // return today
+        {
+            // ensure that the end date is today
+            endDate = DateTimeUtil::getSystemDateTime();
+            startDate = DateTimeUtil::addDays(endDate, -randGen.randomInt(1, 10));
+            reservationState = FMReservationState::InProgress;
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

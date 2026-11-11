@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+    <div id="TestListDetailForm3" data-dyn-role="metaModel: 'Form'" data-dyn-bind="label: 'OData binding'" data-dyn-context="$dyn.OData.CreateEndpoint('data/service.svc/')">
+        <div data-dyn-role="metaModel: { Type: 'Tab', Style: 'Panorama'}" data-dyn-bind="ShowHeader: true">
+
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Label: 'Reservations'">
+                <div data-dyn-role="metaModel: 'Grid'" data-dyn-bind="DataSource: 'Reservations'">
+                    <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'ID', Value: $field('ReservationId'), AllowEdit: false"></div>
+                    <div data-dyn-role="metaModel: 'DateTime'" data-dyn-bind="Label: 'Start Date', Value: $field('PickupDate'), AllowEdit: false"></div>
+                    <div data-dyn-role="metaModel: 'DateTime'" data-dyn-bind="Label: 'End Date', Value: $field('ReturnDate'), AllowEdit: false"></div>
+                </div>
+            </div>
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Label: 'Reservation Details'" data-dyn-context="$selected('Reservations')">
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'ID', Value: $field('ReservationId'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'DateTime'" data-dyn-bind="Label: 'Start Date', Value: $field('PickupDate'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Start Fuel Level', Value: $field('StartFuelLevel'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Start Mileage', Value: $field('StartMileage'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'DateTime'" data-dyn-bind="Label: 'End Date', Value: $field('ReturnDate'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'End Fuel Level', Value: $field('EndFuelLevel'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'End Mileage', Value: $field('EndMileage'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Customer URI', Value: $field('CustomerId'), AllowEdit: false"></div>
+            </div>
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="Label: 'Customer Details'" data-dyn-context="$selected('Reservations')">
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'First Name', Value: $field('FirstName', 'Customer'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Last Name', Value: $field('LastName', 'Customer'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Cell Phone', Value: $field('CellPhone', 'Customer'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Driver License', Value: $field('DriverLicense', 'Customer'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Credit Card Number', Value: $field('CreditCardNum', 'Customer'), AllowEdit: false"></div>
+                <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Email', Value: $field('Email', 'Customer'), AllowEdit: false"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

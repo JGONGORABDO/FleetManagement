@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxEnumExtension xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>NumberSeqModule.Extension</Name>
+	<EnumValues>
+		<AxEnumValue>
+			<Name>FleetManagement</Name>
+			<Label>@FLM105</Label>
+		</AxEnumValue>
+	</EnumValues>
+</AxEnumExtension>

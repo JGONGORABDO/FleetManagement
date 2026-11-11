@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Datu pārvaldības galvenā elementa datu uzturēšana
+DataManagementFleetMasterEntitiesView=Datu pārvaldības galvenā elementa datu skatīšana

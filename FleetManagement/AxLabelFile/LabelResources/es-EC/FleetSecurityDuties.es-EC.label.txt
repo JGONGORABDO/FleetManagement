@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Mantener datos de la entidad Maestro para administración de datos 
+DataManagementFleetMasterEntitiesView=Ver datos de la entidad Maestro para administración de datos 

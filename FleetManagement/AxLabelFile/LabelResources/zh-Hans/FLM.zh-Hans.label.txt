@@ -1,0 +1,784 @@
+﻿@FLM41=于 4/3/2011 创建标签文件
+ ;By user Admin
+@FLM42=红色
+ ;Fleet colors
+@FLM43=蓝色
+ ;Fleet colors
+@FLM44=绿色
+ ;Fleet colors
+@FLM46=选择图像
+ ;Fleet label
+@FLM47=更改
+ ;Fleet label
+@FLM48=移除
+ ;Fleet label
+@FLM49=客户
+ ;Fleet label
+@FLM50=打开
+ ;Fleet label
+@FLM51=新
+ ;Fleet label
+@FLM52=租赁
+ ;Fleet label
+@FLM53=常规
+ ;Fleet label
+@FLM55=视图
+ ;Fleet label
+@FLM56=删除
+ ;Fleet label
+@FLM57=附件
+ ;Fleet label
+@FLM58=完成
+ ;Fleet label
+@FLM59=租赁费用
+ ;Fleet label
+@FLM60=租期
+ ;Fleet label
+@FLM61=从
+ ;Fleet label
+@FLM62=至
+ ;Fleet label
+@FLM63=里程
+ ;Fleet label
+@FLM64=开始
+ ;Fleet label
+@FLM65=结束
+ ;Fleet label
+@FLM66=燃油油位
+ ;Fleet label
+@FLM67=分拣
+ ;Fleet label
+@FLM68=费用
+ ;Fleet label
+@FLM69=添加费用
+ ;Fleet label
+@FLM70=包括卡车
+ ;Fleet label
+@FLM71=租赁
+ ;Fleet label
+@FLM72=编辑
+ ;Fleet label
+@FLM73=车队管理配置
+ ;Fleet label
+@FLM74=车辆厂家和型号
+ ;Fleet label
+@FLM75=定义车辆厂家和型号
+ ;Fleet label
+@FLM76=定义库存中的车辆的厂家和型号，包括型号的代表性图像。
+ ;Fleet label
+@FLM77=型号图像
+ ;Fleet label
+@FLM78=浏览...
+ ;Fleet label
+@FLM79=新建厂家
+ ;Fleet label
+@FLM80=新型号
+ ;Fleet label
+@FLM81=租赁费用类型
+ ;Fleet label
+@FLM82=定义费用类型
+ ;Fleet label
+@FLM83=费用类型用于对每个租赁费用进行分类。这样可以更轻松地跟踪成本。
+ ;Fleet label
+@FLM84=SUV 安全等级
+ ;Fleet label
+@FLM85=定义 SUV 安全等级
+ ;Fleet label
+@FLM86=车辆
+ ;Fleet label
+@FLM87=维护
+ ;Fleet label
+@FLM88=历史记录
+ ;Fleet label
+@FLM89=历史费率
+ ;Fleet label
+@FLM90=费率
+ ;Fleet label
+@FLM91=详细信息
+ ;Fleet label
+@FLM92=轿车和 SUV 信息
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=卡车信息
+ ;Fleet label
+@FLM95=车辆
+ ;Fleet label
+@FLM96=可用性
+ ;Fleet label
+@FLM97=位置
+ ;Fleet label
+@FLM98=维护
+ ;Fleet label
+@FLM99=记录
+ ;Fleet label
+@FLM100=列表
+ ;Fleet label
+@FLM101=车辆 ID
+ ;Fleet label
+@FLM102=车辆费率日期管理员
+ ;Fleet label
+@FLM103=新版本
+ ;Fleet label
+@FLM104=车辆维护
+ ;Fleet label
+@FLM105=车队管理
+ ;Fleet label
+@FLM106=最近的租赁
+ ;Fleet label
+@FLM107=我的用于安全访问的内部组织
+ ;Fleet label
+@FLM108=用户具有安全访问权限的车辆
+ ;Fleet label
+@FLM109=用户有权访问的内部组织
+ ;Fleet label
+@FLM110=卡车
+ ;Fleet label
+@FLM111=SUV
+ ;Fleet label
+@FLM112=客户视图页面的菜单
+ ;Fleet label
+@FLM113=操作
+ ;Fleet label
+@FLM114=车辆菜单
+ ;Fleet label
+@FLM115=车辆视图页面的菜单
+ ;Fleet label
+@FLM116=分支机构 - 弃用
+ ;Fleet label
+@FLM117=租赁位置 - 弃用
+ ;Fleet label
+@FLM118=区域 - 弃用
+ ;Fleet label
+@FLM119=前轮驱动
+ ;Fleet label
+@FLM120=后轮驱动
+ ;Fleet label
+@FLM121=全轮驱动
+ ;Fleet label
+@FLM122=燃油类型
+ ;Fleet label
+@FLM123=标准
+ ;Fleet label
+@FLM124=高级
+ ;Fleet label
+@FLM125=启用了 GPS
+ ;Fleet label
+@FLM126=换机油
+ ;Fleet label
+@FLM127=修复
+ ;Fleet label
+@FLM128=预防性维护
+ ;Fleet label
+@FLM129=正在等待检查
+ ;Fleet label
+@FLM130=正在等待服务
+ ;Fleet label
+@FLM131=等待审批
+ ;Fleet label
+@FLM132=正在等待清洁
+ ;Fleet label
+@FLM133=完成
+ ;Fleet label
+@FLM134=传输
+ ;Fleet label
+@FLM135=自动
+ ;Fleet label
+@FLM136=手动
+ ;Fleet label
+@FLM137=可用
+ ;Fleet label
+@FLM138=服务中
+ ;Fleet label
+@FLM139=已租赁
+ ;Fleet label
+@FLM140=损坏
+ ;Fleet label
+@FLM141=已召回
+ ;Fleet label
+@FLM142=待处理
+ ;Fleet label
+@FLM143=车辆类型
+ ;Fleet label
+@FLM144=未知
+ ;Fleet label
+@FLM145=卡车
+ ;Fleet label
+@FLM146=汽车
+ ;Fleet label
+@FLM147=费用类型
+ ;Fleet label
+@FLM148=驾照
+ ;Fleet label
+@FLM149=厂家型号
+ ;Fleet label
+@FLM150=备注
+ ;Fleet label
+@FLM151=车辆租赁信息
+ ;Fleet label
+@FLM152=安全等级 ID
+ ;Fleet label
+@FLM153=SUV 安全等级
+ ;Fleet label
+@FLM154=总租赁数
+ ;Fleet label
+@FLM155=厂家
+ ;Fleet label
+@FLM156=车辆厂家
+ ;Fleet label
+@FLM157=模型
+ ;Fleet label
+@FLM158=车辆型号
+ ;Fleet label
+@FLM159=汽车
+ ;Fleet label
+@FLM160=门
+ ;Fleet label
+@FLM161=载客人数
+ ;Fleet label
+@FLM162=费用类型
+ ;Fleet label
+@FLM163=到期日期
+ ;Fleet label
+@FLM164=开始里程
+ ;Fleet label
+@FLM165=结束里程
+ ;Fleet label
+@FLM166=开始燃油油位
+ ;Fleet label
+@FLM167=结束燃油油位
+ ;Fleet label
+@FLM168=车辆租赁信息
+ ;Fleet label
+@FLM169=第三排载客人数
+ ;Fleet label
+@FLM170=转弯半径
+ ;Fleet label
+@FLM171=离地高度
+ ;Fleet label
+@FLM172=翻滚等级
+ ;Fleet label
+@FLM173=整体等级
+ ;Fleet label
+@FLM174=移动空间
+ ;Fleet label
+@FLM175=占地空间
+ ;Fleet label
+@FLM176=最大负荷
+ ;Fleet label
+@FLM177=类型
+ ;Fleet label
+@FLM178=车辆总重
+ ;Fleet label
+@FLM179=车辆状态
+ ;Fleet label
+@FLM180=组织
+ ;Fleet label
+@FLM181=预览组
+ ;Fleet label
+@FLM182=车辆厂家
+ ;Fleet label
+@FLM183=车辆型号
+ ;Fleet label
+@FLM184=车辆图像
+ ;Fleet label
+@FLM185=型号规格
+ ;Fleet label
+@FLM186=图像格式
+ ;Fleet label
+@FLM187=车辆费率
+ ;Fleet label
+@FLM188=每天比率
+ ;Fleet label
+@FLM189=每周的费率
+ ;Fleet label
+@FLM190=我的与某个角色相关的内部组织
+ ;Fleet label
+@FLM191=包含与用户角色相关的内部组织的表
+ ;Fleet label
+@FLM192=DimAttributeOMBranch 视图包含 OMOperatingUnit 表中所有标记为分支机构的记录。
+ ;Fleet label
+@FLM193=DimAttributeOMRegion 视图包含 OMOperatingUnit 表中所有标记为区域的记录
+ ;Fleet label
+@FLM194=DimAttributeOMRentalLocation 视图包含 OMOperatingUnit 表中所有标记为租赁位置的记录。
+ ;Fleet label
+@FLM195=车队管理中心
+ ;Fleet label
+@FLM196=添加
+ ;Fleet label
+@FLM197=当前租赁
+ ;Fleet label
+@FLM198=已分配车辆
+ ;Fleet label
+@FLM199=可用车辆
+ ;Fleet label
+@FLM200=已召回车辆
+ ;Fleet label
+@FLM201=已完成
+ ;Fleet label
+@FLM202=正在进行
+ ;Fleet label
+@FLM203=历史费率
+ ;Fleet label
+@FLM204=完成租赁
+ ;Fleet label
+@FLM205=清洁车辆
+ ;Fleet label
+@FLM206=检查车辆
+ ;Fleet label
+@FLM207=维护车辆
+ ;Fleet label
+@FLM208=服务审核
+ ;Fleet label
+@FLM209=客户详细信息
+ ;Fleet label
+@FLM210=名称
+ ;Fleet label
+@FLM211=许可证
+ ;Fleet label
+@FLM212=地址
+ ;Fleet label
+@FLM213=电话
+ ;Fleet label
+@FLM214=电子邮件
+ ;Fleet label
+@FLM215=付款信息
+ ;Fleet label
+@FLM216=信用卡
+ ;Fleet label
+@FLM217=到期
+ ;Fleet label
+@FLM218=日期
+ ;Fleet label
+@FLM219=租赁开始
+ ;Fleet label
+@FLM220=结束日期
+ ;Fleet label
+@FLM221=说明
+ ;Fleet label
+@FLM222=数量
+ ;Fleet label
+@FLM223=已扩展
+ ;Fleet label
+@FLM224=汽车详细信息
+ ;Fleet label
+@FLM225=厂家和型号
+ ;Fleet label
+@FLM226=每日费率
+ ;Fleet label
+@FLM227=每周费率
+ ;Fleet label
+@FLM228=车辆预览部分
+ ;Fleet label
+@FLM229=颜色
+ ;Fleet label
+@FLM230=状态
+ ;Fleet label
+@FLM231=已分配车辆
+ ;Fleet label
+@FLM232=车队管理提示
+ ;Fleet label
+@FLM233=将用户限制为 BU
+ ;Fleet label
+@FLM234=我的对用于安全访问的车辆的访问权限
+ ;Fleet label
+@FLM235=租赁记录的自助服务
+ ;Fleet label
+@FLM236=车队管理员
+ ;Fleet label
+@FLM237=租赁职员
+ ;Fleet label
+@FLM238=车队管理分支机构管理员
+ ;Fleet label
+@FLM239=租赁分支机构管理员
+ ;Fleet label
+@FLM240=车队管理服务技术员
+ ;Fleet label
+@FLM241=服务技术员
+ ;Fleet label
+@FLM242=使用工作流
+ ;Fleet label
+@FLM243=公开可用轿车库存的服务组
+ ;Fleet label
+@FLM244=车门数
+ ;Number of doors in the FM vehicle
+@FLM245=总额
+ ;Fleet label
+@FLM246=燃油油位
+ ;Fleet label
+@FLM247=离地高度
+ ;Fleet label
+@FLM248=卡车占地空间
+ ;Fleet label
+@FLM249=最大负荷
+ ;Fleet label
+@FLM250=头部移动空间
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=评分
+ ;Fleet label
+@FLM253=总租赁数
+ ;Fleet label
+@FLM254=座椅
+ ;Fleet label
+@FLM255=费用类型
+ ;Fleet label (table)
+@FLM256=容量
+ ;Fleet label
+@FLM257=转弯半径
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=工作流查询
+ ;Fleet label
+@FLM260=维护记录
+ ;Fleet label
+@FLM261=新建租赁
+ ;Fleet label
+@FLM262=所有租赁
+ ;Fleet label
+@FLM263=车队设置
+ ;Fleet label
+@FLM264=所有车辆
+ ;Fleet label
+@FLM265=费率日期
+ ;Fleet label
+@FLM268=分支 _DEMO_
+ ;Fleet label
+@FLM269=租赁位置 _DEMO_
+ ;Fleet label
+@FLM270=区域 _DEMO_
+ ;Fleet label
+@FLM271=清洁完成
+ ;Fleet label
+@FLM272=删除客户
+ ;Fleet label
+@FLM273=删除所选租赁
+ ;Fleet label
+@FLM274=删除所选车辆
+ ;Fleet label
+@FLM275=检查完成
+ ;Fleet label
+@FLM276=服务完成
+ ;Fleet label
+@FLM278=启动工作流
+ ;Fleet label
+@FLM279=批准服务
+ ;Fleet label
+@FLM280=拒绝服务
+ ;Fleet label
+@FLM281=退回服务
+ ;Fleet label
+@FLM282=删除所选车辆
+ ;Fleet label
+@FLM283=工作流配置
+ ;Fleet label
+@FLM284=创建或更新分支机构
+ ;Fleet label
+@FLM285=创建或更新租赁位置
+ ;Fleet label
+@FLM286=创建或更新区域
+ ;Fleet label
+@FLM287=添加/编辑客户
+ ;Fleet label
+@FLM288=车辆租赁 ID
+ ;Fleet label (table)
+@FLM289=添加/编辑租赁费用
+ ;Fleet label
+@FLM290=费用详细信息
+ ;Fleet label
+@FLM291=租赁详细信息
+ ;Fleet label
+@FLM292=编辑租赁
+ ;Fleet label
+@FLM293=按客户排列的租赁
+ ;Fleet label
+@FLM294=每个型号的租赁
+ ;Fleet label
+@FLM295=添加/编辑车辆
+ ;Fleet label
+@FLM296=即将发生的租赁
+ ;Fleet label
+@FLM297=按车辆排列的租赁
+ ;Fleet label
+@FLM298=参阅联机帮助
+ ;Fleet label
+@FLM299=租赁费用类型
+ ;Fleet label
+@FLM300=记录里程
+ ;Fleet label
+@FLM301=车队流程周期
+ ;Fleet label
+@FLM302=车队 - 管理车队设置
+ ;Fleet label
+@FLM303=车队 - 编辑客户记录
+ ;Fleet label
+@FLM304=车队 - 管理客户
+ ;Fleet label
+@FLM305=车队 - 管理库存
+ ;Fleet label
+@FLM306=车队 - 租赁轿车
+ ;Fleet label
+@FLM307=车队 - 查看客户记录
+ ;Fleet label
+@FLM308=车队 - 查看库存
+ ;Fleet label
+@FLM309=车队 - 工作流员工
+ ;Fleet label
+@FLM310=车辆颜色
+ ;Fleet label
+@FLM311=车队 - 工作流管理员
+ ;Fleet label
+@FLM312=车队 - 工作流服务技术员
+ ;Fleet label
+@FLM313=车队 - 基本职责
+ ;Fleet label
+@FLM314=车队 - 管理轿车
+ ;Fleet label
+@FLM315=车队标准流程周期
+ ;Fleet label
+@FLM316=车辆里程
+ ;Fleet label
+@FLM317=成本
+ ;Fleet label
+@FLM318=间隙
+ ;Fleet label
+@FLM54=客户
+ ;Fleet label
+@FLM266=信用卡到期
+ ;Fleet label (table)
+@FLM277=驾照
+ ;Fleet label (table)
+@FLM320=客户列表
+ ;Fleet label (report menu item)
+@FLM321=客户列表报表
+ ;Fleet label (report menu item help text)
+@FLM267=工作流设置
+ ;Fleet label
+@FLM400=车辆维护工作流
+ ;Fleet label
+@FLM500=首选付款方式
+ ;Fleet label
+@FLM501=白色
+ ;Fleet colors
+@FLM502=灰色
+ ;Fleet colors
+@FLM503=黄色
+ ;Fleet colors
+@FLM504=橙色
+ ;Fleet colors
+@FLM505=分拣
+ ;Fleet label
+@FLM506=返回
+ ;Fleet label
+@FLM507=开始租赁
+ ;Fleet label
+@FLM401=预订管理
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=上一里程
+ ;Fleet label for returning vehicle slider
+@FLM509=新建里程
+ ;Fleet label for returning vehicle slider
+@FLM510=车辆租赁
+ ;Fleet label
+@FLM512=其他费用
+ ;Fleet label
+@FLM513=节省
+ ;Fleet label
+@FLM514=新建保留
+ ;New reservation menu item label
+@FLM515=型号年份
+ ;Field label for Year field in FmVehicleModel
+@FLM516=到期年份
+ ;Expiration year label
+@FLM517=客户报表
+ ;Fleet tile label
+@FLM518=现有预订
+ ;Fleet tile label
+@FLM519=逾期租赁
+ ;Fleet tile label
+@FLM520=付款名称
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=到期月份
+ ;Expiration month label
+@FLM523=卡片上的姓名
+ ;Fleet name on credit card
+@FLM524=车辆费率历史记录
+ ;Fleet form label
+@FLM525=新建评论
+ ;Fleet dialog caption
+@FLM526=新客户
+ ;Fleet dialog caption
+@FLM527=新建付款信息
+ ;Fleet dialog caption
+@FLM528=添加附件
+ ;Fleet dialog caption
+@FLM529=选择客户
+ ;Fleet dialog caption
+@FLM530=可取件
+ ;Fleet ReservationState enum option
+@FLM531=地址记录 ID
+ ;Fleet label
+@FLM532=十六进制颜色代码
+ ;Fleet label
+@FLM533=颜色 ID
+ ;Fleet label
+@FLM534=颜色名称
+ ;Fleet label
+@FLM535=折扣 ID
+ ;Fleet label
+@FLM536=付款信息 ID
+ ;Fleet label
+@FLM537=预订 ID
+ ;Fleet label
+@FLM539=已租赁车辆
+ ;Fleet label
+@FLM540=车队管理
+ ;Fleet menu label
+@FLM541=加载演示数据
+ ;Fleet button text
+@FLM542=费率历史记录
+ ;Fleet button text
+@FLM543=更改客户
+ ;Fleet dialog label
+@FLM544=选择车辆
+ ;Fleet button text
+@FLM545=所有预订
+ ;Fleet grid title
+@FLM546=客户反馈
+ ;Fleet group label
+@FLM547=租赁信息
+ ;Fleet group label
+@FLM548=费用图像
+ ;Fleet group label
+@FLM549=数据设置
+ ;Fleet tab label
+@FLM550=车辆信息
+ ;Fleet group label
+@FLM551=可用车辆
+ ;Fleet chart label
+@FLM552=车辆租赁状态
+ ;Fleet chart label
+@FLM553=按型号排列的车辆 - 收入
+ ;Fleet chart label
+@FLM554=今天取车
+ ;Fleet panorama label
+@FLM555=今天还车
+ ;Fleet panorama label
+@FLM556=租赁费率
+ ;Fleet panorama label
+@FLM558=预订详细信息
+ ;Fleet panorama label
+@FLM559=配件
+ ;Fleet panorama label
+@FLM560=功能
+ ;Fleet group label
+@FLM561=取车信息
+ ;Fleet field label
+@FLM562=还车信息
+ ;Fleet field label
+@FLM563=租赁列表
+ ;Fleet report label
+@FLM564=创建示例客户、租赁和车辆
+ ;Fleet TOC label
+@FLM565=这将只需要几秒钟。 
+ ;New Comment
+@FLM322=按客户排列的租赁
+ ;Fleet report label
+@FLM566=客户图表
+ ;Fleet form part caption
+@FLM567=车辆收入图表
+ ;Fleet form part caption
+@FLM601=车队管理租赁
+ ;Fleet rental entity
+@FLM602=车队管理客户
+ ;Fleet customer entity
+@FLM603=示例小程序
+ ;Label for the sample applet name
+@FLM604=使用了一个示例小程序来演示和测试小程序框架
+ ;Label for the sample applet description
+@FLM605=查看更多
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=客户位置
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=模板提供了客户位置的地图
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=租赁(按状态)
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=模板提供了租赁状态计数
+ ;Rentals by status template description
+FMCustomerEntityView=查看车队管理客户实体
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=维护车队管理客户实体
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=查看车队管理租赁实体
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=维护车队管理租赁实体
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=查看活动实体
+ ;View privilege for RCADActivity
+RCADActivityMaintain=维护活动实体
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=查看类别实体
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=维护类别实体
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=查看法律实体
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=维护法律实体
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=查看行属性实体
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=维护行属性实体
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=查看期间实体
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=维护期间实体
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=查看项目实体
+ ;View privilege for RCADProject
+RCADProjectMaintain=维护项目实体
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=查看工时单实体
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=维护工时单实体
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=查看工时单分录实体
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=维护工时单分录实体
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=查看工时单设置实体
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=维护工时单设置实体
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=查看工时单工作流历史记录实体
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=维护工时单工作流历史记录实体
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=查看工作流历史记录项实体
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=维护工作流历史记录项实体
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=查找租赁
+FMTemplateCustomerInformationDisplayName=客户信息
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=模板提供基本客户信息及其租赁列表
+ ;Fleet customer information template description
+DataCreated=示例数据已创建。
+DataRestored=示例数据已还原。
+DataRestoreConfirm=这会将所有车队管理数据还原到其原始状态。这是你想要执行的操作吗?
+Branch=分支 _DEMO_
+ ;Branch operating unit type
+RentalLocation=租赁位置 _DEMO_
+ ;Rental location operating unit type
+Region=区域 _DEMO_
+ ;Region operating unit type
+Timestamp=时间戳
+ ;Comment timestamp
+CustomerImage=客户图像
+ ;Fleet label
+Analytics=分析
+ ;used on Fleet clerk workspace for Analytics section

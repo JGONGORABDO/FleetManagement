@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxLabelFile xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FLM_nl-BE</Name>
+	<LabelContentFileName>FLM.nl-BE.label.txt</LabelContentFileName>
+	<LabelFileId>FLM</LabelFileId>
+	<Language>nl-BE</Language>
+	<RelativeUriInModelStore>FleetManagement\FleetManagement\AxLabelFile\LabelResources\nl-BE\FLM.nl-BE.label.txt</RelativeUriInModelStore>
+</AxLabelFile>

@@ -1,0 +1,784 @@
+﻿@FLM41=ไฟล์ป้ายชื่อถูกสร้างเมื่อ 4/3/2011
+ ;By user Admin
+@FLM42=สีแดง
+ ;Fleet colors
+@FLM43=สีน้ำเงิน
+ ;Fleet colors
+@FLM44=สีเขียว
+ ;Fleet colors
+@FLM46=เลือกรูปภาพ
+ ;Fleet label
+@FLM47=เปลี่ยนแปลง
+ ;Fleet label
+@FLM48=เอาออก
+ ;Fleet label
+@FLM49=ลูกค้า
+ ;Fleet label
+@FLM50=เปิด
+ ;Fleet label
+@FLM51=สร้าง
+ ;Fleet label
+@FLM52=การเช่า
+ ;Fleet label
+@FLM53=ทั่วไป
+ ;Fleet label
+@FLM55=ดู
+ ;Fleet label
+@FLM56=ลบ
+ ;Fleet label
+@FLM57=สิ่งที่แนบ
+ ;Fleet label
+@FLM58=เสร็จสมบูรณ์
+ ;Fleet label
+@FLM59=ค่าธรรมเนียมการเช่า
+ ;Fleet label
+@FLM60=รอบระยะเวลาการเช่า
+ ;Fleet label
+@FLM61=จาก
+ ;Fleet label
+@FLM62=ไปที่
+ ;Fleet label
+@FLM63=ระยะไมล์
+ ;Fleet label
+@FLM64=เริ่มต้น
+ ;Fleet label
+@FLM65=สิ้นสุด
+ ;Fleet label
+@FLM66=ระดับเชื้อเพลิง
+ ;Fleet label
+@FLM67=รถบรรทุก
+ ;Fleet label
+@FLM68=ค่าธรรมเนียม
+ ;Fleet label
+@FLM69=เพิ่มค่าธรรมเนียม
+ ;Fleet label
+@FLM70=รวมรถบรรทุก
+ ;Fleet label
+@FLM71=การเช่า
+ ;Fleet label
+@FLM72=แก้ไข
+ ;Fleet label
+@FLM73=การตั้งค่าคอนฟิกการจัดการยานพาหนะ
+ ;Fleet label
+@FLM74=ยี่ห้อและรุ่นของพาหนะ
+ ;Fleet label
+@FLM75=กำหนดยี่ห้อและรุ่นของพาหนะ
+ ;Fleet label
+@FLM76=กำหนดยี่ห้อและรุ่นของพาหนะในสินค้าคงคลัง รวมถึงรูปภาพแสดงแทนของรถ
+ ;Fleet label
+@FLM77=รูปภาพของรุ่น
+ ;Fleet label
+@FLM78=เลือกดู...
+ ;Fleet label
+@FLM79=ยี่ห้อใหม่
+ ;Fleet label
+@FLM80=รุ่นใหม่
+ ;Fleet label
+@FLM81=ชนิดค่าธรรมเนียมการเช่า
+ ;Fleet label
+@FLM82=กำหนดชนิดค่าธรรมเนียม
+ ;Fleet label
+@FLM83=ชนิดค่าธรรมเนียมที่ใช้เพื่อจัดประเภทค่าธรรมเนียมการเช่าแต่ละแบบ ซึ่งช่วยให้คุณสามารถตรวจสอบต้นทุนได้ง่ายขึ้น
+ ;Fleet label
+@FLM84=ระดับความปลอดภัยของเอสยูวี
+ ;Fleet label
+@FLM85=กำหนดระดับความปลอดภัยของเอสยูวี
+ ;Fleet label
+@FLM86=พาหนะ
+ ;Fleet label
+@FLM87=รักษา
+ ;Fleet label
+@FLM88=ประวัติ
+ ;Fleet label
+@FLM89=อัตราในอดีต
+ ;Fleet label
+@FLM90=อัตรา
+ ;Fleet label
+@FLM91=รายละเอียด
+ ;Fleet label
+@FLM92=ข้อมูลของรถยนต์และรถเอสยูวี
+ ;Fleet label
+@FLM93=รถเอสยูวี
+ ;Fleet label
+@FLM94=ข้อมูลรถบรรทุก
+ ;Fleet label
+@FLM95=พาหนะ
+ ;Fleet label
+@FLM96=ความพร้อมใช้งาน
+ ;Fleet label
+@FLM97=สถานที่
+ ;Fleet label
+@FLM98=การบำรุงรักษา
+ ;Fleet label
+@FLM99=เรกคอร์ด
+ ;Fleet label
+@FLM100=รายการ
+ ;Fleet label
+@FLM101=รหัสพาหนะ
+ ;Fleet label
+@FLM102=ตัวจัดการวันที่อัตราของพาหนะ
+ ;Fleet label
+@FLM103=เวอร์ชันใหม่
+ ;Fleet label
+@FLM104=การบำรุงรักษาพาหนะ
+ ;Fleet label
+@FLM105=การจัดการยานพาหนะ
+ ;Fleet label
+@FLM106=การเช่าล่าสุด
+ ;Fleet label
+@FLM107=องค์กรภายในของฉันสำหรับการเข้าถึงความปลอดภัย
+ ;Fleet label
+@FLM108=พาหนะที่ผู้ใช้มีสิทธิการเข้าถึงความปลอดภัย
+ ;Fleet label
+@FLM109=องค์กรภายในที่ผู้ใช้มีสิทธิ์เข้าถึง
+ ;Fleet label
+@FLM110=รถบรรทุก
+ ;Fleet label
+@FLM111=รถเอสยูวี
+ ;Fleet label
+@FLM112=เมนูสำหรับหน้าการดูของลูกค้า
+ ;Fleet label
+@FLM113=การดำเนินการ
+ ;Fleet label
+@FLM114=เมนูพาหนะ
+ ;Fleet label
+@FLM115=เมนูสำหรับหน้าการดูพาหนะ
+ ;Fleet label
+@FLM116=สาขา - ไม่สนับสนุน
+ ;Fleet label
+@FLM117=สถานที่เช่า - ไม่สนับสนุน
+ ;Fleet label
+@FLM118=ภูมิภาค - ไม่สนับสนุน
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=ชนิดเชื้อเพลิง
+ ;Fleet label
+@FLM123=มาตรฐาน
+ ;Fleet label
+@FLM124=พรีเมี่ยม
+ ;Fleet label
+@FLM125=เปิดใช้งาน GPS
+ ;Fleet label
+@FLM126=การเปลี่ยนถ่ายน้ำมัน
+ ;Fleet label
+@FLM127=ซ่อมแซม
+ ;Fleet label
+@FLM128=การบำรุงรักษาเชิงป้องกัน
+ ;Fleet label
+@FLM129=กำลังรอการตรวจสอบ
+ ;Fleet label
+@FLM130=กำลังรอรับบริการ
+ ;Fleet label
+@FLM131=กำลังรอการอนุมัติ
+ ;Fleet label
+@FLM132=กำลังรอการทำความสะอาด
+ ;Fleet label
+@FLM133=เสร็จสิ้น
+ ;Fleet label
+@FLM134=ระบบเกียร์
+ ;Fleet label
+@FLM135=อัตโนมัติ
+ ;Fleet label
+@FLM136=ธรรมดา
+ ;Fleet label
+@FLM137=พร้อมใช้งาน
+ ;Fleet label
+@FLM138=อยู่ระหว่างรับบริการ
+ ;Fleet label
+@FLM139=ถูกเช่า
+ ;Fleet label
+@FLM140=เสียหาย
+ ;Fleet label
+@FLM141=เรียกคืนแล้ว
+ ;Fleet label
+@FLM142=ค้างอยู่
+ ;Fleet label
+@FLM143=ชนิดพาหนะ
+ ;Fleet label
+@FLM144=ไม่รู้จัก
+ ;Fleet label
+@FLM145=รถบรรทุก
+ ;Fleet label
+@FLM146=รถยนต์
+ ;Fleet label
+@FLM147=ชนิดค่าธรรมเนียม
+ ;Fleet label
+@FLM148=ใบอนุญาตขับขี่
+ ;Fleet label
+@FLM149=รุ่นของยี่ห้อ
+ ;Fleet label
+@FLM150=หมายเหตุ
+ ;Fleet label
+@FLM151=ข้อมูลการเช่าพาหนะ
+ ;Fleet label
+@FLM152=รหัสระดับของความปลอดภัย
+ ;Fleet label
+@FLM153=ระดับความปลอดภัยของเอสยูวี
+ ;Fleet label
+@FLM154=ค่าเช่ารวม
+ ;Fleet label
+@FLM155=ยี่ห้อ
+ ;Fleet label
+@FLM156=ยี่ห้อของพาหนะ
+ ;Fleet label
+@FLM157=รุ่น
+ ;Fleet label
+@FLM158=รุ่นของพาหนะ
+ ;Fleet label
+@FLM159=รถยนต์
+ ;Fleet label
+@FLM160=ประตู
+ ;Fleet label
+@FLM161=จำนวนที่นั่ง
+ ;Fleet label
+@FLM162=ชนิดค่าธรรมเนียม
+ ;Fleet label
+@FLM163=วันหมดอายุ
+ ;Fleet label
+@FLM164=ระยะไมล์เริ่มต้น
+ ;Fleet label
+@FLM165=ระยะไมล์สิ้นสุด
+ ;Fleet label
+@FLM166=ระดับเชื้อเพลิงเริ่มต้น
+ ;Fleet label
+@FLM167=ระดับเชื้อเพลิงสิ้นสุด
+ ;Fleet label
+@FLM168=ข้อมูลการเช่าพาหนะ
+ ;Fleet label
+@FLM169=ที่นั่งแถวสาม
+ ;Fleet label
+@FLM170=รัศมีการเลี้ยว
+ ;Fleet label
+@FLM171=ระยาะห่างจากพื้น
+ ;Fleet label
+@FLM172=ระดับการพลิกคว่ำ
+ ;Fleet label
+@FLM173=ระดับโดยรวม
+ ;Fleet label
+@FLM174=พื้นที่การขนย้าย
+ ;Fleet label
+@FLM175=ที่ว่างบนพื้นรถ
+ ;Fleet label
+@FLM176=น้ำหนักบรรทุกสูงสุด
+ ;Fleet label
+@FLM177=ชนิด
+ ;Fleet label
+@FLM178=น้ำหนักพาหนะรวม
+ ;Fleet label
+@FLM179=สถานะของพาหนะ
+ ;Fleet label
+@FLM180=องค์กร
+ ;Fleet label
+@FLM181=แสดงตัวอย่างกลุ่ม
+ ;Fleet label
+@FLM182=ยี่ห้อของพาหนะ
+ ;Fleet label
+@FLM183=รุ่นของพาหนะ
+ ;Fleet label
+@FLM184=รูปภาพของพาหนะ
+ ;Fleet label
+@FLM185=ข้อมูลจำเพาะของรุ่น
+ ;Fleet label
+@FLM186=รูปแบบของรูปภาพ
+ ;Fleet label
+@FLM187=อัตราของพาหนะ
+ ;Fleet label
+@FLM188=อัตราต่อวัน
+ ;Fleet label
+@FLM189=อัตราต่อสัปดาห์
+ ;Fleet label
+@FLM190=องค์กรภายในของฉันที่เชื่อมโยงกับบทบาท
+ ;Fleet label
+@FLM191=ตารางที่มีองค์กรภายในที่เชื่อมโยงกับบทบาทของผู้ใช้
+ ;Fleet label
+@FLM192=มุมมอง DimAttributeOMBranch ประกอบด้วยเรกคอร์ดทั้งหมดจากตาราง OMOperatingUnit ที่ถูกทำเครื่องหมายเป็นสาขา
+ ;Fleet label
+@FLM193=มุมมอง DimAttributeOMRegion ประกอบด้วยเรกคอร์ดทั้งหมดจากตาราง OMOperatingUnit ที่ถูกทำเครื่องหมายเป็นภูมิภาค
+ ;Fleet label
+@FLM194=มุมมอง DimAttributeOMRentalLocation ประกอบด้วยเรกคอร์ดทั้งหมดจากตาราง OMOperatingUnit ที่ถูกทำเครื่องหมายเป็นสถานที่เช่า
+ ;Fleet label
+@FLM195=ศูนย์การจัดการยานพาหนะ
+ ;Fleet label
+@FLM196=เพิ่ม
+ ;Fleet label
+@FLM197=การเช่าปัจจุบัน
+ ;Fleet label
+@FLM198=พาหนะที่กำหนด
+ ;Fleet label
+@FLM199=พาหนะที่มีอยู่
+ ;Fleet label
+@FLM200=พาหนะที่เรียกคืน
+ ;Fleet label
+@FLM201=เสร็จสมบูรณ์
+ ;Fleet label
+@FLM202=กำลังดำเนินการ
+ ;Fleet label
+@FLM203=อัตราในอดีต
+ ;Fleet label
+@FLM204=การเช่าที่สมบูรณ์
+ ;Fleet label
+@FLM205=ทำความสะอาดพาหนะ
+ ;Fleet label
+@FLM206=ตรวจสอบพาหนะ
+ ;Fleet label
+@FLM207=ซ่อมพาหนะ
+ ;Fleet label
+@FLM208=การอนุมัติการซ่อม
+ ;Fleet label
+@FLM209=รายละเอียดลูกค้า
+ ;Fleet label
+@FLM210=ชื่อ
+ ;Fleet label
+@FLM211=ใบอนุญาต
+ ;Fleet label
+@FLM212=ที่อยู่
+ ;Fleet label
+@FLM213=โทรศัพท์
+ ;Fleet label
+@FLM214=อีเมล
+ ;Fleet label
+@FLM215=ข้อมูลการชำระเงิน
+ ;Fleet label
+@FLM216=บัตรเครดิต
+ ;Fleet label
+@FLM217=การหมดอายุ
+ ;Fleet label
+@FLM218=วันที่
+ ;Fleet label
+@FLM219=การเริ่มต้นการเช่า
+ ;Fleet label
+@FLM220=วันที่สิ้นสุด
+ ;Fleet label
+@FLM221=คำอธิบาย
+ ;Fleet label
+@FLM222=ปริมาณ
+ ;Fleet label
+@FLM223=ขยาย
+ ;Fleet label
+@FLM224=รายละเอียดพาหนะ
+ ;Fleet label
+@FLM225=ยี่ห้อและรุ่น
+ ;Fleet label
+@FLM226=อัตรารายวัน
+ ;Fleet label
+@FLM227=อัตรารายสัปดาห์
+ ;Fleet label
+@FLM228=ส่วนแสดงตัวอย่างพาหนะ
+ ;Fleet label
+@FLM229=สี
+ ;Fleet label
+@FLM230=สถานะ
+ ;Fleet label
+@FLM231=พาหนะที่กำหนด
+ ;Fleet label
+@FLM232=สัญลักษณ์การจัดการยานพาหนะ
+ ;Fleet label
+@FLM233=จำกัดผู้ใช้สำหรับ BU
+ ;Fleet label
+@FLM234=การเข้าถึงพาหนะของฉันสำหรับการเข้าถึงความปลอดภัย
+ ;Fleet label
+@FLM235=การบริการตนเองสำหรับเรกคอร์ดการเช่า
+ ;Fleet label
+@FLM236=เจ้าหน้าที่การจัดการยานพาหนะ
+ ;Fleet label
+@FLM237=เจ้าหน้าที่การเช่า
+ ;Fleet label
+@FLM238=ผู้จัดการสาขาการจัดการยานพาหนะ
+ ;Fleet label
+@FLM239=ผู้จัดการสาขาการเช่า
+ ;Fleet label
+@FLM240=ช่างเทคนิคบริการสำหรับการจัดการยานพาหนะ
+ ;Fleet label
+@FLM241=ช่างเทคนิคบริการ
+ ;Fleet label
+@FLM242=ใช้ลำดับงาน
+ ;Fleet label
+@FLM243=กลุ่มบริการที่แสดงรายการคงเหลือของรถยนต์ที่มีอยู่
+ ;Fleet label
+@FLM244=จำนวนประตู
+ ;Number of doors in the FM vehicle
+@FLM245=จำนวนรวม
+ ;Fleet label
+@FLM246=ระดับเชื้อเพลิง
+ ;Fleet label
+@FLM247=ระยาะห่างจากพื้น
+ ;Fleet label
+@FLM248=ที่ว่างบนพื้นรถบรรทุก
+ ;Fleet label
+@FLM249=น้ำหนักบรรทุกสูงสุด
+ ;Fleet label
+@FLM250=พื้นที่การขนย้ายเหนือศีรษะ
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=การจัดอันดับ
+ ;Fleet label
+@FLM253=ค่าเช่ารวม
+ ;Fleet label
+@FLM254=จำนวนที่นั่ง
+ ;Fleet label
+@FLM255=ชนิดค่าธรรมเนียม
+ ;Fleet label (table)
+@FLM256=ความจุ
+ ;Fleet label
+@FLM257=รัศมีการเลี้ยว
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=การสอบถามลำดับงาน
+ ;Fleet label
+@FLM260=เรกคอร์ดการบำรุงรักษา
+ ;Fleet label
+@FLM261=การเช่าใหม่
+ ;Fleet label
+@FLM262=การเช่าทั้งหมด
+ ;Fleet label
+@FLM263=การตั้งค่าบริการจัดหาพาหนะ
+ ;Fleet label
+@FLM264=พาหนะทั้งหมด
+ ;Fleet label
+@FLM265=วันที่ของอัตรา
+ ;Fleet label
+@FLM268=สาขา _DEMO_
+ ;Fleet label
+@FLM269=สถานที่เช่า _DEMO_
+ ;Fleet label
+@FLM270=ภูมิภาค _DEMO_
+ ;Fleet label
+@FLM271=การทำความสะอาดเสร็จสมบูรณ์
+ ;Fleet label
+@FLM272=ลบลูกค้า
+ ;Fleet label
+@FLM273=ลบการเช่าที่เลือก
+ ;Fleet label
+@FLM274=ลบพาหนะที่เลือก
+ ;Fleet label
+@FLM275=การตรวจสอบเสร็จสมบูรณ์
+ ;Fleet label
+@FLM276=การซ่อมเสร็จสมบูรณ์
+ ;Fleet label
+@FLM278=เริ่มต้นลำดับงาน
+ ;Fleet label
+@FLM279=อนุมัติการซ่อม
+ ;Fleet label
+@FLM280=ปฏิเสธการซ่อม
+ ;Fleet label
+@FLM281=ปฏิเสธการซ่อม
+ ;Fleet label
+@FLM282=ลบพาหนะที่เลือก
+ ;Fleet label
+@FLM283=การตั้งค่าคอนฟิกลำดับงาน
+ ;Fleet label
+@FLM284=สร้างหรืออัพเดตสาขา
+ ;Fleet label
+@FLM285=สร้างหรืออัพเดตสถานที่เช่า
+ ;Fleet label
+@FLM286=สร้างหรืออัพเดตภูมิภาค
+ ;Fleet label
+@FLM287=เพิ่ม/แก้ไขลูกค้า
+ ;Fleet label
+@FLM288=รหัสการเช่าพาหนะ
+ ;Fleet label (table)
+@FLM289=เพิ่ม/แก้ไขค่าธรรมเนียมการเช่า
+ ;Fleet label
+@FLM290=รายละเอียดค่าธรรมเนียม
+ ;Fleet label
+@FLM291=รายละเอียดการเช่า
+ ;Fleet label
+@FLM292=แก้ไขการเช่า
+ ;Fleet label
+@FLM293=การเช่าตามลูกค้า
+ ;Fleet label
+@FLM294=การเช่าตามรุ่น
+ ;Fleet label
+@FLM295=เพิ่ม/แก้ไขพาหนะ
+ ;Fleet label
+@FLM296=การเช่าในเร็วๆ นี้
+ ;Fleet label
+@FLM297=การเช่าตามพาหนะ
+ ;Fleet label
+@FLM298=ดูความช่วยเหลือออนไลน์
+ ;Fleet label
+@FLM299=ชนิดค่าธรรมเนียมการเช่า
+ ;Fleet label
+@FLM300=บันทึกระยะไมล์
+ ;Fleet label
+@FLM301=วงจรกระบวนการของบริการจัดหาพาหนะ
+ ;Fleet label
+@FLM302=บริการจัดหาพาหนะ - การตั้งค่าจัดการบริการจัดหาพาหนะ
+ ;Fleet label
+@FLM303=บริการจัดหาพาหนะ - แก้ไขเรกคอร์ดลูกค้า
+ ;Fleet label
+@FLM304=บริการจัดหาพาหนะ - จัดการลูกค้า
+ ;Fleet label
+@FLM305=บริการจัดหาพาหนะ - จัดการสินค้าคงคลัง
+ ;Fleet label
+@FLM306=บริการจัดหาพาหนะ - รถที่เช่า
+ ;Fleet label
+@FLM307=บริการจัดหาพาหนะ - ดูเรกคอร์ดลูกค้า
+ ;Fleet label
+@FLM308=บริการจัดหาพาหนะ - ดูสินค้าคงคลัง
+ ;Fleet label
+@FLM309=บริการจัดหาพาหนะ - เจ้าหน้าที่ลำดับงาน
+ ;Fleet label
+@FLM310=สีของพาหนะ
+ ;Fleet label
+@FLM311=บริการจัดหาพาหนะ - ผู้จัดการลำดับงาน
+ ;Fleet label
+@FLM312=บริการจัดหาพาหนะ - ช่างเทคนิคบริการลำดับงาน
+ ;Fleet label
+@FLM313=บริการจัดหาพาหนะ - หน้าที่เบื้องต้น
+ ;Fleet label
+@FLM314=บริการจัดหาพาหนะ - จัดการรถ
+ ;Fleet label
+@FLM315=วงจรกระบวนการมาตรฐานของบริการจัดหาพาหนะ
+ ;Fleet label
+@FLM316=ระยะไมล์ของพาหนะ
+ ;Fleet label
+@FLM317=ต้นทุน
+ ;Fleet label
+@FLM318=ระยะห่าง
+ ;Fleet label
+@FLM54=ลูกค้า
+ ;Fleet label
+@FLM266=การหมดอายุของบัตรเครดิต
+ ;Fleet label (table)
+@FLM277=ใบอนุญาตขับขี่
+ ;Fleet label (table)
+@FLM320=รายชื่อลูกค้า
+ ;Fleet label (report menu item)
+@FLM321=รายงานรายชื่อลูกค้า
+ ;Fleet label (report menu item help text)
+@FLM267=การตั้งค่าลำดับงาน
+ ;Fleet label
+@FLM400=ลำดับงานการบำรุงรักษาพาหนะ
+ ;Fleet label
+@FLM500=วิธีการชำระเงินที่ต้องการ
+ ;Fleet label
+@FLM501=สีขาว
+ ;Fleet colors
+@FLM502=สีเทา
+ ;Fleet colors
+@FLM503=สีเหลือง
+ ;Fleet colors
+@FLM504=สีส้ม
+ ;Fleet colors
+@FLM505=รถบรรทุก
+ ;Fleet label
+@FLM506=ส่งคืน
+ ;Fleet label
+@FLM507=เริ่มต้นการเช่า
+ ;Fleet label
+@FLM401=การจัดการการจอง
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=ระยะไมล์ก่อนหน้า
+ ;Fleet label for returning vehicle slider
+@FLM509=ระยะไมล์ใหม่
+ ;Fleet label for returning vehicle slider
+@FLM510=การเช่าพาหนะ
+ ;Fleet label
+@FLM512=ค่าธรรมเนียมเพิ่มเติม
+ ;Fleet label
+@FLM513=การประหยัด
+ ;Fleet label
+@FLM514=การจองใหม่
+ ;New reservation menu item label
+@FLM515=ปีของรุ่น
+ ;Field label for Year field in FmVehicleModel
+@FLM516=ปีที่หมดอายุ
+ ;Expiration year label
+@FLM517=รายงานของลูกค้า
+ ;Fleet tile label
+@FLM518=การจองที่มีอยู่
+ ;Fleet tile label
+@FLM519=การเช่าที่พ้นกำหนด
+ ;Fleet tile label
+@FLM520=ชื่อการชำระเงิน
+ ;Fleet PaymentInfo field label
+@FLM521=หมายเลขตรวจสอบยืนยันบัตร
+ ;Fleet label
+@FLM522=เดือนที่หมดอายุ
+ ;Expiration month label
+@FLM523=ชื่อบนบัตร
+ ;Fleet name on credit card
+@FLM524=ประวัติอัตราของพาหนะ
+ ;Fleet form label
+@FLM525=ข้อคิดเห็นใหม่
+ ;Fleet dialog caption
+@FLM526=ลูกค้าใหม่
+ ;Fleet dialog caption
+@FLM527=ข้อมูลการชำระเงินใหม่
+ ;Fleet dialog caption
+@FLM528=เพิ่มอุปกรณ์เสริม
+ ;Fleet dialog caption
+@FLM529=เลือกลูกค้า
+ ;Fleet dialog caption
+@FLM530=พร้อมสำหรับการเบิกสินค้า
+ ;Fleet ReservationState enum option
+@FLM531=รหัสเรกคอร์ดที่อยู่
+ ;Fleet label
+@FLM532=รหัสสีเลขฐานสิบหก
+ ;Fleet label
+@FLM533=รหัสสี
+ ;Fleet label
+@FLM534=ชื่อสี
+ ;Fleet label
+@FLM535=รหัสส่วนลด
+ ;Fleet label
+@FLM536=รหัสข้อมูลการชำระเงิน
+ ;Fleet label
+@FLM537=รหัสการจอง
+ ;Fleet label
+@FLM539=พาหนะที่เช่า
+ ;Fleet label
+@FLM540=การจัดการยานพาหนะ
+ ;Fleet menu label
+@FLM541=โหลดข้อมูลสาธิต
+ ;Fleet button text
+@FLM542=ประวัติอัตรา
+ ;Fleet button text
+@FLM543=เปลี่ยนลูกค้า
+ ;Fleet dialog label
+@FLM544=เลือกพาหนะ
+ ;Fleet button text
+@FLM545=การจองทั้งหมด
+ ;Fleet grid title
+@FLM546=คำติชมของลูกค้า
+ ;Fleet group label
+@FLM547=ข้อมูลการเช่า
+ ;Fleet group label
+@FLM548=รูปภาพค่าธรรมเนียม
+ ;Fleet group label
+@FLM549=การตั้งค่าข้อมูล
+ ;Fleet tab label
+@FLM550=ข้อมูลพาหนะ
+ ;Fleet group label
+@FLM551=พาหนะที่มีอยู่
+ ;Fleet chart label
+@FLM552=สถานะการเช่าพาหนะ
+ ;Fleet chart label
+@FLM553=พาหนะตามรุ่น - รายได้
+ ;Fleet chart label
+@FLM554=การรับรถวันนี้
+ ;Fleet panorama label
+@FLM555=การส่งคืนวันนี้
+ ;Fleet panorama label
+@FLM556=อัตราค่าเช่า
+ ;Fleet panorama label
+@FLM558=รายละเอียดการจอง
+ ;Fleet panorama label
+@FLM559=อุปกรณ์เสริม
+ ;Fleet panorama label
+@FLM560=ลักษณะการทำงาน
+ ;Fleet group label
+@FLM561=ข้อมูลการรับรถ
+ ;Fleet field label
+@FLM562=ข้อมูลการส่งคืน
+ ;Fleet field label
+@FLM563=รายการการเช่า
+ ;Fleet report label
+@FLM564=สร้างตัวอย่างของลูกค้า การเช่า และพาหนะ
+ ;Fleet TOC label
+@FLM565=การดำเนินการนี้อาจใชเวลาสองสามวินาที  
+ ;New Comment
+@FLM322=การเช่าตามลูกค้า
+ ;Fleet report label
+@FLM566=แผนภูมิลูกค้า
+ ;Fleet form part caption
+@FLM567=แผนภูมิรายได้ของพาหนะ
+ ;Fleet form part caption
+@FLM601=การเช่าในการจัดการยานพาหนะ
+ ;Fleet rental entity
+@FLM602=ลูกค้าในการจัดการยานพาหนะ
+ ;Fleet customer entity
+@FLM603=แอปเพล็ตตัวอย่าง
+ ;Label for the sample applet name
+@FLM604=แอปเพล็ตตัวอย่างที่ใช้แสดงและทดสอบเฟรมเวิร์กของแอปเพล็ต
+ ;Label for the sample applet description
+@FLM605=ดูเพิ่มเติม
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=ที่ตั้งของลูกค้า
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=เท็มเพลตจะแสดงการแม็ปที่ตั้งของลูกค้า
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=การเช่าตามสถานะ
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=เท็มเพลตจะแสดงจำนวนของสถานะการเช่า
+ ;Rentals by status template description
+FMCustomerEntityView=ดูเอนทิตี้ลูกค้าในการจัดการยานพาหนะ
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=รักษาเอนทิตี้ลูกค้าในการจัดการยานพาหนะ
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=ดูเอนทิตี้การเช่าในการจัดการยานพาหนะ
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=รักษาเอนทิตี้การเช่าในการจัดการยานพาหนะ
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=ดูเอนทิตี้กิจกรรม
+ ;View privilege for RCADActivity
+RCADActivityMaintain=รักษาเอนทิตี้กิจกรรม
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=ดูเอนทิตี้ประเภท
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=รักษาเอนทิตี้ประเภท
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=ดูเอนทิตี้นิติบุคคล
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=รักษาเอนทิตี้นิติบุคคล
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=ดูเอนทิตี้คุณสมบัติของรายการ
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=รักษาเอนทิตี้คุณสมบัติของรายการ
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=ดูเอนทิตี้รอบระยะเวลา
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=รักษาเอนทิตี้รอบระยะเวลา
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=ดูเอนทิตี้โครงการ
+ ;View privilege for RCADProject
+RCADProjectMaintain=รักษาเอนทิตี้โครงการ
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=ดูเอนทิตี้แผ่นเวลา
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=รักษาเอนทิตี้แผ่นเวลา
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=ดูเอนทิตี้การป้อนข้อมูลแผ่นเวลา
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=รักษาเอนทิตี้การป้อนข้อมูลแผ่นเวลา
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=ดูเอนทิตี้การตั้งค่าแผ่นเวลา
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=รักษาเอนทิตี้การตั้งค่าแผ่นเวลา
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=ดูเอนทิตี้ประวัติลำดับงานของแผ่นเวลา
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=รักษาเอนทิตี้ประวัติลำดับงานของแผ่นเวลา
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=ดูเอนทิตี้รายการประวัติลำดับงาน
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=รักษาเอนทิตี้รายการประวัติลำดับงาน
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=ค้นหาการเช่า
+FMTemplateCustomerInformationDisplayName=ข้อมูลลูกค้า
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=เท็มเพลตจะแสดงข้อมูลพื้นฐานและรายการเช่าของลูกค้า
+ ;Fleet customer information template description
+DataCreated=สร้างข้อมูลตัวอย่างแล้ว
+DataRestored=คืนค่าข้อมูลตัวอย่างแล้ว
+DataRestoreConfirm=การดำเนินการนี้จะคืนค่าข้อมูลการจัดการยานพาหนะทั้งหมดเป็นสถานะดั้งเดิม นี่คือสิ่งที่คุณต้องการทำใช่หรือไม่
+Branch=สาขา _DEMO_
+ ;Branch operating unit type
+RentalLocation=สถานที่เช่า _DEMO_
+ ;Rental location operating unit type
+Region=ภูมิภาค _DEMO_
+ ;Region operating unit type
+Timestamp=การบันทึกเวลา
+ ;Comment timestamp
+CustomerImage=รูปภาพลูกค้า
+ ;Fleet label
+Analytics=การวิเคราะห์
+ ;used on Fleet clerk workspace for Analytics section

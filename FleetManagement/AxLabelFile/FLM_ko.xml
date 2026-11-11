@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AxLabelFile xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>FLM_ko</Name>
+  <LabelContentFileName>FLM.ko.label.txt</LabelContentFileName>
+  <LabelFileId>FLM</LabelFileId>
+  <Language>ko</Language>
+  <RelativeUriInModelStore>FleetManagement\FleetManagement\AxLabelFile\LabelResources\ko\FLM.ko.label.txt</RelativeUriInModelStore>
+</AxLabelFile>

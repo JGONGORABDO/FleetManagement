@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMAddOnsDialog</title>
+</head>
+<body>
+    <div id="FMAddOnsDialog" data-dyn-role="metaModel: 'Form'" data-dyn-context="$dyn.OData.CreateEndpoint('data/service.svc/')">
+        <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="ExtendedStyle: 'titleGroup'">
+            <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="ExtendedStyle: 'formCaption', Value: 'Add Ons'"></div>
+        </div>
+        <div data-dyn-role="metaModel: 'List'" data-dyn-bind="DataSource: 'AddOns', DataFilter: 'State !== $dyn.OData.Entry.State.New', ExtendedStyle:'addOnsDialogList'">
+            <div data-dyn-role="metaModel: 'Template'" data-dyn-bind="TemplateId: 'addonsdialogcard'"></div>
+        </div>
+        <div>
+            <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Save', ActionCommand: $close($save())"></button>
+            <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Cancel', ActionCommand: $close($revert())"></button>
+        </div>
+
+        <div style="display: none" class="dyn-stop-binding">
+            <div id="addonsdialogcard" data-dyn-context="ModelContext" data-dyn-bind="extendedStyle:'card'">
+                <div class="details">
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('Name')"></div>
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $format('${0}/day',$field('Rate'))"></div>
+                </div>
+            </div>
+        </div>
+        <div data-dyn-template="templateId: 'Card', resourceBundle: 'Card'"></div>
+    </div>
+</body>
+</html>

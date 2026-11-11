@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Керувати основними даними сутності для керування даними 
+DataManagementFleetMasterEntitiesView=Переглядати основні дані сутності для керування даними 

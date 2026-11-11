@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+    <div id="FMPeopleReturningToday">
+        <div data-dyn-role="metaModel: 'List'" data-dyn-bind="Width: 420, DataSource: 'Reservations', DataFilter: 'State !== $dyn.OData.Entry.State.New'" class="card">
+            <div data-dyn-role="metaModel: 'Template'" data-dyn-bind="TemplateId: 'peopleCard'"></div>
+        </div>
+        <div style="display: none" class="dyn-stop-binding">
+            <div id="peopleCard" data-dyn-context="ModelContext">
+                <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageType: 'URL', ImageName: $field('Thumbnail', 'Customer')"></span>
+                <div class="details">
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $format('{0} {1}', $field('FirstName', 'Customer'), $field('LastName', 'Customer'))"></div>
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('Description', 'Vehicle')"></div>
+                    <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $field('ReservationId')"></div>
+                </div>
+            </div>
+        </div>
+        <div data-dyn-template="templateId: 'Card', resourceBundle: 'Card'"></div>
+    </div>
+</body>
+</html>

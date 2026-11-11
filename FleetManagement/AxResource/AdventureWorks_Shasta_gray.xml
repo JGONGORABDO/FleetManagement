@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxResource xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>AdventureWorks_Shasta_gray</Name>
+	<FileName>AdventureWorks_Shasta_gray.png</FileName>
+	<RelativeUriInModelStore>FleetManagement/AxResource/ResourceContent/Images/AdventureWorks_Shasta_gray.png</RelativeUriInModelStore>
+</AxResource>

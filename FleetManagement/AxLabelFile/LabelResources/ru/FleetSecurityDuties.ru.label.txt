@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Ведение данных объекта шаблона для управления данными
+DataManagementFleetMasterEntitiesView=Просмотр данных объекта шаблона для управления данными

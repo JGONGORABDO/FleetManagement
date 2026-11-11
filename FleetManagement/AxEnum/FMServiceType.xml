@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxEnum xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMServiceType</Name>
+	<EnumValues>
+		<AxEnumValue>
+			<Name>New</Name>
+			<Label>@SYS312960</Label>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>Repair</Name>
+			<Label>@FLM127</Label>
+			<Value>1</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>PreventitiveMaintenance</Name>
+			<Label>@FLM128</Label>
+			<Value>2</Value>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>OilChange</Name>
+			<Label>@FLM126</Label>
+			<Value>3</Value>
+		</AxEnumValue>
+	</EnumValues>
+</AxEnum>

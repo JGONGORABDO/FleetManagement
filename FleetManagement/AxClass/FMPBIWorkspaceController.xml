@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMPBIWorkspaceController</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+/// The <c>FMPBIWorkspaceController</c> class is used to orchestrate the user experience when accessing the <c>FMPBIWorkspaces</c> collection
+/// </summary>
+public class FMPBIWorkspaceController extends PBIReportControllerBase
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>showFilterPane</Name>
+				<Source><![CDATA[
+    protected boolean showFilterPane()
+    {
+        return false;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>showNavContentPane</Name>
+				<Source><![CDATA[
+    protected boolean showNavContentPane()
+    {
+        return false;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>setupReportRunParams</Name>
+				<Source><![CDATA[
+    public PBIReportRunParameters setupReportRunParams()
+    {
+        // populate and return the report run parameters for the session
+        PBIReportRunParameters reportRunParams = new PBIReportRunParameters();        
+        reportRunParams.parmResourceName('FMPBIWorkspaces');
+        reportRunParams.parmShowFilterPane(this.showFilterPane());
+        reportRunParams.parmShowNavContentPane(this.showNavContentPane());
+        reportRunParams.parmPageName(this.pageName());
+        reportRunParams.parmIsEmbedded(true);
+        reportRunParams.parmApplyCompanyFilter(false);
+        return reportRunParams;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args _args)
+    {
+        // intialize the contrller object
+        FMPBIWorkspaceController controller = new FMPBIWorkspaceController();
+        controller.setupReportRunParams();
+        controller.run(_args);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

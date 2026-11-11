@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxSecurityRole xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMServiceTech</Name>
+	<Description>@FLM241</Description>
+	<Label>@FLM240</Label>
+	<DirectAccessPermissions />
+	<Duties>
+		<AxSecurityDutyReference>
+			<Name>FMBasicDuties</Name>
+		</AxSecurityDutyReference>
+	</Duties>
+	<Privileges>
+		<AxSecurityPrivilegeReference>
+			<Name>FMWorkflowServiceTech</Name>
+		</AxSecurityPrivilegeReference>
+	</Privileges>
+	<SubRoles />
+</AxSecurityRole>

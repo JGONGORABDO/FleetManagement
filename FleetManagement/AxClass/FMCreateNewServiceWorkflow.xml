@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCreateNewServiceWorkflow</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMCreateNewServiceWorkflow
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>fmAddMaintenanceRecord</Name>
+				<Source><![CDATA[
+    public static void fmAddMaintenanceRecord(FMVehicle vehicle, FMRental rental)
+    {
+
+        FMVehicleMaintenance lastMaintenance, newRec;
+
+        UnitofWork uoW;
+        uoW = new UnitofWork();
+
+        select firstonly maxof(DateCompleted) from lastMaintenance;
+
+        newRec.fmVehicle(vehicle);
+        newRec.Mileage = rental.EndMileage - lastMaintenance.Mileage;
+        newRec.Status = FMStatus::New;
+        newRec.DateStarted = DateTimeUtil::getSystemDate(DateTimeUtil::getUserPreferredTimeZone());
+
+        uoW.insertonSaveChanges(newRec);
+        uoW.saveChanges();
+
+        // Activate a workflow for managing the vehicle maintenance process
+        Workflow::activateFromWorkflowType('FMVehicleMaintenanceWorkflowType',
+                newRec.RecId,
+                'Automatically started workflow',
+                NoYes::No,
+                curUserId());
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Pertahankan data entitas Master untuk manajemen data 
+DataManagementFleetMasterEntitiesView=Lihat data entitas Master untuk manajemen data 

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehicleExtendedView</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMVehicleExtendedView extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>compColCurrentDate</Name>
+				<Source><![CDATA[
+    private static str compColCurrentDate()
+    {
+        
+       /// return syscomputedcolumn::getCurrentDate();
+       /// SysComputedColumn::
+        ///
+        return 'convert(date, GETDATE(),101)';
+        
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FMNumVehiclesAvailable</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Retrieves the number of Available vehicles
+    /// </summary>
+    /// <returns>
+    /// An expression number of Available vehicles
+    /// </returns>
+    public static str FMNumVehiclesAvailable()
+    {
+        // CREATE MEMBER CURRENTCUBE.[Available] AS sum([Measures].[NoVehicles], [FMVehicle].[VehicleStatus].&[1])
+
+        TableName       viewName = tableStr(FMVehicleExtendedView);
+
+        List            transTypeList = new List(Types::String);
+
+        return SysComputedColumn::if(
+            SysComputedColumn::equalExpression(
+                SysComputedColumn::comparisonField(viewName, identifierStr(FMVehicle) , fieldStr(FMVehicle, Status)),
+                SysComputedColumn::comparisonLiteral(enum2int(FMVehicleStatus::Available))),
+                SysComputedColumn::returnLiteral(1),
+                SysComputedColumn::returnLiteral(0));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FMNumVehiclesInService</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Retrieves the number of InService vehicles
+    /// </summary>
+    /// <returns>
+    /// An expression number of InService vehicles
+    /// </returns>
+    public static str FMNumVehiclesInService()
+    {
+        // CREATE MEMBER CURRENTCUBE.[Available] AS sum([Measures].[NoVehicles], [FMVehicle].[VehicleStatus].&[2])
+
+        TableName       viewName = tableStr(FMVehicleExtendedView);
+
+        List            transTypeList = new List(Types::String);
+
+        return SysComputedColumn::if(
+            SysComputedColumn::equalExpression(
+                SysComputedColumn::comparisonField(viewName, identifierStr(FMVehicle) , fieldStr(FMVehicle, Status)),
+                SysComputedColumn::comparisonLiteral(enum2int(FMVehicleStatus::InService))),
+                SysComputedColumn::returnLiteral(1),
+                SysComputedColumn::returnLiteral(0));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FMNumVehiclesRented</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Retrieves the number of Rented vehicles
+    /// </summary>
+    /// <returns>
+    /// An expression number of Rented vehicles
+    /// </returns>
+    public static str FMNumVehiclesRented()
+    {
+        // CREATE MEMBER CURRENTCUBE.[Available] AS sum([Measures].[NoVehicles], [FMVehicle].[VehicleStatus].&[0])
+
+        TableName       viewName = tableStr(FMVehicleExtendedView);
+
+        List            transTypeList = new List(Types::String);
+
+        return SysComputedColumn::if(
+            SysComputedColumn::equalExpression(
+                SysComputedColumn::comparisonField(viewName, identifierStr(FMVehicle) , fieldStr(FMVehicle, Status)),
+                SysComputedColumn::comparisonLiteral(enum2int(FMVehicleStatus::Rented))),
+                SysComputedColumn::returnLiteral(1),
+                SysComputedColumn::returnLiteral(0));
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Description</Name>
+			<DataField>Description</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>FuelType</Name>
+			<DataField>FuelType</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>GPSEnabled</Name>
+			<DataField>GPSEnabled</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>GrossVehicleWeight</Name>
+			<DataField>GrossVehicleWeight</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Mileage</Name>
+			<DataField>Mileage</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>MPG</Name>
+			<DataField>MPG</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Note</Name>
+			<DataField>Note</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Status</Name>
+			<DataField>Status</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Transmission</Name>
+			<DataField>Transmission</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>VehicleIdentifier</Name>
+			<DataField>RecId</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>VIN</Name>
+			<DataField>VIN</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ColorName</Name>
+			<DataField>Name</DataField>
+			<DataSource>FMCarColor</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Make</Name>
+			<DataField>Make</DataField>
+			<DataSource>FMVehicleModel</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Model</Name>
+			<DataField>Model</DataField>
+			<DataSource>FMVehicleModel</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ModelSpec</Name>
+			<DataField>ModelSpec</DataField>
+			<DataSource>FMVehicleModel</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Year</Name>
+			<DataField>Year</DataField>
+			<DataSource>FMVehicleModel</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>VehicleShortDescr</Name>
+			<DataField>VehicleId</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldComputedDate">
+			<Name>StatusDate</Name>
+			<ExtendedDataType>FMCCExpiryDate</ExtendedDataType>
+			<ViewMethod>compColCurrentDate</ViewMethod>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>DisplayRelationType</Name>
+			<DataField>DisplayRelationType</DataField>
+			<DataSource>FMVehicle</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldComputedInt">
+			<Name>Available</Name>
+			<ViewMethod>FMNumVehiclesAvailable</ViewMethod>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldComputedInt">
+			<Name>InService</Name>
+			<ViewMethod>FMNumVehiclesInService</ViewMethod>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldComputedInt">
+			<Name>Rented</Name>
+			<ViewMethod>FMNumVehiclesRented</ViewMethod>
+		</AxViewField>
+	</Fields>
+	<Indexes />
+	<Mappings />
+	<Relations />
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods />
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMVehicle</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMVehicle</Table>
+				<DataSources>
+					<AxQuerySimpleEmbeddedDataSource>
+						<Name>FMCarColor</Name>
+						<DynamicFields>Yes</DynamicFields>
+						<Table>FMCarColor</Table>
+						<DataSources />
+						<DerivedDataSources />
+						<Fields />
+						<Ranges />
+						<Relations>
+							<AxQuerySimpleDataSourceRelation>
+								<Name>QueryDataSourceRelation1</Name>
+								<Field>ColorID</Field>
+								<JoinDataSource>FMVehicle</JoinDataSource>
+								<RelatedField>RecId</RelatedField>
+							</AxQuerySimpleDataSourceRelation>
+						</Relations>
+					</AxQuerySimpleEmbeddedDataSource>
+					<AxQuerySimpleEmbeddedDataSource>
+						<Name>FMVehicleModel</Name>
+						<DynamicFields>Yes</DynamicFields>
+						<Table>FMVehicleModel</Table>
+						<DataSources />
+						<DerivedDataSources />
+						<Fields />
+						<Ranges />
+						<Relations>
+							<AxQuerySimpleDataSourceRelation>
+								<Name>QueryDataSourceRelation1</Name>
+								<Field>VehicleModel</Field>
+								<JoinDataSource>FMVehicle</JoinDataSource>
+								<RelatedField>RecId</RelatedField>
+							</AxQuerySimpleDataSourceRelation>
+						</Relations>
+					</AxQuerySimpleEmbeddedDataSource>
+				</DataSources>
+				<DerivedDataSources />
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxView>

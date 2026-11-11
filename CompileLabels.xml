@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Diagnostics
+  GenerationTime="2026-11-06T13:54:11.0392421-05:00">
+  <Items>
+    <Diagnostic>
+      <DiagnosticType>VisualStudioIntegration</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>C:\Users\JBELTRAN\AppData\Local\Microsoft\Dynamics365\10.0.2790.93\PackagesLocalDirectory\Bin\labelc.exe</Path>
+      <Moniker>C:\Users\JBELTRAN\AppData\Local\Microsoft\Dynamics365\10.0.2790.93\PackagesLocalDirectory\Bin\labelc.exe -metadata="C:\CustomXppMetadatagavw3opv.ehj" -output="C:\Users\JBELTRAN\AppData\Local\Microsoft\Dynamics365\10.0.2790.93\PackagesLocalDirectory\FleetManagement\Resources" -modelmodule="FleetManagement" </Moniker>
+      <Message>C:\Users\JBELTRAN\AppData\Local\Microsoft\Dynamics365\10.0.2790.93\PackagesLocalDirectory\Bin\labelc.exe -metadata="C:\CustomXppMetadatagavw3opv.ehj" -output="C:\Users\JBELTRAN\AppData\Local\Microsoft\Dynamics365\10.0.2790.93\PackagesLocalDirectory\FleetManagement\Resources" -modelmodule="FleetManagement" </Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Unspecified</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>labelc.exe</Path>
+      <Moniker>Starting label compilation...</Moniker>
+      <Message>Starting label compilation...</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Unspecified</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>labelc.exe</Path>
+      <Moniker>- Module name    </Moniker>
+      <Message>FleetManagement</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Unspecified</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>labelc.exe</Path>
+      <Moniker>- Metadata path  </Moniker>
+      <Message>C:\CustomXppMetadatagavw3opv.ehj\</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Unspecified</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>labelc.exe</Path>
+      <Moniker>- Output path    </Moniker>
+      <Message>C:\Users\JBELTRAN\AppData\Local\Microsoft\Dynamics365\10.0.2790.93\PackagesLocalDirectory\FleetManagement\Resources\</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Unspecified</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>labelc.exe</Path>
+      <Moniker>- Maximum DoP    </Moniker>
+      <Message>0 (Logical Processors: 14)</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Unspecified</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>labelc.exe</Path>
+      <Moniker>Done compiling 0 label files!</Moniker>
+      <Message>Done compiling 0 label files!</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Unspecified</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>labelc.exe</Path>
+      <Moniker>Model store query time 00:00:00.1442693.</Moniker>
+      <Message>Model store query time 00:00:00.1442693.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Unspecified</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>labelc.exe</Path>
+      <Moniker>Label compilation time 00:00:00.0264557.</Moniker>
+      <Message>Label compilation time 00:00:00.0264557.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Unspecified</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>labelc.exe</Path>
+      <Moniker>Completed label compilation in 0 seconds with exit code 0.</Moniker>
+      <Message>Completed label compilation in 0 seconds with exit code 0.</Message>
+    </Diagnostic>
+  </Items>
+  <Aliases />
+</Diagnostics>

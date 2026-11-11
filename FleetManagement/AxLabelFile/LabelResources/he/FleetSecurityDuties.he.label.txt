@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=שמור על נתוני ישות ראשית עבור ניהול נתונים 
+DataManagementFleetMasterEntitiesView=הצג נתוני ישות ראשית עבור ניהול נתונים 

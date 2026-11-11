@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<z:anyType xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxCompilerMetadata" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+	<Extends>SysDataSetQuery</Extends>
+	<IsPublic>true</IsPublic>
+	<Attributes>
+		<AxAttribute>
+			<Name>SysDataSetExtension</Name>
+			<Parameters>
+				<AxAttributeParameter>
+					<Type>Intrinsic</Type>
+					<TypeValue>classStr</TypeValue>
+					<AdditionalData>
+						<AxAttributeParameter>
+							<TypeValue>FMPickupAndReturn</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</AdditionalData>
+				</AxAttributeParameter>
+			</Parameters>
+		</AxAttribute>
+		<AxAttribute>
+			<Name>SysDataSetCacheTableExtension</Name>
+			<Parameters>
+				<AxAttributeParameter>
+					<Type>Intrinsic</Type>
+					<TypeValue>tableStr</TypeValue>
+					<AdditionalData>
+						<AxAttributeParameter>
+							<TypeValue>FMPickupAndReturnTable</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</AdditionalData>
+				</AxAttributeParameter>
+			</Parameters>
+		</AxAttribute>
+	</Attributes>
+	<Implements xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+		<d2p1:string>SysIDataSet</d2p1:string>
+	</Implements>
+	<Methods>
+		<Method>
+			<Name>parmRefreshFrequency</Name>
+			<Visibility>Public</Visibility>
+			<ReturnType>
+				<Type>ExtendedDataType</Type>
+				<TypeName>SysDataCacheRefreshFrequency</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>parmQueryableIdentifier</Name>
+			<Visibility>Public</Visibility>
+			<ReturnType>
+				<Type>ExtendedDataType</Type>
+				<TypeName>SysQueryableIdentifier</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>parmCacheTypeId</Name>
+			<Visibility>Public</Visibility>
+			<ReturnType>
+				<Type>ExtendedDataType</Type>
+				<TypeName>SysDataCacheTypeId</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>parmQueryableToCacheMapping</Name>
+			<Visibility>Public</Visibility>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>Map</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>construct</Name>
+			<IsStatic>true</IsStatic>
+			<Visibility>Public</Visibility>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>FMPickupAndReturn</TypeName>
+			</ReturnType>
+		</Method>
+	</Methods>
+</z:anyType>

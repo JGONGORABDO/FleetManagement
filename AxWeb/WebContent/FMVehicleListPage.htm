@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMVehicleListPage</title>
+</head>
+<body>
+    <div id="FMVehicleListPage" data-dyn-role="metaModel: 'Form'" data-dyn-context="$dyn.OData.CreateEndpoint('data/service.svc/')">
+        <div data-dyn-role="metaModel: 'Group'">
+            <div data-dyn-role="metaModel: 'DataBoundLabel'" data-dyn-bind="ExtendedStyle: 'titleField', Value: 'Available vehicles'"></div>
+        </div>
+        <!-- An example of retrieving the context passed into this page (expected to be $model('Reservations') in this case) -->
+        <!-- TODO: Refactor/Expand framework so this context isn't so ugly -->
+        <div data-dyn-bind="FMVehicleListPageViewModel.setDuration($field('Duration', $parent()))"></div>
+        <div data-dyn-role="metaModel: { Type: 'Tab', Style: 'Panorama'}">
+            <div data-dyn-role="metaModel: { Type: 'TabPage', Style: 'PanoramaItem'}" data-dyn-bind="ExtendedStyle: 'vehiclePanorama'">
+                <!-- TODO: Apply a filter on this foreach to only get the MakeModels where MakeModel.VehicleCount > 0 -->
+                <div data-dyn-inline="true" data-dyn-bind="foreach: $($dyn.value($models('MakeModels')) ? $dyn.value($models('MakeModels')) : []).map(function (index, item) { return $dyn.clientForm.viewModel(item); })">
+                    <div data-dyn-bind="extendedStyle: 'vehicleCard', click: $parent().$select('MakeModels', $index), selected: $parent().$isSelected('MakeModels', $index)">
+                        <div class="vehicleDetails">
+                            <!-- Note: using formatted value -->
+                            <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $format('{0} {1} {2}', $field('Make'), $field('Model'), $field('Year'))"></div>
+                        </div>
+                        <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageName: $field('Image'), ImageType: 'Base64'"></span>
+                        <div class="rateDetails">
+                            <!-- Note: using formatted value -->
+                            <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $format('${0}', FMVehicleListPageViewModel.calculateCostOfReservation($field('RatePerDay', 'Rate')))"></div>
+                            <div data-dyn-role="metaModel: 'StaticText'" data-dyn-bind="Value: $format('(${0}/day)', $field('RatePerDay', 'Rate'))"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-dyn-role="metaModel: 'ActionPane'">
+            <div data-dyn-role="metaModel: 'ButtonGroup'" data-dyn-bind="ExtendedStyle: 'mainActionPaneButton'">
+                <!-- TODO: Broke the conditional visibility of these buttons with $selected change, will fix later  -->
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Select vehicle', ActionCommand: $navigate({templateId: 'FMReservationHub', resourceBundle: 'FMReservationHub'})"></button>
+                <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'View details', ActionCommand: $navigate({templateId: 'FMVehicleHub', resourceBundle: 'FMVehicleHub'})"></button>
+            </div>
+        </div>
+        <div data-dyn-template="templateId: 'Card', resourceBundle: 'Card'"></div>
+    </div>
+    <div data-dyn-script="FMVehicleListPage.js"></div>
+</body>
+</html>

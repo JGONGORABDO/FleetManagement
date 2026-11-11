@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxMenu xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V1">
+	<Name>FleetManagement</Name>
+	<Label>@FLM540</Label>
+	<Elements>
+		<AxMenuElement xmlns=""
+			i:type="AxMenuElementSubMenu">
+			<Name>Workspaces</Name>
+			<Label>@SYS:Platform_Menu_ColHeading_Workspaces</Label>
+			<Elements>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementTile">
+					<Name>FMClerkWorkspace</Name>
+					<Tile>FMClerkWorkspace</Tile>
+				</AxMenuElement>
+			</Elements>
+		</AxMenuElement>
+		<AxMenuElement xmlns=""
+			i:type="AxMenuElementSubMenu">
+			<Name>Rentals</Name>
+			<Label>@FLM71</Label>
+			<Elements>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FMRental</Name>
+					<DisplayInContentArea>Yes</DisplayInContentArea>
+					<MenuItemName>FMRental</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FMRental_Upcoming</Name>
+					<DisplayInContentArea>Yes</DisplayInContentArea>
+					<MenuItemName>FMRental_Upcoming</MenuItemName>
+				</AxMenuElement>
+			</Elements>
+		</AxMenuElement>
+		<AxMenuElement xmlns=""
+			i:type="AxMenuElementSubMenu">
+			<Name>Customers</Name>
+			<Label>@SYS343364</Label>
+			<Elements>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FmCustomer</Name>
+					<MenuItemName>FMCustomer</MenuItemName>
+				</AxMenuElement>
+			</Elements>
+		</AxMenuElement>
+		<AxMenuElement xmlns=""
+			i:type="AxMenuElementSubMenu">
+			<Name>Vehicles</Name>
+			<Label>@FLM95</Label>
+			<Elements>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FMVehicle</Name>
+					<DisplayInContentArea>Yes</DisplayInContentArea>
+					<MenuItemName>FMVehicle</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FMVehicle_Cars</Name>
+					<DisplayInContentArea>Yes</DisplayInContentArea>
+					<MenuItemName>FMVehicle_Cars</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FMVehicle_SUVs</Name>
+					<DisplayInContentArea>Yes</DisplayInContentArea>
+					<MenuItemName>FMVehicle_SUVs</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FMVehicle_Trucks</Name>
+					<DisplayInContentArea>Yes</DisplayInContentArea>
+					<MenuItemName>FMVehicle_Trucks</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FMVehicle_Assigned</Name>
+					<DisplayInContentArea>Yes</DisplayInContentArea>
+					<MenuItemName>FMVehicle_Assigned</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FMVehicle_Avail</Name>
+					<DisplayInContentArea>Yes</DisplayInContentArea>
+					<MenuItemName>FMVehicle_Avail</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FmVehicleMaintenance2</Name>
+					<MenuItemName>FmVehicleMaintenance</MenuItemName>
+				</AxMenuElement>
+			</Elements>
+		</AxMenuElement>
+		<AxMenuElement xmlns=""
+			i:type="AxMenuElementSubMenu">
+			<Name>Setup</Name>
+			<Label>@SYS333869</Label>
+			<Elements>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FMSetup</Name>
+					<MenuItemName>FMSetup</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>FMWorkflowConfiguration</Name>
+					<DisplayInContentArea>Yes</DisplayInContentArea>
+					<MenuItemName>FMWorkflowConfiguration</MenuItemName>
+				</AxMenuElement>
+			</Elements>
+		</AxMenuElement>
+	</Elements>
+</AxMenu>

@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=データ管理用マスター エンティティ データの管理 
+DataManagementFleetMasterEntitiesView=データ管理用マスター エンティティ データの表示 

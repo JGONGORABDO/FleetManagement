@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<z:anyType xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxCompilerMetadata" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+	<Extends>SysAppWorkspace</Extends>
+	<IsPublic>true</IsPublic>
+	<Attributes>
+		<AxAttribute>
+			<Name>SysAppWorkspaceAttribute</Name>
+			<Parameters>
+				<AxAttributeParameter>
+					<TypeValue>"B6EDC94F-F10E-4050-B79E-B56C965368DA"</TypeValue>
+					<AdditionalData />
+				</AxAttributeParameter>
+				<AxAttributeParameter>
+					<TypeValue>"FMReservationManagementWorkspace"</TypeValue>
+					<AdditionalData />
+				</AxAttributeParameter>
+			</Parameters>
+		</AxAttribute>
+	</Attributes>
+	<Methods>
+		<Method>
+			<Name>reservationList</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppPage</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"All Reservation"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"All reservations description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>FMAllReservationListPage</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>reservationDetails</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppPageAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"Reservation details"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"Reservation details description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>FMReservationDetailsPage</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>rentalChargeDetails</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppPageAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"Rental charge details"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"Rental charge details description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>FMRentalChargeListItem</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>customerList</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppPageAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"All Customers"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"All customers description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysAppLookUpAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"FMCustomer_customerFirstName"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"FMCustomer_recId"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>FMCustomerListPage</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>customerDetails</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppPageAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"Customer details"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"Customer details description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>FMCustomerDetailsPage</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>activeReservationList</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppPageAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"Active Reservation"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"Active reservations description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysAppSecurityAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"CustTableListPage"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>FMActiveReservationListPage</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>vehicleList</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppPageAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"All Vehicles"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"All vehicles description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysAppLookUpAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"FMVehicle_vehicleDescription"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"FMVehicle_recId"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>FMVehicleListPage</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>createReservation</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppActionAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"New reservation"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"Create new reservation description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<Type>Enum</Type>
+							<TypeValue>SysAppCrudOperation</TypeValue>
+							<AdditionalData>
+								<AxAttributeParameter>
+									<TypeValue>Create</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+							</AdditionalData>
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<Type>Intrinsic</Type>
+							<TypeValue>methodStr</TypeValue>
+							<AdditionalData>
+								<AxAttributeParameter>
+									<TypeValue>FMReservationManagementWorkspace</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<TypeValue>activeReservationList</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<AdditionalData />
+								</AxAttributeParameter>
+							</AdditionalData>
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>FMCreateReservationAction</TypeName>
+					<Name>_reservationDetails</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>SysAppResponse</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>updateCustomer</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppActionAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"Update customer details"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"Update customer details description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<Type>Enum</Type>
+							<TypeValue>SysAppCrudOperation</TypeValue>
+							<AdditionalData>
+								<AxAttributeParameter>
+									<TypeValue>Update</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+							</AdditionalData>
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<Type>Intrinsic</Type>
+							<TypeValue>methodStr</TypeValue>
+							<AdditionalData>
+								<AxAttributeParameter>
+									<TypeValue>FMReservationManagementWorkspace</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<TypeValue>customerDetails</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<AdditionalData />
+								</AxAttributeParameter>
+							</AdditionalData>
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>FMUpdateCustomerAction</TypeName>
+					<Name>_customerDetails</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>SysAppResponse</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>addCustomer</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppActionAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"New customer"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"Add new customer description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<Type>Enum</Type>
+							<TypeValue>SysAppCrudOperation</TypeValue>
+							<AdditionalData>
+								<AxAttributeParameter>
+									<TypeValue>Create</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+							</AdditionalData>
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<Type>Intrinsic</Type>
+							<TypeValue>methodStr</TypeValue>
+							<AdditionalData>
+								<AxAttributeParameter>
+									<TypeValue>FMReservationManagementWorkspace</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<TypeValue>customerList</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<AdditionalData />
+								</AxAttributeParameter>
+							</AdditionalData>
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>FMCreateCustomerAction</TypeName>
+					<Name>_customerDetails</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>SysAppResponse</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>deleteCustomer</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>SysAppActionAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"Delete Customer"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<TypeValue>"Delete a customer description"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<Type>Enum</Type>
+							<TypeValue>SysAppCrudOperation</TypeValue>
+							<AdditionalData>
+								<AxAttributeParameter>
+									<TypeValue>Delete</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+							</AdditionalData>
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<Type>Intrinsic</Type>
+							<TypeValue>methodStr</TypeValue>
+							<AdditionalData>
+								<AxAttributeParameter>
+									<TypeValue>FMReservationManagementWorkspace</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<TypeValue>customerDetails</TypeValue>
+									<AdditionalData />
+								</AxAttributeParameter>
+								<AxAttributeParameter>
+									<AdditionalData />
+								</AxAttributeParameter>
+							</AdditionalData>
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>SysAppRequestParams</TypeName>
+					<Name>_requestParams</Name>
+				</AxMethodParameter>
+				<AxMethodParameter>
+					<Type>Class</Type>
+					<TypeName>FMCustomerPage</TypeName>
+					<Name>_customerDetails</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Class</Type>
+				<TypeName>SysAppResponse</TypeName>
+			</ReturnType>
+		</Method>
+	</Methods>
+</z:anyType>

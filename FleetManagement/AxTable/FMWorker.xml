@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMWorker</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMWorker extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>validateField</Name>
+				<Source><![CDATA[
+    public boolean validateField(FieldId _fieldIdToCheck)
+    {
+        boolean ret;
+
+        ret = super(_fieldIdToCheck);
+
+        if(ret)
+        {
+            switch (_fieldIdToCheck)
+            {
+                case fieldnum(FMWorker, TitleValidTo):
+                    if(this.TitleValidTo < this.TitleValidFrom) 
+                    {
+                        ret = checkFailed("End date for title validation must be after the start date");
+                    }
+                    break;
+
+                case fieldnum(FMWorker, PositionValidTo):
+                    if(this.PositionValidTo < this.PositionValidFrom) 
+                    {
+                        ret = checkFailed("End date for position validation must be after the start date");
+                    }
+                    break;
+            }
+        }
+
+        return ret;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>This table represents workers</DeveloperDocumentation>
+	<TitleField1>PersonnelNumber</TitleField1>
+	<Modules>FleetManagement</Modules>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>TitleId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>PersonnelNumber</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>OfficeLocation</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>DEL_Shadow_DataAreaId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Person</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>PersonnelNumber</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>TitleId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Location</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>OfficeLocation</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>SeniorityDate</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>TitleValidFrom</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>TitleValidTo</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>PositionId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>RelationshipGroup</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>RelationshipType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>PositionValidFrom</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>PositionValidTo</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>DEL_Shadow_DataAreaId</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ConfigurationKey>SysDeletedObjects70</ConfigurationKey>
+			<ExtendedDataType>DataAreaId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>Person</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>DirPartyRecId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>PersonnelNumber</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMPersonnelNumberId_RU</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>TitleId</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMTitleId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>Location</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>LogisticsLocationRecId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>OfficeLocation</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldUtcDateTime">
+			<Name>SeniorityDate</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMEmploymentSeniorityDateTime</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldUtcDateTime">
+			<Name>TitleValidFrom</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>ValidFromDateTime</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldUtcDateTime">
+			<Name>TitleValidTo</Name>
+			<ExtendedDataType>ValidToDateTime</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>PositionId</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMPositionId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>RelationshipGroup</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<EnumType>FMRelationshipGroup</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>RelationshipType</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>DirRelationshipTypeId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldUtcDateTime">
+			<Name>PositionValidFrom</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMPositionWorkerAssignmentStartDate</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldUtcDateTime">
+			<Name>PositionValidTo</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMPositionWorkerAssignmentEndDate</ExtendedDataType>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes />
+	<Mappings />
+	<Relations />
+	<StateMachines />
+</AxTable>

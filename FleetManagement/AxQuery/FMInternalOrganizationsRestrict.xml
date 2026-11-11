@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxQuery xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxQuerySimple">
+	<Name>FMInternalOrganizationsRestrict</Name>
+	<SourceCode>
+		<Methods>
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Query]
+public class FMInternalOrganizationsRestrict extends QueryRun
+{
+}
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<Title>@FLM107</Title>
+	<DataSources>
+		<AxQuerySimpleRootDataSource>
+			<Name>FMVehicle_1</Name>
+			<DynamicFields>Yes</DynamicFields>
+			<Label>@FLM108</Label>
+			<Table>FMVehicle</Table>
+			<DataSources>
+				<AxQuerySimpleEmbeddedDataSource>
+					<Name>MyInternalOrganizationsForRole_1</Name>
+					<DynamicFields>Yes</DynamicFields>
+					<Label>@FLM109</Label>
+					<Table>MyInternalOrganizationsForRole</Table>
+					<DataSources />
+					<Fields />
+					<Ranges />
+					<Relations>
+						<AxQuerySimpleDataSourceRelation>
+							<Name>OMInternalOrganization</Name>
+							<Field>OMInternalOrganization</Field>
+							<JoinDataSource>FMVehicle_1</JoinDataSource>
+							<RelatedField>PartyRecId</RelatedField>
+						</AxQuerySimpleDataSourceRelation>
+					</Relations>
+				</AxQuerySimpleEmbeddedDataSource>
+			</DataSources>
+			<Fields />
+			<Ranges />
+			<GroupBy />
+			<Having />
+			<OrderBy />
+		</AxQuerySimpleRootDataSource>
+	</DataSources>
+</AxQuery>

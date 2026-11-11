@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=الاحتفاظ بالبيانات الرئيسية للكيان لإدارة البيانات 
+DataManagementFleetMasterEntitiesView=عرض البيانات الرئيسية للكيان لإدارة البيانات 

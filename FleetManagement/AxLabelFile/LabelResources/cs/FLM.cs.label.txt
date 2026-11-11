@@ -1,0 +1,784 @@
+﻿@FLM41=Soubory popisků vytvořené 4. 3. 2011
+ ;By user Admin
+@FLM42=Červená
+ ;Fleet colors
+@FLM43=Modrá
+ ;Fleet colors
+@FLM44=Zelená
+ ;Fleet colors
+@FLM46=Zvolit obrázek
+ ;Fleet label
+@FLM47=Změnit
+ ;Fleet label
+@FLM48=Odebrat
+ ;Fleet label
+@FLM49=Odběratel
+ ;Fleet label
+@FLM50=Otevřít
+ ;Fleet label
+@FLM51=Nový
+ ;Fleet label
+@FLM52=Vypůjčení
+ ;Fleet label
+@FLM53=Obecné
+ ;Fleet label
+@FLM55=Zobrazit
+ ;Fleet label
+@FLM56=Odstranit
+ ;Fleet label
+@FLM57=Přílohy
+ ;Fleet label
+@FLM58=Dokončeno
+ ;Fleet label
+@FLM59=Náklady na vypůjčení
+ ;Fleet label
+@FLM60=Období vypůjčení
+ ;Fleet label
+@FLM61=Od
+ ;Fleet label
+@FLM62=Do
+ ;Fleet label
+@FLM63=Vzdálenost
+ ;Fleet label
+@FLM64=Počátek
+ ;Fleet label
+@FLM65=Konec
+ ;Fleet label
+@FLM66=Stavy paliva
+ ;Fleet label
+@FLM67=Vyskladnit
+ ;Fleet label
+@FLM68=Náklady
+ ;Fleet label
+@FLM69=Přidat náklady
+ ;Fleet label
+@FLM70=Zahrnout nákladní vozy
+ ;Fleet label
+@FLM71=Vypůjčení
+ ;Fleet label
+@FLM72=Upravit
+ ;Fleet label
+@FLM73=Konfigurace správy vozového parku
+ ;Fleet label
+@FLM74=Značka a modely vozidel
+ ;Fleet label
+@FLM75=Definovat značky a modely vozidel
+ ;Fleet label
+@FLM76=Definujte značku a modely vozidel v zásobách, včetně obrázku modelu.
+ ;Fleet label
+@FLM77=Obrázek modelu
+ ;Fleet label
+@FLM78=Procházet…
+ ;Fleet label
+@FLM79=Nová značka
+ ;Fleet label
+@FLM80=Nový model
+ ;Fleet label
+@FLM81=Typy nákladů na vypůjčení
+ ;Fleet label
+@FLM82=Definovat typy nákladů
+ ;Fleet label
+@FLM83=Typy nákladů se používají k určení kategorií pro každou položku nákladů na vypůjčení. Můžete tak snadněji sledovat náklady.
+ ;Fleet label
+@FLM84=Hodnocení bezpečnosti SUV
+ ;Fleet label
+@FLM85=Definovat hodnocení bezpečnosti SUV
+ ;Fleet label
+@FLM86=Vozidla
+ ;Fleet label
+@FLM87=Udržovat
+ ;Fleet label
+@FLM88=Historie
+ ;Fleet label
+@FLM89=Historické sazby
+ ;Fleet label
+@FLM90=Sazby
+ ;Fleet label
+@FLM91=Podrobnosti
+ ;Fleet label
+@FLM92=Informace o automobilu a SUV
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=Informace o nákladním vozu
+ ;Fleet label
+@FLM95=Vozidla
+ ;Fleet label
+@FLM96=Dostupnost
+ ;Fleet label
+@FLM97=Umístění
+ ;Fleet label
+@FLM98=Údržba
+ ;Fleet label
+@FLM99=Záznam
+ ;Fleet label
+@FLM100=Seznam
+ ;Fleet label
+@FLM101=ID vozidla
+ ;Fleet label
+@FLM102=Správce data sazby za vozidlo
+ ;Fleet label
+@FLM103=Nová verze
+ ;Fleet label
+@FLM104=Údržba vozidla
+ ;Fleet label
+@FLM105=Správa vozového parku
+ ;Fleet label
+@FLM106=Nedávno vypůjčené položky
+ ;Fleet label
+@FLM107=Mé interní organizace pro zabezpečený přístup
+ ;Fleet label
+@FLM108=Vozidla, k nimž má uživatel zabezpečený přístup
+ ;Fleet label
+@FLM109=Interní organizace, k nimž má uživatel přístup
+ ;Fleet label
+@FLM110=Nákladní vozy
+ ;Fleet label
+@FLM111=SUV
+ ;Fleet label
+@FLM112=Nabídka pro stránky k zobrazení odběratelů
+ ;Fleet label
+@FLM113=Akce
+ ;Fleet label
+@FLM114=Nabídka vozidel
+ ;Fleet label
+@FLM115=Nabídka pro stránky k zobrazení vozidel
+ ;Fleet label
+@FLM116=Pobočka – zastaralé
+ ;Fleet label
+@FLM117=Umístění půjčovny – zastaralé
+ ;Fleet label
+@FLM118=Oblast – zastaralé
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Typ paliva
+ ;Fleet label
+@FLM123=Standardní
+ ;Fleet label
+@FLM124=Prémiové
+ ;Fleet label
+@FLM125=Podpora navigace GPS
+ ;Fleet label
+@FLM126=Výměna oleje
+ ;Fleet label
+@FLM127=Oprava
+ ;Fleet label
+@FLM128=Preventivní údržba
+ ;Fleet label
+@FLM129=Čeká na prohlídku
+ ;Fleet label
+@FLM130=Čeká na servis
+ ;Fleet label
+@FLM131=Čeká na schválení
+ ;Fleet label
+@FLM132=Čeká na čištění
+ ;Fleet label
+@FLM133=Hotovo
+ ;Fleet label
+@FLM134=Převodovka
+ ;Fleet label
+@FLM135=Automaticky
+ ;Fleet label
+@FLM136=Ruční
+ ;Fleet label
+@FLM137=K dispozici
+ ;Fleet label
+@FLM138=V servisu
+ ;Fleet label
+@FLM139=Pronajato
+ ;Fleet label
+@FLM140=Poškozeno
+ ;Fleet label
+@FLM141=Odvoláno
+ ;Fleet label
+@FLM142=Čekající
+ ;Fleet label
+@FLM143=Typ vozidla
+ ;Fleet label
+@FLM144=Neznámý
+ ;Fleet label
+@FLM145=Nákladní vůz
+ ;Fleet label
+@FLM146=Automobil
+ ;Fleet label
+@FLM147=Typ poplatku
+ ;Fleet label
+@FLM148=Řidičský průkaz
+ ;Fleet label
+@FLM149=Značka/model
+ ;Fleet label
+@FLM150=Poznámky
+ ;Fleet label
+@FLM151=Informace o půjčování vozidla
+ ;Fleet label
+@FLM152=ID hodnocení bezpečnosti
+ ;Fleet label
+@FLM153=Hodnocení bezpečnosti SUV
+ ;Fleet label
+@FLM154=Celkem půjčeno
+ ;Fleet label
+@FLM155=Značka
+ ;Fleet label
+@FLM156=Značka vozidla
+ ;Fleet label
+@FLM157=Model
+ ;Fleet label
+@FLM158=Model vozidla
+ ;Fleet label
+@FLM159=Automobily
+ ;Fleet label
+@FLM160=Dveře
+ ;Fleet label
+@FLM161=Počet míst k sezení
+ ;Fleet label
+@FLM162=Typy nákladů
+ ;Fleet label
+@FLM163=Datum vypršení platnosti
+ ;Fleet label
+@FLM164=Počáteční stav ujetých kilometrů
+ ;Fleet label
+@FLM165=Koncový stav ujetých kilometrů
+ ;Fleet label
+@FLM166=Počáteční stav paliva
+ ;Fleet label
+@FLM167=Koncový stav paliva
+ ;Fleet label
+@FLM168=Informace o půjčování vozidla
+ ;Fleet label
+@FLM169=Kapacita třetí řady
+ ;Fleet label
+@FLM170=Poloměr otáčení
+ ;Fleet label
+@FLM171=Světlost vozidla
+ ;Fleet label
+@FLM172=Hodnocení převrácení vozidla
+ ;Fleet label
+@FLM173=Celkové hodnocení
+ ;Fleet label
+@FLM174=Prostor potřebný za pohybu
+ ;Fleet label
+@FLM175=Podlahový prostor
+ ;Fleet label
+@FLM176=Max. vytížení
+ ;Fleet label
+@FLM177=Typ
+ ;Fleet label
+@FLM178=Hrubá hmotnost vozidla
+ ;Fleet label
+@FLM179=Stav vozidla
+ ;Fleet label
+@FLM180=Organizace
+ ;Fleet label
+@FLM181=Náhled skupiny
+ ;Fleet label
+@FLM182=Značky vozidel
+ ;Fleet label
+@FLM183=Modely vozidel
+ ;Fleet label
+@FLM184=Obrázek vozidla
+ ;Fleet label
+@FLM185=Specifikace modelu
+ ;Fleet label
+@FLM186=Formát obrázku
+ ;Fleet label
+@FLM187=Sazby za vozidlo
+ ;Fleet label
+@FLM188=Sazba za den
+ ;Fleet label
+@FLM189=Sazba za týden
+ ;Fleet label
+@FLM190=Moje interních organizace přidružené k roli
+ ;Fleet label
+@FLM191=Tabulka obsahující interní organizace přidružené k roli uživatele
+ ;Fleet label
+@FLM192=Zobrazení DimAttributeOMBranch obsahuje všechny záznamy z tabulky OMOperatingUnit, které jsou označeny jako Pobočka.
+ ;Fleet label
+@FLM193=Zobrazení DimAttributeOMRegion obsahuje všechny záznamy z tabulky OMOperatingUnit, které jsou označeny jako Oblasti.
+ ;Fleet label
+@FLM194=Zobrazení DimAttributeOMRentalLocation obsahuje všechny záznamy z tabulky OMOperatingUnit, které jsou označeny jako Umístění půjčovny.
+ ;Fleet label
+@FLM195=Centrum správy vozového parku
+ ;Fleet label
+@FLM196=Přidat
+ ;Fleet label
+@FLM197=Aktuálně vypůjčené položky
+ ;Fleet label
+@FLM198=Přiřazená vozidla
+ ;Fleet label
+@FLM199=Dostupná vozidla
+ ;Fleet label
+@FLM200=Stažená vozidla
+ ;Fleet label
+@FLM201=Dokončeno
+ ;Fleet label
+@FLM202=Probíhá
+ ;Fleet label
+@FLM203=Historická sazba
+ ;Fleet label
+@FLM204=Dokončené vypůjčení
+ ;Fleet label
+@FLM205=Umýt vozidlo
+ ;Fleet label
+@FLM206=Zkontrolovat vozidlo
+ ;Fleet label
+@FLM207=Servisovat vozidlo
+ ;Fleet label
+@FLM208=Schválení servisu
+ ;Fleet label
+@FLM209=Podrobnosti o odběrateli
+ ;Fleet label
+@FLM210=Název
+ ;Fleet label
+@FLM211=Licence
+ ;Fleet label
+@FLM212=Adresa
+ ;Fleet label
+@FLM213=Telefon
+ ;Fleet label
+@FLM214=E-mail
+ ;Fleet label
+@FLM215=Informace o platbě
+ ;Fleet label
+@FLM216=Platební karta
+ ;Fleet label
+@FLM217=Vypršení platnosti
+ ;Fleet label
+@FLM218=Datum
+ ;Fleet label
+@FLM219=Počáteční den vypůjčení
+ ;Fleet label
+@FLM220=Koncové datum
+ ;Fleet label
+@FLM221=Popis
+ ;Fleet label
+@FLM222=Množství
+ ;Fleet label
+@FLM223=Rozšířený
+ ;Fleet label
+@FLM224=Podrobnosti o vozidlu
+ ;Fleet label
+@FLM225=Značka a model
+ ;Fleet label
+@FLM226=Denní sazba
+ ;Fleet label
+@FLM227=Týdenní sazba
+ ;Fleet label
+@FLM228=Část náhledu vozidla
+ ;Fleet label
+@FLM229=Barva
+ ;Fleet label
+@FLM230=Stav
+ ;Fleet label
+@FLM231=Přiřazené vozidlo
+ ;Fleet label
+@FLM232=Hromádky správy vozového parku
+ ;Fleet label
+@FLM233=Omezit uživatele na obchodní jednotky
+ ;Fleet label
+@FLM234=Můj přístup k vozidlům pro zabezpečený přístup
+ ;Fleet label
+@FLM235=Samoobslužná služba pro záznamy o vypůjčení
+ ;Fleet label
+@FLM236=Úředník pro správu vozového parku
+ ;Fleet label
+@FLM237=Úředník pro půjčování
+ ;Fleet label
+@FLM238=Vedoucí pobočky pro správu vozového parku
+ ;Fleet label
+@FLM239=Vedoucí pobočky pro půjčování
+ ;Fleet label
+@FLM240=Servisní technik pro správu vozového parku
+ ;Fleet label
+@FLM241=Servisní technik
+ ;Fleet label
+@FLM242=Použít workflow
+ ;Fleet label
+@FLM243=Skupina služeb, která zveřejňuje zásoby dostupných vozidel
+ ;Fleet label
+@FLM244=Počet dveří
+ ;Number of doors in the FM vehicle
+@FLM245=Rozšířená částka
+ ;Fleet label
+@FLM246=Stav paliva
+ ;Fleet label
+@FLM247=Světlost vozidla
+ ;Fleet label
+@FLM248=Podlahový prostor nákladního vozu
+ ;Fleet label
+@FLM249=Max. zatížení
+ ;Fleet label
+@FLM250=Prostor potřebný za pohybu – rezervní
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Ohodnocení
+ ;Fleet label
+@FLM253=Celkem za vypůjčení
+ ;Fleet label
+@FLM254=Sedadla
+ ;Fleet label
+@FLM255=Typ poplatku
+ ;Fleet label (table)
+@FLM256=Kapacita
+ ;Fleet label
+@FLM257=Poloměr otáčení
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Dotaz na workflow
+ ;Fleet label
+@FLM260=Záznam o údržbě
+ ;Fleet label
+@FLM261=Nové vypůjčení
+ ;Fleet label
+@FLM262=Všechna vypůjčení
+ ;Fleet label
+@FLM263=Složení vozového parku
+ ;Fleet label
+@FLM264=Všechna vozidla
+ ;Fleet label
+@FLM265=Data sazby
+ ;Fleet label
+@FLM268=Pobočky _DEMO_
+ ;Fleet label
+@FLM269=Umístění půjčovny _DEMO_
+ ;Fleet label
+@FLM270=Oblasti _DEMO_
+ ;Fleet label
+@FLM271=Mytí dokončeno
+ ;Fleet label
+@FLM272=Odstranit odběratele
+ ;Fleet label
+@FLM273=Odstranit vybraná vypůjčení
+ ;Fleet label
+@FLM274=Odstranit vybrané vozidlo
+ ;Fleet label
+@FLM275=Kontrola dokončena
+ ;Fleet label
+@FLM276=Servis dokončen
+ ;Fleet label
+@FLM278=Zahájit workflow
+ ;Fleet label
+@FLM279=Schválit servis
+ ;Fleet label
+@FLM280=Zamítnout servis
+ ;Fleet label
+@FLM281=Odmítnout servis
+ ;Fleet label
+@FLM282=Odstranit vybraná vozidla
+ ;Fleet label
+@FLM283=Konfigurace workflowu
+ ;Fleet label
+@FLM284=Vytvořit nebo aktualizovat pobočky
+ ;Fleet label
+@FLM285=Vytvořit nebo aktualizovat umístění půjčovny
+ ;Fleet label
+@FLM286=Vytvořit nebo aktualizovat oblasti
+ ;Fleet label
+@FLM287=Přidat/upravit odběratele
+ ;Fleet label
+@FLM288=ID vypůjčení vozidla
+ ;Fleet label (table)
+@FLM289=Přidat/upravit náklady na vypůjčení
+ ;Fleet label
+@FLM290=Podrobnosti o nákladech
+ ;Fleet label
+@FLM291=Podrobnosti o vypůjčení
+ ;Fleet label
+@FLM292=Upravit vypůjčení
+ ;Fleet label
+@FLM293=Vypůjčení podle odběratele
+ ;Fleet label
+@FLM294=Vypůjčení podle modelu
+ ;Fleet label
+@FLM295=Přidat/upravit vozidlo
+ ;Fleet label
+@FLM296=Nadcházející vypůjčení
+ ;Fleet label
+@FLM297=Vypůjčení podle vozidla
+ ;Fleet label
+@FLM298=Zobrazit online nápovědu
+ ;Fleet label
+@FLM299=Typ nákladů na vypůjčení
+ ;Fleet label
+@FLM300=Zaznamenat stav ujetých kilometrů
+ ;Fleet label
+@FLM301=Cyklus procesu vozového parku
+ ;Fleet label
+@FLM302=Vozový park – nastavení správy vozového parku
+ ;Fleet label
+@FLM303=Vozový park – úprava záznamů o odběrateli
+ ;Fleet label
+@FLM304=Vozový park – správa odběratelů
+ ;Fleet label
+@FLM305=Vozový park – správa zásob
+ ;Fleet label
+@FLM306=Vozový park – půjčování automobilů
+ ;Fleet label
+@FLM307=Vozový park – zobrazení záznamů o odběrateli
+ ;Fleet label
+@FLM308=Vozový park – zobrazení zásob
+ ;Fleet label
+@FLM309=Vozový park – úředník pro workflow
+ ;Fleet label
+@FLM310=Barva vozidla
+ ;Fleet label
+@FLM311=Vozový park – vedoucí pro workflow
+ ;Fleet label
+@FLM312=Vozový park – servisní technik pro workflow
+ ;Fleet label
+@FLM313=Vozový park – základní povinnosti
+ ;Fleet label
+@FLM314=Vozový park – správa automobilů
+ ;Fleet label
+@FLM315=Cyklus standardního procesu vozového parku
+ ;Fleet label
+@FLM316=Ujeté kilometry vozidla
+ ;Fleet label
+@FLM317=Náklady
+ ;Fleet label
+@FLM318=Světlost
+ ;Fleet label
+@FLM54=Odběratelé
+ ;Fleet label
+@FLM266=Vypršení platnosti platební karty
+ ;Fleet label (table)
+@FLM277=Řidičský průkaz
+ ;Fleet label (table)
+@FLM320=Seznam odběratelů
+ ;Fleet label (report menu item)
+@FLM321=Sestava seznamu odběratelů
+ ;Fleet label (report menu item help text)
+@FLM267=Nastavení workflowu
+ ;Fleet label
+@FLM400=Workflow údržby vozidla
+ ;Fleet label
+@FLM500=Upřednostňovaný způsob platby
+ ;Fleet label
+@FLM501=Bílá
+ ;Fleet colors
+@FLM502=Šedá
+ ;Fleet colors
+@FLM503=Žlutá
+ ;Fleet colors
+@FLM504=Oranžová
+ ;Fleet colors
+@FLM505=Vyskladnit
+ ;Fleet label
+@FLM506=Vrátit
+ ;Fleet label
+@FLM507=Zahájit vypůjčení
+ ;Fleet label
+@FLM401=Správa rezervací
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Předchozí stav ujetých kilometrů
+ ;Fleet label for returning vehicle slider
+@FLM509=Nový stav ujetých kilometrů
+ ;Fleet label for returning vehicle slider
+@FLM510=Vypůjčení vozidla
+ ;Fleet label
+@FLM512=Další náklady
+ ;Fleet label
+@FLM513=Ušetřeno
+ ;Fleet label
+@FLM514=Nová rezervace
+ ;New reservation menu item label
+@FLM515=Rok výroby modelu
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Rok vypršení platnosti
+ ;Expiration year label
+@FLM517=Sestava odběratelů
+ ;Fleet tile label
+@FLM518=Stávající rezervace
+ ;Fleet tile label
+@FLM519=Vypůjčení po termínu
+ ;Fleet tile label
+@FLM520=Název platby
+ ;Fleet PaymentInfo field label
+@FLM521=Kód CVV
+ ;Fleet label
+@FLM522=Měsíc vypršení platnosti
+ ;Expiration month label
+@FLM523=Jméno na kartě
+ ;Fleet name on credit card
+@FLM524=Historie sazby za vozidlo
+ ;Fleet form label
+@FLM525=Nová poznámka
+ ;Fleet dialog caption
+@FLM526=Nový zákazník
+ ;Fleet dialog caption
+@FLM527=Informace o nové platbě
+ ;Fleet dialog caption
+@FLM528=Přidat příslušenství
+ ;Fleet dialog caption
+@FLM529=Vybrat odběratele
+ ;Fleet dialog caption
+@FLM530=Připraveno k vyzvednutí
+ ;Fleet ReservationState enum option
+@FLM531=ID záznamu adresy
+ ;Fleet label
+@FLM532=Hexadecimální kód barvy
+ ;Fleet label
+@FLM533=ID barvy
+ ;Fleet label
+@FLM534=Název barvy
+ ;Fleet label
+@FLM535=ID slevy
+ ;Fleet label
+@FLM536=ID informací o platbě
+ ;Fleet label
+@FLM537=ID rezervace
+ ;Fleet label
+@FLM539=Vypůjčená vozidla
+ ;Fleet label
+@FLM540=Správa vozového parku
+ ;Fleet menu label
+@FLM541=Načíst ukázková data
+ ;Fleet button text
+@FLM542=Historie sazeb
+ ;Fleet button text
+@FLM543=Změnit odběratele
+ ;Fleet dialog label
+@FLM544=Vybrat vozidlo
+ ;Fleet button text
+@FLM545=Všechny rezervace
+ ;Fleet grid title
+@FLM546=Zpětná vazba odběratele
+ ;Fleet group label
+@FLM547=Informace o vypůjčení
+ ;Fleet group label
+@FLM548=Obrázek nákladů
+ ;Fleet group label
+@FLM549=Nastavení dat
+ ;Fleet tab label
+@FLM550=Informace o vozidle
+ ;Fleet group label
+@FLM551=Dostupná vozidla
+ ;Fleet chart label
+@FLM552=Stav vypůjčení vozidla
+ ;Fleet chart label
+@FLM553=Vozidla podle modelu – výnosy
+ ;Fleet chart label
+@FLM554=K vyzvednutí dnes
+ ;Fleet panorama label
+@FLM555=K vrácení dnes
+ ;Fleet panorama label
+@FLM556=Sazby za vypůjčení
+ ;Fleet panorama label
+@FLM558=Podrobnosti rezervace
+ ;Fleet panorama label
+@FLM559=Příslušenství
+ ;Fleet panorama label
+@FLM560=Funkce
+ ;Fleet group label
+@FLM561=Informace o vyzvednutí
+ ;Fleet field label
+@FLM562=Informace o vrácení
+ ;Fleet field label
+@FLM563=Seznam vypůjčení
+ ;Fleet report label
+@FLM564=Vytvořit ukázková data pro zákazníky, vypůjčení a vozidla
+ ;Fleet TOC label
+@FLM565=Bude to trvat jen několik sekund.  
+ ;New Comment
+@FLM322=Vypůjčení podle odběratele
+ ;Fleet report label
+@FLM566=Odběratelské grafy
+ ;Fleet form part caption
+@FLM567=Graf výnosu vozidla
+ ;Fleet form part caption
+@FLM601=Správa vozového parku – vypůjčení
+ ;Fleet rental entity
+@FLM602=Správa vozového parku – odběratelé
+ ;Fleet customer entity
+@FLM603=Ukázkový applet
+ ;Label for the sample applet name
+@FLM604=Ukázkový applet pro předvedení a testování rozhraní appletu
+ ;Label for the sample applet description
+@FLM605=Zobrazit více
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Umístění odběratelů
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Šablona poskytuje mapu umístění odběratelů
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Vypůjčení podle stavu
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Šablona poskytuje počet stavů vypůjčení
+ ;Rentals by status template description
+FMCustomerEntityView=Zobrazit entitu Odběratelé správy vozového parku
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Udržovat entitu Odběratelé správy vozového parku
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Zobrazit entitu Vypůjčení správy vozového parku
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Udržovat entitu Vypůjčení správy vozového parku
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Zobrazit entitu Aktivita
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Udržovat entitu Aktivita
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Zobrazit entitu Kategorie
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Udržovat entitu Kategorie
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Zobrazit entitu Právnická osoba
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Udržovat entitu Právnická osoba
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Zobrazit entitu Vlastnost řádku
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Udržovat entitu Vlastnost řádku
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Zobrazit entitu Období
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Udržovat entitu Období
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Zobrazit entitu Projekt
+ ;View privilege for RCADProject
+RCADProjectMaintain=Udržovat entitu Projekt
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Zobrazit entitu Časový rozvrh
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Udržovat entitu Časový rozvrh
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Zobrazit entitu Položka časového rozvrhu
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Udržovat entitu Položka časového rozvrhu
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Zobrazit entitu Nastavení časového rozvrhu
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Udržovat entitu Nastavení časového rozvrhu
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Zobrazit entitu Historie workflowu časového rozvrhu
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Udržovat entitu Historie workflowu časového rozvrhu
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Zobrazit entitu Položka historie workflowu
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Udržovat entitu Položka historie workflowu
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Vyhledat vypůjčení
+FMTemplateCustomerInformationDisplayName=Informace o zákazníkovi
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Šablona poskytuje základní informace o odběrateli a seznam jeho pronájmů
+ ;Fleet customer information template description
+DataCreated=Ukázková data byla vytvořena.
+DataRestored=Ukázková data byla obnovena.
+DataRestoreConfirm=Tím se obnoví původní stav všech dat správy vozového parku. Opravdu to chcete provést?
+Branch=Pobočka _DEMO_
+ ;Branch operating unit type
+RentalLocation=Umístění půjčovny _DEMO_
+ ;Rental location operating unit type
+Region=Oblast _DEMO_
+ ;Region operating unit type
+Timestamp=Časová značka
+ ;Comment timestamp
+CustomerImage=Obrázek odběratele
+ ;Fleet label
+Analytics=Analytika
+ ;used on Fleet clerk workspace for Analytics section

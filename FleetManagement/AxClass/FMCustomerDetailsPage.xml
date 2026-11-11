@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCustomerDetailsPage</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMCustomerDetailsPage extends FMCustomerPage
+{
+    private str customerFullNameInternal;
+    private ImageReference custImage;
+    private ImageReference licenseImage;
+    private  str firstName;
+    private str lastName;
+    private str custEmail;
+    private str driversLicense;
+    private str cellPhone;
+    private str custAddress;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>customerFullName</Name>
+				<Source><![CDATA[
+    [SysAppField(tableMethodStr(FMCustomer,fullName ), "Customer name")]
+    public str customerFullName(str _value=customerFullNameInternal)
+    {
+        customerFullNameInternal = _value;
+        return customerFullNameInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerFirstName</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, FirstName), "First name")]
+    public str customerFirstName(str _value=firstName)
+    {
+        firstName = _value;
+        return firstName;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerLastName</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, LastName), "Last name")]
+    public str customerLastName(str _value=lastName)
+    {
+        lastName = _value;
+        return lastName;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerImage</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, Image), "Customer image")]
+    public ImageReference customerImage(ImageReference _value=custImage)
+    {
+        custImage = _value;
+        return custImage;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>licenseImage</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, LicenseImage), "License image")]
+    public ImageReference licenseImage(ImageReference _value=licenseImage)
+    {
+        licenseImage = _value;
+        return licenseImage;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>driverLicenseNumber</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, DriverLicense), "Drivers license")]
+    public str driverLicenseNumber(str _value=driversLicense)
+    {
+        driversLicense = _value;
+        return driversLicense;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerEmail</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, Email), "Email")]
+    public str customerEmail(str _value=custEmail)
+    {
+        custEmail = _value;
+        return custEmail;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerPhone</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMCustomer, CellPhone), "Phone")]
+    public str customerPhone(str _value=cellPhone)
+    {
+        cellPhone = _value;
+        return cellPhone;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerAddress</Name>
+				<Source><![CDATA[
+    [SysAppProjection("Address")]
+    public str customerAddress(str _value=custAddress)
+    {
+        custAddress = _value;
+        return custAddress;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populate</Name>
+				<Source><![CDATA[
+    public void populate(FMCustomer _customerTable, FMAddressTable _addressTable)
+    {
+        this.customerFullName(_customerTable.fullName());
+        this.customerFirstName(_customerTable.FirstName);
+        this.customerLastName(_customerTable.LastName);
+        this.driverLicenseNumber(_customerTable.DriverLicense);
+        this.customerEmail(_customerTable.Email);
+        this.customerPhone(_customerTable.CellPhone);
+     
+        this.customerAddress(_addressTable.FullAddress());
+
+        if (_customerTable.Image != conNull())
+        {
+            Image img = new Image();
+            img.setData(_customerTable.Image);
+            this.customerImage(ImageReference::constructForImage(img));
+        }
+        
+        if (_customerTable.LicenseImage != conNull())
+        {
+            Image licenseImg = new Image();
+            licenseImg.setData(_customerTable.LicenseImage);
+            this.licenseImage(ImageReference::constructForImage(licenseImg));
+        }
+
+        this.RecId(_customerTable.RecId);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getCustomerDetails</Name>
+				<Source><![CDATA[
+    public static FMCustomerDetailsPage getCustomerDetails(SysAppEntityContext _entityContext, List _filterContextList)
+    {
+        if (_entityContext && _entityContext.entityId())
+        {
+            int64 canonicalId = str2Int64(_entityContext.entityId());
+            FMCustomer customerTable;
+            FMAddressTable addressTable;
+
+            select firstonly * from customerTable
+                join addressTable
+                where customerTable.RecId == canonicalId
+                && addressTable.RecId == customerTable.AddressID;
+        
+            FMCustomerDetailsPage customerDetailsPage = new FMCustomerDetailsPage();
+            customerDetailsPage.populate(customerTable, addressTable);
+            return customerDetailsPage;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

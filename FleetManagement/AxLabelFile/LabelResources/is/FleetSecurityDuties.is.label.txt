@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Vinna með aðalgögn um einingu skjals fyrir gagnastjórnun 
+DataManagementFleetMasterEntitiesView=Skoða aðalgögn um einingu skjals fyrir gagnastjórnun 

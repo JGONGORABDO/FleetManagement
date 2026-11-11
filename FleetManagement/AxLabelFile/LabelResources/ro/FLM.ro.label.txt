@@ -1,0 +1,784 @@
+﻿@FLM41=Fișiere de etichete create pe 3/4/2011
+ ;By user Admin
+@FLM42=Roșu
+ ;Fleet colors
+@FLM43=Albastru
+ ;Fleet colors
+@FLM44=Verde
+ ;Fleet colors
+@FLM46=Alegeți imaginea
+ ;Fleet label
+@FLM47=Modificare
+ ;Fleet label
+@FLM48=Eliminare
+ ;Fleet label
+@FLM49=Client
+ ;Fleet label
+@FLM50=Deschidere
+ ;Fleet label
+@FLM51=Nou
+ ;Fleet label
+@FLM52=Închiriere
+ ;Fleet label
+@FLM53=General
+ ;Fleet label
+@FLM55=Vizualizare
+ ;Fleet label
+@FLM56=Ștergere
+ ;Fleet label
+@FLM57=Atașări
+ ;Fleet label
+@FLM58=Finalizare
+ ;Fleet label
+@FLM59=Tarife de închiriere
+ ;Fleet label
+@FLM60=Perioada de închiriere
+ ;Fleet label
+@FLM61=De la
+ ;Fleet label
+@FLM62=Până la
+ ;Fleet label
+@FLM63=Kilometraj
+ ;Fleet label
+@FLM64=Început
+ ;Fleet label
+@FLM65=Sfârșit
+ ;Fleet label
+@FLM66=Niveluri de combustibil
+ ;Fleet label
+@FLM67=Preluare
+ ;Fleet label
+@FLM68=Tarife
+ ;Fleet label
+@FLM69=Adăugare tarif
+ ;Fleet label
+@FLM70=Se includ camioanele
+ ;Fleet label
+@FLM71=Închirieri
+ ;Fleet label
+@FLM72=Editare
+ ;Fleet label
+@FLM73=Configurație administrare flotă
+ ;Fleet label
+@FLM74=Mărci și modele vehicule
+ ;Fleet label
+@FLM75=Definiți mărcile și modelele vehiculelor
+ ;Fleet label
+@FLM76=Definiți mărcile și modelele vehiculelor din inventarul dvs., inclusiv o imagine reprezentativă pentru model.
+ ;Fleet label
+@FLM77=Imagine model
+ ;Fleet label
+@FLM78=Răsfoire...
+ ;Fleet label
+@FLM79=Marcă nouă
+ ;Fleet label
+@FLM80=Model nou
+ ;Fleet label
+@FLM81=Tipuri taxe de închiriere
+ ;Fleet label
+@FLM82=Definiți tipurile de taxe
+ ;Fleet label
+@FLM83=Tipurile de taxe sunt utilizate pentru a clasifica fiecare taxă de închiriere. Acest lucru vă permite să urmăriți costurile mai ușor.
+ ;Fleet label
+@FLM84=Clase de siguranță SUV
+ ;Fleet label
+@FLM85=Definiți clasele de siguranță ale SUV-urilor
+ ;Fleet label
+@FLM86=Vehicule
+ ;Fleet label
+@FLM87=Întreținere
+ ;Fleet label
+@FLM88=Istoric
+ ;Fleet label
+@FLM89=Tarife istorice
+ ;Fleet label
+@FLM90=Tarife
+ ;Fleet label
+@FLM91=Detalii
+ ;Fleet label
+@FLM92=Informații automobile și SUV-uri
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=Informații camionetă
+ ;Fleet label
+@FLM95=Vehicule
+ ;Fleet label
+@FLM96=Disponibilitate
+ ;Fleet label
+@FLM97=Locație
+ ;Fleet label
+@FLM98=Întreținere
+ ;Fleet label
+@FLM99=Înregistrare
+ ;Fleet label
+@FLM100=Listă
+ ;Fleet label
+@FLM101=ID vehicul
+ ;Fleet label
+@FLM102=Manager date tarife vehicule
+ ;Fleet label
+@FLM103=Versiune nouă
+ ;Fleet label
+@FLM104=Întreținere vehicul
+ ;Fleet label
+@FLM105=Administrare flotă
+ ;Fleet label
+@FLM106=Închirieri recente
+ ;Fleet label
+@FLM107=Organizațiile mele interne pentru acces la securitate
+ ;Fleet label
+@FLM108=Vehicule la care utilizatorul are acces de securitate
+ ;Fleet label
+@FLM109=Organizații interne la care utilizatorul are acces
+ ;Fleet label
+@FLM110=Camioane
+ ;Fleet label
+@FLM111=SUV-uri
+ ;Fleet label
+@FLM112=Meniu pentru paginile de vizualizare a clienților
+ ;Fleet label
+@FLM113=Acțiuni
+ ;Fleet label
+@FLM114=Meniu vehicul
+ ;Fleet label
+@FLM115=Meniu pentru paginile de vizualizare a vehiculelor
+ ;Fleet label
+@FLM116=Filială – perimată
+ ;Fleet label
+@FLM117=Locație închiriere – perimată
+ ;Fleet label
+@FLM118=Regiune – perimată
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Tip combustibil
+ ;Fleet label
+@FLM123=Standard
+ ;Fleet label
+@FLM124=Premium
+ ;Fleet label
+@FLM125=GPS activat
+ ;Fleet label
+@FLM126=Schimbare ulei
+ ;Fleet label
+@FLM127=Reparare
+ ;Fleet label
+@FLM128=Întreținere preventivă
+ ;Fleet label
+@FLM129=Se așteaptă examinarea
+ ;Fleet label
+@FLM130=Se așteaptă serviciul
+ ;Fleet label
+@FLM131=Se așteaptă aprobarea
+ ;Fleet label
+@FLM132=Se așteaptă curățarea
+ ;Fleet label
+@FLM133=Efectuat
+ ;Fleet label
+@FLM134=Transmisie
+ ;Fleet label
+@FLM135=Automat
+ ;Fleet label
+@FLM136=Manual
+ ;Fleet label
+@FLM137=Disponibil
+ ;Fleet label
+@FLM138=În service
+ ;Fleet label
+@FLM139=Închiriat
+ ;Fleet label
+@FLM140=Deteriorat
+ ;Fleet label
+@FLM141=Rechemat
+ ;Fleet label
+@FLM142=În așteptare
+ ;Fleet label
+@FLM143=Tip de vehicul
+ ;Fleet label
+@FLM144=Necunoscut
+ ;Fleet label
+@FLM145=Camionetă
+ ;Fleet label
+@FLM146=Automobil
+ ;Fleet label
+@FLM147=Tipul de tarif
+ ;Fleet label
+@FLM148=Permis de conducere
+ ;Fleet label
+@FLM149=Marcă și model
+ ;Fleet label
+@FLM150=Note
+ ;Fleet label
+@FLM151=Informații închiriere vehicule
+ ;Fleet label
+@FLM152=ID clasă de siguranță
+ ;Fleet label
+@FLM153=Clasă de siguranță SUV
+ ;Fleet label
+@FLM154=Total închirieri
+ ;Fleet label
+@FLM155=Marcă
+ ;Fleet label
+@FLM156=Marcă vehicul
+ ;Fleet label
+@FLM157=Model
+ ;Fleet label
+@FLM158=Model vehicul
+ ;Fleet label
+@FLM159=Autovehicule
+ ;Fleet label
+@FLM160=Uși
+ ;Fleet label
+@FLM161=Număr de locuri
+ ;Fleet label
+@FLM162=Tipuri de tarife
+ ;Fleet label
+@FLM163=Data de expirare
+ ;Fleet label
+@FLM164=Kilometraj inițial
+ ;Fleet label
+@FLM165=Kilometraj final
+ ;Fleet label
+@FLM166=Nivelul de combustibil inițial
+ ;Fleet label
+@FLM167=Nivelul de combustibil final
+ ;Fleet label
+@FLM168=Informații închiriere vehicule
+ ;Fleet label
+@FLM169=Capacitate pe rândul trei
+ ;Fleet label
+@FLM170=Rază de bracaj
+ ;Fleet label
+@FLM171=Gardă la sol
+ ;Fleet label
+@FLM172=Clasă de protecție la răsturnare
+ ;Fleet label
+@FLM173=Evaluare generală
+ ;Fleet label
+@FLM174=Spațiu bagaje
+ ;Fleet label
+@FLM175=Suprafață podea
+ ;Fleet label
+@FLM176=Sarcină maximă
+ ;Fleet label
+@FLM177=Tip
+ ;Fleet label
+@FLM178=Greutate brută vehicul
+ ;Fleet label
+@FLM179=Stare vehicul
+ ;Fleet label
+@FLM180=Organizație
+ ;Fleet label
+@FLM181=Previzualizare grup
+ ;Fleet label
+@FLM182=Mărci vehicule
+ ;Fleet label
+@FLM183=Modele vehicule
+ ;Fleet label
+@FLM184=Imagine vehicul
+ ;Fleet label
+@FLM185=Specificație model
+ ;Fleet label
+@FLM186=Format imagine
+ ;Fleet label
+@FLM187=Tarife vehicule
+ ;Fleet label
+@FLM188=Tarif pe zi
+ ;Fleet label
+@FLM189=Tarif pe săptămână
+ ;Fleet label
+@FLM190=Organizațiile mele interne asociate cu un rol
+ ;Fleet label
+@FLM191=Tabel care conține organizații interne asociate cu rolul utilizatorului
+ ;Fleet label
+@FLM192=Vizualizarea DimAttributeOMBranch conține toate înregistrările din tabelul OMOperatingUnit care sunt marcate ca Filială.
+ ;Fleet label
+@FLM193=Vizualizarea DimAttributeOMRegion conține toate înregistrările din tabelul OMOperatingUnit care sunt marcate ca Regiuni.
+ ;Fleet label
+@FLM194=Vizualizarea DimAttributeOMRentalLocation conține toate înregistrările din tabelul OMOperatingUnit care sunt marcate ca Locații închiriere.
+ ;Fleet label
+@FLM195=Centru administrare flotă
+ ;Fleet label
+@FLM196=Adăugare
+ ;Fleet label
+@FLM197=Închirieri curente
+ ;Fleet label
+@FLM198=Vehicule atribuite
+ ;Fleet label
+@FLM199=Vehicule disponibile
+ ;Fleet label
+@FLM200=Vehicule rechemate
+ ;Fleet label
+@FLM201=Finalizat
+ ;Fleet label
+@FLM202=În curs
+ ;Fleet label
+@FLM203=Rata istorică
+ ;Fleet label
+@FLM204=Închiriere completă
+ ;Fleet label
+@FLM205=Curățați vehiculul
+ ;Fleet label
+@FLM206=Examinați vehiculul
+ ;Fleet label
+@FLM207=Efectuați revizia vehiculului
+ ;Fleet label
+@FLM208=Aprobare service
+ ;Fleet label
+@FLM209=Detalii client
+ ;Fleet label
+@FLM210=Nume
+ ;Fleet label
+@FLM211=Licență
+ ;Fleet label
+@FLM212=Adresă
+ ;Fleet label
+@FLM213=Telefon
+ ;Fleet label
+@FLM214=E-mail
+ ;Fleet label
+@FLM215=Informații plată
+ ;Fleet label
+@FLM216=Card de credit
+ ;Fleet label
+@FLM217=Expirare
+ ;Fleet label
+@FLM218=Dată
+ ;Fleet label
+@FLM219=Începutul închirierii
+ ;Fleet label
+@FLM220=Data finală
+ ;Fleet label
+@FLM221=Descriere
+ ;Fleet label
+@FLM222=Cantitate
+ ;Fleet label
+@FLM223=Extins
+ ;Fleet label
+@FLM224=Detalii vehicul
+ ;Fleet label
+@FLM225=Marcă și model
+ ;Fleet label
+@FLM226=Tarif pe zi
+ ;Fleet label
+@FLM227=Tarif pe săptămână
+ ;Fleet label
+@FLM228=Parte de previzualizare vehicul
+ ;Fleet label
+@FLM229=Culoare
+ ;Fleet label
+@FLM230=Stare
+ ;Fleet label
+@FLM231=Vehicul atribuit
+ ;Fleet label
+@FLM232=Indicații administrare flotă
+ ;Fleet label
+@FLM233=Limitați utilizatorii la UA
+ ;Fleet label
+@FLM234=Accesul meu la vehicule pentru acces de securitate
+ ;Fleet label
+@FLM235=Autoservire pentru înregistrări închirieri
+ ;Fleet label
+@FLM236=Funcționar administrare flotă
+ ;Fleet label
+@FLM237=Funcționar închirieri
+ ;Fleet label
+@FLM238=Manager filială de administrare flotă
+ ;Fleet label
+@FLM239=Manager filială închirieri
+ ;Fleet label
+@FLM240=Tehnician de service administrare flotă
+ ;Fleet label
+@FLM241=Tehnician de service
+ ;Fleet label
+@FLM242=Utilizare flux de lucru
+ ;Fleet label
+@FLM243=Grup de service care expune inventarul auto disponibil
+ ;Fleet label
+@FLM244=Numărul de uși
+ ;Number of doors in the FM vehicle
+@FLM245=Sumă extinsă
+ ;Fleet label
+@FLM246=Nivel de combustibil
+ ;Fleet label
+@FLM247=Gardă la sol
+ ;Fleet label
+@FLM248=Spațiu platformă camionetă
+ ;Fleet label
+@FLM249=Sarcină maximă
+ ;Fleet label
+@FLM250=Spațiu superior bagaje
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Evaluare
+ ;Fleet label
+@FLM253=Total închirieri
+ ;Fleet label
+@FLM254=Scaune
+ ;Fleet label
+@FLM255=Tipul de tarif
+ ;Fleet label (table)
+@FLM256=Capacitate
+ ;Fleet label
+@FLM257=Rază de bracaj
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Interogare flux de lucru
+ ;Fleet label
+@FLM260=Înregistrare întreținere
+ ;Fleet label
+@FLM261=Închiriere nouă
+ ;Fleet label
+@FLM262=Toate închirierile
+ ;Fleet label
+@FLM263=Configurare flotă
+ ;Fleet label
+@FLM264=Toate vehiculele
+ ;Fleet label
+@FLM265=Date tarife
+ ;Fleet label
+@FLM268=Filiale _DEMO_
+ ;Fleet label
+@FLM269=Locații de închiriere _DEMO_
+ ;Fleet label
+@FLM270=Regiuni _DEMO_
+ ;Fleet label
+@FLM271=Curățare finalizată
+ ;Fleet label
+@FLM272=Ștergere clienți
+ ;Fleet label
+@FLM273=Ștergere închirieri selectate
+ ;Fleet label
+@FLM274=Ștergere vehicul selectat
+ ;Fleet label
+@FLM275=Examinare finalizată
+ ;Fleet label
+@FLM276=Service finalizat
+ ;Fleet label
+@FLM278=Pornire flux de lucru
+ ;Fleet label
+@FLM279=Aprobare service
+ ;Fleet label
+@FLM280=Respingere service
+ ;Fleet label
+@FLM281=Refuzare service
+ ;Fleet label
+@FLM282=Ștergere vehicule selectate
+ ;Fleet label
+@FLM283=Configurație flux de lucru
+ ;Fleet label
+@FLM284=Creare sau actualizare filiale
+ ;Fleet label
+@FLM285=Creați sau actualizare locații de închiriere
+ ;Fleet label
+@FLM286=Creare sau actualizare regiuni
+ ;Fleet label
+@FLM287=Adăugare/editare client
+ ;Fleet label
+@FLM288=ID închiriere vehicul
+ ;Fleet label (table)
+@FLM289=Adăugare/editare tarif de închiriere
+ ;Fleet label
+@FLM290=Detalii tarif
+ ;Fleet label
+@FLM291=Detalii închiriere
+ ;Fleet label
+@FLM292=Editare închiriere
+ ;Fleet label
+@FLM293=Închirieri după client
+ ;Fleet label
+@FLM294=Închirieri per model
+ ;Fleet label
+@FLM295=Adăugare/editare vehicul
+ ;Fleet label
+@FLM296=Închirieri viitoare
+ ;Fleet label
+@FLM297=Închirieri după vehicul
+ ;Fleet label
+@FLM298=Consultați ajutorul online
+ ;Fleet label
+@FLM299=Tipul tarifului de închiriere
+ ;Fleet label
+@FLM300=Înregistrare kilometraj
+ ;Fleet label
+@FLM301=Ciclu procesare flotă
+ ;Fleet label
+@FLM302=Flotă – Administrare configurație flotă
+ ;Fleet label
+@FLM303=Flotă – Editare înregistrări clienți
+ ;Fleet label
+@FLM304=Flotă – Administrare clienți
+ ;Fleet label
+@FLM305=Flotă – Administrare inventar
+ ;Fleet label
+@FLM306=Flotă – Închiriere automobile
+ ;Fleet label
+@FLM307=Flotă – Vizualizare înregistrări clienți
+ ;Fleet label
+@FLM308=Flotă – Vizualizare inventar
+ ;Fleet label
+@FLM309=Flotă – Funcționar flux de lucru
+ ;Fleet label
+@FLM310=Culoare vehicul
+ ;Fleet label
+@FLM311=Flotă – Manager flux de lucru
+ ;Fleet label
+@FLM312=Flotă – Tehnician service flux de lucru
+ ;Fleet label
+@FLM313=Flotă – Sarcini de bază
+ ;Fleet label
+@FLM314=Flotă – Gestionare automobile
+ ;Fleet label
+@FLM315=Ciclu standard procesare flotă
+ ;Fleet label
+@FLM316=Kilometraj vehicul
+ ;Fleet label
+@FLM317=Cost
+ ;Fleet label
+@FLM318=Spațiu
+ ;Fleet label
+@FLM54=Clienți
+ ;Fleet label
+@FLM266=Expirare card de credit
+ ;Fleet label (table)
+@FLM277=Permis de conducere
+ ;Fleet label (table)
+@FLM320=Listă de clienți
+ ;Fleet label (report menu item)
+@FLM321=Raport listă clienți
+ ;Fleet label (report menu item help text)
+@FLM267=Configurare flux de lucru
+ ;Fleet label
+@FLM400=Flux de lucru întreținere vehicule
+ ;Fleet label
+@FLM500=Metodă de plată preferată
+ ;Fleet label
+@FLM501=Alb
+ ;Fleet colors
+@FLM502=Gri
+ ;Fleet colors
+@FLM503=Galben
+ ;Fleet colors
+@FLM504=Portocaliu
+ ;Fleet colors
+@FLM505=Preluare
+ ;Fleet label
+@FLM506=Returnare
+ ;Fleet label
+@FLM507=Începutul închirierii
+ ;Fleet label
+@FLM401=Gestionare rezervări
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Kilometraj anterior
+ ;Fleet label for returning vehicle slider
+@FLM509=Kilometraj nou
+ ;Fleet label for returning vehicle slider
+@FLM510=Închiriere vehicul
+ ;Fleet label
+@FLM512=Tarife suplimentare
+ ;Fleet label
+@FLM513=Economii
+ ;Fleet label
+@FLM514=Rezervare nouă
+ ;New reservation menu item label
+@FLM515=Anul modelului
+ ;Field label for Year field in FmVehicleModel
+@FLM516=An exp.
+ ;Expiration year label
+@FLM517=Raport clienți
+ ;Fleet tile label
+@FLM518=Rezervări existente
+ ;Fleet tile label
+@FLM519=Închirieri scadente
+ ;Fleet tile label
+@FLM520=Nume plată
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=Luna exp.
+ ;Expiration month label
+@FLM523=Numele de pe card
+ ;Fleet name on credit card
+@FLM524=Istoric tarife vehicul
+ ;Fleet form label
+@FLM525=Comentariu nou
+ ;Fleet dialog caption
+@FLM526=Client nou
+ ;Fleet dialog caption
+@FLM527=Informații plată nouă
+ ;Fleet dialog caption
+@FLM528=Adăugare accesoriu
+ ;Fleet dialog caption
+@FLM529=Selectați un client
+ ;Fleet dialog caption
+@FLM530=Gata pentru preluare
+ ;Fleet ReservationState enum option
+@FLM531=ID evidență adresă
+ ;Fleet label
+@FLM532=Cod hexazecimal culoare
+ ;Fleet label
+@FLM533=ID culoare
+ ;Fleet label
+@FLM534=Nume culoare
+ ;Fleet label
+@FLM535=ID reducere
+ ;Fleet label
+@FLM536=ID informații plată
+ ;Fleet label
+@FLM537=ID rezervare
+ ;Fleet label
+@FLM539=Vehicule închiriate
+ ;Fleet label
+@FLM540=Administrare flotă
+ ;Fleet menu label
+@FLM541=Încărcare date demo
+ ;Fleet button text
+@FLM542=Istoric tarife
+ ;Fleet button text
+@FLM543=Schimbare client
+ ;Fleet dialog label
+@FLM544=Selectare vehicul
+ ;Fleet button text
+@FLM545=Toate rezervările
+ ;Fleet grid title
+@FLM546=Feedback clienți
+ ;Fleet group label
+@FLM547=Informații închiriere
+ ;Fleet group label
+@FLM548=Imagine tarif
+ ;Fleet group label
+@FLM549=Configurare date
+ ;Fleet tab label
+@FLM550=Informații vehicul
+ ;Fleet group label
+@FLM551=Vehicule disponibile
+ ;Fleet chart label
+@FLM552=Stare închiriere vehicul
+ ;Fleet chart label
+@FLM553=Vehicul după model – venituri
+ ;Fleet chart label
+@FLM554=Preluare astăzi
+ ;Fleet panorama label
+@FLM555=Returnare astăzi
+ ;Fleet panorama label
+@FLM556=Tarife închiriere
+ ;Fleet panorama label
+@FLM558=Detalii rezervare
+ ;Fleet panorama label
+@FLM559=Accesorii
+ ;Fleet panorama label
+@FLM560=Caracteristici
+ ;Fleet group label
+@FLM561=Informații preluare
+ ;Fleet field label
+@FLM562=Informații returnare
+ ;Fleet field label
+@FLM563=Listă de închirieri
+ ;Fleet report label
+@FLM564=Creați exemple de clienți, închirieri și vehicule
+ ;Fleet TOC label
+@FLM565=Acest lucru va dura doar câteva secunde.  
+ ;New Comment
+@FLM322=Închirieri după client
+ ;Fleet report label
+@FLM566=Tabelele clienți
+ ;Fleet form part caption
+@FLM567=Tabel venituri vehicule
+ ;Fleet form part caption
+@FLM601=Închirieri administrare flotă
+ ;Fleet rental entity
+@FLM602=Clienți administrare flotă
+ ;Fleet customer entity
+@FLM603=Exemplu de applet
+ ;Label for the sample applet name
+@FLM604=Un exemplu de applet folosit pentru a demonstra și testa cadrul pentru appleturi
+ ;Label for the sample applet description
+@FLM605=Vizualizați mai multe
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Locațiile clienților
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Șablonul oferă o hartă a locațiilor clienților
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Închirieri după stare
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Șablonul indică numărul de stări ale închirierilor
+ ;Rentals by status template description
+FMCustomerEntityView=Vizualizați entitatea Clienți administrare flotă
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Întrețineți entitatea Clienți administrare flotă
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Vizualizați entitatea Închirieri administrare flotă
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Întrețineți entitatea Închirieri administrare flotă
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Vizualizați entitatea Activitate
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Întrețineți entitatea Activitate
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Vizualizați entitatea Categorie
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Întrețineți entitatea Categorie
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Vizualizați entitatea Entitate juridică
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Întrețineți entitatea Entitate juridică
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Vizualizați entitatea Proprietate rând
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Întrețineți entitatea Proprietate rând
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Vizualizați entitatea Perioadă
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Întrețineți entitatea Perioadă
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Vizualizați entitatea Proiect
+ ;View privilege for RCADProject
+RCADProjectMaintain=Întrețineți entitatea Proiect
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Vizualizați entitatea Orar
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Întrețineți entitatea Orar
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Vizualizați entitatea Intrare orar
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Întrețineți entitatea Intrare orar
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Vizualizați entitatea Setări orar
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Întrețineți entitatea Setări orar
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Vizualizați entitatea Istoric flux de lucru orar
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Întrețineți entitatea Istoric flux de lucru orar
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Vizualizați entitatea Element istoric flux de lucru
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Întrețineți entitatea Element istoric flux de lucru
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Găsiți închirieri
+FMTemplateCustomerInformationDisplayName=Informații clienți
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Șablonul oferă informații de bază despre clienți și o listă cu închirierile acestora
+ ;Fleet customer information template description
+DataCreated=Exemplu de date creat.
+DataRestored=Exemplu de date restaurat.
+DataRestoreConfirm=Aceasta va restabili toate datele de administrare a flotei la starea inițială. Confirmați?
+Branch=Filială _DEMO_
+ ;Branch operating unit type
+RentalLocation=Locație de închiriere _DEMO_
+ ;Rental location operating unit type
+Region=Regiune _DEMO_
+ ;Region operating unit type
+Timestamp=Marcă de timp
+ ;Comment timestamp
+CustomerImage=Imagine client
+ ;Fleet label
+Analytics=Analiză
+ ;used on Fleet clerk workspace for Analytics section

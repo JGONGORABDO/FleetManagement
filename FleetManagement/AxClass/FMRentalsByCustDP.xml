@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalsByCustDP</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+///    The <c>FMRentalsByCustDP</c> class is the report data provider class that supports the <c>FMRentalsByCustomer</c>
+///    report.
+/// </summary>
+/// <remarks>
+///    This class provides the methods that are used by the <c>FMRentalsByCustomer</c> report that lists items and
+///    calculates the ABC values for each item in a specified period.
+/// </remarks>
+[   SRSReportQueryAttribute(queryStr(FMRentalsDetails)),
+    SRSReportParameterAttribute(classstr(FMRentalsByCustContract))
+]
+public class FMRentalsByCustDP extends SRSReportDataProviderBase
+{
+    TmpFMRentalsByCust          tmpTable;
+    
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>getTmpFMRentalsByCust</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///    Retrieves the data table from the <c>TmpFMRentalsByCust</c> table.
+    /// </summary>
+    /// <returns>
+    ///    The required report data table.
+    /// </returns>
+    [SRSReportDataSetAttribute('TmpFMRentalsByCust')]
+    public TmpFMRentalsByCust getTmpFMRentalsByCust()
+    {
+        select * from tmpTable;
+        return tmpTable;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>processReport</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///    Processes the report business logic.
+    /// </summary>
+    /// <remarks>
+    ///    This method is used to process the report business logic that is used by <c>FMRentalsByCustomer</c> report.
+    /// </remarks>
+    public void processReport()
+    {
+        QueryRun                    qr;
+        FMRental                    rental;
+        FMCustomer                  customer;
+        FMVehicle                   vehicle;
+        FMRentalCharge              rentalCharge;
+        FMCustGroup                 custGroup;
+        TransDate                   fromDate, toDate;
+        FMCustGroupId               custGroupId;
+        FMRentalsByCustContract     contract;
+        Map                         custIndex;
+
+        Query query = this.parmQuery();
+
+        // access to the data contract
+        contract = this.parmDataContract() as FMRentalsByCustContract;
+        if (contract)
+        {
+            // capture the session parms
+            fromDate = contract.parmFromDate();
+            toDate = contract.parmToDate();
+            custGroupId = contract.parmCustGroupId();
+        }
+
+        // check to see if parameters were provided
+        if (fromDate || toDate)
+        {
+            query.dataSourceTable(tablenum(FMRentalCharge)).addRange(fieldnum(FMRentalCharge, TransDate)).value(queryRange(fromDate, toDate));
+        }
+
+        if (custGroupId)
+        {
+            query.dataSourceTable(tablenum(FMCustomer)).addRange(fieldnum(FMCustomer, CustGroup)).value(custGroupId);
+        }
+
+        // execute base query
+        qr = new QueryRun(query);
+
+        // define a new map container
+        custIndex = new Map(Types::Int64, Types::Int64);
+
+        ttsbegin;
+        while(qr.next())
+        {
+            tmpTable.clear();
+            
+            rental = qr.get(tablenum(FMRental));
+            customer = qr.get(tablenum(FMCustomer));
+            custGroup = qr.get(tablenum(FMCustGroup));
+            vehicle = qr.get(tablenum(FMVehicle));
+            rentalCharge = qr.get(tablenum(FMRentalCharge));
+
+            tmpTable.Comments = rental.Comments;
+            tmpTable.EndDate = rental.EndDate;
+            tmpTable.StartDate = rental.StartDate;
+            tmpTable.VehicleRateTotal = rental.VehicleRateTotal;
+            tmpTable.RentalId = rental.RentalId;
+            tmpTable.ChargeType = rentalCharge.ChargeType;
+            tmpTable.ExtendedAmount = rentalCharge.ExtendedAmount;
+            tmpTable.TransDate = rentalCharge.TransDate;
+            tmpTable.Color = vehicle.Color;
+            tmpTable.Description = vehicle.Description;
+            tmpTable.FuelType = vehicle.FuelType;
+            tmpTable.DriverLicense = customer.DriverLicense;    // column available for by grouping 
+
+            // check before storing customer details
+            if (!custIndex.exists(customer.RecId))
+            {
+                tmpTable.CellPhone = customer.CellPhone;
+                tmpTable.CustGroup = customer.CustGroup;
+                tmpTable.GroupDesc = custGroup.Description;
+                tmpTable.Email = customer.Email;
+                tmpTable.FirstName = customer.FirstName;
+                tmpTable.LastName = customer.LastName;
+                tmpTable.Image = customer.Image;                // size considerations - customer logos
+                
+                // keep track of the customer records
+                custIndex.insert(customer.RecId, customer.RecId);
+            }
+            tmpTable.insert();
+        }
+        ttscommit;
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

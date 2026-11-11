@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxResource xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>AdventureWorks_Fuji_red</Name>
+	<FileName>AdventureWorks_Fuji_red.png</FileName>
+	<RelativeUriInModelStore>FleetManagement/AxResource/ResourceContent/Images/AdventureWorks_Fuji_red.png</RelativeUriInModelStore>
+</AxResource>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMVehicleListPageItem</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMVehicleListPageItem extends FMVehiclePage
+{
+    private str vehicleDescriptionInternal;
+    private str vehicleVINInternal;
+    private ImageReference vehicleImage;
+    private FMVehicleStatus vehicleStatusInternal;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>vehicleDescription</Name>
+				<Source><![CDATA[
+    [SysAppField(tableMethodStr(FMVehicle,FullDescription), "Vehicle description")]
+    public str vehicleDescription(str _value=vehicleDescriptionInternal)
+    {
+        vehicleDescriptionInternal = _value;
+        return vehicleDescriptionInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>vehicleVIN</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMVehicle, VIN), "VIN")]
+    public str vehicleVIN(str _value=vehicleVINInternal)
+    {
+        vehicleVINInternal = _value;
+        return vehicleVINInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>vehicleStatus</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMVehicle, Status), "Status")]
+    public FMVehicleStatus vehicleStatus(FMVehicleStatus _value=vehicleStatusInternal)
+    {
+        vehicleStatusInternal = _value;
+        return vehicleStatusInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>vehicleImage</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMVehicleModel,Image ), "Vehicle image")]
+    public ImageReference vehicleImage(ImageReference _value=vehicleImage)
+    {
+        vehicleImage = _value;
+        return vehicleImage;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populate</Name>
+				<Source><![CDATA[
+    public void populate(FMVehicle _vehicleTable, FMVehicleModel _vehicleModel = null)
+    {
+        if (_vehicleModel)
+        {
+            if (_vehicleModel.Image != conNull())
+            {
+                Image img = new Image();
+                img.setData(_vehicleModel.Image);
+                this.vehicleImage(ImageReference::constructForImage(img));
+            }
+        }
+        this.vehicleDescription(_vehicleTable.FullDescription());
+        this.vehicleStatus(_vehicleTable.Status);
+        this.RecId(_vehicleTable.RecId);
+        
+        this.vehicleVIN(_vehicleTable.VIN);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

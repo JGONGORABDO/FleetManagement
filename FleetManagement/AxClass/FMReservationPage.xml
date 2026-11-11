@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMReservationPage</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+//All entity contracts needs to be decorated with SysAppEntity attribute. 
+//You also need to provide the entity key field which is commonly the recId field but can be any field in the contract
+[SysAppEntity(tableStr(FMRental), methodStr(FMReservationPage, recId))]
+class FMReservationPage
+{
+    protected int64 recIdInternal;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>recId</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRental, RecId), "RecId")]
+    public int64 recId(int64 _value=recIdInternal)
+    {
+        recIdInternal = _value;
+        return recIdInternal;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

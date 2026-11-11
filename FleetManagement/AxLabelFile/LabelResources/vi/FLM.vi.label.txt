@@ -1,0 +1,784 @@
+﻿@FLM41=Tệp nhãn được tạo vào ngày 3/4/2011
+ ;By user Admin
+@FLM42=Đỏ
+ ;Fleet colors
+@FLM43=Xanh lam
+ ;Fleet colors
+@FLM44=Xanh lục
+ ;Fleet colors
+@FLM46=Chọn hình ảnh
+ ;Fleet label
+@FLM47=Thay đổi
+ ;Fleet label
+@FLM48=Xóa
+ ;Fleet label
+@FLM49=Khách hàng
+ ;Fleet label
+@FLM50=Mở
+ ;Fleet label
+@FLM51=Mới
+ ;Fleet label
+@FLM52=Cho thuê
+ ;Fleet label
+@FLM53=Tổng quát
+ ;Fleet label
+@FLM55=Xem
+ ;Fleet label
+@FLM56=Xóa
+ ;Fleet label
+@FLM57=Tệp đính kèm
+ ;Fleet label
+@FLM58=Hoàn tất
+ ;Fleet label
+@FLM59=Phí thuê
+ ;Fleet label
+@FLM60=Thời gian thuê
+ ;Fleet label
+@FLM61=Từ
+ ;Fleet label
+@FLM62=Đến
+ ;Fleet label
+@FLM63=Chỉ số quãng đường
+ ;Fleet label
+@FLM64=Bắt đầu
+ ;Fleet label
+@FLM65=Kết thúc
+ ;Fleet label
+@FLM66=Mức nhiên liệu
+ ;Fleet label
+@FLM67=Đến lấy hàng
+ ;Fleet label
+@FLM68=Phí
+ ;Fleet label
+@FLM69=Thêm khoản phí
+ ;Fleet label
+@FLM70=Bao gồm cả xe tải
+ ;Fleet label
+@FLM71=Lượt cho thuê
+ ;Fleet label
+@FLM72=Chỉnh sửa
+ ;Fleet label
+@FLM73=Cấu hình quản lý đội xe
+ ;Fleet label
+@FLM74=Nhãn hiệu và model xe
+ ;Fleet label
+@FLM75=Xác định nhãn hiệu và model xe
+ ;Fleet label
+@FLM76=Xác định nhãn hiệu và model xe trong hàng tồn kho của bạn, bao gồm cả một hình ảnh đại diện cho model đó.
+ ;Fleet label
+@FLM77=Hình ảnh model
+ ;Fleet label
+@FLM78=Duyệt...
+ ;Fleet label
+@FLM79=Nhãn hiệu mới
+ ;Fleet label
+@FLM80=Model mới
+ ;Fleet label
+@FLM81=Loại phí thuê
+ ;Fleet label
+@FLM82=Xác định các loại phí
+ ;Fleet label
+@FLM83=Các loại phí được dùng để phân loại từng khoản phí thuê. Điều này cho phép bạn theo dõi chi phí dễ dàng hơn.
+ ;Fleet label
+@FLM84=Xếp hạng an toàn của xe SUV
+ ;Fleet label
+@FLM85=Xác định mức xếp hạng an toàn của xe SUV
+ ;Fleet label
+@FLM86=Xe
+ ;Fleet label
+@FLM87=Duy trì
+ ;Fleet label
+@FLM88=Lịch sử
+ ;Fleet label
+@FLM89=Giá trước đây
+ ;Fleet label
+@FLM90=Giá
+ ;Fleet label
+@FLM91=Chi tiết
+ ;Fleet label
+@FLM92=Thông tin về xe con và xe SUV
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=Thông tin về xe tải
+ ;Fleet label
+@FLM95=Xe
+ ;Fleet label
+@FLM96=Tình trạng sẵn có
+ ;Fleet label
+@FLM97=Vị trí
+ ;Fleet label
+@FLM98=Bảo trì
+ ;Fleet label
+@FLM99=Bản ghi
+ ;Fleet label
+@FLM100=Danh sách
+ ;Fleet label
+@FLM101=ID xe
+ ;Fleet label
+@FLM102=Người quản lý ngày xếp hạng xe
+ ;Fleet label
+@FLM103=Phiên bản mới
+ ;Fleet label
+@FLM104=Bảo dưỡng xe
+ ;Fleet label
+@FLM105=Quản lý đội xe
+ ;Fleet label
+@FLM106=Các lượt cho thuê gần đây
+ ;Fleet label
+@FLM107=Các tổ chức nội bộ của tôi để truy cập bảo mật
+ ;Fleet label
+@FLM108=Xe mà người dùng có quyền truy cập bảo mật
+ ;Fleet label
+@FLM109=Tổ chức nội bộ mà người dùng có quyền truy cập
+ ;Fleet label
+@FLM110=Xe tải
+ ;Fleet label
+@FLM111=SUV
+ ;Fleet label
+@FLM112=Menu cho các trang xem của khách hàng
+ ;Fleet label
+@FLM113=Hành động
+ ;Fleet label
+@FLM114=Menu xe
+ ;Fleet label
+@FLM115=Menu cho các trang xem xe
+ ;Fleet label
+@FLM116=Chi nhánh – Không còn dùng
+ ;Fleet label
+@FLM117=Vị trí cho thuê – Không còn dùng
+ ;Fleet label
+@FLM118=Khu vực – Không còn dùng
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Loại nhiên liệu
+ ;Fleet label
+@FLM123=Tiêu chuẩn
+ ;Fleet label
+@FLM124=Cao cấp
+ ;Fleet label
+@FLM125=Có bật GPS
+ ;Fleet label
+@FLM126=Thay dầu
+ ;Fleet label
+@FLM127=Sửa chữa
+ ;Fleet label
+@FLM128=Bảo trì phòng ngừa
+ ;Fleet label
+@FLM129=Đang chờ kiểm tra
+ ;Fleet label
+@FLM130=Đang chờ dịch vụ
+ ;Fleet label
+@FLM131=Đang chờ phê duyệt
+ ;Fleet label
+@FLM132=Đang chờ vệ sinh
+ ;Fleet label
+@FLM133=Hoàn tất
+ ;Fleet label
+@FLM134=Hộp số
+ ;Fleet label
+@FLM135=Tự động
+ ;Fleet label
+@FLM136=Số sàn
+ ;Fleet label
+@FLM137=Khả dụng
+ ;Fleet label
+@FLM138=Đang làm việc
+ ;Fleet label
+@FLM139=Đã thuê
+ ;Fleet label
+@FLM140=Hư hỏng
+ ;Fleet label
+@FLM141=Đã thu hồi
+ ;Fleet label
+@FLM142=Đang chờ xử lý
+ ;Fleet label
+@FLM143=Loại xe
+ ;Fleet label
+@FLM144=Không xác định
+ ;Fleet label
+@FLM145=Xe tải
+ ;Fleet label
+@FLM146=Xe con
+ ;Fleet label
+@FLM147=Loại phí
+ ;Fleet label
+@FLM148=Giấy phép lái xe
+ ;Fleet label
+@FLM149=Model nhãn hiệu
+ ;Fleet label
+@FLM150=Ghi chú
+ ;Fleet label
+@FLM151=Thông tin thuê xe
+ ;Fleet label
+@FLM152=ID mức xếp hạng an toàn
+ ;Fleet label
+@FLM153=Xếp hạng an toàn của xe SUV
+ ;Fleet label
+@FLM154=Tổng số tiền thuê
+ ;Fleet label
+@FLM155=Nhãn hiệu
+ ;Fleet label
+@FLM156=Nhãn hiệu xe
+ ;Fleet label
+@FLM157=Model
+ ;Fleet label
+@FLM158=Model xe
+ ;Fleet label
+@FLM159=Xe con
+ ;Fleet label
+@FLM160=Số cửa
+ ;Fleet label
+@FLM161=Số chỗ ngồi
+ ;Fleet label
+@FLM162=Loại phí
+ ;Fleet label
+@FLM163=Ngày hết hạn
+ ;Fleet label
+@FLM164=Chỉ số quãng đường bắt đầu
+ ;Fleet label
+@FLM165=Chỉ số quãng đường kết thúc
+ ;Fleet label
+@FLM166=Mức nhiên liệu bắt đầu
+ ;Fleet label
+@FLM167=Mức nhiên liệu kết thúc
+ ;Fleet label
+@FLM168=Thông tin thuê xe
+ ;Fleet label
+@FLM169=Số chỗ ngồi trên hàng ghế thứ ba
+ ;Fleet label
+@FLM170=Bán kính quay vòng
+ ;Fleet label
+@FLM171=Khoảng sáng gầm xe
+ ;Fleet label
+@FLM172=Xếp hạng khả năng chống lật
+ ;Fleet label
+@FLM173=Xếp hạng tổng thể
+ ;Fleet label
+@FLM174=Không gian di chuyển
+ ;Fleet label
+@FLM175=Không gian sàn
+ ;Fleet label
+@FLM176=Tải trọng tối đa
+ ;Fleet label
+@FLM177=Loại
+ ;Fleet label
+@FLM178=Tổng trọng lượng xe
+ ;Fleet label
+@FLM179=Tình trạng xe
+ ;Fleet label
+@FLM180=Tổ chức
+ ;Fleet label
+@FLM181=Xem trước nhóm
+ ;Fleet label
+@FLM182=Nhãn hiệu xe
+ ;Fleet label
+@FLM183=Model xe
+ ;Fleet label
+@FLM184=Hình ảnh xe
+ ;Fleet label
+@FLM185=Thông số kỹ thuật của model
+ ;Fleet label
+@FLM186=Định dạng hình ảnh
+ ;Fleet label
+@FLM187=Giá xe
+ ;Fleet label
+@FLM188=Giá mỗi ngày
+ ;Fleet label
+@FLM189=Giá mỗi tuần
+ ;Fleet label
+@FLM190=Các tổ chức nội bộ của tôi được liên kết với một vai trò
+ ;Fleet label
+@FLM191=Bảng có chứa các tổ chức nội bộ được liên kết với vai trò của người dùng
+ ;Fleet label
+@FLM192=Dạng xem DimAttributeOMBranch có chứa tất cả các bản ghi từ bảng OMOperatingUnit được đánh dấu là Chi nhánh.
+ ;Fleet label
+@FLM193=Dạng xem DimAttributeOMRegion có chứa tất cả các bản ghi từ bảng OMOperatingUnit được đánh dấu là Khu vực
+ ;Fleet label
+@FLM194=Dạng xem DimAttributeOMRentalLocation có chứa tất cả các bản ghi từ bảng OMOperatingUnit được đánh dấu là Vị trí cho thuê.
+ ;Fleet label
+@FLM195=Trung tâm quản lý đội xe
+ ;Fleet label
+@FLM196=Thêm
+ ;Fleet label
+@FLM197=Các lượt cho thuê hiện tại
+ ;Fleet label
+@FLM198=Xe được gán
+ ;Fleet label
+@FLM199=Xe có sẵn
+ ;Fleet label
+@FLM200=Xe đã thu hồi
+ ;Fleet label
+@FLM201=Đã hoàn tất
+ ;Fleet label
+@FLM202=Đang thực hiện
+ ;Fleet label
+@FLM203=Giá trước đây
+ ;Fleet label
+@FLM204=Hoàn thành lượt cho thuê
+ ;Fleet label
+@FLM205=Vệ sinh xe
+ ;Fleet label
+@FLM206=Kiểm tra xe
+ ;Fleet label
+@FLM207=Xe dịch vụ
+ ;Fleet label
+@FLM208=Phê duyệt dịch vụ
+ ;Fleet label
+@FLM209=Chi tiết về khách hàng
+ ;Fleet label
+@FLM210=Tên
+ ;Fleet label
+@FLM211=Giấy phép
+ ;Fleet label
+@FLM212=Địa chỉ
+ ;Fleet label
+@FLM213=Số điện thoại
+ ;Fleet label
+@FLM214=Email
+ ;Fleet label
+@FLM215=Thông tin thanh toán
+ ;Fleet label
+@FLM216=Thẻ tín dụng
+ ;Fleet label
+@FLM217=Thời hạn
+ ;Fleet label
+@FLM218=Ngày
+ ;Fleet label
+@FLM219=Bắt đầu lượt cho thuê
+ ;Fleet label
+@FLM220=Đến ngày
+ ;Fleet label
+@FLM221=Mô tả
+ ;Fleet label
+@FLM222=Số lượng
+ ;Fleet label
+@FLM223=Đã mở rộng
+ ;Fleet label
+@FLM224=Chi tiết về xe
+ ;Fleet label
+@FLM225=Nhãn hiệu và model
+ ;Fleet label
+@FLM226=Giá theo ngày
+ ;Fleet label
+@FLM227=Giá theo tuần
+ ;Fleet label
+@FLM228=Phần bản xem trước về xe
+ ;Fleet label
+@FLM229=Màu sắc
+ ;Fleet label
+@FLM230=Trạng thái
+ ;Fleet label
+@FLM231=Xe được gán
+ ;Fleet label
+@FLM232=Chú thích về quản lý đội xe
+ ;Fleet label
+@FLM233=Hạn chế người dùng đối với các BU
+ ;Fleet label
+@FLM234=Quyền truy cập của tôi vào các xe để truy cập bảo mật
+ ;Fleet label
+@FLM235=Dịch vụ tự phục vụ cho các hồ sơ cho thuê
+ ;Fleet label
+@FLM236=Thư ký quản lý đội xe
+ ;Fleet label
+@FLM237=Thư ký phụ trách việc cho thuê
+ ;Fleet label
+@FLM238=Người quản lý chi nhánh quản lý đội xe
+ ;Fleet label
+@FLM239=Người quản lý chi nhánh cho thuê
+ ;Fleet label
+@FLM240=Kỹ thuật viên dịch vụ quản lý đội xe
+ ;Fleet label
+@FLM241=Kỹ thuật viên dịch vụ
+ ;Fleet label
+@FLM242=Sử dụng quy trình làm việc
+ ;Fleet label
+@FLM243=Nhóm dịch vụ cho thấy hàng tồn kho xe con có sẵn
+ ;Fleet label
+@FLM244=Số cửa
+ ;Number of doors in the FM vehicle
+@FLM245=Số tiền mở rộng
+ ;Fleet label
+@FLM246=Mức nhiên liệu
+ ;Fleet label
+@FLM247=Khoảng sáng gầm xe
+ ;Fleet label
+@FLM248=Không gian sàn xe tải
+ ;Fleet label
+@FLM249=Tải trọng tối đa
+ ;Fleet label
+@FLM250=Không gian di chuyển phía trên
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Xếp hạng
+ ;Fleet label
+@FLM253=Tổng tiền thuê
+ ;Fleet label
+@FLM254=Chỗ ngồi
+ ;Fleet label
+@FLM255=Loại phí
+ ;Fleet label (table)
+@FLM256=Sức chứa
+ ;Fleet label
+@FLM257=Bán kính quay vòng
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Truy vấn quy trình làm việc
+ ;Fleet label
+@FLM260=Hồ sơ bảo trì
+ ;Fleet label
+@FLM261=Lượt cho thuê mới
+ ;Fleet label
+@FLM262=Tất cả các lượt cho thuê
+ ;Fleet label
+@FLM263=Thiết lập đội xe
+ ;Fleet label
+@FLM264=Tất cả các xe
+ ;Fleet label
+@FLM265=Ngày tính giá
+ ;Fleet label
+@FLM268=Chi nhánh _DEMO_
+ ;Fleet label
+@FLM269=Vị trí cho thuê _DEMO_
+ ;Fleet label
+@FLM270=Khu vực _DEMO_
+ ;Fleet label
+@FLM271=Đã vệ sinh xong
+ ;Fleet label
+@FLM272=Xóa các khách hàng
+ ;Fleet label
+@FLM273=Xóa lượt cho thuê đã chọn
+ ;Fleet label
+@FLM274=Xóa xe đã chọn
+ ;Fleet label
+@FLM275=Đã kiểm tra xong
+ ;Fleet label
+@FLM276=Đã hoàn thành dịch vụ
+ ;Fleet label
+@FLM278=Bắt đầu quy trình làm việc
+ ;Fleet label
+@FLM279=Phê duyệt dịch vụ
+ ;Fleet label
+@FLM280=Từ chối dịch vụ
+ ;Fleet label
+@FLM281=Loại bỏ dịch vụ
+ ;Fleet label
+@FLM282=Xóa các xe đã chọn
+ ;Fleet label
+@FLM283=Cấu hình quy trình làm việc
+ ;Fleet label
+@FLM284=Tạo hoặc cập nhật chi nhánh
+ ;Fleet label
+@FLM285=Tạo hoặc cập nhật vị trí cho thuê
+ ;Fleet label
+@FLM286=Tạo hoặc cập nhật khu vực
+ ;Fleet label
+@FLM287=Thêm/chỉnh sửa khách hàng
+ ;Fleet label
+@FLM288=ID lượt cho thuê xe
+ ;Fleet label (table)
+@FLM289=Thêm/chỉnh sửa phí thuê
+ ;Fleet label
+@FLM290=Chi tiết khoản phí
+ ;Fleet label
+@FLM291=Chi tiết về lượt cho thuê
+ ;Fleet label
+@FLM292=Chỉnh sửa lượt cho thuê
+ ;Fleet label
+@FLM293=Lượt cho thuê theo khách hàng
+ ;Fleet label
+@FLM294=Lượt cho thuê theo model
+ ;Fleet label
+@FLM295=Thêm/chỉnh sửa xe
+ ;Fleet label
+@FLM296=Các lượt cho thuê sắp tới
+ ;Fleet label
+@FLM297=Lượt cho thuê xe theo xe
+ ;Fleet label
+@FLM298=Xem trợ giúp trực tuyến
+ ;Fleet label
+@FLM299=Loại phí thuê
+ ;Fleet label
+@FLM300=Ghi lại chỉ số quãng đường
+ ;Fleet label
+@FLM301=Chu trình xử lý của đội xe
+ ;Fleet label
+@FLM302=Đội xe – Quản lý thiết lập đội xe
+ ;Fleet label
+@FLM303=Đội xe – Chỉnh sửa hồ sơ khách hàng
+ ;Fleet label
+@FLM304=Đội xe – Quản lý khách hàng
+ ;Fleet label
+@FLM305=Đội xe – Quản lý hàng tồn kho
+ ;Fleet label
+@FLM306=Đội xe – Xe con cho thuê
+ ;Fleet label
+@FLM307=Đội xe – Xem hồ sơ khách hàng
+ ;Fleet label
+@FLM308=Đội xe – Xem hàng tồn kho
+ ;Fleet label
+@FLM309=Đội xe – Thư ký quy trình làm việc
+ ;Fleet label
+@FLM310=Màu xe
+ ;Fleet label
+@FLM311=Đội xe – Người quản lý quy trình làm việc
+ ;Fleet label
+@FLM312=Đội xe – Kỹ thuật viên dịch vụ quy trình làm việc
+ ;Fleet label
+@FLM313=Đội xe – Nghĩa vụ cơ bản
+ ;Fleet label
+@FLM314=Đội xe – Quản lý xe con
+ ;Fleet label
+@FLM315=Chu trình xử lý tiêu chuẩn của đội xe
+ ;Fleet label
+@FLM316=Chỉ số quãng đường của xe
+ ;Fleet label
+@FLM317=Chi phí
+ ;Fleet label
+@FLM318=Khoảng sáng
+ ;Fleet label
+@FLM54=Khách hàng
+ ;Fleet label
+@FLM266=Thời hạn thẻ tín dụng
+ ;Fleet label (table)
+@FLM277=Giấy phép lái xe
+ ;Fleet label (table)
+@FLM320=Danh sách khách hàng
+ ;Fleet label (report menu item)
+@FLM321=Báo cáo danh sách khách hàng
+ ;Fleet label (report menu item help text)
+@FLM267=Thiết lập quy trình làm việc
+ ;Fleet label
+@FLM400=Quy trình bảo dưỡng xe
+ ;Fleet label
+@FLM500=Phương thức thanh toán ưu tiên
+ ;Fleet label
+@FLM501=Trắng
+ ;Fleet colors
+@FLM502=Xám
+ ;Fleet colors
+@FLM503=Vàng
+ ;Fleet colors
+@FLM504=Cam
+ ;Fleet colors
+@FLM505=Đến lấy hàng
+ ;Fleet label
+@FLM506=Trả lại
+ ;Fleet label
+@FLM507=Bắt đầu lượt cho thuê
+ ;Fleet label
+@FLM401=Quản lý hoạt động đặt trước
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Chỉ số quãng đường trước đó
+ ;Fleet label for returning vehicle slider
+@FLM509=Chỉ số quãng đường mới
+ ;Fleet label for returning vehicle slider
+@FLM510=Cho thuê xe
+ ;Fleet label
+@FLM512=Các khoản phí bổ sung
+ ;Fleet label
+@FLM513=Tiết kiệm
+ ;Fleet label
+@FLM514=Lượt đặt trước mới
+ ;New reservation menu item label
+@FLM515=Năm đời xe
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Năm hết hạn
+ ;Expiration year label
+@FLM517=Báo cáo cho khách hàng
+ ;Fleet tile label
+@FLM518=Lượt đặt trước hiện tại
+ ;Fleet tile label
+@FLM519=Lượt cho thuê quá hạn
+ ;Fleet tile label
+@FLM520=Tên thanh toán
+ ;Fleet PaymentInfo field label
+@FLM521=CVV
+ ;Fleet label
+@FLM522=Tháng hết hạn
+ ;Expiration month label
+@FLM523=Tên trên thẻ
+ ;Fleet name on credit card
+@FLM524=Lịch sử giá xe
+ ;Fleet form label
+@FLM525=Chú thích mới
+ ;Fleet dialog caption
+@FLM526=Khách hàng mới
+ ;Fleet dialog caption
+@FLM527=Thông tin thanh toán mới
+ ;Fleet dialog caption
+@FLM528=Thêm phụ kiện
+ ;Fleet dialog caption
+@FLM529=Chọn một khách hàng
+ ;Fleet dialog caption
+@FLM530=Sẵn sàng để đến lấy
+ ;Fleet ReservationState enum option
+@FLM531=ID bản ghi địa chỉ
+ ;Fleet label
+@FLM532=Mã thập lục phân của màu sắc
+ ;Fleet label
+@FLM533=ID màu sắc
+ ;Fleet label
+@FLM534=Tên màu sắc
+ ;Fleet label
+@FLM535=ID chiết khấu
+ ;Fleet label
+@FLM536=ID thông tin thanh toán
+ ;Fleet label
+@FLM537=ID lượt đặt trước
+ ;Fleet label
+@FLM539=Xe đã thuê
+ ;Fleet label
+@FLM540=Quản lý đội xe
+ ;Fleet menu label
+@FLM541=Tải dữ liệu demo
+ ;Fleet button text
+@FLM542=Lịch sử giá
+ ;Fleet button text
+@FLM543=Thay đổi khách hàng
+ ;Fleet dialog label
+@FLM544=Chọn xe
+ ;Fleet button text
+@FLM545=Tất cả các lượt đặt trước
+ ;Fleet grid title
+@FLM546=Phản hồi của khách hàng
+ ;Fleet group label
+@FLM547=Thông tin về lượt cho thuê
+ ;Fleet group label
+@FLM548=Hình ảnh khoản phí
+ ;Fleet group label
+@FLM549=Thiết lập dữ liệu
+ ;Fleet tab label
+@FLM550=Thông tin xe
+ ;Fleet group label
+@FLM551=Xe có sẵn
+ ;Fleet chart label
+@FLM552=Trạng thái lượt cho thuê xe
+ ;Fleet chart label
+@FLM553=Xe theo model – doanh thu
+ ;Fleet chart label
+@FLM554=Đến lấy hôm nay
+ ;Fleet panorama label
+@FLM555=Trả lại hôm nay
+ ;Fleet panorama label
+@FLM556=Giá thuê
+ ;Fleet panorama label
+@FLM558=Chi tiết đặt trước
+ ;Fleet panorama label
+@FLM559=Phụ kiện
+ ;Fleet panorama label
+@FLM560=Tính năng
+ ;Fleet group label
+@FLM561=Thông tin về việc đến lấy
+ ;Fleet field label
+@FLM562=Thông tin về việc trả lại
+ ;Fleet field label
+@FLM563=Danh sách các lượt cho thuê
+ ;Fleet report label
+@FLM564=Tạo khách hàng, lượt cho thuê và xe mẫu
+ ;Fleet TOC label
+@FLM565=Quá trình này sẽ chỉ mất vài giây.  
+ ;New Comment
+@FLM322=Lượt cho thuê theo khách hàng
+ ;Fleet report label
+@FLM566=Biểu đồ khách hàng
+ ;Fleet form part caption
+@FLM567=Biểu đồ doanh thu từ xe
+ ;Fleet form part caption
+@FLM601=Các lượt cho thuê trong phần quản lý đội xe
+ ;Fleet rental entity
+@FLM602=Khách hàng trong phần quản lý đội xe
+ ;Fleet customer entity
+@FLM603=Applet mẫu
+ ;Label for the sample applet name
+@FLM604=Applet mẫu được dùng để trình diễn và kiểm tra khung applet
+ ;Label for the sample applet description
+@FLM605=Xem thêm
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Vị trí của khách hàng
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Mẫu cung cấp bản đồ vị trí của khách hàng
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Lượt cho thuê theo trạng thái
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Mẫu cung cấp số lượng theo trạng thái lượt cho thuê
+ ;Rentals by status template description
+FMCustomerEntityView=Xem đối tượng Khách hàng trong phần quản lý đội xe
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Duy trì đối tượng Khách hàng trong phần quản lý đội xe
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Xem đối tượng Lượt cho thuê trong phần quản lý đội xe
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Duy trì đối tượng Lượt cho thuê trong phần quản lý đội xe
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Xem đối tượng Hoạt động
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Duy trì đối tượng Hoạt động
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Xem đối tượng Thể loại
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Duy trì đối tượng Thể loại
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Xem đối tượng Pháp thể
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Duy trì đối tượng Pháp thể
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Xem đối tượng Thuộc tính dòng
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Duy trì đối tượng Thuộc tính dòng
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Xem đối tượng Khoảng thời gian
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Duy trì đối tượng Khoảng thời gian
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Xem đối tượng Dự án
+ ;View privilege for RCADProject
+RCADProjectMaintain=Duy trì đối tượng Dự án
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Xem đối tượng Bảng chấm công
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Duy trì đối tượng Bảng chấm công
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Xem đối tượng Mục nhập bảng chấm công
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Duy trì đối tượng Mục nhập bảng chấm công
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Xem đối tượng Thiết đặt bảng chấm công
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Duy trì đối tượng Thiết đặt bảng chấm công
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Xem đối tượng Lịch sử quy trình làm việc với bảng chấm công
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Duy trì đối tượng Lịch sử quy trình làm việc với bảng chấm công
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Xem đối tượng Mục lịch sử quy trình làm việc
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Duy trì đối tượng Mục lịch sử quy trình làm việc
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Tìm lượt cho thuê
+FMTemplateCustomerInformationDisplayName=Thông tin khách hàng
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Mẫu cung cấp thông tin cơ bản của khách hàng và danh sách các lượt thuê của khách hàng
+ ;Fleet customer information template description
+DataCreated=Đã tạo dữ liệu mẫu.
+DataRestored=Đã khôi phục dữ liệu mẫu.
+DataRestoreConfirm=Thao tác này sẽ khôi phục toàn bộ dữ liệu Quản lý đội xe về trạng thái ban đầu. Đây có phải là thao tác bạn muốn thực hiện không?
+Branch=Chi nhánh _DEMO_
+ ;Branch operating unit type
+RentalLocation=Vị trí cho thuê _DEMO_
+ ;Rental location operating unit type
+Region=Khu vực _DEMO_
+ ;Region operating unit type
+Timestamp=Dấu thời gian
+ ;Comment timestamp
+CustomerImage=Hình ảnh khách hàng
+ ;Fleet label
+Analytics=Số liệu phân tích
+ ;used on Fleet clerk workspace for Analytics section

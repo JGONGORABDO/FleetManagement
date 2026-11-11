@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Vehicle</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class Vehicle extends common
+{
+}
+]]></Declaration>
+		<Methods />
+	</SourceCode>
+	<CollectionName>Vehicles</CollectionName>
+	<IsPublic>Yes</IsPublic>
+	<Updatable>Yes</Updatable>
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Description</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>FuelType</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Weight</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Mileage</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>MPG</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Note</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>NumberOfDoors</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>SeatingCapacity</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Status</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Transmission</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleModel</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ColorID</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>ColorEnum</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>VIN</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleId</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Description</Name>
+			<DataField>Description</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>VehicleType</Name>
+			<DataField>DisplayRelationType</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>FuelType</Name>
+			<DataField>FuelType</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Weight</Name>
+			<DataField>GrossVehicleWeight</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Mileage</Name>
+			<DataField>Mileage</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>MPG</Name>
+			<DataField>MPG</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Note</Name>
+			<DataField>Note</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>NumberOfDoors</Name>
+			<DataField>NumberOfDoors</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>SeatingCapacity</Name>
+			<DataField>SeatingCapacity</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Status</Name>
+			<DataField>Status</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>Transmission</Name>
+			<DataField>Transmission</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>VehicleId</Name>
+			<DataField>VehicleId</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>VIN</Name>
+			<DataField>VIN</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>VehicleModel</Name>
+			<DataField>VehicleModel</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ColorID</Name>
+			<DataField>ColorID</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+		<AxViewField xmlns=""
+			i:type="AxViewFieldBound">
+			<Name>ColorEnum</Name>
+			<DataField>Color</DataField>
+			<DataSource>FMCarClass</DataSource>
+		</AxViewField>
+	</Fields>
+	<Indexes>
+		<AxViewIndex>
+			<Name>Index1</Name>
+			<AlternateKey>Yes</AlternateKey>
+			<Fields>
+				<AxViewIndexField>
+					<DataField>VehicleId</DataField>
+				</AxViewIndexField>
+			</Fields>
+		</AxViewIndex>
+	</Indexes>
+	<Mappings />
+	<Relations>
+		<AxViewRelation>
+			<Name>ModelRelation</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedTable>MakeModel</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelatedTableRole>MakeModel</RelatedTableRole>
+			<Role>Vehicles</Role>
+			<Constraints>
+				<AxViewRelationConstraint xmlns=""
+					i:type="AxViewRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>VehicleModel</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxViewRelationConstraint>
+			</Constraints>
+		</AxViewRelation>
+		<AxViewRelation>
+			<Name>CarColorRelation</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedTable>CarColor</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<RelatedTableRole>Color</RelatedTableRole>
+			<Role>Vehicles</Role>
+			<Constraints>
+				<AxViewRelationConstraint xmlns=""
+					i:type="AxViewRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>ColorID</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxViewRelationConstraint>
+			</Constraints>
+		</AxViewRelation>
+	</Relations>
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods />
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>FMCarClass</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>FMCarClass</Table>
+				<DataSources />
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxView>

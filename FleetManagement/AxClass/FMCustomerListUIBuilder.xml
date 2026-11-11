@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMCustomerListUIBuilder</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+///    The <c>FMCustomerListUIBuilder</c> is the <c>UIBuilder</c> class for the <c>FMCustomerList</c> report.
+/// </summary>
+class FMCustomerListUIBuilder extends SrsReportDataContractUIBuilder
+{
+    #define.parmFMCustGroupId('CustomerListDS_CustGroup')
+    
+    DialogField                             dialogFMCustGroup;
+    FMCustomerListRdlContract               contract;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>build</Name>
+				<Source><![CDATA[
+    public void build()
+    {
+        Dialog dialogLocal = this.dialog();
+        contract = this.getRdlContractInfo().dataContractObject() as FMCustomerListRdlContract;
+
+        // add the control for the FMCustomer combobox
+        dialogFMCustGroup = dialogLocal.addFieldValue(extendedTypeStr(FMCustGroupId), contract.getValue(#parmFMCustGroupId), "@SYS181718");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>postBuild</Name>
+				<Source><![CDATA[
+    public void postBuild()
+    {
+        super();
+
+        //register the method we want to override
+        dialogFMCustGroup.registerOverrideMethod(methodStr(FormStringControl, lookup), methodStr(FMCustomerListUIBuilder, lookupCustGroup), this);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getFromDialog</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///    Transfers data from the dialog into the data contract object.
+    /// </summary>
+    public void getFromDialog()
+    {
+        super();
+        contract.setValue(#parmFMCustGroupId, dialogFMCustGroup.value());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>lookupCustGroup</Name>
+				<Source><![CDATA[
+    public void lookupCustGroup(FormStringControl _formStringControl)
+    {
+        Query query = new Query();
+
+        // create a table lookup
+        SysTableLookup sysTablelookup = SysTableLookup::newParameters(tableNum(FMCustGroup), _formStringControl);
+        sysTablelookup.addLookupfield(fieldNum(FMCustGroup, CustGroup));
+        sysTablelookup.addLookupfield(fieldNum(FMCustGroup, Description));
+
+        // create a query
+        QueryBuildDataSource DS;
+        DS = query.addDataSource(tableNum(FMCustGroup));
+
+        // assign the query and call lookup
+        sysTablelookup.parmQuery(query);
+        sysTablelookup.performFormLookup();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

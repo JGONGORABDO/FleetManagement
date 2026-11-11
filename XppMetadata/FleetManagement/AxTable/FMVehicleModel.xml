@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<z:anyType xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxPropertyCollection" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+	<Methods>
+		<Method>
+			<Name>FMVehicleMake</Name>
+			<Visibility>Public</Visibility>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Record</Type>
+					<TypeName>FMVehicleMake</TypeName>
+					<DefaultValue>null</DefaultValue>
+					<Name>_relatedTable</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Record</Type>
+				<TypeName>FMVehicleMake</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>vehicleImage</Name>
+			<IsDisplay>true</IsDisplay>
+			<Visibility>Public</Visibility>
+			<ReturnType>
+				<Type>Container</Type>
+				<TypeName></TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>YearMakeModel</Name>
+			<IsDisplay>true</IsDisplay>
+			<Visibility>Public</Visibility>
+			<ReturnType>
+				<Type>String</Type>
+				<TypeName></TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>validateField</Name>
+			<Visibility>Public</Visibility>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>ExtendedDataType</Type>
+					<TypeName>FieldId</TypeName>
+					<Name>_fieldIdToCheck</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Enum</Type>
+				<TypeName>boolean</TypeName>
+			</ReturnType>
+		</Method>
+	</Methods>
+</z:anyType>

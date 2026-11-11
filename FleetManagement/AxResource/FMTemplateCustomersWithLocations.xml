@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxResource xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMTemplateCustomersWithLocations</Name>
+	<FileName>2015-05-25-FleetCustomersWithLocations.xlsx</FileName>
+	<RelativeUriInModelStore>FleetManagement/FleetManagement/AxResource/ResourceContent/Data/2015-05-25-FleetCustomersWithLocations.xlsx</RelativeUriInModelStore>
+	<TypeOfResource>Data</TypeOfResource>
+</AxResource>

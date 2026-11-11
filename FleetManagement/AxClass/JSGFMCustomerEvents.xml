@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>JSGFMCustomerEvents</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class JSGFMCustomerEvents
+{
+
+    private static boolean firstLoad = true;
+
+    
+
+    
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>JSGVendGroupForm_OnInitialized</Name>
+				<Source><![CDATA[
+    [FormEventHandler(formStr(JSGVendGroupForm),
+                  FormEventType::Initialized)]
+public static void JSGVendGroupForm_OnInitialized(xFormRun sender,
+                                                  FormEventArgs e)
+    {
+        
+        
+        
+        
+        
+        
+        FormComboBoxControl cmbCompany;
+
+        cmbCompany =
+        sender.design().controlName("CmbCompany");
+
+        cmbCompany.add("Seleccione");
+        cmbCompany.add("DAT");
+        cmbCompany.add("USMF");
+
+        cmbCompany.selection(1);
+
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FMCustomer_OnActivated</Name>
+				<Source><![CDATA[
+    [FormDataSourceEventHandler(formDataSourceStr(JSGVendGroupForm, FMCustomer),
+                                FormDataSourceEventType::Activated)]
+    public static void FMCustomer_OnActivated(FormDataSource sender,
+                                              FormDataSourceEventArgs e)
+    {
+        FMCustomer customer;
+        FormRun formRun;
+
+        FormStringControl txtFirstName;
+        FormStringControl txtLastName;
+        FormStringControl txtCellPhone;
+        FormStringControl txtEmail;
+
+        formRun = sender.formRun();
+
+        txtFirstName = formRun.design().controlName("TxtFirstName");
+        txtLastName  = formRun.design().controlName("TxtLastName");
+        txtCellPhone = formRun.design().controlName("TxtCellPhone");
+        txtEmail     = formRun.design().controlName("TxtEmail");
+
+        // Primera carga del formulario
+        if (JSGFMCustomerEvents::firstLoad)
+        {
+            JSGFMCustomerEvents::firstLoad = false;
+
+            txtFirstName.text("");
+            txtLastName.text("");
+            txtCellPhone.text("");
+            txtEmail.text("");
+
+            return;
+        }
+
+        customer = sender.cursor();
+
+        txtFirstName.text(customer.FirstName);
+        txtLastName.text(customer.LastName);
+        txtCellPhone.text(customer.CellPhone);
+        txtEmail.text(customer.Email);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>BtnNewRecord_OnClicked</Name>
+				<Source><![CDATA[
+    [FormControlEventHandler(formControlStr(JSGVendGroupForm, BtnNewRecord),
+                         FormControlEventType::Clicked)]
+public static void BtnNewRecord_OnClicked(FormControl sender,
+                                          FormControlEventArgs e)
+    {
+        FormRun formRun = sender.formRun();
+
+        FormStringControl txtFirstName =
+        formRun.design().controlName("TxtFirstName");
+
+        FormStringControl txtLastName =
+        formRun.design().controlName("TxtLastName");
+
+        FormStringControl txtCellPhone =
+        formRun.design().controlName("TxtCellPhone");
+
+        FormStringControl txtEmail =
+        formRun.design().controlName("TxtEmail");
+
+        txtFirstName.text("");
+        txtLastName.text("");
+        txtCellPhone.text("");
+        txtEmail.text("");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>BtnGuardar_OnClicked</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    [FormControlEventHandler(formControlStr(JSGVendGroupForm, BtnGuardar), FormControlEventType::Clicked)]
+    public static void BtnGuardar_OnClicked(FormControl sender, FormControlEventArgs e)
+    {
+        info("Entró al botón guardar");
+    
+        FormRun formRun = sender.formRun();
+
+        FormStringControl txtFirstName =
+        formRun.design().controlName("TxtFirstName");
+
+        FormStringControl txtLastName =
+        formRun.design().controlName("TxtLastName");
+
+        FormStringControl txtCellPhone =
+        formRun.design().controlName("TxtCellPhone");
+
+        FormStringControl txtEmail =
+        formRun.design().controlName("TxtEmail");
+
+        // VALIDACIONES
+        if (txtFirstName.text() == "")
+        {
+            warning("Debe ingresar el nombre.");
+            return;
+        }
+
+        if (txtLastName.text() == "")
+        {
+            warning("Debe ingresar el apellido.");
+            return;
+        }
+
+        if (txtCellPhone.text() == "")
+        {
+            warning("Debe ingresar el teléfono.");
+            return;
+        }
+
+        if (txtEmail.text() == "")
+        {
+            warning("Debe ingresar el correo electrónico.");
+            return;
+        }
+
+        if (!strScan(txtEmail.text(), "@", 1, strLen(txtEmail.text())))
+        {
+            warning("Debe ingresar un correo válido.");
+            return;
+        }
+
+        FMCustomer customer;
+
+        ttsbegin;
+
+        customer.FirstName = txtFirstName.text();
+        customer.LastName  = txtLastName.text();
+        customer.CellPhone = txtCellPhone.text();
+        customer.Email     = txtEmail.text();
+
+        FMCustomer customerExist;
+
+        select firstOnly customerExist
+    where customerExist.FirstName == txtFirstName.text()
+       && customerExist.LastName  == txtLastName.text();
+
+        if (customerExist.RecId)
+        {
+            warning("Ya existe un cliente con este nombre y apellido.");
+            return;
+        }
+
+        select firstOnly customerExist
+    where customerExist.Email == txtEmail.text();
+
+        if (customerExist.RecId)
+        {
+            warning("Ya existe un cliente con este correo electrónico.");
+            return;
+        }
+
+        try
+        {
+
+        customer.insert();
+
+        }
+        catch (Exception::DuplicateKeyException)
+        {
+            warning("El cliente ya existe.");
+            return;
+        }
+
+        ttscommit;
+
+        info("Cliente guardado correctamente.");
+
+        // Refrescar la grilla
+        FormDataSource fmCustomerDs;
+
+        fmCustomerDs =
+    formRun.dataSource(
+        formDataSourceStr(JSGVendGroupForm, FMCustomer));
+
+        fmCustomerDs.executeQuery();
+    
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>CmbCompany_OnSelectionChanged</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    [FormControlEventHandler(formControlStr(JSGVendGroupForm, CmbCompany), FormControlEventType::SelectionChanged)]
+    public static void CmbCompany_OnSelectionChanged(FormControl sender, FormControlEventArgs e)
+    {
+
+        FormRun formRun = sender.formRun();
+
+        FormComboBoxControl cmbCompany =
+        formRun.design().controlName("CmbCompany");
+
+        info(strFmt("Compañía seleccionada: %1",
+                cmbCompany.valueStr()));
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>BtnActualizar_OnClicked</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    [FormControlEventHandler(formControlStr(JSGVendGroupForm, BtnActualizar), FormControlEventType::Clicked)]
+    public static void BtnActualizar_OnClicked(FormControl sender, FormControlEventArgs e)
+    {
+
+        FormRun formRun = sender.formRun();
+
+        FormStringControl txtFirstName =
+        formRun.design().controlName("TxtFirstName");
+
+        FormStringControl txtLastName =
+        formRun.design().controlName("TxtLastName");
+
+        FormStringControl txtCellPhone =
+        formRun.design().controlName("TxtCellPhone");
+
+        FormStringControl txtEmail =
+        formRun.design().controlName("TxtEmail");
+
+        FormDataSource fmCustomerDs =
+        formRun.dataSource(
+            formDataSourceStr(JSGVendGroupForm, FMCustomer));
+
+        FMCustomer customer;
+
+        customer = fmCustomerDs.cursor();
+
+        if (!customer.RecId)
+        {
+            warning("Debe seleccionar un registro.");
+            return;
+        }
+
+        if (txtFirstName.text() == "")
+        {
+            warning("Debe ingresar el nombre.");
+            return;
+        }
+
+        if (txtLastName.text() == "")
+        {
+            warning("Debe ingresar el apellido.");
+            return;
+        }
+
+        if (txtCellPhone.text() == "")
+        {
+            warning("Debe ingresar el teléfono.");
+            return;
+        }
+
+        if (txtEmail.text() == "")
+        {
+            warning("Debe ingresar el correo electrónico.");
+            return;
+        }
+
+        ttsbegin;
+
+        customer.selectForUpdate(true);
+
+        customer.FirstName = txtFirstName.text();
+        customer.LastName  = txtLastName.text();
+        customer.CellPhone = txtCellPhone.text();
+        customer.Email     = txtEmail.text();
+
+        customer.update();
+
+        ttscommit;
+
+        info("Cliente actualizado correctamente.");
+
+        fmCustomerDs.executeQuery();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>BtnEliminar_OnClicked</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    [FormControlEventHandler(formControlStr(JSGVendGroupForm, BtnEliminar), FormControlEventType::Clicked)]
+    public static void BtnEliminar_OnClicked(FormControl sender, FormControlEventArgs e)
+    {
+        DialogButton respuesta;
+
+        FormRun formRun = sender.formRun();
+
+        FormDataSource fmCustomerDs =
+        formRun.dataSource(
+            formDataSourceStr(JSGVendGroupForm, FMCustomer));
+
+        FMCustomer customer =
+        fmCustomerDs.cursor();
+
+        if (!customer.RecId)
+        {
+            warning("Debe seleccionar un registro.");
+            return;
+        }
+
+        respuesta = Box::yesNo(
+        strFmt("¿Desea eliminar el cliente %1 %2?",
+               customer.FirstName,
+               customer.LastName),
+        DialogButton::No,
+        "Confirmar eliminación");
+
+        if (respuesta == DialogButton::Yes)
+        {
+            ttsbegin;
+
+            customer.selectForUpdate(true);
+            customer.delete();
+
+            ttscommit;
+
+            info("Cliente eliminado correctamente.");
+
+            fmCustomerDs.executeQuery();
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

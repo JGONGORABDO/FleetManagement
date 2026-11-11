@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRental</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMRental extends common 
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>rentalLengthInDays</Name>
+				<Source><![CDATA[
+    public int rentalLengthInDays()
+    {
+        #timeConstants
+        int rentalPeriodInDays;
+        if (this.StartDate == DateTimeUtil::minValue() ||
+            this.EndDate == DateTimeUtil::minValue())
+        {
+            rentalPeriodInDays = 0;
+        }
+        else
+        {
+            rentalPeriodInDays = real2int(roundUp(DateTimeUtil::getDifference(this.EndDate, this.StartDate) / #secondsPerDay, 1));
+        }
+        return rentalPeriodInDays;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>canRelease</Name>
+				<Source><![CDATA[
+    public boolean canRelease()
+    {
+        FMVehicle vehicle;
+        boolean result = false;
+        
+        select firstonly vehicle where vehicle.RecId == this.Vehicle;
+
+        if(vehicle)
+        {
+            // If vehicle is not available then do not allow the vehicle to be released
+            switch (vehicle.Status)
+            {
+                case FMVehicleStatus::Rented:
+                    warning('This vehicle is currently being rented. Please choose an available vehicle.');
+                    break;
+
+                case FMVehicleStatus::Damaged:
+                case FMVehicleStatus::Pending:
+                case FMVehicleStatus::Recalled:
+                case FMVehicleStatus::InService:
+                    warning('This vehicle is not available. It may be damaged, in service or recalled. Please choose an available vehicle.');
+                    break;
+                
+                case FMVehicleStatus::Available:
+
+                    result = true;
+                    break;
+
+                default:
+                    error(strfmt("Unknown FMVehicleStatus: %1", vehicle.Status));
+                    break;
+            }
+        }
+        else
+        {
+            warning("no vehicle");
+        }
+
+        return result;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>find</Name>
+				<Source><![CDATA[
+    public static FMRental find(FMRentalId _rentalId, boolean _forupdate = false)
+    {
+        FMRental result;
+
+        result.selectForUpdate(_forupdate);
+        select firstonly result where result.RentalId == _rentalId;
+
+        return result;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>totals</Name>
+				<Source><![CDATA[
+    public display FMRentalTotal totals()
+    {
+        return FMTotalsEngineBase::GetInstance().totals(this);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>savings</Name>
+				<Source><![CDATA[
+    public display FMRentalTotal savings()
+    {
+        return FMTotalsEngineBase::GetInstance().savings(this);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalChargesTotal</Name>
+				<Source><![CDATA[
+    public display FMChargesTotal rentalChargesTotal()
+    {
+        return FMTotalsEngineBase::GetInstance().chargesTotals(this);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>initFromCustomer</Name>
+				<Source><![CDATA[
+    public void initFromCustomer(FMCustomerRecId _customer = this.Customer)
+    {
+        FMPaymentInformation payment; 
+        if (!_customer)
+        {
+            this.PaymentInformationID = 0; 
+        }
+        else
+        {
+            select firstonly payment where payment.CustomerID == _customer;
+            this.PaymentInformationID = payment.RecId; 
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>initFromVehicle</Name>
+				<Source><![CDATA[
+    public void initFromVehicle(FMVehicleRecId _vehicle = this.Vehicle)
+    {
+        container rates;
+        if (!_vehicle)
+        {
+            this.VehicleRatePerDay = 0;
+            this.VehicleRatePerWeek = 0;
+        }
+        else
+        {
+            rates = FMModelRate::getRate(_vehicle);
+            if (conlen(rates) >=2)
+            {
+                this.VehicleRatePerDay = conpeek(rates, 1);
+                this.VehicleRatePerWeek = conpeek(rates, 2);
+            }
+        }
+        this.VehicleRateTotal = 0;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>modifiedField</Name>
+				<Source><![CDATA[
+    public void modifiedField(FieldId _fieldId)
+    {
+        super(_fieldId);
+
+        switch (_fieldId)
+        {
+            case fieldnum(FMRental, Vehicle):
+                this.initFromVehicle();
+                break;
+            case fieldnum(FMRental, StartDate):
+            case fieldnum(FMRental, EndDate):
+                FMTotalsEngineBase::GetInstance().calculateRentalVehicleRate(this);
+                break;
+            case fieldnum(FMRental, Customer):
+                this.initFromCustomer(); 
+                break;
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>initValue</Name>
+				<Source><![CDATA[
+    public void initValue()
+    {
+        super();
+
+        this.StartDate = DateTimeUtil::utcNow();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalVehicle</Name>
+				<Source><![CDATA[
+    public display FMDescription rentalVehicle()
+    {
+        FMVehicle vehicle;
+        str value;
+
+        if(this.Vehicle == 0)
+        {        
+            value = "No vehicle assigned"; 
+        }
+        else
+        {
+            select vehicle where vehicle.RecId == this.Vehicle;            
+            value = vehicle.Description;
+        }
+
+        return value;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>idState</Name>
+				<Source><![CDATA[
+    public display str idState()
+    {
+        return this.RentalId + ": " + enum2str(this.State);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>dateRange</Name>
+				<Source><![CDATA[
+    public display str dateRange()
+    {
+        str sDate = date2str(DateTimeUtil::date(DateTimeUtil::applyTimeZoneOffset(this.StartDate, DateTimeUtil::getUserPreferredTimeZone())), 213, DateDay::Digits2, DateSeparator::Slash, DateMonth::Digits2, DateSeparator::Slash, DateYear::Digits4);
+        str eDate = date2str(DateTimeUtil::date(DateTimeUtil::applyTimeZoneOffset(this.EndDate, DateTimeUtil::getUserPreferredTimeZone())), 213, DateDay::Digits2, DateSeparator::Slash, DateMonth::Digits2, DateSeparator::Slash, DateYear::Digits4);
+        
+        return sDate + " - " + eDate;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerName</Name>
+				<Source><![CDATA[
+    public display str customerName()
+    {
+        FMCustomer customer; 
+        str value; 
+
+        select customer where customer.RecId == this.Customer; 
+        if(customer)
+        {
+            value = customer.fullName(); 
+        }
+
+        return value; 
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalImage</Name>
+				<Source><![CDATA[
+    public display container rentalImage()
+    {
+        ImageReference imgRef;
+        FMVehicle car; 
+        FMVehicleModel model; 
+        container imgContainer; 
+
+        //Grab the symbol as the default value
+        imgRef = ImageReference::constructForSymbol("CarRental");
+        imgContainer = imgRef.pack();      
+
+        //If the rental has a linked vehicle and...
+        if(this.Vehicle != 0)
+        {
+            select car where car.RecId == this.Vehicle; 
+            
+            //If the vehicle exists and...
+            if(car)
+            {
+                select model where model.RecId == car.VehicleModel; 
+                
+                //If the vehicle model exists and there is an image
+                if(model && model.Image != connull())
+                {
+                    //Display that image
+                    imgContainer = model.Image; 
+                }                 
+            }
+        }
+
+        return imgContainer;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>validateWrite</Name>
+				<Source><![CDATA[
+    public boolean validateWrite()
+    {
+        boolean ret;
+        FMRentalCheckoutProcessor rcheck;     
+        
+        //call out to the class that raises the event for finalizing rental record.
+        //if the eventhandlers havent raised objections then go ahead and call super()
+        //else some eventhandler that is registered has vetoed this rental. So just return
+        //false.
+        rcheck = new FMRentalCheckoutProcessor();
+
+        ret = rcheck.FinalizeRentalCheckout(this);
+        if(ret == true)
+        {                      
+            ret = super();            
+        }
+        else
+        {
+            error('Sorry cannot rent a vehicle to this customer. Their driving record is terrible !!!');
+
+        }
+
+        return ret;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FMCustomer</Name>
+				<Source><![CDATA[
+    public FMCustomer FMCustomer(FMCustomer _relatedTable = null)
+    {
+        if (prmIsDefault(_relatedTable))
+        {
+            return this.setLink('FMCustomer');
+        }
+        else
+        {
+            // Bug 3135762: setLink does not seem to work
+            this.Customer = _relatedTable.RecId;
+            return this.setLink('FMCustomer', _relatedTable);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FMVehicle</Name>
+				<Source><![CDATA[
+    public FMVehicle FMVehicle(FMVehicle _relatedTable = null)
+    {
+        if (prmIsDefault(_relatedTable))
+        {
+            return this.setLink('FMVehicle');
+        }
+        else
+        {
+            // Bug 3135762: setLink does not seem to work
+            this.Vehicle = _relatedTable.RecId;
+            this.initFromVehicle();
+            return this.setLink('FMVehicle', _relatedTable);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>validateField</Name>
+				<Source><![CDATA[
+    public boolean validateField(FieldId _fieldIdToCheck)
+    {
+        boolean ret;
+
+        ret = super(_fieldIdToCheck);
+
+        if(ret)        
+        {
+            switch (_fieldIdToCheck)
+            {
+                case fieldnum(FMRental, EndDate):
+                    if(this.EndDate < this.StartDate) 
+                    {
+                        ret = checkFailed("End date must be after start date");
+                    }
+                    break;
+
+
+                case fieldnum(FMRental, EndMileage):
+                    if(this.EndMileage != 0 && this.EndMileage < this.StartMileage) 
+                    {
+                        ret = checkFailed("End mileage must be more than the start mileage");
+                    }
+                    break;
+
+                case fieldnum(FMRental, StartMileage):
+                    if(this.StartMileage < 0) 
+                    {
+                        ret = checkFailed("Start mileage cannot be negative");
+                    }
+                    break; 
+                   
+            }
+        }
+
+        return ret;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getModelForVehicle</Name>
+				<Source><![CDATA[
+    public FMVehicleModelRecId getModelForVehicle()
+    {        
+        FMVehicle vehicle; 
+        FMVehicleModelRecId value = 0;
+
+        if (this.Vehicle)
+        {
+            select firstonly vehicle where vehicle.RecId == this.Vehicle;
+            if(vehicle)
+            {
+                value = vehicle.VehicleModel;
+            }
+        }
+
+        return value; 
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>insert</Name>
+				<Source><![CDATA[
+    public void insert()
+    {
+        FMRental rental;
+        NumberSeq numberSeq;
+        NumberSequenceReference reference;
+        ExtendedTypeId edt = extendedtypenum(FMRentalID);
+
+        Microsoft.Dynamics.Application.Instrumentation.FleetManagementEventSource::EventWriteXppTransactionStart("FleetManagement", "Create new reservation");
+
+        if (rental.RentalId == '')
+        {
+            reference = NumberSequenceReference::findByDatatypeAndScope(edt);
+            numberSeq = NumberSeq::newGetNum(reference);
+            numberSeq.parmNumTableNum(null).Manual = false;
+            this.RentalId = numberSeq.num();
+        }
+        
+        super();
+
+        Microsoft.Dynamics.Application.Instrumentation.FleetManagementEventSource::EventWriteXppTransactionStop("FleetManagement", "Create new reservation");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ReservationTitle</Name>
+				<Source><![CDATA[
+    public display str ReservationTitle()
+    {
+        return this.RentalId + ": " + enum2str(this.State);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>RentalStatus</Name>
+				<Source><![CDATA[
+    public display str RentalStatus()
+    {
+        return enum2Str(this.State);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>@SYS172552</DeveloperDocumentation>
+	<FormRef>FMRental</FormRef>
+	<Label>@FLM71</Label>
+	<SingularLabel>Rental</SingularLabel>
+	<TableGroup>TransactionHeader</TableGroup>
+	<TitleField1>RentalId</TitleField1>
+	<TitleField2>Customer</TitleField2>
+	<CacheLookup>FoundAndEmpty</CacheLookup>
+	<Modules>FleetManagement</Modules>
+	<ReplacementKey>ReplacementKey</ReplacementKey>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Vehicle</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Customer</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>RentalId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Comments</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Vehicle</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Customer</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>RentalId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>StartDate</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>RentalId</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>Comments</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Customer</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>EndDate</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>EndFuelLevel</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>EndMileage</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>RentalId</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>StartDate</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>StartFuelLevel</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>StartMileage</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>Vehicle</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>PaymentInformationID</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>State</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleRatePerDay</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleRatePerWeek</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>VehicleRateTotal</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>Comments</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMNote</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>Customer</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMCustomerRecId</ExtendedDataType>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldUtcDateTime">
+			<Name>EndDate</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>EndDateTime</ExtendedDataType>
+			<Label>@FLM220</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>EndFuelLevel</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMFuelLevel</ExtendedDataType>
+			<Label>@FLM167</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>EndMileage</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMMileage</ExtendedDataType>
+			<Label>@FLM165</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>RentalId</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMRentalId</ExtendedDataType>
+			<Label>@FLM288</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldUtcDateTime">
+			<Name>StartDate</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>StartDateTime</ExtendedDataType>
+			<Label>@SYS2168</Label>
+			<Mandatory>Yes</Mandatory>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>StartFuelLevel</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMFuelLevel</ExtendedDataType>
+			<Label>@FLM166</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt">
+			<Name>StartMileage</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMMileage</ExtendedDataType>
+			<Label>@FLM164</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>Vehicle</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMVehicleRecId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>PaymentInformationID</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMPaymentInformationId</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>State</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<Label>@FLM230</Label>
+			<EnumType>FMReservationState</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>VehicleRatePerDay</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMRate</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>VehicleRatePerWeek</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMRate</ExtendedDataType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>VehicleRateTotal</Name>
+			<AllowEdit>No</AllowEdit>
+			<AllowEditOnCreate>No</AllowEditOnCreate>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMVehicleTotal</ExtendedDataType>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes>
+		<AxTableIndex>
+			<Name>ReplacementKey</Name>
+			<AlternateKey>Yes</AlternateKey>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>RentalId</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+		<AxTableIndex>
+			<Name>FMVehicleIdx</Name>
+			<AllowDuplicates>Yes</AllowDuplicates>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>Vehicle</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+		<AxTableIndex>
+			<Name>FMCustomerIdx</Name>
+			<AllowDuplicates>Yes</AllowDuplicates>
+			<Fields>
+				<AxTableIndexField>
+					<DataField>Customer</DataField>
+				</AxTableIndexField>
+			</Fields>
+		</AxTableIndex>
+	</Indexes>
+	<Mappings />
+	<Relations>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>FMCustomer</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<CreateNavigationPropertyMethods>Yes</CreateNavigationPropertyMethods>
+			<RelatedTable>FMCustomer</RelatedTable>
+			<RelatedTableCardinality>ZeroOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>Customer</Name>
+					<Field>Customer</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+			<Index>RecId</Index>
+		</AxTableRelation>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>FMVehicle</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<CreateNavigationPropertyMethods>Yes</CreateNavigationPropertyMethods>
+			<RelatedTable>FMVehicle</RelatedTable>
+			<RelatedTableCardinality>ZeroOne</RelatedTableCardinality>
+			<RelationshipType>Association</RelationshipType>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>Vehicle</Name>
+					<Field>Vehicle</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+			<Index>RecId</Index>
+		</AxTableRelation>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>FMPaymentInformation</Name>
+			<Cardinality>ZeroMore</Cardinality>
+			<RelatedTable>FMPaymentInformation</RelatedTable>
+			<RelatedTableCardinality>ZeroOne</RelatedTableCardinality>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>PaymentInformationID</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+		</AxTableRelation>
+	</Relations>
+	<StateMachines />
+</AxTable>

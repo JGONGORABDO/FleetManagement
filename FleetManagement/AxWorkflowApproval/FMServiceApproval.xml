@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxWorkflowApproval xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V2">
+	<Name>FMServiceApproval</Name>
+	<CanceledEventHandler>FMCanceledEventHandler</CanceledEventHandler>
+	<DelegateMenuItem>FMWorkflowDelegate</DelegateMenuItem>
+	<Document>FMWorkflowDocument</Document>
+	<DocumentMenuItem>FMWorkflowDocumentMenuItem</DocumentMenuItem>
+	<HelpText>@FLM298</HelpText>
+	<Label>@FLM208</Label>
+	<ResubmitMenuItem>FMWorkflowResubmit</ResubmitMenuItem>
+	<StartedEventHandler>FMService</StartedEventHandler>
+	<Approve>
+		<Name xmlns="">Approve</Name>
+		<ActionMenuItem xmlns="">FMWorkflowApproval</ActionMenuItem>
+	</Approve>
+	<Deny>
+		<Name xmlns="">Deny</Name>
+		<ActionMenuItem xmlns="">FMWorkflowDeny</ActionMenuItem>
+		<Type xmlns="">Deny</Type>
+	</Deny>
+	<Reject>
+		<Name xmlns="">Reject</Name>
+		<ActionMenuItem xmlns="">FMWorkflowReject</ActionMenuItem>
+		<Type xmlns="">Return</Type>
+	</Reject>
+	<RequestChange>
+		<Name xmlns="">RequestChange</Name>
+		<ActionMenuItem xmlns="">FMWorkflowRequestChange</ActionMenuItem>
+		<Type xmlns="">RequestChange</Type>
+	</RequestChange>
+</AxWorkflowApproval>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMReservationManagementWorkspace</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[SysAppWorkspaceAttribute("B6EDC94F-F10E-4050-B79E-B56C965368DA", "FMReservationManagementWorkspace")]
+class FMReservationManagementWorkspace extends SysAppWorkspace
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>reservationList</Name>
+				<Source><![CDATA[
+    //Pages are created by adding SysAppPage attribute to methods
+    //The return types of these methods is a class that will be used to create page controls
+    [SysAppPage("All Reservation", "All reservations description")]
+    public FMAllReservationListPage reservationList(SysAppRequestParams _requestParams)
+    {
+        return FMAllReservationListPage::getAllReservations(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>reservationDetails</Name>
+				<Source><![CDATA[
+    [SysAppPageAttribute("Reservation details", "Reservation details description")]
+    public FMReservationDetailsPage reservationDetails(SysAppRequestParams _requestParams)
+    {
+        return FMReservationDetailsPage::getReservationDetails(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalChargeDetails</Name>
+				<Source><![CDATA[
+    [SysAppPageAttribute("Rental charge details", "Rental charge details description")]
+    public FMRentalChargeListItem rentalChargeDetails(SysAppRequestParams _requestParams)
+    {
+        return FMRentalChargeListItem::getRentalChargeDetails(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerList</Name>
+				<Source><![CDATA[
+    //If we would like to mark a page to serve as a lookup page for an entity, we use SysAppLookup attribute.
+    //Note that we need to provide the CONTROL NAMEs of display and value fields.
+    //These CONTROL NAMEs are different from the contract field names and should be construction as EntityName_controlName
+    //If the control is in a nested relation contract the control name will be EntityName_EntityName_controlName
+    //Display control can come from a nested relational cotract field, the value control should always be from the entity and not from any other nested relational entity
+    [
+        SysAppPageAttribute("All Customers", "All customers description"),
+        SysAppLookUpAttribute("FMCustomer_customerFirstName", "FMCustomer_recId")
+    ]
+    public FMCustomerListPage customerList(SysAppRequestParams _requestParams)
+    {        
+        return FMCustomerListPage::getAllCustomers(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customerDetails</Name>
+				<Source><![CDATA[
+    [SysAppPageAttribute("Customer details", "Customer details description")]
+    public FMCustomerDetailsPage customerDetails(SysAppRequestParams _requestParams)
+    {
+        return FMCustomerDetailsPage::getCustomerDetails(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>activeReservationList</Name>
+				<Source><![CDATA[
+    //SysAppSecurity attribute can be used to assign menu item security to pages and actions
+    //If the current logged in user donot have access to the menu item that the page or action will be not sent to the mobile client
+    [
+        SysAppPageAttribute("Active Reservation", "Active reservations description"),
+        SysAppSecurityAttribute("CustTableListPage")
+    ]
+    public FMActiveReservationListPage activeReservationList(SysAppRequestParams _requestParams)
+    {
+        return FMActiveReservationListPage::getActiveReservations(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>vehicleList</Name>
+				<Source><![CDATA[
+    [
+        SysAppPageAttribute("All Vehicles", "All vehicles description"),
+        SysAppLookUpAttribute("FMVehicle_vehicleDescription", "FMVehicle_recId")
+    ]
+    public FMVehicleListPage vehicleList(SysAppRequestParams _requestParams)
+    {
+        return FMVehicleListPage::getAllVehicles(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>createReservation</Name>
+				<Source><![CDATA[
+    //Actions are created by adding SysAppAction attribute to methods.
+    //These methods accept as 2nd parameter (optional) a class object that will be used to create action controls
+    [SysAppActionAttribute("New reservation", "Create new reservation description", SysAppCrudOperation::Create, methodStr(FMReservationManagementWorkspace, activeReservationList))]
+    public SysAppResponse createReservation(SysAppRequestParams _requestParams, FMCreateReservationAction _reservationDetails)
+    {
+        return _reservationDetails.createReservation(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>updateCustomer</Name>
+				<Source><![CDATA[
+    [SysAppActionAttribute("Update customer details", "Update customer details description", SysAppCrudOperation::Update, methodStr(FMReservationManagementWorkspace, customerDetails))]
+    public SysAppResponse updateCustomer(SysAppRequestParams _requestParams, FMUpdateCustomerAction _customerDetails)
+    {        
+        return _customerDetails.updateCustomerDetails(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>addCustomer</Name>
+				<Source><![CDATA[
+    [SysAppActionAttribute("New customer", "Add new customer description",SysAppCrudOperation::Create, methodStr(FMReservationManagementWorkspace, customerList))]
+    public SysAppResponse addCustomer(SysAppRequestParams _requestParams, FMCreateCustomerAction _customerDetails)
+    {
+        return _customerDetails.addCustomer(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>deleteCustomer</Name>
+				<Source><![CDATA[
+    [SysAppActionAttribute("Delete Customer", "Delete a customer description",SysAppCrudOperation::Delete, methodStr(FMReservationManagementWorkspace, customerDetails))]
+    public SysAppResponse deleteCustomer(SysAppRequestParams _requestParams, FMCustomerPage _customerDetails)
+    {
+        return FMCustomerPage::deleteCustomer(_requestParams.entityContext(), _requestParams.filterContext());
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

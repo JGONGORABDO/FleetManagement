@@ -1,0 +1,784 @@
+﻿@FLM41=2011 年 3 月 4 日に作成されたラベルファイル
+ ;By user Admin
+@FLM42=赤
+ ;Fleet colors
+@FLM43=青
+ ;Fleet colors
+@FLM44=緑
+ ;Fleet colors
+@FLM46=画像の選択
+ ;Fleet label
+@FLM47=変更
+ ;Fleet label
+@FLM48=削除
+ ;Fleet label
+@FLM49=顧客
+ ;Fleet label
+@FLM50=開く
+ ;Fleet label
+@FLM51=新規
+ ;Fleet label
+@FLM52=レンタル
+ ;Fleet label
+@FLM53=全般
+ ;Fleet label
+@FLM55=表示
+ ;Fleet label
+@FLM56=削除
+ ;Fleet label
+@FLM57=アタッチメント
+ ;Fleet label
+@FLM58=完了
+ ;Fleet label
+@FLM59=レンタル料
+ ;Fleet label
+@FLM60=レンタル期間
+ ;Fleet label
+@FLM61=開始
+ ;Fleet label
+@FLM62=終了
+ ;Fleet label
+@FLM63=マイレージ
+ ;Fleet label
+@FLM64=開始
+ ;Fleet label
+@FLM65=終了
+ ;Fleet label
+@FLM66=燃料レベル
+ ;Fleet label
+@FLM67=受取
+ ;Fleet label
+@FLM68=料金
+ ;Fleet label
+@FLM69=料金の追加
+ ;Fleet label
+@FLM70=トラックを含める
+ ;Fleet label
+@FLM71=レンタル
+ ;Fleet label
+@FLM72=編集
+ ;Fleet label
+@FLM73=フリート管理のコンフィギュレーション
+ ;Fleet label
+@FLM74=車両のメーカーとモデル
+ ;Fleet label
+@FLM75=車両のメーカーとモデルを定義します
+ ;Fleet label
+@FLM76=モデルの見本画像を含め、在庫にある車両のメーカーとモデルを定義します。
+ ;Fleet label
+@FLM77=モデル画像
+ ;Fleet label
+@FLM78=参照...
+ ;Fleet label
+@FLM79=新しいメーカー
+ ;Fleet label
+@FLM80=新しいモデル
+ ;Fleet label
+@FLM81=レンタル料金のタイプ
+ ;Fleet label
+@FLM82=料金タイプの定義
+ ;Fleet label
+@FLM83=料金タイプは、個々のレンタル料金を分類する目的で使用します。そうすることで費用が追跡しやすくなります。
+ ;Fleet label
+@FLM84=SUV 安全性評価
+ ;Fleet label
+@FLM85=SUV 安全性評価の定義
+ ;Fleet label
+@FLM86=車両
+ ;Fleet label
+@FLM87=メンテナンス
+ ;Fleet label
+@FLM88=履歴
+ ;Fleet label
+@FLM89=料金履歴
+ ;Fleet label
+@FLM90=料金
+ ;Fleet label
+@FLM91=詳細
+ ;Fleet label
+@FLM92=自動車と SUV の情報
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=トラック情報
+ ;Fleet label
+@FLM95=車両
+ ;Fleet label
+@FLM96=在庫状態
+ ;Fleet label
+@FLM97=場所
+ ;Fleet label
+@FLM98=メンテナンス
+ ;Fleet label
+@FLM99=レコード
+ ;Fleet label
+@FLM100=リスト
+ ;Fleet label
+@FLM101=車両 ID
+ ;Fleet label
+@FLM102=車両料金決定日マネージャー
+ ;Fleet label
+@FLM103=新しいバージョン
+ ;Fleet label
+@FLM104=車両メンテナンス
+ ;Fleet label
+@FLM105=フリート管理
+ ;Fleet label
+@FLM106=最近のレンタル
+ ;Fleet label
+@FLM107=内部組織 (セキュリティ アクセス)
+ ;Fleet label
+@FLM108=ユーザーにセキュリティ アクセス権がある車両
+ ;Fleet label
+@FLM109=ユーザーにアクセス権がある内部組織
+ ;Fleet label
+@FLM110=トラック
+ ;Fleet label
+@FLM111=SUV
+ ;Fleet label
+@FLM112=顧客表示ページのメニュー
+ ;Fleet label
+@FLM113=アクション
+ ;Fleet label
+@FLM114=車両メニュー
+ ;Fleet label
+@FLM115=車両表示ページのメニュー
+ ;Fleet label
+@FLM116=支店 - 非推奨
+ ;Fleet label
+@FLM117=レンタル場所 - 非推奨
+ ;Fleet label
+@FLM118=地域 - 非推奨
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=燃料タイプ
+ ;Fleet label
+@FLM123=標準
+ ;Fleet label
+@FLM124=プレミアム
+ ;Fleet label
+@FLM125=GPS 有効
+ ;Fleet label
+@FLM126=オイル交換
+ ;Fleet label
+@FLM127=修理
+ ;Fleet label
+@FLM128=予防的メンテナンス
+ ;Fleet label
+@FLM129=検査待ち
+ ;Fleet label
+@FLM130=サービス待ち
+ ;Fleet label
+@FLM131=承認待ち
+ ;Fleet label
+@FLM132=クリーニング待ち
+ ;Fleet label
+@FLM133=完了
+ ;Fleet label
+@FLM134=トランスミッション
+ ;Fleet label
+@FLM135=オートマチック
+ ;Fleet label
+@FLM136=マニュアル
+ ;Fleet label
+@FLM137=利用可
+ ;Fleet label
+@FLM138=サービス中
+ ;Fleet label
+@FLM139=レンタル
+ ;Fleet label
+@FLM140=破損
+ ;Fleet label
+@FLM141=リコール済
+ ;Fleet label
+@FLM142=保留中
+ ;Fleet label
+@FLM143=車両のタイプ
+ ;Fleet label
+@FLM144=不明
+ ;Fleet label
+@FLM145=トラック
+ ;Fleet label
+@FLM146=自動車
+ ;Fleet label
+@FLM147=費用のタイプ
+ ;Fleet label
+@FLM148=運転免許証
+ ;Fleet label
+@FLM149=メーカー モデル
+ ;Fleet label
+@FLM150=メモ
+ ;Fleet label
+@FLM151=車両レンタル情報
+ ;Fleet label
+@FLM152=安全性評価 ID
+ ;Fleet label
+@FLM153=SUV 安全性評価
+ ;Fleet label
+@FLM154=合計レンタル
+ ;Fleet label
+@FLM155=メーカー
+ ;Fleet label
+@FLM156=車両メーカー
+ ;Fleet label
+@FLM157=モデル
+ ;Fleet label
+@FLM158=車両モデル
+ ;Fleet label
+@FLM159=自動車
+ ;Fleet label
+@FLM160=ドア
+ ;Fleet label
+@FLM161=定員
+ ;Fleet label
+@FLM162=料金のタイプ
+ ;Fleet label
+@FLM163=有効期限
+ ;Fleet label
+@FLM164=マイレージの開始
+ ;Fleet label
+@FLM165=マイレージの終了
+ ;Fleet label
+@FLM166=開始燃料レベル
+ ;Fleet label
+@FLM167=終了燃料レベル
+ ;Fleet label
+@FLM168=車両レンタル情報
+ ;Fleet label
+@FLM169=3 列目定員
+ ;Fleet label
+@FLM170=旋回半径
+ ;Fleet label
+@FLM171=ロード クリアランス
+ ;Fleet label
+@FLM172=操作安定性評価
+ ;Fleet label
+@FLM173=全体評価
+ ;Fleet label
+@FLM174=移動空間
+ ;Fleet label
+@FLM175=床面積
+ ;Fleet label
+@FLM176=最大積載量
+ ;Fleet label
+@FLM177=タイプ
+ ;Fleet label
+@FLM178=車両総重量
+ ;Fleet label
+@FLM179=車両状態
+ ;Fleet label
+@FLM180=組織
+ ;Fleet label
+@FLM181=グループのプレビュー
+ ;Fleet label
+@FLM182=車両メーカー
+ ;Fleet label
+@FLM183=車両モデル
+ ;Fleet label
+@FLM184=車両画像
+ ;Fleet label
+@FLM185=モデル仕様
+ ;Fleet label
+@FLM186=画像形式
+ ;Fleet label
+@FLM187=車両料金
+ ;Fleet label
+@FLM188=1 日あたりの料金
+ ;Fleet label
+@FLM189=1 週間あたりの料金
+ ;Fleet label
+@FLM190=ロールに関連付けられている内部組織
+ ;Fleet label
+@FLM191=ユーザーのロールに関連付けられた内部組織を含むテーブル
+ ;Fleet label
+@FLM192=DimAttributeOMBranch ビューには、支店としてマークされている OMOperatingUnit テーブルのすべてのレコードが格納されます。
+ ;Fleet label
+@FLM193=DimAttributeOMRegion ビューには、地域としてマークされている OMOperatingUnit テーブルのすべてのレコードが格納されます。
+ ;Fleet label
+@FLM194=DimAttributeOMRentalLocation ビューには、レンタル場所としてマークされている OMOperatingUnit テーブルのすべてのレコードが格納されます。
+ ;Fleet label
+@FLM195=フリート管理センター
+ ;Fleet label
+@FLM196=追加
+ ;Fleet label
+@FLM197=現在のレンタル
+ ;Fleet label
+@FLM198=割り当て済車両
+ ;Fleet label
+@FLM199=使用可能な車両
+ ;Fleet label
+@FLM200=リコール済車両
+ ;Fleet label
+@FLM201=完了
+ ;Fleet label
+@FLM202=処理中
+ ;Fleet label
+@FLM203=料金履歴
+ ;Fleet label
+@FLM204=完全レンタル
+ ;Fleet label
+@FLM205=車両のクリーニング
+ ;Fleet label
+@FLM206=車両の検査
+ ;Fleet label
+@FLM207=車両の修理
+ ;Fleet label
+@FLM208=サービス承認
+ ;Fleet label
+@FLM209=顧客の詳細
+ ;Fleet label
+@FLM210=名前
+ ;Fleet label
+@FLM211=ライセンス
+ ;Fleet label
+@FLM212=住所
+ ;Fleet label
+@FLM213=電話
+ ;Fleet label
+@FLM214=電子メール
+ ;Fleet label
+@FLM215=支払情報
+ ;Fleet label
+@FLM216=クレジット カード
+ ;Fleet label
+@FLM217=終了
+ ;Fleet label
+@FLM218=日付
+ ;Fleet label
+@FLM219=レンタル開始
+ ;Fleet label
+@FLM220=終了日
+ ;Fleet label
+@FLM221=説明
+ ;Fleet label
+@FLM222=数量
+ ;Fleet label
+@FLM223=拡張
+ ;Fleet label
+@FLM224=車両詳細
+ ;Fleet label
+@FLM225=メーカーとモデル
+ ;Fleet label
+@FLM226=1 日あたりの料金
+ ;Fleet label
+@FLM227=1 週間あたりの料金
+ ;Fleet label
+@FLM228=車両プレビュー パーツ
+ ;Fleet label
+@FLM229=色
+ ;Fleet label
+@FLM230=状態
+ ;Fleet label
+@FLM231=割り当て済車両
+ ;Fleet label
+@FLM232=フリート管理キュー
+ ;Fleet label
+@FLM233=ユーザーを BU に制限
+ ;Fleet label
+@FLM234=車両へのアクセス (セキュリティ アクセス)
+ ;Fleet label
+@FLM235=レンタル レコード用セルフサービス
+ ;Fleet label
+@FLM236=フリート管理係
+ ;Fleet label
+@FLM237=レンタル係
+ ;Fleet label
+@FLM238=フリート管理支店マネージャー
+ ;Fleet label
+@FLM239=レンタル支店マネージャー
+ ;Fleet label
+@FLM240=フリート管理サービス技術者
+ ;Fleet label
+@FLM241=サービス技術者
+ ;Fleet label
+@FLM242=ワークフローの使用
+ ;Fleet label
+@FLM243=使用できる自動車在庫を公開するサービス グループ
+ ;Fleet label
+@FLM244=ドア数
+ ;Number of doors in the FM vehicle
+@FLM245=増額
+ ;Fleet label
+@FLM246=燃料レベル
+ ;Fleet label
+@FLM247=ロード クリアランス
+ ;Fleet label
+@FLM248=トラック床面積
+ ;Fleet label
+@FLM249=最大積載量
+ ;Fleet label
+@FLM250=頭上移動空間
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=評価
+ ;Fleet label
+@FLM253=レンタル合計
+ ;Fleet label
+@FLM254=座席
+ ;Fleet label
+@FLM255=費用のタイプ
+ ;Fleet label (table)
+@FLM256=定員
+ ;Fleet label
+@FLM257=旋回半径
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=ワークフロー クエリ
+ ;Fleet label
+@FLM260=メンテナンス レコード
+ ;Fleet label
+@FLM261=新しいレンタル
+ ;Fleet label
+@FLM262=すべてのレンタル
+ ;Fleet label
+@FLM263=フリート設定
+ ;Fleet label
+@FLM264=すべての車両
+ ;Fleet label
+@FLM265=レート日付
+ ;Fleet label
+@FLM268=支店 _DEMO_
+ ;Fleet label
+@FLM269=レンタル場所 _DEMO_
+ ;Fleet label
+@FLM270=地域 _DEMO_
+ ;Fleet label
+@FLM271=クリーニング完了
+ ;Fleet label
+@FLM272=顧客の削除
+ ;Fleet label
+@FLM273=選択したレンタルの削除
+ ;Fleet label
+@FLM274=選択した車両の削除
+ ;Fleet label
+@FLM275=検査完了
+ ;Fleet label
+@FLM276=サービス完了
+ ;Fleet label
+@FLM278=ワークフローの開始
+ ;Fleet label
+@FLM279=サービスの承認
+ ;Fleet label
+@FLM280=サービスの拒否
+ ;Fleet label
+@FLM281=サービスの却下
+ ;Fleet label
+@FLM282=選択した車両の削除
+ ;Fleet label
+@FLM283=ワークフロー コンフィギュレーション
+ ;Fleet label
+@FLM284=支店の作成または更新
+ ;Fleet label
+@FLM285=レンタル場所を作成または更新します
+ ;Fleet label
+@FLM286=地域の作成または更新
+ ;Fleet label
+@FLM287=顧客の追加/編集
+ ;Fleet label
+@FLM288=車両レンタル ID
+ ;Fleet label (table)
+@FLM289=レンタル料金の追加/編集
+ ;Fleet label
+@FLM290=料金の詳細
+ ;Fleet label
+@FLM291=レンタルの詳細
+ ;Fleet label
+@FLM292=レンタルの編集
+ ;Fleet label
+@FLM293=顧客別レンタル
+ ;Fleet label
+@FLM294=モデルごとのレンタル
+ ;Fleet label
+@FLM295=車両の追加/編集
+ ;Fleet label
+@FLM296=次回のレンタル
+ ;Fleet label
+@FLM297=車両ごとのレンタル
+ ;Fleet label
+@FLM298=オンライン ヘルプを参照してください
+ ;Fleet label
+@FLM299=レンタル料金のタイプ
+ ;Fleet label
+@FLM300=マイレージの記録
+ ;Fleet label
+@FLM301=フリート プロセス サイクル
+ ;Fleet label
+@FLM302=フリート - フリート設定の管理
+ ;Fleet label
+@FLM303=フリート - 顧客レコードの編集
+ ;Fleet label
+@FLM304=フリート - 顧客の管理
+ ;Fleet label
+@FLM305=フリート - 在庫の管理
+ ;Fleet label
+@FLM306=フリート - レンタカー
+ ;Fleet label
+@FLM307=フリート - 顧客レコードの表示
+ ;Fleet label
+@FLM308=フリート - 在庫の表示
+ ;Fleet label
+@FLM309=フリート - ワークフロー係
+ ;Fleet label
+@FLM310=車両の色
+ ;Fleet label
+@FLM311=フリート - ワークフロー マネージャー
+ ;Fleet label
+@FLM312=フリート - ワークフロー サービス技術者
+ ;Fleet label
+@FLM313=フリート - 基本職務
+ ;Fleet label
+@FLM314=フリート - 車両の管理
+ ;Fleet label
+@FLM315=フリート標準プロセス サイクル
+ ;Fleet label
+@FLM316=車両マイレージ
+ ;Fleet label
+@FLM317=費用
+ ;Fleet label
+@FLM318=クリアランス
+ ;Fleet label
+@FLM54=顧客
+ ;Fleet label
+@FLM266=クレジット カード期限切れ
+ ;Fleet label (table)
+@FLM277=運転免許証
+ ;Fleet label (table)
+@FLM320=顧客リスト
+ ;Fleet label (report menu item)
+@FLM321=顧客リスト レポート
+ ;Fleet label (report menu item help text)
+@FLM267=ワークフローの設定
+ ;Fleet label
+@FLM400=車両メンテナンス ワークフロー
+ ;Fleet label
+@FLM500=希望の支払方法
+ ;Fleet label
+@FLM501=白
+ ;Fleet colors
+@FLM502=灰色
+ ;Fleet colors
+@FLM503=黄
+ ;Fleet colors
+@FLM504=オレンジ
+ ;Fleet colors
+@FLM505=受取
+ ;Fleet label
+@FLM506=返却
+ ;Fleet label
+@FLM507=レンタル開始
+ ;Fleet label
+@FLM401=予約管理
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=以前のマイレージ
+ ;Fleet label for returning vehicle slider
+@FLM509=新しいマイレージ
+ ;Fleet label for returning vehicle slider
+@FLM510=車両レンタル
+ ;Fleet label
+@FLM512=追加料金
+ ;Fleet label
+@FLM513=割引
+ ;Fleet label
+@FLM514=新規予約
+ ;New reservation menu item label
+@FLM515=年式
+ ;Field label for Year field in FmVehicleModel
+@FLM516=有効期限 (年)
+ ;Expiration year label
+@FLM517=顧客レポート
+ ;Fleet tile label
+@FLM518=既存の予約
+ ;Fleet tile label
+@FLM519=期限切れのレンタル
+ ;Fleet tile label
+@FLM520=支払名
+ ;Fleet PaymentInfo field label
+@FLM521=カード検証値
+ ;Fleet label
+@FLM522=有効期限 (月)
+ ;Expiration month label
+@FLM523=カード名義
+ ;Fleet name on credit card
+@FLM524=車両料金履歴
+ ;Fleet form label
+@FLM525=新しいコメント
+ ;Fleet dialog caption
+@FLM526=新しい顧客
+ ;Fleet dialog caption
+@FLM527=新しい支払情報
+ ;Fleet dialog caption
+@FLM528=アクセサリの追加
+ ;Fleet dialog caption
+@FLM529=顧客の選択
+ ;Fleet dialog caption
+@FLM530=集荷準備完了
+ ;Fleet ReservationState enum option
+@FLM531=住所レコード ID
+ ;Fleet label
+@FLM532=16 進値の色コード
+ ;Fleet label
+@FLM533=色 ID
+ ;Fleet label
+@FLM534=色名
+ ;Fleet label
+@FLM535=割引 ID
+ ;Fleet label
+@FLM536=支払情報 ID
+ ;Fleet label
+@FLM537=引当 ID
+ ;Fleet label
+@FLM539=レンタル車両
+ ;Fleet label
+@FLM540=フリート管理
+ ;Fleet menu label
+@FLM541=デモ データの読み込み
+ ;Fleet button text
+@FLM542=料金履歴
+ ;Fleet button text
+@FLM543=顧客の変更
+ ;Fleet dialog label
+@FLM544=車両の選択
+ ;Fleet button text
+@FLM545=すべての予約
+ ;Fleet grid title
+@FLM546=顧客フィードバック
+ ;Fleet group label
+@FLM547=レンタル情報
+ ;Fleet group label
+@FLM548=チャージ画像
+ ;Fleet group label
+@FLM549=データの設定
+ ;Fleet tab label
+@FLM550=車両情報
+ ;Fleet group label
+@FLM551=使用可能な車両
+ ;Fleet chart label
+@FLM552=車両レンタル状態
+ ;Fleet chart label
+@FLM553=モデル別車両 - 収益
+ ;Fleet chart label
+@FLM554=本日受取
+ ;Fleet panorama label
+@FLM555=本日返却
+ ;Fleet panorama label
+@FLM556=レンタル料金
+ ;Fleet panorama label
+@FLM558=予約詳細
+ ;Fleet panorama label
+@FLM559=アクセサリ
+ ;Fleet panorama label
+@FLM560=機能
+ ;Fleet group label
+@FLM561=受取情報
+ ;Fleet field label
+@FLM562=返却情報
+ ;Fleet field label
+@FLM563=レンタル リスト
+ ;Fleet report label
+@FLM564=サンプルの顧客、レンタル、車両を作成します
+ ;Fleet TOC label
+@FLM565=所要時間は数秒程度です。
+ ;New Comment
+@FLM322=顧客別レンタル
+ ;Fleet report label
+@FLM566=顧客グラフ
+ ;Fleet form part caption
+@FLM567=車両収益グラフ
+ ;Fleet form part caption
+@FLM601=フリート管理のレンタル
+ ;Fleet rental entity
+@FLM602=フリート管理の顧客
+ ;Fleet customer entity
+@FLM603=サンプル アプレット
+ ;Label for the sample applet name
+@FLM604=アプレット フレームワークのデモンストレーションとテストに使用するサンプル アプレット
+ ;Label for the sample applet description
+@FLM605=詳細情報
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=顧客の場所
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=テンプレートでは顧客の場所のマップが提供されます
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=状態別のレンタル
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=テンプレートではレンタル状態の数が提供されます
+ ;Rentals by status template description
+FMCustomerEntityView=フリート管理の顧客エンティティの表示
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=フリート管理の顧客エンティティの管理
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=フリート管理のレンタル エンティティの表示
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=フリート管理のレンタル エンティティの管理
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=活動エンティティの表示
+ ;View privilege for RCADActivity
+RCADActivityMaintain=活動エンティティの管理
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=カテゴリ エンティティの表示
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=カテゴリ エンティティの管理
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=法人エンティティの表示
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=法人エンティティの管理
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=明細行プロパティ エンティティの表示
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=明細行プロパティ エンティティの管理
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=期間エンティティの表示
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=期間エンティティの管理
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=プロジェクト エンティティの表示
+ ;View privilege for RCADProject
+RCADProjectMaintain=プロジェクト エンティティの管理
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=タイムシート エンティティの表示
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=タイムシート エンティティの管理
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=タイムシート エントリ エンティティの表示
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=タイムシート エントリ エンティティの管理
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=タイムシートの設定エンティティの表示
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=タイムシートの設定エンティティの管理
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=タイムシートのワークフロー履歴エンティティの表示
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=タイムシートのワークフロー履歴エンティティの管理
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=ワークフロー履歴項目エンティティの表示
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=ワークフロー履歴項目エンティティの管理
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=レンタルの検索
+FMTemplateCustomerInformationDisplayName=顧客情報
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=テンプレートは、基本的な顧客情報と、そのレンタルの一覧を提供します
+ ;Fleet customer information template description
+DataCreated=サンプル データが作成されました。
+DataRestored=サンプル データが復元されました。
+DataRestoreConfirm=すべてのフリート管理データが元の状態に復元されます。この操作を実行しますか?
+Branch=分岐 _DEMO_
+ ;Branch operating unit type
+RentalLocation=レンタル場所 _DEMO_
+ ;Rental location operating unit type
+Region=地域 _DEMO_
+ ;Region operating unit type
+Timestamp=タイムスタンプ
+ ;Comment timestamp
+CustomerImage=顧客画像
+ ;Fleet label
+Analytics=分析
+ ;used on Fleet clerk workspace for Analytics section

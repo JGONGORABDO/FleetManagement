@@ -1,0 +1,2 @@
+﻿DataManagementFleetMasterEntitiesMaintain=Andmehalduse põhiüksuse andmete haldamine 
+DataManagementFleetMasterEntitiesView=Andmehalduse põhiüksuse andmete kuvamine 

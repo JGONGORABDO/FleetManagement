@@ -1,0 +1,784 @@
+﻿@FLM41=تم إنشاء ملفات التسمية في 4/3/2011
+ ;By user Admin
+@FLM42=أحمر
+ ;Fleet colors
+@FLM43=أزرق
+ ;Fleet colors
+@FLM44=أخضر
+ ;Fleet colors
+@FLM46=اختيار صورة
+ ;Fleet label
+@FLM47=التغيير
+ ;Fleet label
+@FLM48=إزالة
+ ;Fleet label
+@FLM49=العميل
+ ;Fleet label
+@FLM50=مفتوح
+ ;Fleet label
+@FLM51=جديد
+ ;Fleet label
+@FLM52=الإيجار
+ ;Fleet label
+@FLM53=عام
+ ;Fleet label
+@FLM55=عرض
+ ;Fleet label
+@FLM56=حذف
+ ;Fleet label
+@FLM57=المرفقات
+ ;Fleet label
+@FLM58=إكمال
+ ;Fleet label
+@FLM59=مصاريف الإيجار
+ ;Fleet label
+@FLM60=فترة الإيجار
+ ;Fleet label
+@FLM61=من
+ ;Fleet label
+@FLM62=إلى
+ ;Fleet label
+@FLM63=المسافة المقطوعة بالميل
+ ;Fleet label
+@FLM64=بدء
+ ;Fleet label
+@FLM65=نهاية
+ ;Fleet label
+@FLM66=مستويات الوقود
+ ;Fleet label
+@FLM67=التقاط
+ ;Fleet label
+@FLM68=المصاريف
+ ;Fleet label
+@FLM69=إضافة تكلفة
+ ;Fleet label
+@FLM70=تضمين شاحنات
+ ;Fleet label
+@FLM71=الإيجارات
+ ;Fleet label
+@FLM72=تحرير
+ ;Fleet label
+@FLM73=تكوين إدارة الأسطول
+ ;Fleet label
+@FLM74=طراز المركبة ونوعها
+ ;Fleet label
+@FLM75=تحديد طراز المركبة ونوعها
+ ;Fleet label
+@FLM76=تحديد أنواع وطرز المركبات في المخزون لديك، بما في ذلك صورة نموذجية للطراز.
+ ;Fleet label
+@FLM77=صورة الطراز
+ ;Fleet label
+@FLM78=استعراض...
+ ;Fleet label
+@FLM79=نوع جديد
+ ;Fleet label
+@FLM80=طراز جديد
+ ;Fleet label
+@FLM81=أنواع مصاريف الإيجار
+ ;Fleet label
+@FLM82=تحديد أنواع المصاريف
+ ;Fleet label
+@FLM83=يتم استخدام نوع المصاريف لتصنيف كل تكلفة الإيجار. يسمح لك ذلك بمتابعة المصاريف بطريقة أسهل.
+ ;Fleet label
+@FLM84=تقييمات أمان السيارات متعددة الأغراض
+ ;Fleet label
+@FLM85=تحديد تقييمات أمان السيارات متعددة الأغراض
+ ;Fleet label
+@FLM86=مركبات
+ ;Fleet label
+@FLM87=احتفاظ
+ ;Fleet label
+@FLM88=المحفوظات
+ ;Fleet label
+@FLM89=المعدلات السابقة
+ ;Fleet label
+@FLM90=المعدلات
+ ;Fleet label
+@FLM91=التفاصيل
+ ;Fleet label
+@FLM92=معلومات السيارات والسيارات متعددة الأغراض
+ ;Fleet label
+@FLM93=السيارات متعددة الأغراض
+ ;Fleet label
+@FLM94=معلومات الشاحنة
+ ;Fleet label
+@FLM95=مركبات
+ ;Fleet label
+@FLM96=مدى التوفر
+ ;Fleet label
+@FLM97=الموقع
+ ;Fleet label
+@FLM98=صيانة
+ ;Fleet label
+@FLM99=السجل
+ ;Fleet label
+@FLM100=القائمة
+ ;Fleet label
+@FLM101=معرف المركبة
+ ;Fleet label
+@FLM102=مدير تاريخ معدل المركبة
+ ;Fleet label
+@FLM103=إصدار جديد
+ ;Fleet label
+@FLM104=صيانة المركبة
+ ;Fleet label
+@FLM105=إدارة الأسطول
+ ;Fleet label
+@FLM106=الإيجارات الحديثة
+ ;Fleet label
+@FLM107=المؤسسات الداخلية للوصول إلى الأمان
+ ;Fleet label
+@FLM108=المركبات التي للمستخدم صلاحية الوصول الآمن إليها
+ ;Fleet label
+@FLM109=المؤسسات الداخلية التي يتمتع المستخدم بصلاحية الوصول إليها
+ ;Fleet label
+@FLM110=الشاحنات
+ ;Fleet label
+@FLM111=سيارات رياضية متعددة الأغراض
+ ;Fleet label
+@FLM112=قائمة لصفحات عرض العملاء
+ ;Fleet label
+@FLM113=الإجراءات
+ ;Fleet label
+@FLM114=قائمة المركبات
+ ;Fleet label
+@FLM115=قائمة لصفحات عرض المركبات
+ ;Fleet label
+@FLM116=الفرع - مهمل
+ ;Fleet label
+@FLM117=موقع الإيجار - مهمل
+ ;Fleet label
+@FLM118=المنطقة - مهمل
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=نوع الوقود
+ ;Fleet label
+@FLM123=قياسي
+ ;Fleet label
+@FLM124=المكافأة
+ ;Fleet label
+@FLM125=نظام GPS ممكَّن
+ ;Fleet label
+@FLM126=تغيير الزيت
+ ;Fleet label
+@FLM127=إصلاح
+ ;Fleet label
+@FLM128=الصيانة الوقائية
+ ;Fleet label
+@FLM129=في انتظار الامتحان
+ ;Fleet label
+@FLM130=في انتظار الخدمة
+ ;Fleet label
+@FLM131=في انتظار الموافقة
+ ;Fleet label
+@FLM132=في انتظار التنظيف
+ ;Fleet label
+@FLM133=تم
+ ;Fleet label
+@FLM134=الإرسال
+ ;Fleet label
+@FLM135=تلقائي
+ ;Fleet label
+@FLM136=يدوي
+ ;Fleet label
+@FLM137=متوفر
+ ;Fleet label
+@FLM138=في الخدمة
+ ;Fleet label
+@FLM139=مستأجَر
+ ;Fleet label
+@FLM140=تالف
+ ;Fleet label
+@FLM141=تم الاستدعاء
+ ;Fleet label
+@FLM142=معلق
+ ;Fleet label
+@FLM143=نوع المركبة
+ ;Fleet label
+@FLM144=غير معروف
+ ;Fleet label
+@FLM145=الشاحنة
+ ;Fleet label
+@FLM146=السيارة
+ ;Fleet label
+@FLM147=نوع الرسوم
+ ;Fleet label
+@FLM148=رخص السائقين
+ ;Fleet label
+@FLM149=نموذج النوع
+ ;Fleet label
+@FLM150=ملاحظات
+ ;Fleet label
+@FLM151=معلومات استئجار المركبة
+ ;Fleet label
+@FLM152=معرف تقييم الأمان
+ ;Fleet label
+@FLM153=تقييم أمان السيارات متعددة الأغراض
+ ;Fleet label
+@FLM154=إجمالي الإيجارات
+ ;Fleet label
+@FLM155=النوع
+ ;Fleet label
+@FLM156=ماركة المركبة
+ ;Fleet label
+@FLM157=الطراز
+ ;Fleet label
+@FLM158=طراز المركبة
+ ;Fleet label
+@FLM159=السيارات
+ ;Fleet label
+@FLM160=الأبواب
+ ;Fleet label
+@FLM161=عدد المقاعد
+ ;Fleet label
+@FLM162=أنواع التكلفة
+ ;Fleet label
+@FLM163=تاريخ انتهاء الصلاحية
+ ;Fleet label
+@FLM164=بداية المسافة المقطوعة
+ ;Fleet label
+@FLM165=نهاية المسافة المقطوعة
+ ;Fleet label
+@FLM166=بداية مستوى الوقود
+ ;Fleet label
+@FLM167=نهاية مستوى الوقود
+ ;Fleet label
+@FLM168=معلومات استئجار المركبة
+ ;Fleet label
+@FLM169=قدرة مقاعد الصف الثالث
+ ;Fleet label
+@FLM170=نصف قطر الدوران
+ ;Fleet label
+@FLM171=الارتفاع عن الأرض
+ ;Fleet label
+@FLM172=تقييم انقلاب المركبة
+ ;Fleet label
+@FLM173=التقييم الإجمالي
+ ;Fleet label
+@FLM174=مساحة التحرك.
+ ;Fleet label
+@FLM175=المساحة
+ ;Fleet label
+@FLM176=أقصى حمل
+ ;Fleet label
+@FLM177=النوع
+ ;Fleet label
+@FLM178=الوزن الإجمالي للمركبة
+ ;Fleet label
+@FLM179=حالة المركبة
+ ;Fleet label
+@FLM180=المؤسسة
+ ;Fleet label
+@FLM181=مجموعة المعاينة
+ ;Fleet label
+@FLM182=أنوع المركبات
+ ;Fleet label
+@FLM183=موديلات المركبات
+ ;Fleet label
+@FLM184=صورة المركبة
+ ;Fleet label
+@FLM185=مواصفات الطراز
+ ;Fleet label
+@FLM186=تنسيق الصورة
+ ;Fleet label
+@FLM187=معدلات المركبات
+ ;Fleet label
+@FLM188=المعدل اليومي
+ ;Fleet label
+@FLM189=المعدل الأسبوعي
+ ;Fleet label
+@FLM190=المؤسسة الداخلية المقترنة بالدور
+ ;Fleet label
+@FLM191=الجدول الذي يحتوي على المؤسسة الداخلية المقترنة بدور المستخدم
+ ;Fleet label
+@FLM192=يتضمن عرض DimAttributeOMBranch كافة السجلات من جدول OMOperatingUnit التي يتم تمييزه كفروع.
+ ;Fleet label
+@FLM193=يتضمن عرض DimAttributeOMBranch كافة السجلات من جدول OMOperatingUnit التي يتم تمييزها كمناطق
+ ;Fleet label
+@FLM194=يتضمن عرض DimAttributeOMRentalLocation كافة السجلات من جدول OMOperatingUnit التي يتم تمييزها كموقع إيجار.
+ ;Fleet label
+@FLM195=مركز إدارة الأسطول
+ ;Fleet label
+@FLM196=إضافة
+ ;Fleet label
+@FLM197=الإيجارات الحالية
+ ;Fleet label
+@FLM198=المركبات المعينة
+ ;Fleet label
+@FLM199=المركبات المتوفرة
+ ;Fleet label
+@FLM200=المركبات التي تم استدعائها
+ ;Fleet label
+@FLM201=مكتمل
+ ;Fleet label
+@FLM202=قيد التقدم
+ ;Fleet label
+@FLM203=المعدل التاريخي
+ ;Fleet label
+@FLM204=الإيجار مكتمل
+ ;Fleet label
+@FLM205=تنظيف المركبة
+ ;Fleet label
+@FLM206=فحص المركبة
+ ;Fleet label
+@FLM207=خدمة المركبة
+ ;Fleet label
+@FLM208=اعتماد الخدمة
+ ;Fleet label
+@FLM209=تفاصيل العميل
+ ;Fleet label
+@FLM210=الاسم
+ ;Fleet label
+@FLM211=الترخيص
+ ;Fleet label
+@FLM212=العنوان
+ ;Fleet label
+@FLM213=الهاتف
+ ;Fleet label
+@FLM214=البريد الإلكتروني
+ ;Fleet label
+@FLM215=معلومات الدفع
+ ;Fleet label
+@FLM216=بطاقة الائتمان
+ ;Fleet label
+@FLM217=انتهاء الصلاحية
+ ;Fleet label
+@FLM218=التاريخ
+ ;Fleet label
+@FLM219=بدء الإيجار
+ ;Fleet label
+@FLM220=تاريخ الانتهاء
+ ;Fleet label
+@FLM221=‏‏الوصف
+ ;Fleet label
+@FLM222=الكمية
+ ;Fleet label
+@FLM223=موسّع
+ ;Fleet label
+@FLM224=تفاصيل المركبة
+ ;Fleet label
+@FLM225=الطراز والنوع
+ ;Fleet label
+@FLM226=المعدل اليومي
+ ;Fleet label
+@FLM227=المعدل الأسبوعي
+ ;Fleet label
+@FLM228=معاينة أجزاء المركبة
+ ;Fleet label
+@FLM229=اللون
+ ;Fleet label
+@FLM230=الحالة
+ ;Fleet label
+@FLM231=المركبة المعينة
+ ;Fleet label
+@FLM232=رموز إدارة الأسطول
+ ;Fleet label
+@FLM233=تقييد المستخدمين حسب وحدات الشراء
+ ;Fleet label
+@FLM234=الوصول للمركبة للوصول الآمن
+ ;Fleet label
+@FLM235=الخدمة الذاتية لسجلات الإيجار
+ ;Fleet label
+@FLM236=موظف إدارة الأسطول
+ ;Fleet label
+@FLM237=موظف الإيجار
+ ;Fleet label
+@FLM238=مدير فرع إدارة الأسطول
+ ;Fleet label
+@FLM239=مدير فرع الإيجار
+ ;Fleet label
+@FLM240=فني خدمة إدارة الأسطول
+ ;Fleet label
+@FLM241=فني الخدمة
+ ;Fleet label
+@FLM242=استخدام سير العمل
+ ;Fleet label
+@FLM243=مجموعة الخدمات التي تكشف مخزون السيارات المتوفرة
+ ;Fleet label
+@FLM244=عدد الأبواب
+ ;Number of doors in the FM vehicle
+@FLM245=المبلغ الملحق
+ ;Fleet label
+@FLM246=مستوى الوقود
+ ;Fleet label
+@FLM247=الارتفاع عن الأرض
+ ;Fleet label
+@FLM248=مساحة أرضية الشاحنة
+ ;Fleet label
+@FLM249=أقصى حمل
+ ;Fleet label
+@FLM250=مساحة التحرك الإضافية
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=التقييم
+ ;Fleet label
+@FLM253=إجمالي الإيجار
+ ;Fleet label
+@FLM254=المقاعد
+ ;Fleet label
+@FLM255=نوع الرسوم
+ ;Fleet label (table)
+@FLM256=القدرة
+ ;Fleet label
+@FLM257=نصف قطر الدوران
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=استعلام سير العمل
+ ;Fleet label
+@FLM260=سجل الصيانة
+ ;Fleet label
+@FLM261=استئجار جديد
+ ;Fleet label
+@FLM262=كل الإيجارات
+ ;Fleet label
+@FLM263=تجهيز الأسطول
+ ;Fleet label
+@FLM264=كل المركبات
+ ;Fleet label
+@FLM265=تواريخ المعدل
+ ;Fleet label
+@FLM268=الفروع _DEMO_
+ ;Fleet label
+@FLM269=مواقع الإيجار _DEMO_
+ ;Fleet label
+@FLM270=المناطق _DEMO_
+ ;Fleet label
+@FLM271=اكتمل التنظيف
+ ;Fleet label
+@FLM272=حذف العملاء
+ ;Fleet label
+@FLM273=حذف الإيجارات المحددة
+ ;Fleet label
+@FLM274=حذف المركبة المحددة
+ ;Fleet label
+@FLM275=اكتمل الفحص
+ ;Fleet label
+@FLM276=اكتملت الخدمة
+ ;Fleet label
+@FLM278=بدء سير العمل
+ ;Fleet label
+@FLM279=الموافقة على الخدمة
+ ;Fleet label
+@FLM280=إنكار الخدمة
+ ;Fleet label
+@FLM281=رفض خدمة
+ ;Fleet label
+@FLM282=حذف المركبات المحددة
+ ;Fleet label
+@FLM283=تكوين سير العمل
+ ;Fleet label
+@FLM284=إنشاء الفروع أو تحديثها
+ ;Fleet label
+@FLM285=إنشاء مواقع الإيجار أو تحديثها
+ ;Fleet label
+@FLM286=إنشاء المناطق أو تحديثها
+ ;Fleet label
+@FLM287=إضافة/تحرير العميل
+ ;Fleet label
+@FLM288=معرف استئجار المركبة
+ ;Fleet label (table)
+@FLM289=إضافة/تحرير مصاريف الإيجار
+ ;Fleet label
+@FLM290=تفاصيل التكلفة
+ ;Fleet label
+@FLM291=تفاصيل الإيجار
+ ;Fleet label
+@FLM292=تحرير الإيجار
+ ;Fleet label
+@FLM293=الإيجارات حسب العميل
+ ;Fleet label
+@FLM294=الإيجارات لكل طراز
+ ;Fleet label
+@FLM295=إضافة/تحرير المركبة
+ ;Fleet label
+@FLM296=الإيجارات التالية
+ ;Fleet label
+@FLM297=الإيجارات حسب المركبة
+ ;Fleet label
+@FLM298=انظر التعليمات عبر الإنترنت
+ ;Fleet label
+@FLM299=أنواع مصاريف الإيجار
+ ;Fleet label
+@FLM300=سجل المسافة المقطوعة
+ ;Fleet label
+@FLM301=دورة عملية الأسطول
+ ;Fleet label
+@FLM302=الأسطول - إدارة تجهيز الأسطول
+ ;Fleet label
+@FLM303=الأسطول - تحرير سجلات العملاء
+ ;Fleet label
+@FLM304=الأسطول - إدارة العملاء
+ ;Fleet label
+@FLM305=الأسطول - إدارة المخزون
+ ;Fleet label
+@FLM306=الأسطول - إيجار السيارات
+ ;Fleet label
+@FLM307=الأسطول - عرض سجلات العملاء
+ ;Fleet label
+@FLM308=الأسطول - عرض المخزون
+ ;Fleet label
+@FLM309=الأسطول - موظف سير العمل
+ ;Fleet label
+@FLM310=لون المركبة
+ ;Fleet label
+@FLM311=الأسطول - مدير سير العمل
+ ;Fleet label
+@FLM312=الأسطول - فني خدمة سير العمل
+ ;Fleet label
+@FLM313=الأسطول - المهام الأساسية
+ ;Fleet label
+@FLM314=الأسطول - إدارة السيارات
+ ;Fleet label
+@FLM315=دورة العملية القياسية للأسطول
+ ;Fleet label
+@FLM316=المسافة التي قطعتها المركبة
+ ;Fleet label
+@FLM317=التكلفة
+ ;Fleet label
+@FLM318=التخليص
+ ;Fleet label
+@FLM54=العملاء
+ ;Fleet label
+@FLM266=صلاحية بطاقة الائتمان
+ ;Fleet label (table)
+@FLM277=رخص السائقين
+ ;Fleet label (table)
+@FLM320=قائمة العملاء
+ ;Fleet label (report menu item)
+@FLM321=تقرير قائمة العملاء
+ ;Fleet label (report menu item help text)
+@FLM267=إعداد سير العمل
+ ;Fleet label
+@FLM400=سير عمل صيانة المركبة
+ ;Fleet label
+@FLM500=طريقة الدفع المفضلة
+ ;Fleet label
+@FLM501=أبيض
+ ;Fleet colors
+@FLM502=رمادي
+ ;Fleet colors
+@FLM503=أصفر
+ ;Fleet colors
+@FLM504=برتقالي
+ ;Fleet colors
+@FLM505=التقاط
+ ;Fleet label
+@FLM506=إرجاع
+ ;Fleet label
+@FLM507=بدء الإيجار
+ ;Fleet label
+@FLM401=إدارة الحجز
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=المسافة المقطوعة السابقة
+ ;Fleet label for returning vehicle slider
+@FLM509=المسافة المقطوعة الجديدة
+ ;Fleet label for returning vehicle slider
+@FLM510=استئجار المركبة
+ ;Fleet label
+@FLM512=التكاليف الإضافية
+ ;Fleet label
+@FLM513=المدخرات
+ ;Fleet label
+@FLM514=الحجز الجديد
+ ;New reservation menu item label
+@FLM515=سنة الطراز
+ ;Field label for Year field in FmVehicleModel
+@FLM516=سنة انتهاء الصلاحية
+ ;Expiration year label
+@FLM517=تقرير العملاء
+ ;Fleet tile label
+@FLM518=عمليات الحجز الحالية
+ ;Fleet tile label
+@FLM519=الإيجارات المستحقة
+ ;Fleet tile label
+@FLM520=اسم الدفع
+ ;Fleet PaymentInfo field label
+@FLM521=قيمة التحقق من البطاقة
+ ;Fleet label
+@FLM522=شهر تاريخ الصلاحية
+ ;Expiration month label
+@FLM523=الاسم الموجود على البطاقة
+ ;Fleet name on credit card
+@FLM524=تاريخ معدل المركبة
+ ;Fleet form label
+@FLM525=تعليق جديد
+ ;Fleet dialog caption
+@FLM526=عميل جديد
+ ;Fleet dialog caption
+@FLM527=معلومات الدفع الجديدة
+ ;Fleet dialog caption
+@FLM528=إضافة ملحقات
+ ;Fleet dialog caption
+@FLM529=تحديد عميل
+ ;Fleet dialog caption
+@FLM530=جاهز للاقتناء
+ ;Fleet ReservationState enum option
+@FLM531=معرف سجل العناوين
+ ;Fleet label
+@FLM532=كود ‏‫القيمة السداسية العشرية للون‬
+ ;Fleet label
+@FLM533=معرف اللون
+ ;Fleet label
+@FLM534=اسم اللون
+ ;Fleet label
+@FLM535=معرِّف الخصم
+ ;Fleet label
+@FLM536=معرف معلومات الدفع
+ ;Fleet label
+@FLM537=معرف الحجز
+ ;Fleet label
+@FLM539=المركبات المستأجرة
+ ;Fleet label
+@FLM540=إدارة الأسطول
+ ;Fleet menu label
+@FLM541=تحميل بيانات العرض التوضيحي
+ ;Fleet button text
+@FLM542=تاريخ المعدل
+ ;Fleet button text
+@FLM543=تغيير العملاء
+ ;Fleet dialog label
+@FLM544=تحديد مركبة
+ ;Fleet button text
+@FLM545=كل الحجوزات
+ ;Fleet grid title
+@FLM546=ملاحظات العميل
+ ;Fleet group label
+@FLM547=المعلومات الإيجار
+ ;Fleet group label
+@FLM548=تكلفة الصورة
+ ;Fleet group label
+@FLM549=إعداد البيانات
+ ;Fleet tab label
+@FLM550=معلومات المركبة
+ ;Fleet group label
+@FLM551=المركبات المتوفرة
+ ;Fleet chart label
+@FLM552=حالة استئجار المركبة
+ ;Fleet chart label
+@FLM553=المركبة حسب الطراز - إيراد
+ ;Fleet chart label
+@FLM554=الانتقاء حتى اليوم
+ ;Fleet panorama label
+@FLM555=الإرجاع حتى اليوم
+ ;Fleet panorama label
+@FLM556=معدلات الإيجار
+ ;Fleet panorama label
+@FLM558=تفاصيل الحجز
+ ;Fleet panorama label
+@FLM559=الملحقات
+ ;Fleet panorama label
+@FLM560=الميزات
+ ;Fleet group label
+@FLM561=معلومات الانتقاء
+ ;Fleet field label
+@FLM562=معلومات الإرجاع
+ ;Fleet field label
+@FLM563=قائمة الإيجارات
+ ;Fleet report label
+@FLM564=إنشاء عينة‬ للعملاء والإيجارات والمركبات
+ ;Fleet TOC label
+@FLM565=لن يستغرق هذا سوى بضع ثوان.
+ ;New Comment
+@FLM322=الإيجارات حسب العميل
+ ;Fleet report label
+@FLM566=مخططات العملاء
+ ;Fleet form part caption
+@FLM567=مخطط إيراد المركبة
+ ;Fleet form part caption
+@FLM601=إدارة إيجارات الأسطول
+ ;Fleet rental entity
+@FLM602=إدارة عملاء الأسطول
+ ;Fleet customer entity
+@FLM603=تطبيق صغير بسيط
+ ;Label for the sample applet name
+@FLM604=تطبيق صغير بسيط يستخدم لإظهار سير عمل التطبيق الصغير واختباره
+ ;Label for the sample applet description
+@FLM605=‏‫راجع المزيد‬
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=مواقع العميل
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=يوفر القالب خريطة بمواقع العميل
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=الإيجارات حسب الحالة
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=يوفر القالب أعداد حالات الإيجار
+ ;Rentals by status template description
+FMCustomerEntityView=عرض كيان عملاء ‏‫إدارة الأسطول‬
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=الاحتفاظ بكيان عملاء ‏‫إدارة الأسطول‬
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=عرض كيان إيجارات ‏‫إدارة الأسطول‬
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=الاحتفاظ بكيان إيجارات ‏‫‏‫إدارة الأسطول‬
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=عرض كيان النشاط
+ ;View privilege for RCADActivity
+RCADActivityMaintain=الاحتفاظ بكيان النشاط
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=عرض كيان الفئة
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=الاحتفاظ بكيان الفئة
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=عرض الكيان القانوني
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=الاحتفاظ بالكيان القانوني
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=عرض كيان خاصية البند
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=الاحتفاظ بكيان خاصية البند
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=عرض كيان الفترة
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=الاحتفاظ بكيان الفترة
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=عرض كيان المشروع
+ ;View privilege for RCADProject
+RCADProjectMaintain=الاحتفاظ بكيان المشروع
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=عرض كيان الجدول الزمني
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=الاحتفاظ بكيان الجدول الزمني
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=عرض كيان إدخال الجدول الزمني
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=الاحتفاظ بكيان إدخال الجدول الزمني
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=عرض كيان إعدادات الجدول الزمني
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=الاحتفاظ بكيان إعدادات الجدول الزمني
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=عرض كيان محفوظات سير العمل للجدول الزمني
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=الاحتفاظ بكيان محفوظات سير العمل للجدول الزمني
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=عرض كيان أصناف محفوظات سير العمل
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=الاحتفاظ بكيان أصناف محفوظات سير العمل
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=العثور على الإيجارات
+FMTemplateCustomerInformationDisplayName=معلومات العميل
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=يوفر القالب معلومات أساسية عن العملاء وقائمة بالإيجارات الخاصة بهم
+ ;Fleet customer information template description
+DataCreated=تم إنشاء عينة بيانات.
+DataRestored=تمت استعادة عينة بيانات.
+DataRestoreConfirm=سيؤدي ذلك إلى استعادة كل بيانات إدارة الأسطول إلى حالتها الأصلية. هل هذا ما تريد إجراؤه؟
+Branch=الفرع _DEMO_
+ ;Branch operating unit type
+RentalLocation=موقع الإيجار _DEMO_
+ ;Rental location operating unit type
+Region=المنطقة _DEMO_
+ ;Region operating unit type
+Timestamp=الطابع الزمني
+ ;Comment timestamp
+CustomerImage=صورة العميل
+ ;Fleet label
+Analytics=التحليلات
+ ;used on Fleet clerk workspace for Analytics section

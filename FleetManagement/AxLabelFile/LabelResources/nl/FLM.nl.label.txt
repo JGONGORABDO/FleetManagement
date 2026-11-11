@@ -1,0 +1,784 @@
+﻿@FLM41=Labelbestanden gemaakt op 3-4-2011
+ ;By user Admin
+@FLM42=Rood
+ ;Fleet colors
+@FLM43=Blauw
+ ;Fleet colors
+@FLM44=Groen
+ ;Fleet colors
+@FLM46=Afbeelding kiezen
+ ;Fleet label
+@FLM47=Wijzigen
+ ;Fleet label
+@FLM48=Verwijderen
+ ;Fleet label
+@FLM49=Klant
+ ;Fleet label
+@FLM50=Open
+ ;Fleet label
+@FLM51=Nieuw
+ ;Fleet label
+@FLM52=Verhuur
+ ;Fleet label
+@FLM53=Algemeen
+ ;Fleet label
+@FLM55=Weergave
+ ;Fleet label
+@FLM56=Verwijderen
+ ;Fleet label
+@FLM57=Bijlagen
+ ;Fleet label
+@FLM58=Voltooid
+ ;Fleet label
+@FLM59=Huurkosten
+ ;Fleet label
+@FLM60=Huurperiode
+ ;Fleet label
+@FLM61=Vanaf
+ ;Fleet label
+@FLM62=Tot
+ ;Fleet label
+@FLM63=Kilometerstand
+ ;Fleet label
+@FLM64=Starten
+ ;Fleet label
+@FLM65=Beëindigen
+ ;Fleet label
+@FLM66=Brandstofpeil
+ ;Fleet label
+@FLM67=Ophalen
+ ;Fleet label
+@FLM68=Kosten
+ ;Fleet label
+@FLM69=Kosten toevoegen
+ ;Fleet label
+@FLM70=Vrachtwagens opnemen
+ ;Fleet label
+@FLM71=Verhuur
+ ;Fleet label
+@FLM72=Bewerken
+ ;Fleet label
+@FLM73=Configuratie wagenparkbeheer
+ ;Fleet label
+@FLM74=Voertuigmerk en -modellen
+ ;Fleet label
+@FLM75=Voertuigmerken en -modellen definiëren
+ ;Fleet label
+@FLM76=Definieer het merk en de modellen van de voertuigen in uw voorraad, en neem een representatieve afbeelding van het model op.
+ ;Fleet label
+@FLM77=Modelafbeelding
+ ;Fleet label
+@FLM78=Bladeren...
+ ;Fleet label
+@FLM79=Nieuw merk
+ ;Fleet label
+@FLM80=Nieuw model
+ ;Fleet label
+@FLM81=Typen huurkosten
+ ;Fleet label
+@FLM82=Typen kosten definiëren
+ ;Fleet label
+@FLM83=Kostentypen worden gebruikt om alle huurkosten te categoriseren. Zo kunt u uw kosten gemakkelijker traceren.
+ ;Fleet label
+@FLM84=Veiligheidsbeoordelingen SUV
+ ;Fleet label
+@FLM85=Veiligheidsbeoordelingen SUV definiëren
+ ;Fleet label
+@FLM86=Voertuigen
+ ;Fleet label
+@FLM87=Onderhouden
+ ;Fleet label
+@FLM88=Historie
+ ;Fleet label
+@FLM89=Historische tarieven
+ ;Fleet label
+@FLM90=Tarieven
+ ;Fleet label
+@FLM91=Gegevens
+ ;Fleet label
+@FLM92=Auto- en SUV-gegevens
+ ;Fleet label
+@FLM93=SUV
+ ;Fleet label
+@FLM94=Vrachtwagengegevens
+ ;Fleet label
+@FLM95=Voertuigen
+ ;Fleet label
+@FLM96=Beschikbaarheid
+ ;Fleet label
+@FLM97=Locatie
+ ;Fleet label
+@FLM98=Onderhoud
+ ;Fleet label
+@FLM99=Record
+ ;Fleet label
+@FLM100=Lijst
+ ;Fleet label
+@FLM101=Voertuig-id
+ ;Fleet label
+@FLM102=Datumbeheer voertuigtarief
+ ;Fleet label
+@FLM103=Nieuwe versie
+ ;Fleet label
+@FLM104=Voertuigonderhoud
+ ;Fleet label
+@FLM105=Wagenparkbeheer
+ ;Fleet label
+@FLM106=Recent gehuurd
+ ;Fleet label
+@FLM107=Mijn interne organisaties voor beveiligingstoegang
+ ;Fleet label
+@FLM108=Voertuigen waartoe de gebruiker beveiligingstoegang heeft
+ ;Fleet label
+@FLM109=Interne organisaties waartoe de gebruiker toegang heeft
+ ;Fleet label
+@FLM110=Vrachtwagens
+ ;Fleet label
+@FLM111=SUV's
+ ;Fleet label
+@FLM112=Menu voor weergavepagina's klant
+ ;Fleet label
+@FLM113=Acties
+ ;Fleet label
+@FLM114=Voertuigmenu
+ ;Fleet label
+@FLM115=Menu voor weergavepagina's voertuig
+ ;Fleet label
+@FLM116=Vestiging - Afgeschaft
+ ;Fleet label
+@FLM117=Huurlocatie - Afgeschaft
+ ;Fleet label
+@FLM118=Regio - Afgeschaft
+ ;Fleet label
+@FLM119=FWD
+ ;Fleet label
+@FLM120=RWD
+ ;Fleet label
+@FLM121=AWD
+ ;Fleet label
+@FLM122=Brandstoftype
+ ;Fleet label
+@FLM123=Standaard
+ ;Fleet label
+@FLM124=Premium
+ ;Fleet label
+@FLM125=GPS ingeschakeld
+ ;Fleet label
+@FLM126=Olie verversen
+ ;Fleet label
+@FLM127=Reparatie
+ ;Fleet label
+@FLM128=Preventief onderhoud
+ ;Fleet label
+@FLM129=In afwachting van onderzoek
+ ;Fleet label
+@FLM130=In afwachting van service
+ ;Fleet label
+@FLM131=In afwachting van goedkeuring
+ ;Fleet label
+@FLM132=In afwachting van reiniging
+ ;Fleet label
+@FLM133=Gereed
+ ;Fleet label
+@FLM134=Transmissie
+ ;Fleet label
+@FLM135=Automatisch
+ ;Fleet label
+@FLM136=Handmatig
+ ;Fleet label
+@FLM137=Beschikbaar
+ ;Fleet label
+@FLM138=In gebruik
+ ;Fleet label
+@FLM139=Gehuurd
+ ;Fleet label
+@FLM140=Beschadigd
+ ;Fleet label
+@FLM141=Teruggeroepen
+ ;Fleet label
+@FLM142=In behandeling
+ ;Fleet label
+@FLM143=Voertuigtype
+ ;Fleet label
+@FLM144=Onbekend
+ ;Fleet label
+@FLM145=Vrachtwagen
+ ;Fleet label
+@FLM146=Auto
+ ;Fleet label
+@FLM147=Toeslagtype
+ ;Fleet label
+@FLM148=Rijbewijs
+ ;Fleet label
+@FLM149=Model van merk
+ ;Fleet label
+@FLM150=Notities
+ ;Fleet label
+@FLM151=Info voertuighuur
+ ;Fleet label
+@FLM152=Id veiligheidsbeoordeling
+ ;Fleet label
+@FLM153=Veiligheidsbeoordeling SUV
+ ;Fleet label
+@FLM154=Totale verhuur
+ ;Fleet label
+@FLM155=Merk
+ ;Fleet label
+@FLM156=Voertuigmerk
+ ;Fleet label
+@FLM157=Model
+ ;Fleet label
+@FLM158=Voertuigmodel
+ ;Fleet label
+@FLM159=Auto's
+ ;Fleet label
+@FLM160=Portieren
+ ;Fleet label
+@FLM161=Aantal zitplaatsen
+ ;Fleet label
+@FLM162=Toeslagtypen
+ ;Fleet label
+@FLM163=Vervaldatum
+ ;Fleet label
+@FLM164=Kilometerstand start
+ ;Fleet label
+@FLM165=Kilometerstand einde
+ ;Fleet label
+@FLM166=Brandstofpeil start
+ ;Fleet label
+@FLM167=Brandstofpeil einde
+ ;Fleet label
+@FLM168=Info voertuighuur
+ ;Fleet label
+@FLM169=Capaciteit derde rij
+ ;Fleet label
+@FLM170=Draaicirkel
+ ;Fleet label
+@FLM171=Bodemvrijheid
+ ;Fleet label
+@FLM172=Kantelstabiliteit
+ ;Fleet label
+@FLM173=Algehele score
+ ;Fleet label
+@FLM174=Bewegingsruimte
+ ;Fleet label
+@FLM175=Vloeroppervlak
+ ;Fleet label
+@FLM176=Maximale belasting
+ ;Fleet label
+@FLM177=Type
+ ;Fleet label
+@FLM178=Brutovoertuiggewicht
+ ;Fleet label
+@FLM179=Voertuigstatus
+ ;Fleet label
+@FLM180=Organisatie
+ ;Fleet label
+@FLM181=Voorbeeldgroep
+ ;Fleet label
+@FLM182=Voertuigmerken
+ ;Fleet label
+@FLM183=Voertuigmodellen
+ ;Fleet label
+@FLM184=Voertuigafbeelding
+ ;Fleet label
+@FLM185=Modelspecificatie
+ ;Fleet label
+@FLM186=Afbeeldingsindeling
+ ;Fleet label
+@FLM187=Voertuigtarieven
+ ;Fleet label
+@FLM188=Tarief per dag
+ ;Fleet label
+@FLM189=Tarief per week
+ ;Fleet label
+@FLM190=Mijn interne organisaties die zijn gekoppeld aan een rol
+ ;Fleet label
+@FLM191=Tabel met interne organisaties die zijn gekoppeld aan de rol van de gebruiker
+ ;Fleet label
+@FLM192=De weergave DimAttributeOMBranch bevat alle records uit de tabel OMOperatingUnit die zijn gemarkeerd als Vestiging.
+ ;Fleet label
+@FLM193=De weergave DimAttributeOMRegion bevat alle records uit de tabel OMOperatingUnit die zijn gemarkeerd als regio's.
+ ;Fleet label
+@FLM194=De weergave DimAttributeOMRentalLocation bevat alle records uit de tabel OMOperatingUnit die zijn gemarkeerd als huurlocatie.
+ ;Fleet label
+@FLM195=Wagenparkbeheercentrum
+ ;Fleet label
+@FLM196=Toevoegen
+ ;Fleet label
+@FLM197=Momenteel gehuurd
+ ;Fleet label
+@FLM198=Toegewezen voertuigen
+ ;Fleet label
+@FLM199=Beschikbare voertuigen
+ ;Fleet label
+@FLM200=Teruggeroepen voertuigen
+ ;Fleet label
+@FLM201=Voltooid
+ ;Fleet label
+@FLM202=In uitvoering
+ ;Fleet label
+@FLM203=Historisch tarief
+ ;Fleet label
+@FLM204=Verhuur afronden
+ ;Fleet label
+@FLM205=Voertuig reinigen
+ ;Fleet label
+@FLM206=Voertuig onderzoeken
+ ;Fleet label
+@FLM207=Service uitvoeren aan voertuig
+ ;Fleet label
+@FLM208=Servicegoedkeuring
+ ;Fleet label
+@FLM209=Details klant
+ ;Fleet label
+@FLM210=Naam
+ ;Fleet label
+@FLM211=Rijbewijs
+ ;Fleet label
+@FLM212=Adres
+ ;Fleet label
+@FLM213=Telefoon
+ ;Fleet label
+@FLM214=E-mail
+ ;Fleet label
+@FLM215=Betalingsgegevens
+ ;Fleet label
+@FLM216=Creditcard
+ ;Fleet label
+@FLM217=Vervaldatum
+ ;Fleet label
+@FLM218=Datum
+ ;Fleet label
+@FLM219=Start verhuur
+ ;Fleet label
+@FLM220=Einddatum
+ ;Fleet label
+@FLM221=Beschrijving
+ ;Fleet label
+@FLM222=Hoeveelheid
+ ;Fleet label
+@FLM223=Uitgebreid
+ ;Fleet label
+@FLM224=Voertuiggegevens
+ ;Fleet label
+@FLM225=Merk en model
+ ;Fleet label
+@FLM226=Dagelijks tarief
+ ;Fleet label
+@FLM227=Wekelijks tarief
+ ;Fleet label
+@FLM228=Gedeelte voorbeeld voertuig
+ ;Fleet label
+@FLM229=Kleur
+ ;Fleet label
+@FLM230=Status
+ ;Fleet label
+@FLM231=Toegewezen voertuig
+ ;Fleet label
+@FLM232=Hints wagenparkbeheer
+ ;Fleet label
+@FLM233=Gebruikers beperken tot bedrijfseenheden
+ ;Fleet label
+@FLM234=Mijn toegang tot voertuigen voor beveiligingstoegang
+ ;Fleet label
+@FLM235=Selfservice voor verhuurrecords
+ ;Fleet label
+@FLM236=Medewerker wagenparkbeheer
+ ;Fleet label
+@FLM237=Medewerker verhuur
+ ;Fleet label
+@FLM238=Vestigingsmanager wagenparkbeheer
+ ;Fleet label
+@FLM239=Vestigingsmanager verhuur
+ ;Fleet label
+@FLM240=Technisch medewerker wagenparkbeheer
+ ;Fleet label
+@FLM241=Technisch medewerker
+ ;Fleet label
+@FLM242=Workflow gebruiken
+ ;Fleet label
+@FLM243=Servicegroep die beschikbare autovoorraad toont
+ ;Fleet label
+@FLM244=Aantal portieren
+ ;Number of doors in the FM vehicle
+@FLM245=Uitgebreid bedrag
+ ;Fleet label
+@FLM246=Brandstofpeil
+ ;Fleet label
+@FLM247=Bodemvrijheid
+ ;Fleet label
+@FLM248=Vloeroppervlak vrachtwagen
+ ;Fleet label
+@FLM249=Max. belasting
+ ;Fleet label
+@FLM250=Bewegingsruimte boven hoofd
+ ;Fleet label
+@FLM251=MPG
+ ;Fleet label
+@FLM252=Beoordeling
+ ;Fleet label
+@FLM253=Totale verhuur
+ ;Fleet label
+@FLM254=Zitplaatsen
+ ;Fleet label
+@FLM255=Toeslagtype
+ ;Fleet label (table)
+@FLM256=Capaciteit
+ ;Fleet label
+@FLM257=Draaicirkel
+ ;Fleet label
+@FLM258=VIN
+ ;Fleet label
+@FLM259=Workflowquery
+ ;Fleet label
+@FLM260=Onderhoudsrecord
+ ;Fleet label
+@FLM261=Nieuwe verhuur
+ ;Fleet label
+@FLM262=Alle verhuur
+ ;Fleet label
+@FLM263=Fleet instellen
+ ;Fleet label
+@FLM264=Alle voertuigen
+ ;Fleet label
+@FLM265=Tariefdatums
+ ;Fleet label
+@FLM268=Vertakkingen _DEMO_
+ ;Fleet label
+@FLM269=Huurlocaties _DEMO_
+ ;Fleet label
+@FLM270=Regio's _DEMO_
+ ;Fleet label
+@FLM271=Reiniging voltooid
+ ;Fleet label
+@FLM272=Klanten verwijderen
+ ;Fleet label
+@FLM273=Geselecteerde verhuur verwijderen
+ ;Fleet label
+@FLM274=Geselecteerd voertuig verwijderen
+ ;Fleet label
+@FLM275=Onderzoek voltooid
+ ;Fleet label
+@FLM276=Service voltooid
+ ;Fleet label
+@FLM278=Workflow starten
+ ;Fleet label
+@FLM279=Service goedkeuren
+ ;Fleet label
+@FLM280=Service weigeren
+ ;Fleet label
+@FLM281=Service afwijzen
+ ;Fleet label
+@FLM282=Geselecteerde voertuigen verwijderen
+ ;Fleet label
+@FLM283=Workflowconfiguratie
+ ;Fleet label
+@FLM284=Vestigingen maken of bijwerken
+ ;Fleet label
+@FLM285=Huurlocaties maken of bijwerken
+ ;Fleet label
+@FLM286=Regio's maken of bijwerken
+ ;Fleet label
+@FLM287=Klant toevoegen/bewerken
+ ;Fleet label
+@FLM288=Verhuur-id voertuig
+ ;Fleet label (table)
+@FLM289=Huurprijs toevoegen/bewerken
+ ;Fleet label
+@FLM290=Gegevens kosten
+ ;Fleet label
+@FLM291=Gegevens verhuur
+ ;Fleet label
+@FLM292=Verhuur bewerken
+ ;Fleet label
+@FLM293=Verhuur per klant
+ ;Fleet label
+@FLM294=Verhuur per model
+ ;Fleet label
+@FLM295=Voertuig toevoegen/bewerken
+ ;Fleet label
+@FLM296=Geplande verhuur
+ ;Fleet label
+@FLM297=Verhuur per voertuig
+ ;Fleet label
+@FLM298=Zie online Help
+ ;Fleet label
+@FLM299=Type huurkosten
+ ;Fleet label
+@FLM300=Kilometerstand registreren
+ ;Fleet label
+@FLM301=Procescyclus fleet
+ ;Fleet label
+@FLM302=Fleet - Fleetinstelling beheren
+ ;Fleet label
+@FLM303=Fleet - Klantrecords bewerken
+ ;Fleet label
+@FLM304=Fleet - Klanten beheren
+ ;Fleet label
+@FLM305=Fleet - Voorraad beheren
+ ;Fleet label
+@FLM306=Fleet - Auto's verhuren
+ ;Fleet label
+@FLM307=Fleet - Klantrecords weergeven
+ ;Fleet label
+@FLM308=Fleet - Voorraad weergeven
+ ;Fleet label
+@FLM309=Fleet - Medewerker workflow
+ ;Fleet label
+@FLM310=Voertuigkleur
+ ;Fleet label
+@FLM311=Fleet - Manager workflow
+ ;Fleet label
+@FLM312=Fleet - Technisch medewerker workflow
+ ;Fleet label
+@FLM313=Fleet - Basisfuncties
+ ;Fleet label
+@FLM314=Fleet - Auto's beheren
+ ;Fleet label
+@FLM315=Standaardprocescyclus fleet
+ ;Fleet label
+@FLM316=Kilometerstand voertuig
+ ;Fleet label
+@FLM317=Kosten
+ ;Fleet label
+@FLM318=Bodemvrijheid
+ ;Fleet label
+@FLM54=Klanten
+ ;Fleet label
+@FLM266=Creditcard vervalt
+ ;Fleet label (table)
+@FLM277=Rijbewijs
+ ;Fleet label (table)
+@FLM320=Klantenlijst
+ ;Fleet label (report menu item)
+@FLM321=Rapport Klantenlijst
+ ;Fleet label (report menu item help text)
+@FLM267=Workflows instellen
+ ;Fleet label
+@FLM400=Workflow voertuigonderhoud
+ ;Fleet label
+@FLM500=Geprefereerde betalingsmethode
+ ;Fleet label
+@FLM501=Wit
+ ;Fleet colors
+@FLM502=Grijs
+ ;Fleet colors
+@FLM503=Geel
+ ;Fleet colors
+@FLM504=Oranje
+ ;Fleet colors
+@FLM505=Ophalen
+ ;Fleet label
+@FLM506=Terugbrengen
+ ;Fleet label
+@FLM507=Start verhuur
+ ;Fleet label
+@FLM401=Reserveringenbeheer
+ ;For use with the Fleet clerk reservation management workspace
+@FLM508=Vorige kilometerstand
+ ;Fleet label for returning vehicle slider
+@FLM509=Nieuwe kilometerstand
+ ;Fleet label for returning vehicle slider
+@FLM510=Voertuigverhuur
+ ;Fleet label
+@FLM512=Aanvullende kosten
+ ;Fleet label
+@FLM513=Besparingen
+ ;Fleet label
+@FLM514=Nieuwe reservering
+ ;New reservation menu item label
+@FLM515=Modeljaar
+ ;Field label for Year field in FmVehicleModel
+@FLM516=Vervaljaar
+ ;Expiration year label
+@FLM517=Rapport Klanten
+ ;Fleet tile label
+@FLM518=Bestaande reserveringen
+ ;Fleet tile label
+@FLM519=Achterstallige verhuur
+ ;Fleet tile label
+@FLM520=Betalingsnaam
+ ;Fleet PaymentInfo field label
+@FLM521=Kaartverificatiewaarde
+ ;Fleet label
+@FLM522=Vervalmaand
+ ;Expiration month label
+@FLM523=Naam op creditcard
+ ;Fleet name on credit card
+@FLM524=Historie voertuigtarieven
+ ;Fleet form label
+@FLM525=Nieuwe opmerking
+ ;Fleet dialog caption
+@FLM526=Nieuwe klant
+ ;Fleet dialog caption
+@FLM527=Nieuwe betalingsgegevens
+ ;Fleet dialog caption
+@FLM528=Accessoire toevoegen
+ ;Fleet dialog caption
+@FLM529=Een klant selecteren
+ ;Fleet dialog caption
+@FLM530=Gereed voor ophalen
+ ;Fleet ReservationState enum option
+@FLM531=Adresrecord-id
+ ;Fleet label
+@FLM532=Hexadecimale kleurcode
+ ;Fleet label
+@FLM533=Kleur-id
+ ;Fleet label
+@FLM534=Kleurnaam
+ ;Fleet label
+@FLM535=Korting-id
+ ;Fleet label
+@FLM536=Betalingsgegevens-id
+ ;Fleet label
+@FLM537=Reservering-id
+ ;Fleet label
+@FLM539=Gehuurde voertuigen
+ ;Fleet label
+@FLM540=Wagenparkbeheer
+ ;Fleet menu label
+@FLM541=Demogegevens laden
+ ;Fleet button text
+@FLM542=Tariefhistorie
+ ;Fleet button text
+@FLM543=Klant wijzigen
+ ;Fleet dialog label
+@FLM544=Voertuig selecteren
+ ;Fleet button text
+@FLM545=Alle reserveringen
+ ;Fleet grid title
+@FLM546=Klantfeedback
+ ;Fleet group label
+@FLM547=Verhuurgegevens
+ ;Fleet group label
+@FLM548=Afbeelding laden
+ ;Fleet group label
+@FLM549=Gegevens instellen
+ ;Fleet tab label
+@FLM550=Voertuiggegevens
+ ;Fleet group label
+@FLM551=Beschikbare voertuigen
+ ;Fleet chart label
+@FLM552=Status voertuigverhuur
+ ;Fleet chart label
+@FLM553=Voertuig per model - opbrengst
+ ;Fleet chart label
+@FLM554=Vandaag opgehaald
+ ;Fleet panorama label
+@FLM555=Vandaag terugbrengen
+ ;Fleet panorama label
+@FLM556=Huurtarieven
+ ;Fleet panorama label
+@FLM558=Reserveringsgegevens
+ ;Fleet panorama label
+@FLM559=Accessoires
+ ;Fleet panorama label
+@FLM560=Functies
+ ;Fleet group label
+@FLM561=Ophaalgegevens
+ ;Fleet field label
+@FLM562=Terugbrenggegevens
+ ;Fleet field label
+@FLM563=Lijst met verhuur
+ ;Fleet report label
+@FLM564=Voorbeelden van klanten, verhuur en voertuigen maken
+ ;Fleet TOC label
+@FLM565=Dit werkt slechts enkele seconden.  
+ ;New Comment
+@FLM322=Verhuur per klant
+ ;Fleet report label
+@FLM566=Klantdiagrammen
+ ;Fleet form part caption
+@FLM567=Diagram met voertuigopbrengst
+ ;Fleet form part caption
+@FLM601=Verhuur wagenparkbeheer
+ ;Fleet rental entity
+@FLM602=Klanten wagenparkbeheer
+ ;Fleet customer entity
+@FLM603=Voorbeeldapplet
+ ;Label for the sample applet name
+@FLM604=Een voorbeeldapplet die wordt gebruikt om het appletraamwerk te demonstreren en te testen
+ ;Label for the sample applet description
+@FLM605=Meer weergeven
+ ;Fleet workspace list link to open the full list
+FMTemplateCustomerLocationsDisplayName=Klantlocaties
+ ;Customer locations template display name
+FMTemplateCustomerLocationsDescription=Een sjabloon biedt een kaart met klantlocaties
+ ;Customer locations template description
+FMTemplateRentalsByStatusDisplayName=Verhuur per status
+ ;Rentals by status template display name
+FMTemplateRentalsByStatusDescription=Een sjabloon biedt aantallen verhuurstatussen
+ ;Rentals by status template description
+FMCustomerEntityView=Entiteit klanten wagenparkbeheer weergeven
+ ;View privilege for FMCustomerEntity
+FMCustomerEntityMaintain=Entiteit klanten wagenparkbeheer onderhouden
+ ;Maintain privilege for FMCustomerEntity
+FMRentalEntityView=Entiteit verhuur wagenparkbeheer weergeven
+ ;View privilege for FMRentalEntity
+FMRentalEntityMaintain=Entiteit verhuur wagenparkbeheer onderhouden
+ ;Maintain privilege for FMRentalEntity
+RCADActivityView=Entiteit activiteit weergeven
+ ;View privilege for RCADActivity
+RCADActivityMaintain=Entiteit activiteit onderhouden
+ ;Maintain privilege for RCADActivity
+RCADCategoryView=Entiteit categorie weergeven
+ ;View privilege for RCADCategory
+RCADCategoryMaintain=Entiteit categorie onderhouden
+ ;Maintain privilege for RCADCategory
+RCADLegalEntityView=Entiteit rechtspersoon weergeven
+ ;View privilege for RCADLegalEntity
+RCADLegalEntityMaintain=Entiteit rechtspersoon onderhouden
+ ;Maintain privilege for RCADLegalEntity
+RCADLinePropertyView=Entiteit regeleigenschap weergeven
+ ;View privilege for RCADLineProperty
+RCADLinePropertyMaintain=Entiteit regeleigenschap onderhouden
+ ;Maintain privilege for RCADLineProperty
+RCADPeriodView=Entiteit periode weergeven
+ ;View privilege for RCADPeriod
+RCADPeriodMaintain=Entiteit periode onderhouden
+ ;Maintain privilege for RCADPeriod
+RCADProjectView=Entiteit project weergeven
+ ;View privilege for RCADProject
+RCADProjectMaintain=Entiteit project onderhouden
+ ;Maintain privilege for RCADProject
+RCADTimesheetView=Entiteit urenstaat weergeven
+ ;View privilege for RCADTimesheet
+RCADTimesheetMaintain=Entiteit urenstaat onderhouden
+ ;Maintain privilege for RCADTimesheet
+RCADTimesheetEntryView=Entiteit urenstaatboeking weergeven
+ ;View privilege for RCADTimesheetEntry
+RCADTimesheetEntryMaintain=Entiteit urenstaatboeking onderhouden
+ ;Maintain privilege for RCADTimesheetEntry
+RCADTimesheetSettingsView=Entiteit urenstaatinstellingen weergeven
+ ;View privilege for RCADTimesheetSettings
+RCADTimesheetSettingsMaintain=Entiteit urenstaatinstellingen onderhouden
+ ;Maintain privilege for RCADTimesheetSettings
+RCADTimesheetWorkflowHistoryView=Entiteit workflowhistorie urenstaat weergeven
+ ;View privilege for RCADTimesheetWorkflowHistory
+RCADTimesheetWorkflowHistoryMaintain=Entiteit workflowhistorie urenstaat onderhouden
+ ;Maintain privilege for RCADTimesheetWorkflowHistory
+RCADWorkflowHistoryItemView=Entiteit item workflowhistorie weergeven
+ ;View privilege for RCADWorkflowHistoryItem
+RCADWorkflowHistoryItemMaintain=Entiteit item workflowhistorie onderhouden
+ ;Maintain privilege for RCADWorkflowHistoryItem
+FindRental=Verhuur zoeken
+FMTemplateCustomerInformationDisplayName=Klantgegevens
+ ;Fleet customer information template display name
+FMTemplateCustomerInformationDescription=Sjabloon verschaft basisinformatie over de klant en de huur van de klant
+ ;Fleet customer information template description
+DataCreated=Voorbeeldgegevens gemaakt.
+DataRestored=Voorbeeldgegevens hersteld.
+DataRestoreConfirm=Hierdoor krijgen alle gegevens voor wagenparkbeheer de oorspronkelijke status. Is dat wat u wilt doen?
+Branch=Vertakking _DEMO_
+ ;Branch operating unit type
+RentalLocation=Huurlocatie _DEMO_
+ ;Rental location operating unit type
+Region=Regio _DEMO_
+ ;Region operating unit type
+Timestamp=Tijdstempel
+ ;Comment timestamp
+CustomerImage=Klantafbeelding
+ ;Fleet label
+Analytics=Analyses
+ ;used on Fleet clerk workspace for Analytics section

@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalScenarios</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMRentalScenarios
+{
+    FMCustomer customer;
+    FMSUV suv;
+    FMCarClass car;
+    FMRental rental;
+    FMRentalCharge rentalCharge;
+    FMChargeType chargetype;
+    FMComments comments;    
+    UnitofWork uoW;
+
+    // Inserting images as containers, not urls
+    resourceNode resourceNode;
+    container imageContainer;
+    str nameResourceNode;
+
+    
+    FMPaymentInformation payment;
+
+    // identification indexes
+    int rentalIdIndex = 8000;
+    int chargeIdIndex = 0;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>insertRentalEntity</Name>
+				<Source><![CDATA[
+    public void insertRentalEntity(FMRentalDetails rentalDtCur)
+    {
+        // random elements
+        int daysReserved;
+
+        // create a utility for generating random data
+        RandomGenerate randGen = new RandomGenerate();
+
+        // establish the number of days reserved in advance
+        daysReserved = randGen.randomInt(0, 14);
+
+        // map the insert API based on vehicle selection
+        switch(rentalDtCur.VID())
+        {
+            case 0:
+                // insert a rental scenario for the active customer - Litware
+                this.fmInsertLitware_001(rentalDtCur.CustId(),
+                                        rentalDtCur.Location(),
+                                        rentalDtCur.Discount(),
+                                        rentalDtCur.StartDate(),
+                                        rentalDtCur.EndDate(),
+                                        rentalDtCur.ReservationState(),
+                                        daysReserved);
+                break;
+            case 1:
+                // insert a rental scenario for the active customer - Makalu
+                this.fmInstertMakalu_001(rentalDtCur.CustId(),
+                                        rentalDtCur.Location(),
+                                        rentalDtCur.Discount(),
+                                        rentalDtCur.StartDate(),
+                                        rentalDtCur.EndDate(),
+                                        rentalDtCur.ReservationState(),
+                                        daysReserved);
+                break;
+            case 2:
+                // insert a rental scenario for the active customer - Adatum
+                this.fmInsertAdatum_001(rentalDtCur.CustId(),
+                                        rentalDtCur.Location(),
+                                        rentalDtCur.Discount(),
+                                        rentalDtCur.StartDate(),
+                                        rentalDtCur.EndDate(),
+                                        rentalDtCur.ReservationState(),
+                                        daysReserved);
+                break;
+            case 3:
+                // insert a rental scenario for the active customer - Shasta
+                this.fmInsertShasta_001(rentalDtCur.CustId(),
+                                        rentalDtCur.Location(),
+                                        rentalDtCur.Discount(),
+                                        rentalDtCur.StartDate(),
+                                        rentalDtCur.EndDate(),
+                                        rentalDtCur.ReservationState(),
+                                        daysReserved);
+                break;
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getRentalIdString</Name>
+				<Source><![CDATA[
+    // utility for producing a unique Rental Identifier
+    str getRentalIdString(str rentalLocation)
+    {
+        rentalIdIndex++;
+        return strfmt("%1_%2", rentalLocation, rentalIdIndex);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getChargeIdString</Name>
+				<Source><![CDATA[
+    // utility for producing a unique Rental Identifier
+    str getChargeIdString(str chargePrefix)
+    {
+        chargeIdIndex++;
+        return strfmt("%1_%2", chargePrefix, chargeIdIndex);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>initRentalInfo</Name>
+				<Source><![CDATA[
+    void initRentalInfo(str customerId, str vehicle, str location, str discountName, utcdatetime startDate, utcdatetime endDate, boolean isSuv, FMReservationState reservationState)
+    {
+        // load the master records for the rental
+        select firstonly customer where customer.DriverLicense == customerId;
+
+        // Bug 3135772: validate object references
+
+        select firstonly payment where payment.CustomerID == customer.RecId;
+
+        // create the UnitofWork
+        uoW = new UnitofWork();
+        
+        rental.RentalId = this.getRentalIdString(location);
+        if (isSuv)
+        {
+            if(reservationState == FMReservationState::ReadyForPickup || reservationState == FMReservationState::InProgress)
+            {
+                select forupdate firstonly suv where suv.VehicleId LIKE vehicle && suv.Status != FMVehicleStatus::Rented;
+            }
+            else 
+            {
+                select forupdate firstonly suv where suv.VehicleId LIKE vehicle && suv.Status;
+            }
+
+            if(reservationState == FMReservationState::ReadyForPickup)
+            {
+                suv.Status = FMVehicleStatus::Available;
+            }
+            else if(reservationState == FMReservationState::InProgress)
+            {
+                suv.Status = FMVehicleStatus::Rented;
+            }
+
+            uow.updateonSaveChanges(suv);
+            rental.fmVehicle(suv);
+        }
+        else
+        {
+            if(reservationState == FMReservationState::ReadyForPickup || reservationState == FMReservationState::InProgress)
+            {
+                select forupdate firstonly car where car.VehicleId LIKE vehicle && car.Status != FMVehicleStatus::Rented;
+
+            }
+            else
+            {
+                select forupdate firstonly car where car.VehicleId LIKE vehicle && car.Status;
+            }
+
+            if(reservationState == FMReservationState::ReadyForPickup)
+            {
+                car.Status = FMVehicleStatus::Available;
+            }
+            else if(reservationState == FMReservationState::InProgress)
+            {
+                car.Status = FMVehicleStatus::Rented;
+            }
+
+            uow.updateonSaveChanges(car);
+            rental.fmVehicle(car);
+        }
+
+        rental.fmCustomer(customer);
+        rental.StartDate = startDate;
+        rental.EndDate = endDate;
+        rental.StartFuelLevel = 'Full';
+        rental.State = reservationState;
+        rental.PaymentInformationID = payment.RecId;        
+
+        // insert and save the Rental object        
+        uoW.insertonSaveChanges(rental);
+        uoW.saveChanges();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmInsertLitware_001</Name>
+				<Source><![CDATA[
+    void fmInsertLitware_001(str customerId, str location, str discountName, utcdatetime startDate, utcdatetime endDate, FMReservationState reservationState, int daysReserved)
+    {
+        // establish the logo resource for this vehicle
+        nameResourceNode = resourceStr(Litware_LitwareFour_gray);
+
+        // initialize state
+        this.initRentalInfo(customerId, 'Litware_LitwareFour*', location, discountName, startDate, endDate, true, reservationState);
+
+        comments.EmployeeName = "Lisa Farr";
+        comments.CustomerDriversLicense = customer.DriverLicense;
+        comments.DateEntered = DateTimeUtil::Date(DateTimeUtil::addDays(startDate, -daysReserved));
+        comments.Comment = "Phil is going camping in one of our Litware Fours!";
+        comments.insert();
+        uoW.insertonSaveChanges(comments);
+
+        // Rental Charges
+        chargetype = FMChargeType::find('Car pickup');
+        rentalCharge.initValue();
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);        
+
+        uoW.insertonSaveChanges(rentalCharge);
+
+        rentalCharge = null;
+        rentalCharge.clear();
+        chargetype = FMChargeType::find('Carbon fee');
+        rentalCharge.initValue();
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);
+        
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        rentalCharge = null;
+        rentalCharge.clear();
+        chargetype = FMChargeType::find('Tank refill');
+        rentalCharge.initValue();
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+        uoW.saveChanges();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmInstertMakalu_001</Name>
+				<Source><![CDATA[
+    void fmInstertMakalu_001(str customerId, str location, str discountName, utcdatetime startDate, utcdatetime endDate, FMReservationState reservationState, int daysReserved)
+    {
+        // establish the logo resource for this vehicle
+        nameResourceNode = resourceStr(AdventureWorks_Makalu_red);
+
+        // initialize state
+        this.initRentalInfo(customerId, 'AdventureWorks_Makalu*', location, discountName, startDate, endDate, false, reservationState);
+        
+        comments.EmployeeName = "Lisa Farr";
+        comments.CustomerDriversLicense = customer.DriverLicense;
+        comments.DateEntered = DateTimeUtil::Date(DateTimeUtil::addDays(startDate, -daysReserved));
+        comments.Comment = "Phil is a fan of Adenture Works cars. He likes the comfortable seating.";
+        comments.insert();
+        uow.insertonSaveChanges(comments);
+
+        
+        // Rental Addons and Discounts
+        chargetype = FMChargeType::find('Child Seat');
+        rentalCharge.initValue();
+        rentalCharge.FMChargeType(chargetype);
+        rentalCharge.FMRental(rental);
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        // Rental Charges
+        rentalCharge = null;
+        rentalCharge.clear();
+        chargetype = FMChargeType::find('Car pickup');
+        rentalCharge.initValue();
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);        
+
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        rentalCharge = null;
+        rentalCharge.clear();
+        chargetype = FMChargeType::find('Carbon fee');
+        rentalCharge.initValue();
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);        
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        rentalCharge = null;
+        rentalCharge.clear();
+        chargetype = FMChargeType::find('Tank refill');
+        rentalCharge.initValue();
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        uoW.saveChanges();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmInsertAdatum_001</Name>
+				<Source><![CDATA[
+    void fmInsertAdatum_001(str customerId, str location, str discountName, utcdatetime startDate, utcdatetime endDate, FMReservationState reservationState, int daysReserved)
+    {
+        // establish the logo resource for this vehicle
+        nameResourceNode = resourceStr(Adatum_Four_red);
+
+        // initialize state
+        this.initRentalInfo(customerId, 'Adatum_Four*', location, discountName, startDate, endDate, false, reservationState);
+
+        comments.EmployeeName = "Lisa Farr";
+        comments.CustomerDriversLicense = customer.DriverLicense;
+        comments.DateEntered = DateTimeUtil::Date(DateTimeUtil::addDays(startDate, -daysReserved));
+        comments.Comment = "This was Phil's first experience with us. He really enjoyed our service!";
+        comments.insert();
+        uoW.insertonSaveChanges(comments);
+
+        
+        // Rental Addons and Discounts
+
+        // Rental Charges
+        rentalCharge.clear();
+        chargetype = FMChargeType::find('Carbon fee');
+        rentalCharge.initValue();
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);        
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        rentalCharge = null;
+        rentalCharge.clear();
+        chargetype = FMChargeType::find('Tank refill');
+        rentalCharge.initValue();
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+        uoW.saveChanges();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmInsertLitware_002</Name>
+				<Source><![CDATA[
+    void fmInsertLitware_002(str customerId, str location, str discountName, utcdatetime startDate, utcdatetime endDate, FMReservationState reservationState, int daysReserved)
+    {
+        // establish the logo resource for this vehicle
+        nameResourceNode = resourceStr(Litware_LitwareFour_gray);
+
+        // initialize state
+        this.initRentalInfo(customerId, 'Litware_LitwareFour*', location, discountName, startDate, endDate, true, reservationState);
+
+        comments.EmployeeName = "Lisa Farr";
+        comments.CustomerDriversLicense = customer.DriverLicense;
+        comments.DateEntered = DateTimeUtil::Date(DateTimeUtil::addDays(startDate, -daysReserved));
+        comments.Comment = "Tony enjoys snowboard and is taking one of our Litware Four models to the mountains for the weekend.";
+        comments.insert();
+        uoW.insertonSaveChanges(comments);
+        
+
+        // Rental Addons and Discounts
+        chargetype = FMChargeType::find('Tire Chains');
+        rentalCharge.initValue();
+        rentalCharge.FMChargeType(chargetype);
+        rentalCharge.FMRental(rental);
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        rentalCharge = null;
+        chargetype = FMChargeType::find('GPS');
+        rentalCharge.clear();
+        rentalCharge.initValue();
+        rentalCharge.FMChargeType(chargetype);
+        rentalCharge.FMRental(rental);
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        rentalCharge = null;
+        // Rental Charges
+        chargetype = FMChargeType::find('Carbon fee');
+        rentalCharge.clear();
+        rentalCharge.initValue();
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);        
+        rentalCharge.TransDate = rental.EndDate;
+        
+
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        rentalCharge = null;
+        rentalCharge.clear();
+        rentalCharge.initValue();
+        chargetype = FMChargeType::find('Tank refill');
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+        uoW.saveChanges();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmInsertAdatum_002</Name>
+				<Source><![CDATA[
+    void fmInsertAdatum_002(str customerId, str location, str discountName, utcdatetime startDate, utcdatetime endDate, FMReservationState reservationState, int daysReserved)
+    {
+        // establish the logo resource for this vehicle
+        nameResourceNode = resourceStr(Adatum_Ninetynine_orange);
+
+        // initialize state
+        this.initRentalInfo(customerId, 'Adatum_Ninety-Nine*', location, discountName, startDate, endDate, false, reservationState);
+
+        comments.EmployeeName = "Lisa Farr";
+        comments.CustomerDriversLicense = customer.DriverLicense;
+        comments.DateEntered = DateTimeUtil::Date(DateTimeUtil::addDays(startDate, -daysReserved));
+        comments.Comment = "Josh is a self-proclaimed car aficionado. He says the Ninety-Nines are the finest car Adatum has ever made.";
+        comments.insert();
+        uoW.insertonSaveChanges(comments);
+
+        
+        // Rental Addons and Discounts
+        chargetype = FMChargeType::find('Satellite Radio');
+        rentalCharge.initValue();
+        rentalCharge.FMChargeType(chargetype);
+        rentalCharge.FMRental(rental);
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        rentalCharge = null;
+        chargetype = FMChargeType::find('GPS');
+        rentalCharge.initValue();
+        rentalCharge.FMChargeType(chargetype);
+        rentalCharge.FMRental(rental);
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        rentalCharge = null;
+        // Rental Charges
+        rentalCharge.clear();
+        rentalCharge.initValue();
+        chargetype = FMChargeType::find('Carbon fee');
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);        
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+        
+        rentalCharge = null;
+        rentalCharge.clear();
+        rentalCharge.initValue();
+        chargetype = FMChargeType::find('Tank refill');
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+        uoW.saveChanges();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>fmInsertShasta_001</Name>
+				<Source><![CDATA[
+    void fmInsertShasta_001(str customerId, str location, str discountName, utcdatetime startDate, utcdatetime endDate, FMReservationState reservationState, int daysReserved)
+    {
+        // establish the logo resource for this vehicle
+        nameResourceNode = resourceStr(AdventureWorks_Shasta_gray);
+
+        // initialize state
+        this.initRentalInfo(customerId, 'AdventureWorks_Shasta*', location, discountName, startDate, endDate, false, reservationState);
+
+        comments.EmployeeName = "Lisa Farr";
+        comments.CustomerDriversLicense = customer.DriverLicense;
+        comments.DateEntered = DateTimeUtil::Date(DateTimeUtil::addDays(startDate, -daysReserved));
+        comments.Comment = "Josh was not a fan of the Shasta's rough ride.";
+        comments.insert();
+        uoW.insertonSaveChanges(comments);
+
+        
+        // Rental Addons and Discounts
+        chargetype = FMChargeType::find('Satellite Radio');
+        rentalCharge.initValue();
+        rentalCharge.FMChargeType(chargetype);
+        rentalCharge.FMRental(rental);
+        uoW.insertonSaveChanges(rentalCharge);
+
+        // Rental Charges
+        rentalCharge = null;
+        rentalCharge.clear();
+        rentalCharge.initValue();
+        chargetype = FMChargeType::find('Carbon fee');
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);        
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+
+        rentalCharge = null;
+        rentalCharge.clear();
+        rentalCharge.initValue();
+        chargetype = FMChargeType::find('Tank refill');
+        rentalCharge.fmChargeType(chargetype);
+        rentalCharge.fmRental(rental);
+        rentalCharge.TransDate = rental.EndDate;
+
+        uoW.insertonSaveChanges(rentalCharge);
+        uoW.saveChanges();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

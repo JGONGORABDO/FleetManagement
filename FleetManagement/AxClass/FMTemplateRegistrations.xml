@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMTemplateRegistrations</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMTemplateRegistrations extends DocuTemplateRegistrationBase
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>registerTemplates</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Register templates for the Fleet Management module
+    /// </summary>
+    public void registerTemplates()
+    {
+        this.addTemplate(OfficeAppApplicationType::Excel, resourceStr(FMTemplateCustomersWithLocations), resourceStr(FMTemplateCustomersWithLocations), literalStr("@FLM:FMTemplateCustomerLocationsDescription"), literalStr("@FLM:FMTemplateCustomerLocationsDisplayName"), NoYes::Yes, NoYes::No, NoYes::No);
+        this.addTemplate(OfficeAppApplicationType::Excel, resourceStr(FMTemplateRentalsByStatus), resourceStr(FMTemplateRentalsByStatus), literalStr("@FLM:FMTemplateRentalsByStatusDescription"), literalStr("@FLM:FMTemplateRentalsByStatusDisplayName"), NoYes::Yes, NoYes::No, NoYes::No);
+        this.addTemplate(OfficeAppApplicationType::Word, resourceStr(FMTemplateCustomerInformation), resourceStr(FMTemplateCustomerInformation), literalStr("@FLM:FMTemplateCustomerInformationDescription"), literalStr("@FLM:FMTemplateCustomerInformationDisplayName"), NoYes::Yes, NoYes::Yes, NoYes::No);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

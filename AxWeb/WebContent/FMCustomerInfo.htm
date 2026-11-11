@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FMCustomerInfo</title>
+</head>
+<body>
+    <div id="FMCustomerInfo">
+        <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageType: 'URL', ImageName: $field('Thumbnail'), AllowEdit: false"></span>
+        <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'First name', Value: $field('FirstName'), AllowEdit: false"></div>
+        <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Last name', Value: $field('LastName'), AllowEdit: false"></div>
+        <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Phone number', Value: $field('CellPhone'), AllowEdit: false"></div>
+        <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Drivers license number', Value: $field('DriverLicense'), AllowEdit: false"></div>
+        <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Email', Value: $field('Email'), AllowEdit: false"></div>
+        <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="Label: 'DRIVERS LICENSE'">
+            <span data-dyn-role="metaModel: 'Image'" data-dyn-bind="ImageType: 'URL', ImageName: $field('License')"></span>
+            <button data-dyn-role="metaModel: 'CommandButton'" data-dyn-bind="Label: 'Scan drivers license', ActionCommand: $dialog({templateId: 'FMScanLicenseDialog', resourceBundle: 'FMScanLicenseDialog'}, $edit())"></button>
+        </div>
+        <div data-dyn-role="metaModel: 'Group'" data-dyn-bind="Label: 'ADDRESS'">
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Address Line 1', Value: $field('AddressLine1', 'PrimaryAddress'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Address Line 2', Value: $field('AddressLine2', 'PrimaryAddress'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'City', Value: $field('City', 'PrimaryAddress'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Country', Value: $field('Country', 'PrimaryAddress'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'State', Value: $field('State', 'PrimaryAddress'), AllowEdit: false"></div>
+            <div data-dyn-role="metaModel: 'String'" data-dyn-bind="Label: 'Zip code', Value: $field('ZipCode', 'PrimaryAddress'), AllowEdit: false"></div>
+        </div>
+    </div>
+</body>
+</html>

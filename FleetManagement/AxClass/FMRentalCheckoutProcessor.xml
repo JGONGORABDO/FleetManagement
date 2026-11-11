@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMRentalCheckoutProcessor</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class FMRentalCheckoutProcessor
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>FinalizeRentalCheckout</Name>
+				<Source><![CDATA[
+    public boolean FinalizeRentalCheckout(FMRental fmrentalrecord)
+    {
+
+        Struct RentalConfirmation = new Struct('boolean OKtoRent');
+
+        // setter
+        RentalConfirmation.value('OktoRent', true);
+
+
+        //fire the event
+        this.RentalTransactionAboutTobeFinalizedEvent(fmrentalrecord, RentalConfirmation);
+
+        //return what survived after eventhandlers finishing
+        return ( RentalConfirmation.value('OktoRent'));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>RentalTransactionAboutTobeFinalizedEvent</Name>
+				<Source><![CDATA[
+    delegate void RentalTransactionAboutTobeFinalizedEvent(FMRental fmrentalrecord, struct RentalConfirmation)
+    {
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

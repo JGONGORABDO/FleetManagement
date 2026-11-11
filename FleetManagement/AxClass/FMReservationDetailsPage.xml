@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMReservationDetailsPage</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+/// This is a contract class that will be used by mobile client to create controls for a page.
+/// </summary>
+class FMReservationDetailsPage extends FMReservationPage
+{
+    private str rentalIdInternal;
+    private utcdatetime startDateInternal;
+    private utcdatetime endDateInternal;
+    private FMReservationState rentalStatusInternal;
+    private FMCustomerRefGroup customerInternal;
+    private FMVehicleRefGroup vehicleInternal;
+    private List rentalChargeList;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    public void new()
+    {
+        rentalChargeList = new List(Types::Class);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalId</Name>
+				<Source><![CDATA[
+    //All fields exposed are decorated with SysAppField attribute.
+    [SysAppField(fieldStr(FMRental, RentalId), "Rental ID")]
+    public str rentalId(str _value=rentalIdInternal)
+    {
+        rentalIdInternal = _value;
+        return rentalIdInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>customer</Name>
+				<Source><![CDATA[
+    //If there is a relation to another entity than it is decorated with SysAppRelational attribute
+    [SysAppRelational]
+    public FMCustomerRefGroup customer(FMCustomerRefGroup _value = customerInternal)
+    {
+        customerInternal = _value;
+        return customerInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>vehicle</Name>
+				<Source><![CDATA[
+    [SysAppRelational]
+    public FMVehicleRefGroup vehicle(FMVehicleRefGroup _value = vehicleInternal)
+    {
+        vehicleInternal = _value;
+        return vehicleInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>startDate</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRental, StartDate), "Pickup")]
+    public utcdatetime startDate(utcdatetime _value=startDateInternal)
+    {
+        startDateInternal = _value;
+        return startDateInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>endDate</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRental, EndDate), "Return")]
+    public utcdatetime endDate(utcdatetime _value=endDateInternal)
+    {
+        endDateInternal = _value;
+        return endDateInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalStatus</Name>
+				<Source><![CDATA[
+    [SysAppField(fieldStr(FMRental, State), "Status")]
+    public FMReservationState rentalStatus(FMReservationState _value=rentalStatusInternal)
+    {
+        rentalStatusInternal = _value;
+        return rentalStatusInternal;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>rentalChargeList</Name>
+				<Source><![CDATA[
+    //If there is a 1:N relation than they are decorated with SysAppCollection attribute
+    [SysAppCollection(classStr(FMRentalChargeListItem), "Rental charge list")]
+    public List rentalChargeList(List _value=rentalChargeList)
+    {
+        rentalChargeList = _value;
+        return rentalChargeList;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>populate</Name>
+				<Source><![CDATA[
+    public void populate(FMRental _rentalTable)
+    {
+        this.rentalId(_rentalTable.RentalId);
+        this.startDate(_rentalTable.StartDate);
+        this.endDate(_rentalTable.EndDate);
+        this.rentalStatus(_rentalTable.State);
+        this.recId(_rentalTable.RecId);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getReservationDetails</Name>
+				<Source><![CDATA[
+    public static FMReservationDetailsPage getReservationDetails(SysAppEntityContext _entityContext, List _filterContextList)
+    {
+        //The entity context contains the entityID that can be used to filter 
+        //Also filterContext might also contains additional filters that are passed from mobile client.
+        //I have used filterContext in AllCustomer list page to do online search.
+        if (_entityContext && _entityContext.entityId())
+        {
+            int64 recId = str2Int64(_entityContext.entityId());
+            FMRental rentalTable;
+            FMCustomer customerTable;
+            FMVehicle vehicleTable;
+            FMVehicleModel vehicleModel;
+            FMAddressTable addressTable;
+
+            select firstonly * from rentalTable
+                join customerTable
+                join vehicleTable
+                join vehicleModel
+                join addressTable
+                where rentalTable.RecId ==  recId
+                    && rentalTable.Customer == customerTable.RecId
+                    && rentalTable.Vehicle == vehicleTable.RecId
+                    && vehicleTable.VehicleModel == vehicleModel.RecId
+                    && customerTable.AddressID == addressTable.RecId;
+
+            FMReservationDetailsPage reservationDetailsPage = new FMReservationDetailsPage();
+            reservationDetailsPage.populate(rentalTable);
+
+            reservationDetailsPage.customer(new FMCustomerRefGroup());
+            reservationDetailsPage.customer().populate(customerTable);
+
+            reservationDetailsPage.vehicle(new FMVehicleRefGroup());
+            reservationDetailsPage.vehicle().populate(vehicleTable, vehicleModel);
+
+            FMRentalCharge rentalCharge;
+            while select * from rentalCharge
+            where rentalCharge.RentalId  == rentalTable.RentalId               
+            {
+                FMRentalChargeListItem rentalChargeItem = new FMRentalChargeListItem();
+                rentalChargeItem.populate(rentalCharge);
+
+                reservationDetailsPage.rentalChargeList().addEnd(rentalChargeItem);
+            }
+
+            return reservationDetailsPage;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

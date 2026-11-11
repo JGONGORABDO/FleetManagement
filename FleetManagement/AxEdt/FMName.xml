@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxEdt xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxEdtString">
+	<Name>FMName</Name>
+	<Label>@SYS31438</Label>
+	<ReferenceTable>FMCustomer</ReferenceTable>
+	<ArrayElements />
+	<Relations />
+	<TableReferences />
+	<StringSize>50</StringSize>
+</AxEdt>

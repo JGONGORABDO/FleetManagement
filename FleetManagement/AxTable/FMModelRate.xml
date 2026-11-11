@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTable xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>FMModelRate</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class FMModelRate extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>vehiclePrices</Name>
+				<Source><![CDATA[
+    public display FMName vehiclePrices()
+    {
+        return int2str(real2int(this.RatePerDay)) + '/day'; 
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>getRate</Name>
+				<Source><![CDATA[
+    public static container getRate(FMVehicleRecId vehicle)
+    {
+        FMModelRate modelRate;
+        FMVehicle vehicleTable;
+        FMVehicleModel vehicleModelTable;
+        container result = connull();
+
+        if (vehicle)
+        {
+            select RatePerDay, RatePerWeek from modelRate
+                join vehicleModelTable
+                join vehicleTable
+                where vehicleModelTable.RecId == modelRate.MakeModelId &&
+                    vehicleTable.VehicleModel == vehicleModelTable.RecId &&
+                    vehicleTable.RecId == vehicle;
+
+            result = [modelRate.RatePerDay, modelRate.RatePerWeek];
+        }
+        return result;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DeveloperDocumentation>TODO</DeveloperDocumentation>
+	<TitleField1>RatePerDay</TitleField1>
+	<Modules>FleetManagement</Modules>
+	<SaveDataPerCompany>No</SaveDataPerCompany>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>RatePerWeek</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>RatePerDay</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>MakeModelId</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>RatePerWeek</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMRate</ExtendedDataType>
+			<Label>@FLM189</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldReal">
+			<Name>RatePerDay</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMRate</ExtendedDataType>
+			<Label>@FLM188</Label>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldInt64">
+			<Name>MakeModelId</Name>
+			<AssetClassification>System Metadata</AssetClassification>
+			<ExtendedDataType>FMMakeModelId</ExtendedDataType>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes />
+	<Mappings />
+	<Relations>
+		<AxTableRelation xmlns=""
+			i:type="AxTableRelationForeignKey">
+			<Name>MakeModelRelation</Name>
+			<Cardinality>ZeroOne</Cardinality>
+			<RelatedTable>FMVehicleModel</RelatedTable>
+			<RelatedTableCardinality>ExactlyOne</RelatedTableCardinality>
+			<Constraints>
+				<AxTableRelationConstraint xmlns=""
+					i:type="AxTableRelationConstraintField">
+					<Name>RelationConstraintField1</Name>
+					<Field>MakeModelId</Field>
+					<RelatedField>RecId</RelatedField>
+				</AxTableRelationConstraint>
+			</Constraints>
+		</AxTableRelation>
+	</Relations>
+	<StateMachines />
+</AxTable>
